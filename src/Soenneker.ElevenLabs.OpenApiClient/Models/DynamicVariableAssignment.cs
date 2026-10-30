@@ -18,11 +18,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("dynamic_variable") is { } nullNodeDynamicVariable && nullNodeDynamicVariable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DynamicVariable = null;
-            if (parseNode.GetChildNode("preserve_native_type") is { } nullNodePreserveNativeType && nullNodePreserveNativeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreserveNativeType = null;
-            if (parseNode.GetChildNode("sanitize") is { } nullNodeSanitize && nullNodeSanitize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sanitize = null;
-            if (parseNode.GetChildNode("source") is { } nullNodeSource && nullNodeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Source = null;
-            if (parseNode.GetChildNode("value_path") is { } nullNodeValuePath && nullNodeValuePath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValuePath = null;
+            if (parseNode.GetChildNode("dynamic_variable") is null) { _explicitNullValueDynamicVariable = default!; _explicitNullProperties?.Remove("dynamic_variable"); }
+            else if (parseNode.GetChildNode("dynamic_variable") is { } nullNodeDynamicVariable && nullNodeDynamicVariable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DynamicVariable = null;
+            if (parseNode.GetChildNode("preserve_native_type") is null) { _explicitNullValuePreserveNativeType = default!; _explicitNullProperties?.Remove("preserve_native_type"); }
+            else if (parseNode.GetChildNode("preserve_native_type") is { } nullNodePreserveNativeType && nullNodePreserveNativeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreserveNativeType = null;
+            if (parseNode.GetChildNode("sanitize") is null) { _explicitNullValueSanitize = default!; _explicitNullProperties?.Remove("sanitize"); }
+            else if (parseNode.GetChildNode("sanitize") is { } nullNodeSanitize && nullNodeSanitize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sanitize = null;
+            if (parseNode.GetChildNode("source") is null) { _explicitNullValueSource = default!; _explicitNullProperties?.Remove("source"); }
+            else if (parseNode.GetChildNode("source") is { } nullNodeSource && nullNodeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Source = null;
+            if (parseNode.GetChildNode("value_path") is null) { _explicitNullValueValuePath = default!; _explicitNullProperties?.Remove("value_path"); }
+            else if (parseNode.GetChildNode("value_path") is { } nullNodeValuePath && nullNodeValuePath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValuePath = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,30 +35,30 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The name of the dynamic variable to assign the extracted value to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DynamicVariable { get => _explicitNullValueDynamicVariable; set { _explicitNullValueDynamicVariable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamic_variable"); else _explicitNullProperties?.Remove("dynamic_variable"); } }
+        public string? DynamicVariable { get => _explicitNullValueDynamicVariable; set { _explicitNullValueDynamicVariable = value; AdditionalData?.Remove("dynamic_variable"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamic_variable"); else _explicitNullProperties?.Remove("dynamic_variable"); } }
         private string? _explicitNullValueDynamicVariable = default!;
 #nullable restore
 #else
-        public string DynamicVariable { get => _explicitNullValueDynamicVariable; set { _explicitNullValueDynamicVariable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamic_variable"); else _explicitNullProperties?.Remove("dynamic_variable"); } }
+        public string DynamicVariable { get => _explicitNullValueDynamicVariable; set { _explicitNullValueDynamicVariable = value; AdditionalData?.Remove("dynamic_variable"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamic_variable"); else _explicitNullProperties?.Remove("dynamic_variable"); } }
         private string _explicitNullValueDynamicVariable = default!;
 #endif
         /// <summary>If true, non-scalar values (lists, objects) extracted from the tool response are stored as their native type instead of being stringified to JSON. Enable this to use extracted arrays directly as list dynamic variables.</summary>
-        public bool? PreserveNativeType { get => _explicitNullValuePreserveNativeType; set { _explicitNullValuePreserveNativeType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preserve_native_type"); else _explicitNullProperties?.Remove("preserve_native_type"); } }
+        public bool? PreserveNativeType { get => _explicitNullValuePreserveNativeType; set { _explicitNullValuePreserveNativeType = value; AdditionalData?.Remove("preserve_native_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preserve_native_type"); else _explicitNullProperties?.Remove("preserve_native_type"); } }
         private bool? _explicitNullValuePreserveNativeType = default!;
         /// <summary>If true, this assignment&apos;s value will be removed from the tool response before sending to the LLM and transcript, but still processed for variable assignment.</summary>
-        public bool? Sanitize { get => _explicitNullValueSanitize; set { _explicitNullValueSanitize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sanitize"); else _explicitNullProperties?.Remove("sanitize"); } }
+        public bool? Sanitize { get => _explicitNullValueSanitize; set { _explicitNullValueSanitize = value; AdditionalData?.Remove("sanitize"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sanitize"); else _explicitNullProperties?.Remove("sanitize"); } }
         private bool? _explicitNullValueSanitize = default!;
         /// <summary>The source to extract the value from. Currently only &apos;response&apos; is supported.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseSource? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseSource? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; AdditionalData?.Remove("source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseSource? _explicitNullValueSource = default!;
         /// <summary>Dot notation path to extract the value from the source (e.g., &apos;user.name&apos; or &apos;data.0.id&apos;)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ValuePath { get => _explicitNullValueValuePath; set { _explicitNullValueValuePath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value_path"); else _explicitNullProperties?.Remove("value_path"); } }
+        public string? ValuePath { get => _explicitNullValueValuePath; set { _explicitNullValueValuePath = value; AdditionalData?.Remove("value_path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value_path"); else _explicitNullProperties?.Remove("value_path"); } }
         private string? _explicitNullValueValuePath = default!;
 #nullable restore
 #else
-        public string ValuePath { get => _explicitNullValueValuePath; set { _explicitNullValueValuePath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value_path"); else _explicitNullProperties?.Remove("value_path"); } }
+        public string ValuePath { get => _explicitNullValueValuePath; set { _explicitNullValueValuePath = value; AdditionalData?.Remove("value_path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value_path"); else _explicitNullProperties?.Remove("value_path"); } }
         private string _explicitNullValueValuePath = default!;
 #endif
         /// <summary>
@@ -86,7 +91,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "dynamic_variable", n => { DynamicVariable = n.GetStringValue(); } },
                 { "preserve_native_type", n => { PreserveNativeType = n.GetBoolValue(); } },
                 { "sanitize", n => { Sanitize = n.GetBoolValue(); } },
-                { "source", n => { Source = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseSource>(); } },
+                { "source", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseSource>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSource = default; _explicitNullProperties?.Remove("source"); AdditionalData["source"] = unknown; } else { Source = parsed; AdditionalData.Remove("source"); } } },
                 { "value_path", n => { ValuePath = n.GetStringValue(); } },
             };
         }

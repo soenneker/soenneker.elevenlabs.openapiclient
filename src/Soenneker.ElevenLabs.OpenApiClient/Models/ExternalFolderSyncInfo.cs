@@ -18,12 +18,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("integration_connection_id") is { } nullNodeIntegrationConnectionId && nullNodeIntegrationConnectionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationConnectionId = null;
-            if (parseNode.GetChildNode("last_sync_at") is { } nullNodeLastSyncAt && nullNodeLastSyncAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastSyncAt = null;
-            if (parseNode.GetChildNode("root_folder_id") is { } nullNodeRootFolderId && nullNodeRootFolderId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RootFolderId = null;
-            if (parseNode.GetChildNode("source_entity_id") is { } nullNodeSourceEntityId && nullNodeSourceEntityId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceEntityId = null;
-            if (parseNode.GetChildNode("sync_cursor") is { } nullNodeSyncCursor && nullNodeSyncCursor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SyncCursor = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("integration_connection_id") is null) { _explicitNullValueIntegrationConnectionId = default!; _explicitNullProperties?.Remove("integration_connection_id"); }
+            else if (parseNode.GetChildNode("integration_connection_id") is { } nullNodeIntegrationConnectionId && nullNodeIntegrationConnectionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationConnectionId = null;
+            if (parseNode.GetChildNode("last_sync_at") is null) { _explicitNullValueLastSyncAt = default!; _explicitNullProperties?.Remove("last_sync_at"); }
+            else if (parseNode.GetChildNode("last_sync_at") is { } nullNodeLastSyncAt && nullNodeLastSyncAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastSyncAt = null;
+            if (parseNode.GetChildNode("root_folder_id") is null) { _explicitNullValueRootFolderId = default!; _explicitNullProperties?.Remove("root_folder_id"); }
+            else if (parseNode.GetChildNode("root_folder_id") is { } nullNodeRootFolderId && nullNodeRootFolderId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RootFolderId = null;
+            if (parseNode.GetChildNode("source_entity_id") is null) { _explicitNullValueSourceEntityId = default!; _explicitNullProperties?.Remove("source_entity_id"); }
+            else if (parseNode.GetChildNode("source_entity_id") is { } nullNodeSourceEntityId && nullNodeSourceEntityId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceEntityId = null;
+            if (parseNode.GetChildNode("sync_cursor") is null) { _explicitNullValueSyncCursor = default!; _explicitNullProperties?.Remove("sync_cursor"); }
+            else if (parseNode.GetChildNode("sync_cursor") is { } nullNodeSyncCursor && nullNodeSyncCursor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SyncCursor = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,48 +37,48 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Integration connection instance ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IntegrationConnectionId { get => _explicitNullValueIntegrationConnectionId; set { _explicitNullValueIntegrationConnectionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration_connection_id"); else _explicitNullProperties?.Remove("integration_connection_id"); } }
+        public string? IntegrationConnectionId { get => _explicitNullValueIntegrationConnectionId; set { _explicitNullValueIntegrationConnectionId = value; AdditionalData?.Remove("integration_connection_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration_connection_id"); else _explicitNullProperties?.Remove("integration_connection_id"); } }
         private string? _explicitNullValueIntegrationConnectionId = default!;
 #nullable restore
 #else
-        public string IntegrationConnectionId { get => _explicitNullValueIntegrationConnectionId; set { _explicitNullValueIntegrationConnectionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration_connection_id"); else _explicitNullProperties?.Remove("integration_connection_id"); } }
+        public string IntegrationConnectionId { get => _explicitNullValueIntegrationConnectionId; set { _explicitNullValueIntegrationConnectionId = value; AdditionalData?.Remove("integration_connection_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration_connection_id"); else _explicitNullProperties?.Remove("integration_connection_id"); } }
         private string _explicitNullValueIntegrationConnectionId = default!;
 #endif
         /// <summary>Unix timestamp of last completed sync</summary>
-        public int? LastSyncAt { get => _explicitNullValueLastSyncAt; set { _explicitNullValueLastSyncAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_sync_at"); else _explicitNullProperties?.Remove("last_sync_at"); } }
+        public int? LastSyncAt { get => _explicitNullValueLastSyncAt; set { _explicitNullValueLastSyncAt = value; AdditionalData?.Remove("last_sync_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_sync_at"); else _explicitNullProperties?.Remove("last_sync_at"); } }
         private int? _explicitNullValueLastSyncAt = default!;
         /// <summary>KB folder ID of the sync root. None means this folder is the root.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RootFolderId { get => _explicitNullValueRootFolderId; set { _explicitNullValueRootFolderId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("root_folder_id"); else _explicitNullProperties?.Remove("root_folder_id"); } }
+        public string? RootFolderId { get => _explicitNullValueRootFolderId; set { _explicitNullValueRootFolderId = value; AdditionalData?.Remove("root_folder_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("root_folder_id"); else _explicitNullProperties?.Remove("root_folder_id"); } }
         private string? _explicitNullValueRootFolderId = default!;
 #nullable restore
 #else
-        public string RootFolderId { get => _explicitNullValueRootFolderId; set { _explicitNullValueRootFolderId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("root_folder_id"); else _explicitNullProperties?.Remove("root_folder_id"); } }
+        public string RootFolderId { get => _explicitNullValueRootFolderId; set { _explicitNullValueRootFolderId = value; AdditionalData?.Remove("root_folder_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("root_folder_id"); else _explicitNullProperties?.Remove("root_folder_id"); } }
         private string _explicitNullValueRootFolderId = default!;
 #endif
         /// <summary>Entity ID in the external system</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceEntityId { get => _explicitNullValueSourceEntityId; set { _explicitNullValueSourceEntityId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_entity_id"); else _explicitNullProperties?.Remove("source_entity_id"); } }
+        public string? SourceEntityId { get => _explicitNullValueSourceEntityId; set { _explicitNullValueSourceEntityId = value; AdditionalData?.Remove("source_entity_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_entity_id"); else _explicitNullProperties?.Remove("source_entity_id"); } }
         private string? _explicitNullValueSourceEntityId = default!;
 #nullable restore
 #else
-        public string SourceEntityId { get => _explicitNullValueSourceEntityId; set { _explicitNullValueSourceEntityId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_entity_id"); else _explicitNullProperties?.Remove("source_entity_id"); } }
+        public string SourceEntityId { get => _explicitNullValueSourceEntityId; set { _explicitNullValueSourceEntityId = value; AdditionalData?.Remove("source_entity_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_entity_id"); else _explicitNullProperties?.Remove("source_entity_id"); } }
         private string _explicitNullValueSourceEntityId = default!;
 #endif
         /// <summary>Opaque cursor for incremental sync, interpreted by the provider</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SyncCursor { get => _explicitNullValueSyncCursor; set { _explicitNullValueSyncCursor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sync_cursor"); else _explicitNullProperties?.Remove("sync_cursor"); } }
+        public string? SyncCursor { get => _explicitNullValueSyncCursor; set { _explicitNullValueSyncCursor = value; AdditionalData?.Remove("sync_cursor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sync_cursor"); else _explicitNullProperties?.Remove("sync_cursor"); } }
         private string? _explicitNullValueSyncCursor = default!;
 #nullable restore
 #else
-        public string SyncCursor { get => _explicitNullValueSyncCursor; set { _explicitNullValueSyncCursor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sync_cursor"); else _explicitNullProperties?.Remove("sync_cursor"); } }
+        public string SyncCursor { get => _explicitNullValueSyncCursor; set { _explicitNullValueSyncCursor = value; AdditionalData?.Remove("sync_cursor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sync_cursor"); else _explicitNullProperties?.Remove("sync_cursor"); } }
         private string _explicitNullValueSyncCursor = default!;
 #endif
         /// <summary>Provider identifier</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalSyncProvider? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalSyncProvider? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalSyncProvider? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalFolderSyncInfo"/> and sets the default values.
@@ -104,7 +110,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "root_folder_id", n => { RootFolderId = n.GetStringValue(); } },
                 { "source_entity_id", n => { SourceEntityId = n.GetStringValue(); } },
                 { "sync_cursor", n => { SyncCursor = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalSyncProvider>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalSyncProvider>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

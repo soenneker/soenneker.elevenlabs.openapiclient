@@ -17,132 +17,145 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("apply_text_normalization") is { } nullNodeApplyTextNormalization && nullNodeApplyTextNormalization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApplyTextNormalization = null;
-            if (parseNode.GetChildNode("audio_effects") is { } nullNodeAudioEffects && nullNodeAudioEffects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudioEffects = null;
-            if (parseNode.GetChildNode("future_text") is { } nullNodeFutureText && nullNodeFutureText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FutureText = null;
-            if (parseNode.GetChildNode("inputs") is { } nullNodeInputs && nullNodeInputs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Inputs = null;
-            if (parseNode.GetChildNode("language_code") is { } nullNodeLanguageCode && nullNodeLanguageCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LanguageCode = null;
-            if (parseNode.GetChildNode("model_id") is { } nullNodeModelId && nullNodeModelId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModelId = null;
-            if (parseNode.GetChildNode("next_request_ids") is { } nullNodeNextRequestIds && nullNodeNextRequestIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextRequestIds = null;
-            if (parseNode.GetChildNode("previous_request_ids") is { } nullNodePreviousRequestIds && nullNodePreviousRequestIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousRequestIds = null;
-            if (parseNode.GetChildNode("previous_text") is { } nullNodePreviousText && nullNodePreviousText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousText = null;
-            if (parseNode.GetChildNode("pronunciation_dictionary_locators") is { } nullNodePronunciationDictionaryLocators && nullNodePronunciationDictionaryLocators.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PronunciationDictionaryLocators = null;
-            if (parseNode.GetChildNode("seed") is { } nullNodeSeed && nullNodeSeed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Seed = null;
-            if (parseNode.GetChildNode("settings") is { } nullNodeSettings && nullNodeSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Settings = null;
-            if (parseNode.GetChildNode("use_pvc_as_ivc") is { } nullNodeUsePvcAsIvc && nullNodeUsePvcAsIvc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsePvcAsIvc = null;
+            if (parseNode.GetChildNode("apply_text_normalization") is null) { _explicitNullValueApplyTextNormalization = default!; _explicitNullProperties?.Remove("apply_text_normalization"); }
+            else if (parseNode.GetChildNode("apply_text_normalization") is { } nullNodeApplyTextNormalization && nullNodeApplyTextNormalization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApplyTextNormalization = null;
+            if (parseNode.GetChildNode("audio_effects") is null) { _explicitNullValueAudioEffects = default!; _explicitNullProperties?.Remove("audio_effects"); }
+            else if (parseNode.GetChildNode("audio_effects") is { } nullNodeAudioEffects && nullNodeAudioEffects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudioEffects = null;
+            if (parseNode.GetChildNode("future_text") is null) { _explicitNullValueFutureText = default!; _explicitNullProperties?.Remove("future_text"); }
+            else if (parseNode.GetChildNode("future_text") is { } nullNodeFutureText && nullNodeFutureText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FutureText = null;
+            if (parseNode.GetChildNode("inputs") is null) { _explicitNullValueInputs = default!; _explicitNullProperties?.Remove("inputs"); }
+            else if (parseNode.GetChildNode("inputs") is { } nullNodeInputs && nullNodeInputs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Inputs = null;
+            if (parseNode.GetChildNode("language_code") is null) { _explicitNullValueLanguageCode = default!; _explicitNullProperties?.Remove("language_code"); }
+            else if (parseNode.GetChildNode("language_code") is { } nullNodeLanguageCode && nullNodeLanguageCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LanguageCode = null;
+            if (parseNode.GetChildNode("model_id") is null) { _explicitNullValueModelId = default!; _explicitNullProperties?.Remove("model_id"); }
+            else if (parseNode.GetChildNode("model_id") is { } nullNodeModelId && nullNodeModelId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModelId = null;
+            if (parseNode.GetChildNode("next_request_ids") is null) { _explicitNullValueNextRequestIds = default!; _explicitNullProperties?.Remove("next_request_ids"); }
+            else if (parseNode.GetChildNode("next_request_ids") is { } nullNodeNextRequestIds && nullNodeNextRequestIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextRequestIds = null;
+            if (parseNode.GetChildNode("previous_request_ids") is null) { _explicitNullValuePreviousRequestIds = default!; _explicitNullProperties?.Remove("previous_request_ids"); }
+            else if (parseNode.GetChildNode("previous_request_ids") is { } nullNodePreviousRequestIds && nullNodePreviousRequestIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousRequestIds = null;
+            if (parseNode.GetChildNode("previous_text") is null) { _explicitNullValuePreviousText = default!; _explicitNullProperties?.Remove("previous_text"); }
+            else if (parseNode.GetChildNode("previous_text") is { } nullNodePreviousText && nullNodePreviousText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousText = null;
+            if (parseNode.GetChildNode("pronunciation_dictionary_locators") is null) { _explicitNullValuePronunciationDictionaryLocators = default!; _explicitNullProperties?.Remove("pronunciation_dictionary_locators"); }
+            else if (parseNode.GetChildNode("pronunciation_dictionary_locators") is { } nullNodePronunciationDictionaryLocators && nullNodePronunciationDictionaryLocators.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PronunciationDictionaryLocators = null;
+            if (parseNode.GetChildNode("seed") is null) { _explicitNullValueSeed = default!; _explicitNullProperties?.Remove("seed"); }
+            else if (parseNode.GetChildNode("seed") is { } nullNodeSeed && nullNodeSeed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Seed = null;
+            if (parseNode.GetChildNode("settings") is null) { _explicitNullValueSettings = default!; _explicitNullProperties?.Remove("settings"); }
+            else if (parseNode.GetChildNode("settings") is { } nullNodeSettings && nullNodeSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Settings = null;
+            if (parseNode.GetChildNode("use_pvc_as_ivc") is null) { _explicitNullValueUsePvcAsIvc = default!; _explicitNullProperties?.Remove("use_pvc_as_ivc"); }
+            else if (parseNode.GetChildNode("use_pvc_as_ivc") is { } nullNodeUsePvcAsIvc && nullNodeUsePvcAsIvc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsePvcAsIvc = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>This parameter controls text normalization with three modes: &apos;auto&apos;, &apos;on&apos;, and &apos;off&apos;. When set to &apos;auto&apos;, the system will automatically decide whether to apply text normalization (e.g., spelling out numbers). With &apos;on&apos;, text normalization will always be applied, while with &apos;off&apos;, it will be skipped.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueStreamWithTimestampsApplyTextNormalization? ApplyTextNormalization { get => _explicitNullValueApplyTextNormalization; set { _explicitNullValueApplyTextNormalization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apply_text_normalization"); else _explicitNullProperties?.Remove("apply_text_normalization"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueStreamWithTimestampsApplyTextNormalization? ApplyTextNormalization { get => _explicitNullValueApplyTextNormalization; set { _explicitNullValueApplyTextNormalization = value; AdditionalData?.Remove("apply_text_normalization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apply_text_normalization"); else _explicitNullProperties?.Remove("apply_text_normalization"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueStreamWithTimestampsApplyTextNormalization? _explicitNullValueApplyTextNormalization = default!;
         /// <summary>Audio effects applied to the generated audio. Unknown IDs return 404 with `param` naming the field. Reverb (`environment_id` with `send_level` above 0) and a non-zero `pan` produce stereo audio and are rejected with 400 for `ulaw_*`, `alaw_*`, and `pcm_*` output formats. Effects don&apos;t change the cost of the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EffectsSpecInput? AudioEffects { get => _explicitNullValueAudioEffects; set { _explicitNullValueAudioEffects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_effects"); else _explicitNullProperties?.Remove("audio_effects"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EffectsSpecInput? AudioEffects { get => _explicitNullValueAudioEffects; set { _explicitNullValueAudioEffects = value; AdditionalData?.Remove("audio_effects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_effects"); else _explicitNullProperties?.Remove("audio_effects"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.EffectsSpecInput? _explicitNullValueAudioEffects = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EffectsSpecInput AudioEffects { get => _explicitNullValueAudioEffects; set { _explicitNullValueAudioEffects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_effects"); else _explicitNullProperties?.Remove("audio_effects"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EffectsSpecInput AudioEffects { get => _explicitNullValueAudioEffects; set { _explicitNullValueAudioEffects = value; AdditionalData?.Remove("audio_effects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_effects"); else _explicitNullProperties?.Remove("audio_effects"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.EffectsSpecInput _explicitNullValueAudioEffects = default!;
 #endif
         /// <summary>The text that comes immediately after this generation, used to condition the model for prosodic continuity. A maximum of 100 characters can be sent. Not supported by every model.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FutureText { get => _explicitNullValueFutureText; set { _explicitNullValueFutureText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("future_text"); else _explicitNullProperties?.Remove("future_text"); } }
+        public string? FutureText { get => _explicitNullValueFutureText; set { _explicitNullValueFutureText = value; AdditionalData?.Remove("future_text"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("future_text"); else _explicitNullProperties?.Remove("future_text"); } }
         private string? _explicitNullValueFutureText = default!;
 #nullable restore
 #else
-        public string FutureText { get => _explicitNullValueFutureText; set { _explicitNullValueFutureText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("future_text"); else _explicitNullProperties?.Remove("future_text"); } }
+        public string FutureText { get => _explicitNullValueFutureText; set { _explicitNullValueFutureText = value; AdditionalData?.Remove("future_text"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("future_text"); else _explicitNullProperties?.Remove("future_text"); } }
         private string _explicitNullValueFutureText = default!;
 #endif
         /// <summary>A list of dialogue inputs, each containing text and a voice ID which will be converted into speech. The maximum number of unique voice IDs is 10. For reliable generation, keep the total character count across all `inputs[].text` values at or below 2,000 characters per request. Longer requests can terminate early in streaming responses or return a validation error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DialogueInput>? Inputs { get => _explicitNullValueInputs; set { _explicitNullValueInputs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inputs"); else _explicitNullProperties?.Remove("inputs"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DialogueInput>? Inputs { get => _explicitNullValueInputs; set { _explicitNullValueInputs = value; AdditionalData?.Remove("inputs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inputs"); else _explicitNullProperties?.Remove("inputs"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DialogueInput>? _explicitNullValueInputs = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DialogueInput> Inputs { get => _explicitNullValueInputs; set { _explicitNullValueInputs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inputs"); else _explicitNullProperties?.Remove("inputs"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DialogueInput> Inputs { get => _explicitNullValueInputs; set { _explicitNullValueInputs = value; AdditionalData?.Remove("inputs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inputs"); else _explicitNullProperties?.Remove("inputs"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DialogueInput> _explicitNullValueInputs = default!;
 #endif
         /// <summary>Language code (ISO 639-1) used to enforce a language for the model and text normalization. If the model does not support the provided language code, it will be ignored. This parameter is not supported for multilingual_v2 models.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LanguageCode { get => _explicitNullValueLanguageCode; set { _explicitNullValueLanguageCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language_code"); else _explicitNullProperties?.Remove("language_code"); } }
+        public string? LanguageCode { get => _explicitNullValueLanguageCode; set { _explicitNullValueLanguageCode = value; AdditionalData?.Remove("language_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language_code"); else _explicitNullProperties?.Remove("language_code"); } }
         private string? _explicitNullValueLanguageCode = default!;
 #nullable restore
 #else
-        public string LanguageCode { get => _explicitNullValueLanguageCode; set { _explicitNullValueLanguageCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language_code"); else _explicitNullProperties?.Remove("language_code"); } }
+        public string LanguageCode { get => _explicitNullValueLanguageCode; set { _explicitNullValueLanguageCode = value; AdditionalData?.Remove("language_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language_code"); else _explicitNullProperties?.Remove("language_code"); } }
         private string _explicitNullValueLanguageCode = default!;
 #endif
         /// <summary>Identifier of the model that will be used, you can query them using GET /v1/models. The model needs to have support for text to speech, you can check this using the can_do_text_to_speech property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModelId { get => _explicitNullValueModelId; set { _explicitNullValueModelId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model_id"); else _explicitNullProperties?.Remove("model_id"); } }
+        public string? ModelId { get => _explicitNullValueModelId; set { _explicitNullValueModelId = value; AdditionalData?.Remove("model_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model_id"); else _explicitNullProperties?.Remove("model_id"); } }
         private string? _explicitNullValueModelId = default!;
 #nullable restore
 #else
-        public string ModelId { get => _explicitNullValueModelId; set { _explicitNullValueModelId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model_id"); else _explicitNullProperties?.Remove("model_id"); } }
+        public string ModelId { get => _explicitNullValueModelId; set { _explicitNullValueModelId = value; AdditionalData?.Remove("model_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model_id"); else _explicitNullProperties?.Remove("model_id"); } }
         private string _explicitNullValueModelId = default!;
 #endif
         /// <summary>A list of request_ids of dialogue generations that come after this one. Useful for maintaining continuity when regenerating a clip in the middle of a sequence. A maximum of 3 request_ids can be sent. The first request_id is the audio which is closest to the current request. Not supported by every model.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? NextRequestIds { get => _explicitNullValueNextRequestIds; set { _explicitNullValueNextRequestIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_request_ids"); else _explicitNullProperties?.Remove("next_request_ids"); } }
+        public List<string>? NextRequestIds { get => _explicitNullValueNextRequestIds; set { _explicitNullValueNextRequestIds = value; AdditionalData?.Remove("next_request_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_request_ids"); else _explicitNullProperties?.Remove("next_request_ids"); } }
         private List<string>? _explicitNullValueNextRequestIds = default!;
 #nullable restore
 #else
-        public List<string> NextRequestIds { get => _explicitNullValueNextRequestIds; set { _explicitNullValueNextRequestIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_request_ids"); else _explicitNullProperties?.Remove("next_request_ids"); } }
+        public List<string> NextRequestIds { get => _explicitNullValueNextRequestIds; set { _explicitNullValueNextRequestIds = value; AdditionalData?.Remove("next_request_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_request_ids"); else _explicitNullProperties?.Remove("next_request_ids"); } }
         private List<string> _explicitNullValueNextRequestIds = default!;
 #endif
         /// <summary>A list of request_ids of dialogue generations that came before this one. Used to condition the model for continuity when splitting a large task into multiple requests. A maximum of 3 request_ids can be sent. The last request_id is the audio which is closest to the current request. Not supported by every model.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PreviousRequestIds { get => _explicitNullValuePreviousRequestIds; set { _explicitNullValuePreviousRequestIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_request_ids"); else _explicitNullProperties?.Remove("previous_request_ids"); } }
+        public List<string>? PreviousRequestIds { get => _explicitNullValuePreviousRequestIds; set { _explicitNullValuePreviousRequestIds = value; AdditionalData?.Remove("previous_request_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_request_ids"); else _explicitNullProperties?.Remove("previous_request_ids"); } }
         private List<string>? _explicitNullValuePreviousRequestIds = default!;
 #nullable restore
 #else
-        public List<string> PreviousRequestIds { get => _explicitNullValuePreviousRequestIds; set { _explicitNullValuePreviousRequestIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_request_ids"); else _explicitNullProperties?.Remove("previous_request_ids"); } }
+        public List<string> PreviousRequestIds { get => _explicitNullValuePreviousRequestIds; set { _explicitNullValuePreviousRequestIds = value; AdditionalData?.Remove("previous_request_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_request_ids"); else _explicitNullProperties?.Remove("previous_request_ids"); } }
         private List<string> _explicitNullValuePreviousRequestIds = default!;
 #endif
         /// <summary>The text that comes immediately before this generation, used to condition the model for prosodic continuity. A maximum of 100 characters can be sent. Not supported by every model.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviousText { get => _explicitNullValuePreviousText; set { _explicitNullValuePreviousText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_text"); else _explicitNullProperties?.Remove("previous_text"); } }
+        public string? PreviousText { get => _explicitNullValuePreviousText; set { _explicitNullValuePreviousText = value; AdditionalData?.Remove("previous_text"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_text"); else _explicitNullProperties?.Remove("previous_text"); } }
         private string? _explicitNullValuePreviousText = default!;
 #nullable restore
 #else
-        public string PreviousText { get => _explicitNullValuePreviousText; set { _explicitNullValuePreviousText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_text"); else _explicitNullProperties?.Remove("previous_text"); } }
+        public string PreviousText { get => _explicitNullValuePreviousText; set { _explicitNullValuePreviousText = value; AdditionalData?.Remove("previous_text"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_text"); else _explicitNullProperties?.Remove("previous_text"); } }
         private string _explicitNullValuePreviousText = default!;
 #endif
         /// <summary>A list of pronunciation dictionary locators (id, version_id) to be applied to the text. They will be applied in order. You may have up to 3 locators per request</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionLocatorRequestModel>? PronunciationDictionaryLocators { get => _explicitNullValuePronunciationDictionaryLocators; set { _explicitNullValuePronunciationDictionaryLocators = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pronunciation_dictionary_locators"); else _explicitNullProperties?.Remove("pronunciation_dictionary_locators"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionLocatorRequestModel>? PronunciationDictionaryLocators { get => _explicitNullValuePronunciationDictionaryLocators; set { _explicitNullValuePronunciationDictionaryLocators = value; AdditionalData?.Remove("pronunciation_dictionary_locators"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pronunciation_dictionary_locators"); else _explicitNullProperties?.Remove("pronunciation_dictionary_locators"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionLocatorRequestModel>? _explicitNullValuePronunciationDictionaryLocators = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionLocatorRequestModel> PronunciationDictionaryLocators { get => _explicitNullValuePronunciationDictionaryLocators; set { _explicitNullValuePronunciationDictionaryLocators = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pronunciation_dictionary_locators"); else _explicitNullProperties?.Remove("pronunciation_dictionary_locators"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionLocatorRequestModel> PronunciationDictionaryLocators { get => _explicitNullValuePronunciationDictionaryLocators; set { _explicitNullValuePronunciationDictionaryLocators = value; AdditionalData?.Remove("pronunciation_dictionary_locators"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pronunciation_dictionary_locators"); else _explicitNullProperties?.Remove("pronunciation_dictionary_locators"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionLocatorRequestModel> _explicitNullValuePronunciationDictionaryLocators = default!;
 #endif
         /// <summary>If specified, our system will make a best effort to sample deterministically, such that repeated requests with the same seed and parameters should return the same result. Determinism is not guaranteed. Must be integer between 0 and 4294967295.</summary>
-        public int? Seed { get => _explicitNullValueSeed; set { _explicitNullValueSeed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("seed"); else _explicitNullProperties?.Remove("seed"); } }
+        public int? Seed { get => _explicitNullValueSeed; set { _explicitNullValueSeed = value; AdditionalData?.Remove("seed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("seed"); else _explicitNullProperties?.Remove("seed"); } }
         private int? _explicitNullValueSeed = default!;
         /// <summary>Settings controlling the dialogue generation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToDialogueSettingsResponseModel? Settings { get => _explicitNullValueSettings; set { _explicitNullValueSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("settings"); else _explicitNullProperties?.Remove("settings"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToDialogueSettingsResponseModel? Settings { get => _explicitNullValueSettings; set { _explicitNullValueSettings = value; AdditionalData?.Remove("settings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("settings"); else _explicitNullProperties?.Remove("settings"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ToDialogueSettingsResponseModel? _explicitNullValueSettings = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToDialogueSettingsResponseModel Settings { get => _explicitNullValueSettings; set { _explicitNullValueSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("settings"); else _explicitNullProperties?.Remove("settings"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToDialogueSettingsResponseModel Settings { get => _explicitNullValueSettings; set { _explicitNullValueSettings = value; AdditionalData?.Remove("settings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("settings"); else _explicitNullProperties?.Remove("settings"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ToDialogueSettingsResponseModel _explicitNullValueSettings = default!;
 #endif
         /// <summary>Whether to use the IVC version of a professional voice. This may improve expressiveness and reduce latency.</summary>
         [Obsolete("")]
-        public bool? UsePvcAsIvc { get => _explicitNullValueUsePvcAsIvc; set { _explicitNullValueUsePvcAsIvc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("use_pvc_as_ivc"); else _explicitNullProperties?.Remove("use_pvc_as_ivc"); } }
+        public bool? UsePvcAsIvc { get => _explicitNullValueUsePvcAsIvc; set { _explicitNullValueUsePvcAsIvc = value; AdditionalData?.Remove("use_pvc_as_ivc"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("use_pvc_as_ivc"); else _explicitNullProperties?.Remove("use_pvc_as_ivc"); } }
         private bool? _explicitNullValueUsePvcAsIvc = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueStreamWithTimestamps"/> and sets the default values.
@@ -170,7 +183,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "apply_text_normalization", n => { ApplyTextNormalization = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueStreamWithTimestampsApplyTextNormalization>(); } },
+                { "apply_text_normalization", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueStreamWithTimestampsApplyTextNormalization>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueApplyTextNormalization = default; _explicitNullProperties?.Remove("apply_text_normalization"); AdditionalData["apply_text_normalization"] = unknown; } else { ApplyTextNormalization = parsed; AdditionalData.Remove("apply_text_normalization"); } } },
                 { "audio_effects", n => { AudioEffects = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EffectsSpecInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.EffectsSpecInput.CreateFromDiscriminatorValue); } },
                 { "future_text", n => { FutureText = n.GetStringValue(); } },
                 { "inputs", n => { Inputs = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DialogueInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DialogueInput.CreateFromDiscriminatorValue)?.AsList(); } },

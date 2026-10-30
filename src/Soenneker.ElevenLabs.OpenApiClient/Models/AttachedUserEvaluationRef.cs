@@ -17,12 +17,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("additional_version_ids") is { } nullNodeAdditionalVersionIds && nullNodeAdditionalVersionIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdditionalVersionIds = null;
-            if (parseNode.GetChildNode("analysis_item_id") is { } nullNodeAnalysisItemId && nullNodeAnalysisItemId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AnalysisItemId = null;
-            if (parseNode.GetChildNode("scope") is { } nullNodeScope && nullNodeScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scope = null;
-            if (parseNode.GetChildNode("source") is { } nullNodeSource && nullNodeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Source = null;
-            if (parseNode.GetChildNode("version_id") is { } nullNodeVersionId && nullNodeVersionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VersionId = null;
-            if (parseNode.GetChildNode("weight") is { } nullNodeWeight && nullNodeWeight.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Weight = null;
+            if (parseNode.GetChildNode("additional_version_ids") is null) { _explicitNullValueAdditionalVersionIds = default!; _explicitNullProperties?.Remove("additional_version_ids"); }
+            else if (parseNode.GetChildNode("additional_version_ids") is { } nullNodeAdditionalVersionIds && nullNodeAdditionalVersionIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdditionalVersionIds = null;
+            if (parseNode.GetChildNode("analysis_item_id") is null) { _explicitNullValueAnalysisItemId = default!; _explicitNullProperties?.Remove("analysis_item_id"); }
+            else if (parseNode.GetChildNode("analysis_item_id") is { } nullNodeAnalysisItemId && nullNodeAnalysisItemId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AnalysisItemId = null;
+            if (parseNode.GetChildNode("scope") is null) { _explicitNullValueScope = default!; _explicitNullProperties?.Remove("scope"); }
+            else if (parseNode.GetChildNode("scope") is { } nullNodeScope && nullNodeScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scope = null;
+            if (parseNode.GetChildNode("source") is null) { _explicitNullValueSource = default!; _explicitNullProperties?.Remove("source"); }
+            else if (parseNode.GetChildNode("source") is { } nullNodeSource && nullNodeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Source = null;
+            if (parseNode.GetChildNode("version_id") is null) { _explicitNullValueVersionId = default!; _explicitNullProperties?.Remove("version_id"); }
+            else if (parseNode.GetChildNode("version_id") is { } nullNodeVersionId && nullNodeVersionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VersionId = null;
+            if (parseNode.GetChildNode("weight") is null) { _explicitNullValueWeight = default!; _explicitNullProperties?.Remove("weight"); }
+            else if (parseNode.GetChildNode("weight") is { } nullNodeWeight && nullNodeWeight.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Weight = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,41 +36,41 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Extra item versions to also run for comparison (A/B). These are executed and stored but excluded from scoring; the primary version_id is the one that scores.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AdditionalVersionIds { get => _explicitNullValueAdditionalVersionIds; set { _explicitNullValueAdditionalVersionIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additional_version_ids"); else _explicitNullProperties?.Remove("additional_version_ids"); } }
+        public List<string>? AdditionalVersionIds { get => _explicitNullValueAdditionalVersionIds; set { _explicitNullValueAdditionalVersionIds = value; AdditionalData?.Remove("additional_version_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additional_version_ids"); else _explicitNullProperties?.Remove("additional_version_ids"); } }
         private List<string>? _explicitNullValueAdditionalVersionIds = default!;
 #nullable restore
 #else
-        public List<string> AdditionalVersionIds { get => _explicitNullValueAdditionalVersionIds; set { _explicitNullValueAdditionalVersionIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additional_version_ids"); else _explicitNullProperties?.Remove("additional_version_ids"); } }
+        public List<string> AdditionalVersionIds { get => _explicitNullValueAdditionalVersionIds; set { _explicitNullValueAdditionalVersionIds = value; AdditionalData?.Remove("additional_version_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additional_version_ids"); else _explicitNullProperties?.Remove("additional_version_ids"); } }
         private List<string> _explicitNullValueAdditionalVersionIds = default!;
 #endif
         /// <summary>Id of the referenced user evaluation item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AnalysisItemId { get => _explicitNullValueAnalysisItemId; set { _explicitNullValueAnalysisItemId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analysis_item_id"); else _explicitNullProperties?.Remove("analysis_item_id"); } }
+        public string? AnalysisItemId { get => _explicitNullValueAnalysisItemId; set { _explicitNullValueAnalysisItemId = value; AdditionalData?.Remove("analysis_item_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analysis_item_id"); else _explicitNullProperties?.Remove("analysis_item_id"); } }
         private string? _explicitNullValueAnalysisItemId = default!;
 #nullable restore
 #else
-        public string AnalysisItemId { get => _explicitNullValueAnalysisItemId; set { _explicitNullValueAnalysisItemId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analysis_item_id"); else _explicitNullProperties?.Remove("analysis_item_id"); } }
+        public string AnalysisItemId { get => _explicitNullValueAnalysisItemId; set { _explicitNullValueAnalysisItemId = value; AdditionalData?.Remove("analysis_item_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analysis_item_id"); else _explicitNullProperties?.Remove("analysis_item_id"); } }
         private string _explicitNullValueAnalysisItemId = default!;
 #endif
         /// <summary>Transcript context (&apos;conversation&apos; or &apos;agent&apos;) used when running this item.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope? Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope? Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; AdditionalData?.Remove("scope"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope? _explicitNullValueScope = default!;
         /// <summary>The source property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AttachedUserEvaluationRefSource? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AttachedUserEvaluationRefSource? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; AdditionalData?.Remove("source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AttachedUserEvaluationRefSource? _explicitNullValueSource = default!;
         /// <summary>Primary item version whose result feeds scoring. None tracks the item&apos;s latest published version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VersionId { get => _explicitNullValueVersionId; set { _explicitNullValueVersionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version_id"); else _explicitNullProperties?.Remove("version_id"); } }
+        public string? VersionId { get => _explicitNullValueVersionId; set { _explicitNullValueVersionId = value; AdditionalData?.Remove("version_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version_id"); else _explicitNullProperties?.Remove("version_id"); } }
         private string? _explicitNullValueVersionId = default!;
 #nullable restore
 #else
-        public string VersionId { get => _explicitNullValueVersionId; set { _explicitNullValueVersionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version_id"); else _explicitNullProperties?.Remove("version_id"); } }
+        public string VersionId { get => _explicitNullValueVersionId; set { _explicitNullValueVersionId = value; AdditionalData?.Remove("version_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version_id"); else _explicitNullProperties?.Remove("version_id"); } }
         private string _explicitNullValueVersionId = default!;
 #endif
         /// <summary>Optional relative weight for aggregate scoring.</summary>
-        public double? Weight { get => _explicitNullValueWeight; set { _explicitNullValueWeight = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("weight"); else _explicitNullProperties?.Remove("weight"); } }
+        public double? Weight { get => _explicitNullValueWeight; set { _explicitNullValueWeight = value; AdditionalData?.Remove("weight"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("weight"); else _explicitNullProperties?.Remove("weight"); } }
         private double? _explicitNullValueWeight = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AttachedUserEvaluationRef"/> and sets the default values.
@@ -94,8 +100,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "additional_version_ids", n => { AdditionalVersionIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "analysis_item_id", n => { AnalysisItemId = n.GetStringValue(); } },
-                { "scope", n => { Scope = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope>(); } },
-                { "source", n => { Source = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AttachedUserEvaluationRefSource>(); } },
+                { "scope", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueScope = default; _explicitNullProperties?.Remove("scope"); AdditionalData["scope"] = unknown; } else { Scope = parsed; AdditionalData.Remove("scope"); } } },
+                { "source", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AttachedUserEvaluationRefSource>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSource = default; _explicitNullProperties?.Remove("source"); AdditionalData["source"] = unknown; } else { Source = parsed; AdditionalData.Remove("source"); } } },
                 { "version_id", n => { VersionId = n.GetStringValue(); } },
                 { "weight", n => { Weight = n.GetDoubleValue(); } },
             };

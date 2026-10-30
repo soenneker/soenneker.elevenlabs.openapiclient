@@ -17,17 +17,19 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("archive_source_branch") is { } nullNodeArchiveSourceBranch && nullNodeArchiveSourceBranch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ArchiveSourceBranch = null;
-            if (parseNode.GetChildNode("force") is { } nullNodeForce && nullNodeForce.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Force = null;
+            if (parseNode.GetChildNode("archive_source_branch") is null) { _explicitNullValueArchiveSourceBranch = default!; _explicitNullProperties?.Remove("archive_source_branch"); }
+            else if (parseNode.GetChildNode("archive_source_branch") is { } nullNodeArchiveSourceBranch && nullNodeArchiveSourceBranch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ArchiveSourceBranch = null;
+            if (parseNode.GetChildNode("force") is null) { _explicitNullValueForce = default!; _explicitNullProperties?.Remove("force"); }
+            else if (parseNode.GetChildNode("force") is { } nullNodeForce && nullNodeForce.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Force = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether to archive the source branch after merging.</summary>
-        public bool? ArchiveSourceBranch { get => _explicitNullValueArchiveSourceBranch; set { _explicitNullValueArchiveSourceBranch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("archive_source_branch"); else _explicitNullProperties?.Remove("archive_source_branch"); } }
+        public bool? ArchiveSourceBranch { get => _explicitNullValueArchiveSourceBranch; set { _explicitNullValueArchiveSourceBranch = value; AdditionalData?.Remove("archive_source_branch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("archive_source_branch"); else _explicitNullProperties?.Remove("archive_source_branch"); } }
         private bool? _explicitNullValueArchiveSourceBranch = default!;
         /// <summary>Force source branch changes onto the target, overriding timestamp-based conflict resolution.</summary>
-        public bool? Force { get => _explicitNullValueForce; set { _explicitNullValueForce = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("force"); else _explicitNullProperties?.Remove("force"); } }
+        public bool? Force { get => _explicitNullValueForce; set { _explicitNullValueForce = value; AdditionalData?.Remove("force"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("force"); else _explicitNullProperties?.Remove("force"); } }
         private bool? _explicitNullValueForce = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyMergeAMergeProposalV1ConvaiAgentsAgentIdMergeProposalsMergeProposalIdMergePost"/> and sets the default values.

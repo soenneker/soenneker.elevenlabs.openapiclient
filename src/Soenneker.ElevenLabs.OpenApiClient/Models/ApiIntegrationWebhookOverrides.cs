@@ -17,10 +17,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("request_headers") is { } nullNodeRequestHeaders && nullNodeRequestHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestHeaders = null;
-            if (parseNode.GetChildNode("response_filter_mode") is { } nullNodeResponseFilterMode && nullNodeResponseFilterMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseFilterMode = null;
-            if (parseNode.GetChildNode("response_filters") is { } nullNodeResponseFilters && nullNodeResponseFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseFilters = null;
-            if (parseNode.GetChildNode("schema_overrides") is { } nullNodeSchemaOverrides && nullNodeSchemaOverrides.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SchemaOverrides = null;
+            if (parseNode.GetChildNode("request_headers") is null) { _explicitNullValueRequestHeaders = default!; _explicitNullProperties?.Remove("request_headers"); }
+            else if (parseNode.GetChildNode("request_headers") is { } nullNodeRequestHeaders && nullNodeRequestHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestHeaders = null;
+            if (parseNode.GetChildNode("response_filter_mode") is null) { _explicitNullValueResponseFilterMode = default!; _explicitNullProperties?.Remove("response_filter_mode"); }
+            else if (parseNode.GetChildNode("response_filter_mode") is { } nullNodeResponseFilterMode && nullNodeResponseFilterMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseFilterMode = null;
+            if (parseNode.GetChildNode("response_filters") is null) { _explicitNullValueResponseFilters = default!; _explicitNullProperties?.Remove("response_filters"); }
+            else if (parseNode.GetChildNode("response_filters") is { } nullNodeResponseFilters && nullNodeResponseFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseFilters = null;
+            if (parseNode.GetChildNode("schema_overrides") is null) { _explicitNullValueSchemaOverrides = default!; _explicitNullProperties?.Remove("schema_overrides"); }
+            else if (parseNode.GetChildNode("schema_overrides") is { } nullNodeSchemaOverrides && nullNodeSchemaOverrides.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SchemaOverrides = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,34 +32,34 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The request_headers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesRequestHeadersProperty? RequestHeaders { get => _explicitNullValueRequestHeaders; set { _explicitNullValueRequestHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_headers"); else _explicitNullProperties?.Remove("request_headers"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesRequestHeadersProperty? RequestHeaders { get => _explicitNullValueRequestHeaders; set { _explicitNullValueRequestHeaders = value; AdditionalData?.Remove("request_headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_headers"); else _explicitNullProperties?.Remove("request_headers"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesRequestHeadersProperty? _explicitNullValueRequestHeaders = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesRequestHeadersProperty RequestHeaders { get => _explicitNullValueRequestHeaders; set { _explicitNullValueRequestHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_headers"); else _explicitNullProperties?.Remove("request_headers"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesRequestHeadersProperty RequestHeaders { get => _explicitNullValueRequestHeaders; set { _explicitNullValueRequestHeaders = value; AdditionalData?.Remove("request_headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_headers"); else _explicitNullProperties?.Remove("request_headers"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesRequestHeadersProperty _explicitNullValueRequestHeaders = default!;
 #endif
         /// <summary>The response_filter_mode property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseFilterMode? ResponseFilterMode { get => _explicitNullValueResponseFilterMode; set { _explicitNullValueResponseFilterMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_filter_mode"); else _explicitNullProperties?.Remove("response_filter_mode"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseFilterMode? ResponseFilterMode { get => _explicitNullValueResponseFilterMode; set { _explicitNullValueResponseFilterMode = value; AdditionalData?.Remove("response_filter_mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_filter_mode"); else _explicitNullProperties?.Remove("response_filter_mode"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseFilterMode? _explicitNullValueResponseFilterMode = default!;
         /// <summary>The response_filters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ResponseFilters { get => _explicitNullValueResponseFilters; set { _explicitNullValueResponseFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_filters"); else _explicitNullProperties?.Remove("response_filters"); } }
+        public List<string>? ResponseFilters { get => _explicitNullValueResponseFilters; set { _explicitNullValueResponseFilters = value; AdditionalData?.Remove("response_filters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_filters"); else _explicitNullProperties?.Remove("response_filters"); } }
         private List<string>? _explicitNullValueResponseFilters = default!;
 #nullable restore
 #else
-        public List<string> ResponseFilters { get => _explicitNullValueResponseFilters; set { _explicitNullValueResponseFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_filters"); else _explicitNullProperties?.Remove("response_filters"); } }
+        public List<string> ResponseFilters { get => _explicitNullValueResponseFilters; set { _explicitNullValueResponseFilters = value; AdditionalData?.Remove("response_filters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_filters"); else _explicitNullProperties?.Remove("response_filters"); } }
         private List<string> _explicitNullValueResponseFilters = default!;
 #endif
         /// <summary>The schema_overrides property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesSchemaOverridesProperty? SchemaOverrides { get => _explicitNullValueSchemaOverrides; set { _explicitNullValueSchemaOverrides = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schema_overrides"); else _explicitNullProperties?.Remove("schema_overrides"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesSchemaOverridesProperty? SchemaOverrides { get => _explicitNullValueSchemaOverrides; set { _explicitNullValueSchemaOverrides = value; AdditionalData?.Remove("schema_overrides"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schema_overrides"); else _explicitNullProperties?.Remove("schema_overrides"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesSchemaOverridesProperty? _explicitNullValueSchemaOverrides = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesSchemaOverridesProperty SchemaOverrides { get => _explicitNullValueSchemaOverrides; set { _explicitNullValueSchemaOverrides = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schema_overrides"); else _explicitNullProperties?.Remove("schema_overrides"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesSchemaOverridesProperty SchemaOverrides { get => _explicitNullValueSchemaOverrides; set { _explicitNullValueSchemaOverrides = value; AdditionalData?.Remove("schema_overrides"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schema_overrides"); else _explicitNullProperties?.Remove("schema_overrides"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesSchemaOverridesProperty _explicitNullValueSchemaOverrides = default!;
 #endif
         /// <summary>
@@ -84,7 +88,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "request_headers", n => { RequestHeaders = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesRequestHeadersProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesRequestHeadersProperty.CreateFromDiscriminatorValue); } },
-                { "response_filter_mode", n => { ResponseFilterMode = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseFilterMode>(); } },
+                { "response_filter_mode", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseFilterMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueResponseFilterMode = default; _explicitNullProperties?.Remove("response_filter_mode"); AdditionalData["response_filter_mode"] = unknown; } else { ResponseFilterMode = parsed; AdditionalData.Remove("response_filter_mode"); } } },
                 { "response_filters", n => { ResponseFilters = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "schema_overrides", n => { SchemaOverrides = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesSchemaOverridesProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesSchemaOverridesProperty.CreateFromDiscriminatorValue); } },
             };

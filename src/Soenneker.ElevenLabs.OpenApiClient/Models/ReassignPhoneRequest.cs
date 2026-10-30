@@ -18,7 +18,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("customer_facing_agent_id") is { } nullNodeCustomerFacingAgentId && nullNodeCustomerFacingAgentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerFacingAgentId = null;
+            if (parseNode.GetChildNode("customer_facing_agent_id") is null) { _explicitNullValueCustomerFacingAgentId = default!; _explicitNullProperties?.Remove("customer_facing_agent_id"); }
+            else if (parseNode.GetChildNode("customer_facing_agent_id") is { } nullNodeCustomerFacingAgentId && nullNodeCustomerFacingAgentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerFacingAgentId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The receptionist that answers calls to the number from now on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomerFacingAgentId { get => _explicitNullValueCustomerFacingAgentId; set { _explicitNullValueCustomerFacingAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_facing_agent_id"); else _explicitNullProperties?.Remove("customer_facing_agent_id"); } }
+        public string? CustomerFacingAgentId { get => _explicitNullValueCustomerFacingAgentId; set { _explicitNullValueCustomerFacingAgentId = value; AdditionalData?.Remove("customer_facing_agent_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_facing_agent_id"); else _explicitNullProperties?.Remove("customer_facing_agent_id"); } }
         private string? _explicitNullValueCustomerFacingAgentId = default!;
 #nullable restore
 #else
-        public string CustomerFacingAgentId { get => _explicitNullValueCustomerFacingAgentId; set { _explicitNullValueCustomerFacingAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_facing_agent_id"); else _explicitNullProperties?.Remove("customer_facing_agent_id"); } }
+        public string CustomerFacingAgentId { get => _explicitNullValueCustomerFacingAgentId; set { _explicitNullValueCustomerFacingAgentId = value; AdditionalData?.Remove("customer_facing_agent_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_facing_agent_id"); else _explicitNullProperties?.Remove("customer_facing_agent_id"); } }
         private string _explicitNullValueCustomerFacingAgentId = default!;
 #endif
         /// <summary>

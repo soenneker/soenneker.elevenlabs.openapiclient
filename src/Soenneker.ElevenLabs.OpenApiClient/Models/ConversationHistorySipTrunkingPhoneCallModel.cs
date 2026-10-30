@@ -17,16 +17,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("agent_number") is { } nullNodeAgentNumber && nullNodeAgentNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentNumber = null;
-            if (parseNode.GetChildNode("call_id") is { } nullNodeCallId && nullNodeCallId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CallId = null;
-            if (parseNode.GetChildNode("call_result") is { } nullNodeCallResult && nullNodeCallResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CallResult = null;
-            if (parseNode.GetChildNode("call_sid") is { } nullNodeCallSid && nullNodeCallSid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CallSid = null;
-            if (parseNode.GetChildNode("direction") is { } nullNodeDirection && nullNodeDirection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Direction = null;
-            if (parseNode.GetChildNode("external_number") is { } nullNodeExternalNumber && nullNodeExternalNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalNumber = null;
-            if (parseNode.GetChildNode("phone_number_id") is { } nullNodePhoneNumberId && nullNodePhoneNumberId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhoneNumberId = null;
-            if (parseNode.GetChildNode("sip_header_dynamic_variables") is { } nullNodeSipHeaderDynamicVariables && nullNodeSipHeaderDynamicVariables.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SipHeaderDynamicVariables = null;
-            if (parseNode.GetChildNode("stream_sid") is { } nullNodeStreamSid && nullNodeStreamSid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StreamSid = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("agent_number") is null) { _explicitNullValueAgentNumber = default!; _explicitNullProperties?.Remove("agent_number"); }
+            else if (parseNode.GetChildNode("agent_number") is { } nullNodeAgentNumber && nullNodeAgentNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentNumber = null;
+            if (parseNode.GetChildNode("call_id") is null) { _explicitNullValueCallId = default!; _explicitNullProperties?.Remove("call_id"); }
+            else if (parseNode.GetChildNode("call_id") is { } nullNodeCallId && nullNodeCallId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CallId = null;
+            if (parseNode.GetChildNode("call_result") is null) { _explicitNullValueCallResult = default!; _explicitNullProperties?.Remove("call_result"); }
+            else if (parseNode.GetChildNode("call_result") is { } nullNodeCallResult && nullNodeCallResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CallResult = null;
+            if (parseNode.GetChildNode("call_sid") is null) { _explicitNullValueCallSid = default!; _explicitNullProperties?.Remove("call_sid"); }
+            else if (parseNode.GetChildNode("call_sid") is { } nullNodeCallSid && nullNodeCallSid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CallSid = null;
+            if (parseNode.GetChildNode("direction") is null) { _explicitNullValueDirection = default!; _explicitNullProperties?.Remove("direction"); }
+            else if (parseNode.GetChildNode("direction") is { } nullNodeDirection && nullNodeDirection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Direction = null;
+            if (parseNode.GetChildNode("external_number") is null) { _explicitNullValueExternalNumber = default!; _explicitNullProperties?.Remove("external_number"); }
+            else if (parseNode.GetChildNode("external_number") is { } nullNodeExternalNumber && nullNodeExternalNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalNumber = null;
+            if (parseNode.GetChildNode("phone_number_id") is null) { _explicitNullValuePhoneNumberId = default!; _explicitNullProperties?.Remove("phone_number_id"); }
+            else if (parseNode.GetChildNode("phone_number_id") is { } nullNodePhoneNumberId && nullNodePhoneNumberId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhoneNumberId = null;
+            if (parseNode.GetChildNode("sip_header_dynamic_variables") is null) { _explicitNullValueSipHeaderDynamicVariables = default!; _explicitNullProperties?.Remove("sip_header_dynamic_variables"); }
+            else if (parseNode.GetChildNode("sip_header_dynamic_variables") is { } nullNodeSipHeaderDynamicVariables && nullNodeSipHeaderDynamicVariables.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SipHeaderDynamicVariables = null;
+            if (parseNode.GetChildNode("stream_sid") is null) { _explicitNullValueStreamSid = default!; _explicitNullProperties?.Remove("stream_sid"); }
+            else if (parseNode.GetChildNode("stream_sid") is { } nullNodeStreamSid && nullNodeStreamSid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StreamSid = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -34,87 +44,87 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The agent_number property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AgentNumber { get => _explicitNullValueAgentNumber; set { _explicitNullValueAgentNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_number"); else _explicitNullProperties?.Remove("agent_number"); } }
+        public string? AgentNumber { get => _explicitNullValueAgentNumber; set { _explicitNullValueAgentNumber = value; AdditionalData?.Remove("agent_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_number"); else _explicitNullProperties?.Remove("agent_number"); } }
         private string? _explicitNullValueAgentNumber = default!;
 #nullable restore
 #else
-        public string AgentNumber { get => _explicitNullValueAgentNumber; set { _explicitNullValueAgentNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_number"); else _explicitNullProperties?.Remove("agent_number"); } }
+        public string AgentNumber { get => _explicitNullValueAgentNumber; set { _explicitNullValueAgentNumber = value; AdditionalData?.Remove("agent_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_number"); else _explicitNullProperties?.Remove("agent_number"); } }
         private string _explicitNullValueAgentNumber = default!;
 #endif
         /// <summary>The call_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CallId { get => _explicitNullValueCallId; set { _explicitNullValueCallId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("call_id"); else _explicitNullProperties?.Remove("call_id"); } }
+        public string? CallId { get => _explicitNullValueCallId; set { _explicitNullValueCallId = value; AdditionalData?.Remove("call_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("call_id"); else _explicitNullProperties?.Remove("call_id"); } }
         private string? _explicitNullValueCallId = default!;
 #nullable restore
 #else
-        public string CallId { get => _explicitNullValueCallId; set { _explicitNullValueCallId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("call_id"); else _explicitNullProperties?.Remove("call_id"); } }
+        public string CallId { get => _explicitNullValueCallId; set { _explicitNullValueCallId = value; AdditionalData?.Remove("call_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("call_id"); else _explicitNullProperties?.Remove("call_id"); } }
         private string _explicitNullValueCallId = default!;
 #endif
         /// <summary>The call_result property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CallResult? CallResult { get => _explicitNullValueCallResult; set { _explicitNullValueCallResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("call_result"); else _explicitNullProperties?.Remove("call_result"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CallResult? CallResult { get => _explicitNullValueCallResult; set { _explicitNullValueCallResult = value; AdditionalData?.Remove("call_result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("call_result"); else _explicitNullProperties?.Remove("call_result"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.CallResult? _explicitNullValueCallResult = default!;
         /// <summary>The call_sid property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CallSid { get => _explicitNullValueCallSid; set { _explicitNullValueCallSid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("call_sid"); else _explicitNullProperties?.Remove("call_sid"); } }
+        public string? CallSid { get => _explicitNullValueCallSid; set { _explicitNullValueCallSid = value; AdditionalData?.Remove("call_sid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("call_sid"); else _explicitNullProperties?.Remove("call_sid"); } }
         private string? _explicitNullValueCallSid = default!;
 #nullable restore
 #else
-        public string CallSid { get => _explicitNullValueCallSid; set { _explicitNullValueCallSid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("call_sid"); else _explicitNullProperties?.Remove("call_sid"); } }
+        public string CallSid { get => _explicitNullValueCallSid; set { _explicitNullValueCallSid = value; AdditionalData?.Remove("call_sid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("call_sid"); else _explicitNullProperties?.Remove("call_sid"); } }
         private string _explicitNullValueCallSid = default!;
 #endif
         /// <summary>The direction property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyDirection? Direction { get => _explicitNullValueDirection; set { _explicitNullValueDirection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("direction"); else _explicitNullProperties?.Remove("direction"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyDirection? Direction { get => _explicitNullValueDirection; set { _explicitNullValueDirection = value; AdditionalData?.Remove("direction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("direction"); else _explicitNullProperties?.Remove("direction"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyDirection? _explicitNullValueDirection = default!;
         /// <summary>The external_number property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalNumber { get => _explicitNullValueExternalNumber; set { _explicitNullValueExternalNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_number"); else _explicitNullProperties?.Remove("external_number"); } }
+        public string? ExternalNumber { get => _explicitNullValueExternalNumber; set { _explicitNullValueExternalNumber = value; AdditionalData?.Remove("external_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_number"); else _explicitNullProperties?.Remove("external_number"); } }
         private string? _explicitNullValueExternalNumber = default!;
 #nullable restore
 #else
-        public string ExternalNumber { get => _explicitNullValueExternalNumber; set { _explicitNullValueExternalNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_number"); else _explicitNullProperties?.Remove("external_number"); } }
+        public string ExternalNumber { get => _explicitNullValueExternalNumber; set { _explicitNullValueExternalNumber = value; AdditionalData?.Remove("external_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_number"); else _explicitNullProperties?.Remove("external_number"); } }
         private string _explicitNullValueExternalNumber = default!;
 #endif
         /// <summary>The phone_number_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PhoneNumberId { get => _explicitNullValuePhoneNumberId; set { _explicitNullValuePhoneNumberId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_number_id"); else _explicitNullProperties?.Remove("phone_number_id"); } }
+        public string? PhoneNumberId { get => _explicitNullValuePhoneNumberId; set { _explicitNullValuePhoneNumberId = value; AdditionalData?.Remove("phone_number_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_number_id"); else _explicitNullProperties?.Remove("phone_number_id"); } }
         private string? _explicitNullValuePhoneNumberId = default!;
 #nullable restore
 #else
-        public string PhoneNumberId { get => _explicitNullValuePhoneNumberId; set { _explicitNullValuePhoneNumberId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_number_id"); else _explicitNullProperties?.Remove("phone_number_id"); } }
+        public string PhoneNumberId { get => _explicitNullValuePhoneNumberId; set { _explicitNullValuePhoneNumberId = value; AdditionalData?.Remove("phone_number_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_number_id"); else _explicitNullProperties?.Remove("phone_number_id"); } }
         private string _explicitNullValuePhoneNumberId = default!;
 #endif
         /// <summary>The sip_header_dynamic_variables property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistorySipTrunkingPhoneCallModelSipHeaderDynamicVariablesProperty? SipHeaderDynamicVariables { get => _explicitNullValueSipHeaderDynamicVariables; set { _explicitNullValueSipHeaderDynamicVariables = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sip_header_dynamic_variables"); else _explicitNullProperties?.Remove("sip_header_dynamic_variables"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistorySipTrunkingPhoneCallModelSipHeaderDynamicVariablesProperty? SipHeaderDynamicVariables { get => _explicitNullValueSipHeaderDynamicVariables; set { _explicitNullValueSipHeaderDynamicVariables = value; AdditionalData?.Remove("sip_header_dynamic_variables"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sip_header_dynamic_variables"); else _explicitNullProperties?.Remove("sip_header_dynamic_variables"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistorySipTrunkingPhoneCallModelSipHeaderDynamicVariablesProperty? _explicitNullValueSipHeaderDynamicVariables = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistorySipTrunkingPhoneCallModelSipHeaderDynamicVariablesProperty SipHeaderDynamicVariables { get => _explicitNullValueSipHeaderDynamicVariables; set { _explicitNullValueSipHeaderDynamicVariables = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sip_header_dynamic_variables"); else _explicitNullProperties?.Remove("sip_header_dynamic_variables"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistorySipTrunkingPhoneCallModelSipHeaderDynamicVariablesProperty SipHeaderDynamicVariables { get => _explicitNullValueSipHeaderDynamicVariables; set { _explicitNullValueSipHeaderDynamicVariables = value; AdditionalData?.Remove("sip_header_dynamic_variables"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sip_header_dynamic_variables"); else _explicitNullProperties?.Remove("sip_header_dynamic_variables"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistorySipTrunkingPhoneCallModelSipHeaderDynamicVariablesProperty _explicitNullValueSipHeaderDynamicVariables = default!;
 #endif
         /// <summary>The stream_sid property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StreamSid { get => _explicitNullValueStreamSid; set { _explicitNullValueStreamSid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stream_sid"); else _explicitNullProperties?.Remove("stream_sid"); } }
+        public string? StreamSid { get => _explicitNullValueStreamSid; set { _explicitNullValueStreamSid = value; AdditionalData?.Remove("stream_sid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stream_sid"); else _explicitNullProperties?.Remove("stream_sid"); } }
         private string? _explicitNullValueStreamSid = default!;
 #nullable restore
 #else
-        public string StreamSid { get => _explicitNullValueStreamSid; set { _explicitNullValueStreamSid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stream_sid"); else _explicitNullProperties?.Remove("stream_sid"); } }
+        public string StreamSid { get => _explicitNullValueStreamSid; set { _explicitNullValueStreamSid = value; AdditionalData?.Remove("stream_sid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stream_sid"); else _explicitNullProperties?.Remove("stream_sid"); } }
         private string _explicitNullValueStreamSid = default!;
 #endif
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public string? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private string? _explicitNullValueType = default!;
 #nullable restore
 #else
-        public string Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public string Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private string _explicitNullValueType = default!;
 #endif
         /// <summary>
@@ -144,9 +154,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "agent_number", n => { AgentNumber = n.GetStringValue(); } },
                 { "call_id", n => { CallId = n.GetStringValue(); } },
-                { "call_result", n => { CallResult = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CallResult>(); } },
+                { "call_result", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CallResult>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCallResult = default; _explicitNullProperties?.Remove("call_result"); AdditionalData["call_result"] = unknown; } else { CallResult = parsed; AdditionalData.Remove("call_result"); } } },
                 { "call_sid", n => { CallSid = n.GetStringValue(); } },
-                { "direction", n => { Direction = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyDirection>(); } },
+                { "direction", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyDirection>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDirection = default; _explicitNullProperties?.Remove("direction"); AdditionalData["direction"] = unknown; } else { Direction = parsed; AdditionalData.Remove("direction"); } } },
                 { "external_number", n => { ExternalNumber = n.GetStringValue(); } },
                 { "phone_number_id", n => { PhoneNumberId = n.GetStringValue(); } },
                 { "sip_header_dynamic_variables", n => { SipHeaderDynamicVariables = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistorySipTrunkingPhoneCallModelSipHeaderDynamicVariablesProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistorySipTrunkingPhoneCallModelSipHeaderDynamicVariablesProperty.CreateFromDiscriminatorValue); } },

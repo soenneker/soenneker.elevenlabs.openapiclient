@@ -17,7 +17,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("chapter") is { } nullNodeChapter && nullNodeChapter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Chapter = null;
+            if (parseNode.GetChildNode("chapter") is null) { _explicitNullValueChapter = default!; _explicitNullProperties?.Remove("chapter"); }
+            else if (parseNode.GetChildNode("chapter") is { } nullNodeChapter && nullNodeChapter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Chapter = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The chapter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterWithContentResponseModel? Chapter { get => _explicitNullValueChapter; set { _explicitNullValueChapter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chapter"); else _explicitNullProperties?.Remove("chapter"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterWithContentResponseModel? Chapter { get => _explicitNullValueChapter; set { _explicitNullValueChapter = value; AdditionalData?.Remove("chapter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chapter"); else _explicitNullProperties?.Remove("chapter"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterWithContentResponseModel? _explicitNullValueChapter = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterWithContentResponseModel Chapter { get => _explicitNullValueChapter; set { _explicitNullValueChapter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chapter"); else _explicitNullProperties?.Remove("chapter"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterWithContentResponseModel Chapter { get => _explicitNullValueChapter; set { _explicitNullValueChapter = value; AdditionalData?.Remove("chapter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chapter"); else _explicitNullProperties?.Remove("chapter"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterWithContentResponseModel _explicitNullValueChapter = default!;
 #endif
         /// <summary>

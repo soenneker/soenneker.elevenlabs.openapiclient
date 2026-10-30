@@ -17,8 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("history_item_ids") is { } nullNodeHistoryItemIds && nullNodeHistoryItemIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HistoryItemIds = null;
-            if (parseNode.GetChildNode("output_format") is { } nullNodeOutputFormat && nullNodeOutputFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputFormat = null;
+            if (parseNode.GetChildNode("history_item_ids") is null) { _explicitNullValueHistoryItemIds = default!; _explicitNullProperties?.Remove("history_item_ids"); }
+            else if (parseNode.GetChildNode("history_item_ids") is { } nullNodeHistoryItemIds && nullNodeHistoryItemIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HistoryItemIds = null;
+            if (parseNode.GetChildNode("output_format") is null) { _explicitNullValueOutputFormat = default!; _explicitNullProperties?.Remove("output_format"); }
+            else if (parseNode.GetChildNode("output_format") is { } nullNodeOutputFormat && nullNodeOutputFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputFormat = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>A list of history items to download, you can get IDs of history items and other metadata using the GET https://api.elevenlabs.io/v1/history endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? HistoryItemIds { get => _explicitNullValueHistoryItemIds; set { _explicitNullValueHistoryItemIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("history_item_ids"); else _explicitNullProperties?.Remove("history_item_ids"); } }
+        public List<string>? HistoryItemIds { get => _explicitNullValueHistoryItemIds; set { _explicitNullValueHistoryItemIds = value; AdditionalData?.Remove("history_item_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("history_item_ids"); else _explicitNullProperties?.Remove("history_item_ids"); } }
         private List<string>? _explicitNullValueHistoryItemIds = default!;
 #nullable restore
 #else
-        public List<string> HistoryItemIds { get => _explicitNullValueHistoryItemIds; set { _explicitNullValueHistoryItemIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("history_item_ids"); else _explicitNullProperties?.Remove("history_item_ids"); } }
+        public List<string> HistoryItemIds { get => _explicitNullValueHistoryItemIds; set { _explicitNullValueHistoryItemIds = value; AdditionalData?.Remove("history_item_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("history_item_ids"); else _explicitNullProperties?.Remove("history_item_ids"); } }
         private List<string> _explicitNullValueHistoryItemIds = default!;
 #endif
         /// <summary>Output format to transcode the audio file, can be wav or default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OutputFormat { get => _explicitNullValueOutputFormat; set { _explicitNullValueOutputFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("output_format"); else _explicitNullProperties?.Remove("output_format"); } }
+        public string? OutputFormat { get => _explicitNullValueOutputFormat; set { _explicitNullValueOutputFormat = value; AdditionalData?.Remove("output_format"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("output_format"); else _explicitNullProperties?.Remove("output_format"); } }
         private string? _explicitNullValueOutputFormat = default!;
 #nullable restore
 #else
-        public string OutputFormat { get => _explicitNullValueOutputFormat; set { _explicitNullValueOutputFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("output_format"); else _explicitNullProperties?.Remove("output_format"); } }
+        public string OutputFormat { get => _explicitNullValueOutputFormat; set { _explicitNullValueOutputFormat = value; AdditionalData?.Remove("output_format"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("output_format"); else _explicitNullProperties?.Remove("output_format"); } }
         private string _explicitNullValueOutputFormat = default!;
 #endif
         /// <summary>

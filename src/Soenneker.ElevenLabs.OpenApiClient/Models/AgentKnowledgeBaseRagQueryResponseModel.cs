@@ -17,8 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("chunks") is { } nullNodeChunks && nullNodeChunks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Chunks = null;
-            if (parseNode.GetChildNode("retrieval_query") is { } nullNodeRetrievalQuery && nullNodeRetrievalQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RetrievalQuery = null;
+            if (parseNode.GetChildNode("chunks") is null) { _explicitNullValueChunks = default!; _explicitNullProperties?.Remove("chunks"); }
+            else if (parseNode.GetChildNode("chunks") is { } nullNodeChunks && nullNodeChunks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Chunks = null;
+            if (parseNode.GetChildNode("retrieval_query") is null) { _explicitNullValueRetrievalQuery = default!; _explicitNullProperties?.Remove("retrieval_query"); }
+            else if (parseNode.GetChildNode("retrieval_query") is { } nullNodeRetrievalQuery && nullNodeRetrievalQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RetrievalQuery = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Ranked chunks the agent would retrieve, after distance and length filtering.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentKnowledgeBaseRagChunkResponseModel>? Chunks { get => _explicitNullValueChunks; set { _explicitNullValueChunks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chunks"); else _explicitNullProperties?.Remove("chunks"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentKnowledgeBaseRagChunkResponseModel>? Chunks { get => _explicitNullValueChunks; set { _explicitNullValueChunks = value; AdditionalData?.Remove("chunks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chunks"); else _explicitNullProperties?.Remove("chunks"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentKnowledgeBaseRagChunkResponseModel>? _explicitNullValueChunks = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentKnowledgeBaseRagChunkResponseModel> Chunks { get => _explicitNullValueChunks; set { _explicitNullValueChunks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chunks"); else _explicitNullProperties?.Remove("chunks"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentKnowledgeBaseRagChunkResponseModel> Chunks { get => _explicitNullValueChunks; set { _explicitNullValueChunks = value; AdditionalData?.Remove("chunks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chunks"); else _explicitNullProperties?.Remove("chunks"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentKnowledgeBaseRagChunkResponseModel> _explicitNullValueChunks = default!;
 #endif
         /// <summary>Raw query used for retrieval (echoes the request query).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RetrievalQuery { get => _explicitNullValueRetrievalQuery; set { _explicitNullValueRetrievalQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retrieval_query"); else _explicitNullProperties?.Remove("retrieval_query"); } }
+        public string? RetrievalQuery { get => _explicitNullValueRetrievalQuery; set { _explicitNullValueRetrievalQuery = value; AdditionalData?.Remove("retrieval_query"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retrieval_query"); else _explicitNullProperties?.Remove("retrieval_query"); } }
         private string? _explicitNullValueRetrievalQuery = default!;
 #nullable restore
 #else
-        public string RetrievalQuery { get => _explicitNullValueRetrievalQuery; set { _explicitNullValueRetrievalQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retrieval_query"); else _explicitNullProperties?.Remove("retrieval_query"); } }
+        public string RetrievalQuery { get => _explicitNullValueRetrievalQuery; set { _explicitNullValueRetrievalQuery = value; AdditionalData?.Remove("retrieval_query"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retrieval_query"); else _explicitNullProperties?.Remove("retrieval_query"); } }
         private string _explicitNullValueRetrievalQuery = default!;
 #endif
         /// <summary>

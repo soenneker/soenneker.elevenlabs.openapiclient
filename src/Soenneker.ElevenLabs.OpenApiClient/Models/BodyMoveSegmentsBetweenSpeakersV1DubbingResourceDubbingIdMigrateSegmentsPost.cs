@@ -17,8 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("segment_ids") is { } nullNodeSegmentIds && nullNodeSegmentIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SegmentIds = null;
-            if (parseNode.GetChildNode("speaker_id") is { } nullNodeSpeakerId && nullNodeSpeakerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpeakerId = null;
+            if (parseNode.GetChildNode("segment_ids") is null) { _explicitNullValueSegmentIds = default!; _explicitNullProperties?.Remove("segment_ids"); }
+            else if (parseNode.GetChildNode("segment_ids") is { } nullNodeSegmentIds && nullNodeSegmentIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SegmentIds = null;
+            if (parseNode.GetChildNode("speaker_id") is null) { _explicitNullValueSpeakerId = default!; _explicitNullProperties?.Remove("speaker_id"); }
+            else if (parseNode.GetChildNode("speaker_id") is { } nullNodeSpeakerId && nullNodeSpeakerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpeakerId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The segment_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SegmentIds { get => _explicitNullValueSegmentIds; set { _explicitNullValueSegmentIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segment_ids"); else _explicitNullProperties?.Remove("segment_ids"); } }
+        public List<string>? SegmentIds { get => _explicitNullValueSegmentIds; set { _explicitNullValueSegmentIds = value; AdditionalData?.Remove("segment_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segment_ids"); else _explicitNullProperties?.Remove("segment_ids"); } }
         private List<string>? _explicitNullValueSegmentIds = default!;
 #nullable restore
 #else
-        public List<string> SegmentIds { get => _explicitNullValueSegmentIds; set { _explicitNullValueSegmentIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segment_ids"); else _explicitNullProperties?.Remove("segment_ids"); } }
+        public List<string> SegmentIds { get => _explicitNullValueSegmentIds; set { _explicitNullValueSegmentIds = value; AdditionalData?.Remove("segment_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segment_ids"); else _explicitNullProperties?.Remove("segment_ids"); } }
         private List<string> _explicitNullValueSegmentIds = default!;
 #endif
         /// <summary>The speaker_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SpeakerId { get => _explicitNullValueSpeakerId; set { _explicitNullValueSpeakerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speaker_id"); else _explicitNullProperties?.Remove("speaker_id"); } }
+        public string? SpeakerId { get => _explicitNullValueSpeakerId; set { _explicitNullValueSpeakerId = value; AdditionalData?.Remove("speaker_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speaker_id"); else _explicitNullProperties?.Remove("speaker_id"); } }
         private string? _explicitNullValueSpeakerId = default!;
 #nullable restore
 #else
-        public string SpeakerId { get => _explicitNullValueSpeakerId; set { _explicitNullValueSpeakerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speaker_id"); else _explicitNullProperties?.Remove("speaker_id"); } }
+        public string SpeakerId { get => _explicitNullValueSpeakerId; set { _explicitNullValueSpeakerId = value; AdditionalData?.Remove("speaker_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speaker_id"); else _explicitNullProperties?.Remove("speaker_id"); } }
         private string _explicitNullValueSpeakerId = default!;
 #endif
         /// <summary>

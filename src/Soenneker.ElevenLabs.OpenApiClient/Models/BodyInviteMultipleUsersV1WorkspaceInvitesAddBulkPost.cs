@@ -17,10 +17,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("emails") is { } nullNodeEmails && nullNodeEmails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Emails = null;
-            if (parseNode.GetChildNode("group_ids") is { } nullNodeGroupIds && nullNodeGroupIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupIds = null;
-            if (parseNode.GetChildNode("seat_type") is { } nullNodeSeatType && nullNodeSeatType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SeatType = null;
-            if (parseNode.GetChildNode("usage_limit") is { } nullNodeUsageLimit && nullNodeUsageLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsageLimit = null;
+            if (parseNode.GetChildNode("emails") is null) { _explicitNullValueEmails = default!; _explicitNullProperties?.Remove("emails"); }
+            else if (parseNode.GetChildNode("emails") is { } nullNodeEmails && nullNodeEmails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Emails = null;
+            if (parseNode.GetChildNode("group_ids") is null) { _explicitNullValueGroupIds = default!; _explicitNullProperties?.Remove("group_ids"); }
+            else if (parseNode.GetChildNode("group_ids") is { } nullNodeGroupIds && nullNodeGroupIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupIds = null;
+            if (parseNode.GetChildNode("seat_type") is null) { _explicitNullValueSeatType = default!; _explicitNullProperties?.Remove("seat_type"); }
+            else if (parseNode.GetChildNode("seat_type") is { } nullNodeSeatType && nullNodeSeatType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SeatType = null;
+            if (parseNode.GetChildNode("usage_limit") is null) { _explicitNullValueUsageLimit = default!; _explicitNullProperties?.Remove("usage_limit"); }
+            else if (parseNode.GetChildNode("usage_limit") is { } nullNodeUsageLimit && nullNodeUsageLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsageLimit = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,28 +32,28 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The email of the customer</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Emails { get => _explicitNullValueEmails; set { _explicitNullValueEmails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("emails"); else _explicitNullProperties?.Remove("emails"); } }
+        public List<string>? Emails { get => _explicitNullValueEmails; set { _explicitNullValueEmails = value; AdditionalData?.Remove("emails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("emails"); else _explicitNullProperties?.Remove("emails"); } }
         private List<string>? _explicitNullValueEmails = default!;
 #nullable restore
 #else
-        public List<string> Emails { get => _explicitNullValueEmails; set { _explicitNullValueEmails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("emails"); else _explicitNullProperties?.Remove("emails"); } }
+        public List<string> Emails { get => _explicitNullValueEmails; set { _explicitNullValueEmails = value; AdditionalData?.Remove("emails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("emails"); else _explicitNullProperties?.Remove("emails"); } }
         private List<string> _explicitNullValueEmails = default!;
 #endif
         /// <summary>The group ids of the user</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? GroupIds { get => _explicitNullValueGroupIds; set { _explicitNullValueGroupIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_ids"); else _explicitNullProperties?.Remove("group_ids"); } }
+        public List<string>? GroupIds { get => _explicitNullValueGroupIds; set { _explicitNullValueGroupIds = value; AdditionalData?.Remove("group_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_ids"); else _explicitNullProperties?.Remove("group_ids"); } }
         private List<string>? _explicitNullValueGroupIds = default!;
 #nullable restore
 #else
-        public List<string> GroupIds { get => _explicitNullValueGroupIds; set { _explicitNullValueGroupIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_ids"); else _explicitNullProperties?.Remove("group_ids"); } }
+        public List<string> GroupIds { get => _explicitNullValueGroupIds; set { _explicitNullValueGroupIds = value; AdditionalData?.Remove("group_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_ids"); else _explicitNullProperties?.Remove("group_ids"); } }
         private List<string> _explicitNullValueGroupIds = default!;
 #endif
         /// <summary>The seat type of the user</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType? SeatType { get => _explicitNullValueSeatType; set { _explicitNullValueSeatType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("seat_type"); else _explicitNullProperties?.Remove("seat_type"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType? SeatType { get => _explicitNullValueSeatType; set { _explicitNullValueSeatType = value; AdditionalData?.Remove("seat_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("seat_type"); else _explicitNullProperties?.Remove("seat_type"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType? _explicitNullValueSeatType = default!;
         /// <summary>Monthly credit usage limit for the invitee. Omit or set to null for no custom cap.</summary>
-        public int? UsageLimit { get => _explicitNullValueUsageLimit; set { _explicitNullValueUsageLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usage_limit"); else _explicitNullProperties?.Remove("usage_limit"); } }
+        public int? UsageLimit { get => _explicitNullValueUsageLimit; set { _explicitNullValueUsageLimit = value; AdditionalData?.Remove("usage_limit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usage_limit"); else _explicitNullProperties?.Remove("usage_limit"); } }
         private int? _explicitNullValueUsageLimit = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyInviteMultipleUsersV1WorkspaceInvitesAddBulkPost"/> and sets the default values.
@@ -78,7 +82,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "emails", n => { Emails = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "group_ids", n => { GroupIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "seat_type", n => { SeatType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType>(); } },
+                { "seat_type", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSeatType = default; _explicitNullProperties?.Remove("seat_type"); AdditionalData["seat_type"] = unknown; } else { SeatType = parsed; AdditionalData.Remove("seat_type"); } } },
                 { "usage_limit", n => { UsageLimit = n.GetIntValue(); } },
             };
         }

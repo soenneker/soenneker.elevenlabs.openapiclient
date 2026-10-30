@@ -18,90 +18,100 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("amount_cents") is { } nullNodeAmountCents && nullNodeAmountCents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AmountCents = null;
-            if (parseNode.GetChildNode("created_unix") is { } nullNodeCreatedUnix && nullNodeCreatedUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedUnix = null;
-            if (parseNode.GetChildNode("currency") is { } nullNodeCurrency && nullNodeCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Currency = null;
-            if (parseNode.GetChildNode("invoice_id") is { } nullNodeInvoiceId && nullNodeInvoiceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InvoiceId = null;
-            if (parseNode.GetChildNode("paid_unix") is { } nullNodePaidUnix && nullNodePaidUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaidUnix = null;
-            if (parseNode.GetChildNode("pay_url") is { } nullNodePayUrl && nullNodePayUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayUrl = null;
-            if (parseNode.GetChildNode("pdf_url") is { } nullNodePdfUrl && nullNodePdfUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PdfUrl = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
-            if (parseNode.GetChildNode("workspace_id") is { } nullNodeWorkspaceId && nullNodeWorkspaceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkspaceId = null;
-            if (parseNode.GetChildNode("workspace_name") is { } nullNodeWorkspaceName && nullNodeWorkspaceName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkspaceName = null;
+            if (parseNode.GetChildNode("amount_cents") is null) { _explicitNullValueAmountCents = default!; _explicitNullProperties?.Remove("amount_cents"); }
+            else if (parseNode.GetChildNode("amount_cents") is { } nullNodeAmountCents && nullNodeAmountCents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AmountCents = null;
+            if (parseNode.GetChildNode("created_unix") is null) { _explicitNullValueCreatedUnix = default!; _explicitNullProperties?.Remove("created_unix"); }
+            else if (parseNode.GetChildNode("created_unix") is { } nullNodeCreatedUnix && nullNodeCreatedUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedUnix = null;
+            if (parseNode.GetChildNode("currency") is null) { _explicitNullValueCurrency = default!; _explicitNullProperties?.Remove("currency"); }
+            else if (parseNode.GetChildNode("currency") is { } nullNodeCurrency && nullNodeCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Currency = null;
+            if (parseNode.GetChildNode("invoice_id") is null) { _explicitNullValueInvoiceId = default!; _explicitNullProperties?.Remove("invoice_id"); }
+            else if (parseNode.GetChildNode("invoice_id") is { } nullNodeInvoiceId && nullNodeInvoiceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InvoiceId = null;
+            if (parseNode.GetChildNode("paid_unix") is null) { _explicitNullValuePaidUnix = default!; _explicitNullProperties?.Remove("paid_unix"); }
+            else if (parseNode.GetChildNode("paid_unix") is { } nullNodePaidUnix && nullNodePaidUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaidUnix = null;
+            if (parseNode.GetChildNode("pay_url") is null) { _explicitNullValuePayUrl = default!; _explicitNullProperties?.Remove("pay_url"); }
+            else if (parseNode.GetChildNode("pay_url") is { } nullNodePayUrl && nullNodePayUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayUrl = null;
+            if (parseNode.GetChildNode("pdf_url") is null) { _explicitNullValuePdfUrl = default!; _explicitNullProperties?.Remove("pdf_url"); }
+            else if (parseNode.GetChildNode("pdf_url") is { } nullNodePdfUrl && nullNodePdfUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PdfUrl = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("workspace_id") is null) { _explicitNullValueWorkspaceId = default!; _explicitNullProperties?.Remove("workspace_id"); }
+            else if (parseNode.GetChildNode("workspace_id") is { } nullNodeWorkspaceId && nullNodeWorkspaceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkspaceId = null;
+            if (parseNode.GetChildNode("workspace_name") is null) { _explicitNullValueWorkspaceName = default!; _explicitNullProperties?.Remove("workspace_name"); }
+            else if (parseNode.GetChildNode("workspace_name") is { } nullNodeWorkspaceName && nullNodeWorkspaceName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkspaceName = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Invoice total, in the currency&apos;s minor unit.</summary>
-        public int? AmountCents { get => _explicitNullValueAmountCents; set { _explicitNullValueAmountCents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount_cents"); else _explicitNullProperties?.Remove("amount_cents"); } }
+        public int? AmountCents { get => _explicitNullValueAmountCents; set { _explicitNullValueAmountCents = value; AdditionalData?.Remove("amount_cents"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount_cents"); else _explicitNullProperties?.Remove("amount_cents"); } }
         private int? _explicitNullValueAmountCents = default!;
         /// <summary>The created_unix property</summary>
-        public int? CreatedUnix { get => _explicitNullValueCreatedUnix; set { _explicitNullValueCreatedUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_unix"); else _explicitNullProperties?.Remove("created_unix"); } }
+        public int? CreatedUnix { get => _explicitNullValueCreatedUnix; set { _explicitNullValueCreatedUnix = value; AdditionalData?.Remove("created_unix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_unix"); else _explicitNullProperties?.Remove("created_unix"); } }
         private int? _explicitNullValueCreatedUnix = default!;
         /// <summary>The currency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
+        public string? Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; AdditionalData?.Remove("currency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
         private string? _explicitNullValueCurrency = default!;
 #nullable restore
 #else
-        public string Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
+        public string Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; AdditionalData?.Remove("currency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
         private string _explicitNullValueCurrency = default!;
 #endif
         /// <summary>The invoice_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InvoiceId { get => _explicitNullValueInvoiceId; set { _explicitNullValueInvoiceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invoice_id"); else _explicitNullProperties?.Remove("invoice_id"); } }
+        public string? InvoiceId { get => _explicitNullValueInvoiceId; set { _explicitNullValueInvoiceId = value; AdditionalData?.Remove("invoice_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invoice_id"); else _explicitNullProperties?.Remove("invoice_id"); } }
         private string? _explicitNullValueInvoiceId = default!;
 #nullable restore
 #else
-        public string InvoiceId { get => _explicitNullValueInvoiceId; set { _explicitNullValueInvoiceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invoice_id"); else _explicitNullProperties?.Remove("invoice_id"); } }
+        public string InvoiceId { get => _explicitNullValueInvoiceId; set { _explicitNullValueInvoiceId = value; AdditionalData?.Remove("invoice_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invoice_id"); else _explicitNullProperties?.Remove("invoice_id"); } }
         private string _explicitNullValueInvoiceId = default!;
 #endif
         /// <summary>The paid_unix property</summary>
-        public int? PaidUnix { get => _explicitNullValuePaidUnix; set { _explicitNullValuePaidUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paid_unix"); else _explicitNullProperties?.Remove("paid_unix"); } }
+        public int? PaidUnix { get => _explicitNullValuePaidUnix; set { _explicitNullValuePaidUnix = value; AdditionalData?.Remove("paid_unix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paid_unix"); else _explicitNullProperties?.Remove("paid_unix"); } }
         private int? _explicitNullValuePaidUnix = default!;
         /// <summary>Stripe&apos;s hosted payment page, only while open.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PayUrl { get => _explicitNullValuePayUrl; set { _explicitNullValuePayUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_url"); else _explicitNullProperties?.Remove("pay_url"); } }
+        public string? PayUrl { get => _explicitNullValuePayUrl; set { _explicitNullValuePayUrl = value; AdditionalData?.Remove("pay_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_url"); else _explicitNullProperties?.Remove("pay_url"); } }
         private string? _explicitNullValuePayUrl = default!;
 #nullable restore
 #else
-        public string PayUrl { get => _explicitNullValuePayUrl; set { _explicitNullValuePayUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_url"); else _explicitNullProperties?.Remove("pay_url"); } }
+        public string PayUrl { get => _explicitNullValuePayUrl; set { _explicitNullValuePayUrl = value; AdditionalData?.Remove("pay_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_url"); else _explicitNullProperties?.Remove("pay_url"); } }
         private string _explicitNullValuePayUrl = default!;
 #endif
         /// <summary>The pdf_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PdfUrl { get => _explicitNullValuePdfUrl; set { _explicitNullValuePdfUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pdf_url"); else _explicitNullProperties?.Remove("pdf_url"); } }
+        public string? PdfUrl { get => _explicitNullValuePdfUrl; set { _explicitNullValuePdfUrl = value; AdditionalData?.Remove("pdf_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pdf_url"); else _explicitNullProperties?.Remove("pdf_url"); } }
         private string? _explicitNullValuePdfUrl = default!;
 #nullable restore
 #else
-        public string PdfUrl { get => _explicitNullValuePdfUrl; set { _explicitNullValuePdfUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pdf_url"); else _explicitNullProperties?.Remove("pdf_url"); } }
+        public string PdfUrl { get => _explicitNullValuePdfUrl; set { _explicitNullValuePdfUrl = value; AdditionalData?.Remove("pdf_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pdf_url"); else _explicitNullProperties?.Remove("pdf_url"); } }
         private string _explicitNullValuePdfUrl = default!;
 #endif
         /// <summary>`open` while the card is still being retried; `void` once retries ran out and the workspace&apos;s plan was ended.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerInvoiceStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerInvoiceStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerInvoiceStatus? _explicitNullValueStatus = default!;
         /// <summary>The workspace this charge paid for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WorkspaceId { get => _explicitNullValueWorkspaceId; set { _explicitNullValueWorkspaceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_id"); else _explicitNullProperties?.Remove("workspace_id"); } }
+        public string? WorkspaceId { get => _explicitNullValueWorkspaceId; set { _explicitNullValueWorkspaceId = value; AdditionalData?.Remove("workspace_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_id"); else _explicitNullProperties?.Remove("workspace_id"); } }
         private string? _explicitNullValueWorkspaceId = default!;
 #nullable restore
 #else
-        public string WorkspaceId { get => _explicitNullValueWorkspaceId; set { _explicitNullValueWorkspaceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_id"); else _explicitNullProperties?.Remove("workspace_id"); } }
+        public string WorkspaceId { get => _explicitNullValueWorkspaceId; set { _explicitNullValueWorkspaceId = value; AdditionalData?.Remove("workspace_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_id"); else _explicitNullProperties?.Remove("workspace_id"); } }
         private string _explicitNullValueWorkspaceId = default!;
 #endif
         /// <summary>The workspace_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WorkspaceName { get => _explicitNullValueWorkspaceName; set { _explicitNullValueWorkspaceName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_name"); else _explicitNullProperties?.Remove("workspace_name"); } }
+        public string? WorkspaceName { get => _explicitNullValueWorkspaceName; set { _explicitNullValueWorkspaceName = value; AdditionalData?.Remove("workspace_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_name"); else _explicitNullProperties?.Remove("workspace_name"); } }
         private string? _explicitNullValueWorkspaceName = default!;
 #nullable restore
 #else
-        public string WorkspaceName { get => _explicitNullValueWorkspaceName; set { _explicitNullValueWorkspaceName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_name"); else _explicitNullProperties?.Remove("workspace_name"); } }
+        public string WorkspaceName { get => _explicitNullValueWorkspaceName; set { _explicitNullValueWorkspaceName = value; AdditionalData?.Remove("workspace_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_name"); else _explicitNullProperties?.Remove("workspace_name"); } }
         private string _explicitNullValueWorkspaceName = default!;
 #endif
         /// <summary>
@@ -136,7 +146,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "paid_unix", n => { PaidUnix = n.GetIntValue(); } },
                 { "pay_url", n => { PayUrl = n.GetStringValue(); } },
                 { "pdf_url", n => { PdfUrl = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerInvoiceStatus>(); } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerInvoiceStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "workspace_id", n => { WorkspaceId = n.GetStringValue(); } },
                 { "workspace_name", n => { WorkspaceName = n.GetStringValue(); } },
             };

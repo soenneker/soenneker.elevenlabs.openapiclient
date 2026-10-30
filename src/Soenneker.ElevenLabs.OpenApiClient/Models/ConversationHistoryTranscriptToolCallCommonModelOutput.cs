@@ -17,13 +17,20 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("params_as_json") is { } nullNodeParamsAsJson && nullNodeParamsAsJson.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParamsAsJson = null;
-            if (parseNode.GetChildNode("request_id") is { } nullNodeRequestId && nullNodeRequestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestId = null;
-            if (parseNode.GetChildNode("tool_details") is { } nullNodeToolDetails && nullNodeToolDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolDetails = null;
-            if (parseNode.GetChildNode("tool_has_been_called") is { } nullNodeToolHasBeenCalled && nullNodeToolHasBeenCalled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolHasBeenCalled = null;
-            if (parseNode.GetChildNode("tool_id") is { } nullNodeToolId && nullNodeToolId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolId = null;
-            if (parseNode.GetChildNode("tool_name") is { } nullNodeToolName && nullNodeToolName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolName = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("params_as_json") is null) { _explicitNullValueParamsAsJson = default!; _explicitNullProperties?.Remove("params_as_json"); }
+            else if (parseNode.GetChildNode("params_as_json") is { } nullNodeParamsAsJson && nullNodeParamsAsJson.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParamsAsJson = null;
+            if (parseNode.GetChildNode("request_id") is null) { _explicitNullValueRequestId = default!; _explicitNullProperties?.Remove("request_id"); }
+            else if (parseNode.GetChildNode("request_id") is { } nullNodeRequestId && nullNodeRequestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestId = null;
+            if (parseNode.GetChildNode("tool_details") is null) { _explicitNullValueToolDetails = default!; _explicitNullProperties?.Remove("tool_details"); }
+            else if (parseNode.GetChildNode("tool_details") is { } nullNodeToolDetails && nullNodeToolDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolDetails = null;
+            if (parseNode.GetChildNode("tool_has_been_called") is null) { _explicitNullValueToolHasBeenCalled = default!; _explicitNullProperties?.Remove("tool_has_been_called"); }
+            else if (parseNode.GetChildNode("tool_has_been_called") is { } nullNodeToolHasBeenCalled && nullNodeToolHasBeenCalled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolHasBeenCalled = null;
+            if (parseNode.GetChildNode("tool_id") is null) { _explicitNullValueToolId = default!; _explicitNullProperties?.Remove("tool_id"); }
+            else if (parseNode.GetChildNode("tool_id") is { } nullNodeToolId && nullNodeToolId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolId = null;
+            if (parseNode.GetChildNode("tool_name") is null) { _explicitNullValueToolName = default!; _explicitNullProperties?.Remove("tool_name"); }
+            else if (parseNode.GetChildNode("tool_name") is { } nullNodeToolName && nullNodeToolName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolName = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,58 +38,58 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The params_as_json property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ParamsAsJson { get => _explicitNullValueParamsAsJson; set { _explicitNullValueParamsAsJson = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("params_as_json"); else _explicitNullProperties?.Remove("params_as_json"); } }
+        public string? ParamsAsJson { get => _explicitNullValueParamsAsJson; set { _explicitNullValueParamsAsJson = value; AdditionalData?.Remove("params_as_json"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("params_as_json"); else _explicitNullProperties?.Remove("params_as_json"); } }
         private string? _explicitNullValueParamsAsJson = default!;
 #nullable restore
 #else
-        public string ParamsAsJson { get => _explicitNullValueParamsAsJson; set { _explicitNullValueParamsAsJson = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("params_as_json"); else _explicitNullProperties?.Remove("params_as_json"); } }
+        public string ParamsAsJson { get => _explicitNullValueParamsAsJson; set { _explicitNullValueParamsAsJson = value; AdditionalData?.Remove("params_as_json"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("params_as_json"); else _explicitNullProperties?.Remove("params_as_json"); } }
         private string _explicitNullValueParamsAsJson = default!;
 #endif
         /// <summary>The request_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
+        public string? RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; AdditionalData?.Remove("request_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
         private string? _explicitNullValueRequestId = default!;
 #nullable restore
 #else
-        public string RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
+        public string RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; AdditionalData?.Remove("request_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
         private string _explicitNullValueRequestId = default!;
 #endif
         /// <summary>The tool_details property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetailsOutput? ToolDetails { get => _explicitNullValueToolDetails; set { _explicitNullValueToolDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_details"); else _explicitNullProperties?.Remove("tool_details"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetailsOutput? ToolDetails { get => _explicitNullValueToolDetails; set { _explicitNullValueToolDetails = value; AdditionalData?.Remove("tool_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_details"); else _explicitNullProperties?.Remove("tool_details"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetailsOutput? _explicitNullValueToolDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetailsOutput ToolDetails { get => _explicitNullValueToolDetails; set { _explicitNullValueToolDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_details"); else _explicitNullProperties?.Remove("tool_details"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetailsOutput ToolDetails { get => _explicitNullValueToolDetails; set { _explicitNullValueToolDetails = value; AdditionalData?.Remove("tool_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_details"); else _explicitNullProperties?.Remove("tool_details"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetailsOutput _explicitNullValueToolDetails = default!;
 #endif
         /// <summary>The tool_has_been_called property</summary>
-        public bool? ToolHasBeenCalled { get => _explicitNullValueToolHasBeenCalled; set { _explicitNullValueToolHasBeenCalled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_has_been_called"); else _explicitNullProperties?.Remove("tool_has_been_called"); } }
+        public bool? ToolHasBeenCalled { get => _explicitNullValueToolHasBeenCalled; set { _explicitNullValueToolHasBeenCalled = value; AdditionalData?.Remove("tool_has_been_called"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_has_been_called"); else _explicitNullProperties?.Remove("tool_has_been_called"); } }
         private bool? _explicitNullValueToolHasBeenCalled = default!;
         /// <summary>ID of the called tool. Not set for tools without an ID, such as system tools.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ToolId { get => _explicitNullValueToolId; set { _explicitNullValueToolId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_id"); else _explicitNullProperties?.Remove("tool_id"); } }
+        public string? ToolId { get => _explicitNullValueToolId; set { _explicitNullValueToolId = value; AdditionalData?.Remove("tool_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_id"); else _explicitNullProperties?.Remove("tool_id"); } }
         private string? _explicitNullValueToolId = default!;
 #nullable restore
 #else
-        public string ToolId { get => _explicitNullValueToolId; set { _explicitNullValueToolId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_id"); else _explicitNullProperties?.Remove("tool_id"); } }
+        public string ToolId { get => _explicitNullValueToolId; set { _explicitNullValueToolId = value; AdditionalData?.Remove("tool_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_id"); else _explicitNullProperties?.Remove("tool_id"); } }
         private string _explicitNullValueToolId = default!;
 #endif
         /// <summary>The tool_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ToolName { get => _explicitNullValueToolName; set { _explicitNullValueToolName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_name"); else _explicitNullProperties?.Remove("tool_name"); } }
+        public string? ToolName { get => _explicitNullValueToolName; set { _explicitNullValueToolName = value; AdditionalData?.Remove("tool_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_name"); else _explicitNullProperties?.Remove("tool_name"); } }
         private string? _explicitNullValueToolName = default!;
 #nullable restore
 #else
-        public string ToolName { get => _explicitNullValueToolName; set { _explicitNullValueToolName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_name"); else _explicitNullProperties?.Remove("tool_name"); } }
+        public string ToolName { get => _explicitNullValueToolName; set { _explicitNullValueToolName = value; AdditionalData?.Remove("tool_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_name"); else _explicitNullProperties?.Remove("tool_name"); } }
         private string _explicitNullValueToolName = default!;
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallCommonModelOutput"/> and sets the default values.
@@ -115,7 +122,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "tool_has_been_called", n => { ToolHasBeenCalled = n.GetBoolValue(); } },
                 { "tool_id", n => { ToolId = n.GetStringValue(); } },
                 { "tool_name", n => { ToolName = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

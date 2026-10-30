@@ -18,11 +18,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("audio_path") is { } nullNodeAudioPath && nullNodeAudioPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudioPath = null;
-            if (parseNode.GetChildNode("audio_url") is { } nullNodeAudioUrl && nullNodeAudioUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudioUrl = null;
-            if (parseNode.GetChildNode("duration_secs") is { } nullNodeDurationSecs && nullNodeDurationSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DurationSecs = null;
-            if (parseNode.GetChildNode("original_filename") is { } nullNodeOriginalFilename && nullNodeOriginalFilename.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginalFilename = null;
-            if (parseNode.GetChildNode("size_bytes") is { } nullNodeSizeBytes && nullNodeSizeBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SizeBytes = null;
+            if (parseNode.GetChildNode("audio_path") is null) { _explicitNullValueAudioPath = default!; _explicitNullProperties?.Remove("audio_path"); }
+            else if (parseNode.GetChildNode("audio_path") is { } nullNodeAudioPath && nullNodeAudioPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudioPath = null;
+            if (parseNode.GetChildNode("audio_url") is null) { _explicitNullValueAudioUrl = default!; _explicitNullProperties?.Remove("audio_url"); }
+            else if (parseNode.GetChildNode("audio_url") is { } nullNodeAudioUrl && nullNodeAudioUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudioUrl = null;
+            if (parseNode.GetChildNode("duration_secs") is null) { _explicitNullValueDurationSecs = default!; _explicitNullProperties?.Remove("duration_secs"); }
+            else if (parseNode.GetChildNode("duration_secs") is { } nullNodeDurationSecs && nullNodeDurationSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DurationSecs = null;
+            if (parseNode.GetChildNode("original_filename") is null) { _explicitNullValueOriginalFilename = default!; _explicitNullProperties?.Remove("original_filename"); }
+            else if (parseNode.GetChildNode("original_filename") is { } nullNodeOriginalFilename && nullNodeOriginalFilename.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginalFilename = null;
+            if (parseNode.GetChildNode("size_bytes") is null) { _explicitNullValueSizeBytes = default!; _explicitNullProperties?.Remove("size_bytes"); }
+            else if (parseNode.GetChildNode("size_bytes") is { } nullNodeSizeBytes && nullNodeSizeBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SizeBytes = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,38 +35,38 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Storage path of the uploaded clip</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AudioPath { get => _explicitNullValueAudioPath; set { _explicitNullValueAudioPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_path"); else _explicitNullProperties?.Remove("audio_path"); } }
+        public string? AudioPath { get => _explicitNullValueAudioPath; set { _explicitNullValueAudioPath = value; AdditionalData?.Remove("audio_path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_path"); else _explicitNullProperties?.Remove("audio_path"); } }
         private string? _explicitNullValueAudioPath = default!;
 #nullable restore
 #else
-        public string AudioPath { get => _explicitNullValueAudioPath; set { _explicitNullValueAudioPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_path"); else _explicitNullProperties?.Remove("audio_path"); } }
+        public string AudioPath { get => _explicitNullValueAudioPath; set { _explicitNullValueAudioPath = value; AdditionalData?.Remove("audio_path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_path"); else _explicitNullProperties?.Remove("audio_path"); } }
         private string _explicitNullValueAudioPath = default!;
 #endif
         /// <summary>Public CDN URL of the uploaded clip</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AudioUrl { get => _explicitNullValueAudioUrl; set { _explicitNullValueAudioUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_url"); else _explicitNullProperties?.Remove("audio_url"); } }
+        public string? AudioUrl { get => _explicitNullValueAudioUrl; set { _explicitNullValueAudioUrl = value; AdditionalData?.Remove("audio_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_url"); else _explicitNullProperties?.Remove("audio_url"); } }
         private string? _explicitNullValueAudioUrl = default!;
 #nullable restore
 #else
-        public string AudioUrl { get => _explicitNullValueAudioUrl; set { _explicitNullValueAudioUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_url"); else _explicitNullProperties?.Remove("audio_url"); } }
+        public string AudioUrl { get => _explicitNullValueAudioUrl; set { _explicitNullValueAudioUrl = value; AdditionalData?.Remove("audio_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_url"); else _explicitNullProperties?.Remove("audio_url"); } }
         private string _explicitNullValueAudioUrl = default!;
 #endif
         /// <summary>Duration of the uploaded clip in seconds</summary>
-        public double? DurationSecs { get => _explicitNullValueDurationSecs; set { _explicitNullValueDurationSecs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration_secs"); else _explicitNullProperties?.Remove("duration_secs"); } }
+        public double? DurationSecs { get => _explicitNullValueDurationSecs; set { _explicitNullValueDurationSecs = value; AdditionalData?.Remove("duration_secs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration_secs"); else _explicitNullProperties?.Remove("duration_secs"); } }
         private double? _explicitNullValueDurationSecs = default!;
         /// <summary>Filename of the uploaded clip as provided by the user</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OriginalFilename { get => _explicitNullValueOriginalFilename; set { _explicitNullValueOriginalFilename = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original_filename"); else _explicitNullProperties?.Remove("original_filename"); } }
+        public string? OriginalFilename { get => _explicitNullValueOriginalFilename; set { _explicitNullValueOriginalFilename = value; AdditionalData?.Remove("original_filename"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original_filename"); else _explicitNullProperties?.Remove("original_filename"); } }
         private string? _explicitNullValueOriginalFilename = default!;
 #nullable restore
 #else
-        public string OriginalFilename { get => _explicitNullValueOriginalFilename; set { _explicitNullValueOriginalFilename = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original_filename"); else _explicitNullProperties?.Remove("original_filename"); } }
+        public string OriginalFilename { get => _explicitNullValueOriginalFilename; set { _explicitNullValueOriginalFilename = value; AdditionalData?.Remove("original_filename"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original_filename"); else _explicitNullProperties?.Remove("original_filename"); } }
         private string _explicitNullValueOriginalFilename = default!;
 #endif
         /// <summary>Size of the uploaded clip in bytes</summary>
-        public int? SizeBytes { get => _explicitNullValueSizeBytes; set { _explicitNullValueSizeBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("size_bytes"); else _explicitNullProperties?.Remove("size_bytes"); } }
+        public int? SizeBytes { get => _explicitNullValueSizeBytes; set { _explicitNullValueSizeBytes = value; AdditionalData?.Remove("size_bytes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("size_bytes"); else _explicitNullProperties?.Remove("size_bytes"); } }
         private int? _explicitNullValueSizeBytes = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentHoldAudioConfig"/> and sets the default values.

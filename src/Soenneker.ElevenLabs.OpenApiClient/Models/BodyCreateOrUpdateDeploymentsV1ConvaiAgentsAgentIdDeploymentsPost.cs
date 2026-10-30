@@ -17,7 +17,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("deployment_request") is { } nullNodeDeploymentRequest && nullNodeDeploymentRequest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentRequest = null;
+            if (parseNode.GetChildNode("deployment_request") is null) { _explicitNullValueDeploymentRequest = default!; _explicitNullProperties?.Remove("deployment_request"); }
+            else if (parseNode.GetChildNode("deployment_request") is { } nullNodeDeploymentRequest && nullNodeDeploymentRequest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentRequest = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Request to create a new deployment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDeploymentRequest? DeploymentRequest { get => _explicitNullValueDeploymentRequest; set { _explicitNullValueDeploymentRequest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deployment_request"); else _explicitNullProperties?.Remove("deployment_request"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDeploymentRequest? DeploymentRequest { get => _explicitNullValueDeploymentRequest; set { _explicitNullValueDeploymentRequest = value; AdditionalData?.Remove("deployment_request"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deployment_request"); else _explicitNullProperties?.Remove("deployment_request"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDeploymentRequest? _explicitNullValueDeploymentRequest = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDeploymentRequest DeploymentRequest { get => _explicitNullValueDeploymentRequest; set { _explicitNullValueDeploymentRequest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deployment_request"); else _explicitNullProperties?.Remove("deployment_request"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDeploymentRequest DeploymentRequest { get => _explicitNullValueDeploymentRequest; set { _explicitNullValueDeploymentRequest = value; AdditionalData?.Remove("deployment_request"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deployment_request"); else _explicitNullProperties?.Remove("deployment_request"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDeploymentRequest _explicitNullValueDeploymentRequest = default!;
 #endif
         /// <summary>

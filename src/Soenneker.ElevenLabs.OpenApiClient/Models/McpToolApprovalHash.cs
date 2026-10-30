@@ -18,34 +18,37 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("approval_policy") is { } nullNodeApprovalPolicy && nullNodeApprovalPolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApprovalPolicy = null;
-            if (parseNode.GetChildNode("tool_hash") is { } nullNodeToolHash && nullNodeToolHash.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolHash = null;
-            if (parseNode.GetChildNode("tool_name") is { } nullNodeToolName && nullNodeToolName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolName = null;
+            if (parseNode.GetChildNode("approval_policy") is null) { _explicitNullValueApprovalPolicy = default!; _explicitNullProperties?.Remove("approval_policy"); }
+            else if (parseNode.GetChildNode("approval_policy") is { } nullNodeApprovalPolicy && nullNodeApprovalPolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApprovalPolicy = null;
+            if (parseNode.GetChildNode("tool_hash") is null) { _explicitNullValueToolHash = default!; _explicitNullProperties?.Remove("tool_hash"); }
+            else if (parseNode.GetChildNode("tool_hash") is { } nullNodeToolHash && nullNodeToolHash.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolHash = null;
+            if (parseNode.GetChildNode("tool_name") is null) { _explicitNullValueToolName = default!; _explicitNullProperties?.Remove("tool_name"); }
+            else if (parseNode.GetChildNode("tool_name") is { } nullNodeToolName && nullNodeToolName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolName = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Defines the tool-level approval policy.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolApprovalPolicy? ApprovalPolicy { get => _explicitNullValueApprovalPolicy; set { _explicitNullValueApprovalPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approval_policy"); else _explicitNullProperties?.Remove("approval_policy"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolApprovalPolicy? ApprovalPolicy { get => _explicitNullValueApprovalPolicy; set { _explicitNullValueApprovalPolicy = value; AdditionalData?.Remove("approval_policy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approval_policy"); else _explicitNullProperties?.Remove("approval_policy"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolApprovalPolicy? _explicitNullValueApprovalPolicy = default!;
         /// <summary>SHA256 hash of the tool&apos;s parameters and description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ToolHash { get => _explicitNullValueToolHash; set { _explicitNullValueToolHash = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_hash"); else _explicitNullProperties?.Remove("tool_hash"); } }
+        public string? ToolHash { get => _explicitNullValueToolHash; set { _explicitNullValueToolHash = value; AdditionalData?.Remove("tool_hash"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_hash"); else _explicitNullProperties?.Remove("tool_hash"); } }
         private string? _explicitNullValueToolHash = default!;
 #nullable restore
 #else
-        public string ToolHash { get => _explicitNullValueToolHash; set { _explicitNullValueToolHash = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_hash"); else _explicitNullProperties?.Remove("tool_hash"); } }
+        public string ToolHash { get => _explicitNullValueToolHash; set { _explicitNullValueToolHash = value; AdditionalData?.Remove("tool_hash"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_hash"); else _explicitNullProperties?.Remove("tool_hash"); } }
         private string _explicitNullValueToolHash = default!;
 #endif
         /// <summary>The name of the MCP tool</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ToolName { get => _explicitNullValueToolName; set { _explicitNullValueToolName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_name"); else _explicitNullProperties?.Remove("tool_name"); } }
+        public string? ToolName { get => _explicitNullValueToolName; set { _explicitNullValueToolName = value; AdditionalData?.Remove("tool_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_name"); else _explicitNullProperties?.Remove("tool_name"); } }
         private string? _explicitNullValueToolName = default!;
 #nullable restore
 #else
-        public string ToolName { get => _explicitNullValueToolName; set { _explicitNullValueToolName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_name"); else _explicitNullProperties?.Remove("tool_name"); } }
+        public string ToolName { get => _explicitNullValueToolName; set { _explicitNullValueToolName = value; AdditionalData?.Remove("tool_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_name"); else _explicitNullProperties?.Remove("tool_name"); } }
         private string _explicitNullValueToolName = default!;
 #endif
         /// <summary>
@@ -73,7 +76,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "approval_policy", n => { ApprovalPolicy = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolApprovalPolicy>(); } },
+                { "approval_policy", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolApprovalPolicy>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueApprovalPolicy = default; _explicitNullProperties?.Remove("approval_policy"); AdditionalData["approval_policy"] = unknown; } else { ApprovalPolicy = parsed; AdditionalData.Remove("approval_policy"); } } },
                 { "tool_hash", n => { ToolHash = n.GetStringValue(); } },
                 { "tool_name", n => { ToolName = n.GetStringValue(); } },
             };

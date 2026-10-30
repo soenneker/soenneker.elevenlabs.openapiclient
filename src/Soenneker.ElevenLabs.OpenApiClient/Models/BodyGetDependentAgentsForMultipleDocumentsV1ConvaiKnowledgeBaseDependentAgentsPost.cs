@@ -17,7 +17,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("document_ids") is { } nullNodeDocumentIds && nullNodeDocumentIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentIds = null;
+            if (parseNode.GetChildNode("document_ids") is null) { _explicitNullValueDocumentIds = default!; _explicitNullProperties?.Remove("document_ids"); }
+            else if (parseNode.GetChildNode("document_ids") is { } nullNodeDocumentIds && nullNodeDocumentIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentIds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The ids of documents or folders from the knowledge base.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DocumentIds { get => _explicitNullValueDocumentIds; set { _explicitNullValueDocumentIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_ids"); else _explicitNullProperties?.Remove("document_ids"); } }
+        public List<string>? DocumentIds { get => _explicitNullValueDocumentIds; set { _explicitNullValueDocumentIds = value; AdditionalData?.Remove("document_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_ids"); else _explicitNullProperties?.Remove("document_ids"); } }
         private List<string>? _explicitNullValueDocumentIds = default!;
 #nullable restore
 #else
-        public List<string> DocumentIds { get => _explicitNullValueDocumentIds; set { _explicitNullValueDocumentIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_ids"); else _explicitNullProperties?.Remove("document_ids"); } }
+        public List<string> DocumentIds { get => _explicitNullValueDocumentIds; set { _explicitNullValueDocumentIds = value; AdditionalData?.Remove("document_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_ids"); else _explicitNullProperties?.Remove("document_ids"); } }
         private List<string> _explicitNullValueDocumentIds = default!;
 #endif
         /// <summary>

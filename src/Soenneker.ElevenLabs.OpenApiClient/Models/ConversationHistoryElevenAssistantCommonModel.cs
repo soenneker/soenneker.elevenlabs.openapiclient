@@ -17,13 +17,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("is_eleven_assistant") is { } nullNodeIsElevenAssistant && nullNodeIsElevenAssistant.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsElevenAssistant = null;
+            if (parseNode.GetChildNode("is_eleven_assistant") is null) { _explicitNullValueIsElevenAssistant = default!; _explicitNullProperties?.Remove("is_eleven_assistant"); }
+            else if (parseNode.GetChildNode("is_eleven_assistant") is { } nullNodeIsElevenAssistant && nullNodeIsElevenAssistant.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsElevenAssistant = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The is_eleven_assistant property</summary>
-        public bool? IsElevenAssistant { get => _explicitNullValueIsElevenAssistant; set { _explicitNullValueIsElevenAssistant = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_eleven_assistant"); else _explicitNullProperties?.Remove("is_eleven_assistant"); } }
+        public bool? IsElevenAssistant { get => _explicitNullValueIsElevenAssistant; set { _explicitNullValueIsElevenAssistant = value; AdditionalData?.Remove("is_eleven_assistant"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_eleven_assistant"); else _explicitNullProperties?.Remove("is_eleven_assistant"); } }
         private bool? _explicitNullValueIsElevenAssistant = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryElevenAssistantCommonModel"/> and sets the default values.

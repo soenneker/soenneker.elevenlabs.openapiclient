@@ -17,7 +17,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("llm_prices") is { } nullNodeLlmPrices && nullNodeLlmPrices.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LlmPrices = null;
+            if (parseNode.GetChildNode("llm_prices") is null) { _explicitNullValueLlmPrices = default!; _explicitNullProperties?.Remove("llm_prices"); }
+            else if (parseNode.GetChildNode("llm_prices") is { } nullNodeLlmPrices && nullNodeLlmPrices.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LlmPrices = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The llm_prices property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageCalculatorLlmResponseModel>? LlmPrices { get => _explicitNullValueLlmPrices; set { _explicitNullValueLlmPrices = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("llm_prices"); else _explicitNullProperties?.Remove("llm_prices"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageCalculatorLlmResponseModel>? LlmPrices { get => _explicitNullValueLlmPrices; set { _explicitNullValueLlmPrices = value; AdditionalData?.Remove("llm_prices"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("llm_prices"); else _explicitNullProperties?.Remove("llm_prices"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageCalculatorLlmResponseModel>? _explicitNullValueLlmPrices = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageCalculatorLlmResponseModel> LlmPrices { get => _explicitNullValueLlmPrices; set { _explicitNullValueLlmPrices = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("llm_prices"); else _explicitNullProperties?.Remove("llm_prices"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageCalculatorLlmResponseModel> LlmPrices { get => _explicitNullValueLlmPrices; set { _explicitNullValueLlmPrices = value; AdditionalData?.Remove("llm_prices"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("llm_prices"); else _explicitNullProperties?.Remove("llm_prices"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageCalculatorLlmResponseModel> _explicitNullValueLlmPrices = default!;
 #endif
         /// <summary>

@@ -17,47 +17,53 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("aggregated_run_count") is { } nullNodeAggregatedRunCount && nullNodeAggregatedRunCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AggregatedRunCount = null;
-            if (parseNode.GetChildNode("has_more") is { } nullNodeHasMore && nullNodeHasMore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasMore = null;
-            if (parseNode.GetChildNode("next_cursor") is { } nullNodeNextCursor && nullNodeNextCursor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextCursor = null;
-            if (parseNode.GetChildNode("topics") is { } nullNodeTopics && nullNodeTopics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Topics = null;
-            if (parseNode.GetChildNode("window_end_unix_secs") is { } nullNodeWindowEndUnixSecs && nullNodeWindowEndUnixSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WindowEndUnixSecs = null;
-            if (parseNode.GetChildNode("window_start_unix_secs") is { } nullNodeWindowStartUnixSecs && nullNodeWindowStartUnixSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WindowStartUnixSecs = null;
+            if (parseNode.GetChildNode("aggregated_run_count") is null) { _explicitNullValueAggregatedRunCount = default!; _explicitNullProperties?.Remove("aggregated_run_count"); }
+            else if (parseNode.GetChildNode("aggregated_run_count") is { } nullNodeAggregatedRunCount && nullNodeAggregatedRunCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AggregatedRunCount = null;
+            if (parseNode.GetChildNode("has_more") is null) { _explicitNullValueHasMore = default!; _explicitNullProperties?.Remove("has_more"); }
+            else if (parseNode.GetChildNode("has_more") is { } nullNodeHasMore && nullNodeHasMore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasMore = null;
+            if (parseNode.GetChildNode("next_cursor") is null) { _explicitNullValueNextCursor = default!; _explicitNullProperties?.Remove("next_cursor"); }
+            else if (parseNode.GetChildNode("next_cursor") is { } nullNodeNextCursor && nullNodeNextCursor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextCursor = null;
+            if (parseNode.GetChildNode("topics") is null) { _explicitNullValueTopics = default!; _explicitNullProperties?.Remove("topics"); }
+            else if (parseNode.GetChildNode("topics") is { } nullNodeTopics && nullNodeTopics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Topics = null;
+            if (parseNode.GetChildNode("window_end_unix_secs") is null) { _explicitNullValueWindowEndUnixSecs = default!; _explicitNullProperties?.Remove("window_end_unix_secs"); }
+            else if (parseNode.GetChildNode("window_end_unix_secs") is { } nullNodeWindowEndUnixSecs && nullNodeWindowEndUnixSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WindowEndUnixSecs = null;
+            if (parseNode.GetChildNode("window_start_unix_secs") is null) { _explicitNullValueWindowStartUnixSecs = default!; _explicitNullProperties?.Remove("window_start_unix_secs"); }
+            else if (parseNode.GetChildNode("window_start_unix_secs") is { } nullNodeWindowStartUnixSecs && nullNodeWindowStartUnixSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WindowStartUnixSecs = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of daily topic-discovery runs the returned metrics were summed over.</summary>
-        public int? AggregatedRunCount { get => _explicitNullValueAggregatedRunCount; set { _explicitNullValueAggregatedRunCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aggregated_run_count"); else _explicitNullProperties?.Remove("aggregated_run_count"); } }
+        public int? AggregatedRunCount { get => _explicitNullValueAggregatedRunCount; set { _explicitNullValueAggregatedRunCount = value; AdditionalData?.Remove("aggregated_run_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aggregated_run_count"); else _explicitNullProperties?.Remove("aggregated_run_count"); } }
         private int? _explicitNullValueAggregatedRunCount = default!;
         /// <summary>The has_more property</summary>
-        public bool? HasMore { get => _explicitNullValueHasMore; set { _explicitNullValueHasMore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_more"); else _explicitNullProperties?.Remove("has_more"); } }
+        public bool? HasMore { get => _explicitNullValueHasMore; set { _explicitNullValueHasMore = value; AdditionalData?.Remove("has_more"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_more"); else _explicitNullProperties?.Remove("has_more"); } }
         private bool? _explicitNullValueHasMore = default!;
         /// <summary>The next_cursor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NextCursor { get => _explicitNullValueNextCursor; set { _explicitNullValueNextCursor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_cursor"); else _explicitNullProperties?.Remove("next_cursor"); } }
+        public string? NextCursor { get => _explicitNullValueNextCursor; set { _explicitNullValueNextCursor = value; AdditionalData?.Remove("next_cursor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_cursor"); else _explicitNullProperties?.Remove("next_cursor"); } }
         private string? _explicitNullValueNextCursor = default!;
 #nullable restore
 #else
-        public string NextCursor { get => _explicitNullValueNextCursor; set { _explicitNullValueNextCursor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_cursor"); else _explicitNullProperties?.Remove("next_cursor"); } }
+        public string NextCursor { get => _explicitNullValueNextCursor; set { _explicitNullValueNextCursor = value; AdditionalData?.Remove("next_cursor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_cursor"); else _explicitNullProperties?.Remove("next_cursor"); } }
         private string _explicitNullValueNextCursor = default!;
 #endif
         /// <summary>The topics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTopicResponseModel>? Topics { get => _explicitNullValueTopics; set { _explicitNullValueTopics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("topics"); else _explicitNullProperties?.Remove("topics"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTopicResponseModel>? Topics { get => _explicitNullValueTopics; set { _explicitNullValueTopics = value; AdditionalData?.Remove("topics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("topics"); else _explicitNullProperties?.Remove("topics"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTopicResponseModel>? _explicitNullValueTopics = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTopicResponseModel> Topics { get => _explicitNullValueTopics; set { _explicitNullValueTopics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("topics"); else _explicitNullProperties?.Remove("topics"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTopicResponseModel> Topics { get => _explicitNullValueTopics; set { _explicitNullValueTopics = value; AdditionalData?.Remove("topics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("topics"); else _explicitNullProperties?.Remove("topics"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTopicResponseModel> _explicitNullValueTopics = default!;
 #endif
         /// <summary>The window_end_unix_secs property</summary>
-        public int? WindowEndUnixSecs { get => _explicitNullValueWindowEndUnixSecs; set { _explicitNullValueWindowEndUnixSecs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("window_end_unix_secs"); else _explicitNullProperties?.Remove("window_end_unix_secs"); } }
+        public int? WindowEndUnixSecs { get => _explicitNullValueWindowEndUnixSecs; set { _explicitNullValueWindowEndUnixSecs = value; AdditionalData?.Remove("window_end_unix_secs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("window_end_unix_secs"); else _explicitNullProperties?.Remove("window_end_unix_secs"); } }
         private int? _explicitNullValueWindowEndUnixSecs = default!;
         /// <summary>The window_start_unix_secs property</summary>
-        public int? WindowStartUnixSecs { get => _explicitNullValueWindowStartUnixSecs; set { _explicitNullValueWindowStartUnixSecs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("window_start_unix_secs"); else _explicitNullProperties?.Remove("window_start_unix_secs"); } }
+        public int? WindowStartUnixSecs { get => _explicitNullValueWindowStartUnixSecs; set { _explicitNullValueWindowStartUnixSecs = value; AdditionalData?.Remove("window_start_unix_secs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("window_start_unix_secs"); else _explicitNullProperties?.Remove("window_start_unix_secs"); } }
         private int? _explicitNullValueWindowStartUnixSecs = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentTopicsResponseModel"/> and sets the default values.

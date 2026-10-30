@@ -17,34 +17,37 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
-            if (parseNode.GetChildNode("entities") is { } nullNodeEntities && nullNodeEntities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Entities = null;
-            if (parseNode.GetChildNode("excluded_data_collection_ids") is { } nullNodeExcludedDataCollectionIds && nullNodeExcludedDataCollectionIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedDataCollectionIds = null;
+            if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
+            else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("entities") is null) { _explicitNullValueEntities = default!; _explicitNullProperties?.Remove("entities"); }
+            else if (parseNode.GetChildNode("entities") is { } nullNodeEntities && nullNodeEntities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Entities = null;
+            if (parseNode.GetChildNode("excluded_data_collection_ids") is null) { _explicitNullValueExcludedDataCollectionIds = default!; _explicitNullProperties?.Remove("excluded_data_collection_ids"); }
+            else if (parseNode.GetChildNode("excluded_data_collection_ids") is { } nullNodeExcludedDataCollectionIds && nullNodeExcludedDataCollectionIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedDataCollectionIds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether conversation history redaction is enabled</summary>
-        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
         /// <summary>The entities to redact from the conversation transcript, audio and analysis. Use top-level types like &apos;name&apos;, &apos;email_address&apos;, or dot notation for specific subtypes like &apos;name.full_name&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConfigEntityType?>? Entities { get => _explicitNullValueEntities; set { _explicitNullValueEntities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entities"); else _explicitNullProperties?.Remove("entities"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConfigEntityType?>? Entities { get => _explicitNullValueEntities; set { _explicitNullValueEntities = value; AdditionalData?.Remove("entities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entities"); else _explicitNullProperties?.Remove("entities"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConfigEntityType?>? _explicitNullValueEntities = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConfigEntityType?> Entities { get => _explicitNullValueEntities; set { _explicitNullValueEntities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entities"); else _explicitNullProperties?.Remove("entities"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConfigEntityType?> Entities { get => _explicitNullValueEntities; set { _explicitNullValueEntities = value; AdditionalData?.Remove("entities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entities"); else _explicitNullProperties?.Remove("entities"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConfigEntityType?> _explicitNullValueEntities = default!;
 #endif
         /// <summary>Data collection item IDs whose extracted values are not redacted. Their rationales are still redacted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExcludedDataCollectionIds { get => _explicitNullValueExcludedDataCollectionIds; set { _explicitNullValueExcludedDataCollectionIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_data_collection_ids"); else _explicitNullProperties?.Remove("excluded_data_collection_ids"); } }
+        public List<string>? ExcludedDataCollectionIds { get => _explicitNullValueExcludedDataCollectionIds; set { _explicitNullValueExcludedDataCollectionIds = value; AdditionalData?.Remove("excluded_data_collection_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_data_collection_ids"); else _explicitNullProperties?.Remove("excluded_data_collection_ids"); } }
         private List<string>? _explicitNullValueExcludedDataCollectionIds = default!;
 #nullable restore
 #else
-        public List<string> ExcludedDataCollectionIds { get => _explicitNullValueExcludedDataCollectionIds; set { _explicitNullValueExcludedDataCollectionIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_data_collection_ids"); else _explicitNullProperties?.Remove("excluded_data_collection_ids"); } }
+        public List<string> ExcludedDataCollectionIds { get => _explicitNullValueExcludedDataCollectionIds; set { _explicitNullValueExcludedDataCollectionIds = value; AdditionalData?.Remove("excluded_data_collection_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_data_collection_ids"); else _explicitNullProperties?.Remove("excluded_data_collection_ids"); } }
         private List<string> _explicitNullValueExcludedDataCollectionIds = default!;
 #endif
         /// <summary>

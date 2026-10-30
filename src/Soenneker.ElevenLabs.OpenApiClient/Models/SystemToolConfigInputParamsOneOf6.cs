@@ -17,21 +17,24 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("suppress_turn_after_dtmf") is { } nullNodeSuppressTurnAfterDtmf && nullNodeSuppressTurnAfterDtmf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuppressTurnAfterDtmf = null;
-            if (parseNode.GetChildNode("system_tool_type") is { } nullNodeSystemToolType && nullNodeSystemToolType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SystemToolType = null;
-            if (parseNode.GetChildNode("use_out_of_band_dtmf") is { } nullNodeUseOutOfBandDtmf && nullNodeUseOutOfBandDtmf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UseOutOfBandDtmf = null;
+            if (parseNode.GetChildNode("suppress_turn_after_dtmf") is null) { _explicitNullValueSuppressTurnAfterDtmf = default!; _explicitNullProperties?.Remove("suppress_turn_after_dtmf"); }
+            else if (parseNode.GetChildNode("suppress_turn_after_dtmf") is { } nullNodeSuppressTurnAfterDtmf && nullNodeSuppressTurnAfterDtmf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuppressTurnAfterDtmf = null;
+            if (parseNode.GetChildNode("system_tool_type") is null) { _explicitNullValueSystemToolType = default!; _explicitNullProperties?.Remove("system_tool_type"); }
+            else if (parseNode.GetChildNode("system_tool_type") is { } nullNodeSystemToolType && nullNodeSystemToolType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SystemToolType = null;
+            if (parseNode.GetChildNode("use_out_of_band_dtmf") is null) { _explicitNullValueUseOutOfBandDtmf = default!; _explicitNullProperties?.Remove("use_out_of_band_dtmf"); }
+            else if (parseNode.GetChildNode("use_out_of_band_dtmf") is { } nullNodeUseOutOfBandDtmf && nullNodeUseOutOfBandDtmf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UseOutOfBandDtmf = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>If true, the agent will not generate further speech after playing DTMF tones. This prevents the agent&apos;s speech from interfering with IVR systems.</summary>
-        public bool? SuppressTurnAfterDtmf { get => _explicitNullValueSuppressTurnAfterDtmf; set { _explicitNullValueSuppressTurnAfterDtmf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suppress_turn_after_dtmf"); else _explicitNullProperties?.Remove("suppress_turn_after_dtmf"); } }
+        public bool? SuppressTurnAfterDtmf { get => _explicitNullValueSuppressTurnAfterDtmf; set { _explicitNullValueSuppressTurnAfterDtmf = value; AdditionalData?.Remove("suppress_turn_after_dtmf"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suppress_turn_after_dtmf"); else _explicitNullProperties?.Remove("suppress_turn_after_dtmf"); } }
         private bool? _explicitNullValueSuppressTurnAfterDtmf = default!;
         /// <summary>The system_tool_type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInputParamsOneOf6_system_tool_type? SystemToolType { get => _explicitNullValueSystemToolType; set { _explicitNullValueSystemToolType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("system_tool_type"); else _explicitNullProperties?.Remove("system_tool_type"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInputParamsOneOf6_system_tool_type? SystemToolType { get => _explicitNullValueSystemToolType; set { _explicitNullValueSystemToolType = value; AdditionalData?.Remove("system_tool_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("system_tool_type"); else _explicitNullProperties?.Remove("system_tool_type"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInputParamsOneOf6_system_tool_type? _explicitNullValueSystemToolType = default!;
         /// <summary>Send DTMF tones as out-of-band RTP events (RFC 4733) instead of in-band audio. Only effective for SIP trunk imported numbers.</summary>
-        public bool? UseOutOfBandDtmf { get => _explicitNullValueUseOutOfBandDtmf; set { _explicitNullValueUseOutOfBandDtmf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("use_out_of_band_dtmf"); else _explicitNullProperties?.Remove("use_out_of_band_dtmf"); } }
+        public bool? UseOutOfBandDtmf { get => _explicitNullValueUseOutOfBandDtmf; set { _explicitNullValueUseOutOfBandDtmf = value; AdditionalData?.Remove("use_out_of_band_dtmf"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("use_out_of_band_dtmf"); else _explicitNullProperties?.Remove("use_out_of_band_dtmf"); } }
         private bool? _explicitNullValueUseOutOfBandDtmf = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInputParamsOneOf6"/> and sets the default values.
@@ -61,7 +64,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "suppress_turn_after_dtmf", n => { SuppressTurnAfterDtmf = n.GetBoolValue(); } },
-                { "system_tool_type", n => { SystemToolType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInputParamsOneOf6_system_tool_type>(); } },
+                { "system_tool_type", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInputParamsOneOf6_system_tool_type>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSystemToolType = default; _explicitNullProperties?.Remove("system_tool_type"); AdditionalData["system_tool_type"] = unknown; } else { SystemToolType = parsed; AdditionalData.Remove("system_tool_type"); } } },
                 { "use_out_of_band_dtmf", n => { UseOutOfBandDtmf = n.GetBoolValue(); } },
             };
         }

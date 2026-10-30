@@ -17,7 +17,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("procedure_id") is { } nullNodeProcedureId && nullNodeProcedureId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProcedureId = null;
+            if (parseNode.GetChildNode("procedure_id") is null) { _explicitNullValueProcedureId = default!; _explicitNullProperties?.Remove("procedure_id"); }
+            else if (parseNode.GetChildNode("procedure_id") is { } nullNodeProcedureId && nullNodeProcedureId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProcedureId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>ID of the created procedure</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProcedureId { get => _explicitNullValueProcedureId; set { _explicitNullValueProcedureId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("procedure_id"); else _explicitNullProperties?.Remove("procedure_id"); } }
+        public string? ProcedureId { get => _explicitNullValueProcedureId; set { _explicitNullValueProcedureId = value; AdditionalData?.Remove("procedure_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("procedure_id"); else _explicitNullProperties?.Remove("procedure_id"); } }
         private string? _explicitNullValueProcedureId = default!;
 #nullable restore
 #else
-        public string ProcedureId { get => _explicitNullValueProcedureId; set { _explicitNullValueProcedureId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("procedure_id"); else _explicitNullProperties?.Remove("procedure_id"); } }
+        public string ProcedureId { get => _explicitNullValueProcedureId; set { _explicitNullValueProcedureId = value; AdditionalData?.Remove("procedure_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("procedure_id"); else _explicitNullProperties?.Remove("procedure_id"); } }
         private string _explicitNullValueProcedureId = default!;
 #endif
         /// <summary>

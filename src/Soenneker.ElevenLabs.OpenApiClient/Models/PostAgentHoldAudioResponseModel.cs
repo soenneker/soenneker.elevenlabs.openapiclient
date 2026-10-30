@@ -17,8 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("agent_id") is { } nullNodeAgentId && nullNodeAgentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentId = null;
-            if (parseNode.GetChildNode("hold_audio") is { } nullNodeHoldAudio && nullNodeHoldAudio.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HoldAudio = null;
+            if (parseNode.GetChildNode("agent_id") is null) { _explicitNullValueAgentId = default!; _explicitNullProperties?.Remove("agent_id"); }
+            else if (parseNode.GetChildNode("agent_id") is { } nullNodeAgentId && nullNodeAgentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentId = null;
+            if (parseNode.GetChildNode("hold_audio") is null) { _explicitNullValueHoldAudio = default!; _explicitNullProperties?.Remove("hold_audio"); }
+            else if (parseNode.GetChildNode("hold_audio") is { } nullNodeHoldAudio && nullNodeHoldAudio.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HoldAudio = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The agent_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
+        public string? AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; AdditionalData?.Remove("agent_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
         private string? _explicitNullValueAgentId = default!;
 #nullable restore
 #else
-        public string AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
+        public string AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; AdditionalData?.Remove("agent_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
         private string _explicitNullValueAgentId = default!;
 #endif
         /// <summary>Custom hold audio played on loop to callers waiting in the agent&apos;s queue.Set by uploading a file through the agent hold-audio endpoint. Values sent inagent create or update requests are ignored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentHoldAudioConfig? HoldAudio { get => _explicitNullValueHoldAudio; set { _explicitNullValueHoldAudio = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hold_audio"); else _explicitNullProperties?.Remove("hold_audio"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentHoldAudioConfig? HoldAudio { get => _explicitNullValueHoldAudio; set { _explicitNullValueHoldAudio = value; AdditionalData?.Remove("hold_audio"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hold_audio"); else _explicitNullProperties?.Remove("hold_audio"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentHoldAudioConfig? _explicitNullValueHoldAudio = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentHoldAudioConfig HoldAudio { get => _explicitNullValueHoldAudio; set { _explicitNullValueHoldAudio = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hold_audio"); else _explicitNullProperties?.Remove("hold_audio"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentHoldAudioConfig HoldAudio { get => _explicitNullValueHoldAudio; set { _explicitNullValueHoldAudio = value; AdditionalData?.Remove("hold_audio"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hold_audio"); else _explicitNullProperties?.Remove("hold_audio"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentHoldAudioConfig _explicitNullValueHoldAudio = default!;
 #endif
         /// <summary>

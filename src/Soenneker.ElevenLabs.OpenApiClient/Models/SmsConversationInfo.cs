@@ -17,10 +17,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("agent_phone_number") is { } nullNodeAgentPhoneNumber && nullNodeAgentPhoneNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentPhoneNumber = null;
-            if (parseNode.GetChildNode("direction") is { } nullNodeDirection && nullNodeDirection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Direction = null;
-            if (parseNode.GetChildNode("phone_number_id") is { } nullNodePhoneNumberId && nullNodePhoneNumberId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhoneNumberId = null;
-            if (parseNode.GetChildNode("sms_user_phone_number") is { } nullNodeSmsUserPhoneNumber && nullNodeSmsUserPhoneNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SmsUserPhoneNumber = null;
+            if (parseNode.GetChildNode("agent_phone_number") is null) { _explicitNullValueAgentPhoneNumber = default!; _explicitNullProperties?.Remove("agent_phone_number"); }
+            else if (parseNode.GetChildNode("agent_phone_number") is { } nullNodeAgentPhoneNumber && nullNodeAgentPhoneNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentPhoneNumber = null;
+            if (parseNode.GetChildNode("direction") is null) { _explicitNullValueDirection = default!; _explicitNullProperties?.Remove("direction"); }
+            else if (parseNode.GetChildNode("direction") is { } nullNodeDirection && nullNodeDirection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Direction = null;
+            if (parseNode.GetChildNode("phone_number_id") is null) { _explicitNullValuePhoneNumberId = default!; _explicitNullProperties?.Remove("phone_number_id"); }
+            else if (parseNode.GetChildNode("phone_number_id") is { } nullNodePhoneNumberId && nullNodePhoneNumberId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhoneNumberId = null;
+            if (parseNode.GetChildNode("sms_user_phone_number") is null) { _explicitNullValueSmsUserPhoneNumber = default!; _explicitNullProperties?.Remove("sms_user_phone_number"); }
+            else if (parseNode.GetChildNode("sms_user_phone_number") is { } nullNodeSmsUserPhoneNumber && nullNodeSmsUserPhoneNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SmsUserPhoneNumber = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,34 +32,34 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The agent_phone_number property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AgentPhoneNumber { get => _explicitNullValueAgentPhoneNumber; set { _explicitNullValueAgentPhoneNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_phone_number"); else _explicitNullProperties?.Remove("agent_phone_number"); } }
+        public string? AgentPhoneNumber { get => _explicitNullValueAgentPhoneNumber; set { _explicitNullValueAgentPhoneNumber = value; AdditionalData?.Remove("agent_phone_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_phone_number"); else _explicitNullProperties?.Remove("agent_phone_number"); } }
         private string? _explicitNullValueAgentPhoneNumber = default!;
 #nullable restore
 #else
-        public string AgentPhoneNumber { get => _explicitNullValueAgentPhoneNumber; set { _explicitNullValueAgentPhoneNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_phone_number"); else _explicitNullProperties?.Remove("agent_phone_number"); } }
+        public string AgentPhoneNumber { get => _explicitNullValueAgentPhoneNumber; set { _explicitNullValueAgentPhoneNumber = value; AdditionalData?.Remove("agent_phone_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_phone_number"); else _explicitNullProperties?.Remove("agent_phone_number"); } }
         private string _explicitNullValueAgentPhoneNumber = default!;
 #endif
         /// <summary>The direction property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SmsConversationInfoDirection? Direction { get => _explicitNullValueDirection; set { _explicitNullValueDirection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("direction"); else _explicitNullProperties?.Remove("direction"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SmsConversationInfoDirection? Direction { get => _explicitNullValueDirection; set { _explicitNullValueDirection = value; AdditionalData?.Remove("direction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("direction"); else _explicitNullProperties?.Remove("direction"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.SmsConversationInfoDirection? _explicitNullValueDirection = default!;
         /// <summary>The phone_number_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PhoneNumberId { get => _explicitNullValuePhoneNumberId; set { _explicitNullValuePhoneNumberId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_number_id"); else _explicitNullProperties?.Remove("phone_number_id"); } }
+        public string? PhoneNumberId { get => _explicitNullValuePhoneNumberId; set { _explicitNullValuePhoneNumberId = value; AdditionalData?.Remove("phone_number_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_number_id"); else _explicitNullProperties?.Remove("phone_number_id"); } }
         private string? _explicitNullValuePhoneNumberId = default!;
 #nullable restore
 #else
-        public string PhoneNumberId { get => _explicitNullValuePhoneNumberId; set { _explicitNullValuePhoneNumberId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_number_id"); else _explicitNullProperties?.Remove("phone_number_id"); } }
+        public string PhoneNumberId { get => _explicitNullValuePhoneNumberId; set { _explicitNullValuePhoneNumberId = value; AdditionalData?.Remove("phone_number_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_number_id"); else _explicitNullProperties?.Remove("phone_number_id"); } }
         private string _explicitNullValuePhoneNumberId = default!;
 #endif
         /// <summary>The sms_user_phone_number property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SmsUserPhoneNumber { get => _explicitNullValueSmsUserPhoneNumber; set { _explicitNullValueSmsUserPhoneNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sms_user_phone_number"); else _explicitNullProperties?.Remove("sms_user_phone_number"); } }
+        public string? SmsUserPhoneNumber { get => _explicitNullValueSmsUserPhoneNumber; set { _explicitNullValueSmsUserPhoneNumber = value; AdditionalData?.Remove("sms_user_phone_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sms_user_phone_number"); else _explicitNullProperties?.Remove("sms_user_phone_number"); } }
         private string? _explicitNullValueSmsUserPhoneNumber = default!;
 #nullable restore
 #else
-        public string SmsUserPhoneNumber { get => _explicitNullValueSmsUserPhoneNumber; set { _explicitNullValueSmsUserPhoneNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sms_user_phone_number"); else _explicitNullProperties?.Remove("sms_user_phone_number"); } }
+        public string SmsUserPhoneNumber { get => _explicitNullValueSmsUserPhoneNumber; set { _explicitNullValueSmsUserPhoneNumber = value; AdditionalData?.Remove("sms_user_phone_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sms_user_phone_number"); else _explicitNullProperties?.Remove("sms_user_phone_number"); } }
         private string _explicitNullValueSmsUserPhoneNumber = default!;
 #endif
         /// <summary>
@@ -84,7 +88,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "agent_phone_number", n => { AgentPhoneNumber = n.GetStringValue(); } },
-                { "direction", n => { Direction = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmsConversationInfoDirection>(); } },
+                { "direction", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmsConversationInfoDirection>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDirection = default; _explicitNullProperties?.Remove("direction"); AdditionalData["direction"] = unknown; } else { Direction = parsed; AdditionalData.Remove("direction"); } } },
                 { "phone_number_id", n => { PhoneNumberId = n.GetStringValue(); } },
                 { "sms_user_phone_number", n => { SmsUserPhoneNumber = n.GetStringValue(); } },
             };

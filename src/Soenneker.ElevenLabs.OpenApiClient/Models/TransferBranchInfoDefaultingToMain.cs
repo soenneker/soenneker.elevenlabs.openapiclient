@@ -17,9 +17,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("branch_id") is { } nullNodeBranchId && nullNodeBranchId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BranchId = null;
-            if (parseNode.GetChildNode("branch_reason") is { } nullNodeBranchReason && nullNodeBranchReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BranchReason = null;
-            if (parseNode.GetChildNode("traffic_percentage") is { } nullNodeTrafficPercentage && nullNodeTrafficPercentage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrafficPercentage = null;
+            if (parseNode.GetChildNode("branch_id") is null) { _explicitNullValueBranchId = default!; _explicitNullProperties?.Remove("branch_id"); }
+            else if (parseNode.GetChildNode("branch_id") is { } nullNodeBranchId && nullNodeBranchId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BranchId = null;
+            if (parseNode.GetChildNode("branch_reason") is null) { _explicitNullValueBranchReason = default!; _explicitNullProperties?.Remove("branch_reason"); }
+            else if (parseNode.GetChildNode("branch_reason") is { } nullNodeBranchReason && nullNodeBranchReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BranchReason = null;
+            if (parseNode.GetChildNode("traffic_percentage") is null) { _explicitNullValueTrafficPercentage = default!; _explicitNullProperties?.Remove("traffic_percentage"); }
+            else if (parseNode.GetChildNode("traffic_percentage") is { } nullNodeTrafficPercentage && nullNodeTrafficPercentage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrafficPercentage = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,25 +30,25 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The branch_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BranchId { get => _explicitNullValueBranchId; set { _explicitNullValueBranchId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch_id"); else _explicitNullProperties?.Remove("branch_id"); } }
+        public string? BranchId { get => _explicitNullValueBranchId; set { _explicitNullValueBranchId = value; AdditionalData?.Remove("branch_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch_id"); else _explicitNullProperties?.Remove("branch_id"); } }
         private string? _explicitNullValueBranchId = default!;
 #nullable restore
 #else
-        public string BranchId { get => _explicitNullValueBranchId; set { _explicitNullValueBranchId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch_id"); else _explicitNullProperties?.Remove("branch_id"); } }
+        public string BranchId { get => _explicitNullValueBranchId; set { _explicitNullValueBranchId = value; AdditionalData?.Remove("branch_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch_id"); else _explicitNullProperties?.Remove("branch_id"); } }
         private string _explicitNullValueBranchId = default!;
 #endif
         /// <summary>The branch_reason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BranchReason { get => _explicitNullValueBranchReason; set { _explicitNullValueBranchReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch_reason"); else _explicitNullProperties?.Remove("branch_reason"); } }
+        public string? BranchReason { get => _explicitNullValueBranchReason; set { _explicitNullValueBranchReason = value; AdditionalData?.Remove("branch_reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch_reason"); else _explicitNullProperties?.Remove("branch_reason"); } }
         private string? _explicitNullValueBranchReason = default!;
 #nullable restore
 #else
-        public string BranchReason { get => _explicitNullValueBranchReason; set { _explicitNullValueBranchReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch_reason"); else _explicitNullProperties?.Remove("branch_reason"); } }
+        public string BranchReason { get => _explicitNullValueBranchReason; set { _explicitNullValueBranchReason = value; AdditionalData?.Remove("branch_reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch_reason"); else _explicitNullProperties?.Remove("branch_reason"); } }
         private string _explicitNullValueBranchReason = default!;
 #endif
         /// <summary>The traffic_percentage property</summary>
-        public double? TrafficPercentage { get => _explicitNullValueTrafficPercentage; set { _explicitNullValueTrafficPercentage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traffic_percentage"); else _explicitNullProperties?.Remove("traffic_percentage"); } }
+        public double? TrafficPercentage { get => _explicitNullValueTrafficPercentage; set { _explicitNullValueTrafficPercentage = value; AdditionalData?.Remove("traffic_percentage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traffic_percentage"); else _explicitNullProperties?.Remove("traffic_percentage"); } }
         private double? _explicitNullValueTrafficPercentage = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferBranchInfoDefaultingToMain"/> and sets the default values.

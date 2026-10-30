@@ -17,13 +17,20 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("data_collection_results") is { } nullNodeDataCollectionResults && nullNodeDataCollectionResults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataCollectionResults = null;
-            if (parseNode.GetChildNode("evaluation_criteria_results") is { } nullNodeEvaluationCriteriaResults && nullNodeEvaluationCriteriaResults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EvaluationCriteriaResults = null;
-            if (parseNode.GetChildNode("scope") is { } nullNodeScope && nullNodeScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scope = null;
-            if (parseNode.GetChildNode("source_agent_id") is { } nullNodeSourceAgentId && nullNodeSourceAgentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceAgentId = null;
-            if (parseNode.GetChildNode("source_branch_id") is { } nullNodeSourceBranchId && nullNodeSourceBranchId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceBranchId = null;
-            if (parseNode.GetChildNode("successful") is { } nullNodeSuccessful && nullNodeSuccessful.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Successful = null;
-            if (parseNode.GetChildNode("success_score") is { } nullNodeSuccessScore && nullNodeSuccessScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuccessScore = null;
+            if (parseNode.GetChildNode("data_collection_results") is null) { _explicitNullValueDataCollectionResults = default!; _explicitNullProperties?.Remove("data_collection_results"); }
+            else if (parseNode.GetChildNode("data_collection_results") is { } nullNodeDataCollectionResults && nullNodeDataCollectionResults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataCollectionResults = null;
+            if (parseNode.GetChildNode("evaluation_criteria_results") is null) { _explicitNullValueEvaluationCriteriaResults = default!; _explicitNullProperties?.Remove("evaluation_criteria_results"); }
+            else if (parseNode.GetChildNode("evaluation_criteria_results") is { } nullNodeEvaluationCriteriaResults && nullNodeEvaluationCriteriaResults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EvaluationCriteriaResults = null;
+            if (parseNode.GetChildNode("scope") is null) { _explicitNullValueScope = default!; _explicitNullProperties?.Remove("scope"); }
+            else if (parseNode.GetChildNode("scope") is { } nullNodeScope && nullNodeScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scope = null;
+            if (parseNode.GetChildNode("source_agent_id") is null) { _explicitNullValueSourceAgentId = default!; _explicitNullProperties?.Remove("source_agent_id"); }
+            else if (parseNode.GetChildNode("source_agent_id") is { } nullNodeSourceAgentId && nullNodeSourceAgentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceAgentId = null;
+            if (parseNode.GetChildNode("source_branch_id") is null) { _explicitNullValueSourceBranchId = default!; _explicitNullProperties?.Remove("source_branch_id"); }
+            else if (parseNode.GetChildNode("source_branch_id") is { } nullNodeSourceBranchId && nullNodeSourceBranchId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceBranchId = null;
+            if (parseNode.GetChildNode("successful") is null) { _explicitNullValueSuccessful = default!; _explicitNullProperties?.Remove("successful"); }
+            else if (parseNode.GetChildNode("successful") is { } nullNodeSuccessful && nullNodeSuccessful.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Successful = null;
+            if (parseNode.GetChildNode("success_score") is null) { _explicitNullValueSuccessScore = default!; _explicitNullProperties?.Remove("success_score"); }
+            else if (parseNode.GetChildNode("success_score") is { } nullNodeSuccessScore && nullNodeSuccessScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuccessScore = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,51 +38,51 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The data_collection_results property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResultDataCollectionResultsProperty? DataCollectionResults { get => _explicitNullValueDataCollectionResults; set { _explicitNullValueDataCollectionResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data_collection_results"); else _explicitNullProperties?.Remove("data_collection_results"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResultDataCollectionResultsProperty? DataCollectionResults { get => _explicitNullValueDataCollectionResults; set { _explicitNullValueDataCollectionResults = value; AdditionalData?.Remove("data_collection_results"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data_collection_results"); else _explicitNullProperties?.Remove("data_collection_results"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResultDataCollectionResultsProperty? _explicitNullValueDataCollectionResults = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResultDataCollectionResultsProperty DataCollectionResults { get => _explicitNullValueDataCollectionResults; set { _explicitNullValueDataCollectionResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data_collection_results"); else _explicitNullProperties?.Remove("data_collection_results"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResultDataCollectionResultsProperty DataCollectionResults { get => _explicitNullValueDataCollectionResults; set { _explicitNullValueDataCollectionResults = value; AdditionalData?.Remove("data_collection_results"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data_collection_results"); else _explicitNullProperties?.Remove("data_collection_results"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResultDataCollectionResultsProperty _explicitNullValueDataCollectionResults = default!;
 #endif
         /// <summary>The evaluation_criteria_results property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResultEvaluationCriteriaResultsProperty? EvaluationCriteriaResults { get => _explicitNullValueEvaluationCriteriaResults; set { _explicitNullValueEvaluationCriteriaResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluation_criteria_results"); else _explicitNullProperties?.Remove("evaluation_criteria_results"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResultEvaluationCriteriaResultsProperty? EvaluationCriteriaResults { get => _explicitNullValueEvaluationCriteriaResults; set { _explicitNullValueEvaluationCriteriaResults = value; AdditionalData?.Remove("evaluation_criteria_results"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluation_criteria_results"); else _explicitNullProperties?.Remove("evaluation_criteria_results"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResultEvaluationCriteriaResultsProperty? _explicitNullValueEvaluationCriteriaResults = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResultEvaluationCriteriaResultsProperty EvaluationCriteriaResults { get => _explicitNullValueEvaluationCriteriaResults; set { _explicitNullValueEvaluationCriteriaResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluation_criteria_results"); else _explicitNullProperties?.Remove("evaluation_criteria_results"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResultEvaluationCriteriaResultsProperty EvaluationCriteriaResults { get => _explicitNullValueEvaluationCriteriaResults; set { _explicitNullValueEvaluationCriteriaResults = value; AdditionalData?.Remove("evaluation_criteria_results"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluation_criteria_results"); else _explicitNullProperties?.Remove("evaluation_criteria_results"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResultEvaluationCriteriaResultsProperty _explicitNullValueEvaluationCriteriaResults = default!;
 #endif
         /// <summary>The scope of the analysis. &apos;conversation&apos; uses the full transcript; &apos;agent&apos; uses only the portion where the defining agent was active.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope? Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope? Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; AdditionalData?.Remove("scope"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope? _explicitNullValueScope = default!;
         /// <summary>The source_agent_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceAgentId { get => _explicitNullValueSourceAgentId; set { _explicitNullValueSourceAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_agent_id"); else _explicitNullProperties?.Remove("source_agent_id"); } }
+        public string? SourceAgentId { get => _explicitNullValueSourceAgentId; set { _explicitNullValueSourceAgentId = value; AdditionalData?.Remove("source_agent_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_agent_id"); else _explicitNullProperties?.Remove("source_agent_id"); } }
         private string? _explicitNullValueSourceAgentId = default!;
 #nullable restore
 #else
-        public string SourceAgentId { get => _explicitNullValueSourceAgentId; set { _explicitNullValueSourceAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_agent_id"); else _explicitNullProperties?.Remove("source_agent_id"); } }
+        public string SourceAgentId { get => _explicitNullValueSourceAgentId; set { _explicitNullValueSourceAgentId = value; AdditionalData?.Remove("source_agent_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_agent_id"); else _explicitNullProperties?.Remove("source_agent_id"); } }
         private string _explicitNullValueSourceAgentId = default!;
 #endif
         /// <summary>Branch of the agent for this scoped block; disambiguates repeated agent_id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceBranchId { get => _explicitNullValueSourceBranchId; set { _explicitNullValueSourceBranchId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_branch_id"); else _explicitNullProperties?.Remove("source_branch_id"); } }
+        public string? SourceBranchId { get => _explicitNullValueSourceBranchId; set { _explicitNullValueSourceBranchId = value; AdditionalData?.Remove("source_branch_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_branch_id"); else _explicitNullProperties?.Remove("source_branch_id"); } }
         private string? _explicitNullValueSourceBranchId = default!;
 #nullable restore
 #else
-        public string SourceBranchId { get => _explicitNullValueSourceBranchId; set { _explicitNullValueSourceBranchId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_branch_id"); else _explicitNullProperties?.Remove("source_branch_id"); } }
+        public string SourceBranchId { get => _explicitNullValueSourceBranchId; set { _explicitNullValueSourceBranchId = value; AdditionalData?.Remove("source_branch_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_branch_id"); else _explicitNullProperties?.Remove("source_branch_id"); } }
         private string _explicitNullValueSourceBranchId = default!;
 #endif
         /// <summary>The successful property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSuccessResult? Successful { get => _explicitNullValueSuccessful; set { _explicitNullValueSuccessful = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("successful"); else _explicitNullProperties?.Remove("successful"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSuccessResult? Successful { get => _explicitNullValueSuccessful; set { _explicitNullValueSuccessful = value; AdditionalData?.Remove("successful"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("successful"); else _explicitNullProperties?.Remove("successful"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSuccessResult? _explicitNullValueSuccessful = default!;
         /// <summary>The success_score property</summary>
-        public double? SuccessScore { get => _explicitNullValueSuccessScore; set { _explicitNullValueSuccessScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success_score"); else _explicitNullProperties?.Remove("success_score"); } }
+        public double? SuccessScore { get => _explicitNullValueSuccessScore; set { _explicitNullValueSuccessScore = value; AdditionalData?.Remove("success_score"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success_score"); else _explicitNullProperties?.Remove("success_score"); } }
         private double? _explicitNullValueSuccessScore = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResult"/> and sets the default values.
@@ -104,11 +111,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "data_collection_results", n => { DataCollectionResults = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResultDataCollectionResultsProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResultDataCollectionResultsProperty.CreateFromDiscriminatorValue); } },
                 { "evaluation_criteria_results", n => { EvaluationCriteriaResults = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResultEvaluationCriteriaResultsProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResultEvaluationCriteriaResultsProperty.CreateFromDiscriminatorValue); } },
-                { "scope", n => { Scope = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope>(); } },
+                { "scope", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueScope = default; _explicitNullProperties?.Remove("scope"); AdditionalData["scope"] = unknown; } else { Scope = parsed; AdditionalData.Remove("scope"); } } },
                 { "source_agent_id", n => { SourceAgentId = n.GetStringValue(); } },
                 { "source_branch_id", n => { SourceBranchId = n.GetStringValue(); } },
                 { "success_score", n => { SuccessScore = n.GetDoubleValue(); } },
-                { "successful", n => { Successful = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSuccessResult>(); } },
+                { "successful", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSuccessResult>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSuccessful = default; _explicitNullProperties?.Remove("successful"); AdditionalData["successful"] = unknown; } else { Successful = parsed; AdditionalData.Remove("successful"); } } },
             };
         }
         /// <summary>

@@ -18,7 +18,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("configs") is { } nullNodeConfigs && nullNodeConfigs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Configs = null;
+            if (parseNode.GetChildNode("configs") is null) { _explicitNullValueConfigs = default!; _explicitNullProperties?.Remove("configs"); }
+            else if (parseNode.GetChildNode("configs") is { } nullNodeConfigs && nullNodeConfigs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Configs = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The configs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfig>? Configs { get => _explicitNullValueConfigs; set { _explicitNullValueConfigs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configs"); else _explicitNullProperties?.Remove("configs"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfig>? Configs { get => _explicitNullValueConfigs; set { _explicitNullValueConfigs = value; AdditionalData?.Remove("configs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configs"); else _explicitNullProperties?.Remove("configs"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfig>? _explicitNullValueConfigs = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfig> Configs { get => _explicitNullValueConfigs; set { _explicitNullValueConfigs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configs"); else _explicitNullProperties?.Remove("configs"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfig> Configs { get => _explicitNullValueConfigs; set { _explicitNullValueConfigs = value; AdditionalData?.Remove("configs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configs"); else _explicitNullProperties?.Remove("configs"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfig> _explicitNullValueConfigs = default!;
 #endif
         /// <summary>

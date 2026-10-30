@@ -17,10 +17,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("columns") is { } nullNodeColumns && nullNodeColumns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Columns = null;
-            if (parseNode.GetChildNode("column_types") is { } nullNodeColumnTypes && nullNodeColumnTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ColumnTypes = null;
-            if (parseNode.GetChildNode("column_units") is { } nullNodeColumnUnits && nullNodeColumnUnits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ColumnUnits = null;
-            if (parseNode.GetChildNode("rows") is { } nullNodeRows && nullNodeRows.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rows = null;
+            if (parseNode.GetChildNode("columns") is null) { _explicitNullValueColumns = default!; _explicitNullProperties?.Remove("columns"); }
+            else if (parseNode.GetChildNode("columns") is { } nullNodeColumns && nullNodeColumns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Columns = null;
+            if (parseNode.GetChildNode("column_types") is null) { _explicitNullValueColumnTypes = default!; _explicitNullProperties?.Remove("column_types"); }
+            else if (parseNode.GetChildNode("column_types") is { } nullNodeColumnTypes && nullNodeColumnTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ColumnTypes = null;
+            if (parseNode.GetChildNode("column_units") is null) { _explicitNullValueColumnUnits = default!; _explicitNullProperties?.Remove("column_units"); }
+            else if (parseNode.GetChildNode("column_units") is { } nullNodeColumnUnits && nullNodeColumnUnits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ColumnUnits = null;
+            if (parseNode.GetChildNode("rows") is null) { _explicitNullValueRows = default!; _explicitNullProperties?.Remove("rows"); }
+            else if (parseNode.GetChildNode("rows") is { } nullNodeRows && nullNodeRows.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rows = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,41 +32,41 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The columns property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Columns { get => _explicitNullValueColumns; set { _explicitNullValueColumns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("columns"); else _explicitNullProperties?.Remove("columns"); } }
+        public List<string>? Columns { get => _explicitNullValueColumns; set { _explicitNullValueColumns = value; AdditionalData?.Remove("columns"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("columns"); else _explicitNullProperties?.Remove("columns"); } }
         private List<string>? _explicitNullValueColumns = default!;
 #nullable restore
 #else
-        public List<string> Columns { get => _explicitNullValueColumns; set { _explicitNullValueColumns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("columns"); else _explicitNullProperties?.Remove("columns"); } }
+        public List<string> Columns { get => _explicitNullValueColumns; set { _explicitNullValueColumns = value; AdditionalData?.Remove("columns"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("columns"); else _explicitNullProperties?.Remove("columns"); } }
         private List<string> _explicitNullValueColumns = default!;
 #endif
         /// <summary>The column_types property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAnalyticsQueryResponseModelColumnTypesItem?>? ColumnTypes { get => _explicitNullValueColumnTypes; set { _explicitNullValueColumnTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("column_types"); else _explicitNullProperties?.Remove("column_types"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAnalyticsQueryResponseModelColumnTypesItem?>? ColumnTypes { get => _explicitNullValueColumnTypes; set { _explicitNullValueColumnTypes = value; AdditionalData?.Remove("column_types"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("column_types"); else _explicitNullProperties?.Remove("column_types"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAnalyticsQueryResponseModelColumnTypesItem?>? _explicitNullValueColumnTypes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAnalyticsQueryResponseModelColumnTypesItem?> ColumnTypes { get => _explicitNullValueColumnTypes; set { _explicitNullValueColumnTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("column_types"); else _explicitNullProperties?.Remove("column_types"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAnalyticsQueryResponseModelColumnTypesItem?> ColumnTypes { get => _explicitNullValueColumnTypes; set { _explicitNullValueColumnTypes = value; AdditionalData?.Remove("column_types"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("column_types"); else _explicitNullProperties?.Remove("column_types"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAnalyticsQueryResponseModelColumnTypesItem?> _explicitNullValueColumnTypes = default!;
 #endif
         /// <summary>The column_units property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>? ColumnUnits { get => _explicitNullValueColumnUnits; set { _explicitNullValueColumnUnits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("column_units"); else _explicitNullProperties?.Remove("column_units"); } }
+        public List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>? ColumnUnits { get => _explicitNullValueColumnUnits; set { _explicitNullValueColumnUnits = value; AdditionalData?.Remove("column_units"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("column_units"); else _explicitNullProperties?.Remove("column_units"); } }
         private List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>? _explicitNullValueColumnUnits = default!;
 #nullable restore
 #else
-        public List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode> ColumnUnits { get => _explicitNullValueColumnUnits; set { _explicitNullValueColumnUnits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("column_units"); else _explicitNullProperties?.Remove("column_units"); } }
+        public List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode> ColumnUnits { get => _explicitNullValueColumnUnits; set { _explicitNullValueColumnUnits = value; AdditionalData?.Remove("column_units"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("column_units"); else _explicitNullProperties?.Remove("column_units"); } }
         private List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode> _explicitNullValueColumnUnits = default!;
 #endif
         /// <summary>The rows property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Rows { get => _explicitNullValueRows; set { _explicitNullValueRows = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rows"); else _explicitNullProperties?.Remove("rows"); } }
+        public UntypedNode? Rows { get => _explicitNullValueRows; set { _explicitNullValueRows = value; AdditionalData?.Remove("rows"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rows"); else _explicitNullProperties?.Remove("rows"); } }
         private UntypedNode? _explicitNullValueRows = default!;
 #nullable restore
 #else
-        public UntypedNode Rows { get => _explicitNullValueRows; set { _explicitNullValueRows = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rows"); else _explicitNullProperties?.Remove("rows"); } }
+        public UntypedNode Rows { get => _explicitNullValueRows; set { _explicitNullValueRows = value; AdditionalData?.Remove("rows"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rows"); else _explicitNullProperties?.Remove("rows"); } }
         private UntypedNode _explicitNullValueRows = default!;
 #endif
         /// <summary>

@@ -18,9 +18,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("area_codes") is { } nullNodeAreaCodes && nullNodeAreaCodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AreaCodes = null;
-            if (parseNode.GetChildNode("customer_facing_agent_id") is { } nullNodeCustomerFacingAgentId && nullNodeCustomerFacingAgentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerFacingAgentId = null;
-            if (parseNode.GetChildNode("number_type") is { } nullNodeNumberType && nullNodeNumberType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NumberType = null;
+            if (parseNode.GetChildNode("area_codes") is null) { _explicitNullValueAreaCodes = default!; _explicitNullProperties?.Remove("area_codes"); }
+            else if (parseNode.GetChildNode("area_codes") is { } nullNodeAreaCodes && nullNodeAreaCodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AreaCodes = null;
+            if (parseNode.GetChildNode("customer_facing_agent_id") is null) { _explicitNullValueCustomerFacingAgentId = default!; _explicitNullProperties?.Remove("customer_facing_agent_id"); }
+            else if (parseNode.GetChildNode("customer_facing_agent_id") is { } nullNodeCustomerFacingAgentId && nullNodeCustomerFacingAgentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerFacingAgentId = null;
+            if (parseNode.GetChildNode("number_type") is null) { _explicitNullValueNumberType = default!; _explicitNullProperties?.Remove("number_type"); }
+            else if (parseNode.GetChildNode("number_type") is { } nullNodeNumberType && nullNodeNumberType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NumberType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,25 +31,25 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Preferred US or Canadian area codes, e.g. `[&quot;415&quot;, &quot;628&quot;]`. Codes outside the business&apos;s country are ignored, and any number is given when none of these is available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AreaCodes { get => _explicitNullValueAreaCodes; set { _explicitNullValueAreaCodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("area_codes"); else _explicitNullProperties?.Remove("area_codes"); } }
+        public List<string>? AreaCodes { get => _explicitNullValueAreaCodes; set { _explicitNullValueAreaCodes = value; AdditionalData?.Remove("area_codes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("area_codes"); else _explicitNullProperties?.Remove("area_codes"); } }
         private List<string>? _explicitNullValueAreaCodes = default!;
 #nullable restore
 #else
-        public List<string> AreaCodes { get => _explicitNullValueAreaCodes; set { _explicitNullValueAreaCodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("area_codes"); else _explicitNullProperties?.Remove("area_codes"); } }
+        public List<string> AreaCodes { get => _explicitNullValueAreaCodes; set { _explicitNullValueAreaCodes = value; AdditionalData?.Remove("area_codes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("area_codes"); else _explicitNullProperties?.Remove("area_codes"); } }
         private List<string> _explicitNullValueAreaCodes = default!;
 #endif
         /// <summary>The receptionist that answers calls to the number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomerFacingAgentId { get => _explicitNullValueCustomerFacingAgentId; set { _explicitNullValueCustomerFacingAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_facing_agent_id"); else _explicitNullProperties?.Remove("customer_facing_agent_id"); } }
+        public string? CustomerFacingAgentId { get => _explicitNullValueCustomerFacingAgentId; set { _explicitNullValueCustomerFacingAgentId = value; AdditionalData?.Remove("customer_facing_agent_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_facing_agent_id"); else _explicitNullProperties?.Remove("customer_facing_agent_id"); } }
         private string? _explicitNullValueCustomerFacingAgentId = default!;
 #nullable restore
 #else
-        public string CustomerFacingAgentId { get => _explicitNullValueCustomerFacingAgentId; set { _explicitNullValueCustomerFacingAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_facing_agent_id"); else _explicitNullProperties?.Remove("customer_facing_agent_id"); } }
+        public string CustomerFacingAgentId { get => _explicitNullValueCustomerFacingAgentId; set { _explicitNullValueCustomerFacingAgentId = value; AdditionalData?.Remove("customer_facing_agent_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_facing_agent_id"); else _explicitNullProperties?.Remove("customer_facing_agent_id"); } }
         private string _explicitNullValueCustomerFacingAgentId = default!;
 #endif
         /// <summary>Local or mobile, in a country that requires paperwork before a number takes calls. Leave unset to try mobile first. Ignored in the US and Canada.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ApplicationNumberType? NumberType { get => _explicitNullValueNumberType; set { _explicitNullValueNumberType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("number_type"); else _explicitNullProperties?.Remove("number_type"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ApplicationNumberType? NumberType { get => _explicitNullValueNumberType; set { _explicitNullValueNumberType = value; AdditionalData?.Remove("number_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("number_type"); else _explicitNullProperties?.Remove("number_type"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ApplicationNumberType? _explicitNullValueNumberType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatePhoneAssignmentRequest"/> and sets the default values.
@@ -75,7 +78,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "area_codes", n => { AreaCodes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "customer_facing_agent_id", n => { CustomerFacingAgentId = n.GetStringValue(); } },
-                { "number_type", n => { NumberType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ApplicationNumberType>(); } },
+                { "number_type", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ApplicationNumberType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueNumberType = default; _explicitNullProperties?.Remove("number_type"); AdditionalData["number_type"] = unknown; } else { NumberType = parsed; AdditionalData.Remove("number_type"); } } },
             };
         }
         /// <summary>

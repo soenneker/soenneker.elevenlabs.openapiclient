@@ -17,9 +17,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("background_noises") is { } nullNodeBackgroundNoises && nullNodeBackgroundNoises.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BackgroundNoises = null;
-            if (parseNode.GetChildNode("environments") is { } nullNodeEnvironments && nullNodeEnvironments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Environments = null;
-            if (parseNode.GetChildNode("filter_presets") is { } nullNodeFilterPresets && nullNodeFilterPresets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FilterPresets = null;
+            if (parseNode.GetChildNode("background_noises") is null) { _explicitNullValueBackgroundNoises = default!; _explicitNullProperties?.Remove("background_noises"); }
+            else if (parseNode.GetChildNode("background_noises") is { } nullNodeBackgroundNoises && nullNodeBackgroundNoises.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BackgroundNoises = null;
+            if (parseNode.GetChildNode("environments") is null) { _explicitNullValueEnvironments = default!; _explicitNullProperties?.Remove("environments"); }
+            else if (parseNode.GetChildNode("environments") is { } nullNodeEnvironments && nullNodeEnvironments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Environments = null;
+            if (parseNode.GetChildNode("filter_presets") is null) { _explicitNullValueFilterPresets = default!; _explicitNullProperties?.Remove("filter_presets"); }
+            else if (parseNode.GetChildNode("filter_presets") is { } nullNodeFilterPresets && nullNodeFilterPresets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FilterPresets = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The background_noises property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioEffectsBackgroundNoiseResponseModel>? BackgroundNoises { get => _explicitNullValueBackgroundNoises; set { _explicitNullValueBackgroundNoises = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("background_noises"); else _explicitNullProperties?.Remove("background_noises"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioEffectsBackgroundNoiseResponseModel>? BackgroundNoises { get => _explicitNullValueBackgroundNoises; set { _explicitNullValueBackgroundNoises = value; AdditionalData?.Remove("background_noises"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("background_noises"); else _explicitNullProperties?.Remove("background_noises"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioEffectsBackgroundNoiseResponseModel>? _explicitNullValueBackgroundNoises = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioEffectsBackgroundNoiseResponseModel> BackgroundNoises { get => _explicitNullValueBackgroundNoises; set { _explicitNullValueBackgroundNoises = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("background_noises"); else _explicitNullProperties?.Remove("background_noises"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioEffectsBackgroundNoiseResponseModel> BackgroundNoises { get => _explicitNullValueBackgroundNoises; set { _explicitNullValueBackgroundNoises = value; AdditionalData?.Remove("background_noises"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("background_noises"); else _explicitNullProperties?.Remove("background_noises"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioEffectsBackgroundNoiseResponseModel> _explicitNullValueBackgroundNoises = default!;
 #endif
         /// <summary>The environments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioEffectsEnvironmentResponseModel>? Environments { get => _explicitNullValueEnvironments; set { _explicitNullValueEnvironments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environments"); else _explicitNullProperties?.Remove("environments"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioEffectsEnvironmentResponseModel>? Environments { get => _explicitNullValueEnvironments; set { _explicitNullValueEnvironments = value; AdditionalData?.Remove("environments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environments"); else _explicitNullProperties?.Remove("environments"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioEffectsEnvironmentResponseModel>? _explicitNullValueEnvironments = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioEffectsEnvironmentResponseModel> Environments { get => _explicitNullValueEnvironments; set { _explicitNullValueEnvironments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environments"); else _explicitNullProperties?.Remove("environments"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioEffectsEnvironmentResponseModel> Environments { get => _explicitNullValueEnvironments; set { _explicitNullValueEnvironments = value; AdditionalData?.Remove("environments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environments"); else _explicitNullProperties?.Remove("environments"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioEffectsEnvironmentResponseModel> _explicitNullValueEnvironments = default!;
 #endif
         /// <summary>The filter_presets property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioEffectsFilterPresetResponseModel>? FilterPresets { get => _explicitNullValueFilterPresets; set { _explicitNullValueFilterPresets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter_presets"); else _explicitNullProperties?.Remove("filter_presets"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioEffectsFilterPresetResponseModel>? FilterPresets { get => _explicitNullValueFilterPresets; set { _explicitNullValueFilterPresets = value; AdditionalData?.Remove("filter_presets"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter_presets"); else _explicitNullProperties?.Remove("filter_presets"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioEffectsFilterPresetResponseModel>? _explicitNullValueFilterPresets = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioEffectsFilterPresetResponseModel> FilterPresets { get => _explicitNullValueFilterPresets; set { _explicitNullValueFilterPresets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter_presets"); else _explicitNullProperties?.Remove("filter_presets"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioEffectsFilterPresetResponseModel> FilterPresets { get => _explicitNullValueFilterPresets; set { _explicitNullValueFilterPresets = value; AdditionalData?.Remove("filter_presets"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter_presets"); else _explicitNullProperties?.Remove("filter_presets"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioEffectsFilterPresetResponseModel> _explicitNullValueFilterPresets = default!;
 #endif
         /// <summary>

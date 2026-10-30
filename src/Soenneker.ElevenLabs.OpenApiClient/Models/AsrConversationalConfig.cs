@@ -17,10 +17,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("keywords") is { } nullNodeKeywords && nullNodeKeywords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Keywords = null;
-            if (parseNode.GetChildNode("provider") is { } nullNodeProvider && nullNodeProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Provider = null;
-            if (parseNode.GetChildNode("quality") is { } nullNodeQuality && nullNodeQuality.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Quality = null;
-            if (parseNode.GetChildNode("user_input_audio_format") is { } nullNodeUserInputAudioFormat && nullNodeUserInputAudioFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserInputAudioFormat = null;
+            if (parseNode.GetChildNode("keywords") is null) { _explicitNullValueKeywords = default!; _explicitNullProperties?.Remove("keywords"); }
+            else if (parseNode.GetChildNode("keywords") is { } nullNodeKeywords && nullNodeKeywords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Keywords = null;
+            if (parseNode.GetChildNode("provider") is null) { _explicitNullValueProvider = default!; _explicitNullProperties?.Remove("provider"); }
+            else if (parseNode.GetChildNode("provider") is { } nullNodeProvider && nullNodeProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Provider = null;
+            if (parseNode.GetChildNode("quality") is null) { _explicitNullValueQuality = default!; _explicitNullProperties?.Remove("quality"); }
+            else if (parseNode.GetChildNode("quality") is { } nullNodeQuality && nullNodeQuality.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Quality = null;
+            if (parseNode.GetChildNode("user_input_audio_format") is null) { _explicitNullValueUserInputAudioFormat = default!; _explicitNullProperties?.Remove("user_input_audio_format"); }
+            else if (parseNode.GetChildNode("user_input_audio_format") is { } nullNodeUserInputAudioFormat && nullNodeUserInputAudioFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserInputAudioFormat = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,21 +32,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Keywords to boost prediction probability for</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Keywords { get => _explicitNullValueKeywords; set { _explicitNullValueKeywords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keywords"); else _explicitNullProperties?.Remove("keywords"); } }
+        public List<string>? Keywords { get => _explicitNullValueKeywords; set { _explicitNullValueKeywords = value; AdditionalData?.Remove("keywords"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keywords"); else _explicitNullProperties?.Remove("keywords"); } }
         private List<string>? _explicitNullValueKeywords = default!;
 #nullable restore
 #else
-        public List<string> Keywords { get => _explicitNullValueKeywords; set { _explicitNullValueKeywords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keywords"); else _explicitNullProperties?.Remove("keywords"); } }
+        public List<string> Keywords { get => _explicitNullValueKeywords; set { _explicitNullValueKeywords = value; AdditionalData?.Remove("keywords"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keywords"); else _explicitNullProperties?.Remove("keywords"); } }
         private List<string> _explicitNullValueKeywords = default!;
 #endif
         /// <summary>The provider property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrProvider? Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrProvider? Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; AdditionalData?.Remove("provider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrProvider? _explicitNullValueProvider = default!;
         /// <summary>The quality property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrQuality? Quality { get => _explicitNullValueQuality; set { _explicitNullValueQuality = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quality"); else _explicitNullProperties?.Remove("quality"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrQuality? Quality { get => _explicitNullValueQuality; set { _explicitNullValueQuality = value; AdditionalData?.Remove("quality"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quality"); else _explicitNullProperties?.Remove("quality"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrQuality? _explicitNullValueQuality = default!;
         /// <summary>The user_input_audio_format property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrInputFormat? UserInputAudioFormat { get => _explicitNullValueUserInputAudioFormat; set { _explicitNullValueUserInputAudioFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_input_audio_format"); else _explicitNullProperties?.Remove("user_input_audio_format"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrInputFormat? UserInputAudioFormat { get => _explicitNullValueUserInputAudioFormat; set { _explicitNullValueUserInputAudioFormat = value; AdditionalData?.Remove("user_input_audio_format"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_input_audio_format"); else _explicitNullProperties?.Remove("user_input_audio_format"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrInputFormat? _explicitNullValueUserInputAudioFormat = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfig"/> and sets the default values.
@@ -70,9 +74,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "keywords", n => { Keywords = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrProvider>(); } },
-                { "quality", n => { Quality = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrQuality>(); } },
-                { "user_input_audio_format", n => { UserInputAudioFormat = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrInputFormat>(); } },
+                { "provider", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrProvider>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueProvider = default; _explicitNullProperties?.Remove("provider"); AdditionalData["provider"] = unknown; } else { Provider = parsed; AdditionalData.Remove("provider"); } } },
+                { "quality", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrQuality>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueQuality = default; _explicitNullProperties?.Remove("quality"); AdditionalData["quality"] = unknown; } else { Quality = parsed; AdditionalData.Remove("quality"); } } },
+                { "user_input_audio_format", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrInputFormat>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueUserInputAudioFormat = default; _explicitNullProperties?.Remove("user_input_audio_format"); AdditionalData["user_input_audio_format"] = unknown; } else { UserInputAudioFormat = parsed; AdditionalData.Remove("user_input_audio_format"); } } },
             };
         }
         /// <summary>

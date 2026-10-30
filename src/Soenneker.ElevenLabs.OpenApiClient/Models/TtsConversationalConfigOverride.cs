@@ -17,57 +17,64 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("model_id") is { } nullNodeModelId && nullNodeModelId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModelId = null;
-            if (parseNode.GetChildNode("pronunciation_dictionary_locators") is { } nullNodePronunciationDictionaryLocators && nullNodePronunciationDictionaryLocators.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PronunciationDictionaryLocators = null;
-            if (parseNode.GetChildNode("similarity_boost") is { } nullNodeSimilarityBoost && nullNodeSimilarityBoost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SimilarityBoost = null;
-            if (parseNode.GetChildNode("speed") is { } nullNodeSpeed && nullNodeSpeed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Speed = null;
-            if (parseNode.GetChildNode("stability") is { } nullNodeStability && nullNodeStability.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Stability = null;
-            if (parseNode.GetChildNode("supported_voices") is { } nullNodeSupportedVoices && nullNodeSupportedVoices.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportedVoices = null;
-            if (parseNode.GetChildNode("voice_id") is { } nullNodeVoiceId && nullNodeVoiceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VoiceId = null;
+            if (parseNode.GetChildNode("model_id") is null) { _explicitNullValueModelId = default!; _explicitNullProperties?.Remove("model_id"); }
+            else if (parseNode.GetChildNode("model_id") is { } nullNodeModelId && nullNodeModelId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModelId = null;
+            if (parseNode.GetChildNode("pronunciation_dictionary_locators") is null) { _explicitNullValuePronunciationDictionaryLocators = default!; _explicitNullProperties?.Remove("pronunciation_dictionary_locators"); }
+            else if (parseNode.GetChildNode("pronunciation_dictionary_locators") is { } nullNodePronunciationDictionaryLocators && nullNodePronunciationDictionaryLocators.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PronunciationDictionaryLocators = null;
+            if (parseNode.GetChildNode("similarity_boost") is null) { _explicitNullValueSimilarityBoost = default!; _explicitNullProperties?.Remove("similarity_boost"); }
+            else if (parseNode.GetChildNode("similarity_boost") is { } nullNodeSimilarityBoost && nullNodeSimilarityBoost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SimilarityBoost = null;
+            if (parseNode.GetChildNode("speed") is null) { _explicitNullValueSpeed = default!; _explicitNullProperties?.Remove("speed"); }
+            else if (parseNode.GetChildNode("speed") is { } nullNodeSpeed && nullNodeSpeed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Speed = null;
+            if (parseNode.GetChildNode("stability") is null) { _explicitNullValueStability = default!; _explicitNullProperties?.Remove("stability"); }
+            else if (parseNode.GetChildNode("stability") is { } nullNodeStability && nullNodeStability.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Stability = null;
+            if (parseNode.GetChildNode("supported_voices") is null) { _explicitNullValueSupportedVoices = default!; _explicitNullProperties?.Remove("supported_voices"); }
+            else if (parseNode.GetChildNode("supported_voices") is { } nullNodeSupportedVoices && nullNodeSupportedVoices.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportedVoices = null;
+            if (parseNode.GetChildNode("voice_id") is null) { _explicitNullValueVoiceId = default!; _explicitNullProperties?.Remove("voice_id"); }
+            else if (parseNode.GetChildNode("voice_id") is { } nullNodeVoiceId && nullNodeVoiceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VoiceId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The model to use for TTS</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalModel? ModelId { get => _explicitNullValueModelId; set { _explicitNullValueModelId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model_id"); else _explicitNullProperties?.Remove("model_id"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalModel? ModelId { get => _explicitNullValueModelId; set { _explicitNullValueModelId = value; AdditionalData?.Remove("model_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model_id"); else _explicitNullProperties?.Remove("model_id"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalModel? _explicitNullValueModelId = default!;
         /// <summary>The pronunciation dictionary locators</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PydanticPronunciationDictionaryVersionLocator>? PronunciationDictionaryLocators { get => _explicitNullValuePronunciationDictionaryLocators; set { _explicitNullValuePronunciationDictionaryLocators = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pronunciation_dictionary_locators"); else _explicitNullProperties?.Remove("pronunciation_dictionary_locators"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PydanticPronunciationDictionaryVersionLocator>? PronunciationDictionaryLocators { get => _explicitNullValuePronunciationDictionaryLocators; set { _explicitNullValuePronunciationDictionaryLocators = value; AdditionalData?.Remove("pronunciation_dictionary_locators"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pronunciation_dictionary_locators"); else _explicitNullProperties?.Remove("pronunciation_dictionary_locators"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PydanticPronunciationDictionaryVersionLocator>? _explicitNullValuePronunciationDictionaryLocators = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PydanticPronunciationDictionaryVersionLocator> PronunciationDictionaryLocators { get => _explicitNullValuePronunciationDictionaryLocators; set { _explicitNullValuePronunciationDictionaryLocators = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pronunciation_dictionary_locators"); else _explicitNullProperties?.Remove("pronunciation_dictionary_locators"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PydanticPronunciationDictionaryVersionLocator> PronunciationDictionaryLocators { get => _explicitNullValuePronunciationDictionaryLocators; set { _explicitNullValuePronunciationDictionaryLocators = value; AdditionalData?.Remove("pronunciation_dictionary_locators"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pronunciation_dictionary_locators"); else _explicitNullProperties?.Remove("pronunciation_dictionary_locators"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PydanticPronunciationDictionaryVersionLocator> _explicitNullValuePronunciationDictionaryLocators = default!;
 #endif
         /// <summary>The similarity boost for generated speech</summary>
-        public double? SimilarityBoost { get => _explicitNullValueSimilarityBoost; set { _explicitNullValueSimilarityBoost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("similarity_boost"); else _explicitNullProperties?.Remove("similarity_boost"); } }
+        public double? SimilarityBoost { get => _explicitNullValueSimilarityBoost; set { _explicitNullValueSimilarityBoost = value; AdditionalData?.Remove("similarity_boost"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("similarity_boost"); else _explicitNullProperties?.Remove("similarity_boost"); } }
         private double? _explicitNullValueSimilarityBoost = default!;
         /// <summary>The speed of generated speech</summary>
-        public double? Speed { get => _explicitNullValueSpeed; set { _explicitNullValueSpeed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speed"); else _explicitNullProperties?.Remove("speed"); } }
+        public double? Speed { get => _explicitNullValueSpeed; set { _explicitNullValueSpeed = value; AdditionalData?.Remove("speed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speed"); else _explicitNullProperties?.Remove("speed"); } }
         private double? _explicitNullValueSpeed = default!;
         /// <summary>The stability of generated speech</summary>
-        public double? Stability { get => _explicitNullValueStability; set { _explicitNullValueStability = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stability"); else _explicitNullProperties?.Remove("stability"); } }
+        public double? Stability { get => _explicitNullValueStability; set { _explicitNullValueStability = value; AdditionalData?.Remove("stability"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stability"); else _explicitNullProperties?.Remove("stability"); } }
         private double? _explicitNullValueStability = default!;
         /// <summary>Additional supported voices for the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SupportedVoice>? SupportedVoices { get => _explicitNullValueSupportedVoices; set { _explicitNullValueSupportedVoices = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supported_voices"); else _explicitNullProperties?.Remove("supported_voices"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SupportedVoice>? SupportedVoices { get => _explicitNullValueSupportedVoices; set { _explicitNullValueSupportedVoices = value; AdditionalData?.Remove("supported_voices"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supported_voices"); else _explicitNullProperties?.Remove("supported_voices"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SupportedVoice>? _explicitNullValueSupportedVoices = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SupportedVoice> SupportedVoices { get => _explicitNullValueSupportedVoices; set { _explicitNullValueSupportedVoices = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supported_voices"); else _explicitNullProperties?.Remove("supported_voices"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SupportedVoice> SupportedVoices { get => _explicitNullValueSupportedVoices; set { _explicitNullValueSupportedVoices = value; AdditionalData?.Remove("supported_voices"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supported_voices"); else _explicitNullProperties?.Remove("supported_voices"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SupportedVoice> _explicitNullValueSupportedVoices = default!;
 #endif
         /// <summary>The voice ID to use for TTS</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VoiceId { get => _explicitNullValueVoiceId; set { _explicitNullValueVoiceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_id"); else _explicitNullProperties?.Remove("voice_id"); } }
+        public string? VoiceId { get => _explicitNullValueVoiceId; set { _explicitNullValueVoiceId = value; AdditionalData?.Remove("voice_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_id"); else _explicitNullProperties?.Remove("voice_id"); } }
         private string? _explicitNullValueVoiceId = default!;
 #nullable restore
 #else
-        public string VoiceId { get => _explicitNullValueVoiceId; set { _explicitNullValueVoiceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_id"); else _explicitNullProperties?.Remove("voice_id"); } }
+        public string VoiceId { get => _explicitNullValueVoiceId; set { _explicitNullValueVoiceId = value; AdditionalData?.Remove("voice_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_id"); else _explicitNullProperties?.Remove("voice_id"); } }
         private string _explicitNullValueVoiceId = default!;
 #endif
         /// <summary>
@@ -95,7 +102,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "model_id", n => { ModelId = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalModel>(); } },
+                { "model_id", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalModel>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueModelId = default; _explicitNullProperties?.Remove("model_id"); AdditionalData["model_id"] = unknown; } else { ModelId = parsed; AdditionalData.Remove("model_id"); } } },
                 { "pronunciation_dictionary_locators", n => { PronunciationDictionaryLocators = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PydanticPronunciationDictionaryVersionLocator>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PydanticPronunciationDictionaryVersionLocator.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "similarity_boost", n => { SimilarityBoost = n.GetDoubleValue(); } },
                 { "speed", n => { Speed = n.GetDoubleValue(); } },

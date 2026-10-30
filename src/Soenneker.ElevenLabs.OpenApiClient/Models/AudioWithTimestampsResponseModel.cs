@@ -17,9 +17,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("alignment") is { } nullNodeAlignment && nullNodeAlignment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Alignment = null;
-            if (parseNode.GetChildNode("audio_base64") is { } nullNodeAudioBase64 && nullNodeAudioBase64.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudioBase64 = null;
-            if (parseNode.GetChildNode("normalized_alignment") is { } nullNodeNormalizedAlignment && nullNodeNormalizedAlignment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NormalizedAlignment = null;
+            if (parseNode.GetChildNode("alignment") is null) { _explicitNullValueAlignment = default!; _explicitNullProperties?.Remove("alignment"); }
+            else if (parseNode.GetChildNode("alignment") is { } nullNodeAlignment && nullNodeAlignment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Alignment = null;
+            if (parseNode.GetChildNode("audio_base64") is null) { _explicitNullValueAudioBase64 = default!; _explicitNullProperties?.Remove("audio_base64"); }
+            else if (parseNode.GetChildNode("audio_base64") is { } nullNodeAudioBase64 && nullNodeAudioBase64.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudioBase64 = null;
+            if (parseNode.GetChildNode("normalized_alignment") is null) { _explicitNullValueNormalizedAlignment = default!; _explicitNullProperties?.Remove("normalized_alignment"); }
+            else if (parseNode.GetChildNode("normalized_alignment") is { } nullNodeNormalizedAlignment && nullNodeNormalizedAlignment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NormalizedAlignment = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Timestamp information for each character in the original text</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentResponseModel? Alignment { get => _explicitNullValueAlignment; set { _explicitNullValueAlignment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alignment"); else _explicitNullProperties?.Remove("alignment"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentResponseModel? Alignment { get => _explicitNullValueAlignment; set { _explicitNullValueAlignment = value; AdditionalData?.Remove("alignment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alignment"); else _explicitNullProperties?.Remove("alignment"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentResponseModel? _explicitNullValueAlignment = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentResponseModel Alignment { get => _explicitNullValueAlignment; set { _explicitNullValueAlignment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alignment"); else _explicitNullProperties?.Remove("alignment"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentResponseModel Alignment { get => _explicitNullValueAlignment; set { _explicitNullValueAlignment = value; AdditionalData?.Remove("alignment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alignment"); else _explicitNullProperties?.Remove("alignment"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentResponseModel _explicitNullValueAlignment = default!;
 #endif
         /// <summary>Base64 encoded audio data</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AudioBase64 { get => _explicitNullValueAudioBase64; set { _explicitNullValueAudioBase64 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_base64"); else _explicitNullProperties?.Remove("audio_base64"); } }
+        public string? AudioBase64 { get => _explicitNullValueAudioBase64; set { _explicitNullValueAudioBase64 = value; AdditionalData?.Remove("audio_base64"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_base64"); else _explicitNullProperties?.Remove("audio_base64"); } }
         private string? _explicitNullValueAudioBase64 = default!;
 #nullable restore
 #else
-        public string AudioBase64 { get => _explicitNullValueAudioBase64; set { _explicitNullValueAudioBase64 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_base64"); else _explicitNullProperties?.Remove("audio_base64"); } }
+        public string AudioBase64 { get => _explicitNullValueAudioBase64; set { _explicitNullValueAudioBase64 = value; AdditionalData?.Remove("audio_base64"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_base64"); else _explicitNullProperties?.Remove("audio_base64"); } }
         private string _explicitNullValueAudioBase64 = default!;
 #endif
         /// <summary>Timestamp information for each character in the normalized text</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentResponseModel? NormalizedAlignment { get => _explicitNullValueNormalizedAlignment; set { _explicitNullValueNormalizedAlignment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("normalized_alignment"); else _explicitNullProperties?.Remove("normalized_alignment"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentResponseModel? NormalizedAlignment { get => _explicitNullValueNormalizedAlignment; set { _explicitNullValueNormalizedAlignment = value; AdditionalData?.Remove("normalized_alignment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("normalized_alignment"); else _explicitNullProperties?.Remove("normalized_alignment"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentResponseModel? _explicitNullValueNormalizedAlignment = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentResponseModel NormalizedAlignment { get => _explicitNullValueNormalizedAlignment; set { _explicitNullValueNormalizedAlignment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("normalized_alignment"); else _explicitNullProperties?.Remove("normalized_alignment"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentResponseModel NormalizedAlignment { get => _explicitNullValueNormalizedAlignment; set { _explicitNullValueNormalizedAlignment = value; AdditionalData?.Remove("normalized_alignment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("normalized_alignment"); else _explicitNullProperties?.Remove("normalized_alignment"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentResponseModel _explicitNullValueNormalizedAlignment = default!;
 #endif
         /// <summary>

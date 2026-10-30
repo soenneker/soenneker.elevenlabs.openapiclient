@@ -56,10 +56,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("secret_id") != null))();
-            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("env_var_label") != null))();
-            if (result.ConvAiEnvVarLocator == null && result.ConvAiSecretLocator == null && result.CustomLlmApiKeyMember1 == null && matchesUnionBranch0 && !matchesUnionBranch1) result.ConvAiSecretLocator = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiSecretLocator(), parseNode);
-            if (result.ConvAiEnvVarLocator == null && result.ConvAiSecretLocator == null && result.CustomLlmApiKeyMember1 == null && matchesUnionBranch1 && !matchesUnionBranch0) result.ConvAiEnvVarLocator = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiEnvVarLocator(), parseNode);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("secret_id") && (!shapeMembers1.ContainsKey("secret_id") || (((shapeMembers1["secret_id"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("env_var_label") && (!shapeMembers1.ContainsKey("env_var_label") || (((shapeMembers1["env_var_label"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))))))))();
+            int matchingUnionBranches = 0;
+            if (matchesUnionBranch0) matchingUnionBranches++;
+            if (matchesUnionBranch1) matchingUnionBranches++;
+            bool noSelectedUnionBranch = result.ConvAiEnvVarLocator == null && result.ConvAiSecretLocator == null && result.CustomLlmApiKeyMember1 == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.ConvAiSecretLocator = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiSecretLocator(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.ConvAiEnvVarLocator = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiEnvVarLocator(), parseNode);
             if (result.ConvAiEnvVarLocator == null && result.ConvAiSecretLocator == null && result.CustomLlmApiKeyMember1 == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
@@ -69,6 +73,8 @@ return result;
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
             if(ConvAiEnvVarLocator != null || ConvAiSecretLocator != null || CustomLlmApiKeyMember1 != null)
             {
                 return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ConvAiEnvVarLocator, ConvAiSecretLocator, CustomLlmApiKeyMember1);
@@ -83,9 +89,13 @@ return result;
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
             if (ConvAiEnvVarLocator == null && ConvAiSecretLocator == null && CustomLlmApiKeyMember1 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
-            if (ConvAiEnvVarLocator != null && ConvAiSecretLocator == null && CustomLlmApiKeyMember1 == null) { if (ConvAiEnvVarLocator is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ConvAiEnvVarLocator); return; }
-            if (ConvAiSecretLocator != null && ConvAiEnvVarLocator == null && CustomLlmApiKeyMember1 == null) { if (ConvAiSecretLocator is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ConvAiSecretLocator); return; }
-            if (CustomLlmApiKeyMember1 != null && ConvAiEnvVarLocator == null && ConvAiSecretLocator == null) { if (CustomLlmApiKeyMember1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CustomLlmApiKeyMember1); return; }
+            int selectedUnionBranches = 0;
+            if (ConvAiEnvVarLocator != null) selectedUnionBranches++;
+            if (ConvAiSecretLocator != null) selectedUnionBranches++;
+            if (CustomLlmApiKeyMember1 != null) selectedUnionBranches++;
+            if (ConvAiEnvVarLocator != null && selectedUnionBranches == 1) { if (ConvAiEnvVarLocator is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ConvAiEnvVarLocator); return; }
+            if (ConvAiSecretLocator != null && selectedUnionBranches == 1) { if (ConvAiSecretLocator is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ConvAiSecretLocator); return; }
+            if (CustomLlmApiKeyMember1 != null && selectedUnionBranches == 1) { if (CustomLlmApiKeyMember1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CustomLlmApiKeyMember1); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiEnvVarLocator>(null, ConvAiEnvVarLocator, ConvAiSecretLocator, CustomLlmApiKeyMember1);

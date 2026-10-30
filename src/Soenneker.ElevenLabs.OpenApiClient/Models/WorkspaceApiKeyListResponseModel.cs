@@ -17,7 +17,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("api-keys") is { } nullNodeApiKeys && nullNodeApiKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiKeys = null;
+            if (parseNode.GetChildNode("api-keys") is null) { _explicitNullValueApiKeys = default!; _explicitNullProperties?.Remove("api-keys"); }
+            else if (parseNode.GetChildNode("api-keys") is { } nullNodeApiKeys && nullNodeApiKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiKeys = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The apiKeys property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModel>? ApiKeys { get => _explicitNullValueApiKeys; set { _explicitNullValueApiKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api-keys"); else _explicitNullProperties?.Remove("api-keys"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModel>? ApiKeys { get => _explicitNullValueApiKeys; set { _explicitNullValueApiKeys = value; AdditionalData?.Remove("api-keys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api-keys"); else _explicitNullProperties?.Remove("api-keys"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModel>? _explicitNullValueApiKeys = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModel> ApiKeys { get => _explicitNullValueApiKeys; set { _explicitNullValueApiKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api-keys"); else _explicitNullProperties?.Remove("api-keys"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModel> ApiKeys { get => _explicitNullValueApiKeys; set { _explicitNullValueApiKeys = value; AdditionalData?.Remove("api-keys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api-keys"); else _explicitNullProperties?.Remove("api-keys"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModel> _explicitNullValueApiKeys = default!;
 #endif
         /// <summary>

@@ -17,23 +17,25 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("kind") is { } nullNodeKind && nullNodeKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kind = null;
-            if (parseNode.GetChildNode("language_pairs") is { } nullNodeLanguagePairs && nullNodeLanguagePairs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LanguagePairs = null;
+            if (parseNode.GetChildNode("kind") is null) { _explicitNullValueKind = default!; _explicitNullProperties?.Remove("kind"); }
+            else if (parseNode.GetChildNode("kind") is { } nullNodeKind && nullNodeKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kind = null;
+            if (parseNode.GetChildNode("language_pairs") is null) { _explicitNullValueLanguagePairs = default!; _explicitNullProperties?.Remove("language_pairs"); }
+            else if (parseNode.GetChildNode("language_pairs") is { } nullNodeLanguagePairs && nullNodeLanguagePairs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LanguagePairs = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates this response contains source-to-destination language pairs.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguagesResponseOneOf1_kind? Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguagesResponseOneOf1_kind? Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; AdditionalData?.Remove("kind"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguagesResponseOneOf1_kind? _explicitNullValueKind = default!;
         /// <summary>The list of available source-to-destination language mappings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguagePairInfo>? LanguagePairs { get => _explicitNullValueLanguagePairs; set { _explicitNullValueLanguagePairs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language_pairs"); else _explicitNullProperties?.Remove("language_pairs"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguagePairInfo>? LanguagePairs { get => _explicitNullValueLanguagePairs; set { _explicitNullValueLanguagePairs = value; AdditionalData?.Remove("language_pairs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language_pairs"); else _explicitNullProperties?.Remove("language_pairs"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguagePairInfo>? _explicitNullValueLanguagePairs = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguagePairInfo> LanguagePairs { get => _explicitNullValueLanguagePairs; set { _explicitNullValueLanguagePairs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language_pairs"); else _explicitNullProperties?.Remove("language_pairs"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguagePairInfo> LanguagePairs { get => _explicitNullValueLanguagePairs; set { _explicitNullValueLanguagePairs = value; AdditionalData?.Remove("language_pairs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language_pairs"); else _explicitNullProperties?.Remove("language_pairs"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguagePairInfo> _explicitNullValueLanguagePairs = default!;
 #endif
         /// <summary>
@@ -61,7 +63,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguagesResponseOneOf1_kind>(); } },
+                { "kind", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguagesResponseOneOf1_kind>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueKind = default; _explicitNullProperties?.Remove("kind"); AdditionalData["kind"] = unknown; } else { Kind = parsed; AdditionalData.Remove("kind"); } } },
                 { "language_pairs", n => { LanguagePairs = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguagePairInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguagePairInfo.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }

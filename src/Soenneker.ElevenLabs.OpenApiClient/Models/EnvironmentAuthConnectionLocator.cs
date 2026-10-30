@@ -18,7 +18,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("env_var_label") is { } nullNodeEnvVarLabel && nullNodeEnvVarLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvVarLabel = null;
+            if (parseNode.GetChildNode("env_var_label") is null) { _explicitNullValueEnvVarLabel = default!; _explicitNullProperties?.Remove("env_var_label"); }
+            else if (parseNode.GetChildNode("env_var_label") is { } nullNodeEnvVarLabel && nullNodeEnvVarLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvVarLabel = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The env_var_label property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EnvVarLabel { get => _explicitNullValueEnvVarLabel; set { _explicitNullValueEnvVarLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("env_var_label"); else _explicitNullProperties?.Remove("env_var_label"); } }
+        public string? EnvVarLabel { get => _explicitNullValueEnvVarLabel; set { _explicitNullValueEnvVarLabel = value; AdditionalData?.Remove("env_var_label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("env_var_label"); else _explicitNullProperties?.Remove("env_var_label"); } }
         private string? _explicitNullValueEnvVarLabel = default!;
 #nullable restore
 #else
-        public string EnvVarLabel { get => _explicitNullValueEnvVarLabel; set { _explicitNullValueEnvVarLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("env_var_label"); else _explicitNullProperties?.Remove("env_var_label"); } }
+        public string EnvVarLabel { get => _explicitNullValueEnvVarLabel; set { _explicitNullValueEnvVarLabel = value; AdditionalData?.Remove("env_var_label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("env_var_label"); else _explicitNullProperties?.Remove("env_var_label"); } }
         private string _explicitNullValueEnvVarLabel = default!;
 #endif
         /// <summary>

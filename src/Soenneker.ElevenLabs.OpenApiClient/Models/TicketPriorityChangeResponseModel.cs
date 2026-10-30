@@ -17,28 +17,31 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("changed_at_unix_secs") is { } nullNodeChangedAtUnixSecs && nullNodeChangedAtUnixSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChangedAtUnixSecs = null;
-            if (parseNode.GetChildNode("changed_by_user_id") is { } nullNodeChangedByUserId && nullNodeChangedByUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChangedByUserId = null;
-            if (parseNode.GetChildNode("priority") is { } nullNodePriority && nullNodePriority.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Priority = null;
+            if (parseNode.GetChildNode("changed_at_unix_secs") is null) { _explicitNullValueChangedAtUnixSecs = default!; _explicitNullProperties?.Remove("changed_at_unix_secs"); }
+            else if (parseNode.GetChildNode("changed_at_unix_secs") is { } nullNodeChangedAtUnixSecs && nullNodeChangedAtUnixSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChangedAtUnixSecs = null;
+            if (parseNode.GetChildNode("changed_by_user_id") is null) { _explicitNullValueChangedByUserId = default!; _explicitNullProperties?.Remove("changed_by_user_id"); }
+            else if (parseNode.GetChildNode("changed_by_user_id") is { } nullNodeChangedByUserId && nullNodeChangedByUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChangedByUserId = null;
+            if (parseNode.GetChildNode("priority") is null) { _explicitNullValuePriority = default!; _explicitNullProperties?.Remove("priority"); }
+            else if (parseNode.GetChildNode("priority") is { } nullNodePriority && nullNodePriority.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Priority = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The changed_at_unix_secs property</summary>
-        public int? ChangedAtUnixSecs { get => _explicitNullValueChangedAtUnixSecs; set { _explicitNullValueChangedAtUnixSecs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changed_at_unix_secs"); else _explicitNullProperties?.Remove("changed_at_unix_secs"); } }
+        public int? ChangedAtUnixSecs { get => _explicitNullValueChangedAtUnixSecs; set { _explicitNullValueChangedAtUnixSecs = value; AdditionalData?.Remove("changed_at_unix_secs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changed_at_unix_secs"); else _explicitNullProperties?.Remove("changed_at_unix_secs"); } }
         private int? _explicitNullValueChangedAtUnixSecs = default!;
         /// <summary>The changed_by_user_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ChangedByUserId { get => _explicitNullValueChangedByUserId; set { _explicitNullValueChangedByUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changed_by_user_id"); else _explicitNullProperties?.Remove("changed_by_user_id"); } }
+        public string? ChangedByUserId { get => _explicitNullValueChangedByUserId; set { _explicitNullValueChangedByUserId = value; AdditionalData?.Remove("changed_by_user_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changed_by_user_id"); else _explicitNullProperties?.Remove("changed_by_user_id"); } }
         private string? _explicitNullValueChangedByUserId = default!;
 #nullable restore
 #else
-        public string ChangedByUserId { get => _explicitNullValueChangedByUserId; set { _explicitNullValueChangedByUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changed_by_user_id"); else _explicitNullProperties?.Remove("changed_by_user_id"); } }
+        public string ChangedByUserId { get => _explicitNullValueChangedByUserId; set { _explicitNullValueChangedByUserId = value; AdditionalData?.Remove("changed_by_user_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changed_by_user_id"); else _explicitNullProperties?.Remove("changed_by_user_id"); } }
         private string _explicitNullValueChangedByUserId = default!;
 #endif
         /// <summary>The priority property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketPriority? Priority { get => _explicitNullValuePriority; set { _explicitNullValuePriority = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priority"); else _explicitNullProperties?.Remove("priority"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketPriority? Priority { get => _explicitNullValuePriority; set { _explicitNullValuePriority = value; AdditionalData?.Remove("priority"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priority"); else _explicitNullProperties?.Remove("priority"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketPriority? _explicitNullValuePriority = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketPriorityChangeResponseModel"/> and sets the default values.
@@ -67,7 +70,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "changed_at_unix_secs", n => { ChangedAtUnixSecs = n.GetIntValue(); } },
                 { "changed_by_user_id", n => { ChangedByUserId = n.GetStringValue(); } },
-                { "priority", n => { Priority = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketPriority>(); } },
+                { "priority", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketPriority>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePriority = default; _explicitNullProperties?.Remove("priority"); AdditionalData["priority"] = unknown; } else { Priority = parsed; AdditionalData.Remove("priority"); } } },
             };
         }
         /// <summary>

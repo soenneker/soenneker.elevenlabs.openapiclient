@@ -18,9 +18,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("text") is { } nullNodeText && nullNodeText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Text = null;
-            if (parseNode.GetChildNode("time_in_call_secs") is { } nullNodeTimeInCallSecs && nullNodeTimeInCallSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeInCallSecs = null;
-            if (parseNode.GetChildNode("voice_label") is { } nullNodeVoiceLabel && nullNodeVoiceLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VoiceLabel = null;
+            if (parseNode.GetChildNode("text") is null) { _explicitNullValueText = default!; _explicitNullProperties?.Remove("text"); }
+            else if (parseNode.GetChildNode("text") is { } nullNodeText && nullNodeText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Text = null;
+            if (parseNode.GetChildNode("time_in_call_secs") is null) { _explicitNullValueTimeInCallSecs = default!; _explicitNullProperties?.Remove("time_in_call_secs"); }
+            else if (parseNode.GetChildNode("time_in_call_secs") is { } nullNodeTimeInCallSecs && nullNodeTimeInCallSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeInCallSecs = null;
+            if (parseNode.GetChildNode("voice_label") is null) { _explicitNullValueVoiceLabel = default!; _explicitNullProperties?.Remove("voice_label"); }
+            else if (parseNode.GetChildNode("voice_label") is { } nullNodeVoiceLabel && nullNodeVoiceLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VoiceLabel = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,24 +31,24 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The text property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Text { get => _explicitNullValueText; set { _explicitNullValueText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
+        public string? Text { get => _explicitNullValueText; set { _explicitNullValueText = value; AdditionalData?.Remove("text"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
         private string? _explicitNullValueText = default!;
 #nullable restore
 #else
-        public string Text { get => _explicitNullValueText; set { _explicitNullValueText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
+        public string Text { get => _explicitNullValueText; set { _explicitNullValueText = value; AdditionalData?.Remove("text"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
         private string _explicitNullValueText = default!;
 #endif
         /// <summary>The time_in_call_secs property</summary>
-        public int? TimeInCallSecs { get => _explicitNullValueTimeInCallSecs; set { _explicitNullValueTimeInCallSecs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_in_call_secs"); else _explicitNullProperties?.Remove("time_in_call_secs"); } }
+        public int? TimeInCallSecs { get => _explicitNullValueTimeInCallSecs; set { _explicitNullValueTimeInCallSecs = value; AdditionalData?.Remove("time_in_call_secs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_in_call_secs"); else _explicitNullProperties?.Remove("time_in_call_secs"); } }
         private int? _explicitNullValueTimeInCallSecs = default!;
         /// <summary>The voice_label property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VoiceLabel { get => _explicitNullValueVoiceLabel; set { _explicitNullValueVoiceLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_label"); else _explicitNullProperties?.Remove("voice_label"); } }
+        public string? VoiceLabel { get => _explicitNullValueVoiceLabel; set { _explicitNullValueVoiceLabel = value; AdditionalData?.Remove("voice_label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_label"); else _explicitNullProperties?.Remove("voice_label"); } }
         private string? _explicitNullValueVoiceLabel = default!;
 #nullable restore
 #else
-        public string VoiceLabel { get => _explicitNullValueVoiceLabel; set { _explicitNullValueVoiceLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_label"); else _explicitNullProperties?.Remove("voice_label"); } }
+        public string VoiceLabel { get => _explicitNullValueVoiceLabel; set { _explicitNullValueVoiceLabel = value; AdditionalData?.Remove("voice_label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_label"); else _explicitNullProperties?.Remove("voice_label"); } }
         private string _explicitNullValueVoiceLabel = default!;
 #endif
         /// <summary>

@@ -17,8 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("guest_voice_id") is { } nullNodeGuestVoiceId && nullNodeGuestVoiceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GuestVoiceId = null;
-            if (parseNode.GetChildNode("host_voice_id") is { } nullNodeHostVoiceId && nullNodeHostVoiceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HostVoiceId = null;
+            if (parseNode.GetChildNode("guest_voice_id") is null) { _explicitNullValueGuestVoiceId = default!; _explicitNullProperties?.Remove("guest_voice_id"); }
+            else if (parseNode.GetChildNode("guest_voice_id") is { } nullNodeGuestVoiceId && nullNodeGuestVoiceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GuestVoiceId = null;
+            if (parseNode.GetChildNode("host_voice_id") is null) { _explicitNullValueHostVoiceId = default!; _explicitNullProperties?.Remove("host_voice_id"); }
+            else if (parseNode.GetChildNode("host_voice_id") is { } nullNodeHostVoiceId && nullNodeHostVoiceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HostVoiceId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The ID of the guest voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GuestVoiceId { get => _explicitNullValueGuestVoiceId; set { _explicitNullValueGuestVoiceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guest_voice_id"); else _explicitNullProperties?.Remove("guest_voice_id"); } }
+        public string? GuestVoiceId { get => _explicitNullValueGuestVoiceId; set { _explicitNullValueGuestVoiceId = value; AdditionalData?.Remove("guest_voice_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guest_voice_id"); else _explicitNullProperties?.Remove("guest_voice_id"); } }
         private string? _explicitNullValueGuestVoiceId = default!;
 #nullable restore
 #else
-        public string GuestVoiceId { get => _explicitNullValueGuestVoiceId; set { _explicitNullValueGuestVoiceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guest_voice_id"); else _explicitNullProperties?.Remove("guest_voice_id"); } }
+        public string GuestVoiceId { get => _explicitNullValueGuestVoiceId; set { _explicitNullValueGuestVoiceId = value; AdditionalData?.Remove("guest_voice_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guest_voice_id"); else _explicitNullProperties?.Remove("guest_voice_id"); } }
         private string _explicitNullValueGuestVoiceId = default!;
 #endif
         /// <summary>The ID of the host voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HostVoiceId { get => _explicitNullValueHostVoiceId; set { _explicitNullValueHostVoiceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host_voice_id"); else _explicitNullProperties?.Remove("host_voice_id"); } }
+        public string? HostVoiceId { get => _explicitNullValueHostVoiceId; set { _explicitNullValueHostVoiceId = value; AdditionalData?.Remove("host_voice_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host_voice_id"); else _explicitNullProperties?.Remove("host_voice_id"); } }
         private string? _explicitNullValueHostVoiceId = default!;
 #nullable restore
 #else
-        public string HostVoiceId { get => _explicitNullValueHostVoiceId; set { _explicitNullValueHostVoiceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host_voice_id"); else _explicitNullProperties?.Remove("host_voice_id"); } }
+        public string HostVoiceId { get => _explicitNullValueHostVoiceId; set { _explicitNullValueHostVoiceId = value; AdditionalData?.Remove("host_voice_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host_voice_id"); else _explicitNullProperties?.Remove("host_voice_id"); } }
         private string _explicitNullValueHostVoiceId = default!;
 #endif
         /// <summary>

@@ -18,11 +18,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("concurrency") is { } nullNodeConcurrency && nullNodeConcurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Concurrency = null;
-            if (parseNode.GetChildNode("credits") is { } nullNodeCredits && nullNodeCredits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Credits = null;
-            if (parseNode.GetChildNode("dubbing_concurrency") is { } nullNodeDubbingConcurrency && nullNodeDubbingConcurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DubbingConcurrency = null;
-            if (parseNode.GetChildNode("music_concurrency") is { } nullNodeMusicConcurrency && nullNodeMusicConcurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MusicConcurrency = null;
-            if (parseNode.GetChildNode("pvc") is { } nullNodePvc && nullNodePvc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pvc = null;
+            if (parseNode.GetChildNode("concurrency") is null) { _explicitNullValueConcurrency = default!; _explicitNullProperties?.Remove("concurrency"); }
+            else if (parseNode.GetChildNode("concurrency") is { } nullNodeConcurrency && nullNodeConcurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Concurrency = null;
+            if (parseNode.GetChildNode("credits") is null) { _explicitNullValueCredits = default!; _explicitNullProperties?.Remove("credits"); }
+            else if (parseNode.GetChildNode("credits") is { } nullNodeCredits && nullNodeCredits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Credits = null;
+            if (parseNode.GetChildNode("dubbing_concurrency") is null) { _explicitNullValueDubbingConcurrency = default!; _explicitNullProperties?.Remove("dubbing_concurrency"); }
+            else if (parseNode.GetChildNode("dubbing_concurrency") is { } nullNodeDubbingConcurrency && nullNodeDubbingConcurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DubbingConcurrency = null;
+            if (parseNode.GetChildNode("music_concurrency") is null) { _explicitNullValueMusicConcurrency = default!; _explicitNullProperties?.Remove("music_concurrency"); }
+            else if (parseNode.GetChildNode("music_concurrency") is { } nullNodeMusicConcurrency && nullNodeMusicConcurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MusicConcurrency = null;
+            if (parseNode.GetChildNode("pvc") is null) { _explicitNullValuePvc = default!; _explicitNullProperties?.Remove("pvc"); }
+            else if (parseNode.GetChildNode("pvc") is { } nullNodePvc && nullNodePvc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pvc = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,51 +35,51 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>TTS concurrency limit (limit=None means unlimited)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ComputedUsagePlatformLimit? Concurrency { get => _explicitNullValueConcurrency; set { _explicitNullValueConcurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("concurrency"); else _explicitNullProperties?.Remove("concurrency"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ComputedUsagePlatformLimit? Concurrency { get => _explicitNullValueConcurrency; set { _explicitNullValueConcurrency = value; AdditionalData?.Remove("concurrency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("concurrency"); else _explicitNullProperties?.Remove("concurrency"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ComputedUsagePlatformLimit? _explicitNullValueConcurrency = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ComputedUsagePlatformLimit Concurrency { get => _explicitNullValueConcurrency; set { _explicitNullValueConcurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("concurrency"); else _explicitNullProperties?.Remove("concurrency"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ComputedUsagePlatformLimit Concurrency { get => _explicitNullValueConcurrency; set { _explicitNullValueConcurrency = value; AdditionalData?.Remove("concurrency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("concurrency"); else _explicitNullProperties?.Remove("concurrency"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ComputedUsagePlatformLimit _explicitNullValueConcurrency = default!;
 #endif
         /// <summary>Credit usage limit (limit=None means unlimited)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.StoredUsagePlatformLimit? Credits { get => _explicitNullValueCredits; set { _explicitNullValueCredits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credits"); else _explicitNullProperties?.Remove("credits"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.StoredUsagePlatformLimit? Credits { get => _explicitNullValueCredits; set { _explicitNullValueCredits = value; AdditionalData?.Remove("credits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credits"); else _explicitNullProperties?.Remove("credits"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.StoredUsagePlatformLimit? _explicitNullValueCredits = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.StoredUsagePlatformLimit Credits { get => _explicitNullValueCredits; set { _explicitNullValueCredits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credits"); else _explicitNullProperties?.Remove("credits"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.StoredUsagePlatformLimit Credits { get => _explicitNullValueCredits; set { _explicitNullValueCredits = value; AdditionalData?.Remove("credits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credits"); else _explicitNullProperties?.Remove("credits"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.StoredUsagePlatformLimit _explicitNullValueCredits = default!;
 #endif
         /// <summary>Dubbing concurrency limit (limit=None means unlimited)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ComputedUsagePlatformLimit? DubbingConcurrency { get => _explicitNullValueDubbingConcurrency; set { _explicitNullValueDubbingConcurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dubbing_concurrency"); else _explicitNullProperties?.Remove("dubbing_concurrency"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ComputedUsagePlatformLimit? DubbingConcurrency { get => _explicitNullValueDubbingConcurrency; set { _explicitNullValueDubbingConcurrency = value; AdditionalData?.Remove("dubbing_concurrency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dubbing_concurrency"); else _explicitNullProperties?.Remove("dubbing_concurrency"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ComputedUsagePlatformLimit? _explicitNullValueDubbingConcurrency = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ComputedUsagePlatformLimit DubbingConcurrency { get => _explicitNullValueDubbingConcurrency; set { _explicitNullValueDubbingConcurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dubbing_concurrency"); else _explicitNullProperties?.Remove("dubbing_concurrency"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ComputedUsagePlatformLimit DubbingConcurrency { get => _explicitNullValueDubbingConcurrency; set { _explicitNullValueDubbingConcurrency = value; AdditionalData?.Remove("dubbing_concurrency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dubbing_concurrency"); else _explicitNullProperties?.Remove("dubbing_concurrency"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ComputedUsagePlatformLimit _explicitNullValueDubbingConcurrency = default!;
 #endif
         /// <summary>Music generation concurrency limit (limit=None means unlimited)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ComputedUsagePlatformLimit? MusicConcurrency { get => _explicitNullValueMusicConcurrency; set { _explicitNullValueMusicConcurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("music_concurrency"); else _explicitNullProperties?.Remove("music_concurrency"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ComputedUsagePlatformLimit? MusicConcurrency { get => _explicitNullValueMusicConcurrency; set { _explicitNullValueMusicConcurrency = value; AdditionalData?.Remove("music_concurrency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("music_concurrency"); else _explicitNullProperties?.Remove("music_concurrency"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ComputedUsagePlatformLimit? _explicitNullValueMusicConcurrency = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ComputedUsagePlatformLimit MusicConcurrency { get => _explicitNullValueMusicConcurrency; set { _explicitNullValueMusicConcurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("music_concurrency"); else _explicitNullProperties?.Remove("music_concurrency"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ComputedUsagePlatformLimit MusicConcurrency { get => _explicitNullValueMusicConcurrency; set { _explicitNullValueMusicConcurrency = value; AdditionalData?.Remove("music_concurrency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("music_concurrency"); else _explicitNullProperties?.Remove("music_concurrency"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ComputedUsagePlatformLimit _explicitNullValueMusicConcurrency = default!;
 #endif
         /// <summary>Professional Voice Clone count limit (limit=None means unlimited)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ComputedUsagePlatformLimit? Pvc { get => _explicitNullValuePvc; set { _explicitNullValuePvc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pvc"); else _explicitNullProperties?.Remove("pvc"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ComputedUsagePlatformLimit? Pvc { get => _explicitNullValuePvc; set { _explicitNullValuePvc = value; AdditionalData?.Remove("pvc"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pvc"); else _explicitNullProperties?.Remove("pvc"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ComputedUsagePlatformLimit? _explicitNullValuePvc = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ComputedUsagePlatformLimit Pvc { get => _explicitNullValuePvc; set { _explicitNullValuePvc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pvc"); else _explicitNullProperties?.Remove("pvc"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ComputedUsagePlatformLimit Pvc { get => _explicitNullValuePvc; set { _explicitNullValuePvc = value; AdditionalData?.Remove("pvc"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pvc"); else _explicitNullProperties?.Remove("pvc"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ComputedUsagePlatformLimit _explicitNullValuePvc = default!;
 #endif
         /// <summary>

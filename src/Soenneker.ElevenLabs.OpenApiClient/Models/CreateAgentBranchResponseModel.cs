@@ -17,8 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("created_branch_id") is { } nullNodeCreatedBranchId && nullNodeCreatedBranchId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedBranchId = null;
-            if (parseNode.GetChildNode("created_version_id") is { } nullNodeCreatedVersionId && nullNodeCreatedVersionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedVersionId = null;
+            if (parseNode.GetChildNode("created_branch_id") is null) { _explicitNullValueCreatedBranchId = default!; _explicitNullProperties?.Remove("created_branch_id"); }
+            else if (parseNode.GetChildNode("created_branch_id") is { } nullNodeCreatedBranchId && nullNodeCreatedBranchId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedBranchId = null;
+            if (parseNode.GetChildNode("created_version_id") is null) { _explicitNullValueCreatedVersionId = default!; _explicitNullProperties?.Remove("created_version_id"); }
+            else if (parseNode.GetChildNode("created_version_id") is { } nullNodeCreatedVersionId && nullNodeCreatedVersionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedVersionId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>ID of the created branch</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedBranchId { get => _explicitNullValueCreatedBranchId; set { _explicitNullValueCreatedBranchId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_branch_id"); else _explicitNullProperties?.Remove("created_branch_id"); } }
+        public string? CreatedBranchId { get => _explicitNullValueCreatedBranchId; set { _explicitNullValueCreatedBranchId = value; AdditionalData?.Remove("created_branch_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_branch_id"); else _explicitNullProperties?.Remove("created_branch_id"); } }
         private string? _explicitNullValueCreatedBranchId = default!;
 #nullable restore
 #else
-        public string CreatedBranchId { get => _explicitNullValueCreatedBranchId; set { _explicitNullValueCreatedBranchId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_branch_id"); else _explicitNullProperties?.Remove("created_branch_id"); } }
+        public string CreatedBranchId { get => _explicitNullValueCreatedBranchId; set { _explicitNullValueCreatedBranchId = value; AdditionalData?.Remove("created_branch_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_branch_id"); else _explicitNullProperties?.Remove("created_branch_id"); } }
         private string _explicitNullValueCreatedBranchId = default!;
 #endif
         /// <summary>ID of the first version on the created branch</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedVersionId { get => _explicitNullValueCreatedVersionId; set { _explicitNullValueCreatedVersionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_version_id"); else _explicitNullProperties?.Remove("created_version_id"); } }
+        public string? CreatedVersionId { get => _explicitNullValueCreatedVersionId; set { _explicitNullValueCreatedVersionId = value; AdditionalData?.Remove("created_version_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_version_id"); else _explicitNullProperties?.Remove("created_version_id"); } }
         private string? _explicitNullValueCreatedVersionId = default!;
 #nullable restore
 #else
-        public string CreatedVersionId { get => _explicitNullValueCreatedVersionId; set { _explicitNullValueCreatedVersionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_version_id"); else _explicitNullProperties?.Remove("created_version_id"); } }
+        public string CreatedVersionId { get => _explicitNullValueCreatedVersionId; set { _explicitNullValueCreatedVersionId = value; AdditionalData?.Remove("created_version_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_version_id"); else _explicitNullProperties?.Remove("created_version_id"); } }
         private string _explicitNullValueCreatedVersionId = default!;
 #endif
         /// <summary>

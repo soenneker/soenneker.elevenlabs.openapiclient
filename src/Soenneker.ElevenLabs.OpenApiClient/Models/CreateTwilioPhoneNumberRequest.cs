@@ -17,27 +17,38 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("account_auth_token") is { } nullNodeAccountAuthToken && nullNodeAccountAuthToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountAuthToken = null;
-            if (parseNode.GetChildNode("agent_id") is { } nullNodeAgentId && nullNodeAgentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentId = null;
-            if (parseNode.GetChildNode("enable_sms") is { } nullNodeEnableSms && nullNodeEnableSms.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableSms = null;
-            if (parseNode.GetChildNode("label") is { } nullNodeLabel && nullNodeLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Label = null;
-            if (parseNode.GetChildNode("phone_number") is { } nullNodePhoneNumber && nullNodePhoneNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhoneNumber = null;
-            if (parseNode.GetChildNode("provider") is { } nullNodeProvider && nullNodeProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Provider = null;
-            if (parseNode.GetChildNode("region_config") is { } nullNodeRegionConfig && nullNodeRegionConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegionConfig = null;
-            if (parseNode.GetChildNode("sid") is { } nullNodeSid && nullNodeSid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sid = null;
-            if (parseNode.GetChildNode("supports_inbound") is { } nullNodeSupportsInbound && nullNodeSupportsInbound.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportsInbound = null;
-            if (parseNode.GetChildNode("supports_outbound") is { } nullNodeSupportsOutbound && nullNodeSupportsOutbound.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportsOutbound = null;
-            if (parseNode.GetChildNode("token") is { } nullNodeToken && nullNodeToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Token = null;
+            if (parseNode.GetChildNode("account_auth_token") is null) { _explicitNullValueAccountAuthToken = default!; _explicitNullProperties?.Remove("account_auth_token"); }
+            else if (parseNode.GetChildNode("account_auth_token") is { } nullNodeAccountAuthToken && nullNodeAccountAuthToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountAuthToken = null;
+            if (parseNode.GetChildNode("agent_id") is null) { _explicitNullValueAgentId = default!; _explicitNullProperties?.Remove("agent_id"); }
+            else if (parseNode.GetChildNode("agent_id") is { } nullNodeAgentId && nullNodeAgentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentId = null;
+            if (parseNode.GetChildNode("enable_sms") is null) { _explicitNullValueEnableSms = default!; _explicitNullProperties?.Remove("enable_sms"); }
+            else if (parseNode.GetChildNode("enable_sms") is { } nullNodeEnableSms && nullNodeEnableSms.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableSms = null;
+            if (parseNode.GetChildNode("label") is null) { _explicitNullValueLabel = default!; _explicitNullProperties?.Remove("label"); }
+            else if (parseNode.GetChildNode("label") is { } nullNodeLabel && nullNodeLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Label = null;
+            if (parseNode.GetChildNode("phone_number") is null) { _explicitNullValuePhoneNumber = default!; _explicitNullProperties?.Remove("phone_number"); }
+            else if (parseNode.GetChildNode("phone_number") is { } nullNodePhoneNumber && nullNodePhoneNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhoneNumber = null;
+            if (parseNode.GetChildNode("provider") is null) { _explicitNullValueProvider = default!; _explicitNullProperties?.Remove("provider"); }
+            else if (parseNode.GetChildNode("provider") is { } nullNodeProvider && nullNodeProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Provider = null;
+            if (parseNode.GetChildNode("region_config") is null) { _explicitNullValueRegionConfig = default!; _explicitNullProperties?.Remove("region_config"); }
+            else if (parseNode.GetChildNode("region_config") is { } nullNodeRegionConfig && nullNodeRegionConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegionConfig = null;
+            if (parseNode.GetChildNode("sid") is null) { _explicitNullValueSid = default!; _explicitNullProperties?.Remove("sid"); }
+            else if (parseNode.GetChildNode("sid") is { } nullNodeSid && nullNodeSid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sid = null;
+            if (parseNode.GetChildNode("supports_inbound") is null) { _explicitNullValueSupportsInbound = default!; _explicitNullProperties?.Remove("supports_inbound"); }
+            else if (parseNode.GetChildNode("supports_inbound") is { } nullNodeSupportsInbound && nullNodeSupportsInbound.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportsInbound = null;
+            if (parseNode.GetChildNode("supports_outbound") is null) { _explicitNullValueSupportsOutbound = default!; _explicitNullProperties?.Remove("supports_outbound"); }
+            else if (parseNode.GetChildNode("supports_outbound") is { } nullNodeSupportsOutbound && nullNodeSupportsOutbound.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportsOutbound = null;
+            if (parseNode.GetChildNode("token") is null) { _explicitNullValueToken = default!; _explicitNullProperties?.Remove("token"); }
+            else if (parseNode.GetChildNode("token") is { } nullNodeToken && nullNodeToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Token = null;
         }
 
         /// <summary>Twilio Account Auth Token, required for API Key imports to validate inbound webhook signatures</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountAuthToken { get => _explicitNullValueAccountAuthToken; set { _explicitNullValueAccountAuthToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_auth_token"); else _explicitNullProperties?.Remove("account_auth_token"); } }
+        public string? AccountAuthToken { get => _explicitNullValueAccountAuthToken; set { _explicitNullValueAccountAuthToken = value; AdditionalData?.Remove("account_auth_token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_auth_token"); else _explicitNullProperties?.Remove("account_auth_token"); } }
         private string? _explicitNullValueAccountAuthToken = default!;
 #nullable restore
 #else
-        public string AccountAuthToken { get => _explicitNullValueAccountAuthToken; set { _explicitNullValueAccountAuthToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_auth_token"); else _explicitNullProperties?.Remove("account_auth_token"); } }
+        public string AccountAuthToken { get => _explicitNullValueAccountAuthToken; set { _explicitNullValueAccountAuthToken = value; AdditionalData?.Remove("account_auth_token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_auth_token"); else _explicitNullProperties?.Remove("account_auth_token"); } }
         private string _explicitNullValueAccountAuthToken = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -45,75 +56,75 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Agent ID to assign the phone number to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
+        public string? AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; AdditionalData?.Remove("agent_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
         private string? _explicitNullValueAgentId = default!;
 #nullable restore
 #else
-        public string AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
+        public string AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; AdditionalData?.Remove("agent_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
         private string _explicitNullValueAgentId = default!;
 #endif
         /// <summary>Route inbound SMS to ElevenLabs. On by default; set to false to skip SMS configuration for numbers that don&apos;t support it.</summary>
-        public bool? EnableSms { get => _explicitNullValueEnableSms; set { _explicitNullValueEnableSms = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enable_sms"); else _explicitNullProperties?.Remove("enable_sms"); } }
+        public bool? EnableSms { get => _explicitNullValueEnableSms; set { _explicitNullValueEnableSms = value; AdditionalData?.Remove("enable_sms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enable_sms"); else _explicitNullProperties?.Remove("enable_sms"); } }
         private bool? _explicitNullValueEnableSms = default!;
         /// <summary>Label for the phone number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Label { get => _explicitNullValueLabel; set { _explicitNullValueLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("label"); else _explicitNullProperties?.Remove("label"); } }
+        public string? Label { get => _explicitNullValueLabel; set { _explicitNullValueLabel = value; AdditionalData?.Remove("label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("label"); else _explicitNullProperties?.Remove("label"); } }
         private string? _explicitNullValueLabel = default!;
 #nullable restore
 #else
-        public string Label { get => _explicitNullValueLabel; set { _explicitNullValueLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("label"); else _explicitNullProperties?.Remove("label"); } }
+        public string Label { get => _explicitNullValueLabel; set { _explicitNullValueLabel = value; AdditionalData?.Remove("label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("label"); else _explicitNullProperties?.Remove("label"); } }
         private string _explicitNullValueLabel = default!;
 #endif
         /// <summary>Phone number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PhoneNumber { get => _explicitNullValuePhoneNumber; set { _explicitNullValuePhoneNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_number"); else _explicitNullProperties?.Remove("phone_number"); } }
+        public string? PhoneNumber { get => _explicitNullValuePhoneNumber; set { _explicitNullValuePhoneNumber = value; AdditionalData?.Remove("phone_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_number"); else _explicitNullProperties?.Remove("phone_number"); } }
         private string? _explicitNullValuePhoneNumber = default!;
 #nullable restore
 #else
-        public string PhoneNumber { get => _explicitNullValuePhoneNumber; set { _explicitNullValuePhoneNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_number"); else _explicitNullProperties?.Remove("phone_number"); } }
+        public string PhoneNumber { get => _explicitNullValuePhoneNumber; set { _explicitNullValuePhoneNumber = value; AdditionalData?.Remove("phone_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_number"); else _explicitNullProperties?.Remove("phone_number"); } }
         private string _explicitNullValuePhoneNumber = default!;
 #endif
         /// <summary>The provider property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioProvider? Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioProvider? Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; AdditionalData?.Remove("provider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioProvider? _explicitNullValueProvider = default!;
         /// <summary>Twilio Additional Region Configuration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.RegionConfigRequest? RegionConfig { get => _explicitNullValueRegionConfig; set { _explicitNullValueRegionConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region_config"); else _explicitNullProperties?.Remove("region_config"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.RegionConfigRequest? RegionConfig { get => _explicitNullValueRegionConfig; set { _explicitNullValueRegionConfig = value; AdditionalData?.Remove("region_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region_config"); else _explicitNullProperties?.Remove("region_config"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.RegionConfigRequest? _explicitNullValueRegionConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.RegionConfigRequest RegionConfig { get => _explicitNullValueRegionConfig; set { _explicitNullValueRegionConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region_config"); else _explicitNullProperties?.Remove("region_config"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.RegionConfigRequest RegionConfig { get => _explicitNullValueRegionConfig; set { _explicitNullValueRegionConfig = value; AdditionalData?.Remove("region_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region_config"); else _explicitNullProperties?.Remove("region_config"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.RegionConfigRequest _explicitNullValueRegionConfig = default!;
 #endif
         /// <summary>Twilio Account SID (starts with `AC`) or API Key SID (starts with `SK`)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Sid { get => _explicitNullValueSid; set { _explicitNullValueSid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sid"); else _explicitNullProperties?.Remove("sid"); } }
+        public string? Sid { get => _explicitNullValueSid; set { _explicitNullValueSid = value; AdditionalData?.Remove("sid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sid"); else _explicitNullProperties?.Remove("sid"); } }
         private string? _explicitNullValueSid = default!;
 #nullable restore
 #else
-        public string Sid { get => _explicitNullValueSid; set { _explicitNullValueSid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sid"); else _explicitNullProperties?.Remove("sid"); } }
+        public string Sid { get => _explicitNullValueSid; set { _explicitNullValueSid = value; AdditionalData?.Remove("sid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sid"); else _explicitNullProperties?.Remove("sid"); } }
         private string _explicitNullValueSid = default!;
 #endif
         /// <summary>This field is deprecated and will be removed in the future. Whether this phone number supports inbound calls</summary>
         [Obsolete("")]
-        public bool? SupportsInbound { get => _explicitNullValueSupportsInbound; set { _explicitNullValueSupportsInbound = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supports_inbound"); else _explicitNullProperties?.Remove("supports_inbound"); } }
+        public bool? SupportsInbound { get => _explicitNullValueSupportsInbound; set { _explicitNullValueSupportsInbound = value; AdditionalData?.Remove("supports_inbound"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supports_inbound"); else _explicitNullProperties?.Remove("supports_inbound"); } }
         private bool? _explicitNullValueSupportsInbound = default!;
         /// <summary>This field is deprecated and will be removed in the future. Whether this phone number supports outbound calls</summary>
         [Obsolete("")]
-        public bool? SupportsOutbound { get => _explicitNullValueSupportsOutbound; set { _explicitNullValueSupportsOutbound = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supports_outbound"); else _explicitNullProperties?.Remove("supports_outbound"); } }
+        public bool? SupportsOutbound { get => _explicitNullValueSupportsOutbound; set { _explicitNullValueSupportsOutbound = value; AdditionalData?.Remove("supports_outbound"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supports_outbound"); else _explicitNullProperties?.Remove("supports_outbound"); } }
         private bool? _explicitNullValueSupportsOutbound = default!;
         /// <summary>Secret paired with `sid`: the Account Auth Token for an Account SID, or the API Key Secret for an API Key SID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Token { get => _explicitNullValueToken; set { _explicitNullValueToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token"); else _explicitNullProperties?.Remove("token"); } }
+        public string? Token { get => _explicitNullValueToken; set { _explicitNullValueToken = value; AdditionalData?.Remove("token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token"); else _explicitNullProperties?.Remove("token"); } }
         private string? _explicitNullValueToken = default!;
 #nullable restore
 #else
-        public string Token { get => _explicitNullValueToken; set { _explicitNullValueToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token"); else _explicitNullProperties?.Remove("token"); } }
+        public string Token { get => _explicitNullValueToken; set { _explicitNullValueToken = value; AdditionalData?.Remove("token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token"); else _explicitNullProperties?.Remove("token"); } }
         private string _explicitNullValueToken = default!;
 #endif
         /// <summary>
@@ -149,7 +160,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "enable_sms", n => { EnableSms = n.GetBoolValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
                 { "phone_number", n => { PhoneNumber = n.GetStringValue(); } },
-                { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioProvider>(); } },
+                { "provider", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioProvider>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueProvider = default; _explicitNullProperties?.Remove("provider"); AdditionalData["provider"] = unknown; } else { Provider = parsed; AdditionalData.Remove("provider"); } } },
                 { "region_config", n => { RegionConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RegionConfigRequest>(global::Soenneker.ElevenLabs.OpenApiClient.Models.RegionConfigRequest.CreateFromDiscriminatorValue); } },
                 { "sid", n => { Sid = n.GetStringValue(); } },
                 { "supports_inbound", n => { SupportsInbound = n.GetBoolValue(); } },

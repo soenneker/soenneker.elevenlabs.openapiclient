@@ -17,67 +17,73 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
-            if (parseNode.GetChildNode("end_node") is { } nullNodeEndNode && nullNodeEndNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndNode = null;
-            if (parseNode.GetChildNode("override_agent_node") is { } nullNodeOverrideAgentNode && nullNodeOverrideAgentNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OverrideAgentNode = null;
-            if (parseNode.GetChildNode("phone_number_node") is { } nullNodePhoneNumberNode && nullNodePhoneNumberNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhoneNumberNode = null;
-            if (parseNode.GetChildNode("standalone_agent_node") is { } nullNodeStandaloneAgentNode && nullNodeStandaloneAgentNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StandaloneAgentNode = null;
-            if (parseNode.GetChildNode("tool_node") is { } nullNodeToolNode && nullNodeToolNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolNode = null;
+            if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
+            else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("end_node") is null) { _explicitNullValueEndNode = default!; _explicitNullProperties?.Remove("end_node"); }
+            else if (parseNode.GetChildNode("end_node") is { } nullNodeEndNode && nullNodeEndNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndNode = null;
+            if (parseNode.GetChildNode("override_agent_node") is null) { _explicitNullValueOverrideAgentNode = default!; _explicitNullProperties?.Remove("override_agent_node"); }
+            else if (parseNode.GetChildNode("override_agent_node") is { } nullNodeOverrideAgentNode && nullNodeOverrideAgentNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OverrideAgentNode = null;
+            if (parseNode.GetChildNode("phone_number_node") is null) { _explicitNullValuePhoneNumberNode = default!; _explicitNullProperties?.Remove("phone_number_node"); }
+            else if (parseNode.GetChildNode("phone_number_node") is { } nullNodePhoneNumberNode && nullNodePhoneNumberNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhoneNumberNode = null;
+            if (parseNode.GetChildNode("standalone_agent_node") is null) { _explicitNullValueStandaloneAgentNode = default!; _explicitNullProperties?.Remove("standalone_agent_node"); }
+            else if (parseNode.GetChildNode("standalone_agent_node") is { } nullNodeStandaloneAgentNode && nullNodeStandaloneAgentNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StandaloneAgentNode = null;
+            if (parseNode.GetChildNode("tool_node") is null) { _explicitNullValueToolNode = default!; _explicitNullProperties?.Remove("tool_node"); }
+            else if (parseNode.GetChildNode("tool_node") is { } nullNodeToolNode && nullNodeToolNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolNode = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The enabled property</summary>
-        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
         /// <summary>The end_node property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? EndNode { get => _explicitNullValueEndNode; set { _explicitNullValueEndNode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_node"); else _explicitNullProperties?.Remove("end_node"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? EndNode { get => _explicitNullValueEndNode; set { _explicitNullValueEndNode = value; AdditionalData?.Remove("end_node"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_node"); else _explicitNullProperties?.Remove("end_node"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? _explicitNullValueEndNode = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel EndNode { get => _explicitNullValueEndNode; set { _explicitNullValueEndNode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_node"); else _explicitNullProperties?.Remove("end_node"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel EndNode { get => _explicitNullValueEndNode; set { _explicitNullValueEndNode = value; AdditionalData?.Remove("end_node"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_node"); else _explicitNullProperties?.Remove("end_node"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel _explicitNullValueEndNode = default!;
 #endif
         /// <summary>The override_agent_node property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? OverrideAgentNode { get => _explicitNullValueOverrideAgentNode; set { _explicitNullValueOverrideAgentNode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("override_agent_node"); else _explicitNullProperties?.Remove("override_agent_node"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? OverrideAgentNode { get => _explicitNullValueOverrideAgentNode; set { _explicitNullValueOverrideAgentNode = value; AdditionalData?.Remove("override_agent_node"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("override_agent_node"); else _explicitNullProperties?.Remove("override_agent_node"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? _explicitNullValueOverrideAgentNode = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel OverrideAgentNode { get => _explicitNullValueOverrideAgentNode; set { _explicitNullValueOverrideAgentNode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("override_agent_node"); else _explicitNullProperties?.Remove("override_agent_node"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel OverrideAgentNode { get => _explicitNullValueOverrideAgentNode; set { _explicitNullValueOverrideAgentNode = value; AdditionalData?.Remove("override_agent_node"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("override_agent_node"); else _explicitNullProperties?.Remove("override_agent_node"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel _explicitNullValueOverrideAgentNode = default!;
 #endif
         /// <summary>The phone_number_node property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? PhoneNumberNode { get => _explicitNullValuePhoneNumberNode; set { _explicitNullValuePhoneNumberNode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_number_node"); else _explicitNullProperties?.Remove("phone_number_node"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? PhoneNumberNode { get => _explicitNullValuePhoneNumberNode; set { _explicitNullValuePhoneNumberNode = value; AdditionalData?.Remove("phone_number_node"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_number_node"); else _explicitNullProperties?.Remove("phone_number_node"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? _explicitNullValuePhoneNumberNode = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel PhoneNumberNode { get => _explicitNullValuePhoneNumberNode; set { _explicitNullValuePhoneNumberNode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_number_node"); else _explicitNullProperties?.Remove("phone_number_node"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel PhoneNumberNode { get => _explicitNullValuePhoneNumberNode; set { _explicitNullValuePhoneNumberNode = value; AdditionalData?.Remove("phone_number_node"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_number_node"); else _explicitNullProperties?.Remove("phone_number_node"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel _explicitNullValuePhoneNumberNode = default!;
 #endif
         /// <summary>The standalone_agent_node property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? StandaloneAgentNode { get => _explicitNullValueStandaloneAgentNode; set { _explicitNullValueStandaloneAgentNode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("standalone_agent_node"); else _explicitNullProperties?.Remove("standalone_agent_node"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? StandaloneAgentNode { get => _explicitNullValueStandaloneAgentNode; set { _explicitNullValueStandaloneAgentNode = value; AdditionalData?.Remove("standalone_agent_node"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("standalone_agent_node"); else _explicitNullProperties?.Remove("standalone_agent_node"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? _explicitNullValueStandaloneAgentNode = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel StandaloneAgentNode { get => _explicitNullValueStandaloneAgentNode; set { _explicitNullValueStandaloneAgentNode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("standalone_agent_node"); else _explicitNullProperties?.Remove("standalone_agent_node"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel StandaloneAgentNode { get => _explicitNullValueStandaloneAgentNode; set { _explicitNullValueStandaloneAgentNode = value; AdditionalData?.Remove("standalone_agent_node"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("standalone_agent_node"); else _explicitNullProperties?.Remove("standalone_agent_node"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel _explicitNullValueStandaloneAgentNode = default!;
 #endif
         /// <summary>The tool_node property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? ToolNode { get => _explicitNullValueToolNode; set { _explicitNullValueToolNode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_node"); else _explicitNullProperties?.Remove("tool_node"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? ToolNode { get => _explicitNullValueToolNode; set { _explicitNullValueToolNode = value; AdditionalData?.Remove("tool_node"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_node"); else _explicitNullProperties?.Remove("tool_node"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? _explicitNullValueToolNode = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel ToolNode { get => _explicitNullValueToolNode; set { _explicitNullValueToolNode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_node"); else _explicitNullProperties?.Remove("tool_node"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel ToolNode { get => _explicitNullValueToolNode; set { _explicitNullValueToolNode = value; AdditionalData?.Remove("tool_node"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_node"); else _explicitNullProperties?.Remove("tool_node"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel _explicitNullValueToolNode = default!;
 #endif
         /// <summary>

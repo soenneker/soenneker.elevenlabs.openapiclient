@@ -18,9 +18,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("display_name") is { } nullNodeDisplayName && nullNodeDisplayName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayName = null;
-            if (parseNode.GetChildNode("tier_economics") is { } nullNodeTierEconomics && nullNodeTierEconomics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TierEconomics = null;
-            if (parseNode.GetChildNode("tier_id") is { } nullNodeTierId && nullNodeTierId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TierId = null;
+            if (parseNode.GetChildNode("display_name") is null) { _explicitNullValueDisplayName = default!; _explicitNullProperties?.Remove("display_name"); }
+            else if (parseNode.GetChildNode("display_name") is { } nullNodeDisplayName && nullNodeDisplayName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayName = null;
+            if (parseNode.GetChildNode("tier_economics") is null) { _explicitNullValueTierEconomics = default!; _explicitNullProperties?.Remove("tier_economics"); }
+            else if (parseNode.GetChildNode("tier_economics") is { } nullNodeTierEconomics && nullNodeTierEconomics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TierEconomics = null;
+            if (parseNode.GetChildNode("tier_id") is null) { _explicitNullValueTierId = default!; _explicitNullProperties?.Remove("tier_id"); }
+            else if (parseNode.GetChildNode("tier_id") is { } nullNodeTierId && nullNodeTierId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TierId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The display_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName { get => _explicitNullValueDisplayName; set { _explicitNullValueDisplayName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_name"); else _explicitNullProperties?.Remove("display_name"); } }
+        public string? DisplayName { get => _explicitNullValueDisplayName; set { _explicitNullValueDisplayName = value; AdditionalData?.Remove("display_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_name"); else _explicitNullProperties?.Remove("display_name"); } }
         private string? _explicitNullValueDisplayName = default!;
 #nullable restore
 #else
-        public string DisplayName { get => _explicitNullValueDisplayName; set { _explicitNullValueDisplayName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_name"); else _explicitNullProperties?.Remove("display_name"); } }
+        public string DisplayName { get => _explicitNullValueDisplayName; set { _explicitNullValueDisplayName = value; AdditionalData?.Remove("display_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_name"); else _explicitNullProperties?.Remove("display_name"); } }
         private string _explicitNullValueDisplayName = default!;
 #endif
         /// <summary>A tier&apos;s prices and quotas, in the fields a tier is created with.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbTierEconomics? TierEconomics { get => _explicitNullValueTierEconomics; set { _explicitNullValueTierEconomics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tier_economics"); else _explicitNullProperties?.Remove("tier_economics"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbTierEconomics? TierEconomics { get => _explicitNullValueTierEconomics; set { _explicitNullValueTierEconomics = value; AdditionalData?.Remove("tier_economics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tier_economics"); else _explicitNullProperties?.Remove("tier_economics"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbTierEconomics? _explicitNullValueTierEconomics = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbTierEconomics TierEconomics { get => _explicitNullValueTierEconomics; set { _explicitNullValueTierEconomics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tier_economics"); else _explicitNullProperties?.Remove("tier_economics"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbTierEconomics TierEconomics { get => _explicitNullValueTierEconomics; set { _explicitNullValueTierEconomics = value; AdditionalData?.Remove("tier_economics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tier_economics"); else _explicitNullProperties?.Remove("tier_economics"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbTierEconomics _explicitNullValueTierEconomics = default!;
 #endif
         /// <summary>The tier_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TierId { get => _explicitNullValueTierId; set { _explicitNullValueTierId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tier_id"); else _explicitNullProperties?.Remove("tier_id"); } }
+        public string? TierId { get => _explicitNullValueTierId; set { _explicitNullValueTierId = value; AdditionalData?.Remove("tier_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tier_id"); else _explicitNullProperties?.Remove("tier_id"); } }
         private string? _explicitNullValueTierId = default!;
 #nullable restore
 #else
-        public string TierId { get => _explicitNullValueTierId; set { _explicitNullValueTierId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tier_id"); else _explicitNullProperties?.Remove("tier_id"); } }
+        public string TierId { get => _explicitNullValueTierId; set { _explicitNullValueTierId = value; AdditionalData?.Remove("tier_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tier_id"); else _explicitNullProperties?.Remove("tier_id"); } }
         private string _explicitNullValueTierId = default!;
 #endif
         /// <summary>

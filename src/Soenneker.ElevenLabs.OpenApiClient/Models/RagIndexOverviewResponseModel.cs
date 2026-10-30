@@ -17,9 +17,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("models") is { } nullNodeModels && nullNodeModels.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Models = null;
-            if (parseNode.GetChildNode("total_max_bytes") is { } nullNodeTotalMaxBytes && nullNodeTotalMaxBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalMaxBytes = null;
-            if (parseNode.GetChildNode("total_used_bytes") is { } nullNodeTotalUsedBytes && nullNodeTotalUsedBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalUsedBytes = null;
+            if (parseNode.GetChildNode("models") is null) { _explicitNullValueModels = default!; _explicitNullProperties?.Remove("models"); }
+            else if (parseNode.GetChildNode("models") is { } nullNodeModels && nullNodeModels.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Models = null;
+            if (parseNode.GetChildNode("total_max_bytes") is null) { _explicitNullValueTotalMaxBytes = default!; _explicitNullProperties?.Remove("total_max_bytes"); }
+            else if (parseNode.GetChildNode("total_max_bytes") is { } nullNodeTotalMaxBytes && nullNodeTotalMaxBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalMaxBytes = null;
+            if (parseNode.GetChildNode("total_used_bytes") is null) { _explicitNullValueTotalUsedBytes = default!; _explicitNullProperties?.Remove("total_used_bytes"); }
+            else if (parseNode.GetChildNode("total_used_bytes") is { } nullNodeTotalUsedBytes && nullNodeTotalUsedBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalUsedBytes = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,18 +30,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The models property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.RagIndexOverviewEmbeddingModelResponseModel>? Models { get => _explicitNullValueModels; set { _explicitNullValueModels = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("models"); else _explicitNullProperties?.Remove("models"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.RagIndexOverviewEmbeddingModelResponseModel>? Models { get => _explicitNullValueModels; set { _explicitNullValueModels = value; AdditionalData?.Remove("models"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("models"); else _explicitNullProperties?.Remove("models"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.RagIndexOverviewEmbeddingModelResponseModel>? _explicitNullValueModels = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.RagIndexOverviewEmbeddingModelResponseModel> Models { get => _explicitNullValueModels; set { _explicitNullValueModels = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("models"); else _explicitNullProperties?.Remove("models"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.RagIndexOverviewEmbeddingModelResponseModel> Models { get => _explicitNullValueModels; set { _explicitNullValueModels = value; AdditionalData?.Remove("models"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("models"); else _explicitNullProperties?.Remove("models"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.RagIndexOverviewEmbeddingModelResponseModel> _explicitNullValueModels = default!;
 #endif
         /// <summary>The total_max_bytes property</summary>
-        public int? TotalMaxBytes { get => _explicitNullValueTotalMaxBytes; set { _explicitNullValueTotalMaxBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_max_bytes"); else _explicitNullProperties?.Remove("total_max_bytes"); } }
+        public int? TotalMaxBytes { get => _explicitNullValueTotalMaxBytes; set { _explicitNullValueTotalMaxBytes = value; AdditionalData?.Remove("total_max_bytes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_max_bytes"); else _explicitNullProperties?.Remove("total_max_bytes"); } }
         private int? _explicitNullValueTotalMaxBytes = default!;
         /// <summary>The total_used_bytes property</summary>
-        public int? TotalUsedBytes { get => _explicitNullValueTotalUsedBytes; set { _explicitNullValueTotalUsedBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_used_bytes"); else _explicitNullProperties?.Remove("total_used_bytes"); } }
+        public int? TotalUsedBytes { get => _explicitNullValueTotalUsedBytes; set { _explicitNullValueTotalUsedBytes = value; AdditionalData?.Remove("total_used_bytes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_used_bytes"); else _explicitNullProperties?.Remove("total_used_bytes"); } }
         private int? _explicitNullValueTotalUsedBytes = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.RagIndexOverviewResponseModel"/> and sets the default values.

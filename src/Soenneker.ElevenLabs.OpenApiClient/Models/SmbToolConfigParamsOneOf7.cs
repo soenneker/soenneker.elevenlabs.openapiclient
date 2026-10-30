@@ -17,13 +17,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("smb_tool_type") is { } nullNodeSmbToolType && nullNodeSmbToolType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SmbToolType = null;
+            if (parseNode.GetChildNode("smb_tool_type") is null) { _explicitNullValueSmbToolType = default!; _explicitNullProperties?.Remove("smb_tool_type"); }
+            else if (parseNode.GetChildNode("smb_tool_type") is { } nullNodeSmbToolType && nullNodeSmbToolType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SmbToolType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The smb_tool_type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbToolConfigParamsOneOf7_smb_tool_type? SmbToolType { get => _explicitNullValueSmbToolType; set { _explicitNullValueSmbToolType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("smb_tool_type"); else _explicitNullProperties?.Remove("smb_tool_type"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbToolConfigParamsOneOf7_smb_tool_type? SmbToolType { get => _explicitNullValueSmbToolType; set { _explicitNullValueSmbToolType = value; AdditionalData?.Remove("smb_tool_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("smb_tool_type"); else _explicitNullProperties?.Remove("smb_tool_type"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbToolConfigParamsOneOf7_smb_tool_type? _explicitNullValueSmbToolType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbToolConfigParamsOneOf7"/> and sets the default values.
@@ -50,7 +51,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "smb_tool_type", n => { SmbToolType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbToolConfigParamsOneOf7_smb_tool_type>(); } },
+                { "smb_tool_type", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbToolConfigParamsOneOf7_smb_tool_type>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSmbToolType = default; _explicitNullProperties?.Remove("smb_tool_type"); AdditionalData["smb_tool_type"] = unknown; } else { SmbToolType = parsed; AdditionalData.Remove("smb_tool_type"); } } },
             };
         }
         /// <summary>

@@ -18,8 +18,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("all_of") is { } nullNodeAllOf && nullNodeAllOf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllOf = null;
-            if (parseNode.GetChildNode("any_of") is { } nullNodeAnyOf && nullNodeAnyOf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AnyOf = null;
+            if (parseNode.GetChildNode("all_of") is null) { _explicitNullValueAllOf = default!; _explicitNullProperties?.Remove("all_of"); }
+            else if (parseNode.GetChildNode("all_of") is { } nullNodeAllOf && nullNodeAllOf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllOf = null;
+            if (parseNode.GetChildNode("any_of") is null) { _explicitNullValueAnyOf = default!; _explicitNullProperties?.Remove("any_of"); }
+            else if (parseNode.GetChildNode("any_of") is { } nullNodeAnyOf && nullNodeAnyOf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AnyOf = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The all_of property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.RequiredConstraint>? AllOf { get => _explicitNullValueAllOf; set { _explicitNullValueAllOf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("all_of"); else _explicitNullProperties?.Remove("all_of"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.RequiredConstraint>? AllOf { get => _explicitNullValueAllOf; set { _explicitNullValueAllOf = value; AdditionalData?.Remove("all_of"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("all_of"); else _explicitNullProperties?.Remove("all_of"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.RequiredConstraint>? _explicitNullValueAllOf = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.RequiredConstraint> AllOf { get => _explicitNullValueAllOf; set { _explicitNullValueAllOf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("all_of"); else _explicitNullProperties?.Remove("all_of"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.RequiredConstraint> AllOf { get => _explicitNullValueAllOf; set { _explicitNullValueAllOf = value; AdditionalData?.Remove("all_of"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("all_of"); else _explicitNullProperties?.Remove("all_of"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.RequiredConstraint> _explicitNullValueAllOf = default!;
 #endif
         /// <summary>The any_of property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.RequiredConstraint>? AnyOf { get => _explicitNullValueAnyOf; set { _explicitNullValueAnyOf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("any_of"); else _explicitNullProperties?.Remove("any_of"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.RequiredConstraint>? AnyOf { get => _explicitNullValueAnyOf; set { _explicitNullValueAnyOf = value; AdditionalData?.Remove("any_of"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("any_of"); else _explicitNullProperties?.Remove("any_of"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.RequiredConstraint>? _explicitNullValueAnyOf = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.RequiredConstraint> AnyOf { get => _explicitNullValueAnyOf; set { _explicitNullValueAnyOf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("any_of"); else _explicitNullProperties?.Remove("any_of"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.RequiredConstraint> AnyOf { get => _explicitNullValueAnyOf; set { _explicitNullValueAnyOf = value; AdditionalData?.Remove("any_of"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("any_of"); else _explicitNullProperties?.Remove("any_of"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.RequiredConstraint> _explicitNullValueAnyOf = default!;
 #endif
         /// <summary>

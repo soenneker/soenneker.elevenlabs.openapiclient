@@ -17,11 +17,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("characters") is { } nullNodeCharacters && nullNodeCharacters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Characters = null;
-            if (parseNode.GetChildNode("end_s") is { } nullNodeEndS && nullNodeEndS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndS = null;
-            if (parseNode.GetChildNode("start_s") is { } nullNodeStartS && nullNodeStartS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartS = null;
-            if (parseNode.GetChildNode("text") is { } nullNodeText && nullNodeText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Text = null;
-            if (parseNode.GetChildNode("word_type") is { } nullNodeWordType && nullNodeWordType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WordType = null;
+            if (parseNode.GetChildNode("characters") is null) { _explicitNullValueCharacters = default!; _explicitNullProperties?.Remove("characters"); }
+            else if (parseNode.GetChildNode("characters") is { } nullNodeCharacters && nullNodeCharacters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Characters = null;
+            if (parseNode.GetChildNode("end_s") is null) { _explicitNullValueEndS = default!; _explicitNullProperties?.Remove("end_s"); }
+            else if (parseNode.GetChildNode("end_s") is { } nullNodeEndS && nullNodeEndS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndS = null;
+            if (parseNode.GetChildNode("start_s") is null) { _explicitNullValueStartS = default!; _explicitNullProperties?.Remove("start_s"); }
+            else if (parseNode.GetChildNode("start_s") is { } nullNodeStartS && nullNodeStartS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartS = null;
+            if (parseNode.GetChildNode("text") is null) { _explicitNullValueText = default!; _explicitNullProperties?.Remove("text"); }
+            else if (parseNode.GetChildNode("text") is { } nullNodeText && nullNodeText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Text = null;
+            if (parseNode.GetChildNode("word_type") is null) { _explicitNullValueWordType = default!; _explicitNullProperties?.Remove("word_type"); }
+            else if (parseNode.GetChildNode("word_type") is { } nullNodeWordType && nullNodeWordType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WordType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,37 +34,37 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The characters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptCharacter>? Characters { get => _explicitNullValueCharacters; set { _explicitNullValueCharacters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("characters"); else _explicitNullProperties?.Remove("characters"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptCharacter>? Characters { get => _explicitNullValueCharacters; set { _explicitNullValueCharacters = value; AdditionalData?.Remove("characters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("characters"); else _explicitNullProperties?.Remove("characters"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptCharacter>? _explicitNullValueCharacters = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptCharacter> Characters { get => _explicitNullValueCharacters; set { _explicitNullValueCharacters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("characters"); else _explicitNullProperties?.Remove("characters"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptCharacter> Characters { get => _explicitNullValueCharacters; set { _explicitNullValueCharacters = value; AdditionalData?.Remove("characters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("characters"); else _explicitNullProperties?.Remove("characters"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptCharacter> _explicitNullValueCharacters = default!;
 #endif
         /// <summary>The end_s property</summary>
-        public double? EndS { get => _explicitNullValueEndS; set { _explicitNullValueEndS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_s"); else _explicitNullProperties?.Remove("end_s"); } }
+        public double? EndS { get => _explicitNullValueEndS; set { _explicitNullValueEndS = value; AdditionalData?.Remove("end_s"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_s"); else _explicitNullProperties?.Remove("end_s"); } }
         private double? _explicitNullValueEndS = default!;
         /// <summary>The start_s property</summary>
-        public double? StartS { get => _explicitNullValueStartS; set { _explicitNullValueStartS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_s"); else _explicitNullProperties?.Remove("start_s"); } }
+        public double? StartS { get => _explicitNullValueStartS; set { _explicitNullValueStartS = value; AdditionalData?.Remove("start_s"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_s"); else _explicitNullProperties?.Remove("start_s"); } }
         private double? _explicitNullValueStartS = default!;
         /// <summary>The text property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Text { get => _explicitNullValueText; set { _explicitNullValueText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
+        public string? Text { get => _explicitNullValueText; set { _explicitNullValueText = value; AdditionalData?.Remove("text"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
         private string? _explicitNullValueText = default!;
 #nullable restore
 #else
-        public string Text { get => _explicitNullValueText; set { _explicitNullValueText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
+        public string Text { get => _explicitNullValueText; set { _explicitNullValueText = value; AdditionalData?.Remove("text"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
         private string _explicitNullValueText = default!;
 #endif
         /// <summary>The word_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WordType { get => _explicitNullValueWordType; set { _explicitNullValueWordType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("word_type"); else _explicitNullProperties?.Remove("word_type"); } }
+        public string? WordType { get => _explicitNullValueWordType; set { _explicitNullValueWordType = value; AdditionalData?.Remove("word_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("word_type"); else _explicitNullProperties?.Remove("word_type"); } }
         private string? _explicitNullValueWordType = default!;
 #nullable restore
 #else
-        public string WordType { get => _explicitNullValueWordType; set { _explicitNullValueWordType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("word_type"); else _explicitNullProperties?.Remove("word_type"); } }
+        public string WordType { get => _explicitNullValueWordType; set { _explicitNullValueWordType = value; AdditionalData?.Remove("word_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("word_type"); else _explicitNullProperties?.Remove("word_type"); } }
         private string _explicitNullValueWordType = default!;
 #endif
         /// <summary>

@@ -17,7 +17,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("chapter_ids") is { } nullNodeChapterIds && nullNodeChapterIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChapterIds = null;
+            if (parseNode.GetChildNode("chapter_ids") is null) { _explicitNullValueChapterIds = default!; _explicitNullProperties?.Remove("chapter_ids"); }
+            else if (parseNode.GetChildNode("chapter_ids") is { } nullNodeChapterIds && nullNodeChapterIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChapterIds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>List of chapter IDs that have muted tracks.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ChapterIds { get => _explicitNullValueChapterIds; set { _explicitNullValueChapterIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chapter_ids"); else _explicitNullProperties?.Remove("chapter_ids"); } }
+        public List<string>? ChapterIds { get => _explicitNullValueChapterIds; set { _explicitNullValueChapterIds = value; AdditionalData?.Remove("chapter_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chapter_ids"); else _explicitNullProperties?.Remove("chapter_ids"); } }
         private List<string>? _explicitNullValueChapterIds = default!;
 #nullable restore
 #else
-        public List<string> ChapterIds { get => _explicitNullValueChapterIds; set { _explicitNullValueChapterIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chapter_ids"); else _explicitNullProperties?.Remove("chapter_ids"); } }
+        public List<string> ChapterIds { get => _explicitNullValueChapterIds; set { _explicitNullValueChapterIds = value; AdditionalData?.Remove("chapter_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chapter_ids"); else _explicitNullProperties?.Remove("chapter_ids"); } }
         private List<string> _explicitNullValueChapterIds = default!;
 #endif
         /// <summary>

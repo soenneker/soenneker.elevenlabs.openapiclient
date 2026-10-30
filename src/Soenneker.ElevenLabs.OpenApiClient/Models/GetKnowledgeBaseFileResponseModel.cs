@@ -17,31 +17,46 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("access_info") is { } nullNodeAccessInfo && nullNodeAccessInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessInfo = null;
-            if (parseNode.GetChildNode("auto_sync_info") is { } nullNodeAutoSyncInfo && nullNodeAutoSyncInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoSyncInfo = null;
-            if (parseNode.GetChildNode("content_format") is { } nullNodeContentFormat && nullNodeContentFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentFormat = null;
-            if (parseNode.GetChildNode("external_sync_info") is { } nullNodeExternalSyncInfo && nullNodeExternalSyncInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalSyncInfo = null;
-            if (parseNode.GetChildNode("extracted_inner_html") is { } nullNodeExtractedInnerHtml && nullNodeExtractedInnerHtml.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExtractedInnerHtml = null;
-            if (parseNode.GetChildNode("filename") is { } nullNodeFilename && nullNodeFilename.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filename = null;
-            if (parseNode.GetChildNode("folder_parent_id") is { } nullNodeFolderParentId && nullNodeFolderParentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FolderParentId = null;
-            if (parseNode.GetChildNode("folder_path") is { } nullNodeFolderPath && nullNodeFolderPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FolderPath = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("is_frozen") is { } nullNodeIsFrozen && nullNodeIsFrozen.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsFrozen = null;
-            if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("refresh_status") is { } nullNodeRefreshStatus && nullNodeRefreshStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RefreshStatus = null;
-            if (parseNode.GetChildNode("supported_usages") is { } nullNodeSupportedUsages && nullNodeSupportedUsages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportedUsages = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("access_info") is null) { _explicitNullValueAccessInfo = default!; _explicitNullProperties?.Remove("access_info"); }
+            else if (parseNode.GetChildNode("access_info") is { } nullNodeAccessInfo && nullNodeAccessInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessInfo = null;
+            if (parseNode.GetChildNode("auto_sync_info") is null) { _explicitNullValueAutoSyncInfo = default!; _explicitNullProperties?.Remove("auto_sync_info"); }
+            else if (parseNode.GetChildNode("auto_sync_info") is { } nullNodeAutoSyncInfo && nullNodeAutoSyncInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoSyncInfo = null;
+            if (parseNode.GetChildNode("content_format") is null) { _explicitNullValueContentFormat = default!; _explicitNullProperties?.Remove("content_format"); }
+            else if (parseNode.GetChildNode("content_format") is { } nullNodeContentFormat && nullNodeContentFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentFormat = null;
+            if (parseNode.GetChildNode("external_sync_info") is null) { _explicitNullValueExternalSyncInfo = default!; _explicitNullProperties?.Remove("external_sync_info"); }
+            else if (parseNode.GetChildNode("external_sync_info") is { } nullNodeExternalSyncInfo && nullNodeExternalSyncInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalSyncInfo = null;
+            if (parseNode.GetChildNode("extracted_inner_html") is null) { _explicitNullValueExtractedInnerHtml = default!; _explicitNullProperties?.Remove("extracted_inner_html"); }
+            else if (parseNode.GetChildNode("extracted_inner_html") is { } nullNodeExtractedInnerHtml && nullNodeExtractedInnerHtml.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExtractedInnerHtml = null;
+            if (parseNode.GetChildNode("filename") is null) { _explicitNullValueFilename = default!; _explicitNullProperties?.Remove("filename"); }
+            else if (parseNode.GetChildNode("filename") is { } nullNodeFilename && nullNodeFilename.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filename = null;
+            if (parseNode.GetChildNode("folder_parent_id") is null) { _explicitNullValueFolderParentId = default!; _explicitNullProperties?.Remove("folder_parent_id"); }
+            else if (parseNode.GetChildNode("folder_parent_id") is { } nullNodeFolderParentId && nullNodeFolderParentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FolderParentId = null;
+            if (parseNode.GetChildNode("folder_path") is null) { _explicitNullValueFolderPath = default!; _explicitNullProperties?.Remove("folder_path"); }
+            else if (parseNode.GetChildNode("folder_path") is { } nullNodeFolderPath && nullNodeFolderPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FolderPath = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("is_frozen") is null) { _explicitNullValueIsFrozen = default!; _explicitNullProperties?.Remove("is_frozen"); }
+            else if (parseNode.GetChildNode("is_frozen") is { } nullNodeIsFrozen && nullNodeIsFrozen.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsFrozen = null;
+            if (parseNode.GetChildNode("metadata") is null) { _explicitNullValueMetadata = default!; _explicitNullProperties?.Remove("metadata"); }
+            else if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("refresh_status") is null) { _explicitNullValueRefreshStatus = default!; _explicitNullProperties?.Remove("refresh_status"); }
+            else if (parseNode.GetChildNode("refresh_status") is { } nullNodeRefreshStatus && nullNodeRefreshStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RefreshStatus = null;
+            if (parseNode.GetChildNode("supported_usages") is null) { _explicitNullValueSupportedUsages = default!; _explicitNullProperties?.Remove("supported_usages"); }
+            else if (parseNode.GetChildNode("supported_usages") is { } nullNodeSupportedUsages && nullNodeSupportedUsages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportedUsages = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>The access_info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo? AccessInfo { get => _explicitNullValueAccessInfo; set { _explicitNullValueAccessInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_info"); else _explicitNullProperties?.Remove("access_info"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo? AccessInfo { get => _explicitNullValueAccessInfo; set { _explicitNullValueAccessInfo = value; AdditionalData?.Remove("access_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_info"); else _explicitNullProperties?.Remove("access_info"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo? _explicitNullValueAccessInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo AccessInfo { get => _explicitNullValueAccessInfo; set { _explicitNullValueAccessInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_info"); else _explicitNullProperties?.Remove("access_info"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo AccessInfo { get => _explicitNullValueAccessInfo; set { _explicitNullValueAccessInfo = value; AdditionalData?.Remove("access_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_info"); else _explicitNullProperties?.Remove("access_info"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo _explicitNullValueAccessInfo = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -49,121 +64,121 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The auto_sync_info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoSyncInfo? AutoSyncInfo { get => _explicitNullValueAutoSyncInfo; set { _explicitNullValueAutoSyncInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_sync_info"); else _explicitNullProperties?.Remove("auto_sync_info"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoSyncInfo? AutoSyncInfo { get => _explicitNullValueAutoSyncInfo; set { _explicitNullValueAutoSyncInfo = value; AdditionalData?.Remove("auto_sync_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_sync_info"); else _explicitNullProperties?.Remove("auto_sync_info"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoSyncInfo? _explicitNullValueAutoSyncInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoSyncInfo AutoSyncInfo { get => _explicitNullValueAutoSyncInfo; set { _explicitNullValueAutoSyncInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_sync_info"); else _explicitNullProperties?.Remove("auto_sync_info"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoSyncInfo AutoSyncInfo { get => _explicitNullValueAutoSyncInfo; set { _explicitNullValueAutoSyncInfo = value; AdditionalData?.Remove("auto_sync_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_sync_info"); else _explicitNullProperties?.Remove("auto_sync_info"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoSyncInfo _explicitNullValueAutoSyncInfo = default!;
 #endif
         /// <summary>Canonical representation of a knowledge base document&apos;s stored content.HTML is the legacy default; documents created before this field existed areinterpreted as HTML.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentFormat? ContentFormat { get => _explicitNullValueContentFormat; set { _explicitNullValueContentFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_format"); else _explicitNullProperties?.Remove("content_format"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentFormat? ContentFormat { get => _explicitNullValueContentFormat; set { _explicitNullValueContentFormat = value; AdditionalData?.Remove("content_format"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_format"); else _explicitNullProperties?.Remove("content_format"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentFormat? _explicitNullValueContentFormat = default!;
         /// <summary>The external_sync_info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalFileSyncInfo? ExternalSyncInfo { get => _explicitNullValueExternalSyncInfo; set { _explicitNullValueExternalSyncInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_sync_info"); else _explicitNullProperties?.Remove("external_sync_info"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalFileSyncInfo? ExternalSyncInfo { get => _explicitNullValueExternalSyncInfo; set { _explicitNullValueExternalSyncInfo = value; AdditionalData?.Remove("external_sync_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_sync_info"); else _explicitNullProperties?.Remove("external_sync_info"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalFileSyncInfo? _explicitNullValueExternalSyncInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalFileSyncInfo ExternalSyncInfo { get => _explicitNullValueExternalSyncInfo; set { _explicitNullValueExternalSyncInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_sync_info"); else _explicitNullProperties?.Remove("external_sync_info"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalFileSyncInfo ExternalSyncInfo { get => _explicitNullValueExternalSyncInfo; set { _explicitNullValueExternalSyncInfo = value; AdditionalData?.Remove("external_sync_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_sync_info"); else _explicitNullProperties?.Remove("external_sync_info"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalFileSyncInfo _explicitNullValueExternalSyncInfo = default!;
 #endif
         /// <summary>The extracted_inner_html property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExtractedInnerHtml { get => _explicitNullValueExtractedInnerHtml; set { _explicitNullValueExtractedInnerHtml = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extracted_inner_html"); else _explicitNullProperties?.Remove("extracted_inner_html"); } }
+        public string? ExtractedInnerHtml { get => _explicitNullValueExtractedInnerHtml; set { _explicitNullValueExtractedInnerHtml = value; AdditionalData?.Remove("extracted_inner_html"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extracted_inner_html"); else _explicitNullProperties?.Remove("extracted_inner_html"); } }
         private string? _explicitNullValueExtractedInnerHtml = default!;
 #nullable restore
 #else
-        public string ExtractedInnerHtml { get => _explicitNullValueExtractedInnerHtml; set { _explicitNullValueExtractedInnerHtml = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extracted_inner_html"); else _explicitNullProperties?.Remove("extracted_inner_html"); } }
+        public string ExtractedInnerHtml { get => _explicitNullValueExtractedInnerHtml; set { _explicitNullValueExtractedInnerHtml = value; AdditionalData?.Remove("extracted_inner_html"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extracted_inner_html"); else _explicitNullProperties?.Remove("extracted_inner_html"); } }
         private string _explicitNullValueExtractedInnerHtml = default!;
 #endif
         /// <summary>The filename property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Filename { get => _explicitNullValueFilename; set { _explicitNullValueFilename = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filename"); else _explicitNullProperties?.Remove("filename"); } }
+        public string? Filename { get => _explicitNullValueFilename; set { _explicitNullValueFilename = value; AdditionalData?.Remove("filename"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filename"); else _explicitNullProperties?.Remove("filename"); } }
         private string? _explicitNullValueFilename = default!;
 #nullable restore
 #else
-        public string Filename { get => _explicitNullValueFilename; set { _explicitNullValueFilename = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filename"); else _explicitNullProperties?.Remove("filename"); } }
+        public string Filename { get => _explicitNullValueFilename; set { _explicitNullValueFilename = value; AdditionalData?.Remove("filename"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filename"); else _explicitNullProperties?.Remove("filename"); } }
         private string _explicitNullValueFilename = default!;
 #endif
         /// <summary>The ID of the parent folder, or null if the document is at the root level.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FolderParentId { get => _explicitNullValueFolderParentId; set { _explicitNullValueFolderParentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("folder_parent_id"); else _explicitNullProperties?.Remove("folder_parent_id"); } }
+        public string? FolderParentId { get => _explicitNullValueFolderParentId; set { _explicitNullValueFolderParentId = value; AdditionalData?.Remove("folder_parent_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("folder_parent_id"); else _explicitNullProperties?.Remove("folder_parent_id"); } }
         private string? _explicitNullValueFolderParentId = default!;
 #nullable restore
 #else
-        public string FolderParentId { get => _explicitNullValueFolderParentId; set { _explicitNullValueFolderParentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("folder_parent_id"); else _explicitNullProperties?.Remove("folder_parent_id"); } }
+        public string FolderParentId { get => _explicitNullValueFolderParentId; set { _explicitNullValueFolderParentId = value; AdditionalData?.Remove("folder_parent_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("folder_parent_id"); else _explicitNullProperties?.Remove("folder_parent_id"); } }
         private string _explicitNullValueFolderParentId = default!;
 #endif
         /// <summary>The folder path segments leading to this entity, from root to parent folder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseFolderPathSegmentResponseModel>? FolderPath { get => _explicitNullValueFolderPath; set { _explicitNullValueFolderPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("folder_path"); else _explicitNullProperties?.Remove("folder_path"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseFolderPathSegmentResponseModel>? FolderPath { get => _explicitNullValueFolderPath; set { _explicitNullValueFolderPath = value; AdditionalData?.Remove("folder_path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("folder_path"); else _explicitNullProperties?.Remove("folder_path"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseFolderPathSegmentResponseModel>? _explicitNullValueFolderPath = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseFolderPathSegmentResponseModel> FolderPath { get => _explicitNullValueFolderPath; set { _explicitNullValueFolderPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("folder_path"); else _explicitNullProperties?.Remove("folder_path"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseFolderPathSegmentResponseModel> FolderPath { get => _explicitNullValueFolderPath; set { _explicitNullValueFolderPath = value; AdditionalData?.Remove("folder_path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("folder_path"); else _explicitNullProperties?.Remove("folder_path"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseFolderPathSegmentResponseModel> _explicitNullValueFolderPath = default!;
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>The is_frozen property</summary>
-        public bool? IsFrozen { get => _explicitNullValueIsFrozen; set { _explicitNullValueIsFrozen = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_frozen"); else _explicitNullProperties?.Remove("is_frozen"); } }
+        public bool? IsFrozen { get => _explicitNullValueIsFrozen; set { _explicitNullValueIsFrozen = value; AdditionalData?.Remove("is_frozen"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_frozen"); else _explicitNullProperties?.Remove("is_frozen"); } }
         private bool? _explicitNullValueIsFrozen = default!;
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentMetadataResponseModel? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentMetadataResponseModel? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentMetadataResponseModel? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentMetadataResponseModel Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentMetadataResponseModel Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentMetadataResponseModel _explicitNullValueMetadata = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>In-flight or last refresh state for an externally-synced file. Used by clients to render sync progress and disable re-sync while a refresh is queued or processing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FileRefreshStatus? RefreshStatus { get => _explicitNullValueRefreshStatus; set { _explicitNullValueRefreshStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refresh_status"); else _explicitNullProperties?.Remove("refresh_status"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FileRefreshStatus? RefreshStatus { get => _explicitNullValueRefreshStatus; set { _explicitNullValueRefreshStatus = value; AdditionalData?.Remove("refresh_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refresh_status"); else _explicitNullProperties?.Remove("refresh_status"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.FileRefreshStatus? _explicitNullValueRefreshStatus = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FileRefreshStatus RefreshStatus { get => _explicitNullValueRefreshStatus; set { _explicitNullValueRefreshStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refresh_status"); else _explicitNullProperties?.Remove("refresh_status"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FileRefreshStatus RefreshStatus { get => _explicitNullValueRefreshStatus; set { _explicitNullValueRefreshStatus = value; AdditionalData?.Remove("refresh_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refresh_status"); else _explicitNullProperties?.Remove("refresh_status"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.FileRefreshStatus _explicitNullValueRefreshStatus = default!;
 #endif
         /// <summary>The supported_usages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DocumentUsageModeEnum?>? SupportedUsages { get => _explicitNullValueSupportedUsages; set { _explicitNullValueSupportedUsages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supported_usages"); else _explicitNullProperties?.Remove("supported_usages"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DocumentUsageModeEnum?>? SupportedUsages { get => _explicitNullValueSupportedUsages; set { _explicitNullValueSupportedUsages = value; AdditionalData?.Remove("supported_usages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supported_usages"); else _explicitNullProperties?.Remove("supported_usages"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DocumentUsageModeEnum?>? _explicitNullValueSupportedUsages = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DocumentUsageModeEnum?> SupportedUsages { get => _explicitNullValueSupportedUsages; set { _explicitNullValueSupportedUsages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supported_usages"); else _explicitNullProperties?.Remove("supported_usages"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DocumentUsageModeEnum?> SupportedUsages { get => _explicitNullValueSupportedUsages; set { _explicitNullValueSupportedUsages = value; AdditionalData?.Remove("supported_usages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supported_usages"); else _explicitNullProperties?.Remove("supported_usages"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DocumentUsageModeEnum?> _explicitNullValueSupportedUsages = default!;
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FileType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FileType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.FileType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModel"/> and sets the default values.
@@ -194,7 +209,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "access_info", n => { AccessInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo.CreateFromDiscriminatorValue); } },
                 { "auto_sync_info", n => { AutoSyncInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoSyncInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoSyncInfo.CreateFromDiscriminatorValue); } },
-                { "content_format", n => { ContentFormat = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentFormat>(); } },
+                { "content_format", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentFormat>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueContentFormat = default; _explicitNullProperties?.Remove("content_format"); AdditionalData["content_format"] = unknown; } else { ContentFormat = parsed; AdditionalData.Remove("content_format"); } } },
                 { "external_sync_info", n => { ExternalSyncInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalFileSyncInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalFileSyncInfo.CreateFromDiscriminatorValue); } },
                 { "extracted_inner_html", n => { ExtractedInnerHtml = n.GetStringValue(); } },
                 { "filename", n => { Filename = n.GetStringValue(); } },
@@ -206,7 +221,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "refresh_status", n => { RefreshStatus = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FileRefreshStatus>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FileRefreshStatus.CreateFromDiscriminatorValue); } },
                 { "supported_usages", n => { SupportedUsages = n.GetCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DocumentUsageModeEnum>()?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FileType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FileType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

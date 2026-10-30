@@ -17,8 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("guardrail_name") is { } nullNodeGuardrailName && nullNodeGuardrailName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GuardrailName = null;
-            if (parseNode.GetChildNode("guardrail_type") is { } nullNodeGuardrailType && nullNodeGuardrailType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GuardrailType = null;
+            if (parseNode.GetChildNode("guardrail_name") is null) { _explicitNullValueGuardrailName = default!; _explicitNullProperties?.Remove("guardrail_name"); }
+            else if (parseNode.GetChildNode("guardrail_name") is { } nullNodeGuardrailName && nullNodeGuardrailName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GuardrailName = null;
+            if (parseNode.GetChildNode("guardrail_type") is null) { _explicitNullValueGuardrailType = default!; _explicitNullProperties?.Remove("guardrail_type"); }
+            else if (parseNode.GetChildNode("guardrail_type") is { } nullNodeGuardrailType && nullNodeGuardrailType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GuardrailType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The guardrail_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GuardrailName { get => _explicitNullValueGuardrailName; set { _explicitNullValueGuardrailName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guardrail_name"); else _explicitNullProperties?.Remove("guardrail_name"); } }
+        public string? GuardrailName { get => _explicitNullValueGuardrailName; set { _explicitNullValueGuardrailName = value; AdditionalData?.Remove("guardrail_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guardrail_name"); else _explicitNullProperties?.Remove("guardrail_name"); } }
         private string? _explicitNullValueGuardrailName = default!;
 #nullable restore
 #else
-        public string GuardrailName { get => _explicitNullValueGuardrailName; set { _explicitNullValueGuardrailName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guardrail_name"); else _explicitNullProperties?.Remove("guardrail_name"); } }
+        public string GuardrailName { get => _explicitNullValueGuardrailName; set { _explicitNullValueGuardrailName = value; AdditionalData?.Remove("guardrail_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guardrail_name"); else _explicitNullProperties?.Remove("guardrail_name"); } }
         private string _explicitNullValueGuardrailName = default!;
 #endif
         /// <summary>The guardrail_type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailType? GuardrailType { get => _explicitNullValueGuardrailType; set { _explicitNullValueGuardrailType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guardrail_type"); else _explicitNullProperties?.Remove("guardrail_type"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailType? GuardrailType { get => _explicitNullValueGuardrailType; set { _explicitNullValueGuardrailType = value; AdditionalData?.Remove("guardrail_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guardrail_type"); else _explicitNullProperties?.Remove("guardrail_type"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailType? _explicitNullValueGuardrailType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TriggeredGuardrailCommonModel"/> and sets the default values.
@@ -62,7 +64,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "guardrail_name", n => { GuardrailName = n.GetStringValue(); } },
-                { "guardrail_type", n => { GuardrailType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailType>(); } },
+                { "guardrail_type", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueGuardrailType = default; _explicitNullProperties?.Remove("guardrail_type"); AdditionalData["guardrail_type"] = unknown; } else { GuardrailType = parsed; AdditionalData.Remove("guardrail_type"); } } },
             };
         }
         /// <summary>

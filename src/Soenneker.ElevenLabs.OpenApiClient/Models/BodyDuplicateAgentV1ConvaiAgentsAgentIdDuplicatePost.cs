@@ -17,7 +17,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,12 +26,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>A name to make the agent easier to find</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyDuplicateAgentV1ConvaiAgentsAgentIdDuplicatePostName? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyDuplicateAgentV1ConvaiAgentsAgentIdDuplicatePostName? _explicitNullValueName = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentV1ConvaiAgentsCreatePostName? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentV1ConvaiAgentsCreatePostName? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyDuplicateAgentV1ConvaiAgentsAgentIdDuplicatePostName Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyDuplicateAgentV1ConvaiAgentsAgentIdDuplicatePostName _explicitNullValueName = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentV1ConvaiAgentsCreatePostName Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentV1ConvaiAgentsCreatePostName _explicitNullValueName = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyDuplicateAgentV1ConvaiAgentsAgentIdDuplicatePost"/> and sets the default values.
@@ -57,7 +58,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyDuplicateAgentV1ConvaiAgentsAgentIdDuplicatePostName>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyDuplicateAgentV1ConvaiAgentsAgentIdDuplicatePostName.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentV1ConvaiAgentsCreatePostName>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentV1ConvaiAgentsCreatePostName.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,7 +68,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyDuplicateAgentV1ConvaiAgentsAgentIdDuplicatePostName>("name", Name);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentV1ConvaiAgentsCreatePostName>("name", Name);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

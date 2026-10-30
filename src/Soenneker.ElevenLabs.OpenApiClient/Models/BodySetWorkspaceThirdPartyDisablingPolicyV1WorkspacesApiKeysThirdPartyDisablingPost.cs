@@ -17,13 +17,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("third_party_disable_allowed") is { } nullNodeThirdPartyDisableAllowed && nullNodeThirdPartyDisableAllowed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThirdPartyDisableAllowed = null;
+            if (parseNode.GetChildNode("third_party_disable_allowed") is null) { _explicitNullValueThirdPartyDisableAllowed = default!; _explicitNullProperties?.Remove("third_party_disable_allowed"); }
+            else if (parseNode.GetChildNode("third_party_disable_allowed") is { } nullNodeThirdPartyDisableAllowed && nullNodeThirdPartyDisableAllowed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThirdPartyDisableAllowed = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>`true` forces every key in the workspace to be disable-able by its holder; `false` forbids it for every key; `null` clears the override (per-key values and the plan default apply).</summary>
-        public bool? ThirdPartyDisableAllowed { get => _explicitNullValueThirdPartyDisableAllowed; set { _explicitNullValueThirdPartyDisableAllowed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("third_party_disable_allowed"); else _explicitNullProperties?.Remove("third_party_disable_allowed"); } }
+        public bool? ThirdPartyDisableAllowed { get => _explicitNullValueThirdPartyDisableAllowed; set { _explicitNullValueThirdPartyDisableAllowed = value; AdditionalData?.Remove("third_party_disable_allowed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("third_party_disable_allowed"); else _explicitNullProperties?.Remove("third_party_disable_allowed"); } }
         private bool? _explicitNullValueThirdPartyDisableAllowed = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodySetWorkspaceThirdPartyDisablingPolicyV1WorkspacesApiKeysThirdPartyDisablingPost"/> and sets the default values.

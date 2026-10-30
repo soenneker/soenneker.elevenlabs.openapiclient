@@ -17,7 +17,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("procedures") is { } nullNodeProcedures && nullNodeProcedures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Procedures = null;
+            if (parseNode.GetChildNode("procedures") is null) { _explicitNullValueProcedures = default!; _explicitNullProperties?.Remove("procedures"); }
+            else if (parseNode.GetChildNode("procedures") is { } nullNodeProcedures && nullNodeProcedures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Procedures = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Procedures on the branch with their draft-aware metadata.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProcedureListItemResponseModel>? Procedures { get => _explicitNullValueProcedures; set { _explicitNullValueProcedures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("procedures"); else _explicitNullProperties?.Remove("procedures"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProcedureListItemResponseModel>? Procedures { get => _explicitNullValueProcedures; set { _explicitNullValueProcedures = value; AdditionalData?.Remove("procedures"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("procedures"); else _explicitNullProperties?.Remove("procedures"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProcedureListItemResponseModel>? _explicitNullValueProcedures = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProcedureListItemResponseModel> Procedures { get => _explicitNullValueProcedures; set { _explicitNullValueProcedures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("procedures"); else _explicitNullProperties?.Remove("procedures"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProcedureListItemResponseModel> Procedures { get => _explicitNullValueProcedures; set { _explicitNullValueProcedures = value; AdditionalData?.Remove("procedures"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("procedures"); else _explicitNullProperties?.Remove("procedures"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProcedureListItemResponseModel> _explicitNullValueProcedures = default!;
 #endif
         /// <summary>

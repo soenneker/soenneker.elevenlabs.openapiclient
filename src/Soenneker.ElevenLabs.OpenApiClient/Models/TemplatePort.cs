@@ -18,8 +18,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("content_schema") is { } nullNodeContentSchema && nullNodeContentSchema.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentSchema = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("content_schema") is null) { _explicitNullValueContentSchema = default!; _explicitNullProperties?.Remove("content_schema"); }
+            else if (parseNode.GetChildNode("content_schema") is { } nullNodeContentSchema && nullNodeContentSchema.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentSchema = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>What this port accepts or produces, as a `ContentSchema`. Its `title` is the port&apos;s display name and its `description` is the help text the template author wrote. For an input, its `type` decides what value is accepted: `string` takes a bare string or a `generation` reference, `voice` takes a `voice` reference, and `image`/`video`/`audio` take an `asset`, `generation` or `inline_base64` reference. `number`, `integer` and `boolean` take a JSON value of that type. An `array` input takes a JSON array with one value per element, each admissible for its `items`. `object` inputs cannot be bound through this API yet. A `string` schema may carry an `enum` of the only values accepted. For an output, its `type` decides which `Template&lt;Kind&gt;Output` shape the run response holds under the port id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentSchema? ContentSchema { get => _explicitNullValueContentSchema; set { _explicitNullValueContentSchema = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_schema"); else _explicitNullProperties?.Remove("content_schema"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentSchema? ContentSchema { get => _explicitNullValueContentSchema; set { _explicitNullValueContentSchema = value; AdditionalData?.Remove("content_schema"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_schema"); else _explicitNullProperties?.Remove("content_schema"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentSchema? _explicitNullValueContentSchema = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentSchema ContentSchema { get => _explicitNullValueContentSchema; set { _explicitNullValueContentSchema = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_schema"); else _explicitNullProperties?.Remove("content_schema"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentSchema ContentSchema { get => _explicitNullValueContentSchema; set { _explicitNullValueContentSchema = value; AdditionalData?.Remove("content_schema"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_schema"); else _explicitNullProperties?.Remove("content_schema"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentSchema _explicitNullValueContentSchema = default!;
 #endif
         /// <summary>The port id. Input ids are the keys of the `inputs` map on `POST /v1/flows/templates/{template_id}/runs`; output ids are the keys of the `outputs` map on the run response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>

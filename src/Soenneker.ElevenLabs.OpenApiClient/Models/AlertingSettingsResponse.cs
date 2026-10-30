@@ -18,34 +18,37 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("auto_resolve_after_inactive_minutes") is { } nullNodeAutoResolveAfterInactiveMinutes && nullNodeAutoResolveAfterInactiveMinutes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoResolveAfterInactiveMinutes = null;
-            if (parseNode.GetChildNode("monitor_configs") is { } nullNodeMonitorConfigs && nullNodeMonitorConfigs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MonitorConfigs = null;
-            if (parseNode.GetChildNode("notifiers") is { } nullNodeNotifiers && nullNodeNotifiers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Notifiers = null;
+            if (parseNode.GetChildNode("auto_resolve_after_inactive_minutes") is null) { _explicitNullValueAutoResolveAfterInactiveMinutes = default!; _explicitNullProperties?.Remove("auto_resolve_after_inactive_minutes"); }
+            else if (parseNode.GetChildNode("auto_resolve_after_inactive_minutes") is { } nullNodeAutoResolveAfterInactiveMinutes && nullNodeAutoResolveAfterInactiveMinutes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoResolveAfterInactiveMinutes = null;
+            if (parseNode.GetChildNode("monitor_configs") is null) { _explicitNullValueMonitorConfigs = default!; _explicitNullProperties?.Remove("monitor_configs"); }
+            else if (parseNode.GetChildNode("monitor_configs") is { } nullNodeMonitorConfigs && nullNodeMonitorConfigs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MonitorConfigs = null;
+            if (parseNode.GetChildNode("notifiers") is null) { _explicitNullValueNotifiers = default!; _explicitNullProperties?.Remove("notifiers"); }
+            else if (parseNode.GetChildNode("notifiers") is { } nullNodeNotifiers && nullNodeNotifiers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Notifiers = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The auto_resolve_after_inactive_minutes property</summary>
-        public int? AutoResolveAfterInactiveMinutes { get => _explicitNullValueAutoResolveAfterInactiveMinutes; set { _explicitNullValueAutoResolveAfterInactiveMinutes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_resolve_after_inactive_minutes"); else _explicitNullProperties?.Remove("auto_resolve_after_inactive_minutes"); } }
+        public int? AutoResolveAfterInactiveMinutes { get => _explicitNullValueAutoResolveAfterInactiveMinutes; set { _explicitNullValueAutoResolveAfterInactiveMinutes = value; AdditionalData?.Remove("auto_resolve_after_inactive_minutes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_resolve_after_inactive_minutes"); else _explicitNullProperties?.Remove("auto_resolve_after_inactive_minutes"); } }
         private int? _explicitNullValueAutoResolveAfterInactiveMinutes = default!;
         /// <summary>The monitor_configs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettingsResponseMonitorConfigsProperty? MonitorConfigs { get => _explicitNullValueMonitorConfigs; set { _explicitNullValueMonitorConfigs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monitor_configs"); else _explicitNullProperties?.Remove("monitor_configs"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettingsResponseMonitorConfigsProperty? MonitorConfigs { get => _explicitNullValueMonitorConfigs; set { _explicitNullValueMonitorConfigs = value; AdditionalData?.Remove("monitor_configs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monitor_configs"); else _explicitNullProperties?.Remove("monitor_configs"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettingsResponseMonitorConfigsProperty? _explicitNullValueMonitorConfigs = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettingsResponseMonitorConfigsProperty MonitorConfigs { get => _explicitNullValueMonitorConfigs; set { _explicitNullValueMonitorConfigs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monitor_configs"); else _explicitNullProperties?.Remove("monitor_configs"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettingsResponseMonitorConfigsProperty MonitorConfigs { get => _explicitNullValueMonitorConfigs; set { _explicitNullValueMonitorConfigs = value; AdditionalData?.Remove("monitor_configs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monitor_configs"); else _explicitNullProperties?.Remove("monitor_configs"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettingsResponseMonitorConfigsProperty _explicitNullValueMonitorConfigs = default!;
 #endif
         /// <summary>The notifiers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettingsResponseNotifiersItem>? Notifiers { get => _explicitNullValueNotifiers; set { _explicitNullValueNotifiers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notifiers"); else _explicitNullProperties?.Remove("notifiers"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettingsResponseNotifiersItem>? Notifiers { get => _explicitNullValueNotifiers; set { _explicitNullValueNotifiers = value; AdditionalData?.Remove("notifiers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notifiers"); else _explicitNullProperties?.Remove("notifiers"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettingsResponseNotifiersItem>? _explicitNullValueNotifiers = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettingsResponseNotifiersItem> Notifiers { get => _explicitNullValueNotifiers; set { _explicitNullValueNotifiers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notifiers"); else _explicitNullProperties?.Remove("notifiers"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettingsResponseNotifiersItem> Notifiers { get => _explicitNullValueNotifiers; set { _explicitNullValueNotifiers = value; AdditionalData?.Remove("notifiers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notifiers"); else _explicitNullProperties?.Remove("notifiers"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettingsResponseNotifiersItem> _explicitNullValueNotifiers = default!;
 #endif
         /// <summary>

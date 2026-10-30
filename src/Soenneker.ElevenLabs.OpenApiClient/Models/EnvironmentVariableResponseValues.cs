@@ -56,6 +56,17 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject))))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject))))();
+            int matchingUnionBranches = 0;
+            if (matchesUnionBranch0) matchingUnionBranches++;
+            if (matchesUnionBranch1) matchingUnionBranches++;
+            if (matchesUnionBranch2) matchingUnionBranches++;
+            bool noSelectedUnionBranch = result.EnvironmentVariableResponseValuesAnyOf1 == null && result.EnvironmentVariableResponseValuesAnyOf2 == null && result.EnvironmentVariableResponseValuesAnyOf3 == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.EnvironmentVariableResponseValuesAnyOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentVariableResponseValuesAnyOf1(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.EnvironmentVariableResponseValuesAnyOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentVariableResponseValuesAnyOf2(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch2 && matchingUnionBranches == 1) result.EnvironmentVariableResponseValuesAnyOf3 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentVariableResponseValuesAnyOf3(), parseNode);
             if (result.EnvironmentVariableResponseValuesAnyOf1 == null && result.EnvironmentVariableResponseValuesAnyOf2 == null && result.EnvironmentVariableResponseValuesAnyOf3 == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
@@ -65,6 +76,8 @@ return result;
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
             if(EnvironmentVariableResponseValuesAnyOf1 != null || EnvironmentVariableResponseValuesAnyOf2 != null || EnvironmentVariableResponseValuesAnyOf3 != null)
             {
                 return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(EnvironmentVariableResponseValuesAnyOf1, EnvironmentVariableResponseValuesAnyOf2, EnvironmentVariableResponseValuesAnyOf3);
@@ -79,9 +92,13 @@ return result;
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
             if (EnvironmentVariableResponseValuesAnyOf1 == null && EnvironmentVariableResponseValuesAnyOf2 == null && EnvironmentVariableResponseValuesAnyOf3 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
-            if (EnvironmentVariableResponseValuesAnyOf1 != null && EnvironmentVariableResponseValuesAnyOf2 == null && EnvironmentVariableResponseValuesAnyOf3 == null) { if (EnvironmentVariableResponseValuesAnyOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, EnvironmentVariableResponseValuesAnyOf1); return; }
-            if (EnvironmentVariableResponseValuesAnyOf2 != null && EnvironmentVariableResponseValuesAnyOf1 == null && EnvironmentVariableResponseValuesAnyOf3 == null) { if (EnvironmentVariableResponseValuesAnyOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, EnvironmentVariableResponseValuesAnyOf2); return; }
-            if (EnvironmentVariableResponseValuesAnyOf3 != null && EnvironmentVariableResponseValuesAnyOf1 == null && EnvironmentVariableResponseValuesAnyOf2 == null) { if (EnvironmentVariableResponseValuesAnyOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, EnvironmentVariableResponseValuesAnyOf3); return; }
+            int selectedUnionBranches = 0;
+            if (EnvironmentVariableResponseValuesAnyOf1 != null) selectedUnionBranches++;
+            if (EnvironmentVariableResponseValuesAnyOf2 != null) selectedUnionBranches++;
+            if (EnvironmentVariableResponseValuesAnyOf3 != null) selectedUnionBranches++;
+            if (EnvironmentVariableResponseValuesAnyOf1 != null && selectedUnionBranches == 1) { if (EnvironmentVariableResponseValuesAnyOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, EnvironmentVariableResponseValuesAnyOf1); return; }
+            if (EnvironmentVariableResponseValuesAnyOf2 != null && selectedUnionBranches == 1) { if (EnvironmentVariableResponseValuesAnyOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, EnvironmentVariableResponseValuesAnyOf2); return; }
+            if (EnvironmentVariableResponseValuesAnyOf3 != null && selectedUnionBranches == 1) { if (EnvironmentVariableResponseValuesAnyOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, EnvironmentVariableResponseValuesAnyOf3); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentVariableResponseValuesAnyOf1>(null, EnvironmentVariableResponseValuesAnyOf1, EnvironmentVariableResponseValuesAnyOf2, EnvironmentVariableResponseValuesAnyOf3);

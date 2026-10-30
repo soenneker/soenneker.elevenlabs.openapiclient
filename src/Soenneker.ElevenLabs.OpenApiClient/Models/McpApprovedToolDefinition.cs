@@ -18,8 +18,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
-            if (parseNode.GetChildNode("input_schema") is { } nullNodeInputSchema && nullNodeInputSchema.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InputSchema = null;
+            if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
+            else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("input_schema") is null) { _explicitNullValueInputSchema = default!; _explicitNullProperties?.Remove("input_schema"); }
+            else if (parseNode.GetChildNode("input_schema") is { } nullNodeInputSchema && nullNodeInputSchema.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InputSchema = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The MCP server-provided tool description at approval time</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The MCP server-provided JSON input schema at approval time</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpApprovedToolDefinitionInputSchemaProperty? InputSchema { get => _explicitNullValueInputSchema; set { _explicitNullValueInputSchema = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input_schema"); else _explicitNullProperties?.Remove("input_schema"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpApprovedToolDefinitionInputSchemaProperty? InputSchema { get => _explicitNullValueInputSchema; set { _explicitNullValueInputSchema = value; AdditionalData?.Remove("input_schema"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input_schema"); else _explicitNullProperties?.Remove("input_schema"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.McpApprovedToolDefinitionInputSchemaProperty? _explicitNullValueInputSchema = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpApprovedToolDefinitionInputSchemaProperty InputSchema { get => _explicitNullValueInputSchema; set { _explicitNullValueInputSchema = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input_schema"); else _explicitNullProperties?.Remove("input_schema"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpApprovedToolDefinitionInputSchemaProperty InputSchema { get => _explicitNullValueInputSchema; set { _explicitNullValueInputSchema = value; AdditionalData?.Remove("input_schema"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input_schema"); else _explicitNullProperties?.Remove("input_schema"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.McpApprovedToolDefinitionInputSchemaProperty _explicitNullValueInputSchema = default!;
 #endif
         /// <summary>

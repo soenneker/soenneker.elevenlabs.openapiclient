@@ -17,8 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("config") is { } nullNodeConfig && nullNodeConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Config = null;
-            if (parseNode.GetChildNode("execution_mode") is { } nullNodeExecutionMode && nullNodeExecutionMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExecutionMode = null;
+            if (parseNode.GetChildNode("config") is null) { _explicitNullValueConfig = default!; _explicitNullProperties?.Remove("config"); }
+            else if (parseNode.GetChildNode("config") is { } nullNodeConfig && nullNodeConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Config = null;
+            if (parseNode.GetChildNode("execution_mode") is null) { _explicitNullValueExecutionMode = default!; _explicitNullProperties?.Remove("execution_mode"); }
+            else if (parseNode.GetChildNode("execution_mode") is { } nullNodeExecutionMode && nullNodeExecutionMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExecutionMode = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ModerationConfig? Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ModerationConfig? Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; AdditionalData?.Remove("config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ModerationConfig? _explicitNullValueConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ModerationConfig Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ModerationConfig Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; AdditionalData?.Remove("config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ModerationConfig _explicitNullValueConfig = default!;
 #endif
         /// <summary>The execution_mode property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailExecutionMode? ExecutionMode { get => _explicitNullValueExecutionMode; set { _explicitNullValueExecutionMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execution_mode"); else _explicitNullProperties?.Remove("execution_mode"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailExecutionMode? ExecutionMode { get => _explicitNullValueExecutionMode; set { _explicitNullValueExecutionMode = value; AdditionalData?.Remove("execution_mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execution_mode"); else _explicitNullProperties?.Remove("execution_mode"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailExecutionMode? _explicitNullValueExecutionMode = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ModerationGuardrailInput"/> and sets the default values.
@@ -63,7 +65,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "config", n => { Config = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ModerationConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ModerationConfig.CreateFromDiscriminatorValue); } },
-                { "execution_mode", n => { ExecutionMode = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailExecutionMode>(); } },
+                { "execution_mode", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailExecutionMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueExecutionMode = default; _explicitNullProperties?.Remove("execution_mode"); AdditionalData["execution_mode"] = unknown; } else { ExecutionMode = parsed; AdditionalData.Remove("execution_mode"); } } },
             };
         }
         /// <summary>

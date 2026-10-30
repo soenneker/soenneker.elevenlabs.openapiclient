@@ -17,13 +17,20 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("explanation") is { } nullNodeExplanation && nullNodeExplanation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Explanation = null;
-            if (parseNode.GetChildNode("rejected_details") is { } nullNodeRejectedDetails && nullNodeRejectedDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RejectedDetails = null;
-            if (parseNode.GetChildNode("reject_reasons") is { } nullNodeRejectReasons && nullNodeRejectReasons.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RejectReasons = null;
-            if (parseNode.GetChildNode("reviewed_at_unix") is { } nullNodeReviewedAtUnix && nullNodeReviewedAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReviewedAtUnix = null;
-            if (parseNode.GetChildNode("reviewed_by") is { } nullNodeReviewedBy && nullNodeReviewedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReviewedBy = null;
-            if (parseNode.GetChildNode("review_status") is { } nullNodeReviewStatus && nullNodeReviewStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReviewStatus = null;
-            if (parseNode.GetChildNode("scores_breakdown") is { } nullNodeScoresBreakdown && nullNodeScoresBreakdown.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScoresBreakdown = null;
+            if (parseNode.GetChildNode("explanation") is null) { _explicitNullValueExplanation = default!; _explicitNullProperties?.Remove("explanation"); }
+            else if (parseNode.GetChildNode("explanation") is { } nullNodeExplanation && nullNodeExplanation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Explanation = null;
+            if (parseNode.GetChildNode("rejected_details") is null) { _explicitNullValueRejectedDetails = default!; _explicitNullProperties?.Remove("rejected_details"); }
+            else if (parseNode.GetChildNode("rejected_details") is { } nullNodeRejectedDetails && nullNodeRejectedDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RejectedDetails = null;
+            if (parseNode.GetChildNode("reject_reasons") is null) { _explicitNullValueRejectReasons = default!; _explicitNullProperties?.Remove("reject_reasons"); }
+            else if (parseNode.GetChildNode("reject_reasons") is { } nullNodeRejectReasons && nullNodeRejectReasons.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RejectReasons = null;
+            if (parseNode.GetChildNode("reviewed_at_unix") is null) { _explicitNullValueReviewedAtUnix = default!; _explicitNullProperties?.Remove("reviewed_at_unix"); }
+            else if (parseNode.GetChildNode("reviewed_at_unix") is { } nullNodeReviewedAtUnix && nullNodeReviewedAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReviewedAtUnix = null;
+            if (parseNode.GetChildNode("reviewed_by") is null) { _explicitNullValueReviewedBy = default!; _explicitNullProperties?.Remove("reviewed_by"); }
+            else if (parseNode.GetChildNode("reviewed_by") is { } nullNodeReviewedBy && nullNodeReviewedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReviewedBy = null;
+            if (parseNode.GetChildNode("review_status") is null) { _explicitNullValueReviewStatus = default!; _explicitNullProperties?.Remove("review_status"); }
+            else if (parseNode.GetChildNode("review_status") is { } nullNodeReviewStatus && nullNodeReviewStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReviewStatus = null;
+            if (parseNode.GetChildNode("scores_breakdown") is null) { _explicitNullValueScoresBreakdown = default!; _explicitNullProperties?.Remove("scores_breakdown"); }
+            else if (parseNode.GetChildNode("scores_breakdown") is { } nullNodeScoresBreakdown && nullNodeScoresBreakdown.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScoresBreakdown = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,57 +38,57 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The explanation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Explanation { get => _explicitNullValueExplanation; set { _explicitNullValueExplanation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("explanation"); else _explicitNullProperties?.Remove("explanation"); } }
+        public string? Explanation { get => _explicitNullValueExplanation; set { _explicitNullValueExplanation = value; AdditionalData?.Remove("explanation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("explanation"); else _explicitNullProperties?.Remove("explanation"); } }
         private string? _explicitNullValueExplanation = default!;
 #nullable restore
 #else
-        public string Explanation { get => _explicitNullValueExplanation; set { _explicitNullValueExplanation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("explanation"); else _explicitNullProperties?.Remove("explanation"); } }
+        public string Explanation { get => _explicitNullValueExplanation; set { _explicitNullValueExplanation = value; AdditionalData?.Remove("explanation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("explanation"); else _explicitNullProperties?.Remove("explanation"); } }
         private string _explicitNullValueExplanation = default!;
 #endif
         /// <summary>The rejected_details property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RejectedDetails { get => _explicitNullValueRejectedDetails; set { _explicitNullValueRejectedDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rejected_details"); else _explicitNullProperties?.Remove("rejected_details"); } }
+        public string? RejectedDetails { get => _explicitNullValueRejectedDetails; set { _explicitNullValueRejectedDetails = value; AdditionalData?.Remove("rejected_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rejected_details"); else _explicitNullProperties?.Remove("rejected_details"); } }
         private string? _explicitNullValueRejectedDetails = default!;
 #nullable restore
 #else
-        public string RejectedDetails { get => _explicitNullValueRejectedDetails; set { _explicitNullValueRejectedDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rejected_details"); else _explicitNullProperties?.Remove("rejected_details"); } }
+        public string RejectedDetails { get => _explicitNullValueRejectedDetails; set { _explicitNullValueRejectedDetails = value; AdditionalData?.Remove("rejected_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rejected_details"); else _explicitNullProperties?.Remove("rejected_details"); } }
         private string _explicitNullValueRejectedDetails = default!;
 #endif
         /// <summary>The reject_reasons property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelRejectReasonsItem?>? RejectReasons { get => _explicitNullValueRejectReasons; set { _explicitNullValueRejectReasons = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reject_reasons"); else _explicitNullProperties?.Remove("reject_reasons"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelRejectReasonsItem?>? RejectReasons { get => _explicitNullValueRejectReasons; set { _explicitNullValueRejectReasons = value; AdditionalData?.Remove("reject_reasons"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reject_reasons"); else _explicitNullProperties?.Remove("reject_reasons"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelRejectReasonsItem?>? _explicitNullValueRejectReasons = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelRejectReasonsItem?> RejectReasons { get => _explicitNullValueRejectReasons; set { _explicitNullValueRejectReasons = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reject_reasons"); else _explicitNullProperties?.Remove("reject_reasons"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelRejectReasonsItem?> RejectReasons { get => _explicitNullValueRejectReasons; set { _explicitNullValueRejectReasons = value; AdditionalData?.Remove("reject_reasons"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reject_reasons"); else _explicitNullProperties?.Remove("reject_reasons"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelRejectReasonsItem?> _explicitNullValueRejectReasons = default!;
 #endif
         /// <summary>The reviewed_at_unix property</summary>
-        public int? ReviewedAtUnix { get => _explicitNullValueReviewedAtUnix; set { _explicitNullValueReviewedAtUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reviewed_at_unix"); else _explicitNullProperties?.Remove("reviewed_at_unix"); } }
+        public int? ReviewedAtUnix { get => _explicitNullValueReviewedAtUnix; set { _explicitNullValueReviewedAtUnix = value; AdditionalData?.Remove("reviewed_at_unix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reviewed_at_unix"); else _explicitNullProperties?.Remove("reviewed_at_unix"); } }
         private int? _explicitNullValueReviewedAtUnix = default!;
         /// <summary>The reviewed_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReviewedBy { get => _explicitNullValueReviewedBy; set { _explicitNullValueReviewedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reviewed_by"); else _explicitNullProperties?.Remove("reviewed_by"); } }
+        public string? ReviewedBy { get => _explicitNullValueReviewedBy; set { _explicitNullValueReviewedBy = value; AdditionalData?.Remove("reviewed_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reviewed_by"); else _explicitNullProperties?.Remove("reviewed_by"); } }
         private string? _explicitNullValueReviewedBy = default!;
 #nullable restore
 #else
-        public string ReviewedBy { get => _explicitNullValueReviewedBy; set { _explicitNullValueReviewedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reviewed_by"); else _explicitNullProperties?.Remove("reviewed_by"); } }
+        public string ReviewedBy { get => _explicitNullValueReviewedBy; set { _explicitNullValueReviewedBy = value; AdditionalData?.Remove("reviewed_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reviewed_by"); else _explicitNullProperties?.Remove("reviewed_by"); } }
         private string _explicitNullValueReviewedBy = default!;
 #endif
         /// <summary>The review_status property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelReviewStatus? ReviewStatus { get => _explicitNullValueReviewStatus; set { _explicitNullValueReviewStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("review_status"); else _explicitNullProperties?.Remove("review_status"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelReviewStatus? ReviewStatus { get => _explicitNullValueReviewStatus; set { _explicitNullValueReviewStatus = value; AdditionalData?.Remove("review_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("review_status"); else _explicitNullProperties?.Remove("review_status"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelReviewStatus? _explicitNullValueReviewStatus = default!;
         /// <summary>The scores_breakdown property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelScoresBreakdownProperty? ScoresBreakdown { get => _explicitNullValueScoresBreakdown; set { _explicitNullValueScoresBreakdown = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scores_breakdown"); else _explicitNullProperties?.Remove("scores_breakdown"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelScoresBreakdownProperty? ScoresBreakdown { get => _explicitNullValueScoresBreakdown; set { _explicitNullValueScoresBreakdown = value; AdditionalData?.Remove("scores_breakdown"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scores_breakdown"); else _explicitNullProperties?.Remove("scores_breakdown"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelScoresBreakdownProperty? _explicitNullValueScoresBreakdown = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelScoresBreakdownProperty ScoresBreakdown { get => _explicitNullValueScoresBreakdown; set { _explicitNullValueScoresBreakdown = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scores_breakdown"); else _explicitNullProperties?.Remove("scores_breakdown"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelScoresBreakdownProperty ScoresBreakdown { get => _explicitNullValueScoresBreakdown; set { _explicitNullValueScoresBreakdown = value; AdditionalData?.Remove("scores_breakdown"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scores_breakdown"); else _explicitNullProperties?.Remove("scores_breakdown"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelScoresBreakdownProperty _explicitNullValueScoresBreakdown = default!;
 #endif
         /// <summary>
@@ -112,7 +119,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "explanation", n => { Explanation = n.GetStringValue(); } },
                 { "reject_reasons", n => { RejectReasons = n.GetCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelRejectReasonsItem>()?.AsList(); } },
                 { "rejected_details", n => { RejectedDetails = n.GetStringValue(); } },
-                { "review_status", n => { ReviewStatus = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelReviewStatus>(); } },
+                { "review_status", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelReviewStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueReviewStatus = default; _explicitNullProperties?.Remove("review_status"); AdditionalData["review_status"] = unknown; } else { ReviewStatus = parsed; AdditionalData.Remove("review_status"); } } },
                 { "reviewed_at_unix", n => { ReviewedAtUnix = n.GetIntValue(); } },
                 { "reviewed_by", n => { ReviewedBy = n.GetStringValue(); } },
                 { "scores_breakdown", n => { ScoresBreakdown = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelScoresBreakdownProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelScoresBreakdownProperty.CreateFromDiscriminatorValue); } },

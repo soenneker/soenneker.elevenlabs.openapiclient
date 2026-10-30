@@ -17,13 +17,20 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("conversation_config") is { } nullNodeConversationConfig && nullNodeConversationConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationConfig = null;
-            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
-            if (parseNode.GetChildNode("include_draft") is { } nullNodeIncludeDraft && nullNodeIncludeDraft.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeDraft = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("parent_version_id") is { } nullNodeParentVersionId && nullNodeParentVersionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentVersionId = null;
-            if (parseNode.GetChildNode("platform_settings") is { } nullNodePlatformSettings && nullNodePlatformSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlatformSettings = null;
-            if (parseNode.GetChildNode("workflow") is { } nullNodeWorkflow && nullNodeWorkflow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Workflow = null;
+            if (parseNode.GetChildNode("conversation_config") is null) { _explicitNullValueConversationConfig = default!; _explicitNullProperties?.Remove("conversation_config"); }
+            else if (parseNode.GetChildNode("conversation_config") is { } nullNodeConversationConfig && nullNodeConversationConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationConfig = null;
+            if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
+            else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("include_draft") is null) { _explicitNullValueIncludeDraft = default!; _explicitNullProperties?.Remove("include_draft"); }
+            else if (parseNode.GetChildNode("include_draft") is { } nullNodeIncludeDraft && nullNodeIncludeDraft.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeDraft = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("parent_version_id") is null) { _explicitNullValueParentVersionId = default!; _explicitNullProperties?.Remove("parent_version_id"); }
+            else if (parseNode.GetChildNode("parent_version_id") is { } nullNodeParentVersionId && nullNodeParentVersionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentVersionId = null;
+            if (parseNode.GetChildNode("platform_settings") is null) { _explicitNullValuePlatformSettings = default!; _explicitNullProperties?.Remove("platform_settings"); }
+            else if (parseNode.GetChildNode("platform_settings") is { } nullNodePlatformSettings && nullNodePlatformSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlatformSettings = null;
+            if (parseNode.GetChildNode("workflow") is null) { _explicitNullValueWorkflow = default!; _explicitNullProperties?.Remove("workflow"); }
+            else if (parseNode.GetChildNode("workflow") is { } nullNodeWorkflow && nullNodeWorkflow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Workflow = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,64 +38,64 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Changes to apply to conversation config</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPostConversationConfigProperty? ConversationConfig { get => _explicitNullValueConversationConfig; set { _explicitNullValueConversationConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_config"); else _explicitNullProperties?.Remove("conversation_config"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPostConversationConfigProperty? ConversationConfig { get => _explicitNullValueConversationConfig; set { _explicitNullValueConversationConfig = value; AdditionalData?.Remove("conversation_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_config"); else _explicitNullProperties?.Remove("conversation_config"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPostConversationConfigProperty? _explicitNullValueConversationConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPostConversationConfigProperty ConversationConfig { get => _explicitNullValueConversationConfig; set { _explicitNullValueConversationConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_config"); else _explicitNullProperties?.Remove("conversation_config"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPostConversationConfigProperty ConversationConfig { get => _explicitNullValueConversationConfig; set { _explicitNullValueConversationConfig = value; AdditionalData?.Remove("conversation_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_config"); else _explicitNullProperties?.Remove("conversation_config"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPostConversationConfigProperty _explicitNullValueConversationConfig = default!;
 #endif
         /// <summary>Description for the branch</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>When true, the new branch uses the caller&apos;s draft procedure set instead of the branch tip. Requires parent_version_id to be the branch tip.</summary>
-        public bool? IncludeDraft { get => _explicitNullValueIncludeDraft; set { _explicitNullValueIncludeDraft = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_draft"); else _explicitNullProperties?.Remove("include_draft"); } }
+        public bool? IncludeDraft { get => _explicitNullValueIncludeDraft; set { _explicitNullValueIncludeDraft = value; AdditionalData?.Remove("include_draft"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_draft"); else _explicitNullProperties?.Remove("include_draft"); } }
         private bool? _explicitNullValueIncludeDraft = default!;
         /// <summary>Name of the branch. It is unique within the agent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>ID of the version to branch from</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ParentVersionId { get => _explicitNullValueParentVersionId; set { _explicitNullValueParentVersionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_version_id"); else _explicitNullProperties?.Remove("parent_version_id"); } }
+        public string? ParentVersionId { get => _explicitNullValueParentVersionId; set { _explicitNullValueParentVersionId = value; AdditionalData?.Remove("parent_version_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_version_id"); else _explicitNullProperties?.Remove("parent_version_id"); } }
         private string? _explicitNullValueParentVersionId = default!;
 #nullable restore
 #else
-        public string ParentVersionId { get => _explicitNullValueParentVersionId; set { _explicitNullValueParentVersionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_version_id"); else _explicitNullProperties?.Remove("parent_version_id"); } }
+        public string ParentVersionId { get => _explicitNullValueParentVersionId; set { _explicitNullValueParentVersionId = value; AdditionalData?.Remove("parent_version_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_version_id"); else _explicitNullProperties?.Remove("parent_version_id"); } }
         private string _explicitNullValueParentVersionId = default!;
 #endif
         /// <summary>Changes to apply to platform settings</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPostPlatformSettingsProperty? PlatformSettings { get => _explicitNullValuePlatformSettings; set { _explicitNullValuePlatformSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform_settings"); else _explicitNullProperties?.Remove("platform_settings"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPostPlatformSettingsProperty? PlatformSettings { get => _explicitNullValuePlatformSettings; set { _explicitNullValuePlatformSettings = value; AdditionalData?.Remove("platform_settings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform_settings"); else _explicitNullProperties?.Remove("platform_settings"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPostPlatformSettingsProperty? _explicitNullValuePlatformSettings = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPostPlatformSettingsProperty PlatformSettings { get => _explicitNullValuePlatformSettings; set { _explicitNullValuePlatformSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform_settings"); else _explicitNullProperties?.Remove("platform_settings"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPostPlatformSettingsProperty PlatformSettings { get => _explicitNullValuePlatformSettings; set { _explicitNullValuePlatformSettings = value; AdditionalData?.Remove("platform_settings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform_settings"); else _explicitNullProperties?.Remove("platform_settings"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPostPlatformSettingsProperty _explicitNullValuePlatformSettings = default!;
 #endif
         /// <summary>Updated workflow definition</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModel? Workflow { get => _explicitNullValueWorkflow; set { _explicitNullValueWorkflow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow"); else _explicitNullProperties?.Remove("workflow"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModel? Workflow { get => _explicitNullValueWorkflow; set { _explicitNullValueWorkflow = value; AdditionalData?.Remove("workflow"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow"); else _explicitNullProperties?.Remove("workflow"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModel? _explicitNullValueWorkflow = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModel Workflow { get => _explicitNullValueWorkflow; set { _explicitNullValueWorkflow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow"); else _explicitNullProperties?.Remove("workflow"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModel Workflow { get => _explicitNullValueWorkflow; set { _explicitNullValueWorkflow = value; AdditionalData?.Remove("workflow"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow"); else _explicitNullProperties?.Remove("workflow"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModel _explicitNullValueWorkflow = default!;
 #endif
         /// <summary>

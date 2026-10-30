@@ -17,13 +17,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("amount_usd") is { } nullNodeAmountUsd && nullNodeAmountUsd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AmountUsd = null;
+            if (parseNode.GetChildNode("amount_usd") is null) { _explicitNullValueAmountUsd = default!; _explicitNullProperties?.Remove("amount_usd"); }
+            else if (parseNode.GetChildNode("amount_usd") is { } nullNodeAmountUsd && nullNodeAmountUsd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AmountUsd = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The quoted price for this item in USD. Use the order&apos;s total_amount_usd for the combined order total.</summary>
-        public double? AmountUsd { get => _explicitNullValueAmountUsd; set { _explicitNullValueAmountUsd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount_usd"); else _explicitNullProperties?.Remove("amount_usd"); } }
+        public double? AmountUsd { get => _explicitNullValueAmountUsd; set { _explicitNullValueAmountUsd = value; AdditionalData?.Remove("amount_usd"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount_usd"); else _explicitNullProperties?.Remove("amount_usd"); } }
         private double? _explicitNullValueAmountUsd = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.QuoteInfo"/> and sets the default values.

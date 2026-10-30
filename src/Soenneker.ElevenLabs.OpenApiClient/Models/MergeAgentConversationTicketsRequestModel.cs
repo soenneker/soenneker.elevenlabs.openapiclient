@@ -17,7 +17,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("source_ticket_ids") is { } nullNodeSourceTicketIds && nullNodeSourceTicketIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceTicketIds = null;
+            if (parseNode.GetChildNode("source_ticket_ids") is null) { _explicitNullValueSourceTicketIds = default!; _explicitNullProperties?.Remove("source_ticket_ids"); }
+            else if (parseNode.GetChildNode("source_ticket_ids") is { } nullNodeSourceTicketIds && nullNodeSourceTicketIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceTicketIds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Open tickets of the same agent to fold into this one. They are kept with status &apos;merged&apos;, pointing at this ticket.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SourceTicketIds { get => _explicitNullValueSourceTicketIds; set { _explicitNullValueSourceTicketIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_ticket_ids"); else _explicitNullProperties?.Remove("source_ticket_ids"); } }
+        public List<string>? SourceTicketIds { get => _explicitNullValueSourceTicketIds; set { _explicitNullValueSourceTicketIds = value; AdditionalData?.Remove("source_ticket_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_ticket_ids"); else _explicitNullProperties?.Remove("source_ticket_ids"); } }
         private List<string>? _explicitNullValueSourceTicketIds = default!;
 #nullable restore
 #else
-        public List<string> SourceTicketIds { get => _explicitNullValueSourceTicketIds; set { _explicitNullValueSourceTicketIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_ticket_ids"); else _explicitNullProperties?.Remove("source_ticket_ids"); } }
+        public List<string> SourceTicketIds { get => _explicitNullValueSourceTicketIds; set { _explicitNullValueSourceTicketIds = value; AdditionalData?.Remove("source_ticket_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_ticket_ids"); else _explicitNullProperties?.Remove("source_ticket_ids"); } }
         private List<string> _explicitNullValueSourceTicketIds = default!;
 #endif
         /// <summary>

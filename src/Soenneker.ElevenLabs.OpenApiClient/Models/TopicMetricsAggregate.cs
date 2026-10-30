@@ -17,34 +17,37 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("conversation_count") is { } nullNodeConversationCount && nullNodeConversationCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationCount = null;
-            if (parseNode.GetChildNode("evaluation_criteria") is { } nullNodeEvaluationCriteria && nullNodeEvaluationCriteria.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EvaluationCriteria = null;
-            if (parseNode.GetChildNode("sentiment") is { } nullNodeSentiment && nullNodeSentiment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sentiment = null;
+            if (parseNode.GetChildNode("conversation_count") is null) { _explicitNullValueConversationCount = default!; _explicitNullProperties?.Remove("conversation_count"); }
+            else if (parseNode.GetChildNode("conversation_count") is { } nullNodeConversationCount && nullNodeConversationCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationCount = null;
+            if (parseNode.GetChildNode("evaluation_criteria") is null) { _explicitNullValueEvaluationCriteria = default!; _explicitNullProperties?.Remove("evaluation_criteria"); }
+            else if (parseNode.GetChildNode("evaluation_criteria") is { } nullNodeEvaluationCriteria && nullNodeEvaluationCriteria.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EvaluationCriteria = null;
+            if (parseNode.GetChildNode("sentiment") is null) { _explicitNullValueSentiment = default!; _explicitNullProperties?.Remove("sentiment"); }
+            else if (parseNode.GetChildNode("sentiment") is { } nullNodeSentiment && nullNodeSentiment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sentiment = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The conversation_count property</summary>
-        public int? ConversationCount { get => _explicitNullValueConversationCount; set { _explicitNullValueConversationCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_count"); else _explicitNullProperties?.Remove("conversation_count"); } }
+        public int? ConversationCount { get => _explicitNullValueConversationCount; set { _explicitNullValueConversationCount = value; AdditionalData?.Remove("conversation_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_count"); else _explicitNullProperties?.Remove("conversation_count"); } }
         private int? _explicitNullValueConversationCount = default!;
         /// <summary>The evaluation_criteria property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TopicEvaluationCriteriaAggregate>? EvaluationCriteria { get => _explicitNullValueEvaluationCriteria; set { _explicitNullValueEvaluationCriteria = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluation_criteria"); else _explicitNullProperties?.Remove("evaluation_criteria"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TopicEvaluationCriteriaAggregate>? EvaluationCriteria { get => _explicitNullValueEvaluationCriteria; set { _explicitNullValueEvaluationCriteria = value; AdditionalData?.Remove("evaluation_criteria"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluation_criteria"); else _explicitNullProperties?.Remove("evaluation_criteria"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TopicEvaluationCriteriaAggregate>? _explicitNullValueEvaluationCriteria = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TopicEvaluationCriteriaAggregate> EvaluationCriteria { get => _explicitNullValueEvaluationCriteria; set { _explicitNullValueEvaluationCriteria = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluation_criteria"); else _explicitNullProperties?.Remove("evaluation_criteria"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TopicEvaluationCriteriaAggregate> EvaluationCriteria { get => _explicitNullValueEvaluationCriteria; set { _explicitNullValueEvaluationCriteria = value; AdditionalData?.Remove("evaluation_criteria"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluation_criteria"); else _explicitNullProperties?.Remove("evaluation_criteria"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TopicEvaluationCriteriaAggregate> _explicitNullValueEvaluationCriteria = default!;
 #endif
         /// <summary>The sentiment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TopicSentimentAggregate? Sentiment { get => _explicitNullValueSentiment; set { _explicitNullValueSentiment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sentiment"); else _explicitNullProperties?.Remove("sentiment"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TopicSentimentAggregate? Sentiment { get => _explicitNullValueSentiment; set { _explicitNullValueSentiment = value; AdditionalData?.Remove("sentiment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sentiment"); else _explicitNullProperties?.Remove("sentiment"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.TopicSentimentAggregate? _explicitNullValueSentiment = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TopicSentimentAggregate Sentiment { get => _explicitNullValueSentiment; set { _explicitNullValueSentiment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sentiment"); else _explicitNullProperties?.Remove("sentiment"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TopicSentimentAggregate Sentiment { get => _explicitNullValueSentiment; set { _explicitNullValueSentiment = value; AdditionalData?.Remove("sentiment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sentiment"); else _explicitNullProperties?.Remove("sentiment"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.TopicSentimentAggregate _explicitNullValueSentiment = default!;
 #endif
         /// <summary>

@@ -17,25 +17,29 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("created_at_unix_secs") is { } nullNodeCreatedAtUnixSecs && nullNodeCreatedAtUnixSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAtUnixSecs = null;
-            if (parseNode.GetChildNode("created_from") is { } nullNodeCreatedFrom && nullNodeCreatedFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedFrom = null;
-            if (parseNode.GetChildNode("last_updated_from") is { } nullNodeLastUpdatedFrom && nullNodeLastUpdatedFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastUpdatedFrom = null;
-            if (parseNode.GetChildNode("updated_at_unix_secs") is { } nullNodeUpdatedAtUnixSecs && nullNodeUpdatedAtUnixSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAtUnixSecs = null;
+            if (parseNode.GetChildNode("created_at_unix_secs") is null) { _explicitNullValueCreatedAtUnixSecs = default!; _explicitNullProperties?.Remove("created_at_unix_secs"); }
+            else if (parseNode.GetChildNode("created_at_unix_secs") is { } nullNodeCreatedAtUnixSecs && nullNodeCreatedAtUnixSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAtUnixSecs = null;
+            if (parseNode.GetChildNode("created_from") is null) { _explicitNullValueCreatedFrom = default!; _explicitNullProperties?.Remove("created_from"); }
+            else if (parseNode.GetChildNode("created_from") is { } nullNodeCreatedFrom && nullNodeCreatedFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedFrom = null;
+            if (parseNode.GetChildNode("last_updated_from") is null) { _explicitNullValueLastUpdatedFrom = default!; _explicitNullProperties?.Remove("last_updated_from"); }
+            else if (parseNode.GetChildNode("last_updated_from") is { } nullNodeLastUpdatedFrom && nullNodeLastUpdatedFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastUpdatedFrom = null;
+            if (parseNode.GetChildNode("updated_at_unix_secs") is null) { _explicitNullValueUpdatedAtUnixSecs = default!; _explicitNullProperties?.Remove("updated_at_unix_secs"); }
+            else if (parseNode.GetChildNode("updated_at_unix_secs") is { } nullNodeUpdatedAtUnixSecs && nullNodeUpdatedAtUnixSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAtUnixSecs = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The created_at_unix_secs property</summary>
-        public int? CreatedAtUnixSecs { get => _explicitNullValueCreatedAtUnixSecs; set { _explicitNullValueCreatedAtUnixSecs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at_unix_secs"); else _explicitNullProperties?.Remove("created_at_unix_secs"); } }
+        public int? CreatedAtUnixSecs { get => _explicitNullValueCreatedAtUnixSecs; set { _explicitNullValueCreatedAtUnixSecs = value; AdditionalData?.Remove("created_at_unix_secs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at_unix_secs"); else _explicitNullProperties?.Remove("created_at_unix_secs"); } }
         private int? _explicitNullValueCreatedAtUnixSecs = default!;
         /// <summary>The created_from property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDefinitionSource? CreatedFrom { get => _explicitNullValueCreatedFrom; set { _explicitNullValueCreatedFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_from"); else _explicitNullProperties?.Remove("created_from"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDefinitionSource? CreatedFrom { get => _explicitNullValueCreatedFrom; set { _explicitNullValueCreatedFrom = value; AdditionalData?.Remove("created_from"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_from"); else _explicitNullProperties?.Remove("created_from"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDefinitionSource? _explicitNullValueCreatedFrom = default!;
         /// <summary>The last_updated_from property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDefinitionSource? LastUpdatedFrom { get => _explicitNullValueLastUpdatedFrom; set { _explicitNullValueLastUpdatedFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_updated_from"); else _explicitNullProperties?.Remove("last_updated_from"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDefinitionSource? LastUpdatedFrom { get => _explicitNullValueLastUpdatedFrom; set { _explicitNullValueLastUpdatedFrom = value; AdditionalData?.Remove("last_updated_from"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_updated_from"); else _explicitNullProperties?.Remove("last_updated_from"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDefinitionSource? _explicitNullValueLastUpdatedFrom = default!;
         /// <summary>The updated_at_unix_secs property</summary>
-        public int? UpdatedAtUnixSecs { get => _explicitNullValueUpdatedAtUnixSecs; set { _explicitNullValueUpdatedAtUnixSecs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at_unix_secs"); else _explicitNullProperties?.Remove("updated_at_unix_secs"); } }
+        public int? UpdatedAtUnixSecs { get => _explicitNullValueUpdatedAtUnixSecs; set { _explicitNullValueUpdatedAtUnixSecs = value; AdditionalData?.Remove("updated_at_unix_secs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at_unix_secs"); else _explicitNullProperties?.Remove("updated_at_unix_secs"); } }
         private int? _explicitNullValueUpdatedAtUnixSecs = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadataDbModel"/> and sets the default values.
@@ -65,8 +69,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "created_at_unix_secs", n => { CreatedAtUnixSecs = n.GetIntValue(); } },
-                { "created_from", n => { CreatedFrom = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDefinitionSource>(); } },
-                { "last_updated_from", n => { LastUpdatedFrom = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDefinitionSource>(); } },
+                { "created_from", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDefinitionSource>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCreatedFrom = default; _explicitNullProperties?.Remove("created_from"); AdditionalData["created_from"] = unknown; } else { CreatedFrom = parsed; AdditionalData.Remove("created_from"); } } },
+                { "last_updated_from", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDefinitionSource>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueLastUpdatedFrom = default; _explicitNullProperties?.Remove("last_updated_from"); AdditionalData["last_updated_from"] = unknown; } else { LastUpdatedFrom = parsed; AdditionalData.Remove("last_updated_from"); } } },
                 { "updated_at_unix_secs", n => { UpdatedAtUnixSecs = n.GetIntValue(); } },
             };
         }

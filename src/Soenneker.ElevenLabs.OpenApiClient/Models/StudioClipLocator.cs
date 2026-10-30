@@ -18,12 +18,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("block_id") is { } nullNodeBlockId && nullNodeBlockId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlockId = null;
-            if (parseNode.GetChildNode("chapter_id") is { } nullNodeChapterId && nullNodeChapterId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChapterId = null;
-            if (parseNode.GetChildNode("clip_id") is { } nullNodeClipId && nullNodeClipId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClipId = null;
-            if (parseNode.GetChildNode("clip_type") is { } nullNodeClipType && nullNodeClipType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClipType = null;
-            if (parseNode.GetChildNode("preview_url") is { } nullNodePreviewUrl && nullNodePreviewUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviewUrl = null;
-            if (parseNode.GetChildNode("project_id") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
+            if (parseNode.GetChildNode("block_id") is null) { _explicitNullValueBlockId = default!; _explicitNullProperties?.Remove("block_id"); }
+            else if (parseNode.GetChildNode("block_id") is { } nullNodeBlockId && nullNodeBlockId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlockId = null;
+            if (parseNode.GetChildNode("chapter_id") is null) { _explicitNullValueChapterId = default!; _explicitNullProperties?.Remove("chapter_id"); }
+            else if (parseNode.GetChildNode("chapter_id") is { } nullNodeChapterId && nullNodeChapterId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChapterId = null;
+            if (parseNode.GetChildNode("clip_id") is null) { _explicitNullValueClipId = default!; _explicitNullProperties?.Remove("clip_id"); }
+            else if (parseNode.GetChildNode("clip_id") is { } nullNodeClipId && nullNodeClipId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClipId = null;
+            if (parseNode.GetChildNode("clip_type") is null) { _explicitNullValueClipType = default!; _explicitNullProperties?.Remove("clip_type"); }
+            else if (parseNode.GetChildNode("clip_type") is { } nullNodeClipType && nullNodeClipType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClipType = null;
+            if (parseNode.GetChildNode("preview_url") is null) { _explicitNullValuePreviewUrl = default!; _explicitNullProperties?.Remove("preview_url"); }
+            else if (parseNode.GetChildNode("preview_url") is { } nullNodePreviewUrl && nullNodePreviewUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviewUrl = null;
+            if (parseNode.GetChildNode("project_id") is null) { _explicitNullValueProjectId = default!; _explicitNullProperties?.Remove("project_id"); }
+            else if (parseNode.GetChildNode("project_id") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,54 +37,54 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The block_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BlockId { get => _explicitNullValueBlockId; set { _explicitNullValueBlockId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("block_id"); else _explicitNullProperties?.Remove("block_id"); } }
+        public string? BlockId { get => _explicitNullValueBlockId; set { _explicitNullValueBlockId = value; AdditionalData?.Remove("block_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("block_id"); else _explicitNullProperties?.Remove("block_id"); } }
         private string? _explicitNullValueBlockId = default!;
 #nullable restore
 #else
-        public string BlockId { get => _explicitNullValueBlockId; set { _explicitNullValueBlockId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("block_id"); else _explicitNullProperties?.Remove("block_id"); } }
+        public string BlockId { get => _explicitNullValueBlockId; set { _explicitNullValueBlockId = value; AdditionalData?.Remove("block_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("block_id"); else _explicitNullProperties?.Remove("block_id"); } }
         private string _explicitNullValueBlockId = default!;
 #endif
         /// <summary>The chapter_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ChapterId { get => _explicitNullValueChapterId; set { _explicitNullValueChapterId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chapter_id"); else _explicitNullProperties?.Remove("chapter_id"); } }
+        public string? ChapterId { get => _explicitNullValueChapterId; set { _explicitNullValueChapterId = value; AdditionalData?.Remove("chapter_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chapter_id"); else _explicitNullProperties?.Remove("chapter_id"); } }
         private string? _explicitNullValueChapterId = default!;
 #nullable restore
 #else
-        public string ChapterId { get => _explicitNullValueChapterId; set { _explicitNullValueChapterId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chapter_id"); else _explicitNullProperties?.Remove("chapter_id"); } }
+        public string ChapterId { get => _explicitNullValueChapterId; set { _explicitNullValueChapterId = value; AdditionalData?.Remove("chapter_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chapter_id"); else _explicitNullProperties?.Remove("chapter_id"); } }
         private string _explicitNullValueChapterId = default!;
 #endif
         /// <summary>The clip_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClipId { get => _explicitNullValueClipId; set { _explicitNullValueClipId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clip_id"); else _explicitNullProperties?.Remove("clip_id"); } }
+        public string? ClipId { get => _explicitNullValueClipId; set { _explicitNullValueClipId = value; AdditionalData?.Remove("clip_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clip_id"); else _explicitNullProperties?.Remove("clip_id"); } }
         private string? _explicitNullValueClipId = default!;
 #nullable restore
 #else
-        public string ClipId { get => _explicitNullValueClipId; set { _explicitNullValueClipId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clip_id"); else _explicitNullProperties?.Remove("clip_id"); } }
+        public string ClipId { get => _explicitNullValueClipId; set { _explicitNullValueClipId = value; AdditionalData?.Remove("clip_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clip_id"); else _explicitNullProperties?.Remove("clip_id"); } }
         private string _explicitNullValueClipId = default!;
 #endif
         /// <summary>The clip_type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioClipLocatorClipType? ClipType { get => _explicitNullValueClipType; set { _explicitNullValueClipType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clip_type"); else _explicitNullProperties?.Remove("clip_type"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioClipLocatorClipType? ClipType { get => _explicitNullValueClipType; set { _explicitNullValueClipType = value; AdditionalData?.Remove("clip_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clip_type"); else _explicitNullProperties?.Remove("clip_type"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioClipLocatorClipType? _explicitNullValueClipType = default!;
         /// <summary>The preview_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviewUrl { get => _explicitNullValuePreviewUrl; set { _explicitNullValuePreviewUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preview_url"); else _explicitNullProperties?.Remove("preview_url"); } }
+        public string? PreviewUrl { get => _explicitNullValuePreviewUrl; set { _explicitNullValuePreviewUrl = value; AdditionalData?.Remove("preview_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preview_url"); else _explicitNullProperties?.Remove("preview_url"); } }
         private string? _explicitNullValuePreviewUrl = default!;
 #nullable restore
 #else
-        public string PreviewUrl { get => _explicitNullValuePreviewUrl; set { _explicitNullValuePreviewUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preview_url"); else _explicitNullProperties?.Remove("preview_url"); } }
+        public string PreviewUrl { get => _explicitNullValuePreviewUrl; set { _explicitNullValuePreviewUrl = value; AdditionalData?.Remove("preview_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preview_url"); else _explicitNullProperties?.Remove("preview_url"); } }
         private string _explicitNullValuePreviewUrl = default!;
 #endif
         /// <summary>The project_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_id"); else _explicitNullProperties?.Remove("project_id"); } }
+        public string? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("project_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_id"); else _explicitNullProperties?.Remove("project_id"); } }
         private string? _explicitNullValueProjectId = default!;
 #nullable restore
 #else
-        public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_id"); else _explicitNullProperties?.Remove("project_id"); } }
+        public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("project_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_id"); else _explicitNullProperties?.Remove("project_id"); } }
         private string _explicitNullValueProjectId = default!;
 #endif
         /// <summary>
@@ -109,7 +115,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "block_id", n => { BlockId = n.GetStringValue(); } },
                 { "chapter_id", n => { ChapterId = n.GetStringValue(); } },
                 { "clip_id", n => { ClipId = n.GetStringValue(); } },
-                { "clip_type", n => { ClipType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioClipLocatorClipType>(); } },
+                { "clip_type", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioClipLocatorClipType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueClipType = default; _explicitNullProperties?.Remove("clip_type"); AdditionalData["clip_type"] = unknown; } else { ClipType = parsed; AdditionalData.Remove("clip_type"); } } },
                 { "preview_url", n => { PreviewUrl = n.GetStringValue(); } },
                 { "project_id", n => { ProjectId = n.GetStringValue(); } },
             };

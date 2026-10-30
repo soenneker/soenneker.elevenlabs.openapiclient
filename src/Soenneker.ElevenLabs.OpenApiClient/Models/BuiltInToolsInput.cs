@@ -18,13 +18,20 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("end_call") is { } nullNodeEndCall && nullNodeEndCall.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndCall = null;
-            if (parseNode.GetChildNode("language_detection") is { } nullNodeLanguageDetection && nullNodeLanguageDetection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LanguageDetection = null;
-            if (parseNode.GetChildNode("play_keypad_touch_tone") is { } nullNodePlayKeypadTouchTone && nullNodePlayKeypadTouchTone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlayKeypadTouchTone = null;
-            if (parseNode.GetChildNode("skip_turn") is { } nullNodeSkipTurn && nullNodeSkipTurn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkipTurn = null;
-            if (parseNode.GetChildNode("transfer_to_agent") is { } nullNodeTransferToAgent && nullNodeTransferToAgent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferToAgent = null;
-            if (parseNode.GetChildNode("transfer_to_number") is { } nullNodeTransferToNumber && nullNodeTransferToNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferToNumber = null;
-            if (parseNode.GetChildNode("voicemail_detection") is { } nullNodeVoicemailDetection && nullNodeVoicemailDetection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VoicemailDetection = null;
+            if (parseNode.GetChildNode("end_call") is null) { _explicitNullValueEndCall = default!; _explicitNullProperties?.Remove("end_call"); }
+            else if (parseNode.GetChildNode("end_call") is { } nullNodeEndCall && nullNodeEndCall.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndCall = null;
+            if (parseNode.GetChildNode("language_detection") is null) { _explicitNullValueLanguageDetection = default!; _explicitNullProperties?.Remove("language_detection"); }
+            else if (parseNode.GetChildNode("language_detection") is { } nullNodeLanguageDetection && nullNodeLanguageDetection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LanguageDetection = null;
+            if (parseNode.GetChildNode("play_keypad_touch_tone") is null) { _explicitNullValuePlayKeypadTouchTone = default!; _explicitNullProperties?.Remove("play_keypad_touch_tone"); }
+            else if (parseNode.GetChildNode("play_keypad_touch_tone") is { } nullNodePlayKeypadTouchTone && nullNodePlayKeypadTouchTone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlayKeypadTouchTone = null;
+            if (parseNode.GetChildNode("skip_turn") is null) { _explicitNullValueSkipTurn = default!; _explicitNullProperties?.Remove("skip_turn"); }
+            else if (parseNode.GetChildNode("skip_turn") is { } nullNodeSkipTurn && nullNodeSkipTurn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkipTurn = null;
+            if (parseNode.GetChildNode("transfer_to_agent") is null) { _explicitNullValueTransferToAgent = default!; _explicitNullProperties?.Remove("transfer_to_agent"); }
+            else if (parseNode.GetChildNode("transfer_to_agent") is { } nullNodeTransferToAgent && nullNodeTransferToAgent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferToAgent = null;
+            if (parseNode.GetChildNode("transfer_to_number") is null) { _explicitNullValueTransferToNumber = default!; _explicitNullProperties?.Remove("transfer_to_number"); }
+            else if (parseNode.GetChildNode("transfer_to_number") is { } nullNodeTransferToNumber && nullNodeTransferToNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferToNumber = null;
+            if (parseNode.GetChildNode("voicemail_detection") is null) { _explicitNullValueVoicemailDetection = default!; _explicitNullProperties?.Remove("voicemail_detection"); }
+            else if (parseNode.GetChildNode("voicemail_detection") is { } nullNodeVoicemailDetection && nullNodeVoicemailDetection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VoicemailDetection = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -32,71 +39,71 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The end call tool</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput? EndCall { get => _explicitNullValueEndCall; set { _explicitNullValueEndCall = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_call"); else _explicitNullProperties?.Remove("end_call"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput? EndCall { get => _explicitNullValueEndCall; set { _explicitNullValueEndCall = value; AdditionalData?.Remove("end_call"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_call"); else _explicitNullProperties?.Remove("end_call"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput? _explicitNullValueEndCall = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput EndCall { get => _explicitNullValueEndCall; set { _explicitNullValueEndCall = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_call"); else _explicitNullProperties?.Remove("end_call"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput EndCall { get => _explicitNullValueEndCall; set { _explicitNullValueEndCall = value; AdditionalData?.Remove("end_call"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_call"); else _explicitNullProperties?.Remove("end_call"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput _explicitNullValueEndCall = default!;
 #endif
         /// <summary>The language detection tool</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput? LanguageDetection { get => _explicitNullValueLanguageDetection; set { _explicitNullValueLanguageDetection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language_detection"); else _explicitNullProperties?.Remove("language_detection"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput? LanguageDetection { get => _explicitNullValueLanguageDetection; set { _explicitNullValueLanguageDetection = value; AdditionalData?.Remove("language_detection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language_detection"); else _explicitNullProperties?.Remove("language_detection"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput? _explicitNullValueLanguageDetection = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput LanguageDetection { get => _explicitNullValueLanguageDetection; set { _explicitNullValueLanguageDetection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language_detection"); else _explicitNullProperties?.Remove("language_detection"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput LanguageDetection { get => _explicitNullValueLanguageDetection; set { _explicitNullValueLanguageDetection = value; AdditionalData?.Remove("language_detection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language_detection"); else _explicitNullProperties?.Remove("language_detection"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput _explicitNullValueLanguageDetection = default!;
 #endif
         /// <summary>The play DTMF tool</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput? PlayKeypadTouchTone { get => _explicitNullValuePlayKeypadTouchTone; set { _explicitNullValuePlayKeypadTouchTone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("play_keypad_touch_tone"); else _explicitNullProperties?.Remove("play_keypad_touch_tone"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput? PlayKeypadTouchTone { get => _explicitNullValuePlayKeypadTouchTone; set { _explicitNullValuePlayKeypadTouchTone = value; AdditionalData?.Remove("play_keypad_touch_tone"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("play_keypad_touch_tone"); else _explicitNullProperties?.Remove("play_keypad_touch_tone"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput? _explicitNullValuePlayKeypadTouchTone = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput PlayKeypadTouchTone { get => _explicitNullValuePlayKeypadTouchTone; set { _explicitNullValuePlayKeypadTouchTone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("play_keypad_touch_tone"); else _explicitNullProperties?.Remove("play_keypad_touch_tone"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput PlayKeypadTouchTone { get => _explicitNullValuePlayKeypadTouchTone; set { _explicitNullValuePlayKeypadTouchTone = value; AdditionalData?.Remove("play_keypad_touch_tone"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("play_keypad_touch_tone"); else _explicitNullProperties?.Remove("play_keypad_touch_tone"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput _explicitNullValuePlayKeypadTouchTone = default!;
 #endif
         /// <summary>The skip turn tool</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput? SkipTurn { get => _explicitNullValueSkipTurn; set { _explicitNullValueSkipTurn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skip_turn"); else _explicitNullProperties?.Remove("skip_turn"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput? SkipTurn { get => _explicitNullValueSkipTurn; set { _explicitNullValueSkipTurn = value; AdditionalData?.Remove("skip_turn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skip_turn"); else _explicitNullProperties?.Remove("skip_turn"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput? _explicitNullValueSkipTurn = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput SkipTurn { get => _explicitNullValueSkipTurn; set { _explicitNullValueSkipTurn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skip_turn"); else _explicitNullProperties?.Remove("skip_turn"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput SkipTurn { get => _explicitNullValueSkipTurn; set { _explicitNullValueSkipTurn = value; AdditionalData?.Remove("skip_turn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skip_turn"); else _explicitNullProperties?.Remove("skip_turn"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput _explicitNullValueSkipTurn = default!;
 #endif
         /// <summary>The transfer to agent tool</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput? TransferToAgent { get => _explicitNullValueTransferToAgent; set { _explicitNullValueTransferToAgent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_to_agent"); else _explicitNullProperties?.Remove("transfer_to_agent"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput? TransferToAgent { get => _explicitNullValueTransferToAgent; set { _explicitNullValueTransferToAgent = value; AdditionalData?.Remove("transfer_to_agent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_to_agent"); else _explicitNullProperties?.Remove("transfer_to_agent"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput? _explicitNullValueTransferToAgent = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput TransferToAgent { get => _explicitNullValueTransferToAgent; set { _explicitNullValueTransferToAgent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_to_agent"); else _explicitNullProperties?.Remove("transfer_to_agent"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput TransferToAgent { get => _explicitNullValueTransferToAgent; set { _explicitNullValueTransferToAgent = value; AdditionalData?.Remove("transfer_to_agent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_to_agent"); else _explicitNullProperties?.Remove("transfer_to_agent"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput _explicitNullValueTransferToAgent = default!;
 #endif
         /// <summary>The transfer to number tool</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput? TransferToNumber { get => _explicitNullValueTransferToNumber; set { _explicitNullValueTransferToNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_to_number"); else _explicitNullProperties?.Remove("transfer_to_number"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput? TransferToNumber { get => _explicitNullValueTransferToNumber; set { _explicitNullValueTransferToNumber = value; AdditionalData?.Remove("transfer_to_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_to_number"); else _explicitNullProperties?.Remove("transfer_to_number"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput? _explicitNullValueTransferToNumber = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput TransferToNumber { get => _explicitNullValueTransferToNumber; set { _explicitNullValueTransferToNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_to_number"); else _explicitNullProperties?.Remove("transfer_to_number"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput TransferToNumber { get => _explicitNullValueTransferToNumber; set { _explicitNullValueTransferToNumber = value; AdditionalData?.Remove("transfer_to_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_to_number"); else _explicitNullProperties?.Remove("transfer_to_number"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput _explicitNullValueTransferToNumber = default!;
 #endif
         /// <summary>The voicemail detection tool</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput? VoicemailDetection { get => _explicitNullValueVoicemailDetection; set { _explicitNullValueVoicemailDetection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voicemail_detection"); else _explicitNullProperties?.Remove("voicemail_detection"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput? VoicemailDetection { get => _explicitNullValueVoicemailDetection; set { _explicitNullValueVoicemailDetection = value; AdditionalData?.Remove("voicemail_detection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voicemail_detection"); else _explicitNullProperties?.Remove("voicemail_detection"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput? _explicitNullValueVoicemailDetection = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput VoicemailDetection { get => _explicitNullValueVoicemailDetection; set { _explicitNullValueVoicemailDetection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voicemail_detection"); else _explicitNullProperties?.Remove("voicemail_detection"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput VoicemailDetection { get => _explicitNullValueVoicemailDetection; set { _explicitNullValueVoicemailDetection = value; AdditionalData?.Remove("voicemail_detection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voicemail_detection"); else _explicitNullProperties?.Remove("voicemail_detection"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput _explicitNullValueVoicemailDetection = default!;
 #endif
         /// <summary>

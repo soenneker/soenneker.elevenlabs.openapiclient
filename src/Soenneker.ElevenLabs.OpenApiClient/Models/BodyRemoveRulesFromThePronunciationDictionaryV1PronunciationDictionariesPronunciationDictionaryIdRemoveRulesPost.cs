@@ -17,7 +17,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("rule_strings") is { } nullNodeRuleStrings && nullNodeRuleStrings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RuleStrings = null;
+            if (parseNode.GetChildNode("rule_strings") is null) { _explicitNullValueRuleStrings = default!; _explicitNullProperties?.Remove("rule_strings"); }
+            else if (parseNode.GetChildNode("rule_strings") is { } nullNodeRuleStrings && nullNodeRuleStrings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RuleStrings = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>List of strings to remove from the pronunciation dictionary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RuleStrings { get => _explicitNullValueRuleStrings; set { _explicitNullValueRuleStrings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rule_strings"); else _explicitNullProperties?.Remove("rule_strings"); } }
+        public List<string>? RuleStrings { get => _explicitNullValueRuleStrings; set { _explicitNullValueRuleStrings = value; AdditionalData?.Remove("rule_strings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rule_strings"); else _explicitNullProperties?.Remove("rule_strings"); } }
         private List<string>? _explicitNullValueRuleStrings = default!;
 #nullable restore
 #else
-        public List<string> RuleStrings { get => _explicitNullValueRuleStrings; set { _explicitNullValueRuleStrings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rule_strings"); else _explicitNullProperties?.Remove("rule_strings"); } }
+        public List<string> RuleStrings { get => _explicitNullValueRuleStrings; set { _explicitNullValueRuleStrings = value; AdditionalData?.Remove("rule_strings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rule_strings"); else _explicitNullProperties?.Remove("rule_strings"); } }
         private List<string> _explicitNullValueRuleStrings = default!;
 #endif
         /// <summary>

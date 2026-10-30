@@ -17,7 +17,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("service-account-user-id") is { } nullNodeServiceAccountUserId && nullNodeServiceAccountUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceAccountUserId = null;
+            if (parseNode.GetChildNode("service-account-user-id") is null) { _explicitNullValueServiceAccountUserId = default!; _explicitNullProperties?.Remove("service-account-user-id"); }
+            else if (parseNode.GetChildNode("service-account-user-id") is { } nullNodeServiceAccountUserId && nullNodeServiceAccountUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceAccountUserId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The serviceAccountUserId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServiceAccountUserId { get => _explicitNullValueServiceAccountUserId; set { _explicitNullValueServiceAccountUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service-account-user-id"); else _explicitNullProperties?.Remove("service-account-user-id"); } }
+        public string? ServiceAccountUserId { get => _explicitNullValueServiceAccountUserId; set { _explicitNullValueServiceAccountUserId = value; AdditionalData?.Remove("service-account-user-id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service-account-user-id"); else _explicitNullProperties?.Remove("service-account-user-id"); } }
         private string? _explicitNullValueServiceAccountUserId = default!;
 #nullable restore
 #else
-        public string ServiceAccountUserId { get => _explicitNullValueServiceAccountUserId; set { _explicitNullValueServiceAccountUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service-account-user-id"); else _explicitNullProperties?.Remove("service-account-user-id"); } }
+        public string ServiceAccountUserId { get => _explicitNullValueServiceAccountUserId; set { _explicitNullValueServiceAccountUserId = value; AdditionalData?.Remove("service-account-user-id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service-account-user-id"); else _explicitNullProperties?.Remove("service-account-user-id"); } }
         private string _explicitNullValueServiceAccountUserId = default!;
 #endif
         /// <summary>

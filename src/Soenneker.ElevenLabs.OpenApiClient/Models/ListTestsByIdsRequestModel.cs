@@ -17,7 +17,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("test_ids") is { } nullNodeTestIds && nullNodeTestIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TestIds = null;
+            if (parseNode.GetChildNode("test_ids") is null) { _explicitNullValueTestIds = default!; _explicitNullProperties?.Remove("test_ids"); }
+            else if (parseNode.GetChildNode("test_ids") is { } nullNodeTestIds && nullNodeTestIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TestIds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>List of test IDs to fetch. No duplicates allowed. Prefer at most 1000 IDs per request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TestIds { get => _explicitNullValueTestIds; set { _explicitNullValueTestIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("test_ids"); else _explicitNullProperties?.Remove("test_ids"); } }
+        public List<string>? TestIds { get => _explicitNullValueTestIds; set { _explicitNullValueTestIds = value; AdditionalData?.Remove("test_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("test_ids"); else _explicitNullProperties?.Remove("test_ids"); } }
         private List<string>? _explicitNullValueTestIds = default!;
 #nullable restore
 #else
-        public List<string> TestIds { get => _explicitNullValueTestIds; set { _explicitNullValueTestIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("test_ids"); else _explicitNullProperties?.Remove("test_ids"); } }
+        public List<string> TestIds { get => _explicitNullValueTestIds; set { _explicitNullValueTestIds = value; AdditionalData?.Remove("test_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("test_ids"); else _explicitNullProperties?.Remove("test_ids"); } }
         private List<string> _explicitNullValueTestIds = default!;
 #endif
         /// <summary>

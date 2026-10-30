@@ -17,21 +17,24 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ignore_safety_evaluation") is { } nullNodeIgnoreSafetyEvaluation && nullNodeIgnoreSafetyEvaluation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreSafetyEvaluation = null;
-            if (parseNode.GetChildNode("is_blocked_ivc") is { } nullNodeIsBlockedIvc && nullNodeIsBlockedIvc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsBlockedIvc = null;
-            if (parseNode.GetChildNode("is_blocked_non_ivc") is { } nullNodeIsBlockedNonIvc && nullNodeIsBlockedNonIvc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsBlockedNonIvc = null;
+            if (parseNode.GetChildNode("ignore_safety_evaluation") is null) { _explicitNullValueIgnoreSafetyEvaluation = default!; _explicitNullProperties?.Remove("ignore_safety_evaluation"); }
+            else if (parseNode.GetChildNode("ignore_safety_evaluation") is { } nullNodeIgnoreSafetyEvaluation && nullNodeIgnoreSafetyEvaluation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreSafetyEvaluation = null;
+            if (parseNode.GetChildNode("is_blocked_ivc") is null) { _explicitNullValueIsBlockedIvc = default!; _explicitNullProperties?.Remove("is_blocked_ivc"); }
+            else if (parseNode.GetChildNode("is_blocked_ivc") is { } nullNodeIsBlockedIvc && nullNodeIsBlockedIvc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsBlockedIvc = null;
+            if (parseNode.GetChildNode("is_blocked_non_ivc") is null) { _explicitNullValueIsBlockedNonIvc = default!; _explicitNullProperties?.Remove("is_blocked_non_ivc"); }
+            else if (parseNode.GetChildNode("is_blocked_non_ivc") is { } nullNodeIsBlockedNonIvc && nullNodeIsBlockedNonIvc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsBlockedNonIvc = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ignore_safety_evaluation property</summary>
-        public bool? IgnoreSafetyEvaluation { get => _explicitNullValueIgnoreSafetyEvaluation; set { _explicitNullValueIgnoreSafetyEvaluation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignore_safety_evaluation"); else _explicitNullProperties?.Remove("ignore_safety_evaluation"); } }
+        public bool? IgnoreSafetyEvaluation { get => _explicitNullValueIgnoreSafetyEvaluation; set { _explicitNullValueIgnoreSafetyEvaluation = value; AdditionalData?.Remove("ignore_safety_evaluation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignore_safety_evaluation"); else _explicitNullProperties?.Remove("ignore_safety_evaluation"); } }
         private bool? _explicitNullValueIgnoreSafetyEvaluation = default!;
         /// <summary>The is_blocked_ivc property</summary>
-        public bool? IsBlockedIvc { get => _explicitNullValueIsBlockedIvc; set { _explicitNullValueIsBlockedIvc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_blocked_ivc"); else _explicitNullProperties?.Remove("is_blocked_ivc"); } }
+        public bool? IsBlockedIvc { get => _explicitNullValueIsBlockedIvc; set { _explicitNullValueIsBlockedIvc = value; AdditionalData?.Remove("is_blocked_ivc"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_blocked_ivc"); else _explicitNullProperties?.Remove("is_blocked_ivc"); } }
         private bool? _explicitNullValueIsBlockedIvc = default!;
         /// <summary>The is_blocked_non_ivc property</summary>
-        public bool? IsBlockedNonIvc { get => _explicitNullValueIsBlockedNonIvc; set { _explicitNullValueIsBlockedNonIvc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_blocked_non_ivc"); else _explicitNullProperties?.Remove("is_blocked_non_ivc"); } }
+        public bool? IsBlockedNonIvc { get => _explicitNullValueIsBlockedNonIvc; set { _explicitNullValueIsBlockedNonIvc = value; AdditionalData?.Remove("is_blocked_non_ivc"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_blocked_non_ivc"); else _explicitNullProperties?.Remove("is_blocked_non_ivc"); } }
         private bool? _explicitNullValueIsBlockedNonIvc = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SafetyResponseModel"/> and sets the default values.

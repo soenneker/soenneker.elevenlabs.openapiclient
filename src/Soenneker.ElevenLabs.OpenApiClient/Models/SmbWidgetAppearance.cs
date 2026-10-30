@@ -18,65 +18,72 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("dismissible") is { } nullNodeDismissible && nullNodeDismissible.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dismissible = null;
-            if (parseNode.GetChildNode("main_label") is { } nullNodeMainLabel && nullNodeMainLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MainLabel = null;
-            if (parseNode.GetChildNode("orb_color_1") is { } nullNodeOrbColor1 && nullNodeOrbColor1.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrbColor1 = null;
-            if (parseNode.GetChildNode("orb_color_2") is { } nullNodeOrbColor2 && nullNodeOrbColor2.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrbColor2 = null;
-            if (parseNode.GetChildNode("placement") is { } nullNodePlacement && nullNodePlacement.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Placement = null;
-            if (parseNode.GetChildNode("start_call") is { } nullNodeStartCall && nullNodeStartCall.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartCall = null;
-            if (parseNode.GetChildNode("variant") is { } nullNodeVariant && nullNodeVariant.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Variant = null;
+            if (parseNode.GetChildNode("dismissible") is null) { _explicitNullValueDismissible = default!; _explicitNullProperties?.Remove("dismissible"); }
+            else if (parseNode.GetChildNode("dismissible") is { } nullNodeDismissible && nullNodeDismissible.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dismissible = null;
+            if (parseNode.GetChildNode("main_label") is null) { _explicitNullValueMainLabel = default!; _explicitNullProperties?.Remove("main_label"); }
+            else if (parseNode.GetChildNode("main_label") is { } nullNodeMainLabel && nullNodeMainLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MainLabel = null;
+            if (parseNode.GetChildNode("orb_color_1") is null) { _explicitNullValueOrbColor1 = default!; _explicitNullProperties?.Remove("orb_color_1"); }
+            else if (parseNode.GetChildNode("orb_color_1") is { } nullNodeOrbColor1 && nullNodeOrbColor1.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrbColor1 = null;
+            if (parseNode.GetChildNode("orb_color_2") is null) { _explicitNullValueOrbColor2 = default!; _explicitNullProperties?.Remove("orb_color_2"); }
+            else if (parseNode.GetChildNode("orb_color_2") is { } nullNodeOrbColor2 && nullNodeOrbColor2.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrbColor2 = null;
+            if (parseNode.GetChildNode("placement") is null) { _explicitNullValuePlacement = default!; _explicitNullProperties?.Remove("placement"); }
+            else if (parseNode.GetChildNode("placement") is { } nullNodePlacement && nullNodePlacement.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Placement = null;
+            if (parseNode.GetChildNode("start_call") is null) { _explicitNullValueStartCall = default!; _explicitNullProperties?.Remove("start_call"); }
+            else if (parseNode.GetChildNode("start_call") is { } nullNodeStartCall && nullNodeStartCall.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartCall = null;
+            if (parseNode.GetChildNode("variant") is null) { _explicitNullValueVariant = default!; _explicitNullProperties?.Remove("variant"); }
+            else if (parseNode.GetChildNode("variant") is { } nullNodeVariant && nullNodeVariant.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Variant = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The dismissible property</summary>
-        public bool? Dismissible { get => _explicitNullValueDismissible; set { _explicitNullValueDismissible = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dismissible"); else _explicitNullProperties?.Remove("dismissible"); } }
+        public bool? Dismissible { get => _explicitNullValueDismissible; set { _explicitNullValueDismissible = value; AdditionalData?.Remove("dismissible"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dismissible"); else _explicitNullProperties?.Remove("dismissible"); } }
         private bool? _explicitNullValueDismissible = default!;
         /// <summary>The main_label property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MainLabel { get => _explicitNullValueMainLabel; set { _explicitNullValueMainLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("main_label"); else _explicitNullProperties?.Remove("main_label"); } }
+        public string? MainLabel { get => _explicitNullValueMainLabel; set { _explicitNullValueMainLabel = value; AdditionalData?.Remove("main_label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("main_label"); else _explicitNullProperties?.Remove("main_label"); } }
         private string? _explicitNullValueMainLabel = default!;
 #nullable restore
 #else
-        public string MainLabel { get => _explicitNullValueMainLabel; set { _explicitNullValueMainLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("main_label"); else _explicitNullProperties?.Remove("main_label"); } }
+        public string MainLabel { get => _explicitNullValueMainLabel; set { _explicitNullValueMainLabel = value; AdditionalData?.Remove("main_label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("main_label"); else _explicitNullProperties?.Remove("main_label"); } }
         private string _explicitNullValueMainLabel = default!;
 #endif
         /// <summary>The orb_color_1 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrbColor1 { get => _explicitNullValueOrbColor1; set { _explicitNullValueOrbColor1 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orb_color_1"); else _explicitNullProperties?.Remove("orb_color_1"); } }
+        public string? OrbColor1 { get => _explicitNullValueOrbColor1; set { _explicitNullValueOrbColor1 = value; AdditionalData?.Remove("orb_color_1"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orb_color_1"); else _explicitNullProperties?.Remove("orb_color_1"); } }
         private string? _explicitNullValueOrbColor1 = default!;
 #nullable restore
 #else
-        public string OrbColor1 { get => _explicitNullValueOrbColor1; set { _explicitNullValueOrbColor1 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orb_color_1"); else _explicitNullProperties?.Remove("orb_color_1"); } }
+        public string OrbColor1 { get => _explicitNullValueOrbColor1; set { _explicitNullValueOrbColor1 = value; AdditionalData?.Remove("orb_color_1"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orb_color_1"); else _explicitNullProperties?.Remove("orb_color_1"); } }
         private string _explicitNullValueOrbColor1 = default!;
 #endif
         /// <summary>The orb_color_2 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrbColor2 { get => _explicitNullValueOrbColor2; set { _explicitNullValueOrbColor2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orb_color_2"); else _explicitNullProperties?.Remove("orb_color_2"); } }
+        public string? OrbColor2 { get => _explicitNullValueOrbColor2; set { _explicitNullValueOrbColor2 = value; AdditionalData?.Remove("orb_color_2"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orb_color_2"); else _explicitNullProperties?.Remove("orb_color_2"); } }
         private string? _explicitNullValueOrbColor2 = default!;
 #nullable restore
 #else
-        public string OrbColor2 { get => _explicitNullValueOrbColor2; set { _explicitNullValueOrbColor2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orb_color_2"); else _explicitNullProperties?.Remove("orb_color_2"); } }
+        public string OrbColor2 { get => _explicitNullValueOrbColor2; set { _explicitNullValueOrbColor2 = value; AdditionalData?.Remove("orb_color_2"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orb_color_2"); else _explicitNullProperties?.Remove("orb_color_2"); } }
         private string _explicitNullValueOrbColor2 = default!;
 #endif
         /// <summary>The placement property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbWidgetAppearancePlacement? Placement { get => _explicitNullValuePlacement; set { _explicitNullValuePlacement = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("placement"); else _explicitNullProperties?.Remove("placement"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbWidgetAppearancePlacement? Placement { get => _explicitNullValuePlacement; set { _explicitNullValuePlacement = value; AdditionalData?.Remove("placement"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("placement"); else _explicitNullProperties?.Remove("placement"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbWidgetAppearancePlacement? _explicitNullValuePlacement = default!;
         /// <summary>The start_call property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StartCall { get => _explicitNullValueStartCall; set { _explicitNullValueStartCall = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_call"); else _explicitNullProperties?.Remove("start_call"); } }
+        public string? StartCall { get => _explicitNullValueStartCall; set { _explicitNullValueStartCall = value; AdditionalData?.Remove("start_call"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_call"); else _explicitNullProperties?.Remove("start_call"); } }
         private string? _explicitNullValueStartCall = default!;
 #nullable restore
 #else
-        public string StartCall { get => _explicitNullValueStartCall; set { _explicitNullValueStartCall = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_call"); else _explicitNullProperties?.Remove("start_call"); } }
+        public string StartCall { get => _explicitNullValueStartCall; set { _explicitNullValueStartCall = value; AdditionalData?.Remove("start_call"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_call"); else _explicitNullProperties?.Remove("start_call"); } }
         private string _explicitNullValueStartCall = default!;
 #endif
         /// <summary>The variant property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbWidgetAppearanceVariant? Variant { get => _explicitNullValueVariant; set { _explicitNullValueVariant = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variant"); else _explicitNullProperties?.Remove("variant"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbWidgetAppearanceVariant? Variant { get => _explicitNullValueVariant; set { _explicitNullValueVariant = value; AdditionalData?.Remove("variant"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variant"); else _explicitNullProperties?.Remove("variant"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbWidgetAppearanceVariant? _explicitNullValueVariant = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbWidgetAppearance"/> and sets the default values.
@@ -107,9 +114,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "main_label", n => { MainLabel = n.GetStringValue(); } },
                 { "orb_color_1", n => { OrbColor1 = n.GetStringValue(); } },
                 { "orb_color_2", n => { OrbColor2 = n.GetStringValue(); } },
-                { "placement", n => { Placement = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbWidgetAppearancePlacement>(); } },
+                { "placement", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbWidgetAppearancePlacement>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePlacement = default; _explicitNullProperties?.Remove("placement"); AdditionalData["placement"] = unknown; } else { Placement = parsed; AdditionalData.Remove("placement"); } } },
                 { "start_call", n => { StartCall = n.GetStringValue(); } },
-                { "variant", n => { Variant = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbWidgetAppearanceVariant>(); } },
+                { "variant", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbWidgetAppearanceVariant>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueVariant = default; _explicitNullProperties?.Remove("variant"); AdditionalData["variant"] = unknown; } else { Variant = parsed; AdditionalData.Remove("variant"); } } },
             };
         }
         /// <summary>

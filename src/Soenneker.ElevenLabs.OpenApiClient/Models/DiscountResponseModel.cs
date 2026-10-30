@@ -17,17 +17,19 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("discount_amount_off") is { } nullNodeDiscountAmountOff && nullNodeDiscountAmountOff.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DiscountAmountOff = null;
-            if (parseNode.GetChildNode("discount_percent_off") is { } nullNodeDiscountPercentOff && nullNodeDiscountPercentOff.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DiscountPercentOff = null;
+            if (parseNode.GetChildNode("discount_amount_off") is null) { _explicitNullValueDiscountAmountOff = default!; _explicitNullProperties?.Remove("discount_amount_off"); }
+            else if (parseNode.GetChildNode("discount_amount_off") is { } nullNodeDiscountAmountOff && nullNodeDiscountAmountOff.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DiscountAmountOff = null;
+            if (parseNode.GetChildNode("discount_percent_off") is null) { _explicitNullValueDiscountPercentOff = default!; _explicitNullProperties?.Remove("discount_percent_off"); }
+            else if (parseNode.GetChildNode("discount_percent_off") is { } nullNodeDiscountPercentOff && nullNodeDiscountPercentOff.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DiscountPercentOff = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The discount applied to the invoice. E.g. [20.0f] for 20 cents off.</summary>
-        public double? DiscountAmountOff { get => _explicitNullValueDiscountAmountOff; set { _explicitNullValueDiscountAmountOff = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discount_amount_off"); else _explicitNullProperties?.Remove("discount_amount_off"); } }
+        public double? DiscountAmountOff { get => _explicitNullValueDiscountAmountOff; set { _explicitNullValueDiscountAmountOff = value; AdditionalData?.Remove("discount_amount_off"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discount_amount_off"); else _explicitNullProperties?.Remove("discount_amount_off"); } }
         private double? _explicitNullValueDiscountAmountOff = default!;
         /// <summary>The discount applied to the invoice. E.g. [20.0f] for 20% off.</summary>
-        public double? DiscountPercentOff { get => _explicitNullValueDiscountPercentOff; set { _explicitNullValueDiscountPercentOff = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discount_percent_off"); else _explicitNullProperties?.Remove("discount_percent_off"); } }
+        public double? DiscountPercentOff { get => _explicitNullValueDiscountPercentOff; set { _explicitNullValueDiscountPercentOff = value; AdditionalData?.Remove("discount_percent_off"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discount_percent_off"); else _explicitNullProperties?.Remove("discount_percent_off"); } }
         private double? _explicitNullValueDiscountPercentOff = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DiscountResponseModel"/> and sets the default values.

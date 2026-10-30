@@ -17,13 +17,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("used_bytes") is { } nullNodeUsedBytes && nullNodeUsedBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsedBytes = null;
+            if (parseNode.GetChildNode("used_bytes") is null) { _explicitNullValueUsedBytes = default!; _explicitNullProperties?.Remove("used_bytes"); }
+            else if (parseNode.GetChildNode("used_bytes") is { } nullNodeUsedBytes && nullNodeUsedBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsedBytes = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The used_bytes property</summary>
-        public int? UsedBytes { get => _explicitNullValueUsedBytes; set { _explicitNullValueUsedBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("used_bytes"); else _explicitNullProperties?.Remove("used_bytes"); } }
+        public int? UsedBytes { get => _explicitNullValueUsedBytes; set { _explicitNullValueUsedBytes = value; AdditionalData?.Remove("used_bytes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("used_bytes"); else _explicitNullProperties?.Remove("used_bytes"); } }
         private int? _explicitNullValueUsedBytes = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.RagDocumentIndexUsage"/> and sets the default values.

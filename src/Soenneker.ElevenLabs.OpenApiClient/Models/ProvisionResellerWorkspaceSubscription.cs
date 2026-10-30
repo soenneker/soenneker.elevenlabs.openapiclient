@@ -17,23 +17,25 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("billing_period") is { } nullNodeBillingPeriod && nullNodeBillingPeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingPeriod = null;
-            if (parseNode.GetChildNode("tier_id") is { } nullNodeTierId && nullNodeTierId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TierId = null;
+            if (parseNode.GetChildNode("billing_period") is null) { _explicitNullValueBillingPeriod = default!; _explicitNullProperties?.Remove("billing_period"); }
+            else if (parseNode.GetChildNode("billing_period") is { } nullNodeBillingPeriod && nullNodeBillingPeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingPeriod = null;
+            if (parseNode.GetChildNode("tier_id") is null) { _explicitNullValueTierId = default!; _explicitNullProperties?.Remove("tier_id"); }
+            else if (parseNode.GetChildNode("tier_id") is { } nullNodeTierId && nullNodeTierId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TierId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The billing_period property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProvisionResellerWorkspaceSubscriptionBillingPeriod? BillingPeriod { get => _explicitNullValueBillingPeriod; set { _explicitNullValueBillingPeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_period"); else _explicitNullProperties?.Remove("billing_period"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProvisionResellerWorkspaceSubscriptionBillingPeriod? BillingPeriod { get => _explicitNullValueBillingPeriod; set { _explicitNullValueBillingPeriod = value; AdditionalData?.Remove("billing_period"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_period"); else _explicitNullProperties?.Remove("billing_period"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ProvisionResellerWorkspaceSubscriptionBillingPeriod? _explicitNullValueBillingPeriod = default!;
         /// <summary>The tier_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TierId { get => _explicitNullValueTierId; set { _explicitNullValueTierId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tier_id"); else _explicitNullProperties?.Remove("tier_id"); } }
+        public string? TierId { get => _explicitNullValueTierId; set { _explicitNullValueTierId = value; AdditionalData?.Remove("tier_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tier_id"); else _explicitNullProperties?.Remove("tier_id"); } }
         private string? _explicitNullValueTierId = default!;
 #nullable restore
 #else
-        public string TierId { get => _explicitNullValueTierId; set { _explicitNullValueTierId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tier_id"); else _explicitNullProperties?.Remove("tier_id"); } }
+        public string TierId { get => _explicitNullValueTierId; set { _explicitNullValueTierId = value; AdditionalData?.Remove("tier_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tier_id"); else _explicitNullProperties?.Remove("tier_id"); } }
         private string _explicitNullValueTierId = default!;
 #endif
         /// <summary>
@@ -61,7 +63,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "billing_period", n => { BillingPeriod = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProvisionResellerWorkspaceSubscriptionBillingPeriod>(); } },
+                { "billing_period", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProvisionResellerWorkspaceSubscriptionBillingPeriod>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBillingPeriod = default; _explicitNullProperties?.Remove("billing_period"); AdditionalData["billing_period"] = unknown; } else { BillingPeriod = parsed; AdditionalData.Remove("billing_period"); } } },
                 { "tier_id", n => { TierId = n.GetStringValue(); } },
             };
         }

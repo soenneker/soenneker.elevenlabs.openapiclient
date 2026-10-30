@@ -17,13 +17,20 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("conditioning_ref") is { } nullNodeConditioningRef && nullNodeConditioningRef.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConditioningRef = null;
-            if (parseNode.GetChildNode("condition_strength") is { } nullNodeConditionStrength && nullNodeConditionStrength.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConditionStrength = null;
-            if (parseNode.GetChildNode("context_adherence") is { } nullNodeContextAdherence && nullNodeContextAdherence.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContextAdherence = null;
-            if (parseNode.GetChildNode("duration_ms") is { } nullNodeDurationMs && nullNodeDurationMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DurationMs = null;
-            if (parseNode.GetChildNode("negative_styles") is { } nullNodeNegativeStyles && nullNodeNegativeStyles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NegativeStyles = null;
-            if (parseNode.GetChildNode("positive_styles") is { } nullNodePositiveStyles && nullNodePositiveStyles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PositiveStyles = null;
-            if (parseNode.GetChildNode("text") is { } nullNodeText && nullNodeText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Text = null;
+            if (parseNode.GetChildNode("conditioning_ref") is null) { _explicitNullValueConditioningRef = default!; _explicitNullProperties?.Remove("conditioning_ref"); }
+            else if (parseNode.GetChildNode("conditioning_ref") is { } nullNodeConditioningRef && nullNodeConditioningRef.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConditioningRef = null;
+            if (parseNode.GetChildNode("condition_strength") is null) { _explicitNullValueConditionStrength = default!; _explicitNullProperties?.Remove("condition_strength"); }
+            else if (parseNode.GetChildNode("condition_strength") is { } nullNodeConditionStrength && nullNodeConditionStrength.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConditionStrength = null;
+            if (parseNode.GetChildNode("context_adherence") is null) { _explicitNullValueContextAdherence = default!; _explicitNullProperties?.Remove("context_adherence"); }
+            else if (parseNode.GetChildNode("context_adherence") is { } nullNodeContextAdherence && nullNodeContextAdherence.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContextAdherence = null;
+            if (parseNode.GetChildNode("duration_ms") is null) { _explicitNullValueDurationMs = default!; _explicitNullProperties?.Remove("duration_ms"); }
+            else if (parseNode.GetChildNode("duration_ms") is { } nullNodeDurationMs && nullNodeDurationMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DurationMs = null;
+            if (parseNode.GetChildNode("negative_styles") is null) { _explicitNullValueNegativeStyles = default!; _explicitNullProperties?.Remove("negative_styles"); }
+            else if (parseNode.GetChildNode("negative_styles") is { } nullNodeNegativeStyles && nullNodeNegativeStyles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NegativeStyles = null;
+            if (parseNode.GetChildNode("positive_styles") is null) { _explicitNullValuePositiveStyles = default!; _explicitNullProperties?.Remove("positive_styles"); }
+            else if (parseNode.GetChildNode("positive_styles") is { } nullNodePositiveStyles && nullNodePositiveStyles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PositiveStyles = null;
+            if (parseNode.GetChildNode("text") is null) { _explicitNullValueText = default!; _explicitNullProperties?.Remove("text"); }
+            else if (parseNode.GetChildNode("text") is { } nullNodeText && nullNodeText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Text = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,50 +38,50 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The audio reference to condition the generation on. The first chunk is the most important as it will influence the generation of all subsequent chunks. Thus, if you want to apply conditioning to the entire song, start conditioning from the first chunk.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioRefChunk? ConditioningRef { get => _explicitNullValueConditioningRef; set { _explicitNullValueConditioningRef = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conditioning_ref"); else _explicitNullProperties?.Remove("conditioning_ref"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioRefChunk? ConditioningRef { get => _explicitNullValueConditioningRef; set { _explicitNullValueConditioningRef = value; AdditionalData?.Remove("conditioning_ref"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conditioning_ref"); else _explicitNullProperties?.Remove("conditioning_ref"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioRefChunk? _explicitNullValueConditioningRef = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioRefChunk ConditioningRef { get => _explicitNullValueConditioningRef; set { _explicitNullValueConditioningRef = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conditioning_ref"); else _explicitNullProperties?.Remove("conditioning_ref"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioRefChunk ConditioningRef { get => _explicitNullValueConditioningRef; set { _explicitNullValueConditioningRef = value; AdditionalData?.Remove("conditioning_ref"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conditioning_ref"); else _explicitNullProperties?.Remove("conditioning_ref"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioRefChunk _explicitNullValueConditioningRef = default!;
 #endif
         /// <summary>How strongly the model adheres to the conditioning reference. Low strength means the model will be more creative and deviate from the reference. High strength means the model will be more consistent with the reference.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConditionStrength? ConditionStrength { get => _explicitNullValueConditionStrength; set { _explicitNullValueConditionStrength = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("condition_strength"); else _explicitNullProperties?.Remove("condition_strength"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConditionStrength? ConditionStrength { get => _explicitNullValueConditionStrength; set { _explicitNullValueConditionStrength = value; AdditionalData?.Remove("condition_strength"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("condition_strength"); else _explicitNullProperties?.Remove("condition_strength"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConditionStrength? _explicitNullValueConditionStrength = default!;
         /// <summary>How much the model adheres to the context of its surrounding chunks. Low adherence means the model can deviate from the context and be more creative. High adherence means the model will be more consistent with the context.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationChunkInputContextAdherence? ContextAdherence { get => _explicitNullValueContextAdherence; set { _explicitNullValueContextAdherence = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("context_adherence"); else _explicitNullProperties?.Remove("context_adherence"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationChunkInputContextAdherence? ContextAdherence { get => _explicitNullValueContextAdherence; set { _explicitNullValueContextAdherence = value; AdditionalData?.Remove("context_adherence"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("context_adherence"); else _explicitNullProperties?.Remove("context_adherence"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationChunkInputContextAdherence? _explicitNullValueContextAdherence = default!;
         /// <summary>The duration of the chunk in milliseconds. Must be between 3000ms and 120000ms.</summary>
-        public int? DurationMs { get => _explicitNullValueDurationMs; set { _explicitNullValueDurationMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration_ms"); else _explicitNullProperties?.Remove("duration_ms"); } }
+        public int? DurationMs { get => _explicitNullValueDurationMs; set { _explicitNullValueDurationMs = value; AdditionalData?.Remove("duration_ms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration_ms"); else _explicitNullProperties?.Remove("duration_ms"); } }
         private int? _explicitNullValueDurationMs = default!;
         /// <summary>The styles and musical directions that should not be present in this chunk. Use English language for best results. Leaving empty is a good default, only use this field if you want to explicitly avoid a particular style or direction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? NegativeStyles { get => _explicitNullValueNegativeStyles; set { _explicitNullValueNegativeStyles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("negative_styles"); else _explicitNullProperties?.Remove("negative_styles"); } }
+        public List<string>? NegativeStyles { get => _explicitNullValueNegativeStyles; set { _explicitNullValueNegativeStyles = value; AdditionalData?.Remove("negative_styles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("negative_styles"); else _explicitNullProperties?.Remove("negative_styles"); } }
         private List<string>? _explicitNullValueNegativeStyles = default!;
 #nullable restore
 #else
-        public List<string> NegativeStyles { get => _explicitNullValueNegativeStyles; set { _explicitNullValueNegativeStyles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("negative_styles"); else _explicitNullProperties?.Remove("negative_styles"); } }
+        public List<string> NegativeStyles { get => _explicitNullValueNegativeStyles; set { _explicitNullValueNegativeStyles = value; AdditionalData?.Remove("negative_styles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("negative_styles"); else _explicitNullProperties?.Remove("negative_styles"); } }
         private List<string> _explicitNullValueNegativeStyles = default!;
 #endif
         /// <summary>The styles and musical directions that should be present in this chunk. Use English language for best results. The styles for the first chunk are the most important as they set the overall tone and genre. Styles for subsequent chunks can be used to add nuance, progression, emphasis, or change the direction of the song. Aim to have at least 6-7 styles in early chunks until the direction is established. Generic styles like &apos;great production quality&apos; are good default styles to append to the list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PositiveStyles { get => _explicitNullValuePositiveStyles; set { _explicitNullValuePositiveStyles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("positive_styles"); else _explicitNullProperties?.Remove("positive_styles"); } }
+        public List<string>? PositiveStyles { get => _explicitNullValuePositiveStyles; set { _explicitNullValuePositiveStyles = value; AdditionalData?.Remove("positive_styles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("positive_styles"); else _explicitNullProperties?.Remove("positive_styles"); } }
         private List<string>? _explicitNullValuePositiveStyles = default!;
 #nullable restore
 #else
-        public List<string> PositiveStyles { get => _explicitNullValuePositiveStyles; set { _explicitNullValuePositiveStyles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("positive_styles"); else _explicitNullProperties?.Remove("positive_styles"); } }
+        public List<string> PositiveStyles { get => _explicitNullValuePositiveStyles; set { _explicitNullValuePositiveStyles = value; AdditionalData?.Remove("positive_styles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("positive_styles"); else _explicitNullProperties?.Remove("positive_styles"); } }
         private List<string> _explicitNullValuePositiveStyles = default!;
 #endif
         /// <summary>The text config to be generated for this chunk. Can contain an optional section name in square brackets at the beginning, e.g. [Verse 1], lyrics lines, and inline directions in curly braces, e.g. {scratching}. Section names must be between 1 and 100 characters. At most 30 lines are allowed, each at most 200 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Text { get => _explicitNullValueText; set { _explicitNullValueText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
+        public string? Text { get => _explicitNullValueText; set { _explicitNullValueText = value; AdditionalData?.Remove("text"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
         private string? _explicitNullValueText = default!;
 #nullable restore
 #else
-        public string Text { get => _explicitNullValueText; set { _explicitNullValueText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
+        public string Text { get => _explicitNullValueText; set { _explicitNullValueText = value; AdditionalData?.Remove("text"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
         private string _explicitNullValueText = default!;
 #endif
         /// <summary>
@@ -102,9 +109,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "condition_strength", n => { ConditionStrength = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConditionStrength>(); } },
+                { "condition_strength", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConditionStrength>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueConditionStrength = default; _explicitNullProperties?.Remove("condition_strength"); AdditionalData["condition_strength"] = unknown; } else { ConditionStrength = parsed; AdditionalData.Remove("condition_strength"); } } },
                 { "conditioning_ref", n => { ConditioningRef = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioRefChunk>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioRefChunk.CreateFromDiscriminatorValue); } },
-                { "context_adherence", n => { ContextAdherence = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationChunkInputContextAdherence>(); } },
+                { "context_adherence", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationChunkInputContextAdherence>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueContextAdherence = default; _explicitNullProperties?.Remove("context_adherence"); AdditionalData["context_adherence"] = unknown; } else { ContextAdherence = parsed; AdditionalData.Remove("context_adherence"); } } },
                 { "duration_ms", n => { DurationMs = n.GetIntValue(); } },
                 { "negative_styles", n => { NegativeStyles = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "positive_styles", n => { PositiveStyles = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },

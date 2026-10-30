@@ -17,25 +17,29 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("crossfade_loop") is { } nullNodeCrossfadeLoop && nullNodeCrossfadeLoop.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CrossfadeLoop = null;
-            if (parseNode.GetChildNode("source_id") is { } nullNodeSourceId && nullNodeSourceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceId = null;
-            if (parseNode.GetChildNode("source_type") is { } nullNodeSourceType && nullNodeSourceType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceType = null;
-            if (parseNode.GetChildNode("volume") is { } nullNodeVolume && nullNodeVolume.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Volume = null;
+            if (parseNode.GetChildNode("crossfade_loop") is null) { _explicitNullValueCrossfadeLoop = default!; _explicitNullProperties?.Remove("crossfade_loop"); }
+            else if (parseNode.GetChildNode("crossfade_loop") is { } nullNodeCrossfadeLoop && nullNodeCrossfadeLoop.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CrossfadeLoop = null;
+            if (parseNode.GetChildNode("source_id") is null) { _explicitNullValueSourceId = default!; _explicitNullProperties?.Remove("source_id"); }
+            else if (parseNode.GetChildNode("source_id") is { } nullNodeSourceId && nullNodeSourceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceId = null;
+            if (parseNode.GetChildNode("source_type") is null) { _explicitNullValueSourceType = default!; _explicitNullProperties?.Remove("source_type"); }
+            else if (parseNode.GetChildNode("source_type") is { } nullNodeSourceType && nullNodeSourceType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceType = null;
+            if (parseNode.GetChildNode("volume") is null) { _explicitNullValueVolume = default!; _explicitNullProperties?.Remove("volume"); }
+            else if (parseNode.GetChildNode("volume") is { } nullNodeVolume && nullNodeVolume.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Volume = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Apply a crossfade at the loop boundary to avoid audible pops when the sound loops.</summary>
-        public bool? CrossfadeLoop { get => _explicitNullValueCrossfadeLoop; set { _explicitNullValueCrossfadeLoop = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crossfade_loop"); else _explicitNullProperties?.Remove("crossfade_loop"); } }
+        public bool? CrossfadeLoop { get => _explicitNullValueCrossfadeLoop; set { _explicitNullValueCrossfadeLoop = value; AdditionalData?.Remove("crossfade_loop"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crossfade_loop"); else _explicitNullProperties?.Remove("crossfade_loop"); } }
         private bool? _explicitNullValueCrossfadeLoop = default!;
         /// <summary>Identifier for the sound source.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BackgroundSoundPresetId? SourceId { get => _explicitNullValueSourceId; set { _explicitNullValueSourceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_id"); else _explicitNullProperties?.Remove("source_id"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BackgroundSoundPresetId? SourceId { get => _explicitNullValueSourceId; set { _explicitNullValueSourceId = value; AdditionalData?.Remove("source_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_id"); else _explicitNullProperties?.Remove("source_id"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.BackgroundSoundPresetId? _explicitNullValueSourceId = default!;
         /// <summary>The type of background sound source.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BackgroundSoundSourceType? SourceType { get => _explicitNullValueSourceType; set { _explicitNullValueSourceType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_type"); else _explicitNullProperties?.Remove("source_type"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BackgroundSoundSourceType? SourceType { get => _explicitNullValueSourceType; set { _explicitNullValueSourceType = value; AdditionalData?.Remove("source_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_type"); else _explicitNullProperties?.Remove("source_type"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.BackgroundSoundSourceType? _explicitNullValueSourceType = default!;
         /// <summary>Volume level for background sound (0.01 to 1.0).</summary>
-        public double? Volume { get => _explicitNullValueVolume; set { _explicitNullValueVolume = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("volume"); else _explicitNullProperties?.Remove("volume"); } }
+        public double? Volume { get => _explicitNullValueVolume; set { _explicitNullValueVolume = value; AdditionalData?.Remove("volume"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("volume"); else _explicitNullProperties?.Remove("volume"); } }
         private double? _explicitNullValueVolume = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BackgroundSoundConfig"/> and sets the default values.
@@ -65,8 +69,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "crossfade_loop", n => { CrossfadeLoop = n.GetBoolValue(); } },
-                { "source_id", n => { SourceId = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BackgroundSoundPresetId>(); } },
-                { "source_type", n => { SourceType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BackgroundSoundSourceType>(); } },
+                { "source_id", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BackgroundSoundPresetId>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSourceId = default; _explicitNullProperties?.Remove("source_id"); AdditionalData["source_id"] = unknown; } else { SourceId = parsed; AdditionalData.Remove("source_id"); } } },
+                { "source_type", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BackgroundSoundSourceType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSourceType = default; _explicitNullProperties?.Remove("source_type"); AdditionalData["source_type"] = unknown; } else { SourceType = parsed; AdditionalData.Remove("source_type"); } } },
                 { "volume", n => { Volume = n.GetDoubleValue(); } },
             };
         }

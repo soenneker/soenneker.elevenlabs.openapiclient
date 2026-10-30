@@ -17,17 +17,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("accents") is { } nullNodeAccents && nullNodeAccents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Accents = null;
+            if (parseNode.GetChildNode("accents") is null) { _explicitNullValueAccents = default!; _explicitNullProperties?.Remove("accents"); }
+            else if (parseNode.GetChildNode("accents") is { } nullNodeAccents && nullNodeAccents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Accents = null;
         }
 
         /// <summary>A list of available voice accents.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceAccentResponseModel>? Accents { get => _explicitNullValueAccents; set { _explicitNullValueAccents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accents"); else _explicitNullProperties?.Remove("accents"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceAccentResponseModel>? Accents { get => _explicitNullValueAccents; set { _explicitNullValueAccents = value; AdditionalData?.Remove("accents"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accents"); else _explicitNullProperties?.Remove("accents"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceAccentResponseModel>? _explicitNullValueAccents = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceAccentResponseModel> Accents { get => _explicitNullValueAccents; set { _explicitNullValueAccents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accents"); else _explicitNullProperties?.Remove("accents"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceAccentResponseModel> Accents { get => _explicitNullValueAccents; set { _explicitNullValueAccents = value; AdditionalData?.Remove("accents"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accents"); else _explicitNullProperties?.Remove("accents"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceAccentResponseModel> _explicitNullValueAccents = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

@@ -17,87 +17,98 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("auth_type") is { } nullNodeAuthType && nullNodeAuthType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthType = null;
-            if (parseNode.GetChildNode("created_at_unix") is { } nullNodeCreatedAtUnix && nullNodeCreatedAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAtUnix = null;
-            if (parseNode.GetChildNode("events") is { } nullNodeEvents && nullNodeEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Events = null;
-            if (parseNode.GetChildNode("is_auto_disabled") is { } nullNodeIsAutoDisabled && nullNodeIsAutoDisabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsAutoDisabled = null;
-            if (parseNode.GetChildNode("is_disabled") is { } nullNodeIsDisabled && nullNodeIsDisabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsDisabled = null;
-            if (parseNode.GetChildNode("most_recent_failure_error_code") is { } nullNodeMostRecentFailureErrorCode && nullNodeMostRecentFailureErrorCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MostRecentFailureErrorCode = null;
-            if (parseNode.GetChildNode("most_recent_failure_timestamp") is { } nullNodeMostRecentFailureTimestamp && nullNodeMostRecentFailureTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MostRecentFailureTimestamp = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("usage") is { } nullNodeUsage && nullNodeUsage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Usage = null;
-            if (parseNode.GetChildNode("webhook_id") is { } nullNodeWebhookId && nullNodeWebhookId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebhookId = null;
-            if (parseNode.GetChildNode("webhook_url") is { } nullNodeWebhookUrl && nullNodeWebhookUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebhookUrl = null;
+            if (parseNode.GetChildNode("auth_type") is null) { _explicitNullValueAuthType = default!; _explicitNullProperties?.Remove("auth_type"); }
+            else if (parseNode.GetChildNode("auth_type") is { } nullNodeAuthType && nullNodeAuthType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthType = null;
+            if (parseNode.GetChildNode("created_at_unix") is null) { _explicitNullValueCreatedAtUnix = default!; _explicitNullProperties?.Remove("created_at_unix"); }
+            else if (parseNode.GetChildNode("created_at_unix") is { } nullNodeCreatedAtUnix && nullNodeCreatedAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAtUnix = null;
+            if (parseNode.GetChildNode("events") is null) { _explicitNullValueEvents = default!; _explicitNullProperties?.Remove("events"); }
+            else if (parseNode.GetChildNode("events") is { } nullNodeEvents && nullNodeEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Events = null;
+            if (parseNode.GetChildNode("is_auto_disabled") is null) { _explicitNullValueIsAutoDisabled = default!; _explicitNullProperties?.Remove("is_auto_disabled"); }
+            else if (parseNode.GetChildNode("is_auto_disabled") is { } nullNodeIsAutoDisabled && nullNodeIsAutoDisabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsAutoDisabled = null;
+            if (parseNode.GetChildNode("is_disabled") is null) { _explicitNullValueIsDisabled = default!; _explicitNullProperties?.Remove("is_disabled"); }
+            else if (parseNode.GetChildNode("is_disabled") is { } nullNodeIsDisabled && nullNodeIsDisabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsDisabled = null;
+            if (parseNode.GetChildNode("most_recent_failure_error_code") is null) { _explicitNullValueMostRecentFailureErrorCode = default!; _explicitNullProperties?.Remove("most_recent_failure_error_code"); }
+            else if (parseNode.GetChildNode("most_recent_failure_error_code") is { } nullNodeMostRecentFailureErrorCode && nullNodeMostRecentFailureErrorCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MostRecentFailureErrorCode = null;
+            if (parseNode.GetChildNode("most_recent_failure_timestamp") is null) { _explicitNullValueMostRecentFailureTimestamp = default!; _explicitNullProperties?.Remove("most_recent_failure_timestamp"); }
+            else if (parseNode.GetChildNode("most_recent_failure_timestamp") is { } nullNodeMostRecentFailureTimestamp && nullNodeMostRecentFailureTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MostRecentFailureTimestamp = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("usage") is null) { _explicitNullValueUsage = default!; _explicitNullProperties?.Remove("usage"); }
+            else if (parseNode.GetChildNode("usage") is { } nullNodeUsage && nullNodeUsage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Usage = null;
+            if (parseNode.GetChildNode("webhook_id") is null) { _explicitNullValueWebhookId = default!; _explicitNullProperties?.Remove("webhook_id"); }
+            else if (parseNode.GetChildNode("webhook_id") is { } nullNodeWebhookId && nullNodeWebhookId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebhookId = null;
+            if (parseNode.GetChildNode("webhook_url") is null) { _explicitNullValueWebhookUrl = default!; _explicitNullProperties?.Remove("webhook_url"); }
+            else if (parseNode.GetChildNode("webhook_url") is { } nullNodeWebhookUrl && nullNodeWebhookUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebhookUrl = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The authentication mode used to secure the webhook.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookAuthMethodType? AuthType { get => _explicitNullValueAuthType; set { _explicitNullValueAuthType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_type"); else _explicitNullProperties?.Remove("auth_type"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookAuthMethodType? AuthType { get => _explicitNullValueAuthType; set { _explicitNullValueAuthType = value; AdditionalData?.Remove("auth_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_type"); else _explicitNullProperties?.Remove("auth_type"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookAuthMethodType? _explicitNullValueAuthType = default!;
         /// <summary>Original creation time of the webhook.</summary>
-        public int? CreatedAtUnix { get => _explicitNullValueCreatedAtUnix; set { _explicitNullValueCreatedAtUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at_unix"); else _explicitNullProperties?.Remove("created_at_unix"); } }
+        public int? CreatedAtUnix { get => _explicitNullValueCreatedAtUnix; set { _explicitNullValueCreatedAtUnix = value; AdditionalData?.Remove("created_at_unix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at_unix"); else _explicitNullProperties?.Remove("created_at_unix"); } }
         private int? _explicitNullValueCreatedAtUnix = default!;
         /// <summary>The workspace-level events this webhook is currently subscribed to. Only populated when usages are requested.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookEventType?>? Events { get => _explicitNullValueEvents; set { _explicitNullValueEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("events"); else _explicitNullProperties?.Remove("events"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookEventType?>? Events { get => _explicitNullValueEvents; set { _explicitNullValueEvents = value; AdditionalData?.Remove("events"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("events"); else _explicitNullProperties?.Remove("events"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookEventType?>? _explicitNullValueEvents = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookEventType?> Events { get => _explicitNullValueEvents; set { _explicitNullValueEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("events"); else _explicitNullProperties?.Remove("events"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookEventType?> Events { get => _explicitNullValueEvents; set { _explicitNullValueEvents = value; AdditionalData?.Remove("events"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("events"); else _explicitNullProperties?.Remove("events"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookEventType?> _explicitNullValueEvents = default!;
 #endif
         /// <summary>Whether the webhook has been automatically disabled due to repeated consecutive failures over a long period of time.</summary>
-        public bool? IsAutoDisabled { get => _explicitNullValueIsAutoDisabled; set { _explicitNullValueIsAutoDisabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_auto_disabled"); else _explicitNullProperties?.Remove("is_auto_disabled"); } }
+        public bool? IsAutoDisabled { get => _explicitNullValueIsAutoDisabled; set { _explicitNullValueIsAutoDisabled = value; AdditionalData?.Remove("is_auto_disabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_auto_disabled"); else _explicitNullProperties?.Remove("is_auto_disabled"); } }
         private bool? _explicitNullValueIsAutoDisabled = default!;
         /// <summary>Whether the webhook has been manually disabled by a user.</summary>
-        public bool? IsDisabled { get => _explicitNullValueIsDisabled; set { _explicitNullValueIsDisabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_disabled"); else _explicitNullProperties?.Remove("is_disabled"); } }
+        public bool? IsDisabled { get => _explicitNullValueIsDisabled; set { _explicitNullValueIsDisabled = value; AdditionalData?.Remove("is_disabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_disabled"); else _explicitNullProperties?.Remove("is_disabled"); } }
         private bool? _explicitNullValueIsDisabled = default!;
         /// <summary>The most recent error code returned from the callback URL.</summary>
-        public int? MostRecentFailureErrorCode { get => _explicitNullValueMostRecentFailureErrorCode; set { _explicitNullValueMostRecentFailureErrorCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("most_recent_failure_error_code"); else _explicitNullProperties?.Remove("most_recent_failure_error_code"); } }
+        public int? MostRecentFailureErrorCode { get => _explicitNullValueMostRecentFailureErrorCode; set { _explicitNullValueMostRecentFailureErrorCode = value; AdditionalData?.Remove("most_recent_failure_error_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("most_recent_failure_error_code"); else _explicitNullProperties?.Remove("most_recent_failure_error_code"); } }
         private int? _explicitNullValueMostRecentFailureErrorCode = default!;
         /// <summary>The most recent time the webhook failed, failures are any non-200 codes returned by the callback URL.</summary>
-        public int? MostRecentFailureTimestamp { get => _explicitNullValueMostRecentFailureTimestamp; set { _explicitNullValueMostRecentFailureTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("most_recent_failure_timestamp"); else _explicitNullProperties?.Remove("most_recent_failure_timestamp"); } }
+        public int? MostRecentFailureTimestamp { get => _explicitNullValueMostRecentFailureTimestamp; set { _explicitNullValueMostRecentFailureTimestamp = value; AdditionalData?.Remove("most_recent_failure_timestamp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("most_recent_failure_timestamp"); else _explicitNullProperties?.Remove("most_recent_failure_timestamp"); } }
         private int? _explicitNullValueMostRecentFailureTimestamp = default!;
         /// <summary>The display name for this webhook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The list of products that are currently configured to trigger this webhook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookUsageResponseModel>? Usage { get => _explicitNullValueUsage; set { _explicitNullValueUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usage"); else _explicitNullProperties?.Remove("usage"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookUsageResponseModel>? Usage { get => _explicitNullValueUsage; set { _explicitNullValueUsage = value; AdditionalData?.Remove("usage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usage"); else _explicitNullProperties?.Remove("usage"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookUsageResponseModel>? _explicitNullValueUsage = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookUsageResponseModel> Usage { get => _explicitNullValueUsage; set { _explicitNullValueUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usage"); else _explicitNullProperties?.Remove("usage"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookUsageResponseModel> Usage { get => _explicitNullValueUsage; set { _explicitNullValueUsage = value; AdditionalData?.Remove("usage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usage"); else _explicitNullProperties?.Remove("usage"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookUsageResponseModel> _explicitNullValueUsage = default!;
 #endif
         /// <summary>The unique ID for this webhook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WebhookId { get => _explicitNullValueWebhookId; set { _explicitNullValueWebhookId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook_id"); else _explicitNullProperties?.Remove("webhook_id"); } }
+        public string? WebhookId { get => _explicitNullValueWebhookId; set { _explicitNullValueWebhookId = value; AdditionalData?.Remove("webhook_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook_id"); else _explicitNullProperties?.Remove("webhook_id"); } }
         private string? _explicitNullValueWebhookId = default!;
 #nullable restore
 #else
-        public string WebhookId { get => _explicitNullValueWebhookId; set { _explicitNullValueWebhookId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook_id"); else _explicitNullProperties?.Remove("webhook_id"); } }
+        public string WebhookId { get => _explicitNullValueWebhookId; set { _explicitNullValueWebhookId = value; AdditionalData?.Remove("webhook_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook_id"); else _explicitNullProperties?.Remove("webhook_id"); } }
         private string _explicitNullValueWebhookId = default!;
 #endif
         /// <summary>The HTTPS callback URL that is called when this webhook is triggered in the platform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WebhookUrl { get => _explicitNullValueWebhookUrl; set { _explicitNullValueWebhookUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook_url"); else _explicitNullProperties?.Remove("webhook_url"); } }
+        public string? WebhookUrl { get => _explicitNullValueWebhookUrl; set { _explicitNullValueWebhookUrl = value; AdditionalData?.Remove("webhook_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook_url"); else _explicitNullProperties?.Remove("webhook_url"); } }
         private string? _explicitNullValueWebhookUrl = default!;
 #nullable restore
 #else
-        public string WebhookUrl { get => _explicitNullValueWebhookUrl; set { _explicitNullValueWebhookUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook_url"); else _explicitNullProperties?.Remove("webhook_url"); } }
+        public string WebhookUrl { get => _explicitNullValueWebhookUrl; set { _explicitNullValueWebhookUrl = value; AdditionalData?.Remove("webhook_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook_url"); else _explicitNullProperties?.Remove("webhook_url"); } }
         private string _explicitNullValueWebhookUrl = default!;
 #endif
         /// <summary>
@@ -125,7 +136,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "auth_type", n => { AuthType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookAuthMethodType>(); } },
+                { "auth_type", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookAuthMethodType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAuthType = default; _explicitNullProperties?.Remove("auth_type"); AdditionalData["auth_type"] = unknown; } else { AuthType = parsed; AdditionalData.Remove("auth_type"); } } },
                 { "created_at_unix", n => { CreatedAtUnix = n.GetIntValue(); } },
                 { "events", n => { Events = n.GetCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookEventType>()?.AsList(); } },
                 { "is_auto_disabled", n => { IsAutoDisabled = n.GetBoolValue(); } },

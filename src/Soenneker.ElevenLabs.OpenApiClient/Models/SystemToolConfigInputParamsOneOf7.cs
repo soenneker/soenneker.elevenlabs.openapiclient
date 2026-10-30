@@ -17,23 +17,25 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("system_tool_type") is { } nullNodeSystemToolType && nullNodeSystemToolType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SystemToolType = null;
-            if (parseNode.GetChildNode("voicemail_message") is { } nullNodeVoicemailMessage && nullNodeVoicemailMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VoicemailMessage = null;
+            if (parseNode.GetChildNode("system_tool_type") is null) { _explicitNullValueSystemToolType = default!; _explicitNullProperties?.Remove("system_tool_type"); }
+            else if (parseNode.GetChildNode("system_tool_type") is { } nullNodeSystemToolType && nullNodeSystemToolType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SystemToolType = null;
+            if (parseNode.GetChildNode("voicemail_message") is null) { _explicitNullValueVoicemailMessage = default!; _explicitNullProperties?.Remove("voicemail_message"); }
+            else if (parseNode.GetChildNode("voicemail_message") is { } nullNodeVoicemailMessage && nullNodeVoicemailMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VoicemailMessage = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The system_tool_type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInputParamsOneOf7_system_tool_type? SystemToolType { get => _explicitNullValueSystemToolType; set { _explicitNullValueSystemToolType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("system_tool_type"); else _explicitNullProperties?.Remove("system_tool_type"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInputParamsOneOf7_system_tool_type? SystemToolType { get => _explicitNullValueSystemToolType; set { _explicitNullValueSystemToolType = value; AdditionalData?.Remove("system_tool_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("system_tool_type"); else _explicitNullProperties?.Remove("system_tool_type"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInputParamsOneOf7_system_tool_type? _explicitNullValueSystemToolType = default!;
         /// <summary>Optional message to leave on voicemail when detected. If not provided, the call will end immediately when voicemail is detected. Supports dynamic variables (e.g., {{system__time}}, {{system__call_duration_secs}}, {{custom_variable}}).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VoicemailMessage { get => _explicitNullValueVoicemailMessage; set { _explicitNullValueVoicemailMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voicemail_message"); else _explicitNullProperties?.Remove("voicemail_message"); } }
+        public string? VoicemailMessage { get => _explicitNullValueVoicemailMessage; set { _explicitNullValueVoicemailMessage = value; AdditionalData?.Remove("voicemail_message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voicemail_message"); else _explicitNullProperties?.Remove("voicemail_message"); } }
         private string? _explicitNullValueVoicemailMessage = default!;
 #nullable restore
 #else
-        public string VoicemailMessage { get => _explicitNullValueVoicemailMessage; set { _explicitNullValueVoicemailMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voicemail_message"); else _explicitNullProperties?.Remove("voicemail_message"); } }
+        public string VoicemailMessage { get => _explicitNullValueVoicemailMessage; set { _explicitNullValueVoicemailMessage = value; AdditionalData?.Remove("voicemail_message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voicemail_message"); else _explicitNullProperties?.Remove("voicemail_message"); } }
         private string _explicitNullValueVoicemailMessage = default!;
 #endif
         /// <summary>
@@ -61,7 +63,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "system_tool_type", n => { SystemToolType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInputParamsOneOf7_system_tool_type>(); } },
+                { "system_tool_type", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInputParamsOneOf7_system_tool_type>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSystemToolType = default; _explicitNullProperties?.Remove("system_tool_type"); AdditionalData["system_tool_type"] = unknown; } else { SystemToolType = parsed; AdditionalData.Remove("system_tool_type"); } } },
                 { "voicemail_message", n => { VoicemailMessage = n.GetStringValue(); } },
             };
         }

@@ -17,7 +17,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("charts") is { } nullNodeCharts && nullNodeCharts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Charts = null;
+            if (parseNode.GetChildNode("charts") is null) { _explicitNullValueCharts = default!; _explicitNullProperties?.Remove("charts"); }
+            else if (parseNode.GetChildNode("charts") is { } nullNodeCharts && nullNodeCharts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Charts = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The charts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PatchConvAiDashboardSettingsRequestChartsItem>? Charts { get => _explicitNullValueCharts; set { _explicitNullValueCharts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("charts"); else _explicitNullProperties?.Remove("charts"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PatchConvAiDashboardSettingsRequestChartsItem>? Charts { get => _explicitNullValueCharts; set { _explicitNullValueCharts = value; AdditionalData?.Remove("charts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("charts"); else _explicitNullProperties?.Remove("charts"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PatchConvAiDashboardSettingsRequestChartsItem>? _explicitNullValueCharts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PatchConvAiDashboardSettingsRequestChartsItem> Charts { get => _explicitNullValueCharts; set { _explicitNullValueCharts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("charts"); else _explicitNullProperties?.Remove("charts"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PatchConvAiDashboardSettingsRequestChartsItem> Charts { get => _explicitNullValueCharts; set { _explicitNullValueCharts = value; AdditionalData?.Remove("charts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("charts"); else _explicitNullProperties?.Remove("charts"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PatchConvAiDashboardSettingsRequestChartsItem> _explicitNullValueCharts = default!;
 #endif
         /// <summary>

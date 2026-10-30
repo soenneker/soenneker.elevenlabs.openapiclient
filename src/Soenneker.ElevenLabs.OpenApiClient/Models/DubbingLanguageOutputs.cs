@@ -18,8 +18,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("lossless_audio") is { } nullNodeLosslessAudio && nullNodeLosslessAudio.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LosslessAudio = null;
-            if (parseNode.GetChildNode("subtitles") is { } nullNodeSubtitles && nullNodeSubtitles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subtitles = null;
+            if (parseNode.GetChildNode("lossless_audio") is null) { _explicitNullValueLosslessAudio = default!; _explicitNullProperties?.Remove("lossless_audio"); }
+            else if (parseNode.GetChildNode("lossless_audio") is { } nullNodeLosslessAudio && nullNodeLosslessAudio.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LosslessAudio = null;
+            if (parseNode.GetChildNode("subtitles") is null) { _explicitNullValueSubtitles = default!; _explicitNullProperties?.Remove("subtitles"); }
+            else if (parseNode.GetChildNode("subtitles") is { } nullNodeSubtitles && nullNodeSubtitles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subtitles = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Signed URL for the dubbed lossless audio track, in FLAC. The link expires one hour after it is issued; re-read the language target for a fresh one.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LosslessAudio { get => _explicitNullValueLosslessAudio; set { _explicitNullValueLosslessAudio = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lossless_audio"); else _explicitNullProperties?.Remove("lossless_audio"); } }
+        public string? LosslessAudio { get => _explicitNullValueLosslessAudio; set { _explicitNullValueLosslessAudio = value; AdditionalData?.Remove("lossless_audio"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lossless_audio"); else _explicitNullProperties?.Remove("lossless_audio"); } }
         private string? _explicitNullValueLosslessAudio = default!;
 #nullable restore
 #else
-        public string LosslessAudio { get => _explicitNullValueLosslessAudio; set { _explicitNullValueLosslessAudio = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lossless_audio"); else _explicitNullProperties?.Remove("lossless_audio"); } }
+        public string LosslessAudio { get => _explicitNullValueLosslessAudio; set { _explicitNullValueLosslessAudio = value; AdditionalData?.Remove("lossless_audio"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lossless_audio"); else _explicitNullProperties?.Remove("lossless_audio"); } }
         private string _explicitNullValueLosslessAudio = default!;
 #endif
         /// <summary>Signed URL for the translated lines as WebVTT subtitles, timed to the source speech. Null when none are available, such as for languages dubbed before subtitles were produced. The link expires one hour after it is issued.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Subtitles { get => _explicitNullValueSubtitles; set { _explicitNullValueSubtitles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtitles"); else _explicitNullProperties?.Remove("subtitles"); } }
+        public string? Subtitles { get => _explicitNullValueSubtitles; set { _explicitNullValueSubtitles = value; AdditionalData?.Remove("subtitles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtitles"); else _explicitNullProperties?.Remove("subtitles"); } }
         private string? _explicitNullValueSubtitles = default!;
 #nullable restore
 #else
-        public string Subtitles { get => _explicitNullValueSubtitles; set { _explicitNullValueSubtitles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtitles"); else _explicitNullProperties?.Remove("subtitles"); } }
+        public string Subtitles { get => _explicitNullValueSubtitles; set { _explicitNullValueSubtitles = value; AdditionalData?.Remove("subtitles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtitles"); else _explicitNullProperties?.Remove("subtitles"); } }
         private string _explicitNullValueSubtitles = default!;
 #endif
         /// <summary>

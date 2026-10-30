@@ -17,15 +17,24 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("call_id") is { } nullNodeCallId && nullNodeCallId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CallId = null;
-            if (parseNode.GetChildNode("created_at_unix_micro") is { } nullNodeCreatedAtUnixMicro && nullNodeCreatedAtUnixMicro.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAtUnixMicro = null;
-            if (parseNode.GetChildNode("direction") is { } nullNodeDirection && nullNodeDirection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Direction = null;
-            if (parseNode.GetChildNode("error_message") is { } nullNodeErrorMessage && nullNodeErrorMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorMessage = null;
-            if (parseNode.GetChildNode("local_address") is { } nullNodeLocalAddress && nullNodeLocalAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocalAddress = null;
-            if (parseNode.GetChildNode("phone_numbers") is { } nullNodePhoneNumbers && nullNodePhoneNumbers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhoneNumbers = null;
-            if (parseNode.GetChildNode("raw_message") is { } nullNodeRawMessage && nullNodeRawMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RawMessage = null;
-            if (parseNode.GetChildNode("remote_address") is { } nullNodeRemoteAddress && nullNodeRemoteAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemoteAddress = null;
-            if (parseNode.GetChildNode("transport") is { } nullNodeTransport && nullNodeTransport.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Transport = null;
+            if (parseNode.GetChildNode("call_id") is null) { _explicitNullValueCallId = default!; _explicitNullProperties?.Remove("call_id"); }
+            else if (parseNode.GetChildNode("call_id") is { } nullNodeCallId && nullNodeCallId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CallId = null;
+            if (parseNode.GetChildNode("created_at_unix_micro") is null) { _explicitNullValueCreatedAtUnixMicro = default!; _explicitNullProperties?.Remove("created_at_unix_micro"); }
+            else if (parseNode.GetChildNode("created_at_unix_micro") is { } nullNodeCreatedAtUnixMicro && nullNodeCreatedAtUnixMicro.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAtUnixMicro = null;
+            if (parseNode.GetChildNode("direction") is null) { _explicitNullValueDirection = default!; _explicitNullProperties?.Remove("direction"); }
+            else if (parseNode.GetChildNode("direction") is { } nullNodeDirection && nullNodeDirection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Direction = null;
+            if (parseNode.GetChildNode("error_message") is null) { _explicitNullValueErrorMessage = default!; _explicitNullProperties?.Remove("error_message"); }
+            else if (parseNode.GetChildNode("error_message") is { } nullNodeErrorMessage && nullNodeErrorMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorMessage = null;
+            if (parseNode.GetChildNode("local_address") is null) { _explicitNullValueLocalAddress = default!; _explicitNullProperties?.Remove("local_address"); }
+            else if (parseNode.GetChildNode("local_address") is { } nullNodeLocalAddress && nullNodeLocalAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocalAddress = null;
+            if (parseNode.GetChildNode("phone_numbers") is null) { _explicitNullValuePhoneNumbers = default!; _explicitNullProperties?.Remove("phone_numbers"); }
+            else if (parseNode.GetChildNode("phone_numbers") is { } nullNodePhoneNumbers && nullNodePhoneNumbers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhoneNumbers = null;
+            if (parseNode.GetChildNode("raw_message") is null) { _explicitNullValueRawMessage = default!; _explicitNullProperties?.Remove("raw_message"); }
+            else if (parseNode.GetChildNode("raw_message") is { } nullNodeRawMessage && nullNodeRawMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RawMessage = null;
+            if (parseNode.GetChildNode("remote_address") is null) { _explicitNullValueRemoteAddress = default!; _explicitNullProperties?.Remove("remote_address"); }
+            else if (parseNode.GetChildNode("remote_address") is { } nullNodeRemoteAddress && nullNodeRemoteAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemoteAddress = null;
+            if (parseNode.GetChildNode("transport") is null) { _explicitNullValueTransport = default!; _explicitNullProperties?.Remove("transport"); }
+            else if (parseNode.GetChildNode("transport") is { } nullNodeTransport && nullNodeTransport.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Transport = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -33,77 +42,77 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The call_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CallId { get => _explicitNullValueCallId; set { _explicitNullValueCallId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("call_id"); else _explicitNullProperties?.Remove("call_id"); } }
+        public string? CallId { get => _explicitNullValueCallId; set { _explicitNullValueCallId = value; AdditionalData?.Remove("call_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("call_id"); else _explicitNullProperties?.Remove("call_id"); } }
         private string? _explicitNullValueCallId = default!;
 #nullable restore
 #else
-        public string CallId { get => _explicitNullValueCallId; set { _explicitNullValueCallId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("call_id"); else _explicitNullProperties?.Remove("call_id"); } }
+        public string CallId { get => _explicitNullValueCallId; set { _explicitNullValueCallId = value; AdditionalData?.Remove("call_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("call_id"); else _explicitNullProperties?.Remove("call_id"); } }
         private string _explicitNullValueCallId = default!;
 #endif
         /// <summary>The created_at_unix_micro property</summary>
-        public int? CreatedAtUnixMicro { get => _explicitNullValueCreatedAtUnixMicro; set { _explicitNullValueCreatedAtUnixMicro = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at_unix_micro"); else _explicitNullProperties?.Remove("created_at_unix_micro"); } }
+        public int? CreatedAtUnixMicro { get => _explicitNullValueCreatedAtUnixMicro; set { _explicitNullValueCreatedAtUnixMicro = value; AdditionalData?.Remove("created_at_unix_micro"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at_unix_micro"); else _explicitNullProperties?.Remove("created_at_unix_micro"); } }
         private int? _explicitNullValueCreatedAtUnixMicro = default!;
         /// <summary>The direction property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SipLogMessageDirection? Direction { get => _explicitNullValueDirection; set { _explicitNullValueDirection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("direction"); else _explicitNullProperties?.Remove("direction"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SipLogMessageDirection? Direction { get => _explicitNullValueDirection; set { _explicitNullValueDirection = value; AdditionalData?.Remove("direction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("direction"); else _explicitNullProperties?.Remove("direction"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.SipLogMessageDirection? _explicitNullValueDirection = default!;
         /// <summary>The error_message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ErrorMessage { get => _explicitNullValueErrorMessage; set { _explicitNullValueErrorMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_message"); else _explicitNullProperties?.Remove("error_message"); } }
+        public string? ErrorMessage { get => _explicitNullValueErrorMessage; set { _explicitNullValueErrorMessage = value; AdditionalData?.Remove("error_message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_message"); else _explicitNullProperties?.Remove("error_message"); } }
         private string? _explicitNullValueErrorMessage = default!;
 #nullable restore
 #else
-        public string ErrorMessage { get => _explicitNullValueErrorMessage; set { _explicitNullValueErrorMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_message"); else _explicitNullProperties?.Remove("error_message"); } }
+        public string ErrorMessage { get => _explicitNullValueErrorMessage; set { _explicitNullValueErrorMessage = value; AdditionalData?.Remove("error_message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_message"); else _explicitNullProperties?.Remove("error_message"); } }
         private string _explicitNullValueErrorMessage = default!;
 #endif
         /// <summary>The local_address property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LocalAddress { get => _explicitNullValueLocalAddress; set { _explicitNullValueLocalAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("local_address"); else _explicitNullProperties?.Remove("local_address"); } }
+        public string? LocalAddress { get => _explicitNullValueLocalAddress; set { _explicitNullValueLocalAddress = value; AdditionalData?.Remove("local_address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("local_address"); else _explicitNullProperties?.Remove("local_address"); } }
         private string? _explicitNullValueLocalAddress = default!;
 #nullable restore
 #else
-        public string LocalAddress { get => _explicitNullValueLocalAddress; set { _explicitNullValueLocalAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("local_address"); else _explicitNullProperties?.Remove("local_address"); } }
+        public string LocalAddress { get => _explicitNullValueLocalAddress; set { _explicitNullValueLocalAddress = value; AdditionalData?.Remove("local_address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("local_address"); else _explicitNullProperties?.Remove("local_address"); } }
         private string _explicitNullValueLocalAddress = default!;
 #endif
         /// <summary>The phone_numbers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PhoneNumbers { get => _explicitNullValuePhoneNumbers; set { _explicitNullValuePhoneNumbers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_numbers"); else _explicitNullProperties?.Remove("phone_numbers"); } }
+        public List<string>? PhoneNumbers { get => _explicitNullValuePhoneNumbers; set { _explicitNullValuePhoneNumbers = value; AdditionalData?.Remove("phone_numbers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_numbers"); else _explicitNullProperties?.Remove("phone_numbers"); } }
         private List<string>? _explicitNullValuePhoneNumbers = default!;
 #nullable restore
 #else
-        public List<string> PhoneNumbers { get => _explicitNullValuePhoneNumbers; set { _explicitNullValuePhoneNumbers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_numbers"); else _explicitNullProperties?.Remove("phone_numbers"); } }
+        public List<string> PhoneNumbers { get => _explicitNullValuePhoneNumbers; set { _explicitNullValuePhoneNumbers = value; AdditionalData?.Remove("phone_numbers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_numbers"); else _explicitNullProperties?.Remove("phone_numbers"); } }
         private List<string> _explicitNullValuePhoneNumbers = default!;
 #endif
         /// <summary>The raw_message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RawMessage { get => _explicitNullValueRawMessage; set { _explicitNullValueRawMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw_message"); else _explicitNullProperties?.Remove("raw_message"); } }
+        public string? RawMessage { get => _explicitNullValueRawMessage; set { _explicitNullValueRawMessage = value; AdditionalData?.Remove("raw_message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw_message"); else _explicitNullProperties?.Remove("raw_message"); } }
         private string? _explicitNullValueRawMessage = default!;
 #nullable restore
 #else
-        public string RawMessage { get => _explicitNullValueRawMessage; set { _explicitNullValueRawMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw_message"); else _explicitNullProperties?.Remove("raw_message"); } }
+        public string RawMessage { get => _explicitNullValueRawMessage; set { _explicitNullValueRawMessage = value; AdditionalData?.Remove("raw_message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw_message"); else _explicitNullProperties?.Remove("raw_message"); } }
         private string _explicitNullValueRawMessage = default!;
 #endif
         /// <summary>The remote_address property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RemoteAddress { get => _explicitNullValueRemoteAddress; set { _explicitNullValueRemoteAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remote_address"); else _explicitNullProperties?.Remove("remote_address"); } }
+        public string? RemoteAddress { get => _explicitNullValueRemoteAddress; set { _explicitNullValueRemoteAddress = value; AdditionalData?.Remove("remote_address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remote_address"); else _explicitNullProperties?.Remove("remote_address"); } }
         private string? _explicitNullValueRemoteAddress = default!;
 #nullable restore
 #else
-        public string RemoteAddress { get => _explicitNullValueRemoteAddress; set { _explicitNullValueRemoteAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remote_address"); else _explicitNullProperties?.Remove("remote_address"); } }
+        public string RemoteAddress { get => _explicitNullValueRemoteAddress; set { _explicitNullValueRemoteAddress = value; AdditionalData?.Remove("remote_address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remote_address"); else _explicitNullProperties?.Remove("remote_address"); } }
         private string _explicitNullValueRemoteAddress = default!;
 #endif
         /// <summary>The transport property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Transport { get => _explicitNullValueTransport; set { _explicitNullValueTransport = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transport"); else _explicitNullProperties?.Remove("transport"); } }
+        public string? Transport { get => _explicitNullValueTransport; set { _explicitNullValueTransport = value; AdditionalData?.Remove("transport"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transport"); else _explicitNullProperties?.Remove("transport"); } }
         private string? _explicitNullValueTransport = default!;
 #nullable restore
 #else
-        public string Transport { get => _explicitNullValueTransport; set { _explicitNullValueTransport = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transport"); else _explicitNullProperties?.Remove("transport"); } }
+        public string Transport { get => _explicitNullValueTransport; set { _explicitNullValueTransport = value; AdditionalData?.Remove("transport"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transport"); else _explicitNullProperties?.Remove("transport"); } }
         private string _explicitNullValueTransport = default!;
 #endif
         /// <summary>
@@ -133,7 +142,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "call_id", n => { CallId = n.GetStringValue(); } },
                 { "created_at_unix_micro", n => { CreatedAtUnixMicro = n.GetIntValue(); } },
-                { "direction", n => { Direction = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SipLogMessageDirection>(); } },
+                { "direction", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SipLogMessageDirection>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDirection = default; _explicitNullProperties?.Remove("direction"); AdditionalData["direction"] = unknown; } else { Direction = parsed; AdditionalData.Remove("direction"); } } },
                 { "error_message", n => { ErrorMessage = n.GetStringValue(); } },
                 { "local_address", n => { LocalAddress = n.GetStringValue(); } },
                 { "phone_numbers", n => { PhoneNumbers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },

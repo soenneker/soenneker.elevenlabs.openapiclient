@@ -17,9 +17,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("extra_evaluation_criteria") is { } nullNodeExtraEvaluationCriteria && nullNodeExtraEvaluationCriteria.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExtraEvaluationCriteria = null;
-            if (parseNode.GetChildNode("new_turns_limit") is { } nullNodeNewTurnsLimit && nullNodeNewTurnsLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewTurnsLimit = null;
-            if (parseNode.GetChildNode("simulation_specification") is { } nullNodeSimulationSpecification && nullNodeSimulationSpecification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SimulationSpecification = null;
+            if (parseNode.GetChildNode("extra_evaluation_criteria") is null) { _explicitNullValueExtraEvaluationCriteria = default!; _explicitNullProperties?.Remove("extra_evaluation_criteria"); }
+            else if (parseNode.GetChildNode("extra_evaluation_criteria") is { } nullNodeExtraEvaluationCriteria && nullNodeExtraEvaluationCriteria.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExtraEvaluationCriteria = null;
+            if (parseNode.GetChildNode("new_turns_limit") is null) { _explicitNullValueNewTurnsLimit = default!; _explicitNullProperties?.Remove("new_turns_limit"); }
+            else if (parseNode.GetChildNode("new_turns_limit") is { } nullNodeNewTurnsLimit && nullNodeNewTurnsLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewTurnsLimit = null;
+            if (parseNode.GetChildNode("simulation_specification") is null) { _explicitNullValueSimulationSpecification = default!; _explicitNullProperties?.Remove("simulation_specification"); }
+            else if (parseNode.GetChildNode("simulation_specification") is { } nullNodeSimulationSpecification && nullNodeSimulationSpecification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SimulationSpecification = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,24 +30,24 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>A list of evaluation criteria to test</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptEvaluationCriteria>? ExtraEvaluationCriteria { get => _explicitNullValueExtraEvaluationCriteria; set { _explicitNullValueExtraEvaluationCriteria = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extra_evaluation_criteria"); else _explicitNullProperties?.Remove("extra_evaluation_criteria"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptEvaluationCriteria>? ExtraEvaluationCriteria { get => _explicitNullValueExtraEvaluationCriteria; set { _explicitNullValueExtraEvaluationCriteria = value; AdditionalData?.Remove("extra_evaluation_criteria"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extra_evaluation_criteria"); else _explicitNullProperties?.Remove("extra_evaluation_criteria"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptEvaluationCriteria>? _explicitNullValueExtraEvaluationCriteria = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptEvaluationCriteria> ExtraEvaluationCriteria { get => _explicitNullValueExtraEvaluationCriteria; set { _explicitNullValueExtraEvaluationCriteria = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extra_evaluation_criteria"); else _explicitNullProperties?.Remove("extra_evaluation_criteria"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptEvaluationCriteria> ExtraEvaluationCriteria { get => _explicitNullValueExtraEvaluationCriteria; set { _explicitNullValueExtraEvaluationCriteria = value; AdditionalData?.Remove("extra_evaluation_criteria"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extra_evaluation_criteria"); else _explicitNullProperties?.Remove("extra_evaluation_criteria"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptEvaluationCriteria> _explicitNullValueExtraEvaluationCriteria = default!;
 #endif
         /// <summary>Maximum number of new turns to generate in the conversation simulation</summary>
-        public int? NewTurnsLimit { get => _explicitNullValueNewTurnsLimit; set { _explicitNullValueNewTurnsLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_turns_limit"); else _explicitNullProperties?.Remove("new_turns_limit"); } }
+        public int? NewTurnsLimit { get => _explicitNullValueNewTurnsLimit; set { _explicitNullValueNewTurnsLimit = value; AdditionalData?.Remove("new_turns_limit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_turns_limit"); else _explicitNullProperties?.Remove("new_turns_limit"); } }
         private int? _explicitNullValueNewTurnsLimit = default!;
         /// <summary>A specification detailing how the conversation should be simulated</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSimulationSpecification? SimulationSpecification { get => _explicitNullValueSimulationSpecification; set { _explicitNullValueSimulationSpecification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("simulation_specification"); else _explicitNullProperties?.Remove("simulation_specification"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSimulationSpecification? SimulationSpecification { get => _explicitNullValueSimulationSpecification; set { _explicitNullValueSimulationSpecification = value; AdditionalData?.Remove("simulation_specification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("simulation_specification"); else _explicitNullProperties?.Remove("simulation_specification"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSimulationSpecification? _explicitNullValueSimulationSpecification = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSimulationSpecification SimulationSpecification { get => _explicitNullValueSimulationSpecification; set { _explicitNullValueSimulationSpecification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("simulation_specification"); else _explicitNullProperties?.Remove("simulation_specification"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSimulationSpecification SimulationSpecification { get => _explicitNullValueSimulationSpecification; set { _explicitNullValueSimulationSpecification = value; AdditionalData?.Remove("simulation_specification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("simulation_specification"); else _explicitNullProperties?.Remove("simulation_specification"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSimulationSpecification _explicitNullValueSimulationSpecification = default!;
 #endif
         /// <summary>

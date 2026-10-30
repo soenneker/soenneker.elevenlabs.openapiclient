@@ -17,7 +17,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("auth_connections") is { } nullNodeAuthConnections && nullNodeAuthConnections.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthConnections = null;
+            if (parseNode.GetChildNode("auth_connections") is null) { _explicitNullValueAuthConnections = default!; _explicitNullProperties?.Remove("auth_connections"); }
+            else if (parseNode.GetChildNode("auth_connections") is { } nullNodeAuthConnections && nullNodeAuthConnections.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthConnections = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The auth_connections property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListAuthConnectionsResponseAuthConnectionsItem>? AuthConnections { get => _explicitNullValueAuthConnections; set { _explicitNullValueAuthConnections = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_connections"); else _explicitNullProperties?.Remove("auth_connections"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListAuthConnectionsResponseAuthConnectionsItem>? AuthConnections { get => _explicitNullValueAuthConnections; set { _explicitNullValueAuthConnections = value; AdditionalData?.Remove("auth_connections"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_connections"); else _explicitNullProperties?.Remove("auth_connections"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListAuthConnectionsResponseAuthConnectionsItem>? _explicitNullValueAuthConnections = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListAuthConnectionsResponseAuthConnectionsItem> AuthConnections { get => _explicitNullValueAuthConnections; set { _explicitNullValueAuthConnections = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_connections"); else _explicitNullProperties?.Remove("auth_connections"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListAuthConnectionsResponseAuthConnectionsItem> AuthConnections { get => _explicitNullValueAuthConnections; set { _explicitNullValueAuthConnections = value; AdditionalData?.Remove("auth_connections"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_connections"); else _explicitNullProperties?.Remove("auth_connections"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListAuthConnectionsResponseAuthConnectionsItem> _explicitNullValueAuthConnections = default!;
 #endif
         /// <summary>

@@ -17,13 +17,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("number_of_pages") is { } nullNodeNumberOfPages && nullNodeNumberOfPages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NumberOfPages = null;
+            if (parseNode.GetChildNode("number_of_pages") is null) { _explicitNullValueNumberOfPages = default!; _explicitNullProperties?.Remove("number_of_pages"); }
+            else if (parseNode.GetChildNode("number_of_pages") is { } nullNodeNumberOfPages && nullNodeNumberOfPages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NumberOfPages = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number_of_pages property</summary>
-        public double? NumberOfPages { get => _explicitNullValueNumberOfPages; set { _explicitNullValueNumberOfPages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("number_of_pages"); else _explicitNullProperties?.Remove("number_of_pages"); } }
+        public double? NumberOfPages { get => _explicitNullValueNumberOfPages; set { _explicitNullValueNumberOfPages = value; AdditionalData?.Remove("number_of_pages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("number_of_pages"); else _explicitNullProperties?.Remove("number_of_pages"); } }
         private double? _explicitNullValueNumberOfPages = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentKnowledgebaseSizeResponseModel"/> and sets the default values.

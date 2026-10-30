@@ -17,17 +17,19 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("anchor") is { } nullNodeAnchor && nullNodeAnchor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Anchor = null;
-            if (parseNode.GetChildNode("seconds") is { } nullNodeSeconds && nullNodeSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Seconds = null;
+            if (parseNode.GetChildNode("anchor") is null) { _explicitNullValueAnchor = default!; _explicitNullProperties?.Remove("anchor"); }
+            else if (parseNode.GetChildNode("anchor") is { } nullNodeAnchor && nullNodeAnchor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Anchor = null;
+            if (parseNode.GetChildNode("seconds") is null) { _explicitNullValueSeconds = default!; _explicitNullProperties?.Remove("seconds"); }
+            else if (parseNode.GetChildNode("seconds") is { } nullNodeSeconds && nullNodeSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Seconds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The anchor property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatedAtAnchor? Anchor { get => _explicitNullValueAnchor; set { _explicitNullValueAnchor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("anchor"); else _explicitNullProperties?.Remove("anchor"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatedAtAnchor? Anchor { get => _explicitNullValueAnchor; set { _explicitNullValueAnchor = value; AdditionalData?.Remove("anchor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("anchor"); else _explicitNullProperties?.Remove("anchor"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatedAtAnchor? _explicitNullValueAnchor = default!;
         /// <summary>The seconds property</summary>
-        public int? Seconds { get => _explicitNullValueSeconds; set { _explicitNullValueSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("seconds"); else _explicitNullProperties?.Remove("seconds"); } }
+        public int? Seconds { get => _explicitNullValueSeconds; set { _explicitNullValueSeconds = value; AdditionalData?.Remove("seconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("seconds"); else _explicitNullProperties?.Remove("seconds"); } }
         private int? _explicitNullValueSeconds = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ExpiresAfter"/> and sets the default values.
@@ -54,7 +56,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "anchor", n => { Anchor = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatedAtAnchor>(); } },
+                { "anchor", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatedAtAnchor>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAnchor = default; _explicitNullProperties?.Remove("anchor"); AdditionalData["anchor"] = unknown; } else { Anchor = parsed; AdditionalData.Remove("anchor"); } } },
                 { "seconds", n => { Seconds = n.GetIntValue(); } },
             };
         }

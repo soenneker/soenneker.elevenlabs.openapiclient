@@ -17,8 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("dubbing_id") is { } nullNodeDubbingId && nullNodeDubbingId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DubbingId = null;
-            if (parseNode.GetChildNode("expected_duration_sec") is { } nullNodeExpectedDurationSec && nullNodeExpectedDurationSec.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpectedDurationSec = null;
+            if (parseNode.GetChildNode("dubbing_id") is null) { _explicitNullValueDubbingId = default!; _explicitNullProperties?.Remove("dubbing_id"); }
+            else if (parseNode.GetChildNode("dubbing_id") is { } nullNodeDubbingId && nullNodeDubbingId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DubbingId = null;
+            if (parseNode.GetChildNode("expected_duration_sec") is null) { _explicitNullValueExpectedDurationSec = default!; _explicitNullProperties?.Remove("expected_duration_sec"); }
+            else if (parseNode.GetChildNode("expected_duration_sec") is { } nullNodeExpectedDurationSec && nullNodeExpectedDurationSec.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpectedDurationSec = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The ID of the dubbing project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DubbingId { get => _explicitNullValueDubbingId; set { _explicitNullValueDubbingId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dubbing_id"); else _explicitNullProperties?.Remove("dubbing_id"); } }
+        public string? DubbingId { get => _explicitNullValueDubbingId; set { _explicitNullValueDubbingId = value; AdditionalData?.Remove("dubbing_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dubbing_id"); else _explicitNullProperties?.Remove("dubbing_id"); } }
         private string? _explicitNullValueDubbingId = default!;
 #nullable restore
 #else
-        public string DubbingId { get => _explicitNullValueDubbingId; set { _explicitNullValueDubbingId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dubbing_id"); else _explicitNullProperties?.Remove("dubbing_id"); } }
+        public string DubbingId { get => _explicitNullValueDubbingId; set { _explicitNullValueDubbingId = value; AdditionalData?.Remove("dubbing_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dubbing_id"); else _explicitNullProperties?.Remove("dubbing_id"); } }
         private string _explicitNullValueDubbingId = default!;
 #endif
         /// <summary>The expected duration of the dubbing project in seconds.</summary>
-        public double? ExpectedDurationSec { get => _explicitNullValueExpectedDurationSec; set { _explicitNullValueExpectedDurationSec = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_duration_sec"); else _explicitNullProperties?.Remove("expected_duration_sec"); } }
+        public double? ExpectedDurationSec { get => _explicitNullValueExpectedDurationSec; set { _explicitNullValueExpectedDurationSec = value; AdditionalData?.Remove("expected_duration_sec"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_duration_sec"); else _explicitNullProperties?.Remove("expected_duration_sec"); } }
         private double? _explicitNullValueExpectedDurationSec = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DoDubbingResponseModel"/> and sets the default values.

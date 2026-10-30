@@ -56,10 +56,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("auth_connection_id") != null))();
-            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("env_var_label") != null))();
-            if (result.AuthConnectionLocator == null && result.EnvironmentAuthConnectionLocator == null && result.WebhookToolApiSchemaConfigInputAuthConnectionMember1 == null && matchesUnionBranch0 && !matchesUnionBranch1) result.AuthConnectionLocator = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionLocator(), parseNode);
-            if (result.AuthConnectionLocator == null && result.EnvironmentAuthConnectionLocator == null && result.WebhookToolApiSchemaConfigInputAuthConnectionMember1 == null && matchesUnionBranch1 && !matchesUnionBranch0) result.EnvironmentAuthConnectionLocator = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentAuthConnectionLocator(), parseNode);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("auth_connection_id") && (!shapeMembers1.ContainsKey("auth_connection_id") || (((shapeMembers1["auth_connection_id"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("env_var_label") && (!shapeMembers1.ContainsKey("env_var_label") || (((shapeMembers1["env_var_label"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))))))))();
+            int matchingUnionBranches = 0;
+            if (matchesUnionBranch0) matchingUnionBranches++;
+            if (matchesUnionBranch1) matchingUnionBranches++;
+            bool noSelectedUnionBranch = result.AuthConnectionLocator == null && result.EnvironmentAuthConnectionLocator == null && result.WebhookToolApiSchemaConfigInputAuthConnectionMember1 == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.AuthConnectionLocator = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionLocator(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.EnvironmentAuthConnectionLocator = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentAuthConnectionLocator(), parseNode);
             if (result.AuthConnectionLocator == null && result.EnvironmentAuthConnectionLocator == null && result.WebhookToolApiSchemaConfigInputAuthConnectionMember1 == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
@@ -69,6 +73,8 @@ return result;
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
             if(AuthConnectionLocator != null || EnvironmentAuthConnectionLocator != null || WebhookToolApiSchemaConfigInputAuthConnectionMember1 != null)
             {
                 return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(AuthConnectionLocator, EnvironmentAuthConnectionLocator, WebhookToolApiSchemaConfigInputAuthConnectionMember1);
@@ -83,9 +89,13 @@ return result;
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
             if (AuthConnectionLocator == null && EnvironmentAuthConnectionLocator == null && WebhookToolApiSchemaConfigInputAuthConnectionMember1 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
-            if (AuthConnectionLocator != null && EnvironmentAuthConnectionLocator == null && WebhookToolApiSchemaConfigInputAuthConnectionMember1 == null) { if (AuthConnectionLocator is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AuthConnectionLocator); return; }
-            if (EnvironmentAuthConnectionLocator != null && AuthConnectionLocator == null && WebhookToolApiSchemaConfigInputAuthConnectionMember1 == null) { if (EnvironmentAuthConnectionLocator is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, EnvironmentAuthConnectionLocator); return; }
-            if (WebhookToolApiSchemaConfigInputAuthConnectionMember1 != null && AuthConnectionLocator == null && EnvironmentAuthConnectionLocator == null) { if (WebhookToolApiSchemaConfigInputAuthConnectionMember1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WebhookToolApiSchemaConfigInputAuthConnectionMember1); return; }
+            int selectedUnionBranches = 0;
+            if (AuthConnectionLocator != null) selectedUnionBranches++;
+            if (EnvironmentAuthConnectionLocator != null) selectedUnionBranches++;
+            if (WebhookToolApiSchemaConfigInputAuthConnectionMember1 != null) selectedUnionBranches++;
+            if (AuthConnectionLocator != null && selectedUnionBranches == 1) { if (AuthConnectionLocator is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AuthConnectionLocator); return; }
+            if (EnvironmentAuthConnectionLocator != null && selectedUnionBranches == 1) { if (EnvironmentAuthConnectionLocator is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, EnvironmentAuthConnectionLocator); return; }
+            if (WebhookToolApiSchemaConfigInputAuthConnectionMember1 != null && selectedUnionBranches == 1) { if (WebhookToolApiSchemaConfigInputAuthConnectionMember1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WebhookToolApiSchemaConfigInputAuthConnectionMember1); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionLocator>(null, AuthConnectionLocator, EnvironmentAuthConnectionLocator, WebhookToolApiSchemaConfigInputAuthConnectionMember1);

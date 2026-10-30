@@ -17,9 +17,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("edges") is { } nullNodeEdges && nullNodeEdges.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Edges = null;
-            if (parseNode.GetChildNode("nodes") is { } nullNodeNodes && nullNodeNodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Nodes = null;
-            if (parseNode.GetChildNode("prevent_subagent_loops") is { } nullNodePreventSubagentLoops && nullNodePreventSubagentLoops.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreventSubagentLoops = null;
+            if (parseNode.GetChildNode("edges") is null) { _explicitNullValueEdges = default!; _explicitNullProperties?.Remove("edges"); }
+            else if (parseNode.GetChildNode("edges") is { } nullNodeEdges && nullNodeEdges.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Edges = null;
+            if (parseNode.GetChildNode("nodes") is null) { _explicitNullValueNodes = default!; _explicitNullProperties?.Remove("nodes"); }
+            else if (parseNode.GetChildNode("nodes") is { } nullNodeNodes && nullNodeNodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Nodes = null;
+            if (parseNode.GetChildNode("prevent_subagent_loops") is null) { _explicitNullValuePreventSubagentLoops = default!; _explicitNullProperties?.Remove("prevent_subagent_loops"); }
+            else if (parseNode.GetChildNode("prevent_subagent_loops") is { } nullNodePreventSubagentLoops && nullNodePreventSubagentLoops.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreventSubagentLoops = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,25 +30,25 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The edges property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModelEdgesProperty? Edges { get => _explicitNullValueEdges; set { _explicitNullValueEdges = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edges"); else _explicitNullProperties?.Remove("edges"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModelEdgesProperty? Edges { get => _explicitNullValueEdges; set { _explicitNullValueEdges = value; AdditionalData?.Remove("edges"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edges"); else _explicitNullProperties?.Remove("edges"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModelEdgesProperty? _explicitNullValueEdges = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModelEdgesProperty Edges { get => _explicitNullValueEdges; set { _explicitNullValueEdges = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edges"); else _explicitNullProperties?.Remove("edges"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModelEdgesProperty Edges { get => _explicitNullValueEdges; set { _explicitNullValueEdges = value; AdditionalData?.Remove("edges"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edges"); else _explicitNullProperties?.Remove("edges"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModelEdgesProperty _explicitNullValueEdges = default!;
 #endif
         /// <summary>The nodes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModelNodesProperty? Nodes { get => _explicitNullValueNodes; set { _explicitNullValueNodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nodes"); else _explicitNullProperties?.Remove("nodes"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModelNodesProperty? Nodes { get => _explicitNullValueNodes; set { _explicitNullValueNodes = value; AdditionalData?.Remove("nodes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nodes"); else _explicitNullProperties?.Remove("nodes"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModelNodesProperty? _explicitNullValueNodes = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModelNodesProperty Nodes { get => _explicitNullValueNodes; set { _explicitNullValueNodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nodes"); else _explicitNullProperties?.Remove("nodes"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModelNodesProperty Nodes { get => _explicitNullValueNodes; set { _explicitNullValueNodes = value; AdditionalData?.Remove("nodes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nodes"); else _explicitNullProperties?.Remove("nodes"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModelNodesProperty _explicitNullValueNodes = default!;
 #endif
         /// <summary>Whether to prevent loops in the workflow execution.</summary>
-        public bool? PreventSubagentLoops { get => _explicitNullValuePreventSubagentLoops; set { _explicitNullValuePreventSubagentLoops = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prevent_subagent_loops"); else _explicitNullProperties?.Remove("prevent_subagent_loops"); } }
+        public bool? PreventSubagentLoops { get => _explicitNullValuePreventSubagentLoops; set { _explicitNullValuePreventSubagentLoops = value; AdditionalData?.Remove("prevent_subagent_loops"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prevent_subagent_loops"); else _explicitNullProperties?.Remove("prevent_subagent_loops"); } }
         private bool? _explicitNullValuePreventSubagentLoops = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModel"/> and sets the default values.

@@ -17,7 +17,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("enabled_strategies") is { } nullNodeEnabledStrategies && nullNodeEnabledStrategies.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnabledStrategies = null;
+            if (parseNode.GetChildNode("enabled_strategies") is null) { _explicitNullValueEnabledStrategies = default!; _explicitNullProperties?.Remove("enabled_strategies"); }
+            else if (parseNode.GetChildNode("enabled_strategies") is { } nullNodeEnabledStrategies && nullNodeEnabledStrategies.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnabledStrategies = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Search strategies exposed to the model. Must be non-empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SearchStrategy?>? EnabledStrategies { get => _explicitNullValueEnabledStrategies; set { _explicitNullValueEnabledStrategies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled_strategies"); else _explicitNullProperties?.Remove("enabled_strategies"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SearchStrategy?>? EnabledStrategies { get => _explicitNullValueEnabledStrategies; set { _explicitNullValueEnabledStrategies = value; AdditionalData?.Remove("enabled_strategies"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled_strategies"); else _explicitNullProperties?.Remove("enabled_strategies"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SearchStrategy?>? _explicitNullValueEnabledStrategies = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SearchStrategy?> EnabledStrategies { get => _explicitNullValueEnabledStrategies; set { _explicitNullValueEnabledStrategies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled_strategies"); else _explicitNullProperties?.Remove("enabled_strategies"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SearchStrategy?> EnabledStrategies { get => _explicitNullValueEnabledStrategies; set { _explicitNullValueEnabledStrategies = value; AdditionalData?.Remove("enabled_strategies"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled_strategies"); else _explicitNullProperties?.Remove("enabled_strategies"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SearchStrategy?> _explicitNullValueEnabledStrategies = default!;
 #endif
         /// <summary>

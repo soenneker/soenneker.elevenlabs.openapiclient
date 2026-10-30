@@ -17,10 +17,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("allowlist") is { } nullNodeAllowlist && nullNodeAllowlist.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Allowlist = null;
-            if (parseNode.GetChildNode("enable_auth") is { } nullNodeEnableAuth && nullNodeEnableAuth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableAuth = null;
-            if (parseNode.GetChildNode("require_origin_header") is { } nullNodeRequireOriginHeader && nullNodeRequireOriginHeader.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequireOriginHeader = null;
-            if (parseNode.GetChildNode("shareable_token") is { } nullNodeShareableToken && nullNodeShareableToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShareableToken = null;
+            if (parseNode.GetChildNode("allowlist") is null) { _explicitNullValueAllowlist = default!; _explicitNullProperties?.Remove("allowlist"); }
+            else if (parseNode.GetChildNode("allowlist") is { } nullNodeAllowlist && nullNodeAllowlist.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Allowlist = null;
+            if (parseNode.GetChildNode("enable_auth") is null) { _explicitNullValueEnableAuth = default!; _explicitNullProperties?.Remove("enable_auth"); }
+            else if (parseNode.GetChildNode("enable_auth") is { } nullNodeEnableAuth && nullNodeEnableAuth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableAuth = null;
+            if (parseNode.GetChildNode("require_origin_header") is null) { _explicitNullValueRequireOriginHeader = default!; _explicitNullProperties?.Remove("require_origin_header"); }
+            else if (parseNode.GetChildNode("require_origin_header") is { } nullNodeRequireOriginHeader && nullNodeRequireOriginHeader.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequireOriginHeader = null;
+            if (parseNode.GetChildNode("shareable_token") is null) { _explicitNullValueShareableToken = default!; _explicitNullProperties?.Remove("shareable_token"); }
+            else if (parseNode.GetChildNode("shareable_token") is { } nullNodeShareableToken && nullNodeShareableToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShareableToken = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,27 +32,27 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>A list of hosts that are allowed to start conversations with the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AllowlistItem>? Allowlist { get => _explicitNullValueAllowlist; set { _explicitNullValueAllowlist = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowlist"); else _explicitNullProperties?.Remove("allowlist"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AllowlistItem>? Allowlist { get => _explicitNullValueAllowlist; set { _explicitNullValueAllowlist = value; AdditionalData?.Remove("allowlist"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowlist"); else _explicitNullProperties?.Remove("allowlist"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AllowlistItem>? _explicitNullValueAllowlist = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AllowlistItem> Allowlist { get => _explicitNullValueAllowlist; set { _explicitNullValueAllowlist = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowlist"); else _explicitNullProperties?.Remove("allowlist"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AllowlistItem> Allowlist { get => _explicitNullValueAllowlist; set { _explicitNullValueAllowlist = value; AdditionalData?.Remove("allowlist"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowlist"); else _explicitNullProperties?.Remove("allowlist"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AllowlistItem> _explicitNullValueAllowlist = default!;
 #endif
         /// <summary>If set to true, starting a conversation with an agent will require a signed token</summary>
-        public bool? EnableAuth { get => _explicitNullValueEnableAuth; set { _explicitNullValueEnableAuth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enable_auth"); else _explicitNullProperties?.Remove("enable_auth"); } }
+        public bool? EnableAuth { get => _explicitNullValueEnableAuth; set { _explicitNullValueEnableAuth = value; AdditionalData?.Remove("enable_auth"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enable_auth"); else _explicitNullProperties?.Remove("enable_auth"); } }
         private bool? _explicitNullValueEnableAuth = default!;
         /// <summary>When enabled, connections with no origin header will be rejected. If the allowlist is empty, this option has no effect.</summary>
-        public bool? RequireOriginHeader { get => _explicitNullValueRequireOriginHeader; set { _explicitNullValueRequireOriginHeader = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("require_origin_header"); else _explicitNullProperties?.Remove("require_origin_header"); } }
+        public bool? RequireOriginHeader { get => _explicitNullValueRequireOriginHeader; set { _explicitNullValueRequireOriginHeader = value; AdditionalData?.Remove("require_origin_header"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("require_origin_header"); else _explicitNullProperties?.Remove("require_origin_header"); } }
         private bool? _explicitNullValueRequireOriginHeader = default!;
         /// <summary>A shareable token that can be used to start a conversation with the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ShareableToken { get => _explicitNullValueShareableToken; set { _explicitNullValueShareableToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shareable_token"); else _explicitNullProperties?.Remove("shareable_token"); } }
+        public string? ShareableToken { get => _explicitNullValueShareableToken; set { _explicitNullValueShareableToken = value; AdditionalData?.Remove("shareable_token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shareable_token"); else _explicitNullProperties?.Remove("shareable_token"); } }
         private string? _explicitNullValueShareableToken = default!;
 #nullable restore
 #else
-        public string ShareableToken { get => _explicitNullValueShareableToken; set { _explicitNullValueShareableToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shareable_token"); else _explicitNullProperties?.Remove("shareable_token"); } }
+        public string ShareableToken { get => _explicitNullValueShareableToken; set { _explicitNullValueShareableToken = value; AdditionalData?.Remove("shareable_token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shareable_token"); else _explicitNullProperties?.Remove("shareable_token"); } }
         private string _explicitNullValueShareableToken = default!;
 #endif
         /// <summary>

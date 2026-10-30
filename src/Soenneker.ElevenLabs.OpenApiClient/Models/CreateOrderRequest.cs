@@ -17,13 +17,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("sandbox") is { } nullNodeSandbox && nullNodeSandbox.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sandbox = null;
+            if (parseNode.GetChildNode("sandbox") is null) { _explicitNullValueSandbox = default!; _explicitNullProperties?.Remove("sandbox"); }
+            else if (parseNode.GetChildNode("sandbox") is { } nullNodeSandbox && nullNodeSandbox.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sandbox = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When true, creates a sandbox order that auto-progresses without producer intervention.</summary>
-        public bool? Sandbox { get => _explicitNullValueSandbox; set { _explicitNullValueSandbox = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sandbox"); else _explicitNullProperties?.Remove("sandbox"); } }
+        public bool? Sandbox { get => _explicitNullValueSandbox; set { _explicitNullValueSandbox = value; AdditionalData?.Remove("sandbox"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sandbox"); else _explicitNullProperties?.Remove("sandbox"); } }
         private bool? _explicitNullValueSandbox = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateOrderRequest"/> and sets the default values.

@@ -18,49 +18,54 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("overage_so_far_usd") is { } nullNodeOverageSoFarUsd && nullNodeOverageSoFarUsd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OverageSoFarUsd = null;
-            if (parseNode.GetChildNode("plan_usd") is { } nullNodePlanUsd && nullNodePlanUsd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlanUsd = null;
-            if (parseNode.GetChildNode("subscription") is { } nullNodeSubscription && nullNodeSubscription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subscription = null;
-            if (parseNode.GetChildNode("workspace_id") is { } nullNodeWorkspaceId && nullNodeWorkspaceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkspaceId = null;
-            if (parseNode.GetChildNode("workspace_name") is { } nullNodeWorkspaceName && nullNodeWorkspaceName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkspaceName = null;
+            if (parseNode.GetChildNode("overage_so_far_usd") is null) { _explicitNullValueOverageSoFarUsd = default!; _explicitNullProperties?.Remove("overage_so_far_usd"); }
+            else if (parseNode.GetChildNode("overage_so_far_usd") is { } nullNodeOverageSoFarUsd && nullNodeOverageSoFarUsd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OverageSoFarUsd = null;
+            if (parseNode.GetChildNode("plan_usd") is null) { _explicitNullValuePlanUsd = default!; _explicitNullProperties?.Remove("plan_usd"); }
+            else if (parseNode.GetChildNode("plan_usd") is { } nullNodePlanUsd && nullNodePlanUsd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlanUsd = null;
+            if (parseNode.GetChildNode("subscription") is null) { _explicitNullValueSubscription = default!; _explicitNullProperties?.Remove("subscription"); }
+            else if (parseNode.GetChildNode("subscription") is { } nullNodeSubscription && nullNodeSubscription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subscription = null;
+            if (parseNode.GetChildNode("workspace_id") is null) { _explicitNullValueWorkspaceId = default!; _explicitNullProperties?.Remove("workspace_id"); }
+            else if (parseNode.GetChildNode("workspace_id") is { } nullNodeWorkspaceId && nullNodeWorkspaceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkspaceId = null;
+            if (parseNode.GetChildNode("workspace_name") is null) { _explicitNullValueWorkspaceName = default!; _explicitNullProperties?.Remove("workspace_name"); }
+            else if (parseNode.GetChildNode("workspace_name") is { } nullNodeWorkspaceName && nullNodeWorkspaceName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkspaceName = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>This period&apos;s usage beyond its included minutes so far, charged at the renewal and still growing.</summary>
-        public double? OverageSoFarUsd { get => _explicitNullValueOverageSoFarUsd; set { _explicitNullValueOverageSoFarUsd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("overage_so_far_usd"); else _explicitNullProperties?.Remove("overage_so_far_usd"); } }
+        public double? OverageSoFarUsd { get => _explicitNullValueOverageSoFarUsd; set { _explicitNullValueOverageSoFarUsd = value; AdditionalData?.Remove("overage_so_far_usd"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("overage_so_far_usd"); else _explicitNullProperties?.Remove("overage_so_far_usd"); } }
         private double? _explicitNullValueOverageSoFarUsd = default!;
         /// <summary>The plan the renewal charges upfront: the pending downgrade&apos;s tier when there is one.</summary>
-        public double? PlanUsd { get => _explicitNullValuePlanUsd; set { _explicitNullValuePlanUsd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plan_usd"); else _explicitNullProperties?.Remove("plan_usd"); } }
+        public double? PlanUsd { get => _explicitNullValuePlanUsd; set { _explicitNullValuePlanUsd = value; AdditionalData?.Remove("plan_usd"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plan_usd"); else _explicitNullProperties?.Remove("plan_usd"); } }
         private double? _explicitNullValuePlanUsd = default!;
         /// <summary>A reseller-managed paid subscription, as the reseller can act on it.Present only for a workspace the reseller actually sells to: untiered andtrial workspaces have no subscription to change or end, and are assigned toinstead. Projected from ``SMBBillingState`` rather than read from Stripe,so it is the same state the grant path wrote.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSubscription? Subscription { get => _explicitNullValueSubscription; set { _explicitNullValueSubscription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscription"); else _explicitNullProperties?.Remove("subscription"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSubscription? Subscription { get => _explicitNullValueSubscription; set { _explicitNullValueSubscription = value; AdditionalData?.Remove("subscription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscription"); else _explicitNullProperties?.Remove("subscription"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSubscription? _explicitNullValueSubscription = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSubscription Subscription { get => _explicitNullValueSubscription; set { _explicitNullValueSubscription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscription"); else _explicitNullProperties?.Remove("subscription"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSubscription Subscription { get => _explicitNullValueSubscription; set { _explicitNullValueSubscription = value; AdditionalData?.Remove("subscription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscription"); else _explicitNullProperties?.Remove("subscription"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSubscription _explicitNullValueSubscription = default!;
 #endif
         /// <summary>The workspace_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WorkspaceId { get => _explicitNullValueWorkspaceId; set { _explicitNullValueWorkspaceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_id"); else _explicitNullProperties?.Remove("workspace_id"); } }
+        public string? WorkspaceId { get => _explicitNullValueWorkspaceId; set { _explicitNullValueWorkspaceId = value; AdditionalData?.Remove("workspace_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_id"); else _explicitNullProperties?.Remove("workspace_id"); } }
         private string? _explicitNullValueWorkspaceId = default!;
 #nullable restore
 #else
-        public string WorkspaceId { get => _explicitNullValueWorkspaceId; set { _explicitNullValueWorkspaceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_id"); else _explicitNullProperties?.Remove("workspace_id"); } }
+        public string WorkspaceId { get => _explicitNullValueWorkspaceId; set { _explicitNullValueWorkspaceId = value; AdditionalData?.Remove("workspace_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_id"); else _explicitNullProperties?.Remove("workspace_id"); } }
         private string _explicitNullValueWorkspaceId = default!;
 #endif
         /// <summary>The workspace_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WorkspaceName { get => _explicitNullValueWorkspaceName; set { _explicitNullValueWorkspaceName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_name"); else _explicitNullProperties?.Remove("workspace_name"); } }
+        public string? WorkspaceName { get => _explicitNullValueWorkspaceName; set { _explicitNullValueWorkspaceName = value; AdditionalData?.Remove("workspace_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_name"); else _explicitNullProperties?.Remove("workspace_name"); } }
         private string? _explicitNullValueWorkspaceName = default!;
 #nullable restore
 #else
-        public string WorkspaceName { get => _explicitNullValueWorkspaceName; set { _explicitNullValueWorkspaceName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_name"); else _explicitNullProperties?.Remove("workspace_name"); } }
+        public string WorkspaceName { get => _explicitNullValueWorkspaceName; set { _explicitNullValueWorkspaceName = value; AdditionalData?.Remove("workspace_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_name"); else _explicitNullProperties?.Remove("workspace_name"); } }
         private string _explicitNullValueWorkspaceName = default!;
 #endif
         /// <summary>

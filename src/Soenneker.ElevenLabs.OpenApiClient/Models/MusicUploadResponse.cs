@@ -18,10 +18,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("composition_plan") is { } nullNodeCompositionPlan && nullNodeCompositionPlan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompositionPlan = null;
-            if (parseNode.GetChildNode("song_id") is { } nullNodeSongId && nullNodeSongId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SongId = null;
-            if (parseNode.GetChildNode("waveform_visual") is { } nullNodeWaveformVisual && nullNodeWaveformVisual.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WaveformVisual = null;
-            if (parseNode.GetChildNode("words_timestamps") is { } nullNodeWordsTimestamps && nullNodeWordsTimestamps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WordsTimestamps = null;
+            if (parseNode.GetChildNode("composition_plan") is null) { _explicitNullValueCompositionPlan = default!; _explicitNullProperties?.Remove("composition_plan"); }
+            else if (parseNode.GetChildNode("composition_plan") is { } nullNodeCompositionPlan && nullNodeCompositionPlan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompositionPlan = null;
+            if (parseNode.GetChildNode("song_id") is null) { _explicitNullValueSongId = default!; _explicitNullProperties?.Remove("song_id"); }
+            else if (parseNode.GetChildNode("song_id") is { } nullNodeSongId && nullNodeSongId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SongId = null;
+            if (parseNode.GetChildNode("waveform_visual") is null) { _explicitNullValueWaveformVisual = default!; _explicitNullProperties?.Remove("waveform_visual"); }
+            else if (parseNode.GetChildNode("waveform_visual") is { } nullNodeWaveformVisual && nullNodeWaveformVisual.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WaveformVisual = null;
+            if (parseNode.GetChildNode("words_timestamps") is null) { _explicitNullValueWordsTimestamps = default!; _explicitNullProperties?.Remove("words_timestamps"); }
+            else if (parseNode.GetChildNode("words_timestamps") is { } nullNodeWordsTimestamps && nullNodeWordsTimestamps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WordsTimestamps = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,41 +33,41 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The composition plan extracted from the uploaded song. Only present if `extract_composition_plan` was provided in the request body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicUploadResponseCompositionPlan? CompositionPlan { get => _explicitNullValueCompositionPlan; set { _explicitNullValueCompositionPlan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("composition_plan"); else _explicitNullProperties?.Remove("composition_plan"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicUploadResponseCompositionPlan? CompositionPlan { get => _explicitNullValueCompositionPlan; set { _explicitNullValueCompositionPlan = value; AdditionalData?.Remove("composition_plan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("composition_plan"); else _explicitNullProperties?.Remove("composition_plan"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicUploadResponseCompositionPlan? _explicitNullValueCompositionPlan = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicUploadResponseCompositionPlan CompositionPlan { get => _explicitNullValueCompositionPlan; set { _explicitNullValueCompositionPlan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("composition_plan"); else _explicitNullProperties?.Remove("composition_plan"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicUploadResponseCompositionPlan CompositionPlan { get => _explicitNullValueCompositionPlan; set { _explicitNullValueCompositionPlan = value; AdditionalData?.Remove("composition_plan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("composition_plan"); else _explicitNullProperties?.Remove("composition_plan"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicUploadResponseCompositionPlan _explicitNullValueCompositionPlan = default!;
 #endif
         /// <summary>Unique identifier for the uploaded song</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SongId { get => _explicitNullValueSongId; set { _explicitNullValueSongId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("song_id"); else _explicitNullProperties?.Remove("song_id"); } }
+        public string? SongId { get => _explicitNullValueSongId; set { _explicitNullValueSongId = value; AdditionalData?.Remove("song_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("song_id"); else _explicitNullProperties?.Remove("song_id"); } }
         private string? _explicitNullValueSongId = default!;
 #nullable restore
 #else
-        public string SongId { get => _explicitNullValueSongId; set { _explicitNullValueSongId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("song_id"); else _explicitNullProperties?.Remove("song_id"); } }
+        public string SongId { get => _explicitNullValueSongId; set { _explicitNullValueSongId = value; AdditionalData?.Remove("song_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("song_id"); else _explicitNullProperties?.Remove("song_id"); } }
         private string _explicitNullValueSongId = default!;
 #endif
         /// <summary>A low-resolution waveform of the uploaded song, for showing a preview of it. Holds 4 values per second of audio, from -1000 to 1000. Stereo is mixed down to a single channel. Only present if `with_waveform_visual` was True in the request body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? WaveformVisual { get => _explicitNullValueWaveformVisual; set { _explicitNullValueWaveformVisual = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("waveform_visual"); else _explicitNullProperties?.Remove("waveform_visual"); } }
+        public List<int?>? WaveformVisual { get => _explicitNullValueWaveformVisual; set { _explicitNullValueWaveformVisual = value; AdditionalData?.Remove("waveform_visual"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("waveform_visual"); else _explicitNullProperties?.Remove("waveform_visual"); } }
         private List<int?>? _explicitNullValueWaveformVisual = default!;
 #nullable restore
 #else
-        public List<int?> WaveformVisual { get => _explicitNullValueWaveformVisual; set { _explicitNullValueWaveformVisual = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("waveform_visual"); else _explicitNullProperties?.Remove("waveform_visual"); } }
+        public List<int?> WaveformVisual { get => _explicitNullValueWaveformVisual; set { _explicitNullValueWaveformVisual = value; AdditionalData?.Remove("waveform_visual"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("waveform_visual"); else _explicitNullProperties?.Remove("waveform_visual"); } }
         private List<int?> _explicitNullValueWaveformVisual = default!;
 #endif
         /// <summary>Word-level timestamps transcribed from the uploaded song. Only present if `with_timestamps` was True in the request body</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WordTimestamp>? WordsTimestamps { get => _explicitNullValueWordsTimestamps; set { _explicitNullValueWordsTimestamps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("words_timestamps"); else _explicitNullProperties?.Remove("words_timestamps"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WordTimestamp>? WordsTimestamps { get => _explicitNullValueWordsTimestamps; set { _explicitNullValueWordsTimestamps = value; AdditionalData?.Remove("words_timestamps"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("words_timestamps"); else _explicitNullProperties?.Remove("words_timestamps"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WordTimestamp>? _explicitNullValueWordsTimestamps = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WordTimestamp> WordsTimestamps { get => _explicitNullValueWordsTimestamps; set { _explicitNullValueWordsTimestamps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("words_timestamps"); else _explicitNullProperties?.Remove("words_timestamps"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WordTimestamp> WordsTimestamps { get => _explicitNullValueWordsTimestamps; set { _explicitNullValueWordsTimestamps = value; AdditionalData?.Remove("words_timestamps"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("words_timestamps"); else _explicitNullProperties?.Remove("words_timestamps"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WordTimestamp> _explicitNullValueWordsTimestamps = default!;
 #endif
         /// <summary>

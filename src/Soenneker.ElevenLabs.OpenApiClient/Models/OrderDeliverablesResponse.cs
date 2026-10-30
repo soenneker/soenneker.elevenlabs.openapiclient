@@ -17,7 +17,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("deliverables") is { } nullNodeDeliverables && nullNodeDeliverables.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deliverables = null;
+            if (parseNode.GetChildNode("deliverables") is null) { _explicitNullValueDeliverables = default!; _explicitNullProperties?.Remove("deliverables"); }
+            else if (parseNode.GetChildNode("deliverables") is { } nullNodeDeliverables && nullNodeDeliverables.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deliverables = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The list of delivered files for the order. Empty if the order is not yet completed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DeliverableInfo>? Deliverables { get => _explicitNullValueDeliverables; set { _explicitNullValueDeliverables = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deliverables"); else _explicitNullProperties?.Remove("deliverables"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DeliverableInfo>? Deliverables { get => _explicitNullValueDeliverables; set { _explicitNullValueDeliverables = value; AdditionalData?.Remove("deliverables"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deliverables"); else _explicitNullProperties?.Remove("deliverables"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DeliverableInfo>? _explicitNullValueDeliverables = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DeliverableInfo> Deliverables { get => _explicitNullValueDeliverables; set { _explicitNullValueDeliverables = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deliverables"); else _explicitNullProperties?.Remove("deliverables"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DeliverableInfo> Deliverables { get => _explicitNullValueDeliverables; set { _explicitNullValueDeliverables = value; AdditionalData?.Remove("deliverables"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deliverables"); else _explicitNullProperties?.Remove("deliverables"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DeliverableInfo> _explicitNullValueDeliverables = default!;
 #endif
         /// <summary>

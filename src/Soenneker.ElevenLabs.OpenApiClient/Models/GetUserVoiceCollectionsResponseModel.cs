@@ -17,7 +17,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("collections") is { } nullNodeCollections && nullNodeCollections.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Collections = null;
+            if (parseNode.GetChildNode("collections") is null) { _explicitNullValueCollections = default!; _explicitNullProperties?.Remove("collections"); }
+            else if (parseNode.GetChildNode("collections") is { } nullNodeCollections && nullNodeCollections.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Collections = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The voice collections the caller can access, sorted by title.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.UserVoiceCollectionResponseModel>? Collections { get => _explicitNullValueCollections; set { _explicitNullValueCollections = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("collections"); else _explicitNullProperties?.Remove("collections"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.UserVoiceCollectionResponseModel>? Collections { get => _explicitNullValueCollections; set { _explicitNullValueCollections = value; AdditionalData?.Remove("collections"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("collections"); else _explicitNullProperties?.Remove("collections"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.UserVoiceCollectionResponseModel>? _explicitNullValueCollections = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.UserVoiceCollectionResponseModel> Collections { get => _explicitNullValueCollections; set { _explicitNullValueCollections = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("collections"); else _explicitNullProperties?.Remove("collections"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.UserVoiceCollectionResponseModel> Collections { get => _explicitNullValueCollections; set { _explicitNullValueCollections = value; AdditionalData?.Remove("collections"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("collections"); else _explicitNullProperties?.Remove("collections"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.UserVoiceCollectionResponseModel> _explicitNullValueCollections = default!;
 #endif
         /// <summary>

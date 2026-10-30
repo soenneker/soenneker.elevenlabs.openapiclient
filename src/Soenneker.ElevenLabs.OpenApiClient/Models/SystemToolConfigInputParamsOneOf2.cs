@@ -17,17 +17,19 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("only_at_conversation_start") is { } nullNodeOnlyAtConversationStart && nullNodeOnlyAtConversationStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnlyAtConversationStart = null;
-            if (parseNode.GetChildNode("system_tool_type") is { } nullNodeSystemToolType && nullNodeSystemToolType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SystemToolType = null;
+            if (parseNode.GetChildNode("only_at_conversation_start") is null) { _explicitNullValueOnlyAtConversationStart = default!; _explicitNullProperties?.Remove("only_at_conversation_start"); }
+            else if (parseNode.GetChildNode("only_at_conversation_start") is { } nullNodeOnlyAtConversationStart && nullNodeOnlyAtConversationStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnlyAtConversationStart = null;
+            if (parseNode.GetChildNode("system_tool_type") is null) { _explicitNullValueSystemToolType = default!; _explicitNullProperties?.Remove("system_tool_type"); }
+            else if (parseNode.GetChildNode("system_tool_type") is { } nullNodeSystemToolType && nullNodeSystemToolType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SystemToolType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>If no language switch happens in the first 2 user turns, later attempts fail and the conversation stays in the current language. If the language switches during those turns, later switching stays available. Enable to reduce the possibility of false switching.</summary>
-        public bool? OnlyAtConversationStart { get => _explicitNullValueOnlyAtConversationStart; set { _explicitNullValueOnlyAtConversationStart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("only_at_conversation_start"); else _explicitNullProperties?.Remove("only_at_conversation_start"); } }
+        public bool? OnlyAtConversationStart { get => _explicitNullValueOnlyAtConversationStart; set { _explicitNullValueOnlyAtConversationStart = value; AdditionalData?.Remove("only_at_conversation_start"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("only_at_conversation_start"); else _explicitNullProperties?.Remove("only_at_conversation_start"); } }
         private bool? _explicitNullValueOnlyAtConversationStart = default!;
         /// <summary>The system_tool_type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInputParamsOneOf2_system_tool_type? SystemToolType { get => _explicitNullValueSystemToolType; set { _explicitNullValueSystemToolType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("system_tool_type"); else _explicitNullProperties?.Remove("system_tool_type"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInputParamsOneOf2_system_tool_type? SystemToolType { get => _explicitNullValueSystemToolType; set { _explicitNullValueSystemToolType = value; AdditionalData?.Remove("system_tool_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("system_tool_type"); else _explicitNullProperties?.Remove("system_tool_type"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInputParamsOneOf2_system_tool_type? _explicitNullValueSystemToolType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInputParamsOneOf2"/> and sets the default values.
@@ -56,7 +58,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "only_at_conversation_start", n => { OnlyAtConversationStart = n.GetBoolValue(); } },
-                { "system_tool_type", n => { SystemToolType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInputParamsOneOf2_system_tool_type>(); } },
+                { "system_tool_type", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInputParamsOneOf2_system_tool_type>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSystemToolType = default; _explicitNullProperties?.Remove("system_tool_type"); AdditionalData["system_tool_type"] = unknown; } else { SystemToolType = parsed; AdditionalData.Remove("system_tool_type"); } } },
             };
         }
         /// <summary>

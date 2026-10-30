@@ -17,13 +17,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("first_message") is { } nullNodeFirstMessage && nullNodeFirstMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstMessage = null;
+            if (parseNode.GetChildNode("first_message") is null) { _explicitNullValueFirstMessage = default!; _explicitNullProperties?.Remove("first_message"); }
+            else if (parseNode.GetChildNode("first_message") is { } nullNodeFirstMessage && nullNodeFirstMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstMessage = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the first message can be overridden by the client</summary>
-        public bool? FirstMessage { get => _explicitNullValueFirstMessage; set { _explicitNullValueFirstMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_message"); else _explicitNullProperties?.Remove("first_message"); } }
+        public bool? FirstMessage { get => _explicitNullValueFirstMessage; set { _explicitNullValueFirstMessage = value; AdditionalData?.Remove("first_message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_message"); else _explicitNullProperties?.Remove("first_message"); } }
         private bool? _explicitNullValueFirstMessage = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineConversationInitiationClientDataConfig"/> and sets the default values.

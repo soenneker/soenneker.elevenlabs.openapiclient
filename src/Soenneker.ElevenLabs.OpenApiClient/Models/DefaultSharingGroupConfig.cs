@@ -17,8 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("group_id") is { } nullNodeGroupId && nullNodeGroupId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupId = null;
-            if (parseNode.GetChildNode("permission_level") is { } nullNodePermissionLevel && nullNodePermissionLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PermissionLevel = null;
+            if (parseNode.GetChildNode("group_id") is null) { _explicitNullValueGroupId = default!; _explicitNullProperties?.Remove("group_id"); }
+            else if (parseNode.GetChildNode("group_id") is { } nullNodeGroupId && nullNodeGroupId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupId = null;
+            if (parseNode.GetChildNode("permission_level") is null) { _explicitNullValuePermissionLevel = default!; _explicitNullProperties?.Remove("permission_level"); }
+            else if (parseNode.GetChildNode("permission_level") is { } nullNodePermissionLevel && nullNodePermissionLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PermissionLevel = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The ID of the group to share with</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GroupId { get => _explicitNullValueGroupId; set { _explicitNullValueGroupId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_id"); else _explicitNullProperties?.Remove("group_id"); } }
+        public string? GroupId { get => _explicitNullValueGroupId; set { _explicitNullValueGroupId = value; AdditionalData?.Remove("group_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_id"); else _explicitNullProperties?.Remove("group_id"); } }
         private string? _explicitNullValueGroupId = default!;
 #nullable restore
 #else
-        public string GroupId { get => _explicitNullValueGroupId; set { _explicitNullValueGroupId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_id"); else _explicitNullProperties?.Remove("group_id"); } }
+        public string GroupId { get => _explicitNullValueGroupId; set { _explicitNullValueGroupId = value; AdditionalData?.Remove("group_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_id"); else _explicitNullProperties?.Remove("group_id"); } }
         private string _explicitNullValueGroupId = default!;
 #endif
         /// <summary>The permission level to grant to the group</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DefaultSharingGroupConfigPermissionLevel? PermissionLevel { get => _explicitNullValuePermissionLevel; set { _explicitNullValuePermissionLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permission_level"); else _explicitNullProperties?.Remove("permission_level"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DefaultSharingGroupConfigPermissionLevel? PermissionLevel { get => _explicitNullValuePermissionLevel; set { _explicitNullValuePermissionLevel = value; AdditionalData?.Remove("permission_level"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permission_level"); else _explicitNullProperties?.Remove("permission_level"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.DefaultSharingGroupConfigPermissionLevel? _explicitNullValuePermissionLevel = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DefaultSharingGroupConfig"/> and sets the default values.
@@ -62,7 +64,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "group_id", n => { GroupId = n.GetStringValue(); } },
-                { "permission_level", n => { PermissionLevel = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DefaultSharingGroupConfigPermissionLevel>(); } },
+                { "permission_level", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DefaultSharingGroupConfigPermissionLevel>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePermissionLevel = default; _explicitNullProperties?.Remove("permission_level"); AdditionalData["permission_level"] = unknown; } else { PermissionLevel = parsed; AdditionalData.Remove("permission_level"); } } },
             };
         }
         /// <summary>

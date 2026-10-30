@@ -17,11 +17,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("frustration") is { } nullNodeFrustration && nullNodeFrustration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Frustration = null;
-            if (parseNode.GetChildNode("negative_count") is { } nullNodeNegativeCount && nullNodeNegativeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NegativeCount = null;
-            if (parseNode.GetChildNode("neutral_count") is { } nullNodeNeutralCount && nullNodeNeutralCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NeutralCount = null;
-            if (parseNode.GetChildNode("positive_count") is { } nullNodePositiveCount && nullNodePositiveCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PositiveCount = null;
-            if (parseNode.GetChildNode("sentiment") is { } nullNodeSentiment && nullNodeSentiment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sentiment = null;
+            if (parseNode.GetChildNode("frustration") is null) { _explicitNullValueFrustration = default!; _explicitNullProperties?.Remove("frustration"); }
+            else if (parseNode.GetChildNode("frustration") is { } nullNodeFrustration && nullNodeFrustration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Frustration = null;
+            if (parseNode.GetChildNode("negative_count") is null) { _explicitNullValueNegativeCount = default!; _explicitNullProperties?.Remove("negative_count"); }
+            else if (parseNode.GetChildNode("negative_count") is { } nullNodeNegativeCount && nullNodeNegativeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NegativeCount = null;
+            if (parseNode.GetChildNode("neutral_count") is null) { _explicitNullValueNeutralCount = default!; _explicitNullProperties?.Remove("neutral_count"); }
+            else if (parseNode.GetChildNode("neutral_count") is { } nullNodeNeutralCount && nullNodeNeutralCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NeutralCount = null;
+            if (parseNode.GetChildNode("positive_count") is null) { _explicitNullValuePositiveCount = default!; _explicitNullProperties?.Remove("positive_count"); }
+            else if (parseNode.GetChildNode("positive_count") is { } nullNodePositiveCount && nullNodePositiveCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PositiveCount = null;
+            if (parseNode.GetChildNode("sentiment") is null) { _explicitNullValueSentiment = default!; _explicitNullProperties?.Remove("sentiment"); }
+            else if (parseNode.GetChildNode("sentiment") is { } nullNodeSentiment && nullNodeSentiment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sentiment = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,30 +34,30 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The frustration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.NumericDistributionAggregate? Frustration { get => _explicitNullValueFrustration; set { _explicitNullValueFrustration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frustration"); else _explicitNullProperties?.Remove("frustration"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.NumericDistributionAggregate? Frustration { get => _explicitNullValueFrustration; set { _explicitNullValueFrustration = value; AdditionalData?.Remove("frustration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frustration"); else _explicitNullProperties?.Remove("frustration"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.NumericDistributionAggregate? _explicitNullValueFrustration = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.NumericDistributionAggregate Frustration { get => _explicitNullValueFrustration; set { _explicitNullValueFrustration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frustration"); else _explicitNullProperties?.Remove("frustration"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.NumericDistributionAggregate Frustration { get => _explicitNullValueFrustration; set { _explicitNullValueFrustration = value; AdditionalData?.Remove("frustration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frustration"); else _explicitNullProperties?.Remove("frustration"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.NumericDistributionAggregate _explicitNullValueFrustration = default!;
 #endif
         /// <summary>The negative_count property</summary>
-        public int? NegativeCount { get => _explicitNullValueNegativeCount; set { _explicitNullValueNegativeCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("negative_count"); else _explicitNullProperties?.Remove("negative_count"); } }
+        public int? NegativeCount { get => _explicitNullValueNegativeCount; set { _explicitNullValueNegativeCount = value; AdditionalData?.Remove("negative_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("negative_count"); else _explicitNullProperties?.Remove("negative_count"); } }
         private int? _explicitNullValueNegativeCount = default!;
         /// <summary>The neutral_count property</summary>
-        public int? NeutralCount { get => _explicitNullValueNeutralCount; set { _explicitNullValueNeutralCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("neutral_count"); else _explicitNullProperties?.Remove("neutral_count"); } }
+        public int? NeutralCount { get => _explicitNullValueNeutralCount; set { _explicitNullValueNeutralCount = value; AdditionalData?.Remove("neutral_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("neutral_count"); else _explicitNullProperties?.Remove("neutral_count"); } }
         private int? _explicitNullValueNeutralCount = default!;
         /// <summary>The positive_count property</summary>
-        public int? PositiveCount { get => _explicitNullValuePositiveCount; set { _explicitNullValuePositiveCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("positive_count"); else _explicitNullProperties?.Remove("positive_count"); } }
+        public int? PositiveCount { get => _explicitNullValuePositiveCount; set { _explicitNullValuePositiveCount = value; AdditionalData?.Remove("positive_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("positive_count"); else _explicitNullProperties?.Remove("positive_count"); } }
         private int? _explicitNullValuePositiveCount = default!;
         /// <summary>The sentiment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.NumericDistributionAggregate? Sentiment { get => _explicitNullValueSentiment; set { _explicitNullValueSentiment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sentiment"); else _explicitNullProperties?.Remove("sentiment"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.NumericDistributionAggregate? Sentiment { get => _explicitNullValueSentiment; set { _explicitNullValueSentiment = value; AdditionalData?.Remove("sentiment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sentiment"); else _explicitNullProperties?.Remove("sentiment"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.NumericDistributionAggregate? _explicitNullValueSentiment = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.NumericDistributionAggregate Sentiment { get => _explicitNullValueSentiment; set { _explicitNullValueSentiment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sentiment"); else _explicitNullProperties?.Remove("sentiment"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.NumericDistributionAggregate Sentiment { get => _explicitNullValueSentiment; set { _explicitNullValueSentiment = value; AdditionalData?.Remove("sentiment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sentiment"); else _explicitNullProperties?.Remove("sentiment"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.NumericDistributionAggregate _explicitNullValueSentiment = default!;
 #endif
         /// <summary>

@@ -18,23 +18,25 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
-            if (parseNode.GetChildNode("answered_by") is { } nullNodeAnsweredBy && nullNodeAnsweredBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AnsweredBy = null;
+            if (parseNode.GetChildNode("action") is null) { _explicitNullValueAction = default!; _explicitNullProperties?.Remove("action"); }
+            else if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
+            if (parseNode.GetChildNode("answered_by") is null) { _explicitNullValueAnsweredBy = default!; _explicitNullProperties?.Remove("answered_by"); }
+            else if (parseNode.GetChildNode("answered_by") is { } nullNodeAnsweredBy && nullNodeAnsweredBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AnsweredBy = null;
         }
 
         /// <summary>The action property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioMachineDetectionAction? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioMachineDetectionAction? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; AdditionalData?.Remove("action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioMachineDetectionAction? _explicitNullValueAction = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Verdicts that trigger the action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioAnsweredBy?>? AnsweredBy { get => _explicitNullValueAnsweredBy; set { _explicitNullValueAnsweredBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("answered_by"); else _explicitNullProperties?.Remove("answered_by"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioAnsweredBy?>? AnsweredBy { get => _explicitNullValueAnsweredBy; set { _explicitNullValueAnsweredBy = value; AdditionalData?.Remove("answered_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("answered_by"); else _explicitNullProperties?.Remove("answered_by"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioAnsweredBy?>? _explicitNullValueAnsweredBy = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioAnsweredBy?> AnsweredBy { get => _explicitNullValueAnsweredBy; set { _explicitNullValueAnsweredBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("answered_by"); else _explicitNullProperties?.Remove("answered_by"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioAnsweredBy?> AnsweredBy { get => _explicitNullValueAnsweredBy; set { _explicitNullValueAnsweredBy = value; AdditionalData?.Remove("answered_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("answered_by"); else _explicitNullProperties?.Remove("answered_by"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioAnsweredBy?> _explicitNullValueAnsweredBy = default!;
 #endif
         /// <summary>
@@ -62,7 +64,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioMachineDetectionAction>(); } },
+                { "action", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioMachineDetectionAction>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAction = default; _explicitNullProperties?.Remove("action"); AdditionalData["action"] = unknown; } else { Action = parsed; AdditionalData.Remove("action"); } } },
                 { "answered_by", n => { AnsweredBy = n.GetCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioAnsweredBy>()?.AsList(); } },
             };
         }

@@ -17,13 +17,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cloning_strength") is { } nullNodeCloningStrength && nullNodeCloningStrength.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CloningStrength = null;
+            if (parseNode.GetChildNode("cloning_strength") is null) { _explicitNullValueCloningStrength = default!; _explicitNullProperties?.Remove("cloning_strength"); }
+            else if (parseNode.GetChildNode("cloning_strength") is { } nullNodeCloningStrength && nullNodeCloningStrength.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CloningStrength = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>How strongly the dubbed speakers clone the source voices, 0 to 10.</summary>
-        public int? CloningStrength { get => _explicitNullValueCloningStrength; set { _explicitNullValueCloningStrength = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloning_strength"); else _explicitNullProperties?.Remove("cloning_strength"); } }
+        public int? CloningStrength { get => _explicitNullValueCloningStrength; set { _explicitNullValueCloningStrength = value; AdditionalData?.Remove("cloning_strength"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloning_strength"); else _explicitNullProperties?.Remove("cloning_strength"); } }
         private int? _explicitNullValueCloningStrength = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettings"/> and sets the default values.

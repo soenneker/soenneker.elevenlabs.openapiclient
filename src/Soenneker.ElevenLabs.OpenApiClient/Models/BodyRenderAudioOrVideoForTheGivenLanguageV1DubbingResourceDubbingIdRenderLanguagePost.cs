@@ -17,17 +17,19 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("normalize_volume") is { } nullNodeNormalizeVolume && nullNodeNormalizeVolume.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NormalizeVolume = null;
-            if (parseNode.GetChildNode("render_type") is { } nullNodeRenderType && nullNodeRenderType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RenderType = null;
+            if (parseNode.GetChildNode("normalize_volume") is null) { _explicitNullValueNormalizeVolume = default!; _explicitNullProperties?.Remove("normalize_volume"); }
+            else if (parseNode.GetChildNode("normalize_volume") is { } nullNodeNormalizeVolume && nullNodeNormalizeVolume.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NormalizeVolume = null;
+            if (parseNode.GetChildNode("render_type") is null) { _explicitNullValueRenderType = default!; _explicitNullProperties?.Remove("render_type"); }
+            else if (parseNode.GetChildNode("render_type") is { } nullNodeRenderType && nullNodeRenderType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RenderType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether to normalize the volume of the rendered audio.</summary>
-        public bool? NormalizeVolume { get => _explicitNullValueNormalizeVolume; set { _explicitNullValueNormalizeVolume = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("normalize_volume"); else _explicitNullProperties?.Remove("normalize_volume"); } }
+        public bool? NormalizeVolume { get => _explicitNullValueNormalizeVolume; set { _explicitNullValueNormalizeVolume = value; AdditionalData?.Remove("normalize_volume"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("normalize_volume"); else _explicitNullProperties?.Remove("normalize_volume"); } }
         private bool? _explicitNullValueNormalizeVolume = default!;
         /// <summary>The type of the render. One of [&apos;mp4&apos;, &apos;aac&apos;, &apos;mp3&apos;, &apos;wav&apos;, &apos;aaf&apos;, &apos;tracks_zip&apos;, &apos;clips_zip&apos;]</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.RenderType? RenderType { get => _explicitNullValueRenderType; set { _explicitNullValueRenderType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("render_type"); else _explicitNullProperties?.Remove("render_type"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.RenderType? RenderType { get => _explicitNullValueRenderType; set { _explicitNullValueRenderType = value; AdditionalData?.Remove("render_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("render_type"); else _explicitNullProperties?.Remove("render_type"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.RenderType? _explicitNullValueRenderType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyRenderAudioOrVideoForTheGivenLanguageV1DubbingResourceDubbingIdRenderLanguagePost"/> and sets the default values.
@@ -56,7 +58,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "normalize_volume", n => { NormalizeVolume = n.GetBoolValue(); } },
-                { "render_type", n => { RenderType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RenderType>(); } },
+                { "render_type", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RenderType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRenderType = default; _explicitNullProperties?.Remove("render_type"); AdditionalData["render_type"] = unknown; } else { RenderType = parsed; AdditionalData.Remove("render_type"); } } },
             };
         }
         /// <summary>

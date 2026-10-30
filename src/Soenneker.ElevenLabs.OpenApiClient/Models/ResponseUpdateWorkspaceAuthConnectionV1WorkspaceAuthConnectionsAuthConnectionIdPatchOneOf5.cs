@@ -17,171 +17,189 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("algorithm") is { } nullNodeAlgorithm && nullNodeAlgorithm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Algorithm = null;
-            if (parseNode.GetChildNode("audience") is { } nullNodeAudience && nullNodeAudience.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Audience = null;
-            if (parseNode.GetChildNode("auth_type") is { } nullNodeAuthType && nullNodeAuthType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthType = null;
-            if (parseNode.GetChildNode("expiration_seconds") is { } nullNodeExpirationSeconds && nullNodeExpirationSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpirationSeconds = null;
-            if (parseNode.GetChildNode("extra_params") is { } nullNodeExtraParams && nullNodeExtraParams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExtraParams = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("issuer") is { } nullNodeIssuer && nullNodeIssuer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Issuer = null;
-            if (parseNode.GetChildNode("key_id") is { } nullNodeKeyId && nullNodeKeyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeyId = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("provider") is { } nullNodeProvider && nullNodeProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Provider = null;
-            if (parseNode.GetChildNode("scopes") is { } nullNodeScopes && nullNodeScopes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scopes = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
-            if (parseNode.GetChildNode("status_detail") is { } nullNodeStatusDetail && nullNodeStatusDetail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StatusDetail = null;
-            if (parseNode.GetChildNode("status_updated_at") is { } nullNodeStatusUpdatedAt && nullNodeStatusUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StatusUpdatedAt = null;
-            if (parseNode.GetChildNode("subject") is { } nullNodeSubject && nullNodeSubject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subject = null;
-            if (parseNode.GetChildNode("token_response_field") is { } nullNodeTokenResponseField && nullNodeTokenResponseField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TokenResponseField = null;
-            if (parseNode.GetChildNode("token_url") is { } nullNodeTokenUrl && nullNodeTokenUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TokenUrl = null;
-            if (parseNode.GetChildNode("used_by") is { } nullNodeUsedBy && nullNodeUsedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsedBy = null;
+            if (parseNode.GetChildNode("algorithm") is null) { _explicitNullValueAlgorithm = default!; _explicitNullProperties?.Remove("algorithm"); }
+            else if (parseNode.GetChildNode("algorithm") is { } nullNodeAlgorithm && nullNodeAlgorithm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Algorithm = null;
+            if (parseNode.GetChildNode("audience") is null) { _explicitNullValueAudience = default!; _explicitNullProperties?.Remove("audience"); }
+            else if (parseNode.GetChildNode("audience") is { } nullNodeAudience && nullNodeAudience.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Audience = null;
+            if (parseNode.GetChildNode("auth_type") is null) { _explicitNullValueAuthType = default!; _explicitNullProperties?.Remove("auth_type"); }
+            else if (parseNode.GetChildNode("auth_type") is { } nullNodeAuthType && nullNodeAuthType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthType = null;
+            if (parseNode.GetChildNode("expiration_seconds") is null) { _explicitNullValueExpirationSeconds = default!; _explicitNullProperties?.Remove("expiration_seconds"); }
+            else if (parseNode.GetChildNode("expiration_seconds") is { } nullNodeExpirationSeconds && nullNodeExpirationSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpirationSeconds = null;
+            if (parseNode.GetChildNode("extra_params") is null) { _explicitNullValueExtraParams = default!; _explicitNullProperties?.Remove("extra_params"); }
+            else if (parseNode.GetChildNode("extra_params") is { } nullNodeExtraParams && nullNodeExtraParams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExtraParams = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("issuer") is null) { _explicitNullValueIssuer = default!; _explicitNullProperties?.Remove("issuer"); }
+            else if (parseNode.GetChildNode("issuer") is { } nullNodeIssuer && nullNodeIssuer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Issuer = null;
+            if (parseNode.GetChildNode("key_id") is null) { _explicitNullValueKeyId = default!; _explicitNullProperties?.Remove("key_id"); }
+            else if (parseNode.GetChildNode("key_id") is { } nullNodeKeyId && nullNodeKeyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeyId = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("provider") is null) { _explicitNullValueProvider = default!; _explicitNullProperties?.Remove("provider"); }
+            else if (parseNode.GetChildNode("provider") is { } nullNodeProvider && nullNodeProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Provider = null;
+            if (parseNode.GetChildNode("scopes") is null) { _explicitNullValueScopes = default!; _explicitNullProperties?.Remove("scopes"); }
+            else if (parseNode.GetChildNode("scopes") is { } nullNodeScopes && nullNodeScopes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scopes = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("status_detail") is null) { _explicitNullValueStatusDetail = default!; _explicitNullProperties?.Remove("status_detail"); }
+            else if (parseNode.GetChildNode("status_detail") is { } nullNodeStatusDetail && nullNodeStatusDetail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StatusDetail = null;
+            if (parseNode.GetChildNode("status_updated_at") is null) { _explicitNullValueStatusUpdatedAt = default!; _explicitNullProperties?.Remove("status_updated_at"); }
+            else if (parseNode.GetChildNode("status_updated_at") is { } nullNodeStatusUpdatedAt && nullNodeStatusUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StatusUpdatedAt = null;
+            if (parseNode.GetChildNode("subject") is null) { _explicitNullValueSubject = default!; _explicitNullProperties?.Remove("subject"); }
+            else if (parseNode.GetChildNode("subject") is { } nullNodeSubject && nullNodeSubject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subject = null;
+            if (parseNode.GetChildNode("token_response_field") is null) { _explicitNullValueTokenResponseField = default!; _explicitNullProperties?.Remove("token_response_field"); }
+            else if (parseNode.GetChildNode("token_response_field") is { } nullNodeTokenResponseField && nullNodeTokenResponseField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TokenResponseField = null;
+            if (parseNode.GetChildNode("token_url") is null) { _explicitNullValueTokenUrl = default!; _explicitNullProperties?.Remove("token_url"); }
+            else if (parseNode.GetChildNode("token_url") is { } nullNodeTokenUrl && nullNodeTokenUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TokenUrl = null;
+            if (parseNode.GetChildNode("used_by") is null) { _explicitNullValueUsedBy = default!; _explicitNullProperties?.Remove("used_by"); }
+            else if (parseNode.GetChildNode("used_by") is { } nullNodeUsedBy && nullNodeUsedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsedBy = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>JWT signing algorithm</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JwtResponseAlgorithm? Algorithm { get => _explicitNullValueAlgorithm; set { _explicitNullValueAlgorithm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("algorithm"); else _explicitNullProperties?.Remove("algorithm"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JwtResponseAlgorithm? Algorithm { get => _explicitNullValueAlgorithm; set { _explicitNullValueAlgorithm = value; AdditionalData?.Remove("algorithm"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("algorithm"); else _explicitNullProperties?.Remove("algorithm"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JwtResponseAlgorithm? _explicitNullValueAlgorithm = default!;
         /// <summary>JWT audience (aud claim)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Audience { get => _explicitNullValueAudience; set { _explicitNullValueAudience = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audience"); else _explicitNullProperties?.Remove("audience"); } }
+        public string? Audience { get => _explicitNullValueAudience; set { _explicitNullValueAudience = value; AdditionalData?.Remove("audience"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audience"); else _explicitNullProperties?.Remove("audience"); } }
         private string? _explicitNullValueAudience = default!;
 #nullable restore
 #else
-        public string Audience { get => _explicitNullValueAudience; set { _explicitNullValueAudience = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audience"); else _explicitNullProperties?.Remove("audience"); } }
+        public string Audience { get => _explicitNullValueAudience; set { _explicitNullValueAudience = value; AdditionalData?.Remove("audience"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audience"); else _explicitNullProperties?.Remove("audience"); } }
         private string _explicitNullValueAudience = default!;
 #endif
         /// <summary>The auth_type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseUpdateWorkspaceAuthConnectionV1WorkspaceAuthConnectionsAuthConnectionIdPatchOneOf5_auth_type? AuthType { get => _explicitNullValueAuthType; set { _explicitNullValueAuthType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_type"); else _explicitNullProperties?.Remove("auth_type"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseUpdateWorkspaceAuthConnectionV1WorkspaceAuthConnectionsAuthConnectionIdPatchOneOf5_auth_type? AuthType { get => _explicitNullValueAuthType; set { _explicitNullValueAuthType = value; AdditionalData?.Remove("auth_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_type"); else _explicitNullProperties?.Remove("auth_type"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseUpdateWorkspaceAuthConnectionV1WorkspaceAuthConnectionsAuthConnectionIdPatchOneOf5_auth_type? _explicitNullValueAuthType = default!;
         /// <summary>Token expiration time in seconds</summary>
-        public int? ExpirationSeconds { get => _explicitNullValueExpirationSeconds; set { _explicitNullValueExpirationSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiration_seconds"); else _explicitNullProperties?.Remove("expiration_seconds"); } }
+        public int? ExpirationSeconds { get => _explicitNullValueExpirationSeconds; set { _explicitNullValueExpirationSeconds = value; AdditionalData?.Remove("expiration_seconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiration_seconds"); else _explicitNullProperties?.Remove("expiration_seconds"); } }
         private int? _explicitNullValueExpirationSeconds = default!;
         /// <summary>Additional custom claims to include in the JWT</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JwtResponseExtraParamsProperty? ExtraParams { get => _explicitNullValueExtraParams; set { _explicitNullValueExtraParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extra_params"); else _explicitNullProperties?.Remove("extra_params"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JwtResponseExtraParamsProperty? ExtraParams { get => _explicitNullValueExtraParams; set { _explicitNullValueExtraParams = value; AdditionalData?.Remove("extra_params"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extra_params"); else _explicitNullProperties?.Remove("extra_params"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JwtResponseExtraParamsProperty? _explicitNullValueExtraParams = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JwtResponseExtraParamsProperty ExtraParams { get => _explicitNullValueExtraParams; set { _explicitNullValueExtraParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extra_params"); else _explicitNullProperties?.Remove("extra_params"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JwtResponseExtraParamsProperty ExtraParams { get => _explicitNullValueExtraParams; set { _explicitNullValueExtraParams = value; AdditionalData?.Remove("extra_params"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extra_params"); else _explicitNullProperties?.Remove("extra_params"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JwtResponseExtraParamsProperty _explicitNullValueExtraParams = default!;
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>JWT issuer (iss claim)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Issuer { get => _explicitNullValueIssuer; set { _explicitNullValueIssuer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuer"); else _explicitNullProperties?.Remove("issuer"); } }
+        public string? Issuer { get => _explicitNullValueIssuer; set { _explicitNullValueIssuer = value; AdditionalData?.Remove("issuer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuer"); else _explicitNullProperties?.Remove("issuer"); } }
         private string? _explicitNullValueIssuer = default!;
 #nullable restore
 #else
-        public string Issuer { get => _explicitNullValueIssuer; set { _explicitNullValueIssuer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuer"); else _explicitNullProperties?.Remove("issuer"); } }
+        public string Issuer { get => _explicitNullValueIssuer; set { _explicitNullValueIssuer = value; AdditionalData?.Remove("issuer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuer"); else _explicitNullProperties?.Remove("issuer"); } }
         private string _explicitNullValueIssuer = default!;
 #endif
         /// <summary>Key ID (kid) for JWT header - useful for key rotation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? KeyId { get => _explicitNullValueKeyId; set { _explicitNullValueKeyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key_id"); else _explicitNullProperties?.Remove("key_id"); } }
+        public string? KeyId { get => _explicitNullValueKeyId; set { _explicitNullValueKeyId = value; AdditionalData?.Remove("key_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key_id"); else _explicitNullProperties?.Remove("key_id"); } }
         private string? _explicitNullValueKeyId = default!;
 #nullable restore
 #else
-        public string KeyId { get => _explicitNullValueKeyId; set { _explicitNullValueKeyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key_id"); else _explicitNullProperties?.Remove("key_id"); } }
+        public string KeyId { get => _explicitNullValueKeyId; set { _explicitNullValueKeyId = value; AdditionalData?.Remove("key_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key_id"); else _explicitNullProperties?.Remove("key_id"); } }
         private string _explicitNullValueKeyId = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The provider property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
+        public string? Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; AdditionalData?.Remove("provider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
         private string? _explicitNullValueProvider = default!;
 #nullable restore
 #else
-        public string Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
+        public string Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; AdditionalData?.Remove("provider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
         private string _explicitNullValueProvider = default!;
 #endif
         /// <summary>OAuth2 scopes to request when exchanging JWT for access token</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Scopes { get => _explicitNullValueScopes; set { _explicitNullValueScopes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopes"); else _explicitNullProperties?.Remove("scopes"); } }
+        public List<string>? Scopes { get => _explicitNullValueScopes; set { _explicitNullValueScopes = value; AdditionalData?.Remove("scopes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopes"); else _explicitNullProperties?.Remove("scopes"); } }
         private List<string>? _explicitNullValueScopes = default!;
 #nullable restore
 #else
-        public List<string> Scopes { get => _explicitNullValueScopes; set { _explicitNullValueScopes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopes"); else _explicitNullProperties?.Remove("scopes"); } }
+        public List<string> Scopes { get => _explicitNullValueScopes; set { _explicitNullValueScopes = value; AdditionalData?.Remove("scopes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopes"); else _explicitNullProperties?.Remove("scopes"); } }
         private List<string> _explicitNullValueScopes = default!;
 #endif
         /// <summary>Single status field shared by every auth type&apos;s stored credential.OAuth values (``REFRESH_FAILED``, ``REVOKED``) are written by the OAuthtoken-manager refresh path. ``CREDENTIAL_INVALID`` is written by thetool execution path when an upstream response matches a credential&apos;s``failure_signatures`` entry (Bearer, Basic auth, etc.).</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionStatus? _explicitNullValueStatus = default!;
         /// <summary>The status_detail property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StatusDetail { get => _explicitNullValueStatusDetail; set { _explicitNullValueStatusDetail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status_detail"); else _explicitNullProperties?.Remove("status_detail"); } }
+        public string? StatusDetail { get => _explicitNullValueStatusDetail; set { _explicitNullValueStatusDetail = value; AdditionalData?.Remove("status_detail"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status_detail"); else _explicitNullProperties?.Remove("status_detail"); } }
         private string? _explicitNullValueStatusDetail = default!;
 #nullable restore
 #else
-        public string StatusDetail { get => _explicitNullValueStatusDetail; set { _explicitNullValueStatusDetail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status_detail"); else _explicitNullProperties?.Remove("status_detail"); } }
+        public string StatusDetail { get => _explicitNullValueStatusDetail; set { _explicitNullValueStatusDetail = value; AdditionalData?.Remove("status_detail"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status_detail"); else _explicitNullProperties?.Remove("status_detail"); } }
         private string _explicitNullValueStatusDetail = default!;
 #endif
         /// <summary>The status_updated_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StatusUpdatedAt { get => _explicitNullValueStatusUpdatedAt; set { _explicitNullValueStatusUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status_updated_at"); else _explicitNullProperties?.Remove("status_updated_at"); } }
+        public string? StatusUpdatedAt { get => _explicitNullValueStatusUpdatedAt; set { _explicitNullValueStatusUpdatedAt = value; AdditionalData?.Remove("status_updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status_updated_at"); else _explicitNullProperties?.Remove("status_updated_at"); } }
         private string? _explicitNullValueStatusUpdatedAt = default!;
 #nullable restore
 #else
-        public string StatusUpdatedAt { get => _explicitNullValueStatusUpdatedAt; set { _explicitNullValueStatusUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status_updated_at"); else _explicitNullProperties?.Remove("status_updated_at"); } }
+        public string StatusUpdatedAt { get => _explicitNullValueStatusUpdatedAt; set { _explicitNullValueStatusUpdatedAt = value; AdditionalData?.Remove("status_updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status_updated_at"); else _explicitNullProperties?.Remove("status_updated_at"); } }
         private string _explicitNullValueStatusUpdatedAt = default!;
 #endif
         /// <summary>JWT subject (sub claim)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Subject { get => _explicitNullValueSubject; set { _explicitNullValueSubject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject"); else _explicitNullProperties?.Remove("subject"); } }
+        public string? Subject { get => _explicitNullValueSubject; set { _explicitNullValueSubject = value; AdditionalData?.Remove("subject"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject"); else _explicitNullProperties?.Remove("subject"); } }
         private string? _explicitNullValueSubject = default!;
 #nullable restore
 #else
-        public string Subject { get => _explicitNullValueSubject; set { _explicitNullValueSubject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject"); else _explicitNullProperties?.Remove("subject"); } }
+        public string Subject { get => _explicitNullValueSubject; set { _explicitNullValueSubject = value; AdditionalData?.Remove("subject"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject"); else _explicitNullProperties?.Remove("subject"); } }
         private string _explicitNullValueSubject = default!;
 #endif
         /// <summary>Token field to extract from the token endpoint response.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JwtResponseTokenResponseField? TokenResponseField { get => _explicitNullValueTokenResponseField; set { _explicitNullValueTokenResponseField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token_response_field"); else _explicitNullProperties?.Remove("token_response_field"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JwtResponseTokenResponseField? TokenResponseField { get => _explicitNullValueTokenResponseField; set { _explicitNullValueTokenResponseField = value; AdditionalData?.Remove("token_response_field"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token_response_field"); else _explicitNullProperties?.Remove("token_response_field"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JwtResponseTokenResponseField? _explicitNullValueTokenResponseField = default!;
         /// <summary>Token endpoint URL for exchanging JWT for access token</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TokenUrl { get => _explicitNullValueTokenUrl; set { _explicitNullValueTokenUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token_url"); else _explicitNullProperties?.Remove("token_url"); } }
+        public string? TokenUrl { get => _explicitNullValueTokenUrl; set { _explicitNullValueTokenUrl = value; AdditionalData?.Remove("token_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token_url"); else _explicitNullProperties?.Remove("token_url"); } }
         private string? _explicitNullValueTokenUrl = default!;
 #nullable restore
 #else
-        public string TokenUrl { get => _explicitNullValueTokenUrl; set { _explicitNullValueTokenUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token_url"); else _explicitNullProperties?.Remove("token_url"); } }
+        public string TokenUrl { get => _explicitNullValueTokenUrl; set { _explicitNullValueTokenUrl = value; AdditionalData?.Remove("token_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token_url"); else _explicitNullProperties?.Remove("token_url"); } }
         private string _explicitNullValueTokenUrl = default!;
 #endif
         /// <summary>The used_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependencies? UsedBy { get => _explicitNullValueUsedBy; set { _explicitNullValueUsedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("used_by"); else _explicitNullProperties?.Remove("used_by"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependencies? UsedBy { get => _explicitNullValueUsedBy; set { _explicitNullValueUsedBy = value; AdditionalData?.Remove("used_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("used_by"); else _explicitNullProperties?.Remove("used_by"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependencies? _explicitNullValueUsedBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependencies UsedBy { get => _explicitNullValueUsedBy; set { _explicitNullValueUsedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("used_by"); else _explicitNullProperties?.Remove("used_by"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependencies UsedBy { get => _explicitNullValueUsedBy; set { _explicitNullValueUsedBy = value; AdditionalData?.Remove("used_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("used_by"); else _explicitNullProperties?.Remove("used_by"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependencies _explicitNullValueUsedBy = default!;
 #endif
         /// <summary>
@@ -211,9 +229,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "algorithm", n => { Algorithm = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JwtResponseAlgorithm>(); } },
+                { "algorithm", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JwtResponseAlgorithm>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAlgorithm = default; _explicitNullProperties?.Remove("algorithm"); AdditionalData["algorithm"] = unknown; } else { Algorithm = parsed; AdditionalData.Remove("algorithm"); } } },
                 { "audience", n => { Audience = n.GetStringValue(); } },
-                { "auth_type", n => { AuthType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseUpdateWorkspaceAuthConnectionV1WorkspaceAuthConnectionsAuthConnectionIdPatchOneOf5_auth_type>(); } },
+                { "auth_type", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseUpdateWorkspaceAuthConnectionV1WorkspaceAuthConnectionsAuthConnectionIdPatchOneOf5_auth_type>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAuthType = default; _explicitNullProperties?.Remove("auth_type"); AdditionalData["auth_type"] = unknown; } else { AuthType = parsed; AdditionalData.Remove("auth_type"); } } },
                 { "expiration_seconds", n => { ExpirationSeconds = n.GetIntValue(); } },
                 { "extra_params", n => { ExtraParams = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JwtResponseExtraParamsProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JwtResponseExtraParamsProperty.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -222,11 +240,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "provider", n => { Provider = n.GetStringValue(); } },
                 { "scopes", n => { Scopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionStatus>(); } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "status_detail", n => { StatusDetail = n.GetStringValue(); } },
                 { "status_updated_at", n => { StatusUpdatedAt = n.GetStringValue(); } },
                 { "subject", n => { Subject = n.GetStringValue(); } },
-                { "token_response_field", n => { TokenResponseField = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JwtResponseTokenResponseField>(); } },
+                { "token_response_field", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JwtResponseTokenResponseField>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTokenResponseField = default; _explicitNullProperties?.Remove("token_response_field"); AdditionalData["token_response_field"] = unknown; } else { TokenResponseField = parsed; AdditionalData.Remove("token_response_field"); } } },
                 { "token_url", n => { TokenUrl = n.GetStringValue(); } },
                 { "used_by", n => { UsedBy = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependencies>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependencies.CreateFromDiscriminatorValue); } },
             };

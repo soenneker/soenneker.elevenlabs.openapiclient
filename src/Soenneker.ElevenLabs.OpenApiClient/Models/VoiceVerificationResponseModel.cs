@@ -17,53 +17,59 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("is_verified") is { } nullNodeIsVerified && nullNodeIsVerified.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsVerified = null;
-            if (parseNode.GetChildNode("language") is { } nullNodeLanguage && nullNodeLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Language = null;
-            if (parseNode.GetChildNode("requires_verification") is { } nullNodeRequiresVerification && nullNodeRequiresVerification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequiresVerification = null;
-            if (parseNode.GetChildNode("verification_attempts") is { } nullNodeVerificationAttempts && nullNodeVerificationAttempts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VerificationAttempts = null;
-            if (parseNode.GetChildNode("verification_attempts_count") is { } nullNodeVerificationAttemptsCount && nullNodeVerificationAttemptsCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VerificationAttemptsCount = null;
-            if (parseNode.GetChildNode("verification_failures") is { } nullNodeVerificationFailures && nullNodeVerificationFailures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VerificationFailures = null;
+            if (parseNode.GetChildNode("is_verified") is null) { _explicitNullValueIsVerified = default!; _explicitNullProperties?.Remove("is_verified"); }
+            else if (parseNode.GetChildNode("is_verified") is { } nullNodeIsVerified && nullNodeIsVerified.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsVerified = null;
+            if (parseNode.GetChildNode("language") is null) { _explicitNullValueLanguage = default!; _explicitNullProperties?.Remove("language"); }
+            else if (parseNode.GetChildNode("language") is { } nullNodeLanguage && nullNodeLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Language = null;
+            if (parseNode.GetChildNode("requires_verification") is null) { _explicitNullValueRequiresVerification = default!; _explicitNullProperties?.Remove("requires_verification"); }
+            else if (parseNode.GetChildNode("requires_verification") is { } nullNodeRequiresVerification && nullNodeRequiresVerification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequiresVerification = null;
+            if (parseNode.GetChildNode("verification_attempts") is null) { _explicitNullValueVerificationAttempts = default!; _explicitNullProperties?.Remove("verification_attempts"); }
+            else if (parseNode.GetChildNode("verification_attempts") is { } nullNodeVerificationAttempts && nullNodeVerificationAttempts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VerificationAttempts = null;
+            if (parseNode.GetChildNode("verification_attempts_count") is null) { _explicitNullValueVerificationAttemptsCount = default!; _explicitNullProperties?.Remove("verification_attempts_count"); }
+            else if (parseNode.GetChildNode("verification_attempts_count") is { } nullNodeVerificationAttemptsCount && nullNodeVerificationAttemptsCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VerificationAttemptsCount = null;
+            if (parseNode.GetChildNode("verification_failures") is null) { _explicitNullValueVerificationFailures = default!; _explicitNullProperties?.Remove("verification_failures"); }
+            else if (parseNode.GetChildNode("verification_failures") is { } nullNodeVerificationFailures && nullNodeVerificationFailures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VerificationFailures = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the voice has been verified.</summary>
-        public bool? IsVerified { get => _explicitNullValueIsVerified; set { _explicitNullValueIsVerified = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_verified"); else _explicitNullProperties?.Remove("is_verified"); } }
+        public bool? IsVerified { get => _explicitNullValueIsVerified; set { _explicitNullValueIsVerified = value; AdditionalData?.Remove("is_verified"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_verified"); else _explicitNullProperties?.Remove("is_verified"); } }
         private bool? _explicitNullValueIsVerified = default!;
         /// <summary>The language of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        public string? Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; AdditionalData?.Remove("language"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
         private string? _explicitNullValueLanguage = default!;
 #nullable restore
 #else
-        public string Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        public string Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; AdditionalData?.Remove("language"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
         private string _explicitNullValueLanguage = default!;
 #endif
         /// <summary>Whether the voice requires verification.</summary>
-        public bool? RequiresVerification { get => _explicitNullValueRequiresVerification; set { _explicitNullValueRequiresVerification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requires_verification"); else _explicitNullProperties?.Remove("requires_verification"); } }
+        public bool? RequiresVerification { get => _explicitNullValueRequiresVerification; set { _explicitNullValueRequiresVerification = value; AdditionalData?.Remove("requires_verification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requires_verification"); else _explicitNullProperties?.Remove("requires_verification"); } }
         private bool? _explicitNullValueRequiresVerification = default!;
         /// <summary>Number of times a verification was attempted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VerificationAttemptResponseModel>? VerificationAttempts { get => _explicitNullValueVerificationAttempts; set { _explicitNullValueVerificationAttempts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verification_attempts"); else _explicitNullProperties?.Remove("verification_attempts"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VerificationAttemptResponseModel>? VerificationAttempts { get => _explicitNullValueVerificationAttempts; set { _explicitNullValueVerificationAttempts = value; AdditionalData?.Remove("verification_attempts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verification_attempts"); else _explicitNullProperties?.Remove("verification_attempts"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VerificationAttemptResponseModel>? _explicitNullValueVerificationAttempts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VerificationAttemptResponseModel> VerificationAttempts { get => _explicitNullValueVerificationAttempts; set { _explicitNullValueVerificationAttempts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verification_attempts"); else _explicitNullProperties?.Remove("verification_attempts"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VerificationAttemptResponseModel> VerificationAttempts { get => _explicitNullValueVerificationAttempts; set { _explicitNullValueVerificationAttempts = value; AdditionalData?.Remove("verification_attempts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verification_attempts"); else _explicitNullProperties?.Remove("verification_attempts"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VerificationAttemptResponseModel> _explicitNullValueVerificationAttempts = default!;
 #endif
         /// <summary>The number of verification attempts.</summary>
-        public int? VerificationAttemptsCount { get => _explicitNullValueVerificationAttemptsCount; set { _explicitNullValueVerificationAttemptsCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verification_attempts_count"); else _explicitNullProperties?.Remove("verification_attempts_count"); } }
+        public int? VerificationAttemptsCount { get => _explicitNullValueVerificationAttemptsCount; set { _explicitNullValueVerificationAttemptsCount = value; AdditionalData?.Remove("verification_attempts_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verification_attempts_count"); else _explicitNullProperties?.Remove("verification_attempts_count"); } }
         private int? _explicitNullValueVerificationAttemptsCount = default!;
         /// <summary>List of verification failures.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? VerificationFailures { get => _explicitNullValueVerificationFailures; set { _explicitNullValueVerificationFailures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verification_failures"); else _explicitNullProperties?.Remove("verification_failures"); } }
+        public List<string>? VerificationFailures { get => _explicitNullValueVerificationFailures; set { _explicitNullValueVerificationFailures = value; AdditionalData?.Remove("verification_failures"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verification_failures"); else _explicitNullProperties?.Remove("verification_failures"); } }
         private List<string>? _explicitNullValueVerificationFailures = default!;
 #nullable restore
 #else
-        public List<string> VerificationFailures { get => _explicitNullValueVerificationFailures; set { _explicitNullValueVerificationFailures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verification_failures"); else _explicitNullProperties?.Remove("verification_failures"); } }
+        public List<string> VerificationFailures { get => _explicitNullValueVerificationFailures; set { _explicitNullValueVerificationFailures = value; AdditionalData?.Remove("verification_failures"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verification_failures"); else _explicitNullProperties?.Remove("verification_failures"); } }
         private List<string> _explicitNullValueVerificationFailures = default!;
 #endif
         /// <summary>

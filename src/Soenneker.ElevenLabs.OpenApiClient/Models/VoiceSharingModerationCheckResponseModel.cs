@@ -17,15 +17,24 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("captcha_checks") is { } nullNodeCaptchaChecks && nullNodeCaptchaChecks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CaptchaChecks = null;
-            if (parseNode.GetChildNode("captcha_ids") is { } nullNodeCaptchaIds && nullNodeCaptchaIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CaptchaIds = null;
-            if (parseNode.GetChildNode("date_checked_unix") is { } nullNodeDateCheckedUnix && nullNodeDateCheckedUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateCheckedUnix = null;
-            if (parseNode.GetChildNode("description_check") is { } nullNodeDescriptionCheck && nullNodeDescriptionCheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DescriptionCheck = null;
-            if (parseNode.GetChildNode("description_value") is { } nullNodeDescriptionValue && nullNodeDescriptionValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DescriptionValue = null;
-            if (parseNode.GetChildNode("name_check") is { } nullNodeNameCheck && nullNodeNameCheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NameCheck = null;
-            if (parseNode.GetChildNode("name_value") is { } nullNodeNameValue && nullNodeNameValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NameValue = null;
-            if (parseNode.GetChildNode("sample_checks") is { } nullNodeSampleChecks && nullNodeSampleChecks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SampleChecks = null;
-            if (parseNode.GetChildNode("sample_ids") is { } nullNodeSampleIds && nullNodeSampleIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SampleIds = null;
+            if (parseNode.GetChildNode("captcha_checks") is null) { _explicitNullValueCaptchaChecks = default!; _explicitNullProperties?.Remove("captcha_checks"); }
+            else if (parseNode.GetChildNode("captcha_checks") is { } nullNodeCaptchaChecks && nullNodeCaptchaChecks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CaptchaChecks = null;
+            if (parseNode.GetChildNode("captcha_ids") is null) { _explicitNullValueCaptchaIds = default!; _explicitNullProperties?.Remove("captcha_ids"); }
+            else if (parseNode.GetChildNode("captcha_ids") is { } nullNodeCaptchaIds && nullNodeCaptchaIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CaptchaIds = null;
+            if (parseNode.GetChildNode("date_checked_unix") is null) { _explicitNullValueDateCheckedUnix = default!; _explicitNullProperties?.Remove("date_checked_unix"); }
+            else if (parseNode.GetChildNode("date_checked_unix") is { } nullNodeDateCheckedUnix && nullNodeDateCheckedUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateCheckedUnix = null;
+            if (parseNode.GetChildNode("description_check") is null) { _explicitNullValueDescriptionCheck = default!; _explicitNullProperties?.Remove("description_check"); }
+            else if (parseNode.GetChildNode("description_check") is { } nullNodeDescriptionCheck && nullNodeDescriptionCheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DescriptionCheck = null;
+            if (parseNode.GetChildNode("description_value") is null) { _explicitNullValueDescriptionValue = default!; _explicitNullProperties?.Remove("description_value"); }
+            else if (parseNode.GetChildNode("description_value") is { } nullNodeDescriptionValue && nullNodeDescriptionValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DescriptionValue = null;
+            if (parseNode.GetChildNode("name_check") is null) { _explicitNullValueNameCheck = default!; _explicitNullProperties?.Remove("name_check"); }
+            else if (parseNode.GetChildNode("name_check") is { } nullNodeNameCheck && nullNodeNameCheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NameCheck = null;
+            if (parseNode.GetChildNode("name_value") is null) { _explicitNullValueNameValue = default!; _explicitNullProperties?.Remove("name_value"); }
+            else if (parseNode.GetChildNode("name_value") is { } nullNodeNameValue && nullNodeNameValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NameValue = null;
+            if (parseNode.GetChildNode("sample_checks") is null) { _explicitNullValueSampleChecks = default!; _explicitNullProperties?.Remove("sample_checks"); }
+            else if (parseNode.GetChildNode("sample_checks") is { } nullNodeSampleChecks && nullNodeSampleChecks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SampleChecks = null;
+            if (parseNode.GetChildNode("sample_ids") is null) { _explicitNullValueSampleIds = default!; _explicitNullProperties?.Remove("sample_ids"); }
+            else if (parseNode.GetChildNode("sample_ids") is { } nullNodeSampleIds && nullNodeSampleIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SampleIds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -33,70 +42,70 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>A list of CAPTCHA check values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<double?>? CaptchaChecks { get => _explicitNullValueCaptchaChecks; set { _explicitNullValueCaptchaChecks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("captcha_checks"); else _explicitNullProperties?.Remove("captcha_checks"); } }
+        public List<double?>? CaptchaChecks { get => _explicitNullValueCaptchaChecks; set { _explicitNullValueCaptchaChecks = value; AdditionalData?.Remove("captcha_checks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("captcha_checks"); else _explicitNullProperties?.Remove("captcha_checks"); } }
         private List<double?>? _explicitNullValueCaptchaChecks = default!;
 #nullable restore
 #else
-        public List<double?> CaptchaChecks { get => _explicitNullValueCaptchaChecks; set { _explicitNullValueCaptchaChecks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("captcha_checks"); else _explicitNullProperties?.Remove("captcha_checks"); } }
+        public List<double?> CaptchaChecks { get => _explicitNullValueCaptchaChecks; set { _explicitNullValueCaptchaChecks = value; AdditionalData?.Remove("captcha_checks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("captcha_checks"); else _explicitNullProperties?.Remove("captcha_checks"); } }
         private List<double?> _explicitNullValueCaptchaChecks = default!;
 #endif
         /// <summary>A list of captcha IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CaptchaIds { get => _explicitNullValueCaptchaIds; set { _explicitNullValueCaptchaIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("captcha_ids"); else _explicitNullProperties?.Remove("captcha_ids"); } }
+        public List<string>? CaptchaIds { get => _explicitNullValueCaptchaIds; set { _explicitNullValueCaptchaIds = value; AdditionalData?.Remove("captcha_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("captcha_ids"); else _explicitNullProperties?.Remove("captcha_ids"); } }
         private List<string>? _explicitNullValueCaptchaIds = default!;
 #nullable restore
 #else
-        public List<string> CaptchaIds { get => _explicitNullValueCaptchaIds; set { _explicitNullValueCaptchaIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("captcha_ids"); else _explicitNullProperties?.Remove("captcha_ids"); } }
+        public List<string> CaptchaIds { get => _explicitNullValueCaptchaIds; set { _explicitNullValueCaptchaIds = value; AdditionalData?.Remove("captcha_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("captcha_ids"); else _explicitNullProperties?.Remove("captcha_ids"); } }
         private List<string> _explicitNullValueCaptchaIds = default!;
 #endif
         /// <summary>The date the moderation check was made in Unix time.</summary>
-        public int? DateCheckedUnix { get => _explicitNullValueDateCheckedUnix; set { _explicitNullValueDateCheckedUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date_checked_unix"); else _explicitNullProperties?.Remove("date_checked_unix"); } }
+        public int? DateCheckedUnix { get => _explicitNullValueDateCheckedUnix; set { _explicitNullValueDateCheckedUnix = value; AdditionalData?.Remove("date_checked_unix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date_checked_unix"); else _explicitNullProperties?.Remove("date_checked_unix"); } }
         private int? _explicitNullValueDateCheckedUnix = default!;
         /// <summary>Whether the description check was successful.</summary>
-        public bool? DescriptionCheck { get => _explicitNullValueDescriptionCheck; set { _explicitNullValueDescriptionCheck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description_check"); else _explicitNullProperties?.Remove("description_check"); } }
+        public bool? DescriptionCheck { get => _explicitNullValueDescriptionCheck; set { _explicitNullValueDescriptionCheck = value; AdditionalData?.Remove("description_check"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description_check"); else _explicitNullProperties?.Remove("description_check"); } }
         private bool? _explicitNullValueDescriptionCheck = default!;
         /// <summary>The description value of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DescriptionValue { get => _explicitNullValueDescriptionValue; set { _explicitNullValueDescriptionValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description_value"); else _explicitNullProperties?.Remove("description_value"); } }
+        public string? DescriptionValue { get => _explicitNullValueDescriptionValue; set { _explicitNullValueDescriptionValue = value; AdditionalData?.Remove("description_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description_value"); else _explicitNullProperties?.Remove("description_value"); } }
         private string? _explicitNullValueDescriptionValue = default!;
 #nullable restore
 #else
-        public string DescriptionValue { get => _explicitNullValueDescriptionValue; set { _explicitNullValueDescriptionValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description_value"); else _explicitNullProperties?.Remove("description_value"); } }
+        public string DescriptionValue { get => _explicitNullValueDescriptionValue; set { _explicitNullValueDescriptionValue = value; AdditionalData?.Remove("description_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description_value"); else _explicitNullProperties?.Remove("description_value"); } }
         private string _explicitNullValueDescriptionValue = default!;
 #endif
         /// <summary>Whether the name check was successful.</summary>
-        public bool? NameCheck { get => _explicitNullValueNameCheck; set { _explicitNullValueNameCheck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name_check"); else _explicitNullProperties?.Remove("name_check"); } }
+        public bool? NameCheck { get => _explicitNullValueNameCheck; set { _explicitNullValueNameCheck = value; AdditionalData?.Remove("name_check"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name_check"); else _explicitNullProperties?.Remove("name_check"); } }
         private bool? _explicitNullValueNameCheck = default!;
         /// <summary>The name value of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NameValue { get => _explicitNullValueNameValue; set { _explicitNullValueNameValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name_value"); else _explicitNullProperties?.Remove("name_value"); } }
+        public string? NameValue { get => _explicitNullValueNameValue; set { _explicitNullValueNameValue = value; AdditionalData?.Remove("name_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name_value"); else _explicitNullProperties?.Remove("name_value"); } }
         private string? _explicitNullValueNameValue = default!;
 #nullable restore
 #else
-        public string NameValue { get => _explicitNullValueNameValue; set { _explicitNullValueNameValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name_value"); else _explicitNullProperties?.Remove("name_value"); } }
+        public string NameValue { get => _explicitNullValueNameValue; set { _explicitNullValueNameValue = value; AdditionalData?.Remove("name_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name_value"); else _explicitNullProperties?.Remove("name_value"); } }
         private string _explicitNullValueNameValue = default!;
 #endif
         /// <summary>A list of sample checks.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<double?>? SampleChecks { get => _explicitNullValueSampleChecks; set { _explicitNullValueSampleChecks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sample_checks"); else _explicitNullProperties?.Remove("sample_checks"); } }
+        public List<double?>? SampleChecks { get => _explicitNullValueSampleChecks; set { _explicitNullValueSampleChecks = value; AdditionalData?.Remove("sample_checks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sample_checks"); else _explicitNullProperties?.Remove("sample_checks"); } }
         private List<double?>? _explicitNullValueSampleChecks = default!;
 #nullable restore
 #else
-        public List<double?> SampleChecks { get => _explicitNullValueSampleChecks; set { _explicitNullValueSampleChecks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sample_checks"); else _explicitNullProperties?.Remove("sample_checks"); } }
+        public List<double?> SampleChecks { get => _explicitNullValueSampleChecks; set { _explicitNullValueSampleChecks = value; AdditionalData?.Remove("sample_checks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sample_checks"); else _explicitNullProperties?.Remove("sample_checks"); } }
         private List<double?> _explicitNullValueSampleChecks = default!;
 #endif
         /// <summary>A list of sample IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SampleIds { get => _explicitNullValueSampleIds; set { _explicitNullValueSampleIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sample_ids"); else _explicitNullProperties?.Remove("sample_ids"); } }
+        public List<string>? SampleIds { get => _explicitNullValueSampleIds; set { _explicitNullValueSampleIds = value; AdditionalData?.Remove("sample_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sample_ids"); else _explicitNullProperties?.Remove("sample_ids"); } }
         private List<string>? _explicitNullValueSampleIds = default!;
 #nullable restore
 #else
-        public List<string> SampleIds { get => _explicitNullValueSampleIds; set { _explicitNullValueSampleIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sample_ids"); else _explicitNullProperties?.Remove("sample_ids"); } }
+        public List<string> SampleIds { get => _explicitNullValueSampleIds; set { _explicitNullValueSampleIds = value; AdditionalData?.Remove("sample_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sample_ids"); else _explicitNullProperties?.Remove("sample_ids"); } }
         private List<string> _explicitNullValueSampleIds = default!;
 #endif
         /// <summary>

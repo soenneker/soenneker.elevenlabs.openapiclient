@@ -17,11 +17,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("api-keys") is { } nullNodeApiKeys && nullNodeApiKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiKeys = null;
-            if (parseNode.GetChildNode("created_at_unix") is { } nullNodeCreatedAtUnix && nullNodeCreatedAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAtUnix = null;
-            if (parseNode.GetChildNode("default_sharing_groups") is { } nullNodeDefaultSharingGroups && nullNodeDefaultSharingGroups.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultSharingGroups = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("service_account_user_id") is { } nullNodeServiceAccountUserId && nullNodeServiceAccountUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceAccountUserId = null;
+            if (parseNode.GetChildNode("api-keys") is null) { _explicitNullValueApiKeys = default!; _explicitNullProperties?.Remove("api-keys"); }
+            else if (parseNode.GetChildNode("api-keys") is { } nullNodeApiKeys && nullNodeApiKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiKeys = null;
+            if (parseNode.GetChildNode("created_at_unix") is null) { _explicitNullValueCreatedAtUnix = default!; _explicitNullProperties?.Remove("created_at_unix"); }
+            else if (parseNode.GetChildNode("created_at_unix") is { } nullNodeCreatedAtUnix && nullNodeCreatedAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAtUnix = null;
+            if (parseNode.GetChildNode("default_sharing_groups") is null) { _explicitNullValueDefaultSharingGroups = default!; _explicitNullProperties?.Remove("default_sharing_groups"); }
+            else if (parseNode.GetChildNode("default_sharing_groups") is { } nullNodeDefaultSharingGroups && nullNodeDefaultSharingGroups.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultSharingGroups = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("service_account_user_id") is null) { _explicitNullValueServiceAccountUserId = default!; _explicitNullProperties?.Remove("service_account_user_id"); }
+            else if (parseNode.GetChildNode("service_account_user_id") is { } nullNodeServiceAccountUserId && nullNodeServiceAccountUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceAccountUserId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,44 +34,44 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The apiKeys property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModel>? ApiKeys { get => _explicitNullValueApiKeys; set { _explicitNullValueApiKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api-keys"); else _explicitNullProperties?.Remove("api-keys"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModel>? ApiKeys { get => _explicitNullValueApiKeys; set { _explicitNullValueApiKeys = value; AdditionalData?.Remove("api-keys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api-keys"); else _explicitNullProperties?.Remove("api-keys"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModel>? _explicitNullValueApiKeys = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModel> ApiKeys { get => _explicitNullValueApiKeys; set { _explicitNullValueApiKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api-keys"); else _explicitNullProperties?.Remove("api-keys"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModel> ApiKeys { get => _explicitNullValueApiKeys; set { _explicitNullValueApiKeys = value; AdditionalData?.Remove("api-keys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api-keys"); else _explicitNullProperties?.Remove("api-keys"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModel> _explicitNullValueApiKeys = default!;
 #endif
         /// <summary>The created_at_unix property</summary>
-        public int? CreatedAtUnix { get => _explicitNullValueCreatedAtUnix; set { _explicitNullValueCreatedAtUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at_unix"); else _explicitNullProperties?.Remove("created_at_unix"); } }
+        public int? CreatedAtUnix { get => _explicitNullValueCreatedAtUnix; set { _explicitNullValueCreatedAtUnix = value; AdditionalData?.Remove("created_at_unix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at_unix"); else _explicitNullProperties?.Remove("created_at_unix"); } }
         private int? _explicitNullValueCreatedAtUnix = default!;
         /// <summary>The default_sharing_groups property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DefaultSharingGroupResponseModel>? DefaultSharingGroups { get => _explicitNullValueDefaultSharingGroups; set { _explicitNullValueDefaultSharingGroups = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_sharing_groups"); else _explicitNullProperties?.Remove("default_sharing_groups"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DefaultSharingGroupResponseModel>? DefaultSharingGroups { get => _explicitNullValueDefaultSharingGroups; set { _explicitNullValueDefaultSharingGroups = value; AdditionalData?.Remove("default_sharing_groups"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_sharing_groups"); else _explicitNullProperties?.Remove("default_sharing_groups"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DefaultSharingGroupResponseModel>? _explicitNullValueDefaultSharingGroups = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DefaultSharingGroupResponseModel> DefaultSharingGroups { get => _explicitNullValueDefaultSharingGroups; set { _explicitNullValueDefaultSharingGroups = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_sharing_groups"); else _explicitNullProperties?.Remove("default_sharing_groups"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DefaultSharingGroupResponseModel> DefaultSharingGroups { get => _explicitNullValueDefaultSharingGroups; set { _explicitNullValueDefaultSharingGroups = value; AdditionalData?.Remove("default_sharing_groups"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_sharing_groups"); else _explicitNullProperties?.Remove("default_sharing_groups"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DefaultSharingGroupResponseModel> _explicitNullValueDefaultSharingGroups = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The service_account_user_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServiceAccountUserId { get => _explicitNullValueServiceAccountUserId; set { _explicitNullValueServiceAccountUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_account_user_id"); else _explicitNullProperties?.Remove("service_account_user_id"); } }
+        public string? ServiceAccountUserId { get => _explicitNullValueServiceAccountUserId; set { _explicitNullValueServiceAccountUserId = value; AdditionalData?.Remove("service_account_user_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_account_user_id"); else _explicitNullProperties?.Remove("service_account_user_id"); } }
         private string? _explicitNullValueServiceAccountUserId = default!;
 #nullable restore
 #else
-        public string ServiceAccountUserId { get => _explicitNullValueServiceAccountUserId; set { _explicitNullValueServiceAccountUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_account_user_id"); else _explicitNullProperties?.Remove("service_account_user_id"); } }
+        public string ServiceAccountUserId { get => _explicitNullValueServiceAccountUserId; set { _explicitNullValueServiceAccountUserId = value; AdditionalData?.Remove("service_account_user_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_account_user_id"); else _explicitNullProperties?.Remove("service_account_user_id"); } }
         private string _explicitNullValueServiceAccountUserId = default!;
 #endif
         /// <summary>

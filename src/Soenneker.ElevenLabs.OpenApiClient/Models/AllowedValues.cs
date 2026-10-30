@@ -17,7 +17,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("dynamic_variable") is { } nullNodeDynamicVariable && nullNodeDynamicVariable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DynamicVariable = null;
+            if (parseNode.GetChildNode("dynamic_variable") is null) { _explicitNullValueDynamicVariable = default!; _explicitNullProperties?.Remove("dynamic_variable"); }
+            else if (parseNode.GetChildNode("dynamic_variable") is { } nullNodeDynamicVariable && nullNodeDynamicVariable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DynamicVariable = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Name of a dynamic variable that must resolve to a JSON array of permitted values, e.g. [&quot;ws_alpha&quot;, &quot;ws_beta&quot;]. System variables work only if they resolve to a list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DynamicVariable { get => _explicitNullValueDynamicVariable; set { _explicitNullValueDynamicVariable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamic_variable"); else _explicitNullProperties?.Remove("dynamic_variable"); } }
+        public string? DynamicVariable { get => _explicitNullValueDynamicVariable; set { _explicitNullValueDynamicVariable = value; AdditionalData?.Remove("dynamic_variable"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamic_variable"); else _explicitNullProperties?.Remove("dynamic_variable"); } }
         private string? _explicitNullValueDynamicVariable = default!;
 #nullable restore
 #else
-        public string DynamicVariable { get => _explicitNullValueDynamicVariable; set { _explicitNullValueDynamicVariable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamic_variable"); else _explicitNullProperties?.Remove("dynamic_variable"); } }
+        public string DynamicVariable { get => _explicitNullValueDynamicVariable; set { _explicitNullValueDynamicVariable = value; AdditionalData?.Remove("dynamic_variable"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamic_variable"); else _explicitNullProperties?.Remove("dynamic_variable"); } }
         private string _explicitNullValueDynamicVariable = default!;
 #endif
         /// <summary>

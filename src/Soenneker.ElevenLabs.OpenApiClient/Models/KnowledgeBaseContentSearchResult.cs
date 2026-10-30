@@ -17,9 +17,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("document") is { } nullNodeDocument && nullNodeDocument.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Document = null;
-            if (parseNode.GetChildNode("score") is { } nullNodeScore && nullNodeScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Score = null;
-            if (parseNode.GetChildNode("search_snippet") is { } nullNodeSearchSnippet && nullNodeSearchSnippet.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SearchSnippet = null;
+            if (parseNode.GetChildNode("document") is null) { _explicitNullValueDocument = default!; _explicitNullProperties?.Remove("document"); }
+            else if (parseNode.GetChildNode("document") is { } nullNodeDocument && nullNodeDocument.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Document = null;
+            if (parseNode.GetChildNode("score") is null) { _explicitNullValueScore = default!; _explicitNullProperties?.Remove("score"); }
+            else if (parseNode.GetChildNode("score") is { } nullNodeScore && nullNodeScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Score = null;
+            if (parseNode.GetChildNode("search_snippet") is null) { _explicitNullValueSearchSnippet = default!; _explicitNullProperties?.Remove("search_snippet"); }
+            else if (parseNode.GetChildNode("search_snippet") is { } nullNodeSearchSnippet && nullNodeSearchSnippet.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SearchSnippet = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,24 +30,24 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The document property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseContentSearchResultDocument? Document { get => _explicitNullValueDocument; set { _explicitNullValueDocument = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document"); else _explicitNullProperties?.Remove("document"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseContentSearchResultDocument? Document { get => _explicitNullValueDocument; set { _explicitNullValueDocument = value; AdditionalData?.Remove("document"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document"); else _explicitNullProperties?.Remove("document"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseContentSearchResultDocument? _explicitNullValueDocument = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseContentSearchResultDocument Document { get => _explicitNullValueDocument; set { _explicitNullValueDocument = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document"); else _explicitNullProperties?.Remove("document"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseContentSearchResultDocument Document { get => _explicitNullValueDocument; set { _explicitNullValueDocument = value; AdditionalData?.Remove("document"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document"); else _explicitNullProperties?.Remove("document"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseContentSearchResultDocument _explicitNullValueDocument = default!;
 #endif
         /// <summary>The score property</summary>
-        public double? Score { get => _explicitNullValueScore; set { _explicitNullValueScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("score"); else _explicitNullProperties?.Remove("score"); } }
+        public double? Score { get => _explicitNullValueScore; set { _explicitNullValueScore = value; AdditionalData?.Remove("score"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("score"); else _explicitNullProperties?.Remove("score"); } }
         private double? _explicitNullValueScore = default!;
         /// <summary>The search_snippet property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SearchHighlightSegment>? SearchSnippet { get => _explicitNullValueSearchSnippet; set { _explicitNullValueSearchSnippet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("search_snippet"); else _explicitNullProperties?.Remove("search_snippet"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SearchHighlightSegment>? SearchSnippet { get => _explicitNullValueSearchSnippet; set { _explicitNullValueSearchSnippet = value; AdditionalData?.Remove("search_snippet"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("search_snippet"); else _explicitNullProperties?.Remove("search_snippet"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SearchHighlightSegment>? _explicitNullValueSearchSnippet = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SearchHighlightSegment> SearchSnippet { get => _explicitNullValueSearchSnippet; set { _explicitNullValueSearchSnippet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("search_snippet"); else _explicitNullProperties?.Remove("search_snippet"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SearchHighlightSegment> SearchSnippet { get => _explicitNullValueSearchSnippet; set { _explicitNullValueSearchSnippet = value; AdditionalData?.Remove("search_snippet"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("search_snippet"); else _explicitNullProperties?.Remove("search_snippet"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SearchHighlightSegment> _explicitNullValueSearchSnippet = default!;
 #endif
         /// <summary>

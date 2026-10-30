@@ -18,7 +18,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("secret_id") is { } nullNodeSecretId && nullNodeSecretId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecretId = null;
+            if (parseNode.GetChildNode("secret_id") is null) { _explicitNullValueSecretId = default!; _explicitNullProperties?.Remove("secret_id"); }
+            else if (parseNode.GetChildNode("secret_id") is { } nullNodeSecretId && nullNodeSecretId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecretId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The secret_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SecretId { get => _explicitNullValueSecretId; set { _explicitNullValueSecretId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret_id"); else _explicitNullProperties?.Remove("secret_id"); } }
+        public string? SecretId { get => _explicitNullValueSecretId; set { _explicitNullValueSecretId = value; AdditionalData?.Remove("secret_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret_id"); else _explicitNullProperties?.Remove("secret_id"); } }
         private string? _explicitNullValueSecretId = default!;
 #nullable restore
 #else
-        public string SecretId { get => _explicitNullValueSecretId; set { _explicitNullValueSecretId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret_id"); else _explicitNullProperties?.Remove("secret_id"); } }
+        public string SecretId { get => _explicitNullValueSecretId; set { _explicitNullValueSecretId = value; AdditionalData?.Remove("secret_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret_id"); else _explicitNullProperties?.Remove("secret_id"); } }
         private string _explicitNullValueSecretId = default!;
 #endif
         /// <summary>

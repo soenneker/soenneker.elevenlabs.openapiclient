@@ -17,8 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("default_sharing_groups") is { } nullNodeDefaultSharingGroups && nullNodeDefaultSharingGroups.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultSharingGroups = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("default_sharing_groups") is null) { _explicitNullValueDefaultSharingGroups = default!; _explicitNullProperties?.Remove("default_sharing_groups"); }
+            else if (parseNode.GetChildNode("default_sharing_groups") is { } nullNodeDefaultSharingGroups && nullNodeDefaultSharingGroups.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultSharingGroups = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>List of groups with their permission levels to share with by default. Each entry should specify a group_id and a permission_level (admin, editor, or viewer).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DefaultSharingGroupConfig>? DefaultSharingGroups { get => _explicitNullValueDefaultSharingGroups; set { _explicitNullValueDefaultSharingGroups = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_sharing_groups"); else _explicitNullProperties?.Remove("default_sharing_groups"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DefaultSharingGroupConfig>? DefaultSharingGroups { get => _explicitNullValueDefaultSharingGroups; set { _explicitNullValueDefaultSharingGroups = value; AdditionalData?.Remove("default_sharing_groups"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_sharing_groups"); else _explicitNullProperties?.Remove("default_sharing_groups"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DefaultSharingGroupConfig>? _explicitNullValueDefaultSharingGroups = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DefaultSharingGroupConfig> DefaultSharingGroups { get => _explicitNullValueDefaultSharingGroups; set { _explicitNullValueDefaultSharingGroups = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_sharing_groups"); else _explicitNullProperties?.Remove("default_sharing_groups"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DefaultSharingGroupConfig> DefaultSharingGroups { get => _explicitNullValueDefaultSharingGroups; set { _explicitNullValueDefaultSharingGroups = value; AdditionalData?.Remove("default_sharing_groups"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_sharing_groups"); else _explicitNullProperties?.Remove("default_sharing_groups"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DefaultSharingGroupConfig> _explicitNullValueDefaultSharingGroups = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>

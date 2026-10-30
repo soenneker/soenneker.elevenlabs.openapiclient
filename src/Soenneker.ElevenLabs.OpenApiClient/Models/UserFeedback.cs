@@ -17,17 +17,19 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("score") is { } nullNodeScore && nullNodeScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Score = null;
-            if (parseNode.GetChildNode("time_in_call_secs") is { } nullNodeTimeInCallSecs && nullNodeTimeInCallSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeInCallSecs = null;
+            if (parseNode.GetChildNode("score") is null) { _explicitNullValueScore = default!; _explicitNullProperties?.Remove("score"); }
+            else if (parseNode.GetChildNode("score") is { } nullNodeScore && nullNodeScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Score = null;
+            if (parseNode.GetChildNode("time_in_call_secs") is null) { _explicitNullValueTimeInCallSecs = default!; _explicitNullProperties?.Remove("time_in_call_secs"); }
+            else if (parseNode.GetChildNode("time_in_call_secs") is { } nullNodeTimeInCallSecs && nullNodeTimeInCallSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeInCallSecs = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The score property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedbackScore? Score { get => _explicitNullValueScore; set { _explicitNullValueScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("score"); else _explicitNullProperties?.Remove("score"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedbackScore? Score { get => _explicitNullValueScore; set { _explicitNullValueScore = value; AdditionalData?.Remove("score"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("score"); else _explicitNullProperties?.Remove("score"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedbackScore? _explicitNullValueScore = default!;
         /// <summary>The time_in_call_secs property</summary>
-        public int? TimeInCallSecs { get => _explicitNullValueTimeInCallSecs; set { _explicitNullValueTimeInCallSecs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_in_call_secs"); else _explicitNullProperties?.Remove("time_in_call_secs"); } }
+        public int? TimeInCallSecs { get => _explicitNullValueTimeInCallSecs; set { _explicitNullValueTimeInCallSecs = value; AdditionalData?.Remove("time_in_call_secs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_in_call_secs"); else _explicitNullProperties?.Remove("time_in_call_secs"); } }
         private int? _explicitNullValueTimeInCallSecs = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedback"/> and sets the default values.
@@ -54,7 +56,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "score", n => { Score = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedbackScore>(); } },
+                { "score", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedbackScore>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueScore = default; _explicitNullProperties?.Remove("score"); AdditionalData["score"] = unknown; } else { Score = parsed; AdditionalData.Remove("score"); } } },
                 { "time_in_call_secs", n => { TimeInCallSecs = n.GetIntValue(); } },
             };
         }

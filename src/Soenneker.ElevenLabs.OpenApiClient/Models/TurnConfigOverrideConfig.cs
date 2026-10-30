@@ -17,23 +17,25 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("noisy_environment_message") is { } nullNodeNoisyEnvironmentMessage && nullNodeNoisyEnvironmentMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NoisyEnvironmentMessage = null;
-            if (parseNode.GetChildNode("soft_timeout_config") is { } nullNodeSoftTimeoutConfig && nullNodeSoftTimeoutConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SoftTimeoutConfig = null;
+            if (parseNode.GetChildNode("noisy_environment_message") is null) { _explicitNullValueNoisyEnvironmentMessage = default!; _explicitNullProperties?.Remove("noisy_environment_message"); }
+            else if (parseNode.GetChildNode("noisy_environment_message") is { } nullNodeNoisyEnvironmentMessage && nullNodeNoisyEnvironmentMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NoisyEnvironmentMessage = null;
+            if (parseNode.GetChildNode("soft_timeout_config") is null) { _explicitNullValueSoftTimeoutConfig = default!; _explicitNullProperties?.Remove("soft_timeout_config"); }
+            else if (parseNode.GetChildNode("soft_timeout_config") is { } nullNodeSoftTimeoutConfig && nullNodeSoftTimeoutConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SoftTimeoutConfig = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether to allow overriding the noisy_environment_message field.</summary>
-        public bool? NoisyEnvironmentMessage { get => _explicitNullValueNoisyEnvironmentMessage; set { _explicitNullValueNoisyEnvironmentMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("noisy_environment_message"); else _explicitNullProperties?.Remove("noisy_environment_message"); } }
+        public bool? NoisyEnvironmentMessage { get => _explicitNullValueNoisyEnvironmentMessage; set { _explicitNullValueNoisyEnvironmentMessage = value; AdditionalData?.Remove("noisy_environment_message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("noisy_environment_message"); else _explicitNullProperties?.Remove("noisy_environment_message"); } }
         private bool? _explicitNullValueNoisyEnvironmentMessage = default!;
         /// <summary>Configures overrides for nested fields.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SoftTimeoutConfigOverrideConfig? SoftTimeoutConfig { get => _explicitNullValueSoftTimeoutConfig; set { _explicitNullValueSoftTimeoutConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("soft_timeout_config"); else _explicitNullProperties?.Remove("soft_timeout_config"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SoftTimeoutConfigOverrideConfig? SoftTimeoutConfig { get => _explicitNullValueSoftTimeoutConfig; set { _explicitNullValueSoftTimeoutConfig = value; AdditionalData?.Remove("soft_timeout_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("soft_timeout_config"); else _explicitNullProperties?.Remove("soft_timeout_config"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.SoftTimeoutConfigOverrideConfig? _explicitNullValueSoftTimeoutConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SoftTimeoutConfigOverrideConfig SoftTimeoutConfig { get => _explicitNullValueSoftTimeoutConfig; set { _explicitNullValueSoftTimeoutConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("soft_timeout_config"); else _explicitNullProperties?.Remove("soft_timeout_config"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SoftTimeoutConfigOverrideConfig SoftTimeoutConfig { get => _explicitNullValueSoftTimeoutConfig; set { _explicitNullValueSoftTimeoutConfig = value; AdditionalData?.Remove("soft_timeout_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("soft_timeout_config"); else _explicitNullProperties?.Remove("soft_timeout_config"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.SoftTimeoutConfigOverrideConfig _explicitNullValueSoftTimeoutConfig = default!;
 #endif
         /// <summary>

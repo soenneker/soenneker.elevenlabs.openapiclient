@@ -17,8 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("context_id") is { } nullNodeContextId && nullNodeContextId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContextId = null;
-            if (parseNode.GetChildNode("is_superseded") is { } nullNodeIsSuperseded && nullNodeIsSuperseded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsSuperseded = null;
+            if (parseNode.GetChildNode("context_id") is null) { _explicitNullValueContextId = default!; _explicitNullProperties?.Remove("context_id"); }
+            else if (parseNode.GetChildNode("context_id") is { } nullNodeContextId && nullNodeContextId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContextId = null;
+            if (parseNode.GetChildNode("is_superseded") is null) { _explicitNullValueIsSuperseded = default!; _explicitNullProperties?.Remove("is_superseded"); }
+            else if (parseNode.GetChildNode("is_superseded") is { } nullNodeIsSuperseded && nullNodeIsSuperseded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsSuperseded = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Client-supplied identifier grouping related contextual updates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContextId { get => _explicitNullValueContextId; set { _explicitNullValueContextId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("context_id"); else _explicitNullProperties?.Remove("context_id"); } }
+        public string? ContextId { get => _explicitNullValueContextId; set { _explicitNullValueContextId = value; AdditionalData?.Remove("context_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("context_id"); else _explicitNullProperties?.Remove("context_id"); } }
         private string? _explicitNullValueContextId = default!;
 #nullable restore
 #else
-        public string ContextId { get => _explicitNullValueContextId; set { _explicitNullValueContextId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("context_id"); else _explicitNullProperties?.Remove("context_id"); } }
+        public string ContextId { get => _explicitNullValueContextId; set { _explicitNullValueContextId = value; AdditionalData?.Remove("context_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("context_id"); else _explicitNullProperties?.Remove("context_id"); } }
         private string _explicitNullValueContextId = default!;
 #endif
         /// <summary>True when this contextual update has been replaced by a newer update with the same context_id.</summary>
-        public bool? IsSuperseded { get => _explicitNullValueIsSuperseded; set { _explicitNullValueIsSuperseded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_superseded"); else _explicitNullProperties?.Remove("is_superseded"); } }
+        public bool? IsSuperseded { get => _explicitNullValueIsSuperseded; set { _explicitNullValueIsSuperseded = value; AdditionalData?.Remove("is_superseded"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_superseded"); else _explicitNullProperties?.Remove("is_superseded"); } }
         private bool? _explicitNullValueIsSuperseded = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ContextualUpdateInfo"/> and sets the default values.

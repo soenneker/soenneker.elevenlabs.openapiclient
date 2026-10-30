@@ -18,28 +18,31 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("fallback_strategy") is { } nullNodeFallbackStrategy && nullNodeFallbackStrategy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FallbackStrategy = null;
-            if (parseNode.GetChildNode("mocked_tool_ids") is { } nullNodeMockedToolIds && nullNodeMockedToolIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MockedToolIds = null;
-            if (parseNode.GetChildNode("mocking_strategy") is { } nullNodeMockingStrategy && nullNodeMockingStrategy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MockingStrategy = null;
+            if (parseNode.GetChildNode("fallback_strategy") is null) { _explicitNullValueFallbackStrategy = default!; _explicitNullProperties?.Remove("fallback_strategy"); }
+            else if (parseNode.GetChildNode("fallback_strategy") is { } nullNodeFallbackStrategy && nullNodeFallbackStrategy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FallbackStrategy = null;
+            if (parseNode.GetChildNode("mocked_tool_ids") is null) { _explicitNullValueMockedToolIds = default!; _explicitNullProperties?.Remove("mocked_tool_ids"); }
+            else if (parseNode.GetChildNode("mocked_tool_ids") is { } nullNodeMockedToolIds && nullNodeMockedToolIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MockedToolIds = null;
+            if (parseNode.GetChildNode("mocking_strategy") is null) { _explicitNullValueMockingStrategy = default!; _explicitNullProperties?.Remove("mocking_strategy"); }
+            else if (parseNode.GetChildNode("mocking_strategy") is { } nullNodeMockingStrategy && nullNodeMockingStrategy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MockingStrategy = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Behavior when no mock matches a tool call.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MockNoMatchBehavior? FallbackStrategy { get => _explicitNullValueFallbackStrategy; set { _explicitNullValueFallbackStrategy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fallback_strategy"); else _explicitNullProperties?.Remove("fallback_strategy"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MockNoMatchBehavior? FallbackStrategy { get => _explicitNullValueFallbackStrategy; set { _explicitNullValueFallbackStrategy = value; AdditionalData?.Remove("fallback_strategy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fallback_strategy"); else _explicitNullProperties?.Remove("fallback_strategy"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.MockNoMatchBehavior? _explicitNullValueFallbackStrategy = default!;
         /// <summary>Tool IDs to mock. Resolved to tool names before being passed to the orchestrator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MockedToolIds { get => _explicitNullValueMockedToolIds; set { _explicitNullValueMockedToolIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mocked_tool_ids"); else _explicitNullProperties?.Remove("mocked_tool_ids"); } }
+        public List<string>? MockedToolIds { get => _explicitNullValueMockedToolIds; set { _explicitNullValueMockedToolIds = value; AdditionalData?.Remove("mocked_tool_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mocked_tool_ids"); else _explicitNullProperties?.Remove("mocked_tool_ids"); } }
         private List<string>? _explicitNullValueMockedToolIds = default!;
 #nullable restore
 #else
-        public List<string> MockedToolIds { get => _explicitNullValueMockedToolIds; set { _explicitNullValueMockedToolIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mocked_tool_ids"); else _explicitNullProperties?.Remove("mocked_tool_ids"); } }
+        public List<string> MockedToolIds { get => _explicitNullValueMockedToolIds; set { _explicitNullValueMockedToolIds = value; AdditionalData?.Remove("mocked_tool_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mocked_tool_ids"); else _explicitNullProperties?.Remove("mocked_tool_ids"); } }
         private List<string> _explicitNullValueMockedToolIds = default!;
 #endif
         /// <summary>Which tools to mock: &apos;all&apos; mocks every mockable tool, &apos;selected&apos; mocks only those in mocked_tool_names/mocked_tool_ids, &apos;none&apos; disables mocking.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MockingStrategy? MockingStrategy { get => _explicitNullValueMockingStrategy; set { _explicitNullValueMockingStrategy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mocking_strategy"); else _explicitNullProperties?.Remove("mocking_strategy"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MockingStrategy? MockingStrategy { get => _explicitNullValueMockingStrategy; set { _explicitNullValueMockingStrategy = value; AdditionalData?.Remove("mocking_strategy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mocking_strategy"); else _explicitNullProperties?.Remove("mocking_strategy"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.MockingStrategy? _explicitNullValueMockingStrategy = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SimulationToolMockBehaviorConfig"/> and sets the default values.
@@ -68,9 +71,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "fallback_strategy", n => { FallbackStrategy = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MockNoMatchBehavior>(); } },
+                { "fallback_strategy", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MockNoMatchBehavior>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFallbackStrategy = default; _explicitNullProperties?.Remove("fallback_strategy"); AdditionalData["fallback_strategy"] = unknown; } else { FallbackStrategy = parsed; AdditionalData.Remove("fallback_strategy"); } } },
                 { "mocked_tool_ids", n => { MockedToolIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "mocking_strategy", n => { MockingStrategy = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MockingStrategy>(); } },
+                { "mocking_strategy", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MockingStrategy>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMockingStrategy = default; _explicitNullProperties?.Remove("mocking_strategy"); AdditionalData["mocking_strategy"] = unknown; } else { MockingStrategy = parsed; AdditionalData.Remove("mocking_strategy"); } } },
             };
         }
         /// <summary>

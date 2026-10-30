@@ -18,23 +18,25 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("revision") is { } nullNodeRevision && nullNodeRevision.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Revision = null;
-            if (parseNode.GetChildNode("segment") is { } nullNodeSegment && nullNodeSegment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Segment = null;
+            if (parseNode.GetChildNode("revision") is null) { _explicitNullValueRevision = default!; _explicitNullProperties?.Remove("revision"); }
+            else if (parseNode.GetChildNode("revision") is { } nullNodeRevision && nullNodeRevision.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Revision = null;
+            if (parseNode.GetChildNode("segment") is null) { _explicitNullValueSegment = default!; _explicitNullProperties?.Remove("segment"); }
+            else if (parseNode.GetChildNode("segment") is { } nullNodeSegment && nullNodeSegment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Segment = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The target&apos;s revision after this edit.</summary>
-        public int? Revision { get => _explicitNullValueRevision; set { _explicitNullValueRevision = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("revision"); else _explicitNullProperties?.Remove("revision"); } }
+        public int? Revision { get => _explicitNullValueRevision; set { _explicitNullValueRevision = value; AdditionalData?.Remove("revision"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("revision"); else _explicitNullProperties?.Remove("revision"); } }
         private int? _explicitNullValueRevision = default!;
         /// <summary>The target segment in its updated state.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTargetTranscriptSegment? Segment { get => _explicitNullValueSegment; set { _explicitNullValueSegment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segment"); else _explicitNullProperties?.Remove("segment"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTargetTranscriptSegment? Segment { get => _explicitNullValueSegment; set { _explicitNullValueSegment = value; AdditionalData?.Remove("segment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segment"); else _explicitNullProperties?.Remove("segment"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTargetTranscriptSegment? _explicitNullValueSegment = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTargetTranscriptSegment Segment { get => _explicitNullValueSegment; set { _explicitNullValueSegment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segment"); else _explicitNullProperties?.Remove("segment"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTargetTranscriptSegment Segment { get => _explicitNullValueSegment; set { _explicitNullValueSegment = value; AdditionalData?.Remove("segment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segment"); else _explicitNullProperties?.Remove("segment"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTargetTranscriptSegment _explicitNullValueSegment = default!;
 #endif
         /// <summary>

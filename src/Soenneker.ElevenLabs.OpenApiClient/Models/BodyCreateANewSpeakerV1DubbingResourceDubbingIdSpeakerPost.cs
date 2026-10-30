@@ -17,11 +17,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("speaker_name") is { } nullNodeSpeakerName && nullNodeSpeakerName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpeakerName = null;
-            if (parseNode.GetChildNode("voice_id") is { } nullNodeVoiceId && nullNodeVoiceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VoiceId = null;
-            if (parseNode.GetChildNode("voice_similarity") is { } nullNodeVoiceSimilarity && nullNodeVoiceSimilarity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VoiceSimilarity = null;
-            if (parseNode.GetChildNode("voice_stability") is { } nullNodeVoiceStability && nullNodeVoiceStability.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VoiceStability = null;
-            if (parseNode.GetChildNode("voice_style") is { } nullNodeVoiceStyle && nullNodeVoiceStyle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VoiceStyle = null;
+            if (parseNode.GetChildNode("speaker_name") is null) { _explicitNullValueSpeakerName = default!; _explicitNullProperties?.Remove("speaker_name"); }
+            else if (parseNode.GetChildNode("speaker_name") is { } nullNodeSpeakerName && nullNodeSpeakerName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpeakerName = null;
+            if (parseNode.GetChildNode("voice_id") is null) { _explicitNullValueVoiceId = default!; _explicitNullProperties?.Remove("voice_id"); }
+            else if (parseNode.GetChildNode("voice_id") is { } nullNodeVoiceId && nullNodeVoiceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VoiceId = null;
+            if (parseNode.GetChildNode("voice_similarity") is null) { _explicitNullValueVoiceSimilarity = default!; _explicitNullProperties?.Remove("voice_similarity"); }
+            else if (parseNode.GetChildNode("voice_similarity") is { } nullNodeVoiceSimilarity && nullNodeVoiceSimilarity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VoiceSimilarity = null;
+            if (parseNode.GetChildNode("voice_stability") is null) { _explicitNullValueVoiceStability = default!; _explicitNullProperties?.Remove("voice_stability"); }
+            else if (parseNode.GetChildNode("voice_stability") is { } nullNodeVoiceStability && nullNodeVoiceStability.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VoiceStability = null;
+            if (parseNode.GetChildNode("voice_style") is null) { _explicitNullValueVoiceStyle = default!; _explicitNullProperties?.Remove("voice_style"); }
+            else if (parseNode.GetChildNode("voice_style") is { } nullNodeVoiceStyle && nullNodeVoiceStyle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VoiceStyle = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,31 +34,31 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Name to attribute to this speaker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SpeakerName { get => _explicitNullValueSpeakerName; set { _explicitNullValueSpeakerName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speaker_name"); else _explicitNullProperties?.Remove("speaker_name"); } }
+        public string? SpeakerName { get => _explicitNullValueSpeakerName; set { _explicitNullValueSpeakerName = value; AdditionalData?.Remove("speaker_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speaker_name"); else _explicitNullProperties?.Remove("speaker_name"); } }
         private string? _explicitNullValueSpeakerName = default!;
 #nullable restore
 #else
-        public string SpeakerName { get => _explicitNullValueSpeakerName; set { _explicitNullValueSpeakerName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speaker_name"); else _explicitNullProperties?.Remove("speaker_name"); } }
+        public string SpeakerName { get => _explicitNullValueSpeakerName; set { _explicitNullValueSpeakerName = value; AdditionalData?.Remove("speaker_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speaker_name"); else _explicitNullProperties?.Remove("speaker_name"); } }
         private string _explicitNullValueSpeakerName = default!;
 #endif
         /// <summary>Either the identifier of a voice from the ElevenLabs voice library, or one of [&apos;track-clone&apos;, &apos;clip-clone&apos;].</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VoiceId { get => _explicitNullValueVoiceId; set { _explicitNullValueVoiceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_id"); else _explicitNullProperties?.Remove("voice_id"); } }
+        public string? VoiceId { get => _explicitNullValueVoiceId; set { _explicitNullValueVoiceId = value; AdditionalData?.Remove("voice_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_id"); else _explicitNullProperties?.Remove("voice_id"); } }
         private string? _explicitNullValueVoiceId = default!;
 #nullable restore
 #else
-        public string VoiceId { get => _explicitNullValueVoiceId; set { _explicitNullValueVoiceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_id"); else _explicitNullProperties?.Remove("voice_id"); } }
+        public string VoiceId { get => _explicitNullValueVoiceId; set { _explicitNullValueVoiceId = value; AdditionalData?.Remove("voice_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_id"); else _explicitNullProperties?.Remove("voice_id"); } }
         private string _explicitNullValueVoiceId = default!;
 #endif
         /// <summary>For models that support it, the voice similarity value to use. This will default to 1.0, with a valid range of [0.0, 1.0].</summary>
-        public double? VoiceSimilarity { get => _explicitNullValueVoiceSimilarity; set { _explicitNullValueVoiceSimilarity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_similarity"); else _explicitNullProperties?.Remove("voice_similarity"); } }
+        public double? VoiceSimilarity { get => _explicitNullValueVoiceSimilarity; set { _explicitNullValueVoiceSimilarity = value; AdditionalData?.Remove("voice_similarity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_similarity"); else _explicitNullProperties?.Remove("voice_similarity"); } }
         private double? _explicitNullValueVoiceSimilarity = default!;
         /// <summary>For models that support it, the voice similarity value to use. This will default to 0.65, with a valid range of [0.0, 1.0].</summary>
-        public double? VoiceStability { get => _explicitNullValueVoiceStability; set { _explicitNullValueVoiceStability = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_stability"); else _explicitNullProperties?.Remove("voice_stability"); } }
+        public double? VoiceStability { get => _explicitNullValueVoiceStability; set { _explicitNullValueVoiceStability = value; AdditionalData?.Remove("voice_stability"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_stability"); else _explicitNullProperties?.Remove("voice_stability"); } }
         private double? _explicitNullValueVoiceStability = default!;
         /// <summary>For models that support it, the voice style value to use. This will default to 1.0, with a valid range of [0.0, 1.0].</summary>
-        public double? VoiceStyle { get => _explicitNullValueVoiceStyle; set { _explicitNullValueVoiceStyle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_style"); else _explicitNullProperties?.Remove("voice_style"); } }
+        public double? VoiceStyle { get => _explicitNullValueVoiceStyle; set { _explicitNullValueVoiceStyle = value; AdditionalData?.Remove("voice_style"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_style"); else _explicitNullProperties?.Remove("voice_style"); } }
         private double? _explicitNullValueVoiceStyle = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewSpeakerV1DubbingResourceDubbingIdSpeakerPost"/> and sets the default values.

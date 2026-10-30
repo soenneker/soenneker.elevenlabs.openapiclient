@@ -17,39 +17,43 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("has_more") is { } nullNodeHasMore && nullNodeHasMore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasMore = null;
-            if (parseNode.GetChildNode("history") is { } nullNodeHistory && nullNodeHistory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) History = null;
-            if (parseNode.GetChildNode("last_history_item_id") is { } nullNodeLastHistoryItemId && nullNodeLastHistoryItemId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastHistoryItemId = null;
-            if (parseNode.GetChildNode("scanned_until") is { } nullNodeScannedUntil && nullNodeScannedUntil.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScannedUntil = null;
+            if (parseNode.GetChildNode("has_more") is null) { _explicitNullValueHasMore = default!; _explicitNullProperties?.Remove("has_more"); }
+            else if (parseNode.GetChildNode("has_more") is { } nullNodeHasMore && nullNodeHasMore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasMore = null;
+            if (parseNode.GetChildNode("history") is null) { _explicitNullValueHistory = default!; _explicitNullProperties?.Remove("history"); }
+            else if (parseNode.GetChildNode("history") is { } nullNodeHistory && nullNodeHistory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) History = null;
+            if (parseNode.GetChildNode("last_history_item_id") is null) { _explicitNullValueLastHistoryItemId = default!; _explicitNullProperties?.Remove("last_history_item_id"); }
+            else if (parseNode.GetChildNode("last_history_item_id") is { } nullNodeLastHistoryItemId && nullNodeLastHistoryItemId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastHistoryItemId = null;
+            if (parseNode.GetChildNode("scanned_until") is null) { _explicitNullValueScannedUntil = default!; _explicitNullProperties?.Remove("scanned_until"); }
+            else if (parseNode.GetChildNode("scanned_until") is { } nullNodeScannedUntil && nullNodeScannedUntil.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScannedUntil = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether there are more history items to fetch.</summary>
-        public bool? HasMore { get => _explicitNullValueHasMore; set { _explicitNullValueHasMore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_more"); else _explicitNullProperties?.Remove("has_more"); } }
+        public bool? HasMore { get => _explicitNullValueHasMore; set { _explicitNullValueHasMore = value; AdditionalData?.Remove("has_more"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_more"); else _explicitNullProperties?.Remove("has_more"); } }
         private bool? _explicitNullValueHasMore = default!;
         /// <summary>A list of speech history items.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModel>? History { get => _explicitNullValueHistory; set { _explicitNullValueHistory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("history"); else _explicitNullProperties?.Remove("history"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModel>? History { get => _explicitNullValueHistory; set { _explicitNullValueHistory = value; AdditionalData?.Remove("history"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("history"); else _explicitNullProperties?.Remove("history"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModel>? _explicitNullValueHistory = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModel> History { get => _explicitNullValueHistory; set { _explicitNullValueHistory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("history"); else _explicitNullProperties?.Remove("history"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModel> History { get => _explicitNullValueHistory; set { _explicitNullValueHistory = value; AdditionalData?.Remove("history"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("history"); else _explicitNullProperties?.Remove("history"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModel> _explicitNullValueHistory = default!;
 #endif
         /// <summary>The ID of the last history item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastHistoryItemId { get => _explicitNullValueLastHistoryItemId; set { _explicitNullValueLastHistoryItemId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_history_item_id"); else _explicitNullProperties?.Remove("last_history_item_id"); } }
+        public string? LastHistoryItemId { get => _explicitNullValueLastHistoryItemId; set { _explicitNullValueLastHistoryItemId = value; AdditionalData?.Remove("last_history_item_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_history_item_id"); else _explicitNullProperties?.Remove("last_history_item_id"); } }
         private string? _explicitNullValueLastHistoryItemId = default!;
 #nullable restore
 #else
-        public string LastHistoryItemId { get => _explicitNullValueLastHistoryItemId; set { _explicitNullValueLastHistoryItemId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_history_item_id"); else _explicitNullProperties?.Remove("last_history_item_id"); } }
+        public string LastHistoryItemId { get => _explicitNullValueLastHistoryItemId; set { _explicitNullValueLastHistoryItemId = value; AdditionalData?.Remove("last_history_item_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_history_item_id"); else _explicitNullProperties?.Remove("last_history_item_id"); } }
         private string _explicitNullValueLastHistoryItemId = default!;
 #endif
         /// <summary>The timestamp of the last history item.</summary>
-        public int? ScannedUntil { get => _explicitNullValueScannedUntil; set { _explicitNullValueScannedUntil = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scanned_until"); else _explicitNullProperties?.Remove("scanned_until"); } }
+        public int? ScannedUntil { get => _explicitNullValueScannedUntil; set { _explicitNullValueScannedUntil = value; AdditionalData?.Remove("scanned_until"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scanned_until"); else _explicitNullProperties?.Remove("scanned_until"); } }
         private int? _explicitNullValueScannedUntil = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSpeechHistoryResponseModel"/> and sets the default values.

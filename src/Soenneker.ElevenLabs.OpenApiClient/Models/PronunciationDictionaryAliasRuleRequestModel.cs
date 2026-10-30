@@ -17,11 +17,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("alias") is { } nullNodeAlias && nullNodeAlias.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Alias = null;
-            if (parseNode.GetChildNode("case_sensitive") is { } nullNodeCaseSensitive && nullNodeCaseSensitive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CaseSensitive = null;
-            if (parseNode.GetChildNode("string_to_replace") is { } nullNodeStringToReplace && nullNodeStringToReplace.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StringToReplace = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
-            if (parseNode.GetChildNode("word_boundaries") is { } nullNodeWordBoundaries && nullNodeWordBoundaries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WordBoundaries = null;
+            if (parseNode.GetChildNode("alias") is null) { _explicitNullValueAlias = default!; _explicitNullProperties?.Remove("alias"); }
+            else if (parseNode.GetChildNode("alias") is { } nullNodeAlias && nullNodeAlias.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Alias = null;
+            if (parseNode.GetChildNode("case_sensitive") is null) { _explicitNullValueCaseSensitive = default!; _explicitNullProperties?.Remove("case_sensitive"); }
+            else if (parseNode.GetChildNode("case_sensitive") is { } nullNodeCaseSensitive && nullNodeCaseSensitive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CaseSensitive = null;
+            if (parseNode.GetChildNode("string_to_replace") is null) { _explicitNullValueStringToReplace = default!; _explicitNullProperties?.Remove("string_to_replace"); }
+            else if (parseNode.GetChildNode("string_to_replace") is { } nullNodeStringToReplace && nullNodeStringToReplace.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StringToReplace = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("word_boundaries") is null) { _explicitNullValueWordBoundaries = default!; _explicitNullProperties?.Remove("word_boundaries"); }
+            else if (parseNode.GetChildNode("word_boundaries") is { } nullNodeWordBoundaries && nullNodeWordBoundaries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WordBoundaries = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,31 +34,31 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The alias for the string to be replaced.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Alias { get => _explicitNullValueAlias; set { _explicitNullValueAlias = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alias"); else _explicitNullProperties?.Remove("alias"); } }
+        public string? Alias { get => _explicitNullValueAlias; set { _explicitNullValueAlias = value; AdditionalData?.Remove("alias"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alias"); else _explicitNullProperties?.Remove("alias"); } }
         private string? _explicitNullValueAlias = default!;
 #nullable restore
 #else
-        public string Alias { get => _explicitNullValueAlias; set { _explicitNullValueAlias = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alias"); else _explicitNullProperties?.Remove("alias"); } }
+        public string Alias { get => _explicitNullValueAlias; set { _explicitNullValueAlias = value; AdditionalData?.Remove("alias"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alias"); else _explicitNullProperties?.Remove("alias"); } }
         private string _explicitNullValueAlias = default!;
 #endif
         /// <summary>Whether the rule should match case-sensitively.</summary>
-        public bool? CaseSensitive { get => _explicitNullValueCaseSensitive; set { _explicitNullValueCaseSensitive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("case_sensitive"); else _explicitNullProperties?.Remove("case_sensitive"); } }
+        public bool? CaseSensitive { get => _explicitNullValueCaseSensitive; set { _explicitNullValueCaseSensitive = value; AdditionalData?.Remove("case_sensitive"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("case_sensitive"); else _explicitNullProperties?.Remove("case_sensitive"); } }
         private bool? _explicitNullValueCaseSensitive = default!;
         /// <summary>The string to replace. Must be a non-empty string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StringToReplace { get => _explicitNullValueStringToReplace; set { _explicitNullValueStringToReplace = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("string_to_replace"); else _explicitNullProperties?.Remove("string_to_replace"); } }
+        public string? StringToReplace { get => _explicitNullValueStringToReplace; set { _explicitNullValueStringToReplace = value; AdditionalData?.Remove("string_to_replace"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("string_to_replace"); else _explicitNullProperties?.Remove("string_to_replace"); } }
         private string? _explicitNullValueStringToReplace = default!;
 #nullable restore
 #else
-        public string StringToReplace { get => _explicitNullValueStringToReplace; set { _explicitNullValueStringToReplace = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("string_to_replace"); else _explicitNullProperties?.Remove("string_to_replace"); } }
+        public string StringToReplace { get => _explicitNullValueStringToReplace; set { _explicitNullValueStringToReplace = value; AdditionalData?.Remove("string_to_replace"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("string_to_replace"); else _explicitNullProperties?.Remove("string_to_replace"); } }
         private string _explicitNullValueStringToReplace = default!;
 #endif
         /// <summary>The type of the rule.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AliasType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AliasType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AliasType? _explicitNullValueType = default!;
         /// <summary>Whether the rule should only match at word boundaries.</summary>
-        public bool? WordBoundaries { get => _explicitNullValueWordBoundaries; set { _explicitNullValueWordBoundaries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("word_boundaries"); else _explicitNullProperties?.Remove("word_boundaries"); } }
+        public bool? WordBoundaries { get => _explicitNullValueWordBoundaries; set { _explicitNullValueWordBoundaries = value; AdditionalData?.Remove("word_boundaries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("word_boundaries"); else _explicitNullProperties?.Remove("word_boundaries"); } }
         private bool? _explicitNullValueWordBoundaries = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryAliasRuleRequestModel"/> and sets the default values.
@@ -85,7 +90,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "alias", n => { Alias = n.GetStringValue(); } },
                 { "case_sensitive", n => { CaseSensitive = n.GetBoolValue(); } },
                 { "string_to_replace", n => { StringToReplace = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AliasType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AliasType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
                 { "word_boundaries", n => { WordBoundaries = n.GetBoolValue(); } },
             };
         }

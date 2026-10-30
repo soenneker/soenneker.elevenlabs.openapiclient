@@ -17,10 +17,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("format") is { } nullNodeFormat && nullNodeFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Format = null;
-            if (parseNode.GetChildNode("pacing") is { } nullNodePacing && nullNodePacing.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pacing = null;
-            if (parseNode.GetChildNode("transcription") is { } nullNodeTranscription && nullNodeTranscription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Transcription = null;
-            if (parseNode.GetChildNode("turn_detection") is { } nullNodeTurnDetection && nullNodeTurnDetection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TurnDetection = null;
+            if (parseNode.GetChildNode("format") is null) { _explicitNullValueFormat = default!; _explicitNullProperties?.Remove("format"); }
+            else if (parseNode.GetChildNode("format") is { } nullNodeFormat && nullNodeFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Format = null;
+            if (parseNode.GetChildNode("pacing") is null) { _explicitNullValuePacing = default!; _explicitNullProperties?.Remove("pacing"); }
+            else if (parseNode.GetChildNode("pacing") is { } nullNodePacing && nullNodePacing.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pacing = null;
+            if (parseNode.GetChildNode("transcription") is null) { _explicitNullValueTranscription = default!; _explicitNullProperties?.Remove("transcription"); }
+            else if (parseNode.GetChildNode("transcription") is { } nullNodeTranscription && nullNodeTranscription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Transcription = null;
+            if (parseNode.GetChildNode("turn_detection") is null) { _explicitNullValueTurnDetection = default!; _explicitNullProperties?.Remove("turn_detection"); }
+            else if (parseNode.GetChildNode("turn_detection") is { } nullNodeTurnDetection && nullNodeTurnDetection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TurnDetection = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,34 +32,34 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The format property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiAudioInputFormat? Format { get => _explicitNullValueFormat; set { _explicitNullValueFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("format"); else _explicitNullProperties?.Remove("format"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiAudioInputFormat? Format { get => _explicitNullValueFormat; set { _explicitNullValueFormat = value; AdditionalData?.Remove("format"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("format"); else _explicitNullProperties?.Remove("format"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiAudioInputFormat? _explicitNullValueFormat = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiAudioInputFormat Format { get => _explicitNullValueFormat; set { _explicitNullValueFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("format"); else _explicitNullProperties?.Remove("format"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiAudioInputFormat Format { get => _explicitNullValueFormat; set { _explicitNullValueFormat = value; AdditionalData?.Remove("format"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("format"); else _explicitNullProperties?.Remove("format"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiAudioInputFormat _explicitNullValueFormat = default!;
 #endif
         /// <summary>``BURSTY`` clients stream ahead of wall time, so decisions use the audio clock.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioInputPacing? Pacing { get => _explicitNullValuePacing; set { _explicitNullValuePacing = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pacing"); else _explicitNullProperties?.Remove("pacing"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioInputPacing? Pacing { get => _explicitNullValuePacing; set { _explicitNullValuePacing = value; AdditionalData?.Remove("pacing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pacing"); else _explicitNullProperties?.Remove("pacing"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioInputPacing? _explicitNullValuePacing = default!;
         /// <summary>The transcription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiAudioInputTranscription? Transcription { get => _explicitNullValueTranscription; set { _explicitNullValueTranscription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transcription"); else _explicitNullProperties?.Remove("transcription"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiAudioInputTranscription? Transcription { get => _explicitNullValueTranscription; set { _explicitNullValueTranscription = value; AdditionalData?.Remove("transcription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transcription"); else _explicitNullProperties?.Remove("transcription"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiAudioInputTranscription? _explicitNullValueTranscription = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiAudioInputTranscription Transcription { get => _explicitNullValueTranscription; set { _explicitNullValueTranscription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transcription"); else _explicitNullProperties?.Remove("transcription"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiAudioInputTranscription Transcription { get => _explicitNullValueTranscription; set { _explicitNullValueTranscription = value; AdditionalData?.Remove("transcription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transcription"); else _explicitNullProperties?.Remove("transcription"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiAudioInputTranscription _explicitNullValueTranscription = default!;
 #endif
         /// <summary>The turn_detection property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiTurnDetection? TurnDetection { get => _explicitNullValueTurnDetection; set { _explicitNullValueTurnDetection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("turn_detection"); else _explicitNullProperties?.Remove("turn_detection"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiTurnDetection? TurnDetection { get => _explicitNullValueTurnDetection; set { _explicitNullValueTurnDetection = value; AdditionalData?.Remove("turn_detection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("turn_detection"); else _explicitNullProperties?.Remove("turn_detection"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiTurnDetection? _explicitNullValueTurnDetection = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiTurnDetection TurnDetection { get => _explicitNullValueTurnDetection; set { _explicitNullValueTurnDetection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("turn_detection"); else _explicitNullProperties?.Remove("turn_detection"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiTurnDetection TurnDetection { get => _explicitNullValueTurnDetection; set { _explicitNullValueTurnDetection = value; AdditionalData?.Remove("turn_detection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("turn_detection"); else _explicitNullProperties?.Remove("turn_detection"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiTurnDetection _explicitNullValueTurnDetection = default!;
 #endif
         /// <summary>
@@ -85,7 +89,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "format", n => { Format = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiAudioInputFormat>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiAudioInputFormat.CreateFromDiscriminatorValue); } },
-                { "pacing", n => { Pacing = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioInputPacing>(); } },
+                { "pacing", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioInputPacing>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePacing = default; _explicitNullProperties?.Remove("pacing"); AdditionalData["pacing"] = unknown; } else { Pacing = parsed; AdditionalData.Remove("pacing"); } } },
                 { "transcription", n => { Transcription = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiAudioInputTranscription>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiAudioInputTranscription.CreateFromDiscriminatorValue); } },
                 { "turn_detection", n => { TurnDetection = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiTurnDetection>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiTurnDetection.CreateFromDiscriminatorValue); } },
             };

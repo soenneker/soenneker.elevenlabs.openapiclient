@@ -17,23 +17,25 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("system_tool_type") is { } nullNodeSystemToolType && nullNodeSystemToolType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SystemToolType = null;
-            if (parseNode.GetChildNode("transfers") is { } nullNodeTransfers && nullNodeTransfers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Transfers = null;
+            if (parseNode.GetChildNode("system_tool_type") is null) { _explicitNullValueSystemToolType = default!; _explicitNullProperties?.Remove("system_tool_type"); }
+            else if (parseNode.GetChildNode("system_tool_type") is { } nullNodeSystemToolType && nullNodeSystemToolType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SystemToolType = null;
+            if (parseNode.GetChildNode("transfers") is null) { _explicitNullValueTransfers = default!; _explicitNullProperties?.Remove("transfers"); }
+            else if (parseNode.GetChildNode("transfers") is { } nullNodeTransfers && nullNodeTransfers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Transfers = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The system_tool_type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf3_system_tool_type? SystemToolType { get => _explicitNullValueSystemToolType; set { _explicitNullValueSystemToolType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("system_tool_type"); else _explicitNullProperties?.Remove("system_tool_type"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf3_system_tool_type? SystemToolType { get => _explicitNullValueSystemToolType; set { _explicitNullValueSystemToolType = value; AdditionalData?.Remove("system_tool_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("system_tool_type"); else _explicitNullProperties?.Remove("system_tool_type"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf3_system_tool_type? _explicitNullValueSystemToolType = default!;
         /// <summary>The transfers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTransferOutput>? Transfers { get => _explicitNullValueTransfers; set { _explicitNullValueTransfers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfers"); else _explicitNullProperties?.Remove("transfers"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTransferOutput>? Transfers { get => _explicitNullValueTransfers; set { _explicitNullValueTransfers = value; AdditionalData?.Remove("transfers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfers"); else _explicitNullProperties?.Remove("transfers"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTransferOutput>? _explicitNullValueTransfers = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTransferOutput> Transfers { get => _explicitNullValueTransfers; set { _explicitNullValueTransfers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfers"); else _explicitNullProperties?.Remove("transfers"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTransferOutput> Transfers { get => _explicitNullValueTransfers; set { _explicitNullValueTransfers = value; AdditionalData?.Remove("transfers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfers"); else _explicitNullProperties?.Remove("transfers"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTransferOutput> _explicitNullValueTransfers = default!;
 #endif
         /// <summary>
@@ -61,7 +63,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "system_tool_type", n => { SystemToolType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf3_system_tool_type>(); } },
+                { "system_tool_type", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf3_system_tool_type>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSystemToolType = default; _explicitNullProperties?.Remove("system_tool_type"); AdditionalData["system_tool_type"] = unknown; } else { SystemToolType = parsed; AdditionalData.Remove("system_tool_type"); } } },
                 { "transfers", n => { Transfers = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTransferOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTransferOutput.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }

@@ -17,68 +17,76 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("captions_sdh") is { } nullNodeCaptionsSdh && nullNodeCaptionsSdh.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CaptionsSdh = null;
-            if (parseNode.GetChildNode("destination_languages") is { } nullNodeDestinationLanguages && nullNodeDestinationLanguages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DestinationLanguages = null;
-            if (parseNode.GetChildNode("include_captions") is { } nullNodeIncludeCaptions && nullNodeIncludeCaptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeCaptions = null;
-            if (parseNode.GetChildNode("include_source_captions") is { } nullNodeIncludeSourceCaptions && nullNodeIncludeSourceCaptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeSourceCaptions = null;
-            if (parseNode.GetChildNode("instructions") is { } nullNodeInstructions && nullNodeInstructions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Instructions = null;
-            if (parseNode.GetChildNode("kind") is { } nullNodeKind && nullNodeKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kind = null;
-            if (parseNode.GetChildNode("media_id") is { } nullNodeMediaId && nullNodeMediaId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaId = null;
-            if (parseNode.GetChildNode("source_language") is { } nullNodeSourceLanguage && nullNodeSourceLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceLanguage = null;
+            if (parseNode.GetChildNode("captions_sdh") is null) { _explicitNullValueCaptionsSdh = default!; _explicitNullProperties?.Remove("captions_sdh"); }
+            else if (parseNode.GetChildNode("captions_sdh") is { } nullNodeCaptionsSdh && nullNodeCaptionsSdh.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CaptionsSdh = null;
+            if (parseNode.GetChildNode("destination_languages") is null) { _explicitNullValueDestinationLanguages = default!; _explicitNullProperties?.Remove("destination_languages"); }
+            else if (parseNode.GetChildNode("destination_languages") is { } nullNodeDestinationLanguages && nullNodeDestinationLanguages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DestinationLanguages = null;
+            if (parseNode.GetChildNode("include_captions") is null) { _explicitNullValueIncludeCaptions = default!; _explicitNullProperties?.Remove("include_captions"); }
+            else if (parseNode.GetChildNode("include_captions") is { } nullNodeIncludeCaptions && nullNodeIncludeCaptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeCaptions = null;
+            if (parseNode.GetChildNode("include_source_captions") is null) { _explicitNullValueIncludeSourceCaptions = default!; _explicitNullProperties?.Remove("include_source_captions"); }
+            else if (parseNode.GetChildNode("include_source_captions") is { } nullNodeIncludeSourceCaptions && nullNodeIncludeSourceCaptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeSourceCaptions = null;
+            if (parseNode.GetChildNode("instructions") is null) { _explicitNullValueInstructions = default!; _explicitNullProperties?.Remove("instructions"); }
+            else if (parseNode.GetChildNode("instructions") is { } nullNodeInstructions && nullNodeInstructions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Instructions = null;
+            if (parseNode.GetChildNode("kind") is null) { _explicitNullValueKind = default!; _explicitNullProperties?.Remove("kind"); }
+            else if (parseNode.GetChildNode("kind") is { } nullNodeKind && nullNodeKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kind = null;
+            if (parseNode.GetChildNode("media_id") is null) { _explicitNullValueMediaId = default!; _explicitNullProperties?.Remove("media_id"); }
+            else if (parseNode.GetChildNode("media_id") is { } nullNodeMediaId && nullNodeMediaId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaId = null;
+            if (parseNode.GetChildNode("source_language") is null) { _explicitNullValueSourceLanguage = default!; _explicitNullProperties?.Remove("source_language"); }
+            else if (parseNode.GetChildNode("source_language") is { } nullNodeSourceLanguage && nullNodeSourceLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceLanguage = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether captions should use SDH format, which includes descriptions for deaf and hard-of-hearing viewers.</summary>
-        public bool? CaptionsSdh { get => _explicitNullValueCaptionsSdh; set { _explicitNullValueCaptionsSdh = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("captions_sdh"); else _explicitNullProperties?.Remove("captions_sdh"); } }
+        public bool? CaptionsSdh { get => _explicitNullValueCaptionsSdh; set { _explicitNullValueCaptionsSdh = value; AdditionalData?.Remove("captions_sdh"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("captions_sdh"); else _explicitNullProperties?.Remove("captions_sdh"); } }
         private bool? _explicitNullValueCaptionsSdh = default!;
         /// <summary>List of target language codes to dub the media into.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DestinationLanguages { get => _explicitNullValueDestinationLanguages; set { _explicitNullValueDestinationLanguages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destination_languages"); else _explicitNullProperties?.Remove("destination_languages"); } }
+        public List<string>? DestinationLanguages { get => _explicitNullValueDestinationLanguages; set { _explicitNullValueDestinationLanguages = value; AdditionalData?.Remove("destination_languages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destination_languages"); else _explicitNullProperties?.Remove("destination_languages"); } }
         private List<string>? _explicitNullValueDestinationLanguages = default!;
 #nullable restore
 #else
-        public List<string> DestinationLanguages { get => _explicitNullValueDestinationLanguages; set { _explicitNullValueDestinationLanguages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destination_languages"); else _explicitNullProperties?.Remove("destination_languages"); } }
+        public List<string> DestinationLanguages { get => _explicitNullValueDestinationLanguages; set { _explicitNullValueDestinationLanguages = value; AdditionalData?.Remove("destination_languages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destination_languages"); else _explicitNullProperties?.Remove("destination_languages"); } }
         private List<string> _explicitNullValueDestinationLanguages = default!;
 #endif
         /// <summary>Whether to generate captions for the dubbed outputs.</summary>
-        public bool? IncludeCaptions { get => _explicitNullValueIncludeCaptions; set { _explicitNullValueIncludeCaptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_captions"); else _explicitNullProperties?.Remove("include_captions"); } }
+        public bool? IncludeCaptions { get => _explicitNullValueIncludeCaptions; set { _explicitNullValueIncludeCaptions = value; AdditionalData?.Remove("include_captions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_captions"); else _explicitNullProperties?.Remove("include_captions"); } }
         private bool? _explicitNullValueIncludeCaptions = default!;
         /// <summary>Whether to generate captions for the source language.</summary>
-        public bool? IncludeSourceCaptions { get => _explicitNullValueIncludeSourceCaptions; set { _explicitNullValueIncludeSourceCaptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_source_captions"); else _explicitNullProperties?.Remove("include_source_captions"); } }
+        public bool? IncludeSourceCaptions { get => _explicitNullValueIncludeSourceCaptions; set { _explicitNullValueIncludeSourceCaptions = value; AdditionalData?.Remove("include_source_captions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_source_captions"); else _explicitNullProperties?.Remove("include_source_captions"); } }
         private bool? _explicitNullValueIncludeSourceCaptions = default!;
         /// <summary>Optional free-text instructions for the dubbing team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Instructions { get => _explicitNullValueInstructions; set { _explicitNullValueInstructions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instructions"); else _explicitNullProperties?.Remove("instructions"); } }
+        public string? Instructions { get => _explicitNullValueInstructions; set { _explicitNullValueInstructions = value; AdditionalData?.Remove("instructions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instructions"); else _explicitNullProperties?.Remove("instructions"); } }
         private string? _explicitNullValueInstructions = default!;
 #nullable restore
 #else
-        public string Instructions { get => _explicitNullValueInstructions; set { _explicitNullValueInstructions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instructions"); else _explicitNullProperties?.Remove("instructions"); } }
+        public string Instructions { get => _explicitNullValueInstructions; set { _explicitNullValueInstructions = value; AdditionalData?.Remove("instructions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instructions"); else _explicitNullProperties?.Remove("instructions"); } }
         private string _explicitNullValueInstructions = default!;
 #endif
         /// <summary>The type of order item.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemRequestOutputOneOf1_kind? Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemRequestOutputOneOf1_kind? Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; AdditionalData?.Remove("kind"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemRequestOutputOneOf1_kind? _explicitNullValueKind = default!;
         /// <summary>The media_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MediaId { get => _explicitNullValueMediaId; set { _explicitNullValueMediaId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_id"); else _explicitNullProperties?.Remove("media_id"); } }
+        public string? MediaId { get => _explicitNullValueMediaId; set { _explicitNullValueMediaId = value; AdditionalData?.Remove("media_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_id"); else _explicitNullProperties?.Remove("media_id"); } }
         private string? _explicitNullValueMediaId = default!;
 #nullable restore
 #else
-        public string MediaId { get => _explicitNullValueMediaId; set { _explicitNullValueMediaId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_id"); else _explicitNullProperties?.Remove("media_id"); } }
+        public string MediaId { get => _explicitNullValueMediaId; set { _explicitNullValueMediaId = value; AdditionalData?.Remove("media_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_id"); else _explicitNullProperties?.Remove("media_id"); } }
         private string _explicitNullValueMediaId = default!;
 #endif
         /// <summary>The language code of the source media (e.g. &apos;en&apos;, &apos;es&apos;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceLanguage { get => _explicitNullValueSourceLanguage; set { _explicitNullValueSourceLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_language"); else _explicitNullProperties?.Remove("source_language"); } }
+        public string? SourceLanguage { get => _explicitNullValueSourceLanguage; set { _explicitNullValueSourceLanguage = value; AdditionalData?.Remove("source_language"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_language"); else _explicitNullProperties?.Remove("source_language"); } }
         private string? _explicitNullValueSourceLanguage = default!;
 #nullable restore
 #else
-        public string SourceLanguage { get => _explicitNullValueSourceLanguage; set { _explicitNullValueSourceLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_language"); else _explicitNullProperties?.Remove("source_language"); } }
+        public string SourceLanguage { get => _explicitNullValueSourceLanguage; set { _explicitNullValueSourceLanguage = value; AdditionalData?.Remove("source_language"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_language"); else _explicitNullProperties?.Remove("source_language"); } }
         private string _explicitNullValueSourceLanguage = default!;
 #endif
         /// <summary>
@@ -111,7 +119,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "include_captions", n => { IncludeCaptions = n.GetBoolValue(); } },
                 { "include_source_captions", n => { IncludeSourceCaptions = n.GetBoolValue(); } },
                 { "instructions", n => { Instructions = n.GetStringValue(); } },
-                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemRequestOutputOneOf1_kind>(); } },
+                { "kind", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemRequestOutputOneOf1_kind>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueKind = default; _explicitNullProperties?.Remove("kind"); AdditionalData["kind"] = unknown; } else { Kind = parsed; AdditionalData.Remove("kind"); } } },
                 { "media_id", n => { MediaId = n.GetStringValue(); } },
                 { "source_language", n => { SourceLanguage = n.GetStringValue(); } },
             };

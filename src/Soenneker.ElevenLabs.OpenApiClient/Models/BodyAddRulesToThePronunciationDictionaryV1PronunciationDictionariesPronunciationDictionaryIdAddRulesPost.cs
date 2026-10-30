@@ -17,7 +17,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("rules") is { } nullNodeRules && nullNodeRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rules = null;
+            if (parseNode.GetChildNode("rules") is null) { _explicitNullValueRules = default!; _explicitNullProperties?.Remove("rules"); }
+            else if (parseNode.GetChildNode("rules") is { } nullNodeRules && nullNodeRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rules = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,12 +26,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>List of pronunciation rules. Rule can be either:    an alias rule: {&apos;string_to_replace&apos;: &apos;a&apos;, &apos;type&apos;: &apos;alias&apos;, &apos;alias&apos;: &apos;b&apos;, }    or a phoneme rule: {&apos;string_to_replace&apos;: &apos;a&apos;, &apos;type&apos;: &apos;phoneme&apos;, &apos;phoneme&apos;: &apos;b&apos;, &apos;alphabet&apos;: &apos;ipa&apos; }</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddRulesToThePronunciationDictionaryV1PronunciationDictionariesPronunciationDictionaryIdAddRulesPostRulesItem>? Rules { get => _explicitNullValueRules; set { _explicitNullValueRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules"); else _explicitNullProperties?.Remove("rules"); } }
-        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddRulesToThePronunciationDictionaryV1PronunciationDictionariesPronunciationDictionaryIdAddRulesPostRulesItem>? _explicitNullValueRules = default!;
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostRulesItem>? Rules { get => _explicitNullValueRules; set { _explicitNullValueRules = value; AdditionalData?.Remove("rules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules"); else _explicitNullProperties?.Remove("rules"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostRulesItem>? _explicitNullValueRules = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddRulesToThePronunciationDictionaryV1PronunciationDictionariesPronunciationDictionaryIdAddRulesPostRulesItem> Rules { get => _explicitNullValueRules; set { _explicitNullValueRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules"); else _explicitNullProperties?.Remove("rules"); } }
-        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddRulesToThePronunciationDictionaryV1PronunciationDictionariesPronunciationDictionaryIdAddRulesPostRulesItem> _explicitNullValueRules = default!;
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostRulesItem> Rules { get => _explicitNullValueRules; set { _explicitNullValueRules = value; AdditionalData?.Remove("rules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules"); else _explicitNullProperties?.Remove("rules"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostRulesItem> _explicitNullValueRules = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddRulesToThePronunciationDictionaryV1PronunciationDictionariesPronunciationDictionaryIdAddRulesPost"/> and sets the default values.
@@ -57,7 +58,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "rules", n => { Rules = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddRulesToThePronunciationDictionaryV1PronunciationDictionariesPronunciationDictionaryIdAddRulesPostRulesItem>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddRulesToThePronunciationDictionaryV1PronunciationDictionariesPronunciationDictionaryIdAddRulesPostRulesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "rules", n => { Rules = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostRulesItem>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostRulesItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -67,7 +68,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddRulesToThePronunciationDictionaryV1PronunciationDictionariesPronunciationDictionaryIdAddRulesPostRulesItem>("rules", Rules);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostRulesItem>("rules", Rules);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

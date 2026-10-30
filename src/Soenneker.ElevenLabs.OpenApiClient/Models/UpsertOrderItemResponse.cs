@@ -17,8 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("item_id") is { } nullNodeItemId && nullNodeItemId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ItemId = null;
-            if (parseNode.GetChildNode("quote") is { } nullNodeQuote && nullNodeQuote.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Quote = null;
+            if (parseNode.GetChildNode("item_id") is null) { _explicitNullValueItemId = default!; _explicitNullProperties?.Remove("item_id"); }
+            else if (parseNode.GetChildNode("item_id") is { } nullNodeItemId && nullNodeItemId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ItemId = null;
+            if (parseNode.GetChildNode("quote") is null) { _explicitNullValueQuote = default!; _explicitNullProperties?.Remove("quote"); }
+            else if (parseNode.GetChildNode("quote") is { } nullNodeQuote && nullNodeQuote.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Quote = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The item_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemId { get => _explicitNullValueItemId; set { _explicitNullValueItemId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_id"); else _explicitNullProperties?.Remove("item_id"); } }
+        public string? ItemId { get => _explicitNullValueItemId; set { _explicitNullValueItemId = value; AdditionalData?.Remove("item_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_id"); else _explicitNullProperties?.Remove("item_id"); } }
         private string? _explicitNullValueItemId = default!;
 #nullable restore
 #else
-        public string ItemId { get => _explicitNullValueItemId; set { _explicitNullValueItemId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_id"); else _explicitNullProperties?.Remove("item_id"); } }
+        public string ItemId { get => _explicitNullValueItemId; set { _explicitNullValueItemId = value; AdditionalData?.Remove("item_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_id"); else _explicitNullProperties?.Remove("item_id"); } }
         private string _explicitNullValueItemId = default!;
 #endif
         /// <summary>The quoted price for this item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.QuoteInfo? Quote { get => _explicitNullValueQuote; set { _explicitNullValueQuote = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quote"); else _explicitNullProperties?.Remove("quote"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.QuoteInfo? Quote { get => _explicitNullValueQuote; set { _explicitNullValueQuote = value; AdditionalData?.Remove("quote"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quote"); else _explicitNullProperties?.Remove("quote"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.QuoteInfo? _explicitNullValueQuote = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.QuoteInfo Quote { get => _explicitNullValueQuote; set { _explicitNullValueQuote = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quote"); else _explicitNullProperties?.Remove("quote"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.QuoteInfo Quote { get => _explicitNullValueQuote; set { _explicitNullValueQuote = value; AdditionalData?.Remove("quote"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quote"); else _explicitNullProperties?.Remove("quote"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.QuoteInfo _explicitNullValueQuote = default!;
 #endif
         /// <summary>

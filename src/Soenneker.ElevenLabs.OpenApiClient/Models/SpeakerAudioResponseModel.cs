@@ -17,9 +17,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("audio_base_64") is { } nullNodeAudioBase64 && nullNodeAudioBase64.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudioBase64 = null;
-            if (parseNode.GetChildNode("duration_secs") is { } nullNodeDurationSecs && nullNodeDurationSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DurationSecs = null;
-            if (parseNode.GetChildNode("media_type") is { } nullNodeMediaType && nullNodeMediaType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaType = null;
+            if (parseNode.GetChildNode("audio_base_64") is null) { _explicitNullValueAudioBase64 = default!; _explicitNullProperties?.Remove("audio_base_64"); }
+            else if (parseNode.GetChildNode("audio_base_64") is { } nullNodeAudioBase64 && nullNodeAudioBase64.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudioBase64 = null;
+            if (parseNode.GetChildNode("duration_secs") is null) { _explicitNullValueDurationSecs = default!; _explicitNullProperties?.Remove("duration_secs"); }
+            else if (parseNode.GetChildNode("duration_secs") is { } nullNodeDurationSecs && nullNodeDurationSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DurationSecs = null;
+            if (parseNode.GetChildNode("media_type") is null) { _explicitNullValueMediaType = default!; _explicitNullProperties?.Remove("media_type"); }
+            else if (parseNode.GetChildNode("media_type") is { } nullNodeMediaType && nullNodeMediaType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,24 +30,24 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The base64 encoded audio.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AudioBase64 { get => _explicitNullValueAudioBase64; set { _explicitNullValueAudioBase64 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_base_64"); else _explicitNullProperties?.Remove("audio_base_64"); } }
+        public string? AudioBase64 { get => _explicitNullValueAudioBase64; set { _explicitNullValueAudioBase64 = value; AdditionalData?.Remove("audio_base_64"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_base_64"); else _explicitNullProperties?.Remove("audio_base_64"); } }
         private string? _explicitNullValueAudioBase64 = default!;
 #nullable restore
 #else
-        public string AudioBase64 { get => _explicitNullValueAudioBase64; set { _explicitNullValueAudioBase64 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_base_64"); else _explicitNullProperties?.Remove("audio_base_64"); } }
+        public string AudioBase64 { get => _explicitNullValueAudioBase64; set { _explicitNullValueAudioBase64 = value; AdditionalData?.Remove("audio_base_64"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_base_64"); else _explicitNullProperties?.Remove("audio_base_64"); } }
         private string _explicitNullValueAudioBase64 = default!;
 #endif
         /// <summary>The duration of the audio in seconds.</summary>
-        public double? DurationSecs { get => _explicitNullValueDurationSecs; set { _explicitNullValueDurationSecs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration_secs"); else _explicitNullProperties?.Remove("duration_secs"); } }
+        public double? DurationSecs { get => _explicitNullValueDurationSecs; set { _explicitNullValueDurationSecs = value; AdditionalData?.Remove("duration_secs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration_secs"); else _explicitNullProperties?.Remove("duration_secs"); } }
         private double? _explicitNullValueDurationSecs = default!;
         /// <summary>The media type of the audio.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MediaType { get => _explicitNullValueMediaType; set { _explicitNullValueMediaType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_type"); else _explicitNullProperties?.Remove("media_type"); } }
+        public string? MediaType { get => _explicitNullValueMediaType; set { _explicitNullValueMediaType = value; AdditionalData?.Remove("media_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_type"); else _explicitNullProperties?.Remove("media_type"); } }
         private string? _explicitNullValueMediaType = default!;
 #nullable restore
 #else
-        public string MediaType { get => _explicitNullValueMediaType; set { _explicitNullValueMediaType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_type"); else _explicitNullProperties?.Remove("media_type"); } }
+        public string MediaType { get => _explicitNullValueMediaType; set { _explicitNullValueMediaType = value; AdditionalData?.Remove("media_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_type"); else _explicitNullProperties?.Remove("media_type"); } }
         private string _explicitNullValueMediaType = default!;
 #endif
         /// <summary>

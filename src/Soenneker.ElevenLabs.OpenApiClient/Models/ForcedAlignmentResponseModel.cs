@@ -18,9 +18,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("characters") is { } nullNodeCharacters && nullNodeCharacters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Characters = null;
-            if (parseNode.GetChildNode("loss") is { } nullNodeLoss && nullNodeLoss.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Loss = null;
-            if (parseNode.GetChildNode("words") is { } nullNodeWords && nullNodeWords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Words = null;
+            if (parseNode.GetChildNode("characters") is null) { _explicitNullValueCharacters = default!; _explicitNullProperties?.Remove("characters"); }
+            else if (parseNode.GetChildNode("characters") is { } nullNodeCharacters && nullNodeCharacters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Characters = null;
+            if (parseNode.GetChildNode("loss") is null) { _explicitNullValueLoss = default!; _explicitNullProperties?.Remove("loss"); }
+            else if (parseNode.GetChildNode("loss") is { } nullNodeLoss && nullNodeLoss.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Loss = null;
+            if (parseNode.GetChildNode("words") is null) { _explicitNullValueWords = default!; _explicitNullProperties?.Remove("words"); }
+            else if (parseNode.GetChildNode("words") is { } nullNodeWords && nullNodeWords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Words = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,24 +31,24 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>List of characters with their timing information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ForcedAlignmentCharacterResponseModel>? Characters { get => _explicitNullValueCharacters; set { _explicitNullValueCharacters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("characters"); else _explicitNullProperties?.Remove("characters"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ForcedAlignmentCharacterResponseModel>? Characters { get => _explicitNullValueCharacters; set { _explicitNullValueCharacters = value; AdditionalData?.Remove("characters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("characters"); else _explicitNullProperties?.Remove("characters"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ForcedAlignmentCharacterResponseModel>? _explicitNullValueCharacters = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ForcedAlignmentCharacterResponseModel> Characters { get => _explicitNullValueCharacters; set { _explicitNullValueCharacters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("characters"); else _explicitNullProperties?.Remove("characters"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ForcedAlignmentCharacterResponseModel> Characters { get => _explicitNullValueCharacters; set { _explicitNullValueCharacters = value; AdditionalData?.Remove("characters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("characters"); else _explicitNullProperties?.Remove("characters"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ForcedAlignmentCharacterResponseModel> _explicitNullValueCharacters = default!;
 #endif
         /// <summary>The average alignment loss/confidence score for the entire transcript, calculated from all characters.</summary>
-        public double? Loss { get => _explicitNullValueLoss; set { _explicitNullValueLoss = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loss"); else _explicitNullProperties?.Remove("loss"); } }
+        public double? Loss { get => _explicitNullValueLoss; set { _explicitNullValueLoss = value; AdditionalData?.Remove("loss"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loss"); else _explicitNullProperties?.Remove("loss"); } }
         private double? _explicitNullValueLoss = default!;
         /// <summary>List of words with their timing information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ForcedAlignmentWordResponseModel>? Words { get => _explicitNullValueWords; set { _explicitNullValueWords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("words"); else _explicitNullProperties?.Remove("words"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ForcedAlignmentWordResponseModel>? Words { get => _explicitNullValueWords; set { _explicitNullValueWords = value; AdditionalData?.Remove("words"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("words"); else _explicitNullProperties?.Remove("words"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ForcedAlignmentWordResponseModel>? _explicitNullValueWords = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ForcedAlignmentWordResponseModel> Words { get => _explicitNullValueWords; set { _explicitNullValueWords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("words"); else _explicitNullProperties?.Remove("words"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ForcedAlignmentWordResponseModel> Words { get => _explicitNullValueWords; set { _explicitNullValueWords = value; AdditionalData?.Remove("words"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("words"); else _explicitNullProperties?.Remove("words"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ForcedAlignmentWordResponseModel> _explicitNullValueWords = default!;
 #endif
         /// <summary>

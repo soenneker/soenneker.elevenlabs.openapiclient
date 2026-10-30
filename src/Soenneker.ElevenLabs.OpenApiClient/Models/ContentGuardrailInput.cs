@@ -17,9 +17,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("config") is { } nullNodeConfig && nullNodeConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Config = null;
-            if (parseNode.GetChildNode("execution_mode") is { } nullNodeExecutionMode && nullNodeExecutionMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExecutionMode = null;
-            if (parseNode.GetChildNode("trigger_action") is { } nullNodeTriggerAction && nullNodeTriggerAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TriggerAction = null;
+            if (parseNode.GetChildNode("config") is null) { _explicitNullValueConfig = default!; _explicitNullProperties?.Remove("config"); }
+            else if (parseNode.GetChildNode("config") is { } nullNodeConfig && nullNodeConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Config = null;
+            if (parseNode.GetChildNode("execution_mode") is null) { _explicitNullValueExecutionMode = default!; _explicitNullProperties?.Remove("execution_mode"); }
+            else if (parseNode.GetChildNode("execution_mode") is { } nullNodeExecutionMode && nullNodeExecutionMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExecutionMode = null;
+            if (parseNode.GetChildNode("trigger_action") is null) { _explicitNullValueTriggerAction = default!; _explicitNullProperties?.Remove("trigger_action"); }
+            else if (parseNode.GetChildNode("trigger_action") is { } nullNodeTriggerAction && nullNodeTriggerAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TriggerAction = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,24 +30,24 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentConfig? Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentConfig? Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; AdditionalData?.Remove("config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentConfig? _explicitNullValueConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentConfig Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentConfig Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; AdditionalData?.Remove("config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentConfig _explicitNullValueConfig = default!;
 #endif
         /// <summary>The execution_mode property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailExecutionMode? ExecutionMode { get => _explicitNullValueExecutionMode; set { _explicitNullValueExecutionMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execution_mode"); else _explicitNullProperties?.Remove("execution_mode"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailExecutionMode? ExecutionMode { get => _explicitNullValueExecutionMode; set { _explicitNullValueExecutionMode = value; AdditionalData?.Remove("execution_mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execution_mode"); else _explicitNullProperties?.Remove("execution_mode"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailExecutionMode? _explicitNullValueExecutionMode = default!;
         /// <summary>The trigger_action property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentGuardrailInputTriggerAction? TriggerAction { get => _explicitNullValueTriggerAction; set { _explicitNullValueTriggerAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trigger_action"); else _explicitNullProperties?.Remove("trigger_action"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentGuardrailInputTriggerAction? TriggerAction { get => _explicitNullValueTriggerAction; set { _explicitNullValueTriggerAction = value; AdditionalData?.Remove("trigger_action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trigger_action"); else _explicitNullProperties?.Remove("trigger_action"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentGuardrailInputTriggerAction? _explicitNullValueTriggerAction = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentGuardrailInputTriggerAction TriggerAction { get => _explicitNullValueTriggerAction; set { _explicitNullValueTriggerAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trigger_action"); else _explicitNullProperties?.Remove("trigger_action"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentGuardrailInputTriggerAction TriggerAction { get => _explicitNullValueTriggerAction; set { _explicitNullValueTriggerAction = value; AdditionalData?.Remove("trigger_action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trigger_action"); else _explicitNullProperties?.Remove("trigger_action"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentGuardrailInputTriggerAction _explicitNullValueTriggerAction = default!;
 #endif
         /// <summary>
@@ -74,7 +77,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "config", n => { Config = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentConfig.CreateFromDiscriminatorValue); } },
-                { "execution_mode", n => { ExecutionMode = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailExecutionMode>(); } },
+                { "execution_mode", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailExecutionMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueExecutionMode = default; _explicitNullProperties?.Remove("execution_mode"); AdditionalData["execution_mode"] = unknown; } else { ExecutionMode = parsed; AdditionalData.Remove("execution_mode"); } } },
                 { "trigger_action", n => { TriggerAction = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentGuardrailInputTriggerAction>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentGuardrailInputTriggerAction.CreateFromDiscriminatorValue); } },
             };
         }

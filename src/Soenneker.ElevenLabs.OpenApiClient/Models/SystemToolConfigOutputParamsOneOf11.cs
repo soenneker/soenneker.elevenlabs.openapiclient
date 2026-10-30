@@ -17,8 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("procedures") is { } nullNodeProcedures && nullNodeProcedures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Procedures = null;
-            if (parseNode.GetChildNode("system_tool_type") is { } nullNodeSystemToolType && nullNodeSystemToolType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SystemToolType = null;
+            if (parseNode.GetChildNode("procedures") is null) { _explicitNullValueProcedures = default!; _explicitNullProperties?.Remove("procedures"); }
+            else if (parseNode.GetChildNode("procedures") is { } nullNodeProcedures && nullNodeProcedures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Procedures = null;
+            if (parseNode.GetChildNode("system_tool_type") is null) { _explicitNullValueSystemToolType = default!; _explicitNullProperties?.Remove("system_tool_type"); }
+            else if (parseNode.GetChildNode("system_tool_type") is { } nullNodeSystemToolType && nullNodeSystemToolType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SystemToolType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The procedures property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EndProcedureToolConfigProceduresProperty? Procedures { get => _explicitNullValueProcedures; set { _explicitNullValueProcedures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("procedures"); else _explicitNullProperties?.Remove("procedures"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EndProcedureToolConfigProceduresProperty? Procedures { get => _explicitNullValueProcedures; set { _explicitNullValueProcedures = value; AdditionalData?.Remove("procedures"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("procedures"); else _explicitNullProperties?.Remove("procedures"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.EndProcedureToolConfigProceduresProperty? _explicitNullValueProcedures = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EndProcedureToolConfigProceduresProperty Procedures { get => _explicitNullValueProcedures; set { _explicitNullValueProcedures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("procedures"); else _explicitNullProperties?.Remove("procedures"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EndProcedureToolConfigProceduresProperty Procedures { get => _explicitNullValueProcedures; set { _explicitNullValueProcedures = value; AdditionalData?.Remove("procedures"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("procedures"); else _explicitNullProperties?.Remove("procedures"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.EndProcedureToolConfigProceduresProperty _explicitNullValueProcedures = default!;
 #endif
         /// <summary>The system_tool_type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf11_system_tool_type? SystemToolType { get => _explicitNullValueSystemToolType; set { _explicitNullValueSystemToolType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("system_tool_type"); else _explicitNullProperties?.Remove("system_tool_type"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf11_system_tool_type? SystemToolType { get => _explicitNullValueSystemToolType; set { _explicitNullValueSystemToolType = value; AdditionalData?.Remove("system_tool_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("system_tool_type"); else _explicitNullProperties?.Remove("system_tool_type"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf11_system_tool_type? _explicitNullValueSystemToolType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf11"/> and sets the default values.
@@ -62,7 +64,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "procedures", n => { Procedures = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EndProcedureToolConfigProceduresProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.EndProcedureToolConfigProceduresProperty.CreateFromDiscriminatorValue); } },
-                { "system_tool_type", n => { SystemToolType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf11_system_tool_type>(); } },
+                { "system_tool_type", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf11_system_tool_type>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSystemToolType = default; _explicitNullProperties?.Remove("system_tool_type"); AdditionalData["system_tool_type"] = unknown; } else { SystemToolType = parsed; AdditionalData.Remove("system_tool_type"); } } },
             };
         }
         /// <summary>

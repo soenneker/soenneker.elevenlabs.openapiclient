@@ -17,7 +17,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("move_to") is { } nullNodeMoveTo && nullNodeMoveTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MoveTo = null;
+            if (parseNode.GetChildNode("move_to") is null) { _explicitNullValueMoveTo = default!; _explicitNullProperties?.Remove("move_to"); }
+            else if (parseNode.GetChildNode("move_to") is { } nullNodeMoveTo && nullNodeMoveTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MoveTo = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The folder to move the entities to. If not set, the entities will be moved to the root folder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MoveTo { get => _explicitNullValueMoveTo; set { _explicitNullValueMoveTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("move_to"); else _explicitNullProperties?.Remove("move_to"); } }
+        public string? MoveTo { get => _explicitNullValueMoveTo; set { _explicitNullValueMoveTo = value; AdditionalData?.Remove("move_to"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("move_to"); else _explicitNullProperties?.Remove("move_to"); } }
         private string? _explicitNullValueMoveTo = default!;
 #nullable restore
 #else
-        public string MoveTo { get => _explicitNullValueMoveTo; set { _explicitNullValueMoveTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("move_to"); else _explicitNullProperties?.Remove("move_to"); } }
+        public string MoveTo { get => _explicitNullValueMoveTo; set { _explicitNullValueMoveTo = value; AdditionalData?.Remove("move_to"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("move_to"); else _explicitNullProperties?.Remove("move_to"); } }
         private string _explicitNullValueMoveTo = default!;
 #endif
         /// <summary>

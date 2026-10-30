@@ -17,80 +17,89 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("archived_time_unix") is { } nullNodeArchivedTimeUnix && nullNodeArchivedTimeUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ArchivedTimeUnix = null;
-            if (parseNode.GetChildNode("created_by") is { } nullNodeCreatedBy && nullNodeCreatedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedBy = null;
-            if (parseNode.GetChildNode("creation_time_unix") is { } nullNodeCreationTimeUnix && nullNodeCreationTimeUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreationTimeUnix = null;
-            if (parseNode.GetChildNode("dictionary_name") is { } nullNodeDictionaryName && nullNodeDictionaryName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DictionaryName = null;
-            if (parseNode.GetChildNode("permission_on_resource") is { } nullNodePermissionOnResource && nullNodePermissionOnResource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PermissionOnResource = null;
-            if (parseNode.GetChildNode("pronunciation_dictionary_id") is { } nullNodePronunciationDictionaryId && nullNodePronunciationDictionaryId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PronunciationDictionaryId = null;
-            if (parseNode.GetChildNode("version_id") is { } nullNodeVersionId && nullNodeVersionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VersionId = null;
-            if (parseNode.GetChildNode("version_name") is { } nullNodeVersionName && nullNodeVersionName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VersionName = null;
-            if (parseNode.GetChildNode("version_rules_num") is { } nullNodeVersionRulesNum && nullNodeVersionRulesNum.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VersionRulesNum = null;
+            if (parseNode.GetChildNode("archived_time_unix") is null) { _explicitNullValueArchivedTimeUnix = default!; _explicitNullProperties?.Remove("archived_time_unix"); }
+            else if (parseNode.GetChildNode("archived_time_unix") is { } nullNodeArchivedTimeUnix && nullNodeArchivedTimeUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ArchivedTimeUnix = null;
+            if (parseNode.GetChildNode("created_by") is null) { _explicitNullValueCreatedBy = default!; _explicitNullProperties?.Remove("created_by"); }
+            else if (parseNode.GetChildNode("created_by") is { } nullNodeCreatedBy && nullNodeCreatedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedBy = null;
+            if (parseNode.GetChildNode("creation_time_unix") is null) { _explicitNullValueCreationTimeUnix = default!; _explicitNullProperties?.Remove("creation_time_unix"); }
+            else if (parseNode.GetChildNode("creation_time_unix") is { } nullNodeCreationTimeUnix && nullNodeCreationTimeUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreationTimeUnix = null;
+            if (parseNode.GetChildNode("dictionary_name") is null) { _explicitNullValueDictionaryName = default!; _explicitNullProperties?.Remove("dictionary_name"); }
+            else if (parseNode.GetChildNode("dictionary_name") is { } nullNodeDictionaryName && nullNodeDictionaryName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DictionaryName = null;
+            if (parseNode.GetChildNode("permission_on_resource") is null) { _explicitNullValuePermissionOnResource = default!; _explicitNullProperties?.Remove("permission_on_resource"); }
+            else if (parseNode.GetChildNode("permission_on_resource") is { } nullNodePermissionOnResource && nullNodePermissionOnResource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PermissionOnResource = null;
+            if (parseNode.GetChildNode("pronunciation_dictionary_id") is null) { _explicitNullValuePronunciationDictionaryId = default!; _explicitNullProperties?.Remove("pronunciation_dictionary_id"); }
+            else if (parseNode.GetChildNode("pronunciation_dictionary_id") is { } nullNodePronunciationDictionaryId && nullNodePronunciationDictionaryId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PronunciationDictionaryId = null;
+            if (parseNode.GetChildNode("version_id") is null) { _explicitNullValueVersionId = default!; _explicitNullProperties?.Remove("version_id"); }
+            else if (parseNode.GetChildNode("version_id") is { } nullNodeVersionId && nullNodeVersionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VersionId = null;
+            if (parseNode.GetChildNode("version_name") is null) { _explicitNullValueVersionName = default!; _explicitNullProperties?.Remove("version_name"); }
+            else if (parseNode.GetChildNode("version_name") is { } nullNodeVersionName && nullNodeVersionName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VersionName = null;
+            if (parseNode.GetChildNode("version_rules_num") is null) { _explicitNullValueVersionRulesNum = default!; _explicitNullProperties?.Remove("version_rules_num"); }
+            else if (parseNode.GetChildNode("version_rules_num") is { } nullNodeVersionRulesNum && nullNodeVersionRulesNum.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VersionRulesNum = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The archived_time_unix property</summary>
-        public int? ArchivedTimeUnix { get => _explicitNullValueArchivedTimeUnix; set { _explicitNullValueArchivedTimeUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("archived_time_unix"); else _explicitNullProperties?.Remove("archived_time_unix"); } }
+        public int? ArchivedTimeUnix { get => _explicitNullValueArchivedTimeUnix; set { _explicitNullValueArchivedTimeUnix = value; AdditionalData?.Remove("archived_time_unix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("archived_time_unix"); else _explicitNullProperties?.Remove("archived_time_unix"); } }
         private int? _explicitNullValueArchivedTimeUnix = default!;
         /// <summary>The created_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by"); else _explicitNullProperties?.Remove("created_by"); } }
+        public string? CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; AdditionalData?.Remove("created_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by"); else _explicitNullProperties?.Remove("created_by"); } }
         private string? _explicitNullValueCreatedBy = default!;
 #nullable restore
 #else
-        public string CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by"); else _explicitNullProperties?.Remove("created_by"); } }
+        public string CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; AdditionalData?.Remove("created_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by"); else _explicitNullProperties?.Remove("created_by"); } }
         private string _explicitNullValueCreatedBy = default!;
 #endif
         /// <summary>The creation_time_unix property</summary>
-        public int? CreationTimeUnix { get => _explicitNullValueCreationTimeUnix; set { _explicitNullValueCreationTimeUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creation_time_unix"); else _explicitNullProperties?.Remove("creation_time_unix"); } }
+        public int? CreationTimeUnix { get => _explicitNullValueCreationTimeUnix; set { _explicitNullValueCreationTimeUnix = value; AdditionalData?.Remove("creation_time_unix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creation_time_unix"); else _explicitNullProperties?.Remove("creation_time_unix"); } }
         private int? _explicitNullValueCreationTimeUnix = default!;
         /// <summary>The dictionary_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DictionaryName { get => _explicitNullValueDictionaryName; set { _explicitNullValueDictionaryName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dictionary_name"); else _explicitNullProperties?.Remove("dictionary_name"); } }
+        public string? DictionaryName { get => _explicitNullValueDictionaryName; set { _explicitNullValueDictionaryName = value; AdditionalData?.Remove("dictionary_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dictionary_name"); else _explicitNullProperties?.Remove("dictionary_name"); } }
         private string? _explicitNullValueDictionaryName = default!;
 #nullable restore
 #else
-        public string DictionaryName { get => _explicitNullValueDictionaryName; set { _explicitNullValueDictionaryName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dictionary_name"); else _explicitNullProperties?.Remove("dictionary_name"); } }
+        public string DictionaryName { get => _explicitNullValueDictionaryName; set { _explicitNullValueDictionaryName = value; AdditionalData?.Remove("dictionary_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dictionary_name"); else _explicitNullProperties?.Remove("dictionary_name"); } }
         private string _explicitNullValueDictionaryName = default!;
 #endif
         /// <summary>The permission_on_resource property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionResponseModelPermissionOnResource? PermissionOnResource { get => _explicitNullValuePermissionOnResource; set { _explicitNullValuePermissionOnResource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permission_on_resource"); else _explicitNullProperties?.Remove("permission_on_resource"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionResponseModelPermissionOnResource? PermissionOnResource { get => _explicitNullValuePermissionOnResource; set { _explicitNullValuePermissionOnResource = value; AdditionalData?.Remove("permission_on_resource"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permission_on_resource"); else _explicitNullProperties?.Remove("permission_on_resource"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionResponseModelPermissionOnResource? _explicitNullValuePermissionOnResource = default!;
         /// <summary>The pronunciation_dictionary_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PronunciationDictionaryId { get => _explicitNullValuePronunciationDictionaryId; set { _explicitNullValuePronunciationDictionaryId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pronunciation_dictionary_id"); else _explicitNullProperties?.Remove("pronunciation_dictionary_id"); } }
+        public string? PronunciationDictionaryId { get => _explicitNullValuePronunciationDictionaryId; set { _explicitNullValuePronunciationDictionaryId = value; AdditionalData?.Remove("pronunciation_dictionary_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pronunciation_dictionary_id"); else _explicitNullProperties?.Remove("pronunciation_dictionary_id"); } }
         private string? _explicitNullValuePronunciationDictionaryId = default!;
 #nullable restore
 #else
-        public string PronunciationDictionaryId { get => _explicitNullValuePronunciationDictionaryId; set { _explicitNullValuePronunciationDictionaryId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pronunciation_dictionary_id"); else _explicitNullProperties?.Remove("pronunciation_dictionary_id"); } }
+        public string PronunciationDictionaryId { get => _explicitNullValuePronunciationDictionaryId; set { _explicitNullValuePronunciationDictionaryId = value; AdditionalData?.Remove("pronunciation_dictionary_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pronunciation_dictionary_id"); else _explicitNullProperties?.Remove("pronunciation_dictionary_id"); } }
         private string _explicitNullValuePronunciationDictionaryId = default!;
 #endif
         /// <summary>The version_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VersionId { get => _explicitNullValueVersionId; set { _explicitNullValueVersionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version_id"); else _explicitNullProperties?.Remove("version_id"); } }
+        public string? VersionId { get => _explicitNullValueVersionId; set { _explicitNullValueVersionId = value; AdditionalData?.Remove("version_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version_id"); else _explicitNullProperties?.Remove("version_id"); } }
         private string? _explicitNullValueVersionId = default!;
 #nullable restore
 #else
-        public string VersionId { get => _explicitNullValueVersionId; set { _explicitNullValueVersionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version_id"); else _explicitNullProperties?.Remove("version_id"); } }
+        public string VersionId { get => _explicitNullValueVersionId; set { _explicitNullValueVersionId = value; AdditionalData?.Remove("version_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version_id"); else _explicitNullProperties?.Remove("version_id"); } }
         private string _explicitNullValueVersionId = default!;
 #endif
         /// <summary>The version_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VersionName { get => _explicitNullValueVersionName; set { _explicitNullValueVersionName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version_name"); else _explicitNullProperties?.Remove("version_name"); } }
+        public string? VersionName { get => _explicitNullValueVersionName; set { _explicitNullValueVersionName = value; AdditionalData?.Remove("version_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version_name"); else _explicitNullProperties?.Remove("version_name"); } }
         private string? _explicitNullValueVersionName = default!;
 #nullable restore
 #else
-        public string VersionName { get => _explicitNullValueVersionName; set { _explicitNullValueVersionName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version_name"); else _explicitNullProperties?.Remove("version_name"); } }
+        public string VersionName { get => _explicitNullValueVersionName; set { _explicitNullValueVersionName = value; AdditionalData?.Remove("version_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version_name"); else _explicitNullProperties?.Remove("version_name"); } }
         private string _explicitNullValueVersionName = default!;
 #endif
         /// <summary>The version_rules_num property</summary>
-        public int? VersionRulesNum { get => _explicitNullValueVersionRulesNum; set { _explicitNullValueVersionRulesNum = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version_rules_num"); else _explicitNullProperties?.Remove("version_rules_num"); } }
+        public int? VersionRulesNum { get => _explicitNullValueVersionRulesNum; set { _explicitNullValueVersionRulesNum = value; AdditionalData?.Remove("version_rules_num"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version_rules_num"); else _explicitNullProperties?.Remove("version_rules_num"); } }
         private int? _explicitNullValueVersionRulesNum = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionResponseModel"/> and sets the default values.
@@ -121,7 +130,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "created_by", n => { CreatedBy = n.GetStringValue(); } },
                 { "creation_time_unix", n => { CreationTimeUnix = n.GetIntValue(); } },
                 { "dictionary_name", n => { DictionaryName = n.GetStringValue(); } },
-                { "permission_on_resource", n => { PermissionOnResource = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionResponseModelPermissionOnResource>(); } },
+                { "permission_on_resource", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionResponseModelPermissionOnResource>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePermissionOnResource = default; _explicitNullProperties?.Remove("permission_on_resource"); AdditionalData["permission_on_resource"] = unknown; } else { PermissionOnResource = parsed; AdditionalData.Remove("permission_on_resource"); } } },
                 { "pronunciation_dictionary_id", n => { PronunciationDictionaryId = n.GetStringValue(); } },
                 { "version_id", n => { VersionId = n.GetStringValue(); } },
                 { "version_name", n => { VersionName = n.GetStringValue(); } },

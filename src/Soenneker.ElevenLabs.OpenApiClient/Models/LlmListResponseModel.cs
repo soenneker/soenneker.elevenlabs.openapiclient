@@ -17,8 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("default_deprecation_config") is { } nullNodeDefaultDeprecationConfig && nullNodeDefaultDeprecationConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultDeprecationConfig = null;
-            if (parseNode.GetChildNode("llms") is { } nullNodeLlms && nullNodeLlms.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Llms = null;
+            if (parseNode.GetChildNode("default_deprecation_config") is null) { _explicitNullValueDefaultDeprecationConfig = default!; _explicitNullProperties?.Remove("default_deprecation_config"); }
+            else if (parseNode.GetChildNode("default_deprecation_config") is { } nullNodeDefaultDeprecationConfig && nullNodeDefaultDeprecationConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultDeprecationConfig = null;
+            if (parseNode.GetChildNode("llms") is null) { _explicitNullValueLlms = default!; _explicitNullProperties?.Remove("llms"); }
+            else if (parseNode.GetChildNode("llms") is { } nullNodeLlms && nullNodeLlms.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Llms = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The default_deprecation_config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmDeprecationConfigModel? DefaultDeprecationConfig { get => _explicitNullValueDefaultDeprecationConfig; set { _explicitNullValueDefaultDeprecationConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_deprecation_config"); else _explicitNullProperties?.Remove("default_deprecation_config"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmDeprecationConfigModel? DefaultDeprecationConfig { get => _explicitNullValueDefaultDeprecationConfig; set { _explicitNullValueDefaultDeprecationConfig = value; AdditionalData?.Remove("default_deprecation_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_deprecation_config"); else _explicitNullProperties?.Remove("default_deprecation_config"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmDeprecationConfigModel? _explicitNullValueDefaultDeprecationConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmDeprecationConfigModel DefaultDeprecationConfig { get => _explicitNullValueDefaultDeprecationConfig; set { _explicitNullValueDefaultDeprecationConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_deprecation_config"); else _explicitNullProperties?.Remove("default_deprecation_config"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmDeprecationConfigModel DefaultDeprecationConfig { get => _explicitNullValueDefaultDeprecationConfig; set { _explicitNullValueDefaultDeprecationConfig = value; AdditionalData?.Remove("default_deprecation_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_deprecation_config"); else _explicitNullProperties?.Remove("default_deprecation_config"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmDeprecationConfigModel _explicitNullValueDefaultDeprecationConfig = default!;
 #endif
         /// <summary>List of all available LLM models that can be used with agents.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmInfoModel>? Llms { get => _explicitNullValueLlms; set { _explicitNullValueLlms = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("llms"); else _explicitNullProperties?.Remove("llms"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmInfoModel>? Llms { get => _explicitNullValueLlms; set { _explicitNullValueLlms = value; AdditionalData?.Remove("llms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("llms"); else _explicitNullProperties?.Remove("llms"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmInfoModel>? _explicitNullValueLlms = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmInfoModel> Llms { get => _explicitNullValueLlms; set { _explicitNullValueLlms = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("llms"); else _explicitNullProperties?.Remove("llms"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmInfoModel> Llms { get => _explicitNullValueLlms; set { _explicitNullValueLlms = value; AdditionalData?.Remove("llms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("llms"); else _explicitNullProperties?.Remove("llms"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmInfoModel> _explicitNullValueLlms = default!;
 #endif
         /// <summary>

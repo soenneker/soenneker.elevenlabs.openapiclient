@@ -18,8 +18,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("last_run") is { } nullNodeLastRun && nullNodeLastRun.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastRun = null;
-            if (parseNode.GetChildNode("total") is { } nullNodeTotal && nullNodeTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Total = null;
+            if (parseNode.GetChildNode("last_run") is null) { _explicitNullValueLastRun = default!; _explicitNullProperties?.Remove("last_run"); }
+            else if (parseNode.GetChildNode("last_run") is { } nullNodeLastRun && nullNodeLastRun.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastRun = null;
+            if (parseNode.GetChildNode("total") is null) { _explicitNullValueTotal = default!; _explicitNullProperties?.Remove("total"); }
+            else if (parseNode.GetChildNode("total") is { } nullNodeTotal && nullNodeTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Total = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>LLM cost of the most recent post-call analysis pass on this conversation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunSnapshot? LastRun { get => _explicitNullValueLastRun; set { _explicitNullValueLastRun = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_run"); else _explicitNullProperties?.Remove("last_run"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunSnapshot? LastRun { get => _explicitNullValueLastRun; set { _explicitNullValueLastRun = value; AdditionalData?.Remove("last_run"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_run"); else _explicitNullProperties?.Remove("last_run"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunSnapshot? _explicitNullValueLastRun = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunSnapshot LastRun { get => _explicitNullValueLastRun; set { _explicitNullValueLastRun = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_run"); else _explicitNullProperties?.Remove("last_run"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunSnapshot LastRun { get => _explicitNullValueLastRun; set { _explicitNullValueLastRun = value; AdditionalData?.Remove("last_run"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_run"); else _explicitNullProperties?.Remove("last_run"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunSnapshot _explicitNullValueLastRun = default!;
 #endif
         /// <summary>Cumulative LLM cost of running post-call analysis on this conversation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunningTotal? Total { get => _explicitNullValueTotal; set { _explicitNullValueTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total"); else _explicitNullProperties?.Remove("total"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunningTotal? Total { get => _explicitNullValueTotal; set { _explicitNullValueTotal = value; AdditionalData?.Remove("total"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total"); else _explicitNullProperties?.Remove("total"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunningTotal? _explicitNullValueTotal = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunningTotal Total { get => _explicitNullValueTotal; set { _explicitNullValueTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total"); else _explicitNullProperties?.Remove("total"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunningTotal Total { get => _explicitNullValueTotal; set { _explicitNullValueTotal = value; AdditionalData?.Remove("total"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total"); else _explicitNullProperties?.Remove("total"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunningTotal _explicitNullValueTotal = default!;
 #endif
         /// <summary>

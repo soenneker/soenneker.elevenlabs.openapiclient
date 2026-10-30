@@ -18,15 +18,24 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("delivery_error") is { } nullNodeDeliveryError && nullNodeDeliveryError.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeliveryError = null;
-            if (parseNode.GetChildNode("delivery_status") is { } nullNodeDeliveryStatus && nullNodeDeliveryStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeliveryStatus = null;
-            if (parseNode.GetChildNode("delivery_timestamp") is { } nullNodeDeliveryTimestamp && nullNodeDeliveryTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeliveryTimestamp = null;
-            if (parseNode.GetChildNode("external_id") is { } nullNodeExternalId && nullNodeExternalId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalId = null;
-            if (parseNode.GetChildNode("external_link") is { } nullNodeExternalLink && nullNodeExternalLink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalLink = null;
-            if (parseNode.GetChildNode("external_system") is { } nullNodeExternalSystem && nullNodeExternalSystem.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalSystem = null;
-            if (parseNode.GetChildNode("last_processed_external_message_id") is { } nullNodeLastProcessedExternalMessageId && nullNodeLastProcessedExternalMessageId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastProcessedExternalMessageId = null;
-            if (parseNode.GetChildNode("last_retry_timestamp") is { } nullNodeLastRetryTimestamp && nullNodeLastRetryTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastRetryTimestamp = null;
-            if (parseNode.GetChildNode("retry_count") is { } nullNodeRetryCount && nullNodeRetryCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RetryCount = null;
+            if (parseNode.GetChildNode("delivery_error") is null) { _explicitNullValueDeliveryError = default!; _explicitNullProperties?.Remove("delivery_error"); }
+            else if (parseNode.GetChildNode("delivery_error") is { } nullNodeDeliveryError && nullNodeDeliveryError.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeliveryError = null;
+            if (parseNode.GetChildNode("delivery_status") is null) { _explicitNullValueDeliveryStatus = default!; _explicitNullProperties?.Remove("delivery_status"); }
+            else if (parseNode.GetChildNode("delivery_status") is { } nullNodeDeliveryStatus && nullNodeDeliveryStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeliveryStatus = null;
+            if (parseNode.GetChildNode("delivery_timestamp") is null) { _explicitNullValueDeliveryTimestamp = default!; _explicitNullProperties?.Remove("delivery_timestamp"); }
+            else if (parseNode.GetChildNode("delivery_timestamp") is { } nullNodeDeliveryTimestamp && nullNodeDeliveryTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeliveryTimestamp = null;
+            if (parseNode.GetChildNode("external_id") is null) { _explicitNullValueExternalId = default!; _explicitNullProperties?.Remove("external_id"); }
+            else if (parseNode.GetChildNode("external_id") is { } nullNodeExternalId && nullNodeExternalId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalId = null;
+            if (parseNode.GetChildNode("external_link") is null) { _explicitNullValueExternalLink = default!; _explicitNullProperties?.Remove("external_link"); }
+            else if (parseNode.GetChildNode("external_link") is { } nullNodeExternalLink && nullNodeExternalLink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalLink = null;
+            if (parseNode.GetChildNode("external_system") is null) { _explicitNullValueExternalSystem = default!; _explicitNullProperties?.Remove("external_system"); }
+            else if (parseNode.GetChildNode("external_system") is { } nullNodeExternalSystem && nullNodeExternalSystem.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalSystem = null;
+            if (parseNode.GetChildNode("last_processed_external_message_id") is null) { _explicitNullValueLastProcessedExternalMessageId = default!; _explicitNullProperties?.Remove("last_processed_external_message_id"); }
+            else if (parseNode.GetChildNode("last_processed_external_message_id") is { } nullNodeLastProcessedExternalMessageId && nullNodeLastProcessedExternalMessageId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastProcessedExternalMessageId = null;
+            if (parseNode.GetChildNode("last_retry_timestamp") is null) { _explicitNullValueLastRetryTimestamp = default!; _explicitNullProperties?.Remove("last_retry_timestamp"); }
+            else if (parseNode.GetChildNode("last_retry_timestamp") is { } nullNodeLastRetryTimestamp && nullNodeLastRetryTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastRetryTimestamp = null;
+            if (parseNode.GetChildNode("retry_count") is null) { _explicitNullValueRetryCount = default!; _explicitNullProperties?.Remove("retry_count"); }
+            else if (parseNode.GetChildNode("retry_count") is { } nullNodeRetryCount && nullNodeRetryCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RetryCount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -34,64 +43,64 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The delivery_error property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeliveryError { get => _explicitNullValueDeliveryError; set { _explicitNullValueDeliveryError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delivery_error"); else _explicitNullProperties?.Remove("delivery_error"); } }
+        public string? DeliveryError { get => _explicitNullValueDeliveryError; set { _explicitNullValueDeliveryError = value; AdditionalData?.Remove("delivery_error"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delivery_error"); else _explicitNullProperties?.Remove("delivery_error"); } }
         private string? _explicitNullValueDeliveryError = default!;
 #nullable restore
 #else
-        public string DeliveryError { get => _explicitNullValueDeliveryError; set { _explicitNullValueDeliveryError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delivery_error"); else _explicitNullProperties?.Remove("delivery_error"); } }
+        public string DeliveryError { get => _explicitNullValueDeliveryError; set { _explicitNullValueDeliveryError = value; AdditionalData?.Remove("delivery_error"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delivery_error"); else _explicitNullProperties?.Remove("delivery_error"); } }
         private string _explicitNullValueDeliveryError = default!;
 #endif
         /// <summary>The delivery_status property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AsyncConversationMetadataDeliveryStatus? DeliveryStatus { get => _explicitNullValueDeliveryStatus; set { _explicitNullValueDeliveryStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delivery_status"); else _explicitNullProperties?.Remove("delivery_status"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AsyncConversationMetadataDeliveryStatus? DeliveryStatus { get => _explicitNullValueDeliveryStatus; set { _explicitNullValueDeliveryStatus = value; AdditionalData?.Remove("delivery_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delivery_status"); else _explicitNullProperties?.Remove("delivery_status"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AsyncConversationMetadataDeliveryStatus? _explicitNullValueDeliveryStatus = default!;
         /// <summary>The delivery_timestamp property</summary>
-        public int? DeliveryTimestamp { get => _explicitNullValueDeliveryTimestamp; set { _explicitNullValueDeliveryTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delivery_timestamp"); else _explicitNullProperties?.Remove("delivery_timestamp"); } }
+        public int? DeliveryTimestamp { get => _explicitNullValueDeliveryTimestamp; set { _explicitNullValueDeliveryTimestamp = value; AdditionalData?.Remove("delivery_timestamp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delivery_timestamp"); else _explicitNullProperties?.Remove("delivery_timestamp"); } }
         private int? _explicitNullValueDeliveryTimestamp = default!;
         /// <summary>The external_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalId { get => _explicitNullValueExternalId; set { _explicitNullValueExternalId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_id"); else _explicitNullProperties?.Remove("external_id"); } }
+        public string? ExternalId { get => _explicitNullValueExternalId; set { _explicitNullValueExternalId = value; AdditionalData?.Remove("external_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_id"); else _explicitNullProperties?.Remove("external_id"); } }
         private string? _explicitNullValueExternalId = default!;
 #nullable restore
 #else
-        public string ExternalId { get => _explicitNullValueExternalId; set { _explicitNullValueExternalId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_id"); else _explicitNullProperties?.Remove("external_id"); } }
+        public string ExternalId { get => _explicitNullValueExternalId; set { _explicitNullValueExternalId = value; AdditionalData?.Remove("external_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_id"); else _explicitNullProperties?.Remove("external_id"); } }
         private string _explicitNullValueExternalId = default!;
 #endif
         /// <summary>The external_link property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalLink { get => _explicitNullValueExternalLink; set { _explicitNullValueExternalLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_link"); else _explicitNullProperties?.Remove("external_link"); } }
+        public string? ExternalLink { get => _explicitNullValueExternalLink; set { _explicitNullValueExternalLink = value; AdditionalData?.Remove("external_link"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_link"); else _explicitNullProperties?.Remove("external_link"); } }
         private string? _explicitNullValueExternalLink = default!;
 #nullable restore
 #else
-        public string ExternalLink { get => _explicitNullValueExternalLink; set { _explicitNullValueExternalLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_link"); else _explicitNullProperties?.Remove("external_link"); } }
+        public string ExternalLink { get => _explicitNullValueExternalLink; set { _explicitNullValueExternalLink = value; AdditionalData?.Remove("external_link"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_link"); else _explicitNullProperties?.Remove("external_link"); } }
         private string _explicitNullValueExternalLink = default!;
 #endif
         /// <summary>The external_system property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalSystem { get => _explicitNullValueExternalSystem; set { _explicitNullValueExternalSystem = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_system"); else _explicitNullProperties?.Remove("external_system"); } }
+        public string? ExternalSystem { get => _explicitNullValueExternalSystem; set { _explicitNullValueExternalSystem = value; AdditionalData?.Remove("external_system"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_system"); else _explicitNullProperties?.Remove("external_system"); } }
         private string? _explicitNullValueExternalSystem = default!;
 #nullable restore
 #else
-        public string ExternalSystem { get => _explicitNullValueExternalSystem; set { _explicitNullValueExternalSystem = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_system"); else _explicitNullProperties?.Remove("external_system"); } }
+        public string ExternalSystem { get => _explicitNullValueExternalSystem; set { _explicitNullValueExternalSystem = value; AdditionalData?.Remove("external_system"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_system"); else _explicitNullProperties?.Remove("external_system"); } }
         private string _explicitNullValueExternalSystem = default!;
 #endif
         /// <summary>The last_processed_external_message_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastProcessedExternalMessageId { get => _explicitNullValueLastProcessedExternalMessageId; set { _explicitNullValueLastProcessedExternalMessageId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_processed_external_message_id"); else _explicitNullProperties?.Remove("last_processed_external_message_id"); } }
+        public string? LastProcessedExternalMessageId { get => _explicitNullValueLastProcessedExternalMessageId; set { _explicitNullValueLastProcessedExternalMessageId = value; AdditionalData?.Remove("last_processed_external_message_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_processed_external_message_id"); else _explicitNullProperties?.Remove("last_processed_external_message_id"); } }
         private string? _explicitNullValueLastProcessedExternalMessageId = default!;
 #nullable restore
 #else
-        public string LastProcessedExternalMessageId { get => _explicitNullValueLastProcessedExternalMessageId; set { _explicitNullValueLastProcessedExternalMessageId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_processed_external_message_id"); else _explicitNullProperties?.Remove("last_processed_external_message_id"); } }
+        public string LastProcessedExternalMessageId { get => _explicitNullValueLastProcessedExternalMessageId; set { _explicitNullValueLastProcessedExternalMessageId = value; AdditionalData?.Remove("last_processed_external_message_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_processed_external_message_id"); else _explicitNullProperties?.Remove("last_processed_external_message_id"); } }
         private string _explicitNullValueLastProcessedExternalMessageId = default!;
 #endif
         /// <summary>The last_retry_timestamp property</summary>
-        public int? LastRetryTimestamp { get => _explicitNullValueLastRetryTimestamp; set { _explicitNullValueLastRetryTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_retry_timestamp"); else _explicitNullProperties?.Remove("last_retry_timestamp"); } }
+        public int? LastRetryTimestamp { get => _explicitNullValueLastRetryTimestamp; set { _explicitNullValueLastRetryTimestamp = value; AdditionalData?.Remove("last_retry_timestamp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_retry_timestamp"); else _explicitNullProperties?.Remove("last_retry_timestamp"); } }
         private int? _explicitNullValueLastRetryTimestamp = default!;
         /// <summary>The retry_count property</summary>
-        public int? RetryCount { get => _explicitNullValueRetryCount; set { _explicitNullValueRetryCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retry_count"); else _explicitNullProperties?.Remove("retry_count"); } }
+        public int? RetryCount { get => _explicitNullValueRetryCount; set { _explicitNullValueRetryCount = value; AdditionalData?.Remove("retry_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retry_count"); else _explicitNullProperties?.Remove("retry_count"); } }
         private int? _explicitNullValueRetryCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AsyncConversationMetadata"/> and sets the default values.
@@ -120,7 +129,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "delivery_error", n => { DeliveryError = n.GetStringValue(); } },
-                { "delivery_status", n => { DeliveryStatus = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AsyncConversationMetadataDeliveryStatus>(); } },
+                { "delivery_status", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AsyncConversationMetadataDeliveryStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDeliveryStatus = default; _explicitNullProperties?.Remove("delivery_status"); AdditionalData["delivery_status"] = unknown; } else { DeliveryStatus = parsed; AdditionalData.Remove("delivery_status"); } } },
                 { "delivery_timestamp", n => { DeliveryTimestamp = n.GetIntValue(); } },
                 { "external_id", n => { ExternalId = n.GetStringValue(); } },
                 { "external_link", n => { ExternalLink = n.GetStringValue(); } },

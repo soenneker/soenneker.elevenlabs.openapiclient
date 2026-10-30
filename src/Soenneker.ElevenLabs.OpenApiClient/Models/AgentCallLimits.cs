@@ -17,21 +17,24 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("agent_concurrency_limit") is { } nullNodeAgentConcurrencyLimit && nullNodeAgentConcurrencyLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentConcurrencyLimit = null;
-            if (parseNode.GetChildNode("bursting_enabled") is { } nullNodeBurstingEnabled && nullNodeBurstingEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BurstingEnabled = null;
-            if (parseNode.GetChildNode("daily_limit") is { } nullNodeDailyLimit && nullNodeDailyLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DailyLimit = null;
+            if (parseNode.GetChildNode("agent_concurrency_limit") is null) { _explicitNullValueAgentConcurrencyLimit = default!; _explicitNullProperties?.Remove("agent_concurrency_limit"); }
+            else if (parseNode.GetChildNode("agent_concurrency_limit") is { } nullNodeAgentConcurrencyLimit && nullNodeAgentConcurrencyLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentConcurrencyLimit = null;
+            if (parseNode.GetChildNode("bursting_enabled") is null) { _explicitNullValueBurstingEnabled = default!; _explicitNullProperties?.Remove("bursting_enabled"); }
+            else if (parseNode.GetChildNode("bursting_enabled") is { } nullNodeBurstingEnabled && nullNodeBurstingEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BurstingEnabled = null;
+            if (parseNode.GetChildNode("daily_limit") is null) { _explicitNullValueDailyLimit = default!; _explicitNullProperties?.Remove("daily_limit"); }
+            else if (parseNode.GetChildNode("daily_limit") is { } nullNodeDailyLimit && nullNodeDailyLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DailyLimit = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The maximum number of concurrent conversations. -1 indicates that there is no maximum</summary>
-        public int? AgentConcurrencyLimit { get => _explicitNullValueAgentConcurrencyLimit; set { _explicitNullValueAgentConcurrencyLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_concurrency_limit"); else _explicitNullProperties?.Remove("agent_concurrency_limit"); } }
+        public int? AgentConcurrencyLimit { get => _explicitNullValueAgentConcurrencyLimit; set { _explicitNullValueAgentConcurrencyLimit = value; AdditionalData?.Remove("agent_concurrency_limit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_concurrency_limit"); else _explicitNullProperties?.Remove("agent_concurrency_limit"); } }
         private int? _explicitNullValueAgentConcurrencyLimit = default!;
         /// <summary>Whether to enable bursting. If true, exceeding workspace concurrency limit will be allowed up to 3 times the limit. Calls will be charged at double rate when exceeding the limit.</summary>
-        public bool? BurstingEnabled { get => _explicitNullValueBurstingEnabled; set { _explicitNullValueBurstingEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bursting_enabled"); else _explicitNullProperties?.Remove("bursting_enabled"); } }
+        public bool? BurstingEnabled { get => _explicitNullValueBurstingEnabled; set { _explicitNullValueBurstingEnabled = value; AdditionalData?.Remove("bursting_enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bursting_enabled"); else _explicitNullProperties?.Remove("bursting_enabled"); } }
         private bool? _explicitNullValueBurstingEnabled = default!;
         /// <summary>The maximum number of conversations per day</summary>
-        public int? DailyLimit { get => _explicitNullValueDailyLimit; set { _explicitNullValueDailyLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("daily_limit"); else _explicitNullProperties?.Remove("daily_limit"); } }
+        public int? DailyLimit { get => _explicitNullValueDailyLimit; set { _explicitNullValueDailyLimit = value; AdditionalData?.Remove("daily_limit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("daily_limit"); else _explicitNullProperties?.Remove("daily_limit"); } }
         private int? _explicitNullValueDailyLimit = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentCallLimits"/> and sets the default values.

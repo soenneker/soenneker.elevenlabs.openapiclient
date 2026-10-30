@@ -17,13 +17,20 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("harassment") is { } nullNodeHarassment && nullNodeHarassment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Harassment = null;
-            if (parseNode.GetChildNode("medical_and_legal_information") is { } nullNodeMedicalAndLegalInformation && nullNodeMedicalAndLegalInformation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MedicalAndLegalInformation = null;
-            if (parseNode.GetChildNode("profanity") is { } nullNodeProfanity && nullNodeProfanity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Profanity = null;
-            if (parseNode.GetChildNode("religion_or_politics") is { } nullNodeReligionOrPolitics && nullNodeReligionOrPolitics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReligionOrPolitics = null;
-            if (parseNode.GetChildNode("self_harm") is { } nullNodeSelfHarm && nullNodeSelfHarm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SelfHarm = null;
-            if (parseNode.GetChildNode("sexual") is { } nullNodeSexual && nullNodeSexual.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sexual = null;
-            if (parseNode.GetChildNode("violence") is { } nullNodeViolence && nullNodeViolence.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Violence = null;
+            if (parseNode.GetChildNode("harassment") is null) { _explicitNullValueHarassment = default!; _explicitNullProperties?.Remove("harassment"); }
+            else if (parseNode.GetChildNode("harassment") is { } nullNodeHarassment && nullNodeHarassment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Harassment = null;
+            if (parseNode.GetChildNode("medical_and_legal_information") is null) { _explicitNullValueMedicalAndLegalInformation = default!; _explicitNullProperties?.Remove("medical_and_legal_information"); }
+            else if (parseNode.GetChildNode("medical_and_legal_information") is { } nullNodeMedicalAndLegalInformation && nullNodeMedicalAndLegalInformation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MedicalAndLegalInformation = null;
+            if (parseNode.GetChildNode("profanity") is null) { _explicitNullValueProfanity = default!; _explicitNullProperties?.Remove("profanity"); }
+            else if (parseNode.GetChildNode("profanity") is { } nullNodeProfanity && nullNodeProfanity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Profanity = null;
+            if (parseNode.GetChildNode("religion_or_politics") is null) { _explicitNullValueReligionOrPolitics = default!; _explicitNullProperties?.Remove("religion_or_politics"); }
+            else if (parseNode.GetChildNode("religion_or_politics") is { } nullNodeReligionOrPolitics && nullNodeReligionOrPolitics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReligionOrPolitics = null;
+            if (parseNode.GetChildNode("self_harm") is null) { _explicitNullValueSelfHarm = default!; _explicitNullProperties?.Remove("self_harm"); }
+            else if (parseNode.GetChildNode("self_harm") is { } nullNodeSelfHarm && nullNodeSelfHarm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SelfHarm = null;
+            if (parseNode.GetChildNode("sexual") is null) { _explicitNullValueSexual = default!; _explicitNullProperties?.Remove("sexual"); }
+            else if (parseNode.GetChildNode("sexual") is { } nullNodeSexual && nullNodeSexual.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sexual = null;
+            if (parseNode.GetChildNode("violence") is null) { _explicitNullValueViolence = default!; _explicitNullProperties?.Remove("violence"); }
+            else if (parseNode.GetChildNode("violence") is { } nullNodeViolence && nullNodeViolence.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Violence = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,71 +38,71 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The harassment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail? Harassment { get => _explicitNullValueHarassment; set { _explicitNullValueHarassment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("harassment"); else _explicitNullProperties?.Remove("harassment"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail? Harassment { get => _explicitNullValueHarassment; set { _explicitNullValueHarassment = value; AdditionalData?.Remove("harassment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("harassment"); else _explicitNullProperties?.Remove("harassment"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail? _explicitNullValueHarassment = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail Harassment { get => _explicitNullValueHarassment; set { _explicitNullValueHarassment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("harassment"); else _explicitNullProperties?.Remove("harassment"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail Harassment { get => _explicitNullValueHarassment; set { _explicitNullValueHarassment = value; AdditionalData?.Remove("harassment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("harassment"); else _explicitNullProperties?.Remove("harassment"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail _explicitNullValueHarassment = default!;
 #endif
         /// <summary>The medical_and_legal_information property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail? MedicalAndLegalInformation { get => _explicitNullValueMedicalAndLegalInformation; set { _explicitNullValueMedicalAndLegalInformation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("medical_and_legal_information"); else _explicitNullProperties?.Remove("medical_and_legal_information"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail? MedicalAndLegalInformation { get => _explicitNullValueMedicalAndLegalInformation; set { _explicitNullValueMedicalAndLegalInformation = value; AdditionalData?.Remove("medical_and_legal_information"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("medical_and_legal_information"); else _explicitNullProperties?.Remove("medical_and_legal_information"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail? _explicitNullValueMedicalAndLegalInformation = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail MedicalAndLegalInformation { get => _explicitNullValueMedicalAndLegalInformation; set { _explicitNullValueMedicalAndLegalInformation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("medical_and_legal_information"); else _explicitNullProperties?.Remove("medical_and_legal_information"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail MedicalAndLegalInformation { get => _explicitNullValueMedicalAndLegalInformation; set { _explicitNullValueMedicalAndLegalInformation = value; AdditionalData?.Remove("medical_and_legal_information"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("medical_and_legal_information"); else _explicitNullProperties?.Remove("medical_and_legal_information"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail _explicitNullValueMedicalAndLegalInformation = default!;
 #endif
         /// <summary>The profanity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail? Profanity { get => _explicitNullValueProfanity; set { _explicitNullValueProfanity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profanity"); else _explicitNullProperties?.Remove("profanity"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail? Profanity { get => _explicitNullValueProfanity; set { _explicitNullValueProfanity = value; AdditionalData?.Remove("profanity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profanity"); else _explicitNullProperties?.Remove("profanity"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail? _explicitNullValueProfanity = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail Profanity { get => _explicitNullValueProfanity; set { _explicitNullValueProfanity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profanity"); else _explicitNullProperties?.Remove("profanity"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail Profanity { get => _explicitNullValueProfanity; set { _explicitNullValueProfanity = value; AdditionalData?.Remove("profanity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profanity"); else _explicitNullProperties?.Remove("profanity"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail _explicitNullValueProfanity = default!;
 #endif
         /// <summary>The religion_or_politics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail? ReligionOrPolitics { get => _explicitNullValueReligionOrPolitics; set { _explicitNullValueReligionOrPolitics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("religion_or_politics"); else _explicitNullProperties?.Remove("religion_or_politics"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail? ReligionOrPolitics { get => _explicitNullValueReligionOrPolitics; set { _explicitNullValueReligionOrPolitics = value; AdditionalData?.Remove("religion_or_politics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("religion_or_politics"); else _explicitNullProperties?.Remove("religion_or_politics"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail? _explicitNullValueReligionOrPolitics = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail ReligionOrPolitics { get => _explicitNullValueReligionOrPolitics; set { _explicitNullValueReligionOrPolitics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("religion_or_politics"); else _explicitNullProperties?.Remove("religion_or_politics"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail ReligionOrPolitics { get => _explicitNullValueReligionOrPolitics; set { _explicitNullValueReligionOrPolitics = value; AdditionalData?.Remove("religion_or_politics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("religion_or_politics"); else _explicitNullProperties?.Remove("religion_or_politics"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail _explicitNullValueReligionOrPolitics = default!;
 #endif
         /// <summary>The self_harm property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail? SelfHarm { get => _explicitNullValueSelfHarm; set { _explicitNullValueSelfHarm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("self_harm"); else _explicitNullProperties?.Remove("self_harm"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail? SelfHarm { get => _explicitNullValueSelfHarm; set { _explicitNullValueSelfHarm = value; AdditionalData?.Remove("self_harm"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("self_harm"); else _explicitNullProperties?.Remove("self_harm"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail? _explicitNullValueSelfHarm = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail SelfHarm { get => _explicitNullValueSelfHarm; set { _explicitNullValueSelfHarm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("self_harm"); else _explicitNullProperties?.Remove("self_harm"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail SelfHarm { get => _explicitNullValueSelfHarm; set { _explicitNullValueSelfHarm = value; AdditionalData?.Remove("self_harm"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("self_harm"); else _explicitNullProperties?.Remove("self_harm"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail _explicitNullValueSelfHarm = default!;
 #endif
         /// <summary>The sexual property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail? Sexual { get => _explicitNullValueSexual; set { _explicitNullValueSexual = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sexual"); else _explicitNullProperties?.Remove("sexual"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail? Sexual { get => _explicitNullValueSexual; set { _explicitNullValueSexual = value; AdditionalData?.Remove("sexual"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sexual"); else _explicitNullProperties?.Remove("sexual"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail? _explicitNullValueSexual = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail Sexual { get => _explicitNullValueSexual; set { _explicitNullValueSexual = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sexual"); else _explicitNullProperties?.Remove("sexual"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail Sexual { get => _explicitNullValueSexual; set { _explicitNullValueSexual = value; AdditionalData?.Remove("sexual"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sexual"); else _explicitNullProperties?.Remove("sexual"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail _explicitNullValueSexual = default!;
 #endif
         /// <summary>The violence property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail? Violence { get => _explicitNullValueViolence; set { _explicitNullValueViolence = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("violence"); else _explicitNullProperties?.Remove("violence"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail? Violence { get => _explicitNullValueViolence; set { _explicitNullValueViolence = value; AdditionalData?.Remove("violence"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("violence"); else _explicitNullProperties?.Remove("violence"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail? _explicitNullValueViolence = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail Violence { get => _explicitNullValueViolence; set { _explicitNullValueViolence = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("violence"); else _explicitNullProperties?.Remove("violence"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail Violence { get => _explicitNullValueViolence; set { _explicitNullValueViolence = value; AdditionalData?.Remove("violence"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("violence"); else _explicitNullProperties?.Remove("violence"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail _explicitNullValueViolence = default!;
 #endif
         /// <summary>

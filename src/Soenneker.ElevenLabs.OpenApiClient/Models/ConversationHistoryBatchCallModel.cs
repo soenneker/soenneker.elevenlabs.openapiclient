@@ -17,9 +17,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("batch_call_id") is { } nullNodeBatchCallId && nullNodeBatchCallId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BatchCallId = null;
-            if (parseNode.GetChildNode("batch_call_recipient_id") is { } nullNodeBatchCallRecipientId && nullNodeBatchCallRecipientId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BatchCallRecipientId = null;
-            if (parseNode.GetChildNode("campaign") is { } nullNodeCampaign && nullNodeCampaign.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Campaign = null;
+            if (parseNode.GetChildNode("batch_call_id") is null) { _explicitNullValueBatchCallId = default!; _explicitNullProperties?.Remove("batch_call_id"); }
+            else if (parseNode.GetChildNode("batch_call_id") is { } nullNodeBatchCallId && nullNodeBatchCallId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BatchCallId = null;
+            if (parseNode.GetChildNode("batch_call_recipient_id") is null) { _explicitNullValueBatchCallRecipientId = default!; _explicitNullProperties?.Remove("batch_call_recipient_id"); }
+            else if (parseNode.GetChildNode("batch_call_recipient_id") is { } nullNodeBatchCallRecipientId && nullNodeBatchCallRecipientId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BatchCallRecipientId = null;
+            if (parseNode.GetChildNode("campaign") is null) { _explicitNullValueCampaign = default!; _explicitNullProperties?.Remove("campaign"); }
+            else if (parseNode.GetChildNode("campaign") is { } nullNodeCampaign && nullNodeCampaign.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Campaign = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The batch_call_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BatchCallId { get => _explicitNullValueBatchCallId; set { _explicitNullValueBatchCallId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("batch_call_id"); else _explicitNullProperties?.Remove("batch_call_id"); } }
+        public string? BatchCallId { get => _explicitNullValueBatchCallId; set { _explicitNullValueBatchCallId = value; AdditionalData?.Remove("batch_call_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("batch_call_id"); else _explicitNullProperties?.Remove("batch_call_id"); } }
         private string? _explicitNullValueBatchCallId = default!;
 #nullable restore
 #else
-        public string BatchCallId { get => _explicitNullValueBatchCallId; set { _explicitNullValueBatchCallId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("batch_call_id"); else _explicitNullProperties?.Remove("batch_call_id"); } }
+        public string BatchCallId { get => _explicitNullValueBatchCallId; set { _explicitNullValueBatchCallId = value; AdditionalData?.Remove("batch_call_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("batch_call_id"); else _explicitNullProperties?.Remove("batch_call_id"); } }
         private string _explicitNullValueBatchCallId = default!;
 #endif
         /// <summary>The batch_call_recipient_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BatchCallRecipientId { get => _explicitNullValueBatchCallRecipientId; set { _explicitNullValueBatchCallRecipientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("batch_call_recipient_id"); else _explicitNullProperties?.Remove("batch_call_recipient_id"); } }
+        public string? BatchCallRecipientId { get => _explicitNullValueBatchCallRecipientId; set { _explicitNullValueBatchCallRecipientId = value; AdditionalData?.Remove("batch_call_recipient_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("batch_call_recipient_id"); else _explicitNullProperties?.Remove("batch_call_recipient_id"); } }
         private string? _explicitNullValueBatchCallRecipientId = default!;
 #nullable restore
 #else
-        public string BatchCallRecipientId { get => _explicitNullValueBatchCallRecipientId; set { _explicitNullValueBatchCallRecipientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("batch_call_recipient_id"); else _explicitNullProperties?.Remove("batch_call_recipient_id"); } }
+        public string BatchCallRecipientId { get => _explicitNullValueBatchCallRecipientId; set { _explicitNullValueBatchCallRecipientId = value; AdditionalData?.Remove("batch_call_recipient_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("batch_call_recipient_id"); else _explicitNullProperties?.Remove("batch_call_recipient_id"); } }
         private string _explicitNullValueBatchCallRecipientId = default!;
 #endif
         /// <summary>The campaign property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallingCampaignInformation? Campaign { get => _explicitNullValueCampaign; set { _explicitNullValueCampaign = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("campaign"); else _explicitNullProperties?.Remove("campaign"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallingCampaignInformation? Campaign { get => _explicitNullValueCampaign; set { _explicitNullValueCampaign = value; AdditionalData?.Remove("campaign"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("campaign"); else _explicitNullProperties?.Remove("campaign"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallingCampaignInformation? _explicitNullValueCampaign = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallingCampaignInformation Campaign { get => _explicitNullValueCampaign; set { _explicitNullValueCampaign = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("campaign"); else _explicitNullProperties?.Remove("campaign"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallingCampaignInformation Campaign { get => _explicitNullValueCampaign; set { _explicitNullValueCampaign = value; AdditionalData?.Remove("campaign"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("campaign"); else _explicitNullProperties?.Remove("campaign"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallingCampaignInformation _explicitNullValueCampaign = default!;
 #endif
         /// <summary>

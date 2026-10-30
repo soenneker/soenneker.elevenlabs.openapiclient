@@ -17,27 +17,30 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("edge_location") is { } nullNodeEdgeLocation && nullNodeEdgeLocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeLocation = null;
-            if (parseNode.GetChildNode("region_id") is { } nullNodeRegionId && nullNodeRegionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegionId = null;
-            if (parseNode.GetChildNode("token") is { } nullNodeToken && nullNodeToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Token = null;
+            if (parseNode.GetChildNode("edge_location") is null) { _explicitNullValueEdgeLocation = default!; _explicitNullProperties?.Remove("edge_location"); }
+            else if (parseNode.GetChildNode("edge_location") is { } nullNodeEdgeLocation && nullNodeEdgeLocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeLocation = null;
+            if (parseNode.GetChildNode("region_id") is null) { _explicitNullValueRegionId = default!; _explicitNullProperties?.Remove("region_id"); }
+            else if (parseNode.GetChildNode("region_id") is { } nullNodeRegionId && nullNodeRegionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegionId = null;
+            if (parseNode.GetChildNode("token") is null) { _explicitNullValueToken = default!; _explicitNullProperties?.Remove("token"); }
+            else if (parseNode.GetChildNode("token") is { } nullNodeToken && nullNodeToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Token = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Edge location for this region</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioEdgeLocation? EdgeLocation { get => _explicitNullValueEdgeLocation; set { _explicitNullValueEdgeLocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edge_location"); else _explicitNullProperties?.Remove("edge_location"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioEdgeLocation? EdgeLocation { get => _explicitNullValueEdgeLocation; set { _explicitNullValueEdgeLocation = value; AdditionalData?.Remove("edge_location"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edge_location"); else _explicitNullProperties?.Remove("edge_location"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioEdgeLocation? _explicitNullValueEdgeLocation = default!;
         /// <summary>Region ID</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioRegionId? RegionId { get => _explicitNullValueRegionId; set { _explicitNullValueRegionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region_id"); else _explicitNullProperties?.Remove("region_id"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioRegionId? RegionId { get => _explicitNullValueRegionId; set { _explicitNullValueRegionId = value; AdditionalData?.Remove("region_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region_id"); else _explicitNullProperties?.Remove("region_id"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioRegionId? _explicitNullValueRegionId = default!;
         /// <summary>Auth Token for this region</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Token { get => _explicitNullValueToken; set { _explicitNullValueToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token"); else _explicitNullProperties?.Remove("token"); } }
+        public string? Token { get => _explicitNullValueToken; set { _explicitNullValueToken = value; AdditionalData?.Remove("token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token"); else _explicitNullProperties?.Remove("token"); } }
         private string? _explicitNullValueToken = default!;
 #nullable restore
 #else
-        public string Token { get => _explicitNullValueToken; set { _explicitNullValueToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token"); else _explicitNullProperties?.Remove("token"); } }
+        public string Token { get => _explicitNullValueToken; set { _explicitNullValueToken = value; AdditionalData?.Remove("token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token"); else _explicitNullProperties?.Remove("token"); } }
         private string _explicitNullValueToken = default!;
 #endif
         /// <summary>
@@ -65,8 +68,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "edge_location", n => { EdgeLocation = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioEdgeLocation>(); } },
-                { "region_id", n => { RegionId = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioRegionId>(); } },
+                { "edge_location", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioEdgeLocation>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEdgeLocation = default; _explicitNullProperties?.Remove("edge_location"); AdditionalData["edge_location"] = unknown; } else { EdgeLocation = parsed; AdditionalData.Remove("edge_location"); } } },
+                { "region_id", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioRegionId>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRegionId = default; _explicitNullProperties?.Remove("region_id"); AdditionalData["region_id"] = unknown; } else { RegionId = parsed; AdditionalData.Remove("region_id"); } } },
                 { "token", n => { Token = n.GetStringValue(); } },
             };
         }

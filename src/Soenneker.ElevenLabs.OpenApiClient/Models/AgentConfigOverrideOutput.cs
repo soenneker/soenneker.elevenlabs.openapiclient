@@ -17,10 +17,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("first_message") is { } nullNodeFirstMessage && nullNodeFirstMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstMessage = null;
-            if (parseNode.GetChildNode("language") is { } nullNodeLanguage && nullNodeLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Language = null;
-            if (parseNode.GetChildNode("max_conversation_duration_message") is { } nullNodeMaxConversationDurationMessage && nullNodeMaxConversationDurationMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxConversationDurationMessage = null;
-            if (parseNode.GetChildNode("prompt") is { } nullNodePrompt && nullNodePrompt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Prompt = null;
+            if (parseNode.GetChildNode("first_message") is null) { _explicitNullValueFirstMessage = default!; _explicitNullProperties?.Remove("first_message"); }
+            else if (parseNode.GetChildNode("first_message") is { } nullNodeFirstMessage && nullNodeFirstMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstMessage = null;
+            if (parseNode.GetChildNode("language") is null) { _explicitNullValueLanguage = default!; _explicitNullProperties?.Remove("language"); }
+            else if (parseNode.GetChildNode("language") is { } nullNodeLanguage && nullNodeLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Language = null;
+            if (parseNode.GetChildNode("max_conversation_duration_message") is null) { _explicitNullValueMaxConversationDurationMessage = default!; _explicitNullProperties?.Remove("max_conversation_duration_message"); }
+            else if (parseNode.GetChildNode("max_conversation_duration_message") is { } nullNodeMaxConversationDurationMessage && nullNodeMaxConversationDurationMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxConversationDurationMessage = null;
+            if (parseNode.GetChildNode("prompt") is null) { _explicitNullValuePrompt = default!; _explicitNullProperties?.Remove("prompt"); }
+            else if (parseNode.GetChildNode("prompt") is { } nullNodePrompt && nullNodePrompt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Prompt = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,41 +32,41 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>If non-empty, the first message the agent will say. If empty, the agent waits for the user to start the discussion.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FirstMessage { get => _explicitNullValueFirstMessage; set { _explicitNullValueFirstMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_message"); else _explicitNullProperties?.Remove("first_message"); } }
+        public string? FirstMessage { get => _explicitNullValueFirstMessage; set { _explicitNullValueFirstMessage = value; AdditionalData?.Remove("first_message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_message"); else _explicitNullProperties?.Remove("first_message"); } }
         private string? _explicitNullValueFirstMessage = default!;
 #nullable restore
 #else
-        public string FirstMessage { get => _explicitNullValueFirstMessage; set { _explicitNullValueFirstMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_message"); else _explicitNullProperties?.Remove("first_message"); } }
+        public string FirstMessage { get => _explicitNullValueFirstMessage; set { _explicitNullValueFirstMessage = value; AdditionalData?.Remove("first_message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_message"); else _explicitNullProperties?.Remove("first_message"); } }
         private string _explicitNullValueFirstMessage = default!;
 #endif
         /// <summary>Language of the agent - used for ASR and TTS</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        public string? Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; AdditionalData?.Remove("language"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
         private string? _explicitNullValueLanguage = default!;
 #nullable restore
 #else
-        public string Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        public string Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; AdditionalData?.Remove("language"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
         private string _explicitNullValueLanguage = default!;
 #endif
         /// <summary>If non-empty, the message the agent will send when max conversation duration is reached.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MaxConversationDurationMessage { get => _explicitNullValueMaxConversationDurationMessage; set { _explicitNullValueMaxConversationDurationMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_conversation_duration_message"); else _explicitNullProperties?.Remove("max_conversation_duration_message"); } }
+        public string? MaxConversationDurationMessage { get => _explicitNullValueMaxConversationDurationMessage; set { _explicitNullValueMaxConversationDurationMessage = value; AdditionalData?.Remove("max_conversation_duration_message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_conversation_duration_message"); else _explicitNullProperties?.Remove("max_conversation_duration_message"); } }
         private string? _explicitNullValueMaxConversationDurationMessage = default!;
 #nullable restore
 #else
-        public string MaxConversationDurationMessage { get => _explicitNullValueMaxConversationDurationMessage; set { _explicitNullValueMaxConversationDurationMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_conversation_duration_message"); else _explicitNullProperties?.Remove("max_conversation_duration_message"); } }
+        public string MaxConversationDurationMessage { get => _explicitNullValueMaxConversationDurationMessage; set { _explicitNullValueMaxConversationDurationMessage = value; AdditionalData?.Remove("max_conversation_duration_message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_conversation_duration_message"); else _explicitNullProperties?.Remove("max_conversation_duration_message"); } }
         private string _explicitNullValueMaxConversationDurationMessage = default!;
 #endif
         /// <summary>The prompt for the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOverrideOutput? Prompt { get => _explicitNullValuePrompt; set { _explicitNullValuePrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt"); else _explicitNullProperties?.Remove("prompt"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOverrideOutput? Prompt { get => _explicitNullValuePrompt; set { _explicitNullValuePrompt = value; AdditionalData?.Remove("prompt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt"); else _explicitNullProperties?.Remove("prompt"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOverrideOutput? _explicitNullValuePrompt = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOverrideOutput Prompt { get => _explicitNullValuePrompt; set { _explicitNullValuePrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt"); else _explicitNullProperties?.Remove("prompt"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOverrideOutput Prompt { get => _explicitNullValuePrompt; set { _explicitNullValuePrompt = value; AdditionalData?.Remove("prompt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt"); else _explicitNullProperties?.Remove("prompt"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOverrideOutput _explicitNullValuePrompt = default!;
 #endif
         /// <summary>

@@ -17,9 +17,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("batch_calls") is { } nullNodeBatchCalls && nullNodeBatchCalls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BatchCalls = null;
-            if (parseNode.GetChildNode("has_more") is { } nullNodeHasMore && nullNodeHasMore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasMore = null;
-            if (parseNode.GetChildNode("next_doc") is { } nullNodeNextDoc && nullNodeNextDoc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextDoc = null;
+            if (parseNode.GetChildNode("batch_calls") is null) { _explicitNullValueBatchCalls = default!; _explicitNullProperties?.Remove("batch_calls"); }
+            else if (parseNode.GetChildNode("batch_calls") is { } nullNodeBatchCalls && nullNodeBatchCalls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BatchCalls = null;
+            if (parseNode.GetChildNode("has_more") is null) { _explicitNullValueHasMore = default!; _explicitNullProperties?.Remove("has_more"); }
+            else if (parseNode.GetChildNode("has_more") is { } nullNodeHasMore && nullNodeHasMore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasMore = null;
+            if (parseNode.GetChildNode("next_doc") is null) { _explicitNullValueNextDoc = default!; _explicitNullProperties?.Remove("next_doc"); }
+            else if (parseNode.GetChildNode("next_doc") is { } nullNodeNextDoc && nullNodeNextDoc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextDoc = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,24 +30,24 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The batch_calls property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallResponse>? BatchCalls { get => _explicitNullValueBatchCalls; set { _explicitNullValueBatchCalls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("batch_calls"); else _explicitNullProperties?.Remove("batch_calls"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallResponse>? BatchCalls { get => _explicitNullValueBatchCalls; set { _explicitNullValueBatchCalls = value; AdditionalData?.Remove("batch_calls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("batch_calls"); else _explicitNullProperties?.Remove("batch_calls"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallResponse>? _explicitNullValueBatchCalls = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallResponse> BatchCalls { get => _explicitNullValueBatchCalls; set { _explicitNullValueBatchCalls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("batch_calls"); else _explicitNullProperties?.Remove("batch_calls"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallResponse> BatchCalls { get => _explicitNullValueBatchCalls; set { _explicitNullValueBatchCalls = value; AdditionalData?.Remove("batch_calls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("batch_calls"); else _explicitNullProperties?.Remove("batch_calls"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallResponse> _explicitNullValueBatchCalls = default!;
 #endif
         /// <summary>Whether there are more batch calls to paginate through</summary>
-        public bool? HasMore { get => _explicitNullValueHasMore; set { _explicitNullValueHasMore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_more"); else _explicitNullProperties?.Remove("has_more"); } }
+        public bool? HasMore { get => _explicitNullValueHasMore; set { _explicitNullValueHasMore = value; AdditionalData?.Remove("has_more"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_more"); else _explicitNullProperties?.Remove("has_more"); } }
         private bool? _explicitNullValueHasMore = default!;
         /// <summary>The next document, used to paginate through the batch calls</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NextDoc { get => _explicitNullValueNextDoc; set { _explicitNullValueNextDoc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_doc"); else _explicitNullProperties?.Remove("next_doc"); } }
+        public string? NextDoc { get => _explicitNullValueNextDoc; set { _explicitNullValueNextDoc = value; AdditionalData?.Remove("next_doc"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_doc"); else _explicitNullProperties?.Remove("next_doc"); } }
         private string? _explicitNullValueNextDoc = default!;
 #nullable restore
 #else
-        public string NextDoc { get => _explicitNullValueNextDoc; set { _explicitNullValueNextDoc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_doc"); else _explicitNullProperties?.Remove("next_doc"); } }
+        public string NextDoc { get => _explicitNullValueNextDoc; set { _explicitNullValueNextDoc = value; AdditionalData?.Remove("next_doc"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_doc"); else _explicitNullProperties?.Remove("next_doc"); } }
         private string _explicitNullValueNextDoc = default!;
 #endif
         /// <summary>

@@ -17,13 +17,20 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("agent_id") is { } nullNodeAgentId && nullNodeAgentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentId = null;
-            if (parseNode.GetChildNode("conversation_initiation_client_data") is { } nullNodeConversationInitiationClientData && nullNodeConversationInitiationClientData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationInitiationClientData = null;
-            if (parseNode.GetChildNode("template_language_code") is { } nullNodeTemplateLanguageCode && nullNodeTemplateLanguageCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TemplateLanguageCode = null;
-            if (parseNode.GetChildNode("template_name") is { } nullNodeTemplateName && nullNodeTemplateName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TemplateName = null;
-            if (parseNode.GetChildNode("template_params") is { } nullNodeTemplateParams && nullNodeTemplateParams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TemplateParams = null;
-            if (parseNode.GetChildNode("whatsapp_phone_number_id") is { } nullNodeWhatsappPhoneNumberId && nullNodeWhatsappPhoneNumberId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WhatsappPhoneNumberId = null;
-            if (parseNode.GetChildNode("whatsapp_user_id") is { } nullNodeWhatsappUserId && nullNodeWhatsappUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WhatsappUserId = null;
+            if (parseNode.GetChildNode("agent_id") is null) { _explicitNullValueAgentId = default!; _explicitNullProperties?.Remove("agent_id"); }
+            else if (parseNode.GetChildNode("agent_id") is { } nullNodeAgentId && nullNodeAgentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentId = null;
+            if (parseNode.GetChildNode("conversation_initiation_client_data") is null) { _explicitNullValueConversationInitiationClientData = default!; _explicitNullProperties?.Remove("conversation_initiation_client_data"); }
+            else if (parseNode.GetChildNode("conversation_initiation_client_data") is { } nullNodeConversationInitiationClientData && nullNodeConversationInitiationClientData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationInitiationClientData = null;
+            if (parseNode.GetChildNode("template_language_code") is null) { _explicitNullValueTemplateLanguageCode = default!; _explicitNullProperties?.Remove("template_language_code"); }
+            else if (parseNode.GetChildNode("template_language_code") is { } nullNodeTemplateLanguageCode && nullNodeTemplateLanguageCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TemplateLanguageCode = null;
+            if (parseNode.GetChildNode("template_name") is null) { _explicitNullValueTemplateName = default!; _explicitNullProperties?.Remove("template_name"); }
+            else if (parseNode.GetChildNode("template_name") is { } nullNodeTemplateName && nullNodeTemplateName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TemplateName = null;
+            if (parseNode.GetChildNode("template_params") is null) { _explicitNullValueTemplateParams = default!; _explicitNullProperties?.Remove("template_params"); }
+            else if (parseNode.GetChildNode("template_params") is { } nullNodeTemplateParams && nullNodeTemplateParams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TemplateParams = null;
+            if (parseNode.GetChildNode("whatsapp_phone_number_id") is null) { _explicitNullValueWhatsappPhoneNumberId = default!; _explicitNullProperties?.Remove("whatsapp_phone_number_id"); }
+            else if (parseNode.GetChildNode("whatsapp_phone_number_id") is { } nullNodeWhatsappPhoneNumberId && nullNodeWhatsappPhoneNumberId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WhatsappPhoneNumberId = null;
+            if (parseNode.GetChildNode("whatsapp_user_id") is null) { _explicitNullValueWhatsappUserId = default!; _explicitNullProperties?.Remove("whatsapp_user_id"); }
+            else if (parseNode.GetChildNode("whatsapp_user_id") is { } nullNodeWhatsappUserId && nullNodeWhatsappUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WhatsappUserId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,71 +38,71 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The agent_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
+        public string? AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; AdditionalData?.Remove("agent_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
         private string? _explicitNullValueAgentId = default!;
 #nullable restore
 #else
-        public string AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
+        public string AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; AdditionalData?.Remove("agent_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
         private string _explicitNullValueAgentId = default!;
 #endif
         /// <summary>The conversation_initiation_client_data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestInput? ConversationInitiationClientData { get => _explicitNullValueConversationInitiationClientData; set { _explicitNullValueConversationInitiationClientData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_initiation_client_data"); else _explicitNullProperties?.Remove("conversation_initiation_client_data"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestInput? ConversationInitiationClientData { get => _explicitNullValueConversationInitiationClientData; set { _explicitNullValueConversationInitiationClientData = value; AdditionalData?.Remove("conversation_initiation_client_data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_initiation_client_data"); else _explicitNullProperties?.Remove("conversation_initiation_client_data"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestInput? _explicitNullValueConversationInitiationClientData = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestInput ConversationInitiationClientData { get => _explicitNullValueConversationInitiationClientData; set { _explicitNullValueConversationInitiationClientData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_initiation_client_data"); else _explicitNullProperties?.Remove("conversation_initiation_client_data"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestInput ConversationInitiationClientData { get => _explicitNullValueConversationInitiationClientData; set { _explicitNullValueConversationInitiationClientData = value; AdditionalData?.Remove("conversation_initiation_client_data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_initiation_client_data"); else _explicitNullProperties?.Remove("conversation_initiation_client_data"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestInput _explicitNullValueConversationInitiationClientData = default!;
 #endif
         /// <summary>The template_language_code property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TemplateLanguageCode { get => _explicitNullValueTemplateLanguageCode; set { _explicitNullValueTemplateLanguageCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("template_language_code"); else _explicitNullProperties?.Remove("template_language_code"); } }
+        public string? TemplateLanguageCode { get => _explicitNullValueTemplateLanguageCode; set { _explicitNullValueTemplateLanguageCode = value; AdditionalData?.Remove("template_language_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("template_language_code"); else _explicitNullProperties?.Remove("template_language_code"); } }
         private string? _explicitNullValueTemplateLanguageCode = default!;
 #nullable restore
 #else
-        public string TemplateLanguageCode { get => _explicitNullValueTemplateLanguageCode; set { _explicitNullValueTemplateLanguageCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("template_language_code"); else _explicitNullProperties?.Remove("template_language_code"); } }
+        public string TemplateLanguageCode { get => _explicitNullValueTemplateLanguageCode; set { _explicitNullValueTemplateLanguageCode = value; AdditionalData?.Remove("template_language_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("template_language_code"); else _explicitNullProperties?.Remove("template_language_code"); } }
         private string _explicitNullValueTemplateLanguageCode = default!;
 #endif
         /// <summary>The template_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TemplateName { get => _explicitNullValueTemplateName; set { _explicitNullValueTemplateName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("template_name"); else _explicitNullProperties?.Remove("template_name"); } }
+        public string? TemplateName { get => _explicitNullValueTemplateName; set { _explicitNullValueTemplateName = value; AdditionalData?.Remove("template_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("template_name"); else _explicitNullProperties?.Remove("template_name"); } }
         private string? _explicitNullValueTemplateName = default!;
 #nullable restore
 #else
-        public string TemplateName { get => _explicitNullValueTemplateName; set { _explicitNullValueTemplateName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("template_name"); else _explicitNullProperties?.Remove("template_name"); } }
+        public string TemplateName { get => _explicitNullValueTemplateName; set { _explicitNullValueTemplateName = value; AdditionalData?.Remove("template_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("template_name"); else _explicitNullProperties?.Remove("template_name"); } }
         private string _explicitNullValueTemplateName = default!;
 #endif
         /// <summary>The template_params property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodySendAnOutboundMessageViaWhatsAppV1ConvaiWhatsappOutboundMessagePostTemplateParamsItem>? TemplateParams { get => _explicitNullValueTemplateParams; set { _explicitNullValueTemplateParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("template_params"); else _explicitNullProperties?.Remove("template_params"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodySendAnOutboundMessageViaWhatsAppV1ConvaiWhatsappOutboundMessagePostTemplateParamsItem>? TemplateParams { get => _explicitNullValueTemplateParams; set { _explicitNullValueTemplateParams = value; AdditionalData?.Remove("template_params"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("template_params"); else _explicitNullProperties?.Remove("template_params"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodySendAnOutboundMessageViaWhatsAppV1ConvaiWhatsappOutboundMessagePostTemplateParamsItem>? _explicitNullValueTemplateParams = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodySendAnOutboundMessageViaWhatsAppV1ConvaiWhatsappOutboundMessagePostTemplateParamsItem> TemplateParams { get => _explicitNullValueTemplateParams; set { _explicitNullValueTemplateParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("template_params"); else _explicitNullProperties?.Remove("template_params"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodySendAnOutboundMessageViaWhatsAppV1ConvaiWhatsappOutboundMessagePostTemplateParamsItem> TemplateParams { get => _explicitNullValueTemplateParams; set { _explicitNullValueTemplateParams = value; AdditionalData?.Remove("template_params"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("template_params"); else _explicitNullProperties?.Remove("template_params"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodySendAnOutboundMessageViaWhatsAppV1ConvaiWhatsappOutboundMessagePostTemplateParamsItem> _explicitNullValueTemplateParams = default!;
 #endif
         /// <summary>The whatsapp_phone_number_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WhatsappPhoneNumberId { get => _explicitNullValueWhatsappPhoneNumberId; set { _explicitNullValueWhatsappPhoneNumberId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whatsapp_phone_number_id"); else _explicitNullProperties?.Remove("whatsapp_phone_number_id"); } }
+        public string? WhatsappPhoneNumberId { get => _explicitNullValueWhatsappPhoneNumberId; set { _explicitNullValueWhatsappPhoneNumberId = value; AdditionalData?.Remove("whatsapp_phone_number_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whatsapp_phone_number_id"); else _explicitNullProperties?.Remove("whatsapp_phone_number_id"); } }
         private string? _explicitNullValueWhatsappPhoneNumberId = default!;
 #nullable restore
 #else
-        public string WhatsappPhoneNumberId { get => _explicitNullValueWhatsappPhoneNumberId; set { _explicitNullValueWhatsappPhoneNumberId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whatsapp_phone_number_id"); else _explicitNullProperties?.Remove("whatsapp_phone_number_id"); } }
+        public string WhatsappPhoneNumberId { get => _explicitNullValueWhatsappPhoneNumberId; set { _explicitNullValueWhatsappPhoneNumberId = value; AdditionalData?.Remove("whatsapp_phone_number_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whatsapp_phone_number_id"); else _explicitNullProperties?.Remove("whatsapp_phone_number_id"); } }
         private string _explicitNullValueWhatsappPhoneNumberId = default!;
 #endif
         /// <summary>The whatsapp_user_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WhatsappUserId { get => _explicitNullValueWhatsappUserId; set { _explicitNullValueWhatsappUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whatsapp_user_id"); else _explicitNullProperties?.Remove("whatsapp_user_id"); } }
+        public string? WhatsappUserId { get => _explicitNullValueWhatsappUserId; set { _explicitNullValueWhatsappUserId = value; AdditionalData?.Remove("whatsapp_user_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whatsapp_user_id"); else _explicitNullProperties?.Remove("whatsapp_user_id"); } }
         private string? _explicitNullValueWhatsappUserId = default!;
 #nullable restore
 #else
-        public string WhatsappUserId { get => _explicitNullValueWhatsappUserId; set { _explicitNullValueWhatsappUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whatsapp_user_id"); else _explicitNullProperties?.Remove("whatsapp_user_id"); } }
+        public string WhatsappUserId { get => _explicitNullValueWhatsappUserId; set { _explicitNullValueWhatsappUserId = value; AdditionalData?.Remove("whatsapp_user_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whatsapp_user_id"); else _explicitNullProperties?.Remove("whatsapp_user_id"); } }
         private string _explicitNullValueWhatsappUserId = default!;
 #endif
         /// <summary>

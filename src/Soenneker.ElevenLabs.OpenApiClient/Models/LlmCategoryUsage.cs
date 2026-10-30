@@ -17,8 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("initiated_generation") is { } nullNodeInitiatedGeneration && nullNodeInitiatedGeneration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InitiatedGeneration = null;
-            if (parseNode.GetChildNode("irreversible_generation") is { } nullNodeIrreversibleGeneration && nullNodeIrreversibleGeneration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IrreversibleGeneration = null;
+            if (parseNode.GetChildNode("initiated_generation") is null) { _explicitNullValueInitiatedGeneration = default!; _explicitNullProperties?.Remove("initiated_generation"); }
+            else if (parseNode.GetChildNode("initiated_generation") is { } nullNodeInitiatedGeneration && nullNodeInitiatedGeneration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InitiatedGeneration = null;
+            if (parseNode.GetChildNode("irreversible_generation") is null) { _explicitNullValueIrreversibleGeneration = default!; _explicitNullProperties?.Remove("irreversible_generation"); }
+            else if (parseNode.GetChildNode("irreversible_generation") is { } nullNodeIrreversibleGeneration && nullNodeIrreversibleGeneration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IrreversibleGeneration = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The initiated_generation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageOutput? InitiatedGeneration { get => _explicitNullValueInitiatedGeneration; set { _explicitNullValueInitiatedGeneration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("initiated_generation"); else _explicitNullProperties?.Remove("initiated_generation"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageOutput? InitiatedGeneration { get => _explicitNullValueInitiatedGeneration; set { _explicitNullValueInitiatedGeneration = value; AdditionalData?.Remove("initiated_generation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("initiated_generation"); else _explicitNullProperties?.Remove("initiated_generation"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageOutput? _explicitNullValueInitiatedGeneration = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageOutput InitiatedGeneration { get => _explicitNullValueInitiatedGeneration; set { _explicitNullValueInitiatedGeneration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("initiated_generation"); else _explicitNullProperties?.Remove("initiated_generation"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageOutput InitiatedGeneration { get => _explicitNullValueInitiatedGeneration; set { _explicitNullValueInitiatedGeneration = value; AdditionalData?.Remove("initiated_generation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("initiated_generation"); else _explicitNullProperties?.Remove("initiated_generation"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageOutput _explicitNullValueInitiatedGeneration = default!;
 #endif
         /// <summary>The irreversible_generation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageOutput? IrreversibleGeneration { get => _explicitNullValueIrreversibleGeneration; set { _explicitNullValueIrreversibleGeneration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("irreversible_generation"); else _explicitNullProperties?.Remove("irreversible_generation"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageOutput? IrreversibleGeneration { get => _explicitNullValueIrreversibleGeneration; set { _explicitNullValueIrreversibleGeneration = value; AdditionalData?.Remove("irreversible_generation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("irreversible_generation"); else _explicitNullProperties?.Remove("irreversible_generation"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageOutput? _explicitNullValueIrreversibleGeneration = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageOutput IrreversibleGeneration { get => _explicitNullValueIrreversibleGeneration; set { _explicitNullValueIrreversibleGeneration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("irreversible_generation"); else _explicitNullProperties?.Remove("irreversible_generation"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageOutput IrreversibleGeneration { get => _explicitNullValueIrreversibleGeneration; set { _explicitNullValueIrreversibleGeneration = value; AdditionalData?.Remove("irreversible_generation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("irreversible_generation"); else _explicitNullProperties?.Remove("irreversible_generation"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageOutput _explicitNullValueIrreversibleGeneration = default!;
 #endif
         /// <summary>

@@ -17,35 +17,40 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("duration_seconds") is { } nullNodeDurationSeconds && nullNodeDurationSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DurationSeconds = null;
-            if (parseNode.GetChildNode("loop") is { } nullNodeLoop && nullNodeLoop.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Loop = null;
-            if (parseNode.GetChildNode("model_id") is { } nullNodeModelId && nullNodeModelId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModelId = null;
-            if (parseNode.GetChildNode("prompt_influence") is { } nullNodePromptInfluence && nullNodePromptInfluence.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PromptInfluence = null;
-            if (parseNode.GetChildNode("text") is { } nullNodeText && nullNodeText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Text = null;
+            if (parseNode.GetChildNode("duration_seconds") is null) { _explicitNullValueDurationSeconds = default!; _explicitNullProperties?.Remove("duration_seconds"); }
+            else if (parseNode.GetChildNode("duration_seconds") is { } nullNodeDurationSeconds && nullNodeDurationSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DurationSeconds = null;
+            if (parseNode.GetChildNode("loop") is null) { _explicitNullValueLoop = default!; _explicitNullProperties?.Remove("loop"); }
+            else if (parseNode.GetChildNode("loop") is { } nullNodeLoop && nullNodeLoop.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Loop = null;
+            if (parseNode.GetChildNode("model_id") is null) { _explicitNullValueModelId = default!; _explicitNullProperties?.Remove("model_id"); }
+            else if (parseNode.GetChildNode("model_id") is { } nullNodeModelId && nullNodeModelId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModelId = null;
+            if (parseNode.GetChildNode("prompt_influence") is null) { _explicitNullValuePromptInfluence = default!; _explicitNullProperties?.Remove("prompt_influence"); }
+            else if (parseNode.GetChildNode("prompt_influence") is { } nullNodePromptInfluence && nullNodePromptInfluence.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PromptInfluence = null;
+            if (parseNode.GetChildNode("text") is null) { _explicitNullValueText = default!; _explicitNullProperties?.Remove("text"); }
+            else if (parseNode.GetChildNode("text") is { } nullNodeText && nullNodeText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Text = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The duration of the sound which will be generated in seconds. Must be at least 0.5 and at most 30. If set to None we will guess the optimal duration using the prompt. Defaults to None.</summary>
-        public double? DurationSeconds { get => _explicitNullValueDurationSeconds; set { _explicitNullValueDurationSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration_seconds"); else _explicitNullProperties?.Remove("duration_seconds"); } }
+        public double? DurationSeconds { get => _explicitNullValueDurationSeconds; set { _explicitNullValueDurationSeconds = value; AdditionalData?.Remove("duration_seconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration_seconds"); else _explicitNullProperties?.Remove("duration_seconds"); } }
         private double? _explicitNullValueDurationSeconds = default!;
         /// <summary>Whether to create a sound effect that loops smoothly.</summary>
-        public bool? Loop { get => _explicitNullValueLoop; set { _explicitNullValueLoop = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loop"); else _explicitNullProperties?.Remove("loop"); } }
+        public bool? Loop { get => _explicitNullValueLoop; set { _explicitNullValueLoop = value; AdditionalData?.Remove("loop"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loop"); else _explicitNullProperties?.Remove("loop"); } }
         private bool? _explicitNullValueLoop = default!;
         /// <summary>The model_id property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SfxModelId? ModelId { get => _explicitNullValueModelId; set { _explicitNullValueModelId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model_id"); else _explicitNullProperties?.Remove("model_id"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SfxModelId? ModelId { get => _explicitNullValueModelId; set { _explicitNullValueModelId = value; AdditionalData?.Remove("model_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model_id"); else _explicitNullProperties?.Remove("model_id"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.SfxModelId? _explicitNullValueModelId = default!;
         /// <summary>A higher prompt influence makes your generation follow the prompt more closely while also making generations less variable. Must be a value between 0 and 1. Defaults to 0.3.</summary>
-        public double? PromptInfluence { get => _explicitNullValuePromptInfluence; set { _explicitNullValuePromptInfluence = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt_influence"); else _explicitNullProperties?.Remove("prompt_influence"); } }
+        public double? PromptInfluence { get => _explicitNullValuePromptInfluence; set { _explicitNullValuePromptInfluence = value; AdditionalData?.Remove("prompt_influence"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt_influence"); else _explicitNullProperties?.Remove("prompt_influence"); } }
         private double? _explicitNullValuePromptInfluence = default!;
         /// <summary>The text that will get converted into a sound effect.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Text { get => _explicitNullValueText; set { _explicitNullValueText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
+        public string? Text { get => _explicitNullValueText; set { _explicitNullValueText = value; AdditionalData?.Remove("text"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
         private string? _explicitNullValueText = default!;
 #nullable restore
 #else
-        public string Text { get => _explicitNullValueText; set { _explicitNullValueText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
+        public string Text { get => _explicitNullValueText; set { _explicitNullValueText = value; AdditionalData?.Remove("text"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
         private string _explicitNullValueText = default!;
 #endif
         /// <summary>
@@ -77,7 +82,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "duration_seconds", n => { DurationSeconds = n.GetDoubleValue(); } },
                 { "loop", n => { Loop = n.GetBoolValue(); } },
-                { "model_id", n => { ModelId = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SfxModelId>(); } },
+                { "model_id", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SfxModelId>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueModelId = default; _explicitNullProperties?.Remove("model_id"); AdditionalData["model_id"] = unknown; } else { ModelId = parsed; AdditionalData.Remove("model_id"); } } },
                 { "prompt_influence", n => { PromptInfluence = n.GetDoubleValue(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
             };

@@ -17,9 +17,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("target_language") is { } nullNodeTargetLanguage && nullNodeTargetLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetLanguage = null;
-            if (parseNode.GetChildNode("translations") is { } nullNodeTranslations && nullNodeTranslations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Translations = null;
-            if (parseNode.GetChildNode("voice_settings") is { } nullNodeVoiceSettings && nullNodeVoiceSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VoiceSettings = null;
+            if (parseNode.GetChildNode("target_language") is null) { _explicitNullValueTargetLanguage = default!; _explicitNullProperties?.Remove("target_language"); }
+            else if (parseNode.GetChildNode("target_language") is { } nullNodeTargetLanguage && nullNodeTargetLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetLanguage = null;
+            if (parseNode.GetChildNode("translations") is null) { _explicitNullValueTranslations = default!; _explicitNullProperties?.Remove("translations"); }
+            else if (parseNode.GetChildNode("translations") is { } nullNodeTranslations && nullNodeTranslations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Translations = null;
+            if (parseNode.GetChildNode("voice_settings") is null) { _explicitNullValueVoiceSettings = default!; _explicitNullProperties?.Remove("voice_settings"); }
+            else if (parseNode.GetChildNode("voice_settings") is { } nullNodeVoiceSettings && nullNodeVoiceSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VoiceSettings = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>BCP-47 language tag to dub the project into (for example, `fr` or `es-MX`). Must be one of the [languages the project&apos;s dubbing model supports](https://elevenlabs.io/docs/help-center/product/dubbing/which-languages-are-supported-in-dubbing), and a region-qualified tag must be one of the supported dialects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetLanguage { get => _explicitNullValueTargetLanguage; set { _explicitNullValueTargetLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_language"); else _explicitNullProperties?.Remove("target_language"); } }
+        public string? TargetLanguage { get => _explicitNullValueTargetLanguage; set { _explicitNullValueTargetLanguage = value; AdditionalData?.Remove("target_language"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_language"); else _explicitNullProperties?.Remove("target_language"); } }
         private string? _explicitNullValueTargetLanguage = default!;
 #nullable restore
 #else
-        public string TargetLanguage { get => _explicitNullValueTargetLanguage; set { _explicitNullValueTargetLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_language"); else _explicitNullProperties?.Remove("target_language"); } }
+        public string TargetLanguage { get => _explicitNullValueTargetLanguage; set { _explicitNullValueTargetLanguage = value; AdditionalData?.Remove("target_language"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_language"); else _explicitNullProperties?.Remove("target_language"); } }
         private string _explicitNullValueTargetLanguage = default!;
 #endif
         /// <summary>Enterprise only. Optional translations to use instead of machine translation. A map from each source segment&apos;s `external_id` (or its `id`, if you supplied none) to the translated text; every source segment must be covered exactly once. At most 20,000 entries, totaling at most 4 MiB of text. See [Bring your own transcript](https://elevenlabs.io/docs/eleven-api/guides/how-to/dubbing/bring-your-own-transcript).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateDubbingLanguageTargetV1DubbingProjectProjectIdLanguagePostTranslationsProperty? Translations { get => _explicitNullValueTranslations; set { _explicitNullValueTranslations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("translations"); else _explicitNullProperties?.Remove("translations"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateDubbingLanguageTargetV1DubbingProjectProjectIdLanguagePostTranslationsProperty? Translations { get => _explicitNullValueTranslations; set { _explicitNullValueTranslations = value; AdditionalData?.Remove("translations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("translations"); else _explicitNullProperties?.Remove("translations"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateDubbingLanguageTargetV1DubbingProjectProjectIdLanguagePostTranslationsProperty? _explicitNullValueTranslations = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateDubbingLanguageTargetV1DubbingProjectProjectIdLanguagePostTranslationsProperty Translations { get => _explicitNullValueTranslations; set { _explicitNullValueTranslations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("translations"); else _explicitNullProperties?.Remove("translations"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateDubbingLanguageTargetV1DubbingProjectProjectIdLanguagePostTranslationsProperty Translations { get => _explicitNullValueTranslations; set { _explicitNullValueTranslations = value; AdditionalData?.Remove("translations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("translations"); else _explicitNullProperties?.Remove("translations"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateDubbingLanguageTargetV1DubbingProjectProjectIdLanguagePostTranslationsProperty _explicitNullValueTranslations = default!;
 #endif
         /// <summary>Voice settings applied to every speaker in this language. Omit to use the defaults.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettings? VoiceSettings { get => _explicitNullValueVoiceSettings; set { _explicitNullValueVoiceSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_settings"); else _explicitNullProperties?.Remove("voice_settings"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettings? VoiceSettings { get => _explicitNullValueVoiceSettings; set { _explicitNullValueVoiceSettings = value; AdditionalData?.Remove("voice_settings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_settings"); else _explicitNullProperties?.Remove("voice_settings"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettings? _explicitNullValueVoiceSettings = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettings VoiceSettings { get => _explicitNullValueVoiceSettings; set { _explicitNullValueVoiceSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_settings"); else _explicitNullProperties?.Remove("voice_settings"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettings VoiceSettings { get => _explicitNullValueVoiceSettings; set { _explicitNullValueVoiceSettings = value; AdditionalData?.Remove("voice_settings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_settings"); else _explicitNullProperties?.Remove("voice_settings"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettings _explicitNullValueVoiceSettings = default!;
 #endif
         /// <summary>

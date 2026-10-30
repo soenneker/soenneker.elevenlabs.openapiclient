@@ -17,27 +17,30 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("end_ms") is { } nullNodeEndMs && nullNodeEndMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndMs = null;
-            if (parseNode.GetChildNode("start_ms") is { } nullNodeStartMs && nullNodeStartMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartMs = null;
-            if (parseNode.GetChildNode("word") is { } nullNodeWord && nullNodeWord.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Word = null;
+            if (parseNode.GetChildNode("end_ms") is null) { _explicitNullValueEndMs = default!; _explicitNullProperties?.Remove("end_ms"); }
+            else if (parseNode.GetChildNode("end_ms") is { } nullNodeEndMs && nullNodeEndMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndMs = null;
+            if (parseNode.GetChildNode("start_ms") is null) { _explicitNullValueStartMs = default!; _explicitNullProperties?.Remove("start_ms"); }
+            else if (parseNode.GetChildNode("start_ms") is { } nullNodeStartMs && nullNodeStartMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartMs = null;
+            if (parseNode.GetChildNode("word") is null) { _explicitNullValueWord = default!; _explicitNullProperties?.Remove("word"); }
+            else if (parseNode.GetChildNode("word") is { } nullNodeWord && nullNodeWord.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Word = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The end_ms property</summary>
-        public int? EndMs { get => _explicitNullValueEndMs; set { _explicitNullValueEndMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_ms"); else _explicitNullProperties?.Remove("end_ms"); } }
+        public int? EndMs { get => _explicitNullValueEndMs; set { _explicitNullValueEndMs = value; AdditionalData?.Remove("end_ms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_ms"); else _explicitNullProperties?.Remove("end_ms"); } }
         private int? _explicitNullValueEndMs = default!;
         /// <summary>The start_ms property</summary>
-        public int? StartMs { get => _explicitNullValueStartMs; set { _explicitNullValueStartMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_ms"); else _explicitNullProperties?.Remove("start_ms"); } }
+        public int? StartMs { get => _explicitNullValueStartMs; set { _explicitNullValueStartMs = value; AdditionalData?.Remove("start_ms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_ms"); else _explicitNullProperties?.Remove("start_ms"); } }
         private int? _explicitNullValueStartMs = default!;
         /// <summary>The word property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Word { get => _explicitNullValueWord; set { _explicitNullValueWord = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("word"); else _explicitNullProperties?.Remove("word"); } }
+        public string? Word { get => _explicitNullValueWord; set { _explicitNullValueWord = value; AdditionalData?.Remove("word"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("word"); else _explicitNullProperties?.Remove("word"); } }
         private string? _explicitNullValueWord = default!;
 #nullable restore
 #else
-        public string Word { get => _explicitNullValueWord; set { _explicitNullValueWord = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("word"); else _explicitNullProperties?.Remove("word"); } }
+        public string Word { get => _explicitNullValueWord; set { _explicitNullValueWord = value; AdditionalData?.Remove("word"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("word"); else _explicitNullProperties?.Remove("word"); } }
         private string _explicitNullValueWord = default!;
 #endif
         /// <summary>

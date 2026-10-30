@@ -17,36 +17,41 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("field") is { } nullNodeField && nullNodeField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Field = null;
-            if (parseNode.GetChildNode("highlight_end") is { } nullNodeHighlightEnd && nullNodeHighlightEnd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HighlightEnd = null;
-            if (parseNode.GetChildNode("highlight_start") is { } nullNodeHighlightStart && nullNodeHighlightStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HighlightStart = null;
-            if (parseNode.GetChildNode("snippet") is { } nullNodeSnippet && nullNodeSnippet.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Snippet = null;
-            if (parseNode.GetChildNode("turn_index") is { } nullNodeTurnIndex && nullNodeTurnIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TurnIndex = null;
+            if (parseNode.GetChildNode("field") is null) { _explicitNullValueField = default!; _explicitNullProperties?.Remove("field"); }
+            else if (parseNode.GetChildNode("field") is { } nullNodeField && nullNodeField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Field = null;
+            if (parseNode.GetChildNode("highlight_end") is null) { _explicitNullValueHighlightEnd = default!; _explicitNullProperties?.Remove("highlight_end"); }
+            else if (parseNode.GetChildNode("highlight_end") is { } nullNodeHighlightEnd && nullNodeHighlightEnd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HighlightEnd = null;
+            if (parseNode.GetChildNode("highlight_start") is null) { _explicitNullValueHighlightStart = default!; _explicitNullProperties?.Remove("highlight_start"); }
+            else if (parseNode.GetChildNode("highlight_start") is { } nullNodeHighlightStart && nullNodeHighlightStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HighlightStart = null;
+            if (parseNode.GetChildNode("snippet") is null) { _explicitNullValueSnippet = default!; _explicitNullProperties?.Remove("snippet"); }
+            else if (parseNode.GetChildNode("snippet") is { } nullNodeSnippet && nullNodeSnippet.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Snippet = null;
+            if (parseNode.GetChildNode("turn_index") is null) { _explicitNullValueTurnIndex = default!; _explicitNullProperties?.Remove("turn_index"); }
+            else if (parseNode.GetChildNode("turn_index") is { } nullNodeTurnIndex && nullNodeTurnIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TurnIndex = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Which of the ticket&apos;s texts matched.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketSearchMatchField? Field { get => _explicitNullValueField; set { _explicitNullValueField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketSearchMatchField? Field { get => _explicitNullValueField; set { _explicitNullValueField = value; AdditionalData?.Remove("field"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketSearchMatchField? _explicitNullValueField = default!;
         /// <summary>Exclusive end offset of the match in `snippet`.</summary>
-        public int? HighlightEnd { get => _explicitNullValueHighlightEnd; set { _explicitNullValueHighlightEnd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("highlight_end"); else _explicitNullProperties?.Remove("highlight_end"); } }
+        public int? HighlightEnd { get => _explicitNullValueHighlightEnd; set { _explicitNullValueHighlightEnd = value; AdditionalData?.Remove("highlight_end"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("highlight_end"); else _explicitNullProperties?.Remove("highlight_end"); } }
         private int? _explicitNullValueHighlightEnd = default!;
         /// <summary>Offset of the match in `snippet`.</summary>
-        public int? HighlightStart { get => _explicitNullValueHighlightStart; set { _explicitNullValueHighlightStart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("highlight_start"); else _explicitNullProperties?.Remove("highlight_start"); } }
+        public int? HighlightStart { get => _explicitNullValueHighlightStart; set { _explicitNullValueHighlightStart = value; AdditionalData?.Remove("highlight_start"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("highlight_start"); else _explicitNullProperties?.Remove("highlight_start"); } }
         private int? _explicitNullValueHighlightStart = default!;
         /// <summary>Whitespace-collapsed excerpt around the match, with an ellipsis where it was cut.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Snippet { get => _explicitNullValueSnippet; set { _explicitNullValueSnippet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snippet"); else _explicitNullProperties?.Remove("snippet"); } }
+        public string? Snippet { get => _explicitNullValueSnippet; set { _explicitNullValueSnippet = value; AdditionalData?.Remove("snippet"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snippet"); else _explicitNullProperties?.Remove("snippet"); } }
         private string? _explicitNullValueSnippet = default!;
 #nullable restore
 #else
-        public string Snippet { get => _explicitNullValueSnippet; set { _explicitNullValueSnippet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snippet"); else _explicitNullProperties?.Remove("snippet"); } }
+        public string Snippet { get => _explicitNullValueSnippet; set { _explicitNullValueSnippet = value; AdditionalData?.Remove("snippet"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snippet"); else _explicitNullProperties?.Remove("snippet"); } }
         private string _explicitNullValueSnippet = default!;
 #endif
         /// <summary>The commented turn, set when `field` is &apos;turn_comment&apos;.</summary>
-        public int? TurnIndex { get => _explicitNullValueTurnIndex; set { _explicitNullValueTurnIndex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("turn_index"); else _explicitNullProperties?.Remove("turn_index"); } }
+        public int? TurnIndex { get => _explicitNullValueTurnIndex; set { _explicitNullValueTurnIndex = value; AdditionalData?.Remove("turn_index"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("turn_index"); else _explicitNullProperties?.Remove("turn_index"); } }
         private int? _explicitNullValueTurnIndex = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketSearchMatchResponseModel"/> and sets the default values.
@@ -73,7 +78,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "field", n => { Field = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketSearchMatchField>(); } },
+                { "field", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketSearchMatchField>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueField = default; _explicitNullProperties?.Remove("field"); AdditionalData["field"] = unknown; } else { Field = parsed; AdditionalData.Remove("field"); } } },
                 { "highlight_end", n => { HighlightEnd = n.GetIntValue(); } },
                 { "highlight_start", n => { HighlightStart = n.GetIntValue(); } },
                 { "snippet", n => { Snippet = n.GetStringValue(); } },

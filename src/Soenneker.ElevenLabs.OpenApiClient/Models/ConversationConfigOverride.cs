@@ -17,17 +17,19 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("max_duration_seconds") is { } nullNodeMaxDurationSeconds && nullNodeMaxDurationSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxDurationSeconds = null;
-            if (parseNode.GetChildNode("text_only") is { } nullNodeTextOnly && nullNodeTextOnly.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TextOnly = null;
+            if (parseNode.GetChildNode("max_duration_seconds") is null) { _explicitNullValueMaxDurationSeconds = default!; _explicitNullProperties?.Remove("max_duration_seconds"); }
+            else if (parseNode.GetChildNode("max_duration_seconds") is { } nullNodeMaxDurationSeconds && nullNodeMaxDurationSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxDurationSeconds = null;
+            if (parseNode.GetChildNode("text_only") is null) { _explicitNullValueTextOnly = default!; _explicitNullProperties?.Remove("text_only"); }
+            else if (parseNode.GetChildNode("text_only") is { } nullNodeTextOnly && nullNodeTextOnly.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TextOnly = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The maximum duration of a conversation in seconds</summary>
-        public int? MaxDurationSeconds { get => _explicitNullValueMaxDurationSeconds; set { _explicitNullValueMaxDurationSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_duration_seconds"); else _explicitNullProperties?.Remove("max_duration_seconds"); } }
+        public int? MaxDurationSeconds { get => _explicitNullValueMaxDurationSeconds; set { _explicitNullValueMaxDurationSeconds = value; AdditionalData?.Remove("max_duration_seconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_duration_seconds"); else _explicitNullProperties?.Remove("max_duration_seconds"); } }
         private int? _explicitNullValueMaxDurationSeconds = default!;
         /// <summary>If enabled audio will not be processed and only text will be used, use to avoid audio pricing.</summary>
-        public bool? TextOnly { get => _explicitNullValueTextOnly; set { _explicitNullValueTextOnly = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text_only"); else _explicitNullProperties?.Remove("text_only"); } }
+        public bool? TextOnly { get => _explicitNullValueTextOnly; set { _explicitNullValueTextOnly = value; AdditionalData?.Remove("text_only"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text_only"); else _explicitNullProperties?.Remove("text_only"); } }
         private bool? _explicitNullValueTextOnly = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOverride"/> and sets the default values.

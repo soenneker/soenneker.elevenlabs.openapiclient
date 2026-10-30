@@ -17,17 +17,19 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("align") is { } nullNodeAlign && nullNodeAlign.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Align = null;
-            if (parseNode.GetChildNode("translate_pct") is { } nullNodeTranslatePct && nullNodeTranslatePct.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TranslatePct = null;
+            if (parseNode.GetChildNode("align") is null) { _explicitNullValueAlign = default!; _explicitNullProperties?.Remove("align"); }
+            else if (parseNode.GetChildNode("align") is { } nullNodeAlign && nullNodeAlign.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Align = null;
+            if (parseNode.GetChildNode("translate_pct") is null) { _explicitNullValueTranslatePct = default!; _explicitNullProperties?.Remove("translate_pct"); }
+            else if (parseNode.GetChildNode("translate_pct") is { } nullNodeTranslatePct && nullNodeTranslatePct.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TranslatePct = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The align property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleHorizontalPlacementModelAlign? Align { get => _explicitNullValueAlign; set { _explicitNullValueAlign = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("align"); else _explicitNullProperties?.Remove("align"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleHorizontalPlacementModelAlign? Align { get => _explicitNullValueAlign; set { _explicitNullValueAlign = value; AdditionalData?.Remove("align"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("align"); else _explicitNullProperties?.Remove("align"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleHorizontalPlacementModelAlign? _explicitNullValueAlign = default!;
         /// <summary>The translate_pct property</summary>
-        public double? TranslatePct { get => _explicitNullValueTranslatePct; set { _explicitNullValueTranslatePct = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("translate_pct"); else _explicitNullProperties?.Remove("translate_pct"); } }
+        public double? TranslatePct { get => _explicitNullValueTranslatePct; set { _explicitNullValueTranslatePct = value; AdditionalData?.Remove("translate_pct"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("translate_pct"); else _explicitNullProperties?.Remove("translate_pct"); } }
         private double? _explicitNullValueTranslatePct = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleHorizontalPlacementModel"/> and sets the default values.
@@ -54,7 +56,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "align", n => { Align = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleHorizontalPlacementModelAlign>(); } },
+                { "align", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleHorizontalPlacementModelAlign>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAlign = default; _explicitNullProperties?.Remove("align"); AdditionalData["align"] = unknown; } else { Align = parsed; AdditionalData.Remove("align"); } } },
                 { "translate_pct", n => { TranslatePct = n.GetDoubleValue(); } },
             };
         }

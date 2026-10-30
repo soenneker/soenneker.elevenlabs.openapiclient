@@ -17,31 +17,35 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("fetched_at_ms") is { } nullNodeFetchedAtMs && nullNodeFetchedAtMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FetchedAtMs = null;
-            if (parseNode.GetChildNode("hour") is { } nullNodeHour && nullNodeHour.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hour = null;
-            if (parseNode.GetChildNode("minute") is { } nullNodeMinute && nullNodeMinute.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Minute = null;
-            if (parseNode.GetChildNode("today") is { } nullNodeToday && nullNodeToday.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Today = null;
+            if (parseNode.GetChildNode("fetched_at_ms") is null) { _explicitNullValueFetchedAtMs = default!; _explicitNullProperties?.Remove("fetched_at_ms"); }
+            else if (parseNode.GetChildNode("fetched_at_ms") is { } nullNodeFetchedAtMs && nullNodeFetchedAtMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FetchedAtMs = null;
+            if (parseNode.GetChildNode("hour") is null) { _explicitNullValueHour = default!; _explicitNullProperties?.Remove("hour"); }
+            else if (parseNode.GetChildNode("hour") is { } nullNodeHour && nullNodeHour.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hour = null;
+            if (parseNode.GetChildNode("minute") is null) { _explicitNullValueMinute = default!; _explicitNullProperties?.Remove("minute"); }
+            else if (parseNode.GetChildNode("minute") is { } nullNodeMinute && nullNodeMinute.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Minute = null;
+            if (parseNode.GetChildNode("today") is null) { _explicitNullValueToday = default!; _explicitNullProperties?.Remove("today"); }
+            else if (parseNode.GetChildNode("today") is { } nullNodeToday && nullNodeToday.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Today = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Unix timestamp in milliseconds when this was generated</summary>
-        public int? FetchedAtMs { get => _explicitNullValueFetchedAtMs; set { _explicitNullValueFetchedAtMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fetched_at_ms"); else _explicitNullProperties?.Remove("fetched_at_ms"); } }
+        public int? FetchedAtMs { get => _explicitNullValueFetchedAtMs; set { _explicitNullValueFetchedAtMs = value; AdditionalData?.Remove("fetched_at_ms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fetched_at_ms"); else _explicitNullProperties?.Remove("fetched_at_ms"); } }
         private int? _explicitNullValueFetchedAtMs = default!;
         /// <summary>Current hour (0-23)</summary>
-        public int? Hour { get => _explicitNullValueHour; set { _explicitNullValueHour = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hour"); else _explicitNullProperties?.Remove("hour"); } }
+        public int? Hour { get => _explicitNullValueHour; set { _explicitNullValueHour = value; AdditionalData?.Remove("hour"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hour"); else _explicitNullProperties?.Remove("hour"); } }
         private int? _explicitNullValueHour = default!;
         /// <summary>Current minute (0-59)</summary>
-        public int? Minute { get => _explicitNullValueMinute; set { _explicitNullValueMinute = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minute"); else _explicitNullProperties?.Remove("minute"); } }
+        public int? Minute { get => _explicitNullValueMinute; set { _explicitNullValueMinute = value; AdditionalData?.Remove("minute"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minute"); else _explicitNullProperties?.Remove("minute"); } }
         private int? _explicitNullValueMinute = default!;
         /// <summary>Represents a calendar date as individual numeric components.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DateModel? Today { get => _explicitNullValueToday; set { _explicitNullValueToday = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("today"); else _explicitNullProperties?.Remove("today"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DateModel? Today { get => _explicitNullValueToday; set { _explicitNullValueToday = value; AdditionalData?.Remove("today"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("today"); else _explicitNullProperties?.Remove("today"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.DateModel? _explicitNullValueToday = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DateModel Today { get => _explicitNullValueToday; set { _explicitNullValueToday = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("today"); else _explicitNullProperties?.Remove("today"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DateModel Today { get => _explicitNullValueToday; set { _explicitNullValueToday = value; AdditionalData?.Remove("today"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("today"); else _explicitNullProperties?.Remove("today"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.DateModel _explicitNullValueToday = default!;
 #endif
         /// <summary>

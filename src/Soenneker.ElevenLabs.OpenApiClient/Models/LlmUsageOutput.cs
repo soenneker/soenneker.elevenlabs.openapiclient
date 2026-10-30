@@ -17,7 +17,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("model_usage") is { } nullNodeModelUsage && nullNodeModelUsage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModelUsage = null;
+            if (parseNode.GetChildNode("model_usage") is null) { _explicitNullValueModelUsage = default!; _explicitNullProperties?.Remove("model_usage"); }
+            else if (parseNode.GetChildNode("model_usage") is { } nullNodeModelUsage && nullNodeModelUsage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModelUsage = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The model_usage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageOutputModelUsageProperty? ModelUsage { get => _explicitNullValueModelUsage; set { _explicitNullValueModelUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model_usage"); else _explicitNullProperties?.Remove("model_usage"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageOutputModelUsageProperty? ModelUsage { get => _explicitNullValueModelUsage; set { _explicitNullValueModelUsage = value; AdditionalData?.Remove("model_usage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model_usage"); else _explicitNullProperties?.Remove("model_usage"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageOutputModelUsageProperty? _explicitNullValueModelUsage = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageOutputModelUsageProperty ModelUsage { get => _explicitNullValueModelUsage; set { _explicitNullValueModelUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model_usage"); else _explicitNullProperties?.Remove("model_usage"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageOutputModelUsageProperty ModelUsage { get => _explicitNullValueModelUsage; set { _explicitNullValueModelUsage = value; AdditionalData?.Remove("model_usage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model_usage"); else _explicitNullProperties?.Remove("model_usage"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageOutputModelUsageProperty _explicitNullValueModelUsage = default!;
 #endif
         /// <summary>

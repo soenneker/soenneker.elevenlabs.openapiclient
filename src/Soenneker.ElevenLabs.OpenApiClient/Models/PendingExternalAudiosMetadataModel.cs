@@ -17,8 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("external_audio_ids") is { } nullNodeExternalAudioIds && nullNodeExternalAudioIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalAudioIds = null;
-            if (parseNode.GetChildNode("target_global_offset_ms") is { } nullNodeTargetGlobalOffsetMs && nullNodeTargetGlobalOffsetMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetGlobalOffsetMs = null;
+            if (parseNode.GetChildNode("external_audio_ids") is null) { _explicitNullValueExternalAudioIds = default!; _explicitNullProperties?.Remove("external_audio_ids"); }
+            else if (parseNode.GetChildNode("external_audio_ids") is { } nullNodeExternalAudioIds && nullNodeExternalAudioIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalAudioIds = null;
+            if (parseNode.GetChildNode("target_global_offset_ms") is null) { _explicitNullValueTargetGlobalOffsetMs = default!; _explicitNullProperties?.Remove("target_global_offset_ms"); }
+            else if (parseNode.GetChildNode("target_global_offset_ms") is { } nullNodeTargetGlobalOffsetMs && nullNodeTargetGlobalOffsetMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetGlobalOffsetMs = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The external_audio_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExternalAudioIds { get => _explicitNullValueExternalAudioIds; set { _explicitNullValueExternalAudioIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_audio_ids"); else _explicitNullProperties?.Remove("external_audio_ids"); } }
+        public List<string>? ExternalAudioIds { get => _explicitNullValueExternalAudioIds; set { _explicitNullValueExternalAudioIds = value; AdditionalData?.Remove("external_audio_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_audio_ids"); else _explicitNullProperties?.Remove("external_audio_ids"); } }
         private List<string>? _explicitNullValueExternalAudioIds = default!;
 #nullable restore
 #else
-        public List<string> ExternalAudioIds { get => _explicitNullValueExternalAudioIds; set { _explicitNullValueExternalAudioIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_audio_ids"); else _explicitNullProperties?.Remove("external_audio_ids"); } }
+        public List<string> ExternalAudioIds { get => _explicitNullValueExternalAudioIds; set { _explicitNullValueExternalAudioIds = value; AdditionalData?.Remove("external_audio_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_audio_ids"); else _explicitNullProperties?.Remove("external_audio_ids"); } }
         private List<string> _explicitNullValueExternalAudioIds = default!;
 #endif
         /// <summary>The target_global_offset_ms property</summary>
-        public int? TargetGlobalOffsetMs { get => _explicitNullValueTargetGlobalOffsetMs; set { _explicitNullValueTargetGlobalOffsetMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_global_offset_ms"); else _explicitNullProperties?.Remove("target_global_offset_ms"); } }
+        public int? TargetGlobalOffsetMs { get => _explicitNullValueTargetGlobalOffsetMs; set { _explicitNullValueTargetGlobalOffsetMs = value; AdditionalData?.Remove("target_global_offset_ms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_global_offset_ms"); else _explicitNullProperties?.Remove("target_global_offset_ms"); } }
         private int? _explicitNullValueTargetGlobalOffsetMs = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingExternalAudiosMetadataModel"/> and sets the default values.

@@ -18,7 +18,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("mcp_servers") is { } nullNodeMcpServers && nullNodeMcpServers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) McpServers = null;
+            if (parseNode.GetChildNode("mcp_servers") is null) { _explicitNullValueMcpServers = default!; _explicitNullProperties?.Remove("mcp_servers"); }
+            else if (parseNode.GetChildNode("mcp_servers") is { } nullNodeMcpServers && nullNodeMcpServers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) McpServers = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The mcp_servers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerResponseModel>? McpServers { get => _explicitNullValueMcpServers; set { _explicitNullValueMcpServers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mcp_servers"); else _explicitNullProperties?.Remove("mcp_servers"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerResponseModel>? McpServers { get => _explicitNullValueMcpServers; set { _explicitNullValueMcpServers = value; AdditionalData?.Remove("mcp_servers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mcp_servers"); else _explicitNullProperties?.Remove("mcp_servers"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerResponseModel>? _explicitNullValueMcpServers = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerResponseModel> McpServers { get => _explicitNullValueMcpServers; set { _explicitNullValueMcpServers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mcp_servers"); else _explicitNullProperties?.Remove("mcp_servers"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerResponseModel> McpServers { get => _explicitNullValueMcpServers; set { _explicitNullValueMcpServers = value; AdditionalData?.Remove("mcp_servers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mcp_servers"); else _explicitNullProperties?.Remove("mcp_servers"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerResponseModel> _explicitNullValueMcpServers = default!;
 #endif
         /// <summary>

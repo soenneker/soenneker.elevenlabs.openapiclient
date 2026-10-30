@@ -18,7 +18,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("category_usage") is { } nullNodeCategoryUsage && nullNodeCategoryUsage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CategoryUsage = null;
+            if (parseNode.GetChildNode("category_usage") is null) { _explicitNullValueCategoryUsage = default!; _explicitNullProperties?.Remove("category_usage"); }
+            else if (parseNode.GetChildNode("category_usage") is { } nullNodeCategoryUsage && nullNodeCategoryUsage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CategoryUsage = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The category_usage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PlatformUsageCategoryUsageProperty? CategoryUsage { get => _explicitNullValueCategoryUsage; set { _explicitNullValueCategoryUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category_usage"); else _explicitNullProperties?.Remove("category_usage"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PlatformUsageCategoryUsageProperty? CategoryUsage { get => _explicitNullValueCategoryUsage; set { _explicitNullValueCategoryUsage = value; AdditionalData?.Remove("category_usage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category_usage"); else _explicitNullProperties?.Remove("category_usage"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.PlatformUsageCategoryUsageProperty? _explicitNullValueCategoryUsage = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PlatformUsageCategoryUsageProperty CategoryUsage { get => _explicitNullValueCategoryUsage; set { _explicitNullValueCategoryUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category_usage"); else _explicitNullProperties?.Remove("category_usage"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PlatformUsageCategoryUsageProperty CategoryUsage { get => _explicitNullValueCategoryUsage; set { _explicitNullValueCategoryUsage = value; AdditionalData?.Remove("category_usage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category_usage"); else _explicitNullProperties?.Remove("category_usage"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.PlatformUsageCategoryUsageProperty _explicitNullValueCategoryUsage = default!;
 #endif
         /// <summary>

@@ -17,13 +17,20 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("agent") is { } nullNodeAgent && nullNodeAgent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Agent = null;
-            if (parseNode.GetChildNode("asr") is { } nullNodeAsr && nullNodeAsr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Asr = null;
-            if (parseNode.GetChildNode("conversation") is { } nullNodeConversation && nullNodeConversation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Conversation = null;
-            if (parseNode.GetChildNode("language_presets") is { } nullNodeLanguagePresets && nullNodeLanguagePresets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LanguagePresets = null;
-            if (parseNode.GetChildNode("tts") is { } nullNodeTts && nullNodeTts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tts = null;
-            if (parseNode.GetChildNode("turn") is { } nullNodeTurn && nullNodeTurn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Turn = null;
-            if (parseNode.GetChildNode("vad") is { } nullNodeVad && nullNodeVad.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Vad = null;
+            if (parseNode.GetChildNode("agent") is null) { _explicitNullValueAgent = default!; _explicitNullProperties?.Remove("agent"); }
+            else if (parseNode.GetChildNode("agent") is { } nullNodeAgent && nullNodeAgent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Agent = null;
+            if (parseNode.GetChildNode("asr") is null) { _explicitNullValueAsr = default!; _explicitNullProperties?.Remove("asr"); }
+            else if (parseNode.GetChildNode("asr") is { } nullNodeAsr && nullNodeAsr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Asr = null;
+            if (parseNode.GetChildNode("conversation") is null) { _explicitNullValueConversation = default!; _explicitNullProperties?.Remove("conversation"); }
+            else if (parseNode.GetChildNode("conversation") is { } nullNodeConversation && nullNodeConversation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Conversation = null;
+            if (parseNode.GetChildNode("language_presets") is null) { _explicitNullValueLanguagePresets = default!; _explicitNullProperties?.Remove("language_presets"); }
+            else if (parseNode.GetChildNode("language_presets") is { } nullNodeLanguagePresets && nullNodeLanguagePresets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LanguagePresets = null;
+            if (parseNode.GetChildNode("tts") is null) { _explicitNullValueTts = default!; _explicitNullProperties?.Remove("tts"); }
+            else if (parseNode.GetChildNode("tts") is { } nullNodeTts && nullNodeTts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tts = null;
+            if (parseNode.GetChildNode("turn") is null) { _explicitNullValueTurn = default!; _explicitNullProperties?.Remove("turn"); }
+            else if (parseNode.GetChildNode("turn") is { } nullNodeTurn && nullNodeTurn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Turn = null;
+            if (parseNode.GetChildNode("vad") is null) { _explicitNullValueVad = default!; _explicitNullProperties?.Remove("vad"); }
+            else if (parseNode.GetChildNode("vad") is { } nullNodeVad && nullNodeVad.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Vad = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,71 +38,71 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The agent property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelOutput? Agent { get => _explicitNullValueAgent; set { _explicitNullValueAgent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent"); else _explicitNullProperties?.Remove("agent"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelOutput? Agent { get => _explicitNullValueAgent; set { _explicitNullValueAgent = value; AdditionalData?.Remove("agent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent"); else _explicitNullProperties?.Remove("agent"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelOutput? _explicitNullValueAgent = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelOutput Agent { get => _explicitNullValueAgent; set { _explicitNullValueAgent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent"); else _explicitNullProperties?.Remove("agent"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelOutput Agent { get => _explicitNullValueAgent; set { _explicitNullValueAgent = value; AdditionalData?.Remove("agent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent"); else _explicitNullProperties?.Remove("agent"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelOutput _explicitNullValueAgent = default!;
 #endif
         /// <summary>The asr property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfig? Asr { get => _explicitNullValueAsr; set { _explicitNullValueAsr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asr"); else _explicitNullProperties?.Remove("asr"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfig? Asr { get => _explicitNullValueAsr; set { _explicitNullValueAsr = value; AdditionalData?.Remove("asr"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asr"); else _explicitNullProperties?.Remove("asr"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfig? _explicitNullValueAsr = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfig Asr { get => _explicitNullValueAsr; set { _explicitNullValueAsr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asr"); else _explicitNullProperties?.Remove("asr"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfig Asr { get => _explicitNullValueAsr; set { _explicitNullValueAsr = value; AdditionalData?.Remove("asr"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asr"); else _explicitNullProperties?.Remove("asr"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfig _explicitNullValueAsr = default!;
 #endif
         /// <summary>The conversation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOutput? Conversation { get => _explicitNullValueConversation; set { _explicitNullValueConversation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation"); else _explicitNullProperties?.Remove("conversation"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOutput? Conversation { get => _explicitNullValueConversation; set { _explicitNullValueConversation = value; AdditionalData?.Remove("conversation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation"); else _explicitNullProperties?.Remove("conversation"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOutput? _explicitNullValueConversation = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOutput Conversation { get => _explicitNullValueConversation; set { _explicitNullValueConversation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation"); else _explicitNullProperties?.Remove("conversation"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOutput Conversation { get => _explicitNullValueConversation; set { _explicitNullValueConversation = value; AdditionalData?.Remove("conversation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation"); else _explicitNullProperties?.Remove("conversation"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOutput _explicitNullValueConversation = default!;
 #endif
         /// <summary>Language presets for conversations</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationalConfigApiModelOutputLanguagePresetsProperty? LanguagePresets { get => _explicitNullValueLanguagePresets; set { _explicitNullValueLanguagePresets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language_presets"); else _explicitNullProperties?.Remove("language_presets"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationalConfigApiModelOutputLanguagePresetsProperty? LanguagePresets { get => _explicitNullValueLanguagePresets; set { _explicitNullValueLanguagePresets = value; AdditionalData?.Remove("language_presets"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language_presets"); else _explicitNullProperties?.Remove("language_presets"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationalConfigApiModelOutputLanguagePresetsProperty? _explicitNullValueLanguagePresets = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationalConfigApiModelOutputLanguagePresetsProperty LanguagePresets { get => _explicitNullValueLanguagePresets; set { _explicitNullValueLanguagePresets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language_presets"); else _explicitNullProperties?.Remove("language_presets"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationalConfigApiModelOutputLanguagePresetsProperty LanguagePresets { get => _explicitNullValueLanguagePresets; set { _explicitNullValueLanguagePresets = value; AdditionalData?.Remove("language_presets"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language_presets"); else _explicitNullProperties?.Remove("language_presets"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationalConfigApiModelOutputLanguagePresetsProperty _explicitNullValueLanguagePresets = default!;
 #endif
         /// <summary>The tts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOutput? Tts { get => _explicitNullValueTts; set { _explicitNullValueTts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tts"); else _explicitNullProperties?.Remove("tts"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOutput? Tts { get => _explicitNullValueTts; set { _explicitNullValueTts = value; AdditionalData?.Remove("tts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tts"); else _explicitNullProperties?.Remove("tts"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOutput? _explicitNullValueTts = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOutput Tts { get => _explicitNullValueTts; set { _explicitNullValueTts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tts"); else _explicitNullProperties?.Remove("tts"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOutput Tts { get => _explicitNullValueTts; set { _explicitNullValueTts = value; AdditionalData?.Remove("tts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tts"); else _explicitNullProperties?.Remove("tts"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOutput _explicitNullValueTts = default!;
 #endif
         /// <summary>Configuration for turn detection</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnConfig? Turn { get => _explicitNullValueTurn; set { _explicitNullValueTurn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("turn"); else _explicitNullProperties?.Remove("turn"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnConfig? Turn { get => _explicitNullValueTurn; set { _explicitNullValueTurn = value; AdditionalData?.Remove("turn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("turn"); else _explicitNullProperties?.Remove("turn"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnConfig? _explicitNullValueTurn = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnConfig Turn { get => _explicitNullValueTurn; set { _explicitNullValueTurn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("turn"); else _explicitNullProperties?.Remove("turn"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnConfig Turn { get => _explicitNullValueTurn; set { _explicitNullValueTurn = value; AdditionalData?.Remove("turn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("turn"); else _explicitNullProperties?.Remove("turn"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnConfig _explicitNullValueTurn = default!;
 #endif
         /// <summary>The vad property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VadConfig? Vad { get => _explicitNullValueVad; set { _explicitNullValueVad = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vad"); else _explicitNullProperties?.Remove("vad"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VadConfig? Vad { get => _explicitNullValueVad; set { _explicitNullValueVad = value; AdditionalData?.Remove("vad"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vad"); else _explicitNullProperties?.Remove("vad"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.VadConfig? _explicitNullValueVad = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VadConfig Vad { get => _explicitNullValueVad; set { _explicitNullValueVad = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vad"); else _explicitNullProperties?.Remove("vad"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VadConfig Vad { get => _explicitNullValueVad; set { _explicitNullValueVad = value; AdditionalData?.Remove("vad"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vad"); else _explicitNullProperties?.Remove("vad"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.VadConfig _explicitNullValueVad = default!;
 #endif
         /// <summary>

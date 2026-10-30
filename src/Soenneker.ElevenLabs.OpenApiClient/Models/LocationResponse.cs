@@ -18,15 +18,24 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("address") is { } nullNodeAddress && nullNodeAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Address = null;
-            if (parseNode.GetChildNode("customer_facing_name") is { } nullNodeCustomerFacingName && nullNodeCustomerFacingName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerFacingName = null;
-            if (parseNode.GetChildNode("deactivated_at_unix") is { } nullNodeDeactivatedAtUnix && nullNodeDeactivatedAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeactivatedAtUnix = null;
-            if (parseNode.GetChildNode("deactivation_reason") is { } nullNodeDeactivationReason && nullNodeDeactivationReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeactivationReason = null;
-            if (parseNode.GetChildNode("_id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("max_concurrent_appointments") is { } nullNodeMaxConcurrentAppointments && nullNodeMaxConcurrentAppointments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxConcurrentAppointments = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("notes") is { } nullNodeNotes && nullNodeNotes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Notes = null;
-            if (parseNode.GetChildNode("operating_hours") is { } nullNodeOperatingHours && nullNodeOperatingHours.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OperatingHours = null;
+            if (parseNode.GetChildNode("address") is null) { _explicitNullValueAddress = default!; _explicitNullProperties?.Remove("address"); }
+            else if (parseNode.GetChildNode("address") is { } nullNodeAddress && nullNodeAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Address = null;
+            if (parseNode.GetChildNode("customer_facing_name") is null) { _explicitNullValueCustomerFacingName = default!; _explicitNullProperties?.Remove("customer_facing_name"); }
+            else if (parseNode.GetChildNode("customer_facing_name") is { } nullNodeCustomerFacingName && nullNodeCustomerFacingName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerFacingName = null;
+            if (parseNode.GetChildNode("deactivated_at_unix") is null) { _explicitNullValueDeactivatedAtUnix = default!; _explicitNullProperties?.Remove("deactivated_at_unix"); }
+            else if (parseNode.GetChildNode("deactivated_at_unix") is { } nullNodeDeactivatedAtUnix && nullNodeDeactivatedAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeactivatedAtUnix = null;
+            if (parseNode.GetChildNode("deactivation_reason") is null) { _explicitNullValueDeactivationReason = default!; _explicitNullProperties?.Remove("deactivation_reason"); }
+            else if (parseNode.GetChildNode("deactivation_reason") is { } nullNodeDeactivationReason && nullNodeDeactivationReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeactivationReason = null;
+            if (parseNode.GetChildNode("_id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("_id"); }
+            else if (parseNode.GetChildNode("_id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("max_concurrent_appointments") is null) { _explicitNullValueMaxConcurrentAppointments = default!; _explicitNullProperties?.Remove("max_concurrent_appointments"); }
+            else if (parseNode.GetChildNode("max_concurrent_appointments") is { } nullNodeMaxConcurrentAppointments && nullNodeMaxConcurrentAppointments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxConcurrentAppointments = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("notes") is null) { _explicitNullValueNotes = default!; _explicitNullProperties?.Remove("notes"); }
+            else if (parseNode.GetChildNode("notes") is { } nullNodeNotes && nullNodeNotes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Notes = null;
+            if (parseNode.GetChildNode("operating_hours") is null) { _explicitNullValueOperatingHours = default!; _explicitNullProperties?.Remove("operating_hours"); }
+            else if (parseNode.GetChildNode("operating_hours") is { } nullNodeOperatingHours && nullNodeOperatingHours.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OperatingHours = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -34,72 +43,72 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The address property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
+        public string? Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; AdditionalData?.Remove("address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
         private string? _explicitNullValueAddress = default!;
 #nullable restore
 #else
-        public string Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
+        public string Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; AdditionalData?.Remove("address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
         private string _explicitNullValueAddress = default!;
 #endif
         /// <summary>The customer_facing_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomerFacingName { get => _explicitNullValueCustomerFacingName; set { _explicitNullValueCustomerFacingName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_facing_name"); else _explicitNullProperties?.Remove("customer_facing_name"); } }
+        public string? CustomerFacingName { get => _explicitNullValueCustomerFacingName; set { _explicitNullValueCustomerFacingName = value; AdditionalData?.Remove("customer_facing_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_facing_name"); else _explicitNullProperties?.Remove("customer_facing_name"); } }
         private string? _explicitNullValueCustomerFacingName = default!;
 #nullable restore
 #else
-        public string CustomerFacingName { get => _explicitNullValueCustomerFacingName; set { _explicitNullValueCustomerFacingName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_facing_name"); else _explicitNullProperties?.Remove("customer_facing_name"); } }
+        public string CustomerFacingName { get => _explicitNullValueCustomerFacingName; set { _explicitNullValueCustomerFacingName = value; AdditionalData?.Remove("customer_facing_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_facing_name"); else _explicitNullProperties?.Remove("customer_facing_name"); } }
         private string _explicitNullValueCustomerFacingName = default!;
 #endif
         /// <summary>Unix timestamp when this location was deactivated. None when active.</summary>
-        public int? DeactivatedAtUnix { get => _explicitNullValueDeactivatedAtUnix; set { _explicitNullValueDeactivatedAtUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deactivated_at_unix"); else _explicitNullProperties?.Remove("deactivated_at_unix"); } }
+        public int? DeactivatedAtUnix { get => _explicitNullValueDeactivatedAtUnix; set { _explicitNullValueDeactivatedAtUnix = value; AdditionalData?.Remove("deactivated_at_unix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deactivated_at_unix"); else _explicitNullProperties?.Remove("deactivated_at_unix"); } }
         private int? _explicitNullValueDeactivatedAtUnix = default!;
         /// <summary>Why this location was deactivated. None when active.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbLocationDeactivationReason? DeactivationReason { get => _explicitNullValueDeactivationReason; set { _explicitNullValueDeactivationReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deactivation_reason"); else _explicitNullProperties?.Remove("deactivation_reason"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbLocationDeactivationReason? DeactivationReason { get => _explicitNullValueDeactivationReason; set { _explicitNullValueDeactivationReason = value; AdditionalData?.Remove("deactivation_reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deactivation_reason"); else _explicitNullProperties?.Remove("deactivation_reason"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbLocationDeactivationReason? _explicitNullValueDeactivationReason = default!;
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_id"); else _explicitNullProperties?.Remove("_id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_id"); else _explicitNullProperties?.Remove("_id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_id"); else _explicitNullProperties?.Remove("_id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_id"); else _explicitNullProperties?.Remove("_id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>The is_active property</summary>
         public bool? IsActive { get; private set; }
         /// <summary>Maximum number of appointments that may overlap at this location at a single instant. Only enforced while the booking page setting concurrent_limit_enabled is on.</summary>
-        public int? MaxConcurrentAppointments { get => _explicitNullValueMaxConcurrentAppointments; set { _explicitNullValueMaxConcurrentAppointments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_concurrent_appointments"); else _explicitNullProperties?.Remove("max_concurrent_appointments"); } }
+        public int? MaxConcurrentAppointments { get => _explicitNullValueMaxConcurrentAppointments; set { _explicitNullValueMaxConcurrentAppointments = value; AdditionalData?.Remove("max_concurrent_appointments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_concurrent_appointments"); else _explicitNullProperties?.Remove("max_concurrent_appointments"); } }
         private int? _explicitNullValueMaxConcurrentAppointments = default!;
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The notes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Notes { get => _explicitNullValueNotes; set { _explicitNullValueNotes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notes"); else _explicitNullProperties?.Remove("notes"); } }
+        public string? Notes { get => _explicitNullValueNotes; set { _explicitNullValueNotes = value; AdditionalData?.Remove("notes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notes"); else _explicitNullProperties?.Remove("notes"); } }
         private string? _explicitNullValueNotes = default!;
 #nullable restore
 #else
-        public string Notes { get => _explicitNullValueNotes; set { _explicitNullValueNotes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notes"); else _explicitNullProperties?.Remove("notes"); } }
+        public string Notes { get => _explicitNullValueNotes; set { _explicitNullValueNotes = value; AdditionalData?.Remove("notes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notes"); else _explicitNullProperties?.Remove("notes"); } }
         private string _explicitNullValueNotes = default!;
 #endif
         /// <summary>The operating_hours property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkingHours? OperatingHours { get => _explicitNullValueOperatingHours; set { _explicitNullValueOperatingHours = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operating_hours"); else _explicitNullProperties?.Remove("operating_hours"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkingHours? OperatingHours { get => _explicitNullValueOperatingHours; set { _explicitNullValueOperatingHours = value; AdditionalData?.Remove("operating_hours"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operating_hours"); else _explicitNullProperties?.Remove("operating_hours"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkingHours? _explicitNullValueOperatingHours = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkingHours OperatingHours { get => _explicitNullValueOperatingHours; set { _explicitNullValueOperatingHours = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operating_hours"); else _explicitNullProperties?.Remove("operating_hours"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkingHours OperatingHours { get => _explicitNullValueOperatingHours; set { _explicitNullValueOperatingHours = value; AdditionalData?.Remove("operating_hours"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operating_hours"); else _explicitNullProperties?.Remove("operating_hours"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkingHours _explicitNullValueOperatingHours = default!;
 #endif
         /// <summary>
@@ -131,7 +140,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "address", n => { Address = n.GetStringValue(); } },
                 { "customer_facing_name", n => { CustomerFacingName = n.GetStringValue(); } },
                 { "deactivated_at_unix", n => { DeactivatedAtUnix = n.GetIntValue(); } },
-                { "deactivation_reason", n => { DeactivationReason = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbLocationDeactivationReason>(); } },
+                { "deactivation_reason", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbLocationDeactivationReason>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDeactivationReason = default; _explicitNullProperties?.Remove("deactivation_reason"); AdditionalData["deactivation_reason"] = unknown; } else { DeactivationReason = parsed; AdditionalData.Remove("deactivation_reason"); } } },
                 { "_id", n => { Id = n.GetStringValue(); } },
                 { "is_active", n => { IsActive = n.GetBoolValue(); } },
                 { "max_concurrent_appointments", n => { MaxConcurrentAppointments = n.GetIntValue(); } },

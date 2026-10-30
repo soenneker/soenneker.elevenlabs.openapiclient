@@ -17,10 +17,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("edge_id") is { } nullNodeEdgeId && nullNodeEdgeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeId = null;
-            if (parseNode.GetChildNode("step_latency_secs") is { } nullNodeStepLatencySecs && nullNodeStepLatencySecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StepLatencySecs = null;
-            if (parseNode.GetChildNode("target_node_id") is { } nullNodeTargetNodeId && nullNodeTargetNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetNodeId = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("edge_id") is null) { _explicitNullValueEdgeId = default!; _explicitNullProperties?.Remove("edge_id"); }
+            else if (parseNode.GetChildNode("edge_id") is { } nullNodeEdgeId && nullNodeEdgeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeId = null;
+            if (parseNode.GetChildNode("step_latency_secs") is null) { _explicitNullValueStepLatencySecs = default!; _explicitNullProperties?.Remove("step_latency_secs"); }
+            else if (parseNode.GetChildNode("step_latency_secs") is { } nullNodeStepLatencySecs && nullNodeStepLatencySecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StepLatencySecs = null;
+            if (parseNode.GetChildNode("target_node_id") is null) { _explicitNullValueTargetNodeId = default!; _explicitNullProperties?.Remove("target_node_id"); }
+            else if (parseNode.GetChildNode("target_node_id") is { } nullNodeTargetNodeId && nullNodeTargetNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetNodeId = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,28 +32,28 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The edge_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EdgeId { get => _explicitNullValueEdgeId; set { _explicitNullValueEdgeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edge_id"); else _explicitNullProperties?.Remove("edge_id"); } }
+        public string? EdgeId { get => _explicitNullValueEdgeId; set { _explicitNullValueEdgeId = value; AdditionalData?.Remove("edge_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edge_id"); else _explicitNullProperties?.Remove("edge_id"); } }
         private string? _explicitNullValueEdgeId = default!;
 #nullable restore
 #else
-        public string EdgeId { get => _explicitNullValueEdgeId; set { _explicitNullValueEdgeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edge_id"); else _explicitNullProperties?.Remove("edge_id"); } }
+        public string EdgeId { get => _explicitNullValueEdgeId; set { _explicitNullValueEdgeId = value; AdditionalData?.Remove("edge_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edge_id"); else _explicitNullProperties?.Remove("edge_id"); } }
         private string _explicitNullValueEdgeId = default!;
 #endif
         /// <summary>The step_latency_secs property</summary>
-        public double? StepLatencySecs { get => _explicitNullValueStepLatencySecs; set { _explicitNullValueStepLatencySecs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("step_latency_secs"); else _explicitNullProperties?.Remove("step_latency_secs"); } }
+        public double? StepLatencySecs { get => _explicitNullValueStepLatencySecs; set { _explicitNullValueStepLatencySecs = value; AdditionalData?.Remove("step_latency_secs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("step_latency_secs"); else _explicitNullProperties?.Remove("step_latency_secs"); } }
         private double? _explicitNullValueStepLatencySecs = default!;
         /// <summary>The target_node_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetNodeId { get => _explicitNullValueTargetNodeId; set { _explicitNullValueTargetNodeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_node_id"); else _explicitNullProperties?.Remove("target_node_id"); } }
+        public string? TargetNodeId { get => _explicitNullValueTargetNodeId; set { _explicitNullValueTargetNodeId = value; AdditionalData?.Remove("target_node_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_node_id"); else _explicitNullProperties?.Remove("target_node_id"); } }
         private string? _explicitNullValueTargetNodeId = default!;
 #nullable restore
 #else
-        public string TargetNodeId { get => _explicitNullValueTargetNodeId; set { _explicitNullValueTargetNodeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_node_id"); else _explicitNullProperties?.Remove("target_node_id"); } }
+        public string TargetNodeId { get => _explicitNullValueTargetNodeId; set { _explicitNullValueTargetNodeId = value; AdditionalData?.Remove("target_node_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_node_id"); else _explicitNullProperties?.Remove("target_node_id"); } }
         private string _explicitNullValueTargetNodeId = default!;
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolResponseModelOutputStepsItemOneOf1_type? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolResponseModelOutputStepsItemOneOf1_type? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolResponseModelOutputStepsItemOneOf1_type? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolResponseModelOutputStepsItemOneOf1"/> and sets the default values.
@@ -79,7 +83,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "edge_id", n => { EdgeId = n.GetStringValue(); } },
                 { "step_latency_secs", n => { StepLatencySecs = n.GetDoubleValue(); } },
                 { "target_node_id", n => { TargetNodeId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolResponseModelOutputStepsItemOneOf1_type>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolResponseModelOutputStepsItemOneOf1_type>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

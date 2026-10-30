@@ -17,11 +17,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("events") is { } nullNodeEvents && nullNodeEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Events = null;
-            if (parseNode.GetChildNode("exclude_transcript") is { } nullNodeExcludeTranscript && nullNodeExcludeTranscript.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludeTranscript = null;
-            if (parseNode.GetChildNode("post_call_webhook_id") is { } nullNodePostCallWebhookId && nullNodePostCallWebhookId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PostCallWebhookId = null;
-            if (parseNode.GetChildNode("send_audio") is { } nullNodeSendAudio && nullNodeSendAudio.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SendAudio = null;
-            if (parseNode.GetChildNode("transcript_format") is { } nullNodeTranscriptFormat && nullNodeTranscriptFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TranscriptFormat = null;
+            if (parseNode.GetChildNode("events") is null) { _explicitNullValueEvents = default!; _explicitNullProperties?.Remove("events"); }
+            else if (parseNode.GetChildNode("events") is { } nullNodeEvents && nullNodeEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Events = null;
+            if (parseNode.GetChildNode("exclude_transcript") is null) { _explicitNullValueExcludeTranscript = default!; _explicitNullProperties?.Remove("exclude_transcript"); }
+            else if (parseNode.GetChildNode("exclude_transcript") is { } nullNodeExcludeTranscript && nullNodeExcludeTranscript.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludeTranscript = null;
+            if (parseNode.GetChildNode("post_call_webhook_id") is null) { _explicitNullValuePostCallWebhookId = default!; _explicitNullProperties?.Remove("post_call_webhook_id"); }
+            else if (parseNode.GetChildNode("post_call_webhook_id") is { } nullNodePostCallWebhookId && nullNodePostCallWebhookId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PostCallWebhookId = null;
+            if (parseNode.GetChildNode("send_audio") is null) { _explicitNullValueSendAudio = default!; _explicitNullProperties?.Remove("send_audio"); }
+            else if (parseNode.GetChildNode("send_audio") is { } nullNodeSendAudio && nullNodeSendAudio.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SendAudio = null;
+            if (parseNode.GetChildNode("transcript_format") is null) { _explicitNullValueTranscriptFormat = default!; _explicitNullProperties?.Remove("transcript_format"); }
+            else if (parseNode.GetChildNode("transcript_format") is { } nullNodeTranscriptFormat && nullNodeTranscriptFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TranscriptFormat = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,32 +34,32 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>List of event types to send via webhook. Options: transcript, audio, call_initiation_failure, answering_machine_detection, unredacted_transcript, unredacted_audio.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookEventType?>? Events { get => _explicitNullValueEvents; set { _explicitNullValueEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("events"); else _explicitNullProperties?.Remove("events"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookEventType?>? Events { get => _explicitNullValueEvents; set { _explicitNullValueEvents = value; AdditionalData?.Remove("events"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("events"); else _explicitNullProperties?.Remove("events"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookEventType?>? _explicitNullValueEvents = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookEventType?> Events { get => _explicitNullValueEvents; set { _explicitNullValueEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("events"); else _explicitNullProperties?.Remove("events"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookEventType?> Events { get => _explicitNullValueEvents; set { _explicitNullValueEvents = value; AdditionalData?.Remove("events"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("events"); else _explicitNullProperties?.Remove("events"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookEventType?> _explicitNullValueEvents = default!;
 #endif
         /// <summary>When true, JSON post-call transcription webhooks omit the turn-by-turn transcript. Analysis, metadata, and other conversation fields are still sent. Ignored for OpenTelemetry transcript format.</summary>
-        public bool? ExcludeTranscript { get => _explicitNullValueExcludeTranscript; set { _explicitNullValueExcludeTranscript = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exclude_transcript"); else _explicitNullProperties?.Remove("exclude_transcript"); } }
+        public bool? ExcludeTranscript { get => _explicitNullValueExcludeTranscript; set { _explicitNullValueExcludeTranscript = value; AdditionalData?.Remove("exclude_transcript"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exclude_transcript"); else _explicitNullProperties?.Remove("exclude_transcript"); } }
         private bool? _explicitNullValueExcludeTranscript = default!;
         /// <summary>The post_call_webhook_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PostCallWebhookId { get => _explicitNullValuePostCallWebhookId; set { _explicitNullValuePostCallWebhookId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_call_webhook_id"); else _explicitNullProperties?.Remove("post_call_webhook_id"); } }
+        public string? PostCallWebhookId { get => _explicitNullValuePostCallWebhookId; set { _explicitNullValuePostCallWebhookId = value; AdditionalData?.Remove("post_call_webhook_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_call_webhook_id"); else _explicitNullProperties?.Remove("post_call_webhook_id"); } }
         private string? _explicitNullValuePostCallWebhookId = default!;
 #nullable restore
 #else
-        public string PostCallWebhookId { get => _explicitNullValuePostCallWebhookId; set { _explicitNullValuePostCallWebhookId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_call_webhook_id"); else _explicitNullProperties?.Remove("post_call_webhook_id"); } }
+        public string PostCallWebhookId { get => _explicitNullValuePostCallWebhookId; set { _explicitNullValuePostCallWebhookId = value; AdditionalData?.Remove("post_call_webhook_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_call_webhook_id"); else _explicitNullProperties?.Remove("post_call_webhook_id"); } }
         private string _explicitNullValuePostCallWebhookId = default!;
 #endif
         /// <summary>DEPRECATED: Use &apos;events&apos; field instead. Whether to send audio data with post-call webhooks for ConvAI conversations</summary>
         [Obsolete("")]
-        public bool? SendAudio { get => _explicitNullValueSendAudio; set { _explicitNullValueSendAudio = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("send_audio"); else _explicitNullProperties?.Remove("send_audio"); } }
+        public bool? SendAudio { get => _explicitNullValueSendAudio; set { _explicitNullValueSendAudio = value; AdditionalData?.Remove("send_audio"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("send_audio"); else _explicitNullProperties?.Remove("send_audio"); } }
         private bool? _explicitNullValueSendAudio = default!;
         /// <summary>Format for transcript webhooks.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTranscriptFormat? TranscriptFormat { get => _explicitNullValueTranscriptFormat; set { _explicitNullValueTranscriptFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transcript_format"); else _explicitNullProperties?.Remove("transcript_format"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTranscriptFormat? TranscriptFormat { get => _explicitNullValueTranscriptFormat; set { _explicitNullValueTranscriptFormat = value; AdditionalData?.Remove("transcript_format"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transcript_format"); else _explicitNullProperties?.Remove("transcript_format"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTranscriptFormat? _explicitNullValueTranscriptFormat = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiWebhooks"/> and sets the default values.
@@ -87,7 +92,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "exclude_transcript", n => { ExcludeTranscript = n.GetBoolValue(); } },
                 { "post_call_webhook_id", n => { PostCallWebhookId = n.GetStringValue(); } },
                 { "send_audio", n => { SendAudio = n.GetBoolValue(); } },
-                { "transcript_format", n => { TranscriptFormat = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTranscriptFormat>(); } },
+                { "transcript_format", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTranscriptFormat>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTranscriptFormat = default; _explicitNullProperties?.Remove("transcript_format"); AdditionalData["transcript_format"] = unknown; } else { TranscriptFormat = parsed; AdditionalData.Remove("transcript_format"); } } },
             };
         }
         /// <summary>

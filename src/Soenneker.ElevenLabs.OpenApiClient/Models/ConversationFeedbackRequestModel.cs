@@ -17,13 +17,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("feedback") is { } nullNodeFeedback && nullNodeFeedback.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Feedback = null;
+            if (parseNode.GetChildNode("feedback") is null) { _explicitNullValueFeedback = default!; _explicitNullProperties?.Remove("feedback"); }
+            else if (parseNode.GetChildNode("feedback") is { } nullNodeFeedback && nullNodeFeedback.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Feedback = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Either &apos;like&apos; or &apos;dislike&apos; to indicate the feedback for the conversation.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedbackScore? Feedback { get => _explicitNullValueFeedback; set { _explicitNullValueFeedback = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feedback"); else _explicitNullProperties?.Remove("feedback"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedbackScore? Feedback { get => _explicitNullValueFeedback; set { _explicitNullValueFeedback = value; AdditionalData?.Remove("feedback"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feedback"); else _explicitNullProperties?.Remove("feedback"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedbackScore? _explicitNullValueFeedback = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationFeedbackRequestModel"/> and sets the default values.
@@ -50,7 +51,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "feedback", n => { Feedback = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedbackScore>(); } },
+                { "feedback", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedbackScore>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFeedback = default; _explicitNullProperties?.Remove("feedback"); AdditionalData["feedback"] = unknown; } else { Feedback = parsed; AdditionalData.Remove("feedback"); } } },
             };
         }
         /// <summary>

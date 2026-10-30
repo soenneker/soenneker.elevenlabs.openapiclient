@@ -17,8 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("document_ids") is { } nullNodeDocumentIds && nullNodeDocumentIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentIds = null;
-            if (parseNode.GetChildNode("force") is { } nullNodeForce && nullNodeForce.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Force = null;
+            if (parseNode.GetChildNode("document_ids") is null) { _explicitNullValueDocumentIds = default!; _explicitNullProperties?.Remove("document_ids"); }
+            else if (parseNode.GetChildNode("document_ids") is { } nullNodeDocumentIds && nullNodeDocumentIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentIds = null;
+            if (parseNode.GetChildNode("force") is null) { _explicitNullValueForce = default!; _explicitNullProperties?.Remove("force"); }
+            else if (parseNode.GetChildNode("force") is { } nullNodeForce && nullNodeForce.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Force = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The ids of documents or folders from the knowledge base.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DocumentIds { get => _explicitNullValueDocumentIds; set { _explicitNullValueDocumentIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_ids"); else _explicitNullProperties?.Remove("document_ids"); } }
+        public List<string>? DocumentIds { get => _explicitNullValueDocumentIds; set { _explicitNullValueDocumentIds = value; AdditionalData?.Remove("document_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_ids"); else _explicitNullProperties?.Remove("document_ids"); } }
         private List<string>? _explicitNullValueDocumentIds = default!;
 #nullable restore
 #else
-        public List<string> DocumentIds { get => _explicitNullValueDocumentIds; set { _explicitNullValueDocumentIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_ids"); else _explicitNullProperties?.Remove("document_ids"); } }
+        public List<string> DocumentIds { get => _explicitNullValueDocumentIds; set { _explicitNullValueDocumentIds = value; AdditionalData?.Remove("document_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_ids"); else _explicitNullProperties?.Remove("document_ids"); } }
         private List<string> _explicitNullValueDocumentIds = default!;
 #endif
         /// <summary>If set to true, documents or folders will be deleted regardless of whether they are used by any agents and will be removed from the dependent agents. For non-empty folders, this will also delete all child documents and folders.</summary>
-        public bool? Force { get => _explicitNullValueForce; set { _explicitNullValueForce = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("force"); else _explicitNullProperties?.Remove("force"); } }
+        public bool? Force { get => _explicitNullValueForce; set { _explicitNullValueForce = value; AdditionalData?.Remove("force"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("force"); else _explicitNullProperties?.Remove("force"); } }
         private bool? _explicitNullValueForce = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyBulkDeleteKnowledgeBaseDocumentsV1ConvaiKnowledgeBaseBulkDeletePost"/> and sets the default values.

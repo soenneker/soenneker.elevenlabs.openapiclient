@@ -17,25 +17,29 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("kind") is { } nullNodeKind && nullNodeKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kind = null;
-            if (parseNode.GetChildNode("next_billing_period") is { } nullNodeNextBillingPeriod && nullNodeNextBillingPeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextBillingPeriod = null;
-            if (parseNode.GetChildNode("next_tier") is { } nullNodeNextTier && nullNodeNextTier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextTier = null;
-            if (parseNode.GetChildNode("timestamp_seconds") is { } nullNodeTimestampSeconds && nullNodeTimestampSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimestampSeconds = null;
+            if (parseNode.GetChildNode("kind") is null) { _explicitNullValueKind = default!; _explicitNullProperties?.Remove("kind"); }
+            else if (parseNode.GetChildNode("kind") is { } nullNodeKind && nullNodeKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kind = null;
+            if (parseNode.GetChildNode("next_billing_period") is null) { _explicitNullValueNextBillingPeriod = default!; _explicitNullProperties?.Remove("next_billing_period"); }
+            else if (parseNode.GetChildNode("next_billing_period") is { } nullNodeNextBillingPeriod && nullNodeNextBillingPeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextBillingPeriod = null;
+            if (parseNode.GetChildNode("next_tier") is null) { _explicitNullValueNextTier = default!; _explicitNullProperties?.Remove("next_tier"); }
+            else if (parseNode.GetChildNode("next_tier") is { } nullNodeNextTier && nullNodeNextTier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextTier = null;
+            if (parseNode.GetChildNode("timestamp_seconds") is null) { _explicitNullValueTimestampSeconds = default!; _explicitNullProperties?.Remove("timestamp_seconds"); }
+            else if (parseNode.GetChildNode("timestamp_seconds") is { } nullNodeTimestampSeconds && nullNodeTimestampSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimestampSeconds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The kind property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ChangeKind? Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ChangeKind? Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; AdditionalData?.Remove("kind"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ChangeKind? _explicitNullValueKind = default!;
         /// <summary>The billing period to change to.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BillingPeriod? NextBillingPeriod { get => _explicitNullValueNextBillingPeriod; set { _explicitNullValueNextBillingPeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_billing_period"); else _explicitNullProperties?.Remove("next_billing_period"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BillingPeriod? NextBillingPeriod { get => _explicitNullValueNextBillingPeriod; set { _explicitNullValueNextBillingPeriod = value; AdditionalData?.Remove("next_billing_period"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_billing_period"); else _explicitNullProperties?.Remove("next_billing_period"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.BillingPeriod? _explicitNullValueNextBillingPeriod = default!;
         /// <summary>The tier to change to.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingSubscriptionSwitchResponseModelNextTier? NextTier { get => _explicitNullValueNextTier; set { _explicitNullValueNextTier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_tier"); else _explicitNullProperties?.Remove("next_tier"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingSubscriptionSwitchResponseModelNextTier? NextTier { get => _explicitNullValueNextTier; set { _explicitNullValueNextTier = value; AdditionalData?.Remove("next_tier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_tier"); else _explicitNullProperties?.Remove("next_tier"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingSubscriptionSwitchResponseModelNextTier? _explicitNullValueNextTier = default!;
         /// <summary>The timestamp of the change.</summary>
-        public int? TimestampSeconds { get => _explicitNullValueTimestampSeconds; set { _explicitNullValueTimestampSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp_seconds"); else _explicitNullProperties?.Remove("timestamp_seconds"); } }
+        public int? TimestampSeconds { get => _explicitNullValueTimestampSeconds; set { _explicitNullValueTimestampSeconds = value; AdditionalData?.Remove("timestamp_seconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp_seconds"); else _explicitNullProperties?.Remove("timestamp_seconds"); } }
         private int? _explicitNullValueTimestampSeconds = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingSubscriptionSwitchResponseModel"/> and sets the default values.
@@ -62,9 +66,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChangeKind>(); } },
-                { "next_billing_period", n => { NextBillingPeriod = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BillingPeriod>(); } },
-                { "next_tier", n => { NextTier = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingSubscriptionSwitchResponseModelNextTier>(); } },
+                { "kind", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChangeKind>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueKind = default; _explicitNullProperties?.Remove("kind"); AdditionalData["kind"] = unknown; } else { Kind = parsed; AdditionalData.Remove("kind"); } } },
+                { "next_billing_period", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BillingPeriod>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueNextBillingPeriod = default; _explicitNullProperties?.Remove("next_billing_period"); AdditionalData["next_billing_period"] = unknown; } else { NextBillingPeriod = parsed; AdditionalData.Remove("next_billing_period"); } } },
+                { "next_tier", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingSubscriptionSwitchResponseModelNextTier>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueNextTier = default; _explicitNullProperties?.Remove("next_tier"); AdditionalData["next_tier"] = unknown; } else { NextTier = parsed; AdditionalData.Remove("next_tier"); } } },
                 { "timestamp_seconds", n => { TimestampSeconds = n.GetIntValue(); } },
             };
         }

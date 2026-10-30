@@ -18,10 +18,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("per_voice_usage") is { } nullNodePerVoiceUsage && nullNodePerVoiceUsage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PerVoiceUsage = null;
-            if (parseNode.GetChildNode("primary_tts_model") is { } nullNodePrimaryTtsModel && nullNodePrimaryTtsModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrimaryTtsModel = null;
-            if (parseNode.GetChildNode("total_audio_output_seconds") is { } nullNodeTotalAudioOutputSeconds && nullNodeTotalAudioOutputSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalAudioOutputSeconds = null;
-            if (parseNode.GetChildNode("total_characters") is { } nullNodeTotalCharacters && nullNodeTotalCharacters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalCharacters = null;
+            if (parseNode.GetChildNode("per_voice_usage") is null) { _explicitNullValuePerVoiceUsage = default!; _explicitNullProperties?.Remove("per_voice_usage"); }
+            else if (parseNode.GetChildNode("per_voice_usage") is { } nullNodePerVoiceUsage && nullNodePerVoiceUsage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PerVoiceUsage = null;
+            if (parseNode.GetChildNode("primary_tts_model") is null) { _explicitNullValuePrimaryTtsModel = default!; _explicitNullProperties?.Remove("primary_tts_model"); }
+            else if (parseNode.GetChildNode("primary_tts_model") is { } nullNodePrimaryTtsModel && nullNodePrimaryTtsModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrimaryTtsModel = null;
+            if (parseNode.GetChildNode("total_audio_output_seconds") is null) { _explicitNullValueTotalAudioOutputSeconds = default!; _explicitNullProperties?.Remove("total_audio_output_seconds"); }
+            else if (parseNode.GetChildNode("total_audio_output_seconds") is { } nullNodeTotalAudioOutputSeconds && nullNodeTotalAudioOutputSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalAudioOutputSeconds = null;
+            if (parseNode.GetChildNode("total_characters") is null) { _explicitNullValueTotalCharacters = default!; _explicitNullProperties?.Remove("total_characters"); }
+            else if (parseNode.GetChildNode("total_characters") is { } nullNodeTotalCharacters && nullNodeTotalCharacters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalCharacters = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,28 +33,28 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The per_voice_usage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationVoiceUsageModel>? PerVoiceUsage { get => _explicitNullValuePerVoiceUsage; set { _explicitNullValuePerVoiceUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("per_voice_usage"); else _explicitNullProperties?.Remove("per_voice_usage"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationVoiceUsageModel>? PerVoiceUsage { get => _explicitNullValuePerVoiceUsage; set { _explicitNullValuePerVoiceUsage = value; AdditionalData?.Remove("per_voice_usage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("per_voice_usage"); else _explicitNullProperties?.Remove("per_voice_usage"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationVoiceUsageModel>? _explicitNullValuePerVoiceUsage = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationVoiceUsageModel> PerVoiceUsage { get => _explicitNullValuePerVoiceUsage; set { _explicitNullValuePerVoiceUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("per_voice_usage"); else _explicitNullProperties?.Remove("per_voice_usage"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationVoiceUsageModel> PerVoiceUsage { get => _explicitNullValuePerVoiceUsage; set { _explicitNullValuePerVoiceUsage = value; AdditionalData?.Remove("per_voice_usage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("per_voice_usage"); else _explicitNullProperties?.Remove("per_voice_usage"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationVoiceUsageModel> _explicitNullValuePerVoiceUsage = default!;
 #endif
         /// <summary>The primary_tts_model property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrimaryTtsModel { get => _explicitNullValuePrimaryTtsModel; set { _explicitNullValuePrimaryTtsModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary_tts_model"); else _explicitNullProperties?.Remove("primary_tts_model"); } }
+        public string? PrimaryTtsModel { get => _explicitNullValuePrimaryTtsModel; set { _explicitNullValuePrimaryTtsModel = value; AdditionalData?.Remove("primary_tts_model"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary_tts_model"); else _explicitNullProperties?.Remove("primary_tts_model"); } }
         private string? _explicitNullValuePrimaryTtsModel = default!;
 #nullable restore
 #else
-        public string PrimaryTtsModel { get => _explicitNullValuePrimaryTtsModel; set { _explicitNullValuePrimaryTtsModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary_tts_model"); else _explicitNullProperties?.Remove("primary_tts_model"); } }
+        public string PrimaryTtsModel { get => _explicitNullValuePrimaryTtsModel; set { _explicitNullValuePrimaryTtsModel = value; AdditionalData?.Remove("primary_tts_model"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary_tts_model"); else _explicitNullProperties?.Remove("primary_tts_model"); } }
         private string _explicitNullValuePrimaryTtsModel = default!;
 #endif
         /// <summary>The total_audio_output_seconds property</summary>
-        public double? TotalAudioOutputSeconds { get => _explicitNullValueTotalAudioOutputSeconds; set { _explicitNullValueTotalAudioOutputSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_audio_output_seconds"); else _explicitNullProperties?.Remove("total_audio_output_seconds"); } }
+        public double? TotalAudioOutputSeconds { get => _explicitNullValueTotalAudioOutputSeconds; set { _explicitNullValueTotalAudioOutputSeconds = value; AdditionalData?.Remove("total_audio_output_seconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_audio_output_seconds"); else _explicitNullProperties?.Remove("total_audio_output_seconds"); } }
         private double? _explicitNullValueTotalAudioOutputSeconds = default!;
         /// <summary>The total_characters property</summary>
-        public int? TotalCharacters { get => _explicitNullValueTotalCharacters; set { _explicitNullValueTotalCharacters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_characters"); else _explicitNullProperties?.Remove("total_characters"); } }
+        public int? TotalCharacters { get => _explicitNullValueTotalCharacters; set { _explicitNullValueTotalCharacters = value; AdditionalData?.Remove("total_characters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_characters"); else _explicitNullProperties?.Remove("total_characters"); } }
         private int? _explicitNullValueTotalCharacters = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTtsUsageModel"/> and sets the default values.

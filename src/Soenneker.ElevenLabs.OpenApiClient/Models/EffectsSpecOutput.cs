@@ -18,12 +18,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("background_noise_id") is { } nullNodeBackgroundNoiseId && nullNodeBackgroundNoiseId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BackgroundNoiseId = null;
-            if (parseNode.GetChildNode("distance") is { } nullNodeDistance && nullNodeDistance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Distance = null;
-            if (parseNode.GetChildNode("environment_id") is { } nullNodeEnvironmentId && nullNodeEnvironmentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvironmentId = null;
-            if (parseNode.GetChildNode("filter_preset_id") is { } nullNodeFilterPresetId && nullNodeFilterPresetId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FilterPresetId = null;
-            if (parseNode.GetChildNode("pan") is { } nullNodePan && nullNodePan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pan = null;
-            if (parseNode.GetChildNode("send_level") is { } nullNodeSendLevel && nullNodeSendLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SendLevel = null;
+            if (parseNode.GetChildNode("background_noise_id") is null) { _explicitNullValueBackgroundNoiseId = default!; _explicitNullProperties?.Remove("background_noise_id"); }
+            else if (parseNode.GetChildNode("background_noise_id") is { } nullNodeBackgroundNoiseId && nullNodeBackgroundNoiseId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BackgroundNoiseId = null;
+            if (parseNode.GetChildNode("distance") is null) { _explicitNullValueDistance = default!; _explicitNullProperties?.Remove("distance"); }
+            else if (parseNode.GetChildNode("distance") is { } nullNodeDistance && nullNodeDistance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Distance = null;
+            if (parseNode.GetChildNode("environment_id") is null) { _explicitNullValueEnvironmentId = default!; _explicitNullProperties?.Remove("environment_id"); }
+            else if (parseNode.GetChildNode("environment_id") is { } nullNodeEnvironmentId && nullNodeEnvironmentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvironmentId = null;
+            if (parseNode.GetChildNode("filter_preset_id") is null) { _explicitNullValueFilterPresetId = default!; _explicitNullProperties?.Remove("filter_preset_id"); }
+            else if (parseNode.GetChildNode("filter_preset_id") is { } nullNodeFilterPresetId && nullNodeFilterPresetId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FilterPresetId = null;
+            if (parseNode.GetChildNode("pan") is null) { _explicitNullValuePan = default!; _explicitNullProperties?.Remove("pan"); }
+            else if (parseNode.GetChildNode("pan") is { } nullNodePan && nullNodePan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pan = null;
+            if (parseNode.GetChildNode("send_level") is null) { _explicitNullValueSendLevel = default!; _explicitNullProperties?.Remove("send_level"); }
+            else if (parseNode.GetChildNode("send_level") is { } nullNodeSendLevel && nullNodeSendLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SendLevel = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,41 +37,41 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>ID of a background noise bed looped under the voice, such as `cafe` or `keyboard`. List valid IDs with `GET /v1/audio-effects/catalog`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BackgroundNoiseId { get => _explicitNullValueBackgroundNoiseId; set { _explicitNullValueBackgroundNoiseId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("background_noise_id"); else _explicitNullProperties?.Remove("background_noise_id"); } }
+        public string? BackgroundNoiseId { get => _explicitNullValueBackgroundNoiseId; set { _explicitNullValueBackgroundNoiseId = value; AdditionalData?.Remove("background_noise_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("background_noise_id"); else _explicitNullProperties?.Remove("background_noise_id"); } }
         private string? _explicitNullValueBackgroundNoiseId = default!;
 #nullable restore
 #else
-        public string BackgroundNoiseId { get => _explicitNullValueBackgroundNoiseId; set { _explicitNullValueBackgroundNoiseId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("background_noise_id"); else _explicitNullProperties?.Remove("background_noise_id"); } }
+        public string BackgroundNoiseId { get => _explicitNullValueBackgroundNoiseId; set { _explicitNullValueBackgroundNoiseId = value; AdditionalData?.Remove("background_noise_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("background_noise_id"); else _explicitNullProperties?.Remove("background_noise_id"); } }
         private string _explicitNullValueBackgroundNoiseId = default!;
 #endif
         /// <summary>How far the speaker sounds from the microphone, from 0 (close, unchanged) to 1 (far). Higher values roll off low and high frequencies and, when an environment is set, shift the balance from the dry voice toward the reverb.</summary>
-        public double? Distance { get => _explicitNullValueDistance; set { _explicitNullValueDistance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("distance"); else _explicitNullProperties?.Remove("distance"); } }
+        public double? Distance { get => _explicitNullValueDistance; set { _explicitNullValueDistance = value; AdditionalData?.Remove("distance"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("distance"); else _explicitNullProperties?.Remove("distance"); } }
         private double? _explicitNullValueDistance = default!;
         /// <summary>ID of a reverb environment that places the voice in a space, such as `small_room` or `hall`. List valid IDs with `GET /v1/audio-effects/catalog`. Reverb is rendered in stereo and adds a tail of up to several seconds after the speech ends.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EnvironmentId { get => _explicitNullValueEnvironmentId; set { _explicitNullValueEnvironmentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment_id"); else _explicitNullProperties?.Remove("environment_id"); } }
+        public string? EnvironmentId { get => _explicitNullValueEnvironmentId; set { _explicitNullValueEnvironmentId = value; AdditionalData?.Remove("environment_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment_id"); else _explicitNullProperties?.Remove("environment_id"); } }
         private string? _explicitNullValueEnvironmentId = default!;
 #nullable restore
 #else
-        public string EnvironmentId { get => _explicitNullValueEnvironmentId; set { _explicitNullValueEnvironmentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment_id"); else _explicitNullProperties?.Remove("environment_id"); } }
+        public string EnvironmentId { get => _explicitNullValueEnvironmentId; set { _explicitNullValueEnvironmentId = value; AdditionalData?.Remove("environment_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment_id"); else _explicitNullProperties?.Remove("environment_id"); } }
         private string _explicitNullValueEnvironmentId = default!;
 #endif
         /// <summary>ID of a filter preset that colors the voice, such as `phone` or `old_radio`. List valid IDs with `GET /v1/audio-effects/catalog`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FilterPresetId { get => _explicitNullValueFilterPresetId; set { _explicitNullValueFilterPresetId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter_preset_id"); else _explicitNullProperties?.Remove("filter_preset_id"); } }
+        public string? FilterPresetId { get => _explicitNullValueFilterPresetId; set { _explicitNullValueFilterPresetId = value; AdditionalData?.Remove("filter_preset_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter_preset_id"); else _explicitNullProperties?.Remove("filter_preset_id"); } }
         private string? _explicitNullValueFilterPresetId = default!;
 #nullable restore
 #else
-        public string FilterPresetId { get => _explicitNullValueFilterPresetId; set { _explicitNullValueFilterPresetId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter_preset_id"); else _explicitNullProperties?.Remove("filter_preset_id"); } }
+        public string FilterPresetId { get => _explicitNullValueFilterPresetId; set { _explicitNullValueFilterPresetId = value; AdditionalData?.Remove("filter_preset_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter_preset_id"); else _explicitNullProperties?.Remove("filter_preset_id"); } }
         private string _explicitNullValueFilterPresetId = default!;
 #endif
         /// <summary>Stereo position of the voice, from -1 (hard left) through 0 (center) to 1 (hard right). Only the voice is panned; reverb and background noise stay centered.</summary>
-        public double? Pan { get => _explicitNullValuePan; set { _explicitNullValuePan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pan"); else _explicitNullProperties?.Remove("pan"); } }
+        public double? Pan { get => _explicitNullValuePan; set { _explicitNullValuePan = value; AdditionalData?.Remove("pan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pan"); else _explicitNullProperties?.Remove("pan"); } }
         private double? _explicitNullValuePan = default!;
         /// <summary>How much of the voice feeds the reverb, from 0 (none) to 1 (full). Only applies when `environment_id` is set; 0 turns the reverb off.</summary>
-        public double? SendLevel { get => _explicitNullValueSendLevel; set { _explicitNullValueSendLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("send_level"); else _explicitNullProperties?.Remove("send_level"); } }
+        public double? SendLevel { get => _explicitNullValueSendLevel; set { _explicitNullValueSendLevel = value; AdditionalData?.Remove("send_level"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("send_level"); else _explicitNullProperties?.Remove("send_level"); } }
         private double? _explicitNullValueSendLevel = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.EffectsSpecOutput"/> and sets the default values.

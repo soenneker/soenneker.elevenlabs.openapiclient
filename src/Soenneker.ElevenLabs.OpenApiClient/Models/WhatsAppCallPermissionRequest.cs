@@ -17,29 +17,34 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("granted_by_user_call") is { } nullNodeGrantedByUserCall && nullNodeGrantedByUserCall.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GrantedByUserCall = null;
-            if (parseNode.GetChildNode("permanent") is { } nullNodePermanent && nullNodePermanent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Permanent = null;
-            if (parseNode.GetChildNode("requested_at_unix") is { } nullNodeRequestedAtUnix && nullNodeRequestedAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestedAtUnix = null;
-            if (parseNode.GetChildNode("responded_at_unix") is { } nullNodeRespondedAtUnix && nullNodeRespondedAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RespondedAtUnix = null;
-            if (parseNode.GetChildNode("state") is { } nullNodeState && nullNodeState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) State = null;
+            if (parseNode.GetChildNode("granted_by_user_call") is null) { _explicitNullValueGrantedByUserCall = default!; _explicitNullProperties?.Remove("granted_by_user_call"); }
+            else if (parseNode.GetChildNode("granted_by_user_call") is { } nullNodeGrantedByUserCall && nullNodeGrantedByUserCall.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GrantedByUserCall = null;
+            if (parseNode.GetChildNode("permanent") is null) { _explicitNullValuePermanent = default!; _explicitNullProperties?.Remove("permanent"); }
+            else if (parseNode.GetChildNode("permanent") is { } nullNodePermanent && nullNodePermanent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Permanent = null;
+            if (parseNode.GetChildNode("requested_at_unix") is null) { _explicitNullValueRequestedAtUnix = default!; _explicitNullProperties?.Remove("requested_at_unix"); }
+            else if (parseNode.GetChildNode("requested_at_unix") is { } nullNodeRequestedAtUnix && nullNodeRequestedAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestedAtUnix = null;
+            if (parseNode.GetChildNode("responded_at_unix") is null) { _explicitNullValueRespondedAtUnix = default!; _explicitNullProperties?.Remove("responded_at_unix"); }
+            else if (parseNode.GetChildNode("responded_at_unix") is { } nullNodeRespondedAtUnix && nullNodeRespondedAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RespondedAtUnix = null;
+            if (parseNode.GetChildNode("state") is null) { _explicitNullValueState = default!; _explicitNullProperties?.Remove("state"); }
+            else if (parseNode.GetChildNode("state") is { } nullNodeState && nullNodeState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) State = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The granted_by_user_call property</summary>
-        public bool? GrantedByUserCall { get => _explicitNullValueGrantedByUserCall; set { _explicitNullValueGrantedByUserCall = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("granted_by_user_call"); else _explicitNullProperties?.Remove("granted_by_user_call"); } }
+        public bool? GrantedByUserCall { get => _explicitNullValueGrantedByUserCall; set { _explicitNullValueGrantedByUserCall = value; AdditionalData?.Remove("granted_by_user_call"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("granted_by_user_call"); else _explicitNullProperties?.Remove("granted_by_user_call"); } }
         private bool? _explicitNullValueGrantedByUserCall = default!;
         /// <summary>The permanent property</summary>
-        public bool? Permanent { get => _explicitNullValuePermanent; set { _explicitNullValuePermanent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permanent"); else _explicitNullProperties?.Remove("permanent"); } }
+        public bool? Permanent { get => _explicitNullValuePermanent; set { _explicitNullValuePermanent = value; AdditionalData?.Remove("permanent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permanent"); else _explicitNullProperties?.Remove("permanent"); } }
         private bool? _explicitNullValuePermanent = default!;
         /// <summary>The requested_at_unix property</summary>
-        public int? RequestedAtUnix { get => _explicitNullValueRequestedAtUnix; set { _explicitNullValueRequestedAtUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requested_at_unix"); else _explicitNullProperties?.Remove("requested_at_unix"); } }
+        public int? RequestedAtUnix { get => _explicitNullValueRequestedAtUnix; set { _explicitNullValueRequestedAtUnix = value; AdditionalData?.Remove("requested_at_unix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requested_at_unix"); else _explicitNullProperties?.Remove("requested_at_unix"); } }
         private int? _explicitNullValueRequestedAtUnix = default!;
         /// <summary>The responded_at_unix property</summary>
-        public int? RespondedAtUnix { get => _explicitNullValueRespondedAtUnix; set { _explicitNullValueRespondedAtUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("responded_at_unix"); else _explicitNullProperties?.Remove("responded_at_unix"); } }
+        public int? RespondedAtUnix { get => _explicitNullValueRespondedAtUnix; set { _explicitNullValueRespondedAtUnix = value; AdditionalData?.Remove("responded_at_unix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("responded_at_unix"); else _explicitNullProperties?.Remove("responded_at_unix"); } }
         private int? _explicitNullValueRespondedAtUnix = default!;
         /// <summary>The state property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppCallPermissionRequestState? State { get => _explicitNullValueState; set { _explicitNullValueState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppCallPermissionRequestState? State { get => _explicitNullValueState; set { _explicitNullValueState = value; AdditionalData?.Remove("state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppCallPermissionRequestState? _explicitNullValueState = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppCallPermissionRequest"/> and sets the default values.
@@ -70,7 +75,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "permanent", n => { Permanent = n.GetBoolValue(); } },
                 { "requested_at_unix", n => { RequestedAtUnix = n.GetIntValue(); } },
                 { "responded_at_unix", n => { RespondedAtUnix = n.GetIntValue(); } },
-                { "state", n => { State = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppCallPermissionRequestState>(); } },
+                { "state", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppCallPermissionRequestState>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueState = default; _explicitNullProperties?.Remove("state"); AdditionalData["state"] = unknown; } else { State = parsed; AdditionalData.Remove("state"); } } },
             };
         }
         /// <summary>

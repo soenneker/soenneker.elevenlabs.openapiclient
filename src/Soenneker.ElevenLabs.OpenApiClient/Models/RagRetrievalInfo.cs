@@ -17,11 +17,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("chunks") is { } nullNodeChunks && nullNodeChunks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Chunks = null;
-            if (parseNode.GetChildNode("embedding_model") is { } nullNodeEmbeddingModel && nullNodeEmbeddingModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmbeddingModel = null;
-            if (parseNode.GetChildNode("rag_latency_secs") is { } nullNodeRagLatencySecs && nullNodeRagLatencySecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RagLatencySecs = null;
-            if (parseNode.GetChildNode("retrieval_query") is { } nullNodeRetrievalQuery && nullNodeRetrievalQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RetrievalQuery = null;
-            if (parseNode.GetChildNode("used_chunk_ids") is { } nullNodeUsedChunkIds && nullNodeUsedChunkIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsedChunkIds = null;
+            if (parseNode.GetChildNode("chunks") is null) { _explicitNullValueChunks = default!; _explicitNullProperties?.Remove("chunks"); }
+            else if (parseNode.GetChildNode("chunks") is { } nullNodeChunks && nullNodeChunks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Chunks = null;
+            if (parseNode.GetChildNode("embedding_model") is null) { _explicitNullValueEmbeddingModel = default!; _explicitNullProperties?.Remove("embedding_model"); }
+            else if (parseNode.GetChildNode("embedding_model") is { } nullNodeEmbeddingModel && nullNodeEmbeddingModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmbeddingModel = null;
+            if (parseNode.GetChildNode("rag_latency_secs") is null) { _explicitNullValueRagLatencySecs = default!; _explicitNullProperties?.Remove("rag_latency_secs"); }
+            else if (parseNode.GetChildNode("rag_latency_secs") is { } nullNodeRagLatencySecs && nullNodeRagLatencySecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RagLatencySecs = null;
+            if (parseNode.GetChildNode("retrieval_query") is null) { _explicitNullValueRetrievalQuery = default!; _explicitNullProperties?.Remove("retrieval_query"); }
+            else if (parseNode.GetChildNode("retrieval_query") is { } nullNodeRetrievalQuery && nullNodeRetrievalQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RetrievalQuery = null;
+            if (parseNode.GetChildNode("used_chunk_ids") is null) { _explicitNullValueUsedChunkIds = default!; _explicitNullProperties?.Remove("used_chunk_ids"); }
+            else if (parseNode.GetChildNode("used_chunk_ids") is { } nullNodeUsedChunkIds && nullNodeUsedChunkIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsedChunkIds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,37 +34,37 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The chunks property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.RagChunkMetadata>? Chunks { get => _explicitNullValueChunks; set { _explicitNullValueChunks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chunks"); else _explicitNullProperties?.Remove("chunks"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.RagChunkMetadata>? Chunks { get => _explicitNullValueChunks; set { _explicitNullValueChunks = value; AdditionalData?.Remove("chunks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chunks"); else _explicitNullProperties?.Remove("chunks"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.RagChunkMetadata>? _explicitNullValueChunks = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.RagChunkMetadata> Chunks { get => _explicitNullValueChunks; set { _explicitNullValueChunks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chunks"); else _explicitNullProperties?.Remove("chunks"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.RagChunkMetadata> Chunks { get => _explicitNullValueChunks; set { _explicitNullValueChunks = value; AdditionalData?.Remove("chunks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chunks"); else _explicitNullProperties?.Remove("chunks"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.RagChunkMetadata> _explicitNullValueChunks = default!;
 #endif
         /// <summary>The embedding_model property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EmbeddingModelEnum? EmbeddingModel { get => _explicitNullValueEmbeddingModel; set { _explicitNullValueEmbeddingModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("embedding_model"); else _explicitNullProperties?.Remove("embedding_model"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EmbeddingModelEnum? EmbeddingModel { get => _explicitNullValueEmbeddingModel; set { _explicitNullValueEmbeddingModel = value; AdditionalData?.Remove("embedding_model"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("embedding_model"); else _explicitNullProperties?.Remove("embedding_model"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.EmbeddingModelEnum? _explicitNullValueEmbeddingModel = default!;
         /// <summary>The rag_latency_secs property</summary>
-        public double? RagLatencySecs { get => _explicitNullValueRagLatencySecs; set { _explicitNullValueRagLatencySecs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rag_latency_secs"); else _explicitNullProperties?.Remove("rag_latency_secs"); } }
+        public double? RagLatencySecs { get => _explicitNullValueRagLatencySecs; set { _explicitNullValueRagLatencySecs = value; AdditionalData?.Remove("rag_latency_secs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rag_latency_secs"); else _explicitNullProperties?.Remove("rag_latency_secs"); } }
         private double? _explicitNullValueRagLatencySecs = default!;
         /// <summary>The retrieval_query property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RetrievalQuery { get => _explicitNullValueRetrievalQuery; set { _explicitNullValueRetrievalQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retrieval_query"); else _explicitNullProperties?.Remove("retrieval_query"); } }
+        public string? RetrievalQuery { get => _explicitNullValueRetrievalQuery; set { _explicitNullValueRetrievalQuery = value; AdditionalData?.Remove("retrieval_query"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retrieval_query"); else _explicitNullProperties?.Remove("retrieval_query"); } }
         private string? _explicitNullValueRetrievalQuery = default!;
 #nullable restore
 #else
-        public string RetrievalQuery { get => _explicitNullValueRetrievalQuery; set { _explicitNullValueRetrievalQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retrieval_query"); else _explicitNullProperties?.Remove("retrieval_query"); } }
+        public string RetrievalQuery { get => _explicitNullValueRetrievalQuery; set { _explicitNullValueRetrievalQuery = value; AdditionalData?.Remove("retrieval_query"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retrieval_query"); else _explicitNullProperties?.Remove("retrieval_query"); } }
         private string _explicitNullValueRetrievalQuery = default!;
 #endif
         /// <summary>The used_chunk_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? UsedChunkIds { get => _explicitNullValueUsedChunkIds; set { _explicitNullValueUsedChunkIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("used_chunk_ids"); else _explicitNullProperties?.Remove("used_chunk_ids"); } }
+        public List<string>? UsedChunkIds { get => _explicitNullValueUsedChunkIds; set { _explicitNullValueUsedChunkIds = value; AdditionalData?.Remove("used_chunk_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("used_chunk_ids"); else _explicitNullProperties?.Remove("used_chunk_ids"); } }
         private List<string>? _explicitNullValueUsedChunkIds = default!;
 #nullable restore
 #else
-        public List<string> UsedChunkIds { get => _explicitNullValueUsedChunkIds; set { _explicitNullValueUsedChunkIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("used_chunk_ids"); else _explicitNullProperties?.Remove("used_chunk_ids"); } }
+        public List<string> UsedChunkIds { get => _explicitNullValueUsedChunkIds; set { _explicitNullValueUsedChunkIds = value; AdditionalData?.Remove("used_chunk_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("used_chunk_ids"); else _explicitNullProperties?.Remove("used_chunk_ids"); } }
         private List<string> _explicitNullValueUsedChunkIds = default!;
 #endif
         /// <summary>
@@ -88,7 +93,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "chunks", n => { Chunks = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.RagChunkMetadata>(global::Soenneker.ElevenLabs.OpenApiClient.Models.RagChunkMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "embedding_model", n => { EmbeddingModel = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EmbeddingModelEnum>(); } },
+                { "embedding_model", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EmbeddingModelEnum>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEmbeddingModel = default; _explicitNullProperties?.Remove("embedding_model"); AdditionalData["embedding_model"] = unknown; } else { EmbeddingModel = parsed; AdditionalData.Remove("embedding_model"); } } },
                 { "rag_latency_secs", n => { RagLatencySecs = n.GetDoubleValue(); } },
                 { "retrieval_query", n => { RetrievalQuery = n.GetStringValue(); } },
                 { "used_chunk_ids", n => { UsedChunkIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },

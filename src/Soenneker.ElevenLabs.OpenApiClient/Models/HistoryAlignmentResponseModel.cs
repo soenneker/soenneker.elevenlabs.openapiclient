@@ -17,9 +17,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("character_end_times_seconds") is { } nullNodeCharacterEndTimesSeconds && nullNodeCharacterEndTimesSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CharacterEndTimesSeconds = null;
-            if (parseNode.GetChildNode("characters") is { } nullNodeCharacters && nullNodeCharacters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Characters = null;
-            if (parseNode.GetChildNode("character_start_times_seconds") is { } nullNodeCharacterStartTimesSeconds && nullNodeCharacterStartTimesSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CharacterStartTimesSeconds = null;
+            if (parseNode.GetChildNode("character_end_times_seconds") is null) { _explicitNullValueCharacterEndTimesSeconds = default!; _explicitNullProperties?.Remove("character_end_times_seconds"); }
+            else if (parseNode.GetChildNode("character_end_times_seconds") is { } nullNodeCharacterEndTimesSeconds && nullNodeCharacterEndTimesSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CharacterEndTimesSeconds = null;
+            if (parseNode.GetChildNode("characters") is null) { _explicitNullValueCharacters = default!; _explicitNullProperties?.Remove("characters"); }
+            else if (parseNode.GetChildNode("characters") is { } nullNodeCharacters && nullNodeCharacters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Characters = null;
+            if (parseNode.GetChildNode("character_start_times_seconds") is null) { _explicitNullValueCharacterStartTimesSeconds = default!; _explicitNullProperties?.Remove("character_start_times_seconds"); }
+            else if (parseNode.GetChildNode("character_start_times_seconds") is { } nullNodeCharacterStartTimesSeconds && nullNodeCharacterStartTimesSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CharacterStartTimesSeconds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The end times of the characters in seconds.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<double?>? CharacterEndTimesSeconds { get => _explicitNullValueCharacterEndTimesSeconds; set { _explicitNullValueCharacterEndTimesSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("character_end_times_seconds"); else _explicitNullProperties?.Remove("character_end_times_seconds"); } }
+        public List<double?>? CharacterEndTimesSeconds { get => _explicitNullValueCharacterEndTimesSeconds; set { _explicitNullValueCharacterEndTimesSeconds = value; AdditionalData?.Remove("character_end_times_seconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("character_end_times_seconds"); else _explicitNullProperties?.Remove("character_end_times_seconds"); } }
         private List<double?>? _explicitNullValueCharacterEndTimesSeconds = default!;
 #nullable restore
 #else
-        public List<double?> CharacterEndTimesSeconds { get => _explicitNullValueCharacterEndTimesSeconds; set { _explicitNullValueCharacterEndTimesSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("character_end_times_seconds"); else _explicitNullProperties?.Remove("character_end_times_seconds"); } }
+        public List<double?> CharacterEndTimesSeconds { get => _explicitNullValueCharacterEndTimesSeconds; set { _explicitNullValueCharacterEndTimesSeconds = value; AdditionalData?.Remove("character_end_times_seconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("character_end_times_seconds"); else _explicitNullProperties?.Remove("character_end_times_seconds"); } }
         private List<double?> _explicitNullValueCharacterEndTimesSeconds = default!;
 #endif
         /// <summary>The characters in the alignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Characters { get => _explicitNullValueCharacters; set { _explicitNullValueCharacters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("characters"); else _explicitNullProperties?.Remove("characters"); } }
+        public List<string>? Characters { get => _explicitNullValueCharacters; set { _explicitNullValueCharacters = value; AdditionalData?.Remove("characters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("characters"); else _explicitNullProperties?.Remove("characters"); } }
         private List<string>? _explicitNullValueCharacters = default!;
 #nullable restore
 #else
-        public List<string> Characters { get => _explicitNullValueCharacters; set { _explicitNullValueCharacters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("characters"); else _explicitNullProperties?.Remove("characters"); } }
+        public List<string> Characters { get => _explicitNullValueCharacters; set { _explicitNullValueCharacters = value; AdditionalData?.Remove("characters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("characters"); else _explicitNullProperties?.Remove("characters"); } }
         private List<string> _explicitNullValueCharacters = default!;
 #endif
         /// <summary>The start times of the characters in seconds.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<double?>? CharacterStartTimesSeconds { get => _explicitNullValueCharacterStartTimesSeconds; set { _explicitNullValueCharacterStartTimesSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("character_start_times_seconds"); else _explicitNullProperties?.Remove("character_start_times_seconds"); } }
+        public List<double?>? CharacterStartTimesSeconds { get => _explicitNullValueCharacterStartTimesSeconds; set { _explicitNullValueCharacterStartTimesSeconds = value; AdditionalData?.Remove("character_start_times_seconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("character_start_times_seconds"); else _explicitNullProperties?.Remove("character_start_times_seconds"); } }
         private List<double?>? _explicitNullValueCharacterStartTimesSeconds = default!;
 #nullable restore
 #else
-        public List<double?> CharacterStartTimesSeconds { get => _explicitNullValueCharacterStartTimesSeconds; set { _explicitNullValueCharacterStartTimesSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("character_start_times_seconds"); else _explicitNullProperties?.Remove("character_start_times_seconds"); } }
+        public List<double?> CharacterStartTimesSeconds { get => _explicitNullValueCharacterStartTimesSeconds; set { _explicitNullValueCharacterStartTimesSeconds = value; AdditionalData?.Remove("character_start_times_seconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("character_start_times_seconds"); else _explicitNullProperties?.Remove("character_start_times_seconds"); } }
         private List<double?> _explicitNullValueCharacterStartTimesSeconds = default!;
 #endif
         /// <summary>

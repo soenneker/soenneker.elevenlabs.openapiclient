@@ -17,13 +17,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("background_voice_detection") is { } nullNodeBackgroundVoiceDetection && nullNodeBackgroundVoiceDetection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BackgroundVoiceDetection = null;
+            if (parseNode.GetChildNode("background_voice_detection") is null) { _explicitNullValueBackgroundVoiceDetection = default!; _explicitNullProperties?.Remove("background_voice_detection"); }
+            else if (parseNode.GetChildNode("background_voice_detection") is { } nullNodeBackgroundVoiceDetection && nullNodeBackgroundVoiceDetection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BackgroundVoiceDetection = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether to use background voice filtering</summary>
-        public bool? BackgroundVoiceDetection { get => _explicitNullValueBackgroundVoiceDetection; set { _explicitNullValueBackgroundVoiceDetection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("background_voice_detection"); else _explicitNullProperties?.Remove("background_voice_detection"); } }
+        public bool? BackgroundVoiceDetection { get => _explicitNullValueBackgroundVoiceDetection; set { _explicitNullValueBackgroundVoiceDetection = value; AdditionalData?.Remove("background_voice_detection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("background_voice_detection"); else _explicitNullProperties?.Remove("background_voice_detection"); } }
         private bool? _explicitNullValueBackgroundVoiceDetection = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.VadConfig"/> and sets the default values.

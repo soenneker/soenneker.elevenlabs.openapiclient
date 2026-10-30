@@ -17,13 +17,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("multiplier") is { } nullNodeMultiplier && nullNodeMultiplier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Multiplier = null;
+            if (parseNode.GetChildNode("multiplier") is null) { _explicitNullValueMultiplier = default!; _explicitNullProperties?.Remove("multiplier"); }
+            else if (parseNode.GetChildNode("multiplier") is { } nullNodeMultiplier && nullNodeMultiplier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Multiplier = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The surcharge multiplier applied to this model&apos;s pricing (e.g. 1.1 for a 10% surcharge).</summary>
-        public double? Multiplier { get => _explicitNullValueMultiplier; set { _explicitNullValueMultiplier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("multiplier"); else _explicitNullProperties?.Remove("multiplier"); } }
+        public double? Multiplier { get => _explicitNullValueMultiplier; set { _explicitNullValueMultiplier = value; AdditionalData?.Remove("multiplier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("multiplier"); else _explicitNullProperties?.Remove("multiplier"); } }
         private double? _explicitNullValueMultiplier = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.RegionalProcessingSurchargeInfo"/> and sets the default values.

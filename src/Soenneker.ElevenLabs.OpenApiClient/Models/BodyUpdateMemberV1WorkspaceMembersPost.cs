@@ -17,37 +17,42 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("allow_downgrade_to_basic_seat") is { } nullNodeAllowDowngradeToBasicSeat && nullNodeAllowDowngradeToBasicSeat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowDowngradeToBasicSeat = null;
-            if (parseNode.GetChildNode("email") is { } nullNodeEmail && nullNodeEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Email = null;
-            if (parseNode.GetChildNode("is_locked") is { } nullNodeIsLocked && nullNodeIsLocked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsLocked = null;
-            if (parseNode.GetChildNode("workspace_role") is { } nullNodeWorkspaceRole && nullNodeWorkspaceRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkspaceRole = null;
-            if (parseNode.GetChildNode("workspace_seat_type") is { } nullNodeWorkspaceSeatType && nullNodeWorkspaceSeatType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkspaceSeatType = null;
+            if (parseNode.GetChildNode("allow_downgrade_to_basic_seat") is null) { _explicitNullValueAllowDowngradeToBasicSeat = default!; _explicitNullProperties?.Remove("allow_downgrade_to_basic_seat"); }
+            else if (parseNode.GetChildNode("allow_downgrade_to_basic_seat") is { } nullNodeAllowDowngradeToBasicSeat && nullNodeAllowDowngradeToBasicSeat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowDowngradeToBasicSeat = null;
+            if (parseNode.GetChildNode("email") is null) { _explicitNullValueEmail = default!; _explicitNullProperties?.Remove("email"); }
+            else if (parseNode.GetChildNode("email") is { } nullNodeEmail && nullNodeEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Email = null;
+            if (parseNode.GetChildNode("is_locked") is null) { _explicitNullValueIsLocked = default!; _explicitNullProperties?.Remove("is_locked"); }
+            else if (parseNode.GetChildNode("is_locked") is { } nullNodeIsLocked && nullNodeIsLocked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsLocked = null;
+            if (parseNode.GetChildNode("workspace_role") is null) { _explicitNullValueWorkspaceRole = default!; _explicitNullProperties?.Remove("workspace_role"); }
+            else if (parseNode.GetChildNode("workspace_role") is { } nullNodeWorkspaceRole && nullNodeWorkspaceRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkspaceRole = null;
+            if (parseNode.GetChildNode("workspace_seat_type") is null) { _explicitNullValueWorkspaceSeatType = default!; _explicitNullProperties?.Remove("workspace_seat_type"); }
+            else if (parseNode.GetChildNode("workspace_seat_type") is { } nullNodeWorkspaceSeatType && nullNodeWorkspaceSeatType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkspaceSeatType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When unlocking a user whose original seat type has no seats available but a basic seat is available, downgrade the user to a basic seat instead of failing.</summary>
-        public bool? AllowDowngradeToBasicSeat { get => _explicitNullValueAllowDowngradeToBasicSeat; set { _explicitNullValueAllowDowngradeToBasicSeat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_downgrade_to_basic_seat"); else _explicitNullProperties?.Remove("allow_downgrade_to_basic_seat"); } }
+        public bool? AllowDowngradeToBasicSeat { get => _explicitNullValueAllowDowngradeToBasicSeat; set { _explicitNullValueAllowDowngradeToBasicSeat = value; AdditionalData?.Remove("allow_downgrade_to_basic_seat"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_downgrade_to_basic_seat"); else _explicitNullProperties?.Remove("allow_downgrade_to_basic_seat"); } }
         private bool? _explicitNullValueAllowDowngradeToBasicSeat = default!;
         /// <summary>Email of the target user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
+        public string? Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; AdditionalData?.Remove("email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
         private string? _explicitNullValueEmail = default!;
 #nullable restore
 #else
-        public string Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
+        public string Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; AdditionalData?.Remove("email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
         private string _explicitNullValueEmail = default!;
 #endif
         /// <summary>Whether to lock or unlock the user account.</summary>
-        public bool? IsLocked { get => _explicitNullValueIsLocked; set { _explicitNullValueIsLocked = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_locked"); else _explicitNullProperties?.Remove("is_locked"); } }
+        public bool? IsLocked { get => _explicitNullValueIsLocked; set { _explicitNullValueIsLocked = value; AdditionalData?.Remove("is_locked"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_locked"); else _explicitNullProperties?.Remove("is_locked"); } }
         private bool? _explicitNullValueIsLocked = default!;
         /// <summary>The workspace role of the user. This is deprecated, use `workspace_seat_type` instead.</summary>
         [Obsolete("")]
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType? WorkspaceRole { get => _explicitNullValueWorkspaceRole; set { _explicitNullValueWorkspaceRole = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_role"); else _explicitNullProperties?.Remove("workspace_role"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType? WorkspaceRole { get => _explicitNullValueWorkspaceRole; set { _explicitNullValueWorkspaceRole = value; AdditionalData?.Remove("workspace_role"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_role"); else _explicitNullProperties?.Remove("workspace_role"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType? _explicitNullValueWorkspaceRole = default!;
         /// <summary>The workspace seat type</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType? WorkspaceSeatType { get => _explicitNullValueWorkspaceSeatType; set { _explicitNullValueWorkspaceSeatType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_seat_type"); else _explicitNullProperties?.Remove("workspace_seat_type"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType? WorkspaceSeatType { get => _explicitNullValueWorkspaceSeatType; set { _explicitNullValueWorkspaceSeatType = value; AdditionalData?.Remove("workspace_seat_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_seat_type"); else _explicitNullProperties?.Remove("workspace_seat_type"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType? _explicitNullValueWorkspaceSeatType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateMemberV1WorkspaceMembersPost"/> and sets the default values.
@@ -78,8 +83,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "allow_downgrade_to_basic_seat", n => { AllowDowngradeToBasicSeat = n.GetBoolValue(); } },
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "is_locked", n => { IsLocked = n.GetBoolValue(); } },
-                { "workspace_role", n => { WorkspaceRole = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType>(); } },
-                { "workspace_seat_type", n => { WorkspaceSeatType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType>(); } },
+                { "workspace_role", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueWorkspaceRole = default; _explicitNullProperties?.Remove("workspace_role"); AdditionalData["workspace_role"] = unknown; } else { WorkspaceRole = parsed; AdditionalData.Remove("workspace_role"); } } },
+                { "workspace_seat_type", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueWorkspaceSeatType = default; _explicitNullProperties?.Remove("workspace_seat_type"); AdditionalData["workspace_seat_type"] = unknown; } else { WorkspaceSeatType = parsed; AdditionalData.Remove("workspace_seat_type"); } } },
             };
         }
         /// <summary>

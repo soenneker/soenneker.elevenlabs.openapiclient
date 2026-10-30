@@ -17,11 +17,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("mime_type") is { } nullNodeMimeType && nullNodeMimeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MimeType = null;
-            if (parseNode.GetChildNode("recording_id") is { } nullNodeRecordingId && nullNodeRecordingId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordingId = null;
-            if (parseNode.GetChildNode("size_bytes") is { } nullNodeSizeBytes && nullNodeSizeBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SizeBytes = null;
-            if (parseNode.GetChildNode("transcription") is { } nullNodeTranscription && nullNodeTranscription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Transcription = null;
-            if (parseNode.GetChildNode("upload_date_unix") is { } nullNodeUploadDateUnix && nullNodeUploadDateUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UploadDateUnix = null;
+            if (parseNode.GetChildNode("mime_type") is null) { _explicitNullValueMimeType = default!; _explicitNullProperties?.Remove("mime_type"); }
+            else if (parseNode.GetChildNode("mime_type") is { } nullNodeMimeType && nullNodeMimeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MimeType = null;
+            if (parseNode.GetChildNode("recording_id") is null) { _explicitNullValueRecordingId = default!; _explicitNullProperties?.Remove("recording_id"); }
+            else if (parseNode.GetChildNode("recording_id") is { } nullNodeRecordingId && nullNodeRecordingId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordingId = null;
+            if (parseNode.GetChildNode("size_bytes") is null) { _explicitNullValueSizeBytes = default!; _explicitNullProperties?.Remove("size_bytes"); }
+            else if (parseNode.GetChildNode("size_bytes") is { } nullNodeSizeBytes && nullNodeSizeBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SizeBytes = null;
+            if (parseNode.GetChildNode("transcription") is null) { _explicitNullValueTranscription = default!; _explicitNullProperties?.Remove("transcription"); }
+            else if (parseNode.GetChildNode("transcription") is { } nullNodeTranscription && nullNodeTranscription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Transcription = null;
+            if (parseNode.GetChildNode("upload_date_unix") is null) { _explicitNullValueUploadDateUnix = default!; _explicitNullProperties?.Remove("upload_date_unix"); }
+            else if (parseNode.GetChildNode("upload_date_unix") is { } nullNodeUploadDateUnix && nullNodeUploadDateUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UploadDateUnix = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,38 +34,38 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The MIME type of the recording.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MimeType { get => _explicitNullValueMimeType; set { _explicitNullValueMimeType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mime_type"); else _explicitNullProperties?.Remove("mime_type"); } }
+        public string? MimeType { get => _explicitNullValueMimeType; set { _explicitNullValueMimeType = value; AdditionalData?.Remove("mime_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mime_type"); else _explicitNullProperties?.Remove("mime_type"); } }
         private string? _explicitNullValueMimeType = default!;
 #nullable restore
 #else
-        public string MimeType { get => _explicitNullValueMimeType; set { _explicitNullValueMimeType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mime_type"); else _explicitNullProperties?.Remove("mime_type"); } }
+        public string MimeType { get => _explicitNullValueMimeType; set { _explicitNullValueMimeType = value; AdditionalData?.Remove("mime_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mime_type"); else _explicitNullProperties?.Remove("mime_type"); } }
         private string _explicitNullValueMimeType = default!;
 #endif
         /// <summary>The ID of the recording.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecordingId { get => _explicitNullValueRecordingId; set { _explicitNullValueRecordingId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recording_id"); else _explicitNullProperties?.Remove("recording_id"); } }
+        public string? RecordingId { get => _explicitNullValueRecordingId; set { _explicitNullValueRecordingId = value; AdditionalData?.Remove("recording_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recording_id"); else _explicitNullProperties?.Remove("recording_id"); } }
         private string? _explicitNullValueRecordingId = default!;
 #nullable restore
 #else
-        public string RecordingId { get => _explicitNullValueRecordingId; set { _explicitNullValueRecordingId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recording_id"); else _explicitNullProperties?.Remove("recording_id"); } }
+        public string RecordingId { get => _explicitNullValueRecordingId; set { _explicitNullValueRecordingId = value; AdditionalData?.Remove("recording_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recording_id"); else _explicitNullProperties?.Remove("recording_id"); } }
         private string _explicitNullValueRecordingId = default!;
 #endif
         /// <summary>The size of the recording in bytes.</summary>
-        public int? SizeBytes { get => _explicitNullValueSizeBytes; set { _explicitNullValueSizeBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("size_bytes"); else _explicitNullProperties?.Remove("size_bytes"); } }
+        public int? SizeBytes { get => _explicitNullValueSizeBytes; set { _explicitNullValueSizeBytes = value; AdditionalData?.Remove("size_bytes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("size_bytes"); else _explicitNullProperties?.Remove("size_bytes"); } }
         private int? _explicitNullValueSizeBytes = default!;
         /// <summary>The transcription of the recording.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Transcription { get => _explicitNullValueTranscription; set { _explicitNullValueTranscription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transcription"); else _explicitNullProperties?.Remove("transcription"); } }
+        public string? Transcription { get => _explicitNullValueTranscription; set { _explicitNullValueTranscription = value; AdditionalData?.Remove("transcription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transcription"); else _explicitNullProperties?.Remove("transcription"); } }
         private string? _explicitNullValueTranscription = default!;
 #nullable restore
 #else
-        public string Transcription { get => _explicitNullValueTranscription; set { _explicitNullValueTranscription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transcription"); else _explicitNullProperties?.Remove("transcription"); } }
+        public string Transcription { get => _explicitNullValueTranscription; set { _explicitNullValueTranscription = value; AdditionalData?.Remove("transcription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transcription"); else _explicitNullProperties?.Remove("transcription"); } }
         private string _explicitNullValueTranscription = default!;
 #endif
         /// <summary>The date of the recording in Unix time.</summary>
-        public int? UploadDateUnix { get => _explicitNullValueUploadDateUnix; set { _explicitNullValueUploadDateUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upload_date_unix"); else _explicitNullProperties?.Remove("upload_date_unix"); } }
+        public int? UploadDateUnix { get => _explicitNullValueUploadDateUnix; set { _explicitNullValueUploadDateUnix = value; AdditionalData?.Remove("upload_date_unix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upload_date_unix"); else _explicitNullProperties?.Remove("upload_date_unix"); } }
         private int? _explicitNullValueUploadDateUnix = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.RecordingResponseModel"/> and sets the default values.

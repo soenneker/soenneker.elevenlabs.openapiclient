@@ -17,41 +17,49 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("create_response") is { } nullNodeCreateResponse && nullNodeCreateResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreateResponse = null;
-            if (parseNode.GetChildNode("eagerness") is { } nullNodeEagerness && nullNodeEagerness.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Eagerness = null;
-            if (parseNode.GetChildNode("interrupt_response") is { } nullNodeInterruptResponse && nullNodeInterruptResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InterruptResponse = null;
-            if (parseNode.GetChildNode("prefix_padding_ms") is { } nullNodePrefixPaddingMs && nullNodePrefixPaddingMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrefixPaddingMs = null;
-            if (parseNode.GetChildNode("silence_duration_ms") is { } nullNodeSilenceDurationMs && nullNodeSilenceDurationMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SilenceDurationMs = null;
-            if (parseNode.GetChildNode("threshold") is { } nullNodeThreshold && nullNodeThreshold.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Threshold = null;
-            if (parseNode.GetChildNode("turn_timeout") is { } nullNodeTurnTimeout && nullNodeTurnTimeout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TurnTimeout = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("create_response") is null) { _explicitNullValueCreateResponse = default!; _explicitNullProperties?.Remove("create_response"); }
+            else if (parseNode.GetChildNode("create_response") is { } nullNodeCreateResponse && nullNodeCreateResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreateResponse = null;
+            if (parseNode.GetChildNode("eagerness") is null) { _explicitNullValueEagerness = default!; _explicitNullProperties?.Remove("eagerness"); }
+            else if (parseNode.GetChildNode("eagerness") is { } nullNodeEagerness && nullNodeEagerness.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Eagerness = null;
+            if (parseNode.GetChildNode("interrupt_response") is null) { _explicitNullValueInterruptResponse = default!; _explicitNullProperties?.Remove("interrupt_response"); }
+            else if (parseNode.GetChildNode("interrupt_response") is { } nullNodeInterruptResponse && nullNodeInterruptResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InterruptResponse = null;
+            if (parseNode.GetChildNode("prefix_padding_ms") is null) { _explicitNullValuePrefixPaddingMs = default!; _explicitNullProperties?.Remove("prefix_padding_ms"); }
+            else if (parseNode.GetChildNode("prefix_padding_ms") is { } nullNodePrefixPaddingMs && nullNodePrefixPaddingMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrefixPaddingMs = null;
+            if (parseNode.GetChildNode("silence_duration_ms") is null) { _explicitNullValueSilenceDurationMs = default!; _explicitNullProperties?.Remove("silence_duration_ms"); }
+            else if (parseNode.GetChildNode("silence_duration_ms") is { } nullNodeSilenceDurationMs && nullNodeSilenceDurationMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SilenceDurationMs = null;
+            if (parseNode.GetChildNode("threshold") is null) { _explicitNullValueThreshold = default!; _explicitNullProperties?.Remove("threshold"); }
+            else if (parseNode.GetChildNode("threshold") is { } nullNodeThreshold && nullNodeThreshold.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Threshold = null;
+            if (parseNode.GetChildNode("turn_timeout") is null) { _explicitNullValueTurnTimeout = default!; _explicitNullProperties?.Remove("turn_timeout"); }
+            else if (parseNode.GetChildNode("turn_timeout") is { } nullNodeTurnTimeout && nullNodeTurnTimeout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TurnTimeout = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The create_response property</summary>
-        public bool? CreateResponse { get => _explicitNullValueCreateResponse; set { _explicitNullValueCreateResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("create_response"); else _explicitNullProperties?.Remove("create_response"); } }
+        public bool? CreateResponse { get => _explicitNullValueCreateResponse; set { _explicitNullValueCreateResponse = value; AdditionalData?.Remove("create_response"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("create_response"); else _explicitNullProperties?.Remove("create_response"); } }
         private bool? _explicitNullValueCreateResponse = default!;
         /// <summary>The eagerness property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Eagerness? Eagerness { get => _explicitNullValueEagerness; set { _explicitNullValueEagerness = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eagerness"); else _explicitNullProperties?.Remove("eagerness"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Eagerness? Eagerness { get => _explicitNullValueEagerness; set { _explicitNullValueEagerness = value; AdditionalData?.Remove("eagerness"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eagerness"); else _explicitNullProperties?.Remove("eagerness"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.Eagerness? _explicitNullValueEagerness = default!;
         /// <summary>The interrupt_response property</summary>
-        public bool? InterruptResponse { get => _explicitNullValueInterruptResponse; set { _explicitNullValueInterruptResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interrupt_response"); else _explicitNullProperties?.Remove("interrupt_response"); } }
+        public bool? InterruptResponse { get => _explicitNullValueInterruptResponse; set { _explicitNullValueInterruptResponse = value; AdditionalData?.Remove("interrupt_response"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interrupt_response"); else _explicitNullProperties?.Remove("interrupt_response"); } }
         private bool? _explicitNullValueInterruptResponse = default!;
         /// <summary>The prefix_padding_ms property</summary>
-        public int? PrefixPaddingMs { get => _explicitNullValuePrefixPaddingMs; set { _explicitNullValuePrefixPaddingMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefix_padding_ms"); else _explicitNullProperties?.Remove("prefix_padding_ms"); } }
+        public int? PrefixPaddingMs { get => _explicitNullValuePrefixPaddingMs; set { _explicitNullValuePrefixPaddingMs = value; AdditionalData?.Remove("prefix_padding_ms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefix_padding_ms"); else _explicitNullProperties?.Remove("prefix_padding_ms"); } }
         private int? _explicitNullValuePrefixPaddingMs = default!;
         /// <summary>The silence_duration_ms property</summary>
-        public int? SilenceDurationMs { get => _explicitNullValueSilenceDurationMs; set { _explicitNullValueSilenceDurationMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("silence_duration_ms"); else _explicitNullProperties?.Remove("silence_duration_ms"); } }
+        public int? SilenceDurationMs { get => _explicitNullValueSilenceDurationMs; set { _explicitNullValueSilenceDurationMs = value; AdditionalData?.Remove("silence_duration_ms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("silence_duration_ms"); else _explicitNullProperties?.Remove("silence_duration_ms"); } }
         private int? _explicitNullValueSilenceDurationMs = default!;
         /// <summary>The threshold property</summary>
-        public double? Threshold { get => _explicitNullValueThreshold; set { _explicitNullValueThreshold = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threshold"); else _explicitNullProperties?.Remove("threshold"); } }
+        public double? Threshold { get => _explicitNullValueThreshold; set { _explicitNullValueThreshold = value; AdditionalData?.Remove("threshold"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threshold"); else _explicitNullProperties?.Remove("threshold"); } }
         private double? _explicitNullValueThreshold = default!;
         /// <summary>The turn_timeout property</summary>
-        public double? TurnTimeout { get => _explicitNullValueTurnTimeout; set { _explicitNullValueTurnTimeout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("turn_timeout"); else _explicitNullProperties?.Remove("turn_timeout"); } }
+        public double? TurnTimeout { get => _explicitNullValueTurnTimeout; set { _explicitNullValueTurnTimeout = value; AdditionalData?.Remove("turn_timeout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("turn_timeout"); else _explicitNullProperties?.Remove("turn_timeout"); } }
         private double? _explicitNullValueTurnTimeout = default!;
         /// <summary>The type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnDetectionType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnDetectionType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnDetectionType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiTurnDetection"/> and sets the default values.
@@ -84,13 +92,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "create_response", n => { CreateResponse = n.GetBoolValue(); } },
-                { "eagerness", n => { Eagerness = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Eagerness>(); } },
+                { "eagerness", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Eagerness>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEagerness = default; _explicitNullProperties?.Remove("eagerness"); AdditionalData["eagerness"] = unknown; } else { Eagerness = parsed; AdditionalData.Remove("eagerness"); } } },
                 { "interrupt_response", n => { InterruptResponse = n.GetBoolValue(); } },
                 { "prefix_padding_ms", n => { PrefixPaddingMs = n.GetIntValue(); } },
                 { "silence_duration_ms", n => { SilenceDurationMs = n.GetIntValue(); } },
                 { "threshold", n => { Threshold = n.GetDoubleValue(); } },
                 { "turn_timeout", n => { TurnTimeout = n.GetDoubleValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnDetectionType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnDetectionType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

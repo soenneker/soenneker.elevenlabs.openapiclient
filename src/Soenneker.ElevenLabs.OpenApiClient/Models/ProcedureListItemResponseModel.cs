@@ -17,17 +17,28 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("folder_parent_id") is { } nullNodeFolderParentId && nullNodeFolderParentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FolderParentId = null;
-            if (parseNode.GetChildNode("has_draft") is { } nullNodeHasDraft && nullNodeHasDraft.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasDraft = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("procedure_id") is { } nullNodeProcedureId && nullNodeProcedureId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProcedureId = null;
-            if (parseNode.GetChildNode("referenced_dynamic_variables") is { } nullNodeReferencedDynamicVariables && nullNodeReferencedDynamicVariables.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferencedDynamicVariables = null;
-            if (parseNode.GetChildNode("referenced_kb_ids") is { } nullNodeReferencedKbIds && nullNodeReferencedKbIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferencedKbIds = null;
-            if (parseNode.GetChildNode("referenced_procedure_ids") is { } nullNodeReferencedProcedureIds && nullNodeReferencedProcedureIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferencedProcedureIds = null;
-            if (parseNode.GetChildNode("referenced_tool_ids") is { } nullNodeReferencedToolIds && nullNodeReferencedToolIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferencedToolIds = null;
-            if (parseNode.GetChildNode("trigger") is { } nullNodeTrigger && nullNodeTrigger.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Trigger = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
-            if (parseNode.GetChildNode("version_id") is { } nullNodeVersionId && nullNodeVersionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VersionId = null;
+            if (parseNode.GetChildNode("folder_parent_id") is null) { _explicitNullValueFolderParentId = default!; _explicitNullProperties?.Remove("folder_parent_id"); }
+            else if (parseNode.GetChildNode("folder_parent_id") is { } nullNodeFolderParentId && nullNodeFolderParentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FolderParentId = null;
+            if (parseNode.GetChildNode("has_draft") is null) { _explicitNullValueHasDraft = default!; _explicitNullProperties?.Remove("has_draft"); }
+            else if (parseNode.GetChildNode("has_draft") is { } nullNodeHasDraft && nullNodeHasDraft.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasDraft = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("procedure_id") is null) { _explicitNullValueProcedureId = default!; _explicitNullProperties?.Remove("procedure_id"); }
+            else if (parseNode.GetChildNode("procedure_id") is { } nullNodeProcedureId && nullNodeProcedureId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProcedureId = null;
+            if (parseNode.GetChildNode("referenced_dynamic_variables") is null) { _explicitNullValueReferencedDynamicVariables = default!; _explicitNullProperties?.Remove("referenced_dynamic_variables"); }
+            else if (parseNode.GetChildNode("referenced_dynamic_variables") is { } nullNodeReferencedDynamicVariables && nullNodeReferencedDynamicVariables.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferencedDynamicVariables = null;
+            if (parseNode.GetChildNode("referenced_kb_ids") is null) { _explicitNullValueReferencedKbIds = default!; _explicitNullProperties?.Remove("referenced_kb_ids"); }
+            else if (parseNode.GetChildNode("referenced_kb_ids") is { } nullNodeReferencedKbIds && nullNodeReferencedKbIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferencedKbIds = null;
+            if (parseNode.GetChildNode("referenced_procedure_ids") is null) { _explicitNullValueReferencedProcedureIds = default!; _explicitNullProperties?.Remove("referenced_procedure_ids"); }
+            else if (parseNode.GetChildNode("referenced_procedure_ids") is { } nullNodeReferencedProcedureIds && nullNodeReferencedProcedureIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferencedProcedureIds = null;
+            if (parseNode.GetChildNode("referenced_tool_ids") is null) { _explicitNullValueReferencedToolIds = default!; _explicitNullProperties?.Remove("referenced_tool_ids"); }
+            else if (parseNode.GetChildNode("referenced_tool_ids") is { } nullNodeReferencedToolIds && nullNodeReferencedToolIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferencedToolIds = null;
+            if (parseNode.GetChildNode("trigger") is null) { _explicitNullValueTrigger = default!; _explicitNullProperties?.Remove("trigger"); }
+            else if (parseNode.GetChildNode("trigger") is { } nullNodeTrigger && nullNodeTrigger.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Trigger = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("version_id") is null) { _explicitNullValueVersionId = default!; _explicitNullProperties?.Remove("version_id"); }
+            else if (parseNode.GetChildNode("version_id") is { } nullNodeVersionId && nullNodeVersionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VersionId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -35,97 +46,97 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Procedure ID of the folder this procedure is placed in. None means root.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FolderParentId { get => _explicitNullValueFolderParentId; set { _explicitNullValueFolderParentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("folder_parent_id"); else _explicitNullProperties?.Remove("folder_parent_id"); } }
+        public string? FolderParentId { get => _explicitNullValueFolderParentId; set { _explicitNullValueFolderParentId = value; AdditionalData?.Remove("folder_parent_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("folder_parent_id"); else _explicitNullProperties?.Remove("folder_parent_id"); } }
         private string? _explicitNullValueFolderParentId = default!;
 #nullable restore
 #else
-        public string FolderParentId { get => _explicitNullValueFolderParentId; set { _explicitNullValueFolderParentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("folder_parent_id"); else _explicitNullProperties?.Remove("folder_parent_id"); } }
+        public string FolderParentId { get => _explicitNullValueFolderParentId; set { _explicitNullValueFolderParentId = value; AdditionalData?.Remove("folder_parent_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("folder_parent_id"); else _explicitNullProperties?.Remove("folder_parent_id"); } }
         private string _explicitNullValueFolderParentId = default!;
 #endif
         /// <summary>True when the procedure has unpublished draft changes on this branch (a newly created or edited procedure not yet published). When true, the name, type, and trigger reflect that draft.</summary>
-        public bool? HasDraft { get => _explicitNullValueHasDraft; set { _explicitNullValueHasDraft = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_draft"); else _explicitNullProperties?.Remove("has_draft"); } }
+        public bool? HasDraft { get => _explicitNullValueHasDraft; set { _explicitNullValueHasDraft = value; AdditionalData?.Remove("has_draft"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_draft"); else _explicitNullProperties?.Remove("has_draft"); } }
         private bool? _explicitNullValueHasDraft = default!;
         /// <summary>Procedure name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>Procedure ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProcedureId { get => _explicitNullValueProcedureId; set { _explicitNullValueProcedureId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("procedure_id"); else _explicitNullProperties?.Remove("procedure_id"); } }
+        public string? ProcedureId { get => _explicitNullValueProcedureId; set { _explicitNullValueProcedureId = value; AdditionalData?.Remove("procedure_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("procedure_id"); else _explicitNullProperties?.Remove("procedure_id"); } }
         private string? _explicitNullValueProcedureId = default!;
 #nullable restore
 #else
-        public string ProcedureId { get => _explicitNullValueProcedureId; set { _explicitNullValueProcedureId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("procedure_id"); else _explicitNullProperties?.Remove("procedure_id"); } }
+        public string ProcedureId { get => _explicitNullValueProcedureId; set { _explicitNullValueProcedureId = value; AdditionalData?.Remove("procedure_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("procedure_id"); else _explicitNullProperties?.Remove("procedure_id"); } }
         private string _explicitNullValueProcedureId = default!;
 #endif
         /// <summary>Dynamic variable names used in the procedure content</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ReferencedDynamicVariables { get => _explicitNullValueReferencedDynamicVariables; set { _explicitNullValueReferencedDynamicVariables = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenced_dynamic_variables"); else _explicitNullProperties?.Remove("referenced_dynamic_variables"); } }
+        public List<string>? ReferencedDynamicVariables { get => _explicitNullValueReferencedDynamicVariables; set { _explicitNullValueReferencedDynamicVariables = value; AdditionalData?.Remove("referenced_dynamic_variables"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenced_dynamic_variables"); else _explicitNullProperties?.Remove("referenced_dynamic_variables"); } }
         private List<string>? _explicitNullValueReferencedDynamicVariables = default!;
 #nullable restore
 #else
-        public List<string> ReferencedDynamicVariables { get => _explicitNullValueReferencedDynamicVariables; set { _explicitNullValueReferencedDynamicVariables = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenced_dynamic_variables"); else _explicitNullProperties?.Remove("referenced_dynamic_variables"); } }
+        public List<string> ReferencedDynamicVariables { get => _explicitNullValueReferencedDynamicVariables; set { _explicitNullValueReferencedDynamicVariables = value; AdditionalData?.Remove("referenced_dynamic_variables"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenced_dynamic_variables"); else _explicitNullProperties?.Remove("referenced_dynamic_variables"); } }
         private List<string> _explicitNullValueReferencedDynamicVariables = default!;
 #endif
         /// <summary>Knowledge base IDs referenced in the procedure content</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ReferencedKbIds { get => _explicitNullValueReferencedKbIds; set { _explicitNullValueReferencedKbIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenced_kb_ids"); else _explicitNullProperties?.Remove("referenced_kb_ids"); } }
+        public List<string>? ReferencedKbIds { get => _explicitNullValueReferencedKbIds; set { _explicitNullValueReferencedKbIds = value; AdditionalData?.Remove("referenced_kb_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenced_kb_ids"); else _explicitNullProperties?.Remove("referenced_kb_ids"); } }
         private List<string>? _explicitNullValueReferencedKbIds = default!;
 #nullable restore
 #else
-        public List<string> ReferencedKbIds { get => _explicitNullValueReferencedKbIds; set { _explicitNullValueReferencedKbIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenced_kb_ids"); else _explicitNullProperties?.Remove("referenced_kb_ids"); } }
+        public List<string> ReferencedKbIds { get => _explicitNullValueReferencedKbIds; set { _explicitNullValueReferencedKbIds = value; AdditionalData?.Remove("referenced_kb_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenced_kb_ids"); else _explicitNullProperties?.Remove("referenced_kb_ids"); } }
         private List<string> _explicitNullValueReferencedKbIds = default!;
 #endif
         /// <summary>Procedure IDs referenced in the procedure content</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ReferencedProcedureIds { get => _explicitNullValueReferencedProcedureIds; set { _explicitNullValueReferencedProcedureIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenced_procedure_ids"); else _explicitNullProperties?.Remove("referenced_procedure_ids"); } }
+        public List<string>? ReferencedProcedureIds { get => _explicitNullValueReferencedProcedureIds; set { _explicitNullValueReferencedProcedureIds = value; AdditionalData?.Remove("referenced_procedure_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenced_procedure_ids"); else _explicitNullProperties?.Remove("referenced_procedure_ids"); } }
         private List<string>? _explicitNullValueReferencedProcedureIds = default!;
 #nullable restore
 #else
-        public List<string> ReferencedProcedureIds { get => _explicitNullValueReferencedProcedureIds; set { _explicitNullValueReferencedProcedureIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenced_procedure_ids"); else _explicitNullProperties?.Remove("referenced_procedure_ids"); } }
+        public List<string> ReferencedProcedureIds { get => _explicitNullValueReferencedProcedureIds; set { _explicitNullValueReferencedProcedureIds = value; AdditionalData?.Remove("referenced_procedure_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenced_procedure_ids"); else _explicitNullProperties?.Remove("referenced_procedure_ids"); } }
         private List<string> _explicitNullValueReferencedProcedureIds = default!;
 #endif
         /// <summary>Tool IDs referenced in the procedure content</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ReferencedToolIds { get => _explicitNullValueReferencedToolIds; set { _explicitNullValueReferencedToolIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenced_tool_ids"); else _explicitNullProperties?.Remove("referenced_tool_ids"); } }
+        public List<string>? ReferencedToolIds { get => _explicitNullValueReferencedToolIds; set { _explicitNullValueReferencedToolIds = value; AdditionalData?.Remove("referenced_tool_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenced_tool_ids"); else _explicitNullProperties?.Remove("referenced_tool_ids"); } }
         private List<string>? _explicitNullValueReferencedToolIds = default!;
 #nullable restore
 #else
-        public List<string> ReferencedToolIds { get => _explicitNullValueReferencedToolIds; set { _explicitNullValueReferencedToolIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenced_tool_ids"); else _explicitNullProperties?.Remove("referenced_tool_ids"); } }
+        public List<string> ReferencedToolIds { get => _explicitNullValueReferencedToolIds; set { _explicitNullValueReferencedToolIds = value; AdditionalData?.Remove("referenced_tool_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenced_tool_ids"); else _explicitNullProperties?.Remove("referenced_tool_ids"); } }
         private List<string> _explicitNullValueReferencedToolIds = default!;
 #endif
         /// <summary>When the agent should use this procedure. Empty string means this is a sub-procedure that should only start when another procedure references it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Trigger { get => _explicitNullValueTrigger; set { _explicitNullValueTrigger = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trigger"); else _explicitNullProperties?.Remove("trigger"); } }
+        public string? Trigger { get => _explicitNullValueTrigger; set { _explicitNullValueTrigger = value; AdditionalData?.Remove("trigger"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trigger"); else _explicitNullProperties?.Remove("trigger"); } }
         private string? _explicitNullValueTrigger = default!;
 #nullable restore
 #else
-        public string Trigger { get => _explicitNullValueTrigger; set { _explicitNullValueTrigger = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trigger"); else _explicitNullProperties?.Remove("trigger"); } }
+        public string Trigger { get => _explicitNullValueTrigger; set { _explicitNullValueTrigger = value; AdditionalData?.Remove("trigger"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trigger"); else _explicitNullProperties?.Remove("trigger"); } }
         private string _explicitNullValueTrigger = default!;
 #endif
         /// <summary>Procedure type</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProcedureType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProcedureType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ProcedureType? _explicitNullValueType = default!;
         /// <summary>Version ID of a version of the procedure. None for a procedure never versioned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VersionId { get => _explicitNullValueVersionId; set { _explicitNullValueVersionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version_id"); else _explicitNullProperties?.Remove("version_id"); } }
+        public string? VersionId { get => _explicitNullValueVersionId; set { _explicitNullValueVersionId = value; AdditionalData?.Remove("version_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version_id"); else _explicitNullProperties?.Remove("version_id"); } }
         private string? _explicitNullValueVersionId = default!;
 #nullable restore
 #else
-        public string VersionId { get => _explicitNullValueVersionId; set { _explicitNullValueVersionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version_id"); else _explicitNullProperties?.Remove("version_id"); } }
+        public string VersionId { get => _explicitNullValueVersionId; set { _explicitNullValueVersionId = value; AdditionalData?.Remove("version_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version_id"); else _explicitNullProperties?.Remove("version_id"); } }
         private string _explicitNullValueVersionId = default!;
 #endif
         /// <summary>
@@ -163,7 +174,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "referenced_procedure_ids", n => { ReferencedProcedureIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "referenced_tool_ids", n => { ReferencedToolIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "trigger", n => { Trigger = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProcedureType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProcedureType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
                 { "version_id", n => { VersionId = n.GetStringValue(); } },
             };
         }

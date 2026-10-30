@@ -17,23 +17,25 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("bookmarked") is { } nullNodeBookmarked && nullNodeBookmarked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bookmarked = null;
-            if (parseNode.GetChildNode("new_name") is { } nullNodeNewName && nullNodeNewName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewName = null;
+            if (parseNode.GetChildNode("bookmarked") is null) { _explicitNullValueBookmarked = default!; _explicitNullProperties?.Remove("bookmarked"); }
+            else if (parseNode.GetChildNode("bookmarked") is { } nullNodeBookmarked && nullNodeBookmarked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bookmarked = null;
+            if (parseNode.GetChildNode("new_name") is null) { _explicitNullValueNewName = default!; _explicitNullProperties?.Remove("new_name"); }
+            else if (parseNode.GetChildNode("new_name") is { } nullNodeNewName && nullNodeNewName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewName = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The bookmarked property</summary>
-        public bool? Bookmarked { get => _explicitNullValueBookmarked; set { _explicitNullValueBookmarked = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bookmarked"); else _explicitNullProperties?.Remove("bookmarked"); } }
+        public bool? Bookmarked { get => _explicitNullValueBookmarked; set { _explicitNullValueBookmarked = value; AdditionalData?.Remove("bookmarked"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bookmarked"); else _explicitNullProperties?.Remove("bookmarked"); } }
         private bool? _explicitNullValueBookmarked = default!;
         /// <summary>The name that identifies this voice. This will be displayed in the dropdown of the website.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NewName { get => _explicitNullValueNewName; set { _explicitNullValueNewName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_name"); else _explicitNullProperties?.Remove("new_name"); } }
+        public string? NewName { get => _explicitNullValueNewName; set { _explicitNullValueNewName = value; AdditionalData?.Remove("new_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_name"); else _explicitNullProperties?.Remove("new_name"); } }
         private string? _explicitNullValueNewName = default!;
 #nullable restore
 #else
-        public string NewName { get => _explicitNullValueNewName; set { _explicitNullValueNewName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_name"); else _explicitNullProperties?.Remove("new_name"); } }
+        public string NewName { get => _explicitNullValueNewName; set { _explicitNullValueNewName = value; AdditionalData?.Remove("new_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_name"); else _explicitNullProperties?.Remove("new_name"); } }
         private string _explicitNullValueNewName = default!;
 #endif
         /// <summary>

@@ -17,21 +17,24 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("llm") is { } nullNodeLlm && nullNodeLlm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Llm = null;
-            if (parseNode.GetChildNode("price_per_message") is { } nullNodePricePerMessage && nullNodePricePerMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PricePerMessage = null;
-            if (parseNode.GetChildNode("price_per_minute") is { } nullNodePricePerMinute && nullNodePricePerMinute.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PricePerMinute = null;
+            if (parseNode.GetChildNode("llm") is null) { _explicitNullValueLlm = default!; _explicitNullProperties?.Remove("llm"); }
+            else if (parseNode.GetChildNode("llm") is { } nullNodeLlm && nullNodeLlm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Llm = null;
+            if (parseNode.GetChildNode("price_per_message") is null) { _explicitNullValuePricePerMessage = default!; _explicitNullProperties?.Remove("price_per_message"); }
+            else if (parseNode.GetChildNode("price_per_message") is { } nullNodePricePerMessage && nullNodePricePerMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PricePerMessage = null;
+            if (parseNode.GetChildNode("price_per_minute") is null) { _explicitNullValuePricePerMinute = default!; _explicitNullProperties?.Remove("price_per_minute"); }
+            else if (parseNode.GetChildNode("price_per_minute") is { } nullNodePricePerMinute && nullNodePricePerMinute.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PricePerMinute = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The llm property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm? Llm { get => _explicitNullValueLlm; set { _explicitNullValueLlm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("llm"); else _explicitNullProperties?.Remove("llm"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm? Llm { get => _explicitNullValueLlm; set { _explicitNullValueLlm = value; AdditionalData?.Remove("llm"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("llm"); else _explicitNullProperties?.Remove("llm"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm? _explicitNullValueLlm = default!;
         /// <summary>The price_per_message property</summary>
-        public double? PricePerMessage { get => _explicitNullValuePricePerMessage; set { _explicitNullValuePricePerMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("price_per_message"); else _explicitNullProperties?.Remove("price_per_message"); } }
+        public double? PricePerMessage { get => _explicitNullValuePricePerMessage; set { _explicitNullValuePricePerMessage = value; AdditionalData?.Remove("price_per_message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("price_per_message"); else _explicitNullProperties?.Remove("price_per_message"); } }
         private double? _explicitNullValuePricePerMessage = default!;
         /// <summary>The price_per_minute property</summary>
-        public double? PricePerMinute { get => _explicitNullValuePricePerMinute; set { _explicitNullValuePricePerMinute = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("price_per_minute"); else _explicitNullProperties?.Remove("price_per_minute"); } }
+        public double? PricePerMinute { get => _explicitNullValuePricePerMinute; set { _explicitNullValuePricePerMinute = value; AdditionalData?.Remove("price_per_minute"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("price_per_minute"); else _explicitNullProperties?.Remove("price_per_minute"); } }
         private double? _explicitNullValuePricePerMinute = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageCalculatorLlmResponseModel"/> and sets the default values.
@@ -58,7 +61,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "llm", n => { Llm = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm>(); } },
+                { "llm", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueLlm = default; _explicitNullProperties?.Remove("llm"); AdditionalData["llm"] = unknown; } else { Llm = parsed; AdditionalData.Remove("llm"); } } },
                 { "price_per_message", n => { PricePerMessage = n.GetDoubleValue(); } },
                 { "price_per_minute", n => { PricePerMinute = n.GetDoubleValue(); } },
             };

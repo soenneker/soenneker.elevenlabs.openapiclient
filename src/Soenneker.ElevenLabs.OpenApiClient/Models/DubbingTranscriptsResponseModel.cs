@@ -17,10 +17,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("json") is { } nullNodeJson && nullNodeJson.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Json = null;
-            if (parseNode.GetChildNode("srt") is { } nullNodeSrt && nullNodeSrt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Srt = null;
-            if (parseNode.GetChildNode("transcript_format") is { } nullNodeTranscriptFormat && nullNodeTranscriptFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TranscriptFormat = null;
-            if (parseNode.GetChildNode("webvtt") is { } nullNodeWebvtt && nullNodeWebvtt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Webvtt = null;
+            if (parseNode.GetChildNode("json") is null) { _explicitNullValueJson = default!; _explicitNullProperties?.Remove("json"); }
+            else if (parseNode.GetChildNode("json") is { } nullNodeJson && nullNodeJson.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Json = null;
+            if (parseNode.GetChildNode("srt") is null) { _explicitNullValueSrt = default!; _explicitNullProperties?.Remove("srt"); }
+            else if (parseNode.GetChildNode("srt") is { } nullNodeSrt && nullNodeSrt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Srt = null;
+            if (parseNode.GetChildNode("transcript_format") is null) { _explicitNullValueTranscriptFormat = default!; _explicitNullProperties?.Remove("transcript_format"); }
+            else if (parseNode.GetChildNode("transcript_format") is { } nullNodeTranscriptFormat && nullNodeTranscriptFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TranscriptFormat = null;
+            if (parseNode.GetChildNode("webvtt") is null) { _explicitNullValueWebvtt = default!; _explicitNullProperties?.Remove("webvtt"); }
+            else if (parseNode.GetChildNode("webvtt") is { } nullNodeWebvtt && nullNodeWebvtt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Webvtt = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,34 +32,34 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The json property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscript? Json { get => _explicitNullValueJson; set { _explicitNullValueJson = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json"); else _explicitNullProperties?.Remove("json"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscript? Json { get => _explicitNullValueJson; set { _explicitNullValueJson = value; AdditionalData?.Remove("json"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json"); else _explicitNullProperties?.Remove("json"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscript? _explicitNullValueJson = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscript Json { get => _explicitNullValueJson; set { _explicitNullValueJson = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json"); else _explicitNullProperties?.Remove("json"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscript Json { get => _explicitNullValueJson; set { _explicitNullValueJson = value; AdditionalData?.Remove("json"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json"); else _explicitNullProperties?.Remove("json"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscript _explicitNullValueJson = default!;
 #endif
         /// <summary>The srt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Srt { get => _explicitNullValueSrt; set { _explicitNullValueSrt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("srt"); else _explicitNullProperties?.Remove("srt"); } }
+        public string? Srt { get => _explicitNullValueSrt; set { _explicitNullValueSrt = value; AdditionalData?.Remove("srt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("srt"); else _explicitNullProperties?.Remove("srt"); } }
         private string? _explicitNullValueSrt = default!;
 #nullable restore
 #else
-        public string Srt { get => _explicitNullValueSrt; set { _explicitNullValueSrt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("srt"); else _explicitNullProperties?.Remove("srt"); } }
+        public string Srt { get => _explicitNullValueSrt; set { _explicitNullValueSrt = value; AdditionalData?.Remove("srt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("srt"); else _explicitNullProperties?.Remove("srt"); } }
         private string _explicitNullValueSrt = default!;
 #endif
         /// <summary>The transcript_format property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptsResponseModelTranscriptFormat? TranscriptFormat { get => _explicitNullValueTranscriptFormat; set { _explicitNullValueTranscriptFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transcript_format"); else _explicitNullProperties?.Remove("transcript_format"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptsResponseModelTranscriptFormat? TranscriptFormat { get => _explicitNullValueTranscriptFormat; set { _explicitNullValueTranscriptFormat = value; AdditionalData?.Remove("transcript_format"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transcript_format"); else _explicitNullProperties?.Remove("transcript_format"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptsResponseModelTranscriptFormat? _explicitNullValueTranscriptFormat = default!;
         /// <summary>The webvtt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Webvtt { get => _explicitNullValueWebvtt; set { _explicitNullValueWebvtt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webvtt"); else _explicitNullProperties?.Remove("webvtt"); } }
+        public string? Webvtt { get => _explicitNullValueWebvtt; set { _explicitNullValueWebvtt = value; AdditionalData?.Remove("webvtt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webvtt"); else _explicitNullProperties?.Remove("webvtt"); } }
         private string? _explicitNullValueWebvtt = default!;
 #nullable restore
 #else
-        public string Webvtt { get => _explicitNullValueWebvtt; set { _explicitNullValueWebvtt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webvtt"); else _explicitNullProperties?.Remove("webvtt"); } }
+        public string Webvtt { get => _explicitNullValueWebvtt; set { _explicitNullValueWebvtt = value; AdditionalData?.Remove("webvtt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webvtt"); else _explicitNullProperties?.Remove("webvtt"); } }
         private string _explicitNullValueWebvtt = default!;
 #endif
         /// <summary>
@@ -85,7 +89,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "json", n => { Json = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscript>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscript.CreateFromDiscriminatorValue); } },
                 { "srt", n => { Srt = n.GetStringValue(); } },
-                { "transcript_format", n => { TranscriptFormat = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptsResponseModelTranscriptFormat>(); } },
+                { "transcript_format", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptsResponseModelTranscriptFormat>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTranscriptFormat = default; _explicitNullProperties?.Remove("transcript_format"); AdditionalData["transcript_format"] = unknown; } else { TranscriptFormat = parsed; AdditionalData.Remove("transcript_format"); } } },
                 { "webvtt", n => { Webvtt = n.GetStringValue(); } },
             };
         }

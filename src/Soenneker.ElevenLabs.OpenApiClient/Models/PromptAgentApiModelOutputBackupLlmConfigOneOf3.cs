@@ -17,8 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("order") is { } nullNodeOrder && nullNodeOrder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Order = null;
-            if (parseNode.GetChildNode("preference") is { } nullNodePreference && nullNodePreference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Preference = null;
+            if (parseNode.GetChildNode("order") is null) { _explicitNullValueOrder = default!; _explicitNullProperties?.Remove("order"); }
+            else if (parseNode.GetChildNode("order") is { } nullNodeOrder && nullNodeOrder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Order = null;
+            if (parseNode.GetChildNode("preference") is null) { _explicitNullValuePreference = default!; _explicitNullProperties?.Remove("preference"); }
+            else if (parseNode.GetChildNode("preference") is { } nullNodePreference && nullNodePreference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Preference = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The order property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm?>? Order { get => _explicitNullValueOrder; set { _explicitNullValueOrder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("order"); else _explicitNullProperties?.Remove("order"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm?>? Order { get => _explicitNullValueOrder; set { _explicitNullValueOrder = value; AdditionalData?.Remove("order"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("order"); else _explicitNullProperties?.Remove("order"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm?>? _explicitNullValueOrder = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm?> Order { get => _explicitNullValueOrder; set { _explicitNullValueOrder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("order"); else _explicitNullProperties?.Remove("order"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm?> Order { get => _explicitNullValueOrder; set { _explicitNullValueOrder = value; AdditionalData?.Remove("order"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("order"); else _explicitNullProperties?.Remove("order"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm?> _explicitNullValueOrder = default!;
 #endif
         /// <summary>The preference property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputBackupLlmConfigOneOf3_preference? Preference { get => _explicitNullValuePreference; set { _explicitNullValuePreference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preference"); else _explicitNullProperties?.Remove("preference"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputBackupLlmConfigOneOf3_preference? Preference { get => _explicitNullValuePreference; set { _explicitNullValuePreference = value; AdditionalData?.Remove("preference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preference"); else _explicitNullProperties?.Remove("preference"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputBackupLlmConfigOneOf3_preference? _explicitNullValuePreference = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputBackupLlmConfigOneOf3"/> and sets the default values.
@@ -62,7 +64,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "order", n => { Order = n.GetCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm>()?.AsList(); } },
-                { "preference", n => { Preference = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputBackupLlmConfigOneOf3_preference>(); } },
+                { "preference", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputBackupLlmConfigOneOf3_preference>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePreference = default; _explicitNullProperties?.Remove("preference"); AdditionalData["preference"] = unknown; } else { Preference = parsed; AdditionalData.Remove("preference"); } } },
             };
         }
         /// <summary>

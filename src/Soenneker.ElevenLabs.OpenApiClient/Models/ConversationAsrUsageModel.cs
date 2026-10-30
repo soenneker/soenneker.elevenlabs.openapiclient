@@ -18,9 +18,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("asr_model") is { } nullNodeAsrModel && nullNodeAsrModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AsrModel = null;
-            if (parseNode.GetChildNode("total_audio_input_seconds") is { } nullNodeTotalAudioInputSeconds && nullNodeTotalAudioInputSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalAudioInputSeconds = null;
-            if (parseNode.GetChildNode("total_transcription_calls") is { } nullNodeTotalTranscriptionCalls && nullNodeTotalTranscriptionCalls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalTranscriptionCalls = null;
+            if (parseNode.GetChildNode("asr_model") is null) { _explicitNullValueAsrModel = default!; _explicitNullProperties?.Remove("asr_model"); }
+            else if (parseNode.GetChildNode("asr_model") is { } nullNodeAsrModel && nullNodeAsrModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AsrModel = null;
+            if (parseNode.GetChildNode("total_audio_input_seconds") is null) { _explicitNullValueTotalAudioInputSeconds = default!; _explicitNullProperties?.Remove("total_audio_input_seconds"); }
+            else if (parseNode.GetChildNode("total_audio_input_seconds") is { } nullNodeTotalAudioInputSeconds && nullNodeTotalAudioInputSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalAudioInputSeconds = null;
+            if (parseNode.GetChildNode("total_transcription_calls") is null) { _explicitNullValueTotalTranscriptionCalls = default!; _explicitNullProperties?.Remove("total_transcription_calls"); }
+            else if (parseNode.GetChildNode("total_transcription_calls") is { } nullNodeTotalTranscriptionCalls && nullNodeTotalTranscriptionCalls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalTranscriptionCalls = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,18 +31,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The asr_model property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AsrModel { get => _explicitNullValueAsrModel; set { _explicitNullValueAsrModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asr_model"); else _explicitNullProperties?.Remove("asr_model"); } }
+        public string? AsrModel { get => _explicitNullValueAsrModel; set { _explicitNullValueAsrModel = value; AdditionalData?.Remove("asr_model"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asr_model"); else _explicitNullProperties?.Remove("asr_model"); } }
         private string? _explicitNullValueAsrModel = default!;
 #nullable restore
 #else
-        public string AsrModel { get => _explicitNullValueAsrModel; set { _explicitNullValueAsrModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asr_model"); else _explicitNullProperties?.Remove("asr_model"); } }
+        public string AsrModel { get => _explicitNullValueAsrModel; set { _explicitNullValueAsrModel = value; AdditionalData?.Remove("asr_model"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asr_model"); else _explicitNullProperties?.Remove("asr_model"); } }
         private string _explicitNullValueAsrModel = default!;
 #endif
         /// <summary>The total_audio_input_seconds property</summary>
-        public double? TotalAudioInputSeconds { get => _explicitNullValueTotalAudioInputSeconds; set { _explicitNullValueTotalAudioInputSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_audio_input_seconds"); else _explicitNullProperties?.Remove("total_audio_input_seconds"); } }
+        public double? TotalAudioInputSeconds { get => _explicitNullValueTotalAudioInputSeconds; set { _explicitNullValueTotalAudioInputSeconds = value; AdditionalData?.Remove("total_audio_input_seconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_audio_input_seconds"); else _explicitNullProperties?.Remove("total_audio_input_seconds"); } }
         private double? _explicitNullValueTotalAudioInputSeconds = default!;
         /// <summary>The total_transcription_calls property</summary>
-        public int? TotalTranscriptionCalls { get => _explicitNullValueTotalTranscriptionCalls; set { _explicitNullValueTotalTranscriptionCalls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_transcription_calls"); else _explicitNullProperties?.Remove("total_transcription_calls"); } }
+        public int? TotalTranscriptionCalls { get => _explicitNullValueTotalTranscriptionCalls; set { _explicitNullValueTotalTranscriptionCalls = value; AdditionalData?.Remove("total_transcription_calls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_transcription_calls"); else _explicitNullProperties?.Remove("total_transcription_calls"); } }
         private int? _explicitNullValueTotalTranscriptionCalls = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationAsrUsageModel"/> and sets the default values.

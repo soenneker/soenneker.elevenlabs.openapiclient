@@ -17,47 +17,53 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("access_source") is { } nullNodeAccessSource && nullNodeAccessSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessSource = null;
-            if (parseNode.GetChildNode("anonymous_access_level_override") is { } nullNodeAnonymousAccessLevelOverride && nullNodeAnonymousAccessLevelOverride.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AnonymousAccessLevelOverride = null;
-            if (parseNode.GetChildNode("creator_email") is { } nullNodeCreatorEmail && nullNodeCreatorEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatorEmail = null;
-            if (parseNode.GetChildNode("creator_name") is { } nullNodeCreatorName && nullNodeCreatorName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatorName = null;
-            if (parseNode.GetChildNode("is_creator") is { } nullNodeIsCreator && nullNodeIsCreator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsCreator = null;
-            if (parseNode.GetChildNode("role") is { } nullNodeRole && nullNodeRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Role = null;
+            if (parseNode.GetChildNode("access_source") is null) { _explicitNullValueAccessSource = default!; _explicitNullProperties?.Remove("access_source"); }
+            else if (parseNode.GetChildNode("access_source") is { } nullNodeAccessSource && nullNodeAccessSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessSource = null;
+            if (parseNode.GetChildNode("anonymous_access_level_override") is null) { _explicitNullValueAnonymousAccessLevelOverride = default!; _explicitNullProperties?.Remove("anonymous_access_level_override"); }
+            else if (parseNode.GetChildNode("anonymous_access_level_override") is { } nullNodeAnonymousAccessLevelOverride && nullNodeAnonymousAccessLevelOverride.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AnonymousAccessLevelOverride = null;
+            if (parseNode.GetChildNode("creator_email") is null) { _explicitNullValueCreatorEmail = default!; _explicitNullProperties?.Remove("creator_email"); }
+            else if (parseNode.GetChildNode("creator_email") is { } nullNodeCreatorEmail && nullNodeCreatorEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatorEmail = null;
+            if (parseNode.GetChildNode("creator_name") is null) { _explicitNullValueCreatorName = default!; _explicitNullProperties?.Remove("creator_name"); }
+            else if (parseNode.GetChildNode("creator_name") is { } nullNodeCreatorName && nullNodeCreatorName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatorName = null;
+            if (parseNode.GetChildNode("is_creator") is null) { _explicitNullValueIsCreator = default!; _explicitNullProperties?.Remove("is_creator"); }
+            else if (parseNode.GetChildNode("is_creator") is { } nullNodeIsCreator && nullNodeIsCreator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsCreator = null;
+            if (parseNode.GetChildNode("role") is null) { _explicitNullValueRole = default!; _explicitNullProperties?.Remove("role"); }
+            else if (parseNode.GetChildNode("role") is { } nullNodeRole && nullNodeRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Role = null;
         }
 
         /// <summary>Why the requesting user has access to this resource. &apos;creator&apos; = caller is the owner. &apos;explicit&apos; = caller (or one of their workspace groups) is listed in role_to_group_ids beyond the workspace-wide everyone group. &apos;workspace_default&apos; = the workspace-wide everyone group is listed in role_to_group_ids (every non-anon workspace member, including admins, sees this resource). &apos;workspace_admin&apos; = caller is a workspace admin and the admin seat is the *only* path to access; reserved for docs nobody else can see. Lets the UI disclose why an admin-bypass viewer sees a doc that wasn&apos;t explicitly shared with them.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfoAccessSource? AccessSource { get => _explicitNullValueAccessSource; set { _explicitNullValueAccessSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_source"); else _explicitNullProperties?.Remove("access_source"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfoAccessSource? AccessSource { get => _explicitNullValueAccessSource; set { _explicitNullValueAccessSource = value; AdditionalData?.Remove("access_source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_source"); else _explicitNullProperties?.Remove("access_source"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfoAccessSource? _explicitNullValueAccessSource = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The access level for anonymous users. If None, the resource is not shared publicly.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfoAnonymousAccessLevelOverride? AnonymousAccessLevelOverride { get => _explicitNullValueAnonymousAccessLevelOverride; set { _explicitNullValueAnonymousAccessLevelOverride = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("anonymous_access_level_override"); else _explicitNullProperties?.Remove("anonymous_access_level_override"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfoAnonymousAccessLevelOverride? AnonymousAccessLevelOverride { get => _explicitNullValueAnonymousAccessLevelOverride; set { _explicitNullValueAnonymousAccessLevelOverride = value; AdditionalData?.Remove("anonymous_access_level_override"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("anonymous_access_level_override"); else _explicitNullProperties?.Remove("anonymous_access_level_override"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfoAnonymousAccessLevelOverride? _explicitNullValueAnonymousAccessLevelOverride = default!;
         /// <summary>Email of the agent&apos;s creator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatorEmail { get => _explicitNullValueCreatorEmail; set { _explicitNullValueCreatorEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creator_email"); else _explicitNullProperties?.Remove("creator_email"); } }
+        public string? CreatorEmail { get => _explicitNullValueCreatorEmail; set { _explicitNullValueCreatorEmail = value; AdditionalData?.Remove("creator_email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creator_email"); else _explicitNullProperties?.Remove("creator_email"); } }
         private string? _explicitNullValueCreatorEmail = default!;
 #nullable restore
 #else
-        public string CreatorEmail { get => _explicitNullValueCreatorEmail; set { _explicitNullValueCreatorEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creator_email"); else _explicitNullProperties?.Remove("creator_email"); } }
+        public string CreatorEmail { get => _explicitNullValueCreatorEmail; set { _explicitNullValueCreatorEmail = value; AdditionalData?.Remove("creator_email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creator_email"); else _explicitNullProperties?.Remove("creator_email"); } }
         private string _explicitNullValueCreatorEmail = default!;
 #endif
         /// <summary>Name of the agent&apos;s creator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatorName { get => _explicitNullValueCreatorName; set { _explicitNullValueCreatorName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creator_name"); else _explicitNullProperties?.Remove("creator_name"); } }
+        public string? CreatorName { get => _explicitNullValueCreatorName; set { _explicitNullValueCreatorName = value; AdditionalData?.Remove("creator_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creator_name"); else _explicitNullProperties?.Remove("creator_name"); } }
         private string? _explicitNullValueCreatorName = default!;
 #nullable restore
 #else
-        public string CreatorName { get => _explicitNullValueCreatorName; set { _explicitNullValueCreatorName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creator_name"); else _explicitNullProperties?.Remove("creator_name"); } }
+        public string CreatorName { get => _explicitNullValueCreatorName; set { _explicitNullValueCreatorName = value; AdditionalData?.Remove("creator_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creator_name"); else _explicitNullProperties?.Remove("creator_name"); } }
         private string _explicitNullValueCreatorName = default!;
 #endif
         /// <summary>Whether the user making the request is the creator of the agent</summary>
-        public bool? IsCreator { get => _explicitNullValueIsCreator; set { _explicitNullValueIsCreator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_creator"); else _explicitNullProperties?.Remove("is_creator"); } }
+        public bool? IsCreator { get => _explicitNullValueIsCreator; set { _explicitNullValueIsCreator = value; AdditionalData?.Remove("is_creator"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_creator"); else _explicitNullProperties?.Remove("is_creator"); } }
         private bool? _explicitNullValueIsCreator = default!;
         /// <summary>The role of the user making the request</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfoRole? Role { get => _explicitNullValueRole; set { _explicitNullValueRole = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role"); else _explicitNullProperties?.Remove("role"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfoRole? Role { get => _explicitNullValueRole; set { _explicitNullValueRole = value; AdditionalData?.Remove("role"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role"); else _explicitNullProperties?.Remove("role"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfoRole? _explicitNullValueRole = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo"/> and sets the default values.
@@ -84,12 +90,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "access_source", n => { AccessSource = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfoAccessSource>(); } },
-                { "anonymous_access_level_override", n => { AnonymousAccessLevelOverride = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfoAnonymousAccessLevelOverride>(); } },
+                { "access_source", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfoAccessSource>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAccessSource = default; _explicitNullProperties?.Remove("access_source"); AdditionalData["access_source"] = unknown; } else { AccessSource = parsed; AdditionalData.Remove("access_source"); } } },
+                { "anonymous_access_level_override", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfoAnonymousAccessLevelOverride>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAnonymousAccessLevelOverride = default; _explicitNullProperties?.Remove("anonymous_access_level_override"); AdditionalData["anonymous_access_level_override"] = unknown; } else { AnonymousAccessLevelOverride = parsed; AdditionalData.Remove("anonymous_access_level_override"); } } },
                 { "creator_email", n => { CreatorEmail = n.GetStringValue(); } },
                 { "creator_name", n => { CreatorName = n.GetStringValue(); } },
                 { "is_creator", n => { IsCreator = n.GetBoolValue(); } },
-                { "role", n => { Role = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfoRole>(); } },
+                { "role", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfoRole>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRole = default; _explicitNullProperties?.Remove("role"); AdditionalData["role"] = unknown; } else { Role = parsed; AdditionalData.Remove("role"); } } },
             };
         }
         /// <summary>

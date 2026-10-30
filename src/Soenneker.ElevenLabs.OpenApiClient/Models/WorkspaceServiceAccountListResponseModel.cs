@@ -17,7 +17,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("service-accounts") is { } nullNodeServiceAccounts && nullNodeServiceAccounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceAccounts = null;
+            if (parseNode.GetChildNode("service-accounts") is null) { _explicitNullValueServiceAccounts = default!; _explicitNullProperties?.Remove("service-accounts"); }
+            else if (parseNode.GetChildNode("service-accounts") is { } nullNodeServiceAccounts && nullNodeServiceAccounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceAccounts = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The serviceAccounts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceServiceAccountResponseModel>? ServiceAccounts { get => _explicitNullValueServiceAccounts; set { _explicitNullValueServiceAccounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service-accounts"); else _explicitNullProperties?.Remove("service-accounts"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceServiceAccountResponseModel>? ServiceAccounts { get => _explicitNullValueServiceAccounts; set { _explicitNullValueServiceAccounts = value; AdditionalData?.Remove("service-accounts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service-accounts"); else _explicitNullProperties?.Remove("service-accounts"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceServiceAccountResponseModel>? _explicitNullValueServiceAccounts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceServiceAccountResponseModel> ServiceAccounts { get => _explicitNullValueServiceAccounts; set { _explicitNullValueServiceAccounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service-accounts"); else _explicitNullProperties?.Remove("service-accounts"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceServiceAccountResponseModel> ServiceAccounts { get => _explicitNullValueServiceAccounts; set { _explicitNullValueServiceAccounts = value; AdditionalData?.Remove("service-accounts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service-accounts"); else _explicitNullProperties?.Remove("service-accounts"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceServiceAccountResponseModel> _explicitNullValueServiceAccounts = default!;
 #endif
         /// <summary>

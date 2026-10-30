@@ -17,7 +17,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("traffic_percentage_branch_id_map") is { } nullNodeTrafficPercentageBranchIdMap && nullNodeTrafficPercentageBranchIdMap.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrafficPercentageBranchIdMap = null;
+            if (parseNode.GetChildNode("traffic_percentage_branch_id_map") is null) { _explicitNullValueTrafficPercentageBranchIdMap = default!; _explicitNullProperties?.Remove("traffic_percentage_branch_id_map"); }
+            else if (parseNode.GetChildNode("traffic_percentage_branch_id_map") is { } nullNodeTrafficPercentageBranchIdMap && nullNodeTrafficPercentageBranchIdMap.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrafficPercentageBranchIdMap = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Map of branch IDs to traffic percentages</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDeploymentResponseTrafficPercentageBranchIdMapProperty? TrafficPercentageBranchIdMap { get => _explicitNullValueTrafficPercentageBranchIdMap; set { _explicitNullValueTrafficPercentageBranchIdMap = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traffic_percentage_branch_id_map"); else _explicitNullProperties?.Remove("traffic_percentage_branch_id_map"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDeploymentResponseTrafficPercentageBranchIdMapProperty? TrafficPercentageBranchIdMap { get => _explicitNullValueTrafficPercentageBranchIdMap; set { _explicitNullValueTrafficPercentageBranchIdMap = value; AdditionalData?.Remove("traffic_percentage_branch_id_map"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traffic_percentage_branch_id_map"); else _explicitNullProperties?.Remove("traffic_percentage_branch_id_map"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDeploymentResponseTrafficPercentageBranchIdMapProperty? _explicitNullValueTrafficPercentageBranchIdMap = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDeploymentResponseTrafficPercentageBranchIdMapProperty TrafficPercentageBranchIdMap { get => _explicitNullValueTrafficPercentageBranchIdMap; set { _explicitNullValueTrafficPercentageBranchIdMap = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traffic_percentage_branch_id_map"); else _explicitNullProperties?.Remove("traffic_percentage_branch_id_map"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDeploymentResponseTrafficPercentageBranchIdMapProperty TrafficPercentageBranchIdMap { get => _explicitNullValueTrafficPercentageBranchIdMap; set { _explicitNullValueTrafficPercentageBranchIdMap = value; AdditionalData?.Remove("traffic_percentage_branch_id_map"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traffic_percentage_branch_id_map"); else _explicitNullProperties?.Remove("traffic_percentage_branch_id_map"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDeploymentResponseTrafficPercentageBranchIdMapProperty _explicitNullValueTrafficPercentageBranchIdMap = default!;
 #endif
         /// <summary>

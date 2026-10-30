@@ -18,10 +18,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("mimeType") is { } nullNodeMimeType && nullNodeMimeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MimeType = null;
-            if (parseNode.GetChildNode("sizes") is { } nullNodeSizes && nullNodeSizes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sizes = null;
-            if (parseNode.GetChildNode("src") is { } nullNodeSrc && nullNodeSrc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Src = null;
-            if (parseNode.GetChildNode("theme") is { } nullNodeTheme && nullNodeTheme.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Theme = null;
+            if (parseNode.GetChildNode("mimeType") is null) { _explicitNullValueMimeType = default!; _explicitNullProperties?.Remove("mimeType"); }
+            else if (parseNode.GetChildNode("mimeType") is { } nullNodeMimeType && nullNodeMimeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MimeType = null;
+            if (parseNode.GetChildNode("sizes") is null) { _explicitNullValueSizes = default!; _explicitNullProperties?.Remove("sizes"); }
+            else if (parseNode.GetChildNode("sizes") is { } nullNodeSizes && nullNodeSizes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sizes = null;
+            if (parseNode.GetChildNode("src") is null) { _explicitNullValueSrc = default!; _explicitNullProperties?.Remove("src"); }
+            else if (parseNode.GetChildNode("src") is { } nullNodeSrc && nullNodeSrc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Src = null;
+            if (parseNode.GetChildNode("theme") is null) { _explicitNullValueTheme = default!; _explicitNullProperties?.Remove("theme"); }
+            else if (parseNode.GetChildNode("theme") is { } nullNodeTheme && nullNodeTheme.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Theme = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,35 +33,35 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The mimeType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MimeType { get => _explicitNullValueMimeType; set { _explicitNullValueMimeType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mimeType"); else _explicitNullProperties?.Remove("mimeType"); } }
+        public string? MimeType { get => _explicitNullValueMimeType; set { _explicitNullValueMimeType = value; AdditionalData?.Remove("mimeType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mimeType"); else _explicitNullProperties?.Remove("mimeType"); } }
         private string? _explicitNullValueMimeType = default!;
 #nullable restore
 #else
-        public string MimeType { get => _explicitNullValueMimeType; set { _explicitNullValueMimeType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mimeType"); else _explicitNullProperties?.Remove("mimeType"); } }
+        public string MimeType { get => _explicitNullValueMimeType; set { _explicitNullValueMimeType = value; AdditionalData?.Remove("mimeType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mimeType"); else _explicitNullProperties?.Remove("mimeType"); } }
         private string _explicitNullValueMimeType = default!;
 #endif
         /// <summary>The sizes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Sizes { get => _explicitNullValueSizes; set { _explicitNullValueSizes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sizes"); else _explicitNullProperties?.Remove("sizes"); } }
+        public List<string>? Sizes { get => _explicitNullValueSizes; set { _explicitNullValueSizes = value; AdditionalData?.Remove("sizes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sizes"); else _explicitNullProperties?.Remove("sizes"); } }
         private List<string>? _explicitNullValueSizes = default!;
 #nullable restore
 #else
-        public List<string> Sizes { get => _explicitNullValueSizes; set { _explicitNullValueSizes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sizes"); else _explicitNullProperties?.Remove("sizes"); } }
+        public List<string> Sizes { get => _explicitNullValueSizes; set { _explicitNullValueSizes = value; AdditionalData?.Remove("sizes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sizes"); else _explicitNullProperties?.Remove("sizes"); } }
         private List<string> _explicitNullValueSizes = default!;
 #endif
         /// <summary>The src property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Src { get => _explicitNullValueSrc; set { _explicitNullValueSrc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("src"); else _explicitNullProperties?.Remove("src"); } }
+        public string? Src { get => _explicitNullValueSrc; set { _explicitNullValueSrc = value; AdditionalData?.Remove("src"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("src"); else _explicitNullProperties?.Remove("src"); } }
         private string? _explicitNullValueSrc = default!;
 #nullable restore
 #else
-        public string Src { get => _explicitNullValueSrc; set { _explicitNullValueSrc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("src"); else _explicitNullProperties?.Remove("src"); } }
+        public string Src { get => _explicitNullValueSrc; set { _explicitNullValueSrc = value; AdditionalData?.Remove("src"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("src"); else _explicitNullProperties?.Remove("src"); } }
         private string _explicitNullValueSrc = default!;
 #endif
         /// <summary>The theme property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.IconTheme? Theme { get => _explicitNullValueTheme; set { _explicitNullValueTheme = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("theme"); else _explicitNullProperties?.Remove("theme"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.IconTheme? Theme { get => _explicitNullValueTheme; set { _explicitNullValueTheme = value; AdditionalData?.Remove("theme"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("theme"); else _explicitNullProperties?.Remove("theme"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.IconTheme? _explicitNullValueTheme = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.Icon"/> and sets the default values.
@@ -87,7 +91,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "mimeType", n => { MimeType = n.GetStringValue(); } },
                 { "sizes", n => { Sizes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "src", n => { Src = n.GetStringValue(); } },
-                { "theme", n => { Theme = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.IconTheme>(); } },
+                { "theme", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.IconTheme>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTheme = default; _explicitNullProperties?.Remove("theme"); AdditionalData["theme"] = unknown; } else { Theme = parsed; AdditionalData.Remove("theme"); } } },
             };
         }
         /// <summary>

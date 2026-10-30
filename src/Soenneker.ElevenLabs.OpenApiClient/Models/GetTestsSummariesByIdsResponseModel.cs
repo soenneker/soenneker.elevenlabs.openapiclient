@@ -17,7 +17,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("tests") is { } nullNodeTests && nullNodeTests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tests = null;
+            if (parseNode.GetChildNode("tests") is null) { _explicitNullValueTests = default!; _explicitNullProperties?.Remove("tests"); }
+            else if (parseNode.GetChildNode("tests") is { } nullNodeTests && nullNodeTests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tests = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Dictionary mapping test IDs to their summary information</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestsSummariesByIdsResponseModelTestsProperty? Tests { get => _explicitNullValueTests; set { _explicitNullValueTests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tests"); else _explicitNullProperties?.Remove("tests"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestsSummariesByIdsResponseModelTestsProperty? Tests { get => _explicitNullValueTests; set { _explicitNullValueTests = value; AdditionalData?.Remove("tests"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tests"); else _explicitNullProperties?.Remove("tests"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestsSummariesByIdsResponseModelTestsProperty? _explicitNullValueTests = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestsSummariesByIdsResponseModelTestsProperty Tests { get => _explicitNullValueTests; set { _explicitNullValueTests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tests"); else _explicitNullProperties?.Remove("tests"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestsSummariesByIdsResponseModelTestsProperty Tests { get => _explicitNullValueTests; set { _explicitNullValueTests = value; AdditionalData?.Remove("tests"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tests"); else _explicitNullProperties?.Remove("tests"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestsSummariesByIdsResponseModelTestsProperty _explicitNullValueTests = default!;
 #endif
         /// <summary>

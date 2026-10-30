@@ -17,7 +17,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("tool_settings") is { } nullNodeToolSettings && nullNodeToolSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolSettings = null;
+            if (parseNode.GetChildNode("tool_settings") is null) { _explicitNullValueToolSettings = default!; _explicitNullProperties?.Remove("tool_settings"); }
+            else if (parseNode.GetChildNode("tool_settings") is { } nullNodeToolSettings && nullNodeToolSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolSettings = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The tool_settings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioAgentSettingsModelToolSettingsProperty? ToolSettings { get => _explicitNullValueToolSettings; set { _explicitNullValueToolSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_settings"); else _explicitNullProperties?.Remove("tool_settings"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioAgentSettingsModelToolSettingsProperty? ToolSettings { get => _explicitNullValueToolSettings; set { _explicitNullValueToolSettings = value; AdditionalData?.Remove("tool_settings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_settings"); else _explicitNullProperties?.Remove("tool_settings"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioAgentSettingsModelToolSettingsProperty? _explicitNullValueToolSettings = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioAgentSettingsModelToolSettingsProperty ToolSettings { get => _explicitNullValueToolSettings; set { _explicitNullValueToolSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_settings"); else _explicitNullProperties?.Remove("tool_settings"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioAgentSettingsModelToolSettingsProperty ToolSettings { get => _explicitNullValueToolSettings; set { _explicitNullValueToolSettings = value; AdditionalData?.Remove("tool_settings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_settings"); else _explicitNullProperties?.Remove("tool_settings"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioAgentSettingsModelToolSettingsProperty _explicitNullValueToolSettings = default!;
 #endif
         /// <summary>

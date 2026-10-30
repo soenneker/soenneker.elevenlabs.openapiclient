@@ -17,8 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("data_collection") is { } nullNodeDataCollection && nullNodeDataCollection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataCollection = null;
-            if (parseNode.GetChildNode("evaluation_criteria") is { } nullNodeEvaluationCriteria && nullNodeEvaluationCriteria.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EvaluationCriteria = null;
+            if (parseNode.GetChildNode("data_collection") is null) { _explicitNullValueDataCollection = default!; _explicitNullProperties?.Remove("data_collection"); }
+            else if (parseNode.GetChildNode("data_collection") is { } nullNodeDataCollection && nullNodeDataCollection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataCollection = null;
+            if (parseNode.GetChildNode("evaluation_criteria") is null) { _explicitNullValueEvaluationCriteria = default!; _explicitNullProperties?.Remove("evaluation_criteria"); }
+            else if (parseNode.GetChildNode("evaluation_criteria") is { } nullNodeEvaluationCriteria && nullNodeEvaluationCriteria.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EvaluationCriteria = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,22 +28,22 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The data_collection property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAnalysisItemsOutputDataCollectionItem>? DataCollection { get => _explicitNullValueDataCollection; set { _explicitNullValueDataCollection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data_collection"); else _explicitNullProperties?.Remove("data_collection"); } }
-        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAnalysisItemsOutputDataCollectionItem>? _explicitNullValueDataCollection = default!;
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAnalysisItemsInputDataCollectionItem>? DataCollection { get => _explicitNullValueDataCollection; set { _explicitNullValueDataCollection = value; AdditionalData?.Remove("data_collection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data_collection"); else _explicitNullProperties?.Remove("data_collection"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAnalysisItemsInputDataCollectionItem>? _explicitNullValueDataCollection = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAnalysisItemsOutputDataCollectionItem> DataCollection { get => _explicitNullValueDataCollection; set { _explicitNullValueDataCollection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data_collection"); else _explicitNullProperties?.Remove("data_collection"); } }
-        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAnalysisItemsOutputDataCollectionItem> _explicitNullValueDataCollection = default!;
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAnalysisItemsInputDataCollectionItem> DataCollection { get => _explicitNullValueDataCollection; set { _explicitNullValueDataCollection = value; AdditionalData?.Remove("data_collection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data_collection"); else _explicitNullProperties?.Remove("data_collection"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAnalysisItemsInputDataCollectionItem> _explicitNullValueDataCollection = default!;
 #endif
         /// <summary>The evaluation_criteria property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAnalysisItemsOutputEvaluationCriteriaItem>? EvaluationCriteria { get => _explicitNullValueEvaluationCriteria; set { _explicitNullValueEvaluationCriteria = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluation_criteria"); else _explicitNullProperties?.Remove("evaluation_criteria"); } }
-        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAnalysisItemsOutputEvaluationCriteriaItem>? _explicitNullValueEvaluationCriteria = default!;
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAnalysisItemsInputEvaluationCriteriaItem>? EvaluationCriteria { get => _explicitNullValueEvaluationCriteria; set { _explicitNullValueEvaluationCriteria = value; AdditionalData?.Remove("evaluation_criteria"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluation_criteria"); else _explicitNullProperties?.Remove("evaluation_criteria"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAnalysisItemsInputEvaluationCriteriaItem>? _explicitNullValueEvaluationCriteria = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAnalysisItemsOutputEvaluationCriteriaItem> EvaluationCriteria { get => _explicitNullValueEvaluationCriteria; set { _explicitNullValueEvaluationCriteria = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluation_criteria"); else _explicitNullProperties?.Remove("evaluation_criteria"); } }
-        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAnalysisItemsOutputEvaluationCriteriaItem> _explicitNullValueEvaluationCriteria = default!;
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAnalysisItemsInputEvaluationCriteriaItem> EvaluationCriteria { get => _explicitNullValueEvaluationCriteria; set { _explicitNullValueEvaluationCriteria = value; AdditionalData?.Remove("evaluation_criteria"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluation_criteria"); else _explicitNullProperties?.Remove("evaluation_criteria"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAnalysisItemsInputEvaluationCriteriaItem> _explicitNullValueEvaluationCriteria = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAnalysisItemsOutput"/> and sets the default values.
@@ -68,8 +70,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "data_collection", n => { DataCollection = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAnalysisItemsOutputDataCollectionItem>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAnalysisItemsOutputDataCollectionItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "evaluation_criteria", n => { EvaluationCriteria = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAnalysisItemsOutputEvaluationCriteriaItem>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAnalysisItemsOutputEvaluationCriteriaItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "data_collection", n => { DataCollection = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAnalysisItemsInputDataCollectionItem>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAnalysisItemsInputDataCollectionItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "evaluation_criteria", n => { EvaluationCriteria = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAnalysisItemsInputEvaluationCriteriaItem>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAnalysisItemsInputEvaluationCriteriaItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -79,8 +81,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAnalysisItemsOutputDataCollectionItem>("data_collection", DataCollection);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAnalysisItemsOutputEvaluationCriteriaItem>("evaluation_criteria", EvaluationCriteria);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAnalysisItemsInputDataCollectionItem>("data_collection", DataCollection);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAnalysisItemsInputEvaluationCriteriaItem>("evaluation_criteria", EvaluationCriteria);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

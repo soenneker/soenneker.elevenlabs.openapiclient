@@ -17,9 +17,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("signed_cloud_url") is { } nullNodeSignedCloudUrl && nullNodeSignedCloudUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SignedCloudUrl = null;
-            if (parseNode.GetChildNode("start_thumbnail_index") is { } nullNodeStartThumbnailIndex && nullNodeStartThumbnailIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartThumbnailIndex = null;
-            if (parseNode.GetChildNode("thumbnail_count") is { } nullNodeThumbnailCount && nullNodeThumbnailCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThumbnailCount = null;
+            if (parseNode.GetChildNode("signed_cloud_url") is null) { _explicitNullValueSignedCloudUrl = default!; _explicitNullProperties?.Remove("signed_cloud_url"); }
+            else if (parseNode.GetChildNode("signed_cloud_url") is { } nullNodeSignedCloudUrl && nullNodeSignedCloudUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SignedCloudUrl = null;
+            if (parseNode.GetChildNode("start_thumbnail_index") is null) { _explicitNullValueStartThumbnailIndex = default!; _explicitNullProperties?.Remove("start_thumbnail_index"); }
+            else if (parseNode.GetChildNode("start_thumbnail_index") is { } nullNodeStartThumbnailIndex && nullNodeStartThumbnailIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartThumbnailIndex = null;
+            if (parseNode.GetChildNode("thumbnail_count") is null) { _explicitNullValueThumbnailCount = default!; _explicitNullProperties?.Remove("thumbnail_count"); }
+            else if (parseNode.GetChildNode("thumbnail_count") is { } nullNodeThumbnailCount && nullNodeThumbnailCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThumbnailCount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,18 +30,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The signed_cloud_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SignedCloudUrl { get => _explicitNullValueSignedCloudUrl; set { _explicitNullValueSignedCloudUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signed_cloud_url"); else _explicitNullProperties?.Remove("signed_cloud_url"); } }
+        public string? SignedCloudUrl { get => _explicitNullValueSignedCloudUrl; set { _explicitNullValueSignedCloudUrl = value; AdditionalData?.Remove("signed_cloud_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signed_cloud_url"); else _explicitNullProperties?.Remove("signed_cloud_url"); } }
         private string? _explicitNullValueSignedCloudUrl = default!;
 #nullable restore
 #else
-        public string SignedCloudUrl { get => _explicitNullValueSignedCloudUrl; set { _explicitNullValueSignedCloudUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signed_cloud_url"); else _explicitNullProperties?.Remove("signed_cloud_url"); } }
+        public string SignedCloudUrl { get => _explicitNullValueSignedCloudUrl; set { _explicitNullValueSignedCloudUrl = value; AdditionalData?.Remove("signed_cloud_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signed_cloud_url"); else _explicitNullProperties?.Remove("signed_cloud_url"); } }
         private string _explicitNullValueSignedCloudUrl = default!;
 #endif
         /// <summary>The start_thumbnail_index property</summary>
-        public int? StartThumbnailIndex { get => _explicitNullValueStartThumbnailIndex; set { _explicitNullValueStartThumbnailIndex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_thumbnail_index"); else _explicitNullProperties?.Remove("start_thumbnail_index"); } }
+        public int? StartThumbnailIndex { get => _explicitNullValueStartThumbnailIndex; set { _explicitNullValueStartThumbnailIndex = value; AdditionalData?.Remove("start_thumbnail_index"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_thumbnail_index"); else _explicitNullProperties?.Remove("start_thumbnail_index"); } }
         private int? _explicitNullValueStartThumbnailIndex = default!;
         /// <summary>The thumbnail_count property</summary>
-        public int? ThumbnailCount { get => _explicitNullValueThumbnailCount; set { _explicitNullValueThumbnailCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("thumbnail_count"); else _explicitNullProperties?.Remove("thumbnail_count"); } }
+        public int? ThumbnailCount { get => _explicitNullValueThumbnailCount; set { _explicitNullValueThumbnailCount = value; AdditionalData?.Remove("thumbnail_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("thumbnail_count"); else _explicitNullProperties?.Remove("thumbnail_count"); } }
         private int? _explicitNullValueThumbnailCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoThumbnailSheetResponseModel"/> and sets the default values.

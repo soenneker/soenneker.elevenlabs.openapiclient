@@ -18,12 +18,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("new_value") is { } nullNodeNewValue && nullNodeNewValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewValue = null;
-            if (parseNode.GetChildNode("old_value") is { } nullNodeOldValue && nullNodeOldValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldValue = null;
-            if (parseNode.GetChildNode("tool_name") is { } nullNodeToolName && nullNodeToolName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolName = null;
-            if (parseNode.GetChildNode("tool_request_id") is { } nullNodeToolRequestId && nullNodeToolRequestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolRequestId = null;
-            if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
-            if (parseNode.GetChildNode("variable_name") is { } nullNodeVariableName && nullNodeVariableName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VariableName = null;
+            if (parseNode.GetChildNode("new_value") is null) { _explicitNullValueNewValue = default!; _explicitNullProperties?.Remove("new_value"); }
+            else if (parseNode.GetChildNode("new_value") is { } nullNodeNewValue && nullNodeNewValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewValue = null;
+            if (parseNode.GetChildNode("old_value") is null) { _explicitNullValueOldValue = default!; _explicitNullProperties?.Remove("old_value"); }
+            else if (parseNode.GetChildNode("old_value") is { } nullNodeOldValue && nullNodeOldValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldValue = null;
+            if (parseNode.GetChildNode("tool_name") is null) { _explicitNullValueToolName = default!; _explicitNullProperties?.Remove("tool_name"); }
+            else if (parseNode.GetChildNode("tool_name") is { } nullNodeToolName && nullNodeToolName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolName = null;
+            if (parseNode.GetChildNode("tool_request_id") is null) { _explicitNullValueToolRequestId = default!; _explicitNullProperties?.Remove("tool_request_id"); }
+            else if (parseNode.GetChildNode("tool_request_id") is { } nullNodeToolRequestId && nullNodeToolRequestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolRequestId = null;
+            if (parseNode.GetChildNode("updated_at") is null) { _explicitNullValueUpdatedAt = default!; _explicitNullProperties?.Remove("updated_at"); }
+            else if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+            if (parseNode.GetChildNode("variable_name") is null) { _explicitNullValueVariableName = default!; _explicitNullProperties?.Remove("variable_name"); }
+            else if (parseNode.GetChildNode("variable_name") is { } nullNodeVariableName && nullNodeVariableName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VariableName = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,54 +37,54 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The new_value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NewValue { get => _explicitNullValueNewValue; set { _explicitNullValueNewValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_value"); else _explicitNullProperties?.Remove("new_value"); } }
+        public string? NewValue { get => _explicitNullValueNewValue; set { _explicitNullValueNewValue = value; AdditionalData?.Remove("new_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_value"); else _explicitNullProperties?.Remove("new_value"); } }
         private string? _explicitNullValueNewValue = default!;
 #nullable restore
 #else
-        public string NewValue { get => _explicitNullValueNewValue; set { _explicitNullValueNewValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_value"); else _explicitNullProperties?.Remove("new_value"); } }
+        public string NewValue { get => _explicitNullValueNewValue; set { _explicitNullValueNewValue = value; AdditionalData?.Remove("new_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_value"); else _explicitNullProperties?.Remove("new_value"); } }
         private string _explicitNullValueNewValue = default!;
 #endif
         /// <summary>The old_value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OldValue { get => _explicitNullValueOldValue; set { _explicitNullValueOldValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("old_value"); else _explicitNullProperties?.Remove("old_value"); } }
+        public string? OldValue { get => _explicitNullValueOldValue; set { _explicitNullValueOldValue = value; AdditionalData?.Remove("old_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("old_value"); else _explicitNullProperties?.Remove("old_value"); } }
         private string? _explicitNullValueOldValue = default!;
 #nullable restore
 #else
-        public string OldValue { get => _explicitNullValueOldValue; set { _explicitNullValueOldValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("old_value"); else _explicitNullProperties?.Remove("old_value"); } }
+        public string OldValue { get => _explicitNullValueOldValue; set { _explicitNullValueOldValue = value; AdditionalData?.Remove("old_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("old_value"); else _explicitNullProperties?.Remove("old_value"); } }
         private string _explicitNullValueOldValue = default!;
 #endif
         /// <summary>The tool_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ToolName { get => _explicitNullValueToolName; set { _explicitNullValueToolName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_name"); else _explicitNullProperties?.Remove("tool_name"); } }
+        public string? ToolName { get => _explicitNullValueToolName; set { _explicitNullValueToolName = value; AdditionalData?.Remove("tool_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_name"); else _explicitNullProperties?.Remove("tool_name"); } }
         private string? _explicitNullValueToolName = default!;
 #nullable restore
 #else
-        public string ToolName { get => _explicitNullValueToolName; set { _explicitNullValueToolName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_name"); else _explicitNullProperties?.Remove("tool_name"); } }
+        public string ToolName { get => _explicitNullValueToolName; set { _explicitNullValueToolName = value; AdditionalData?.Remove("tool_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_name"); else _explicitNullProperties?.Remove("tool_name"); } }
         private string _explicitNullValueToolName = default!;
 #endif
         /// <summary>The tool_request_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ToolRequestId { get => _explicitNullValueToolRequestId; set { _explicitNullValueToolRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_request_id"); else _explicitNullProperties?.Remove("tool_request_id"); } }
+        public string? ToolRequestId { get => _explicitNullValueToolRequestId; set { _explicitNullValueToolRequestId = value; AdditionalData?.Remove("tool_request_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_request_id"); else _explicitNullProperties?.Remove("tool_request_id"); } }
         private string? _explicitNullValueToolRequestId = default!;
 #nullable restore
 #else
-        public string ToolRequestId { get => _explicitNullValueToolRequestId; set { _explicitNullValueToolRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_request_id"); else _explicitNullProperties?.Remove("tool_request_id"); } }
+        public string ToolRequestId { get => _explicitNullValueToolRequestId; set { _explicitNullValueToolRequestId = value; AdditionalData?.Remove("tool_request_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_request_id"); else _explicitNullProperties?.Remove("tool_request_id"); } }
         private string _explicitNullValueToolRequestId = default!;
 #endif
         /// <summary>The updated_at property</summary>
-        public double? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        public double? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
         private double? _explicitNullValueUpdatedAt = default!;
         /// <summary>The variable_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VariableName { get => _explicitNullValueVariableName; set { _explicitNullValueVariableName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variable_name"); else _explicitNullProperties?.Remove("variable_name"); } }
+        public string? VariableName { get => _explicitNullValueVariableName; set { _explicitNullValueVariableName = value; AdditionalData?.Remove("variable_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variable_name"); else _explicitNullProperties?.Remove("variable_name"); } }
         private string? _explicitNullValueVariableName = default!;
 #nullable restore
 #else
-        public string VariableName { get => _explicitNullValueVariableName; set { _explicitNullValueVariableName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variable_name"); else _explicitNullProperties?.Remove("variable_name"); } }
+        public string VariableName { get => _explicitNullValueVariableName; set { _explicitNullValueVariableName = value; AdditionalData?.Remove("variable_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variable_name"); else _explicitNullProperties?.Remove("variable_name"); } }
         private string _explicitNullValueVariableName = default!;
 #endif
         /// <summary>

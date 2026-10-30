@@ -17,8 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("key_id") is { } nullNodeKeyId && nullNodeKeyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeyId = null;
-            if (parseNode.GetChildNode("xi-api-key") is { } nullNodeXiApiKey && nullNodeXiApiKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) XiApiKey = null;
+            if (parseNode.GetChildNode("key_id") is null) { _explicitNullValueKeyId = default!; _explicitNullProperties?.Remove("key_id"); }
+            else if (parseNode.GetChildNode("key_id") is { } nullNodeKeyId && nullNodeKeyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeyId = null;
+            if (parseNode.GetChildNode("xi-api-key") is null) { _explicitNullValueXiApiKey = default!; _explicitNullProperties?.Remove("xi-api-key"); }
+            else if (parseNode.GetChildNode("xi-api-key") is { } nullNodeXiApiKey && nullNodeXiApiKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) XiApiKey = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The key_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? KeyId { get => _explicitNullValueKeyId; set { _explicitNullValueKeyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key_id"); else _explicitNullProperties?.Remove("key_id"); } }
+        public string? KeyId { get => _explicitNullValueKeyId; set { _explicitNullValueKeyId = value; AdditionalData?.Remove("key_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key_id"); else _explicitNullProperties?.Remove("key_id"); } }
         private string? _explicitNullValueKeyId = default!;
 #nullable restore
 #else
-        public string KeyId { get => _explicitNullValueKeyId; set { _explicitNullValueKeyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key_id"); else _explicitNullProperties?.Remove("key_id"); } }
+        public string KeyId { get => _explicitNullValueKeyId; set { _explicitNullValueKeyId = value; AdditionalData?.Remove("key_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key_id"); else _explicitNullProperties?.Remove("key_id"); } }
         private string _explicitNullValueKeyId = default!;
 #endif
         /// <summary>The xiApiKey property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? XiApiKey { get => _explicitNullValueXiApiKey; set { _explicitNullValueXiApiKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("xi-api-key"); else _explicitNullProperties?.Remove("xi-api-key"); } }
+        public string? XiApiKey { get => _explicitNullValueXiApiKey; set { _explicitNullValueXiApiKey = value; AdditionalData?.Remove("xi-api-key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("xi-api-key"); else _explicitNullProperties?.Remove("xi-api-key"); } }
         private string? _explicitNullValueXiApiKey = default!;
 #nullable restore
 #else
-        public string XiApiKey { get => _explicitNullValueXiApiKey; set { _explicitNullValueXiApiKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("xi-api-key"); else _explicitNullProperties?.Remove("xi-api-key"); } }
+        public string XiApiKey { get => _explicitNullValueXiApiKey; set { _explicitNullValueXiApiKey = value; AdditionalData?.Remove("xi-api-key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("xi-api-key"); else _explicitNullProperties?.Remove("xi-api-key"); } }
         private string _explicitNullValueXiApiKey = default!;
 #endif
         /// <summary>

@@ -17,16 +17,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("chapter_id") is { } nullNodeChapterId && nullNodeChapterId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChapterId = null;
-            if (parseNode.GetChildNode("chapter_name") is { } nullNodeChapterName && nullNodeChapterName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChapterName = null;
-            if (parseNode.GetChildNode("char_count") is { } nullNodeCharCount && nullNodeCharCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CharCount = null;
-            if (parseNode.GetChildNode("duration_seconds") is { } nullNodeDurationSeconds && nullNodeDurationSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DurationSeconds = null;
-            if (parseNode.GetChildNode("file_number") is { } nullNodeFileNumber && nullNodeFileNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileNumber = null;
-            if (parseNode.GetChildNode("has_parsed_html") is { } nullNodeHasParsedHtml && nullNodeHasParsedHtml.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasParsedHtml = null;
-            if (parseNode.GetChildNode("has_summary") is { } nullNodeHasSummary && nullNodeHasSummary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasSummary = null;
-            if (parseNode.GetChildNode("is_fallback_name") is { } nullNodeIsFallbackName && nullNodeIsFallbackName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsFallbackName = null;
-            if (parseNode.GetChildNode("starting_char_offset") is { } nullNodeStartingCharOffset && nullNodeStartingCharOffset.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartingCharOffset = null;
-            if (parseNode.GetChildNode("word_count") is { } nullNodeWordCount && nullNodeWordCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WordCount = null;
+            if (parseNode.GetChildNode("chapter_id") is null) { _explicitNullValueChapterId = default!; _explicitNullProperties?.Remove("chapter_id"); }
+            else if (parseNode.GetChildNode("chapter_id") is { } nullNodeChapterId && nullNodeChapterId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChapterId = null;
+            if (parseNode.GetChildNode("chapter_name") is null) { _explicitNullValueChapterName = default!; _explicitNullProperties?.Remove("chapter_name"); }
+            else if (parseNode.GetChildNode("chapter_name") is { } nullNodeChapterName && nullNodeChapterName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChapterName = null;
+            if (parseNode.GetChildNode("char_count") is null) { _explicitNullValueCharCount = default!; _explicitNullProperties?.Remove("char_count"); }
+            else if (parseNode.GetChildNode("char_count") is { } nullNodeCharCount && nullNodeCharCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CharCount = null;
+            if (parseNode.GetChildNode("duration_seconds") is null) { _explicitNullValueDurationSeconds = default!; _explicitNullProperties?.Remove("duration_seconds"); }
+            else if (parseNode.GetChildNode("duration_seconds") is { } nullNodeDurationSeconds && nullNodeDurationSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DurationSeconds = null;
+            if (parseNode.GetChildNode("file_number") is null) { _explicitNullValueFileNumber = default!; _explicitNullProperties?.Remove("file_number"); }
+            else if (parseNode.GetChildNode("file_number") is { } nullNodeFileNumber && nullNodeFileNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileNumber = null;
+            if (parseNode.GetChildNode("has_parsed_html") is null) { _explicitNullValueHasParsedHtml = default!; _explicitNullProperties?.Remove("has_parsed_html"); }
+            else if (parseNode.GetChildNode("has_parsed_html") is { } nullNodeHasParsedHtml && nullNodeHasParsedHtml.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasParsedHtml = null;
+            if (parseNode.GetChildNode("has_summary") is null) { _explicitNullValueHasSummary = default!; _explicitNullProperties?.Remove("has_summary"); }
+            else if (parseNode.GetChildNode("has_summary") is { } nullNodeHasSummary && nullNodeHasSummary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasSummary = null;
+            if (parseNode.GetChildNode("is_fallback_name") is null) { _explicitNullValueIsFallbackName = default!; _explicitNullProperties?.Remove("is_fallback_name"); }
+            else if (parseNode.GetChildNode("is_fallback_name") is { } nullNodeIsFallbackName && nullNodeIsFallbackName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsFallbackName = null;
+            if (parseNode.GetChildNode("starting_char_offset") is null) { _explicitNullValueStartingCharOffset = default!; _explicitNullProperties?.Remove("starting_char_offset"); }
+            else if (parseNode.GetChildNode("starting_char_offset") is { } nullNodeStartingCharOffset && nullNodeStartingCharOffset.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartingCharOffset = null;
+            if (parseNode.GetChildNode("word_count") is null) { _explicitNullValueWordCount = default!; _explicitNullProperties?.Remove("word_count"); }
+            else if (parseNode.GetChildNode("word_count") is { } nullNodeWordCount && nullNodeWordCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WordCount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -34,53 +44,53 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The chapter_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ChapterId { get => _explicitNullValueChapterId; set { _explicitNullValueChapterId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chapter_id"); else _explicitNullProperties?.Remove("chapter_id"); } }
+        public string? ChapterId { get => _explicitNullValueChapterId; set { _explicitNullValueChapterId = value; AdditionalData?.Remove("chapter_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chapter_id"); else _explicitNullProperties?.Remove("chapter_id"); } }
         private string? _explicitNullValueChapterId = default!;
 #nullable restore
 #else
-        public string ChapterId { get => _explicitNullValueChapterId; set { _explicitNullValueChapterId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chapter_id"); else _explicitNullProperties?.Remove("chapter_id"); } }
+        public string ChapterId { get => _explicitNullValueChapterId; set { _explicitNullValueChapterId = value; AdditionalData?.Remove("chapter_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chapter_id"); else _explicitNullProperties?.Remove("chapter_id"); } }
         private string _explicitNullValueChapterId = default!;
 #endif
         /// <summary>The chapter_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ChapterName { get => _explicitNullValueChapterName; set { _explicitNullValueChapterName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chapter_name"); else _explicitNullProperties?.Remove("chapter_name"); } }
+        public string? ChapterName { get => _explicitNullValueChapterName; set { _explicitNullValueChapterName = value; AdditionalData?.Remove("chapter_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chapter_name"); else _explicitNullProperties?.Remove("chapter_name"); } }
         private string? _explicitNullValueChapterName = default!;
 #nullable restore
 #else
-        public string ChapterName { get => _explicitNullValueChapterName; set { _explicitNullValueChapterName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chapter_name"); else _explicitNullProperties?.Remove("chapter_name"); } }
+        public string ChapterName { get => _explicitNullValueChapterName; set { _explicitNullValueChapterName = value; AdditionalData?.Remove("chapter_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chapter_name"); else _explicitNullProperties?.Remove("chapter_name"); } }
         private string _explicitNullValueChapterName = default!;
 #endif
         /// <summary>The char_count property</summary>
-        public int? CharCount { get => _explicitNullValueCharCount; set { _explicitNullValueCharCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("char_count"); else _explicitNullProperties?.Remove("char_count"); } }
+        public int? CharCount { get => _explicitNullValueCharCount; set { _explicitNullValueCharCount = value; AdditionalData?.Remove("char_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("char_count"); else _explicitNullProperties?.Remove("char_count"); } }
         private int? _explicitNullValueCharCount = default!;
         /// <summary>The duration_seconds property</summary>
-        public double? DurationSeconds { get => _explicitNullValueDurationSeconds; set { _explicitNullValueDurationSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration_seconds"); else _explicitNullProperties?.Remove("duration_seconds"); } }
+        public double? DurationSeconds { get => _explicitNullValueDurationSeconds; set { _explicitNullValueDurationSeconds = value; AdditionalData?.Remove("duration_seconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration_seconds"); else _explicitNullProperties?.Remove("duration_seconds"); } }
         private double? _explicitNullValueDurationSeconds = default!;
         /// <summary>The file_number property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FileNumber { get => _explicitNullValueFileNumber; set { _explicitNullValueFileNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_number"); else _explicitNullProperties?.Remove("file_number"); } }
+        public string? FileNumber { get => _explicitNullValueFileNumber; set { _explicitNullValueFileNumber = value; AdditionalData?.Remove("file_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_number"); else _explicitNullProperties?.Remove("file_number"); } }
         private string? _explicitNullValueFileNumber = default!;
 #nullable restore
 #else
-        public string FileNumber { get => _explicitNullValueFileNumber; set { _explicitNullValueFileNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_number"); else _explicitNullProperties?.Remove("file_number"); } }
+        public string FileNumber { get => _explicitNullValueFileNumber; set { _explicitNullValueFileNumber = value; AdditionalData?.Remove("file_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_number"); else _explicitNullProperties?.Remove("file_number"); } }
         private string _explicitNullValueFileNumber = default!;
 #endif
         /// <summary>The has_parsed_html property</summary>
-        public bool? HasParsedHtml { get => _explicitNullValueHasParsedHtml; set { _explicitNullValueHasParsedHtml = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_parsed_html"); else _explicitNullProperties?.Remove("has_parsed_html"); } }
+        public bool? HasParsedHtml { get => _explicitNullValueHasParsedHtml; set { _explicitNullValueHasParsedHtml = value; AdditionalData?.Remove("has_parsed_html"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_parsed_html"); else _explicitNullProperties?.Remove("has_parsed_html"); } }
         private bool? _explicitNullValueHasParsedHtml = default!;
         /// <summary>The has_summary property</summary>
-        public bool? HasSummary { get => _explicitNullValueHasSummary; set { _explicitNullValueHasSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_summary"); else _explicitNullProperties?.Remove("has_summary"); } }
+        public bool? HasSummary { get => _explicitNullValueHasSummary; set { _explicitNullValueHasSummary = value; AdditionalData?.Remove("has_summary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_summary"); else _explicitNullProperties?.Remove("has_summary"); } }
         private bool? _explicitNullValueHasSummary = default!;
         /// <summary>The is_fallback_name property</summary>
-        public bool? IsFallbackName { get => _explicitNullValueIsFallbackName; set { _explicitNullValueIsFallbackName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_fallback_name"); else _explicitNullProperties?.Remove("is_fallback_name"); } }
+        public bool? IsFallbackName { get => _explicitNullValueIsFallbackName; set { _explicitNullValueIsFallbackName = value; AdditionalData?.Remove("is_fallback_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_fallback_name"); else _explicitNullProperties?.Remove("is_fallback_name"); } }
         private bool? _explicitNullValueIsFallbackName = default!;
         /// <summary>The starting_char_offset property</summary>
-        public int? StartingCharOffset { get => _explicitNullValueStartingCharOffset; set { _explicitNullValueStartingCharOffset = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("starting_char_offset"); else _explicitNullProperties?.Remove("starting_char_offset"); } }
+        public int? StartingCharOffset { get => _explicitNullValueStartingCharOffset; set { _explicitNullValueStartingCharOffset = value; AdditionalData?.Remove("starting_char_offset"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("starting_char_offset"); else _explicitNullProperties?.Remove("starting_char_offset"); } }
         private int? _explicitNullValueStartingCharOffset = default!;
         /// <summary>The word_count property</summary>
-        public int? WordCount { get => _explicitNullValueWordCount; set { _explicitNullValueWordCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("word_count"); else _explicitNullProperties?.Remove("word_count"); } }
+        public int? WordCount { get => _explicitNullValueWordCount; set { _explicitNullValueWordCount = value; AdditionalData?.Remove("word_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("word_count"); else _explicitNullProperties?.Remove("word_count"); } }
         private int? _explicitNullValueWordCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ReadMetadataChapterDbModel"/> and sets the default values.

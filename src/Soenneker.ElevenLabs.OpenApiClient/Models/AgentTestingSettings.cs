@@ -18,7 +18,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("attached_tests") is { } nullNodeAttachedTests && nullNodeAttachedTests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttachedTests = null;
+            if (parseNode.GetChildNode("attached_tests") is null) { _explicitNullValueAttachedTests = default!; _explicitNullProperties?.Remove("attached_tests"); }
+            else if (parseNode.GetChildNode("attached_tests") is { } nullNodeAttachedTests && nullNodeAttachedTests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttachedTests = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>List of test IDs that should be run for this agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AttachedTestModel>? AttachedTests { get => _explicitNullValueAttachedTests; set { _explicitNullValueAttachedTests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attached_tests"); else _explicitNullProperties?.Remove("attached_tests"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AttachedTestModel>? AttachedTests { get => _explicitNullValueAttachedTests; set { _explicitNullValueAttachedTests = value; AdditionalData?.Remove("attached_tests"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attached_tests"); else _explicitNullProperties?.Remove("attached_tests"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AttachedTestModel>? _explicitNullValueAttachedTests = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AttachedTestModel> AttachedTests { get => _explicitNullValueAttachedTests; set { _explicitNullValueAttachedTests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attached_tests"); else _explicitNullProperties?.Remove("attached_tests"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AttachedTestModel> AttachedTests { get => _explicitNullValueAttachedTests; set { _explicitNullValueAttachedTests = value; AdditionalData?.Remove("attached_tests"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attached_tests"); else _explicitNullProperties?.Remove("attached_tests"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AttachedTestModel> _explicitNullValueAttachedTests = default!;
 #endif
         /// <summary>

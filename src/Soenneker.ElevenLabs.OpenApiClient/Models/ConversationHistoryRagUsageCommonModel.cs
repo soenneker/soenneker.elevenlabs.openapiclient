@@ -17,8 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("embedding_model") is { } nullNodeEmbeddingModel && nullNodeEmbeddingModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmbeddingModel = null;
-            if (parseNode.GetChildNode("usage_count") is { } nullNodeUsageCount && nullNodeUsageCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsageCount = null;
+            if (parseNode.GetChildNode("embedding_model") is null) { _explicitNullValueEmbeddingModel = default!; _explicitNullProperties?.Remove("embedding_model"); }
+            else if (parseNode.GetChildNode("embedding_model") is { } nullNodeEmbeddingModel && nullNodeEmbeddingModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmbeddingModel = null;
+            if (parseNode.GetChildNode("usage_count") is null) { _explicitNullValueUsageCount = default!; _explicitNullProperties?.Remove("usage_count"); }
+            else if (parseNode.GetChildNode("usage_count") is { } nullNodeUsageCount && nullNodeUsageCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsageCount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The embedding_model property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmbeddingModel { get => _explicitNullValueEmbeddingModel; set { _explicitNullValueEmbeddingModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("embedding_model"); else _explicitNullProperties?.Remove("embedding_model"); } }
+        public string? EmbeddingModel { get => _explicitNullValueEmbeddingModel; set { _explicitNullValueEmbeddingModel = value; AdditionalData?.Remove("embedding_model"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("embedding_model"); else _explicitNullProperties?.Remove("embedding_model"); } }
         private string? _explicitNullValueEmbeddingModel = default!;
 #nullable restore
 #else
-        public string EmbeddingModel { get => _explicitNullValueEmbeddingModel; set { _explicitNullValueEmbeddingModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("embedding_model"); else _explicitNullProperties?.Remove("embedding_model"); } }
+        public string EmbeddingModel { get => _explicitNullValueEmbeddingModel; set { _explicitNullValueEmbeddingModel = value; AdditionalData?.Remove("embedding_model"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("embedding_model"); else _explicitNullProperties?.Remove("embedding_model"); } }
         private string _explicitNullValueEmbeddingModel = default!;
 #endif
         /// <summary>The usage_count property</summary>
-        public int? UsageCount { get => _explicitNullValueUsageCount; set { _explicitNullValueUsageCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usage_count"); else _explicitNullProperties?.Remove("usage_count"); } }
+        public int? UsageCount { get => _explicitNullValueUsageCount; set { _explicitNullValueUsageCount = value; AdditionalData?.Remove("usage_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usage_count"); else _explicitNullProperties?.Remove("usage_count"); } }
         private int? _explicitNullValueUsageCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryRagUsageCommonModel"/> and sets the default values.

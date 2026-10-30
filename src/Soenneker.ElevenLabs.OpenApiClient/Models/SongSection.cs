@@ -17,67 +17,73 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("duration_ms") is { } nullNodeDurationMs && nullNodeDurationMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DurationMs = null;
-            if (parseNode.GetChildNode("lines") is { } nullNodeLines && nullNodeLines.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lines = null;
-            if (parseNode.GetChildNode("negative_local_styles") is { } nullNodeNegativeLocalStyles && nullNodeNegativeLocalStyles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NegativeLocalStyles = null;
-            if (parseNode.GetChildNode("positive_local_styles") is { } nullNodePositiveLocalStyles && nullNodePositiveLocalStyles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PositiveLocalStyles = null;
-            if (parseNode.GetChildNode("section_name") is { } nullNodeSectionName && nullNodeSectionName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SectionName = null;
-            if (parseNode.GetChildNode("source_from") is { } nullNodeSourceFrom && nullNodeSourceFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceFrom = null;
+            if (parseNode.GetChildNode("duration_ms") is null) { _explicitNullValueDurationMs = default!; _explicitNullProperties?.Remove("duration_ms"); }
+            else if (parseNode.GetChildNode("duration_ms") is { } nullNodeDurationMs && nullNodeDurationMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DurationMs = null;
+            if (parseNode.GetChildNode("lines") is null) { _explicitNullValueLines = default!; _explicitNullProperties?.Remove("lines"); }
+            else if (parseNode.GetChildNode("lines") is { } nullNodeLines && nullNodeLines.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lines = null;
+            if (parseNode.GetChildNode("negative_local_styles") is null) { _explicitNullValueNegativeLocalStyles = default!; _explicitNullProperties?.Remove("negative_local_styles"); }
+            else if (parseNode.GetChildNode("negative_local_styles") is { } nullNodeNegativeLocalStyles && nullNodeNegativeLocalStyles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NegativeLocalStyles = null;
+            if (parseNode.GetChildNode("positive_local_styles") is null) { _explicitNullValuePositiveLocalStyles = default!; _explicitNullProperties?.Remove("positive_local_styles"); }
+            else if (parseNode.GetChildNode("positive_local_styles") is { } nullNodePositiveLocalStyles && nullNodePositiveLocalStyles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PositiveLocalStyles = null;
+            if (parseNode.GetChildNode("section_name") is null) { _explicitNullValueSectionName = default!; _explicitNullProperties?.Remove("section_name"); }
+            else if (parseNode.GetChildNode("section_name") is { } nullNodeSectionName && nullNodeSectionName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SectionName = null;
+            if (parseNode.GetChildNode("source_from") is null) { _explicitNullValueSourceFrom = default!; _explicitNullProperties?.Remove("source_from"); }
+            else if (parseNode.GetChildNode("source_from") is { } nullNodeSourceFrom && nullNodeSourceFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceFrom = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The duration of the section in milliseconds. Must be between 3000ms and 120000ms.</summary>
-        public int? DurationMs { get => _explicitNullValueDurationMs; set { _explicitNullValueDurationMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration_ms"); else _explicitNullProperties?.Remove("duration_ms"); } }
+        public int? DurationMs { get => _explicitNullValueDurationMs; set { _explicitNullValueDurationMs = value; AdditionalData?.Remove("duration_ms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration_ms"); else _explicitNullProperties?.Remove("duration_ms"); } }
         private int? _explicitNullValueDurationMs = default!;
         /// <summary>The lyrics of the section. Max 30 lines per section and max 200 characters per line.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Lines { get => _explicitNullValueLines; set { _explicitNullValueLines = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lines"); else _explicitNullProperties?.Remove("lines"); } }
+        public List<string>? Lines { get => _explicitNullValueLines; set { _explicitNullValueLines = value; AdditionalData?.Remove("lines"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lines"); else _explicitNullProperties?.Remove("lines"); } }
         private List<string>? _explicitNullValueLines = default!;
 #nullable restore
 #else
-        public List<string> Lines { get => _explicitNullValueLines; set { _explicitNullValueLines = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lines"); else _explicitNullProperties?.Remove("lines"); } }
+        public List<string> Lines { get => _explicitNullValueLines; set { _explicitNullValueLines = value; AdditionalData?.Remove("lines"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lines"); else _explicitNullProperties?.Remove("lines"); } }
         private List<string> _explicitNullValueLines = default!;
 #endif
         /// <summary>The styles and musical directions that should not be present in this section. Use English language for best result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? NegativeLocalStyles { get => _explicitNullValueNegativeLocalStyles; set { _explicitNullValueNegativeLocalStyles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("negative_local_styles"); else _explicitNullProperties?.Remove("negative_local_styles"); } }
+        public List<string>? NegativeLocalStyles { get => _explicitNullValueNegativeLocalStyles; set { _explicitNullValueNegativeLocalStyles = value; AdditionalData?.Remove("negative_local_styles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("negative_local_styles"); else _explicitNullProperties?.Remove("negative_local_styles"); } }
         private List<string>? _explicitNullValueNegativeLocalStyles = default!;
 #nullable restore
 #else
-        public List<string> NegativeLocalStyles { get => _explicitNullValueNegativeLocalStyles; set { _explicitNullValueNegativeLocalStyles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("negative_local_styles"); else _explicitNullProperties?.Remove("negative_local_styles"); } }
+        public List<string> NegativeLocalStyles { get => _explicitNullValueNegativeLocalStyles; set { _explicitNullValueNegativeLocalStyles = value; AdditionalData?.Remove("negative_local_styles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("negative_local_styles"); else _explicitNullProperties?.Remove("negative_local_styles"); } }
         private List<string> _explicitNullValueNegativeLocalStyles = default!;
 #endif
         /// <summary>The styles and musical directions that should be present in this section. Use English language for best result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PositiveLocalStyles { get => _explicitNullValuePositiveLocalStyles; set { _explicitNullValuePositiveLocalStyles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("positive_local_styles"); else _explicitNullProperties?.Remove("positive_local_styles"); } }
+        public List<string>? PositiveLocalStyles { get => _explicitNullValuePositiveLocalStyles; set { _explicitNullValuePositiveLocalStyles = value; AdditionalData?.Remove("positive_local_styles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("positive_local_styles"); else _explicitNullProperties?.Remove("positive_local_styles"); } }
         private List<string>? _explicitNullValuePositiveLocalStyles = default!;
 #nullable restore
 #else
-        public List<string> PositiveLocalStyles { get => _explicitNullValuePositiveLocalStyles; set { _explicitNullValuePositiveLocalStyles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("positive_local_styles"); else _explicitNullProperties?.Remove("positive_local_styles"); } }
+        public List<string> PositiveLocalStyles { get => _explicitNullValuePositiveLocalStyles; set { _explicitNullValuePositiveLocalStyles = value; AdditionalData?.Remove("positive_local_styles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("positive_local_styles"); else _explicitNullProperties?.Remove("positive_local_styles"); } }
         private List<string> _explicitNullValuePositiveLocalStyles = default!;
 #endif
         /// <summary>The name of the section. Must be between 1 and 100 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SectionName { get => _explicitNullValueSectionName; set { _explicitNullValueSectionName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("section_name"); else _explicitNullProperties?.Remove("section_name"); } }
+        public string? SectionName { get => _explicitNullValueSectionName; set { _explicitNullValueSectionName = value; AdditionalData?.Remove("section_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("section_name"); else _explicitNullProperties?.Remove("section_name"); } }
         private string? _explicitNullValueSectionName = default!;
 #nullable restore
 #else
-        public string SectionName { get => _explicitNullValueSectionName; set { _explicitNullValueSectionName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("section_name"); else _explicitNullProperties?.Remove("section_name"); } }
+        public string SectionName { get => _explicitNullValueSectionName; set { _explicitNullValueSectionName = value; AdditionalData?.Remove("section_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("section_name"); else _explicitNullProperties?.Remove("section_name"); } }
         private string _explicitNullValueSectionName = default!;
 #endif
         /// <summary>Optional source to extract the section from. Used for inpainting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SectionSource? SourceFrom { get => _explicitNullValueSourceFrom; set { _explicitNullValueSourceFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_from"); else _explicitNullProperties?.Remove("source_from"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SectionSource? SourceFrom { get => _explicitNullValueSourceFrom; set { _explicitNullValueSourceFrom = value; AdditionalData?.Remove("source_from"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_from"); else _explicitNullProperties?.Remove("source_from"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.SectionSource? _explicitNullValueSourceFrom = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SectionSource SourceFrom { get => _explicitNullValueSourceFrom; set { _explicitNullValueSourceFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_from"); else _explicitNullProperties?.Remove("source_from"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SectionSource SourceFrom { get => _explicitNullValueSourceFrom; set { _explicitNullValueSourceFrom = value; AdditionalData?.Remove("source_from"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_from"); else _explicitNullProperties?.Remove("source_from"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.SectionSource _explicitNullValueSourceFrom = default!;
 #endif
         /// <summary>

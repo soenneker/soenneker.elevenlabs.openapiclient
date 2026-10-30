@@ -17,9 +17,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("extra_text") is { } nullNodeExtraText && nullNodeExtraText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExtraText = null;
-            if (parseNode.GetChildNode("files") is { } nullNodeFiles && nullNodeFiles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Files = null;
-            if (parseNode.GetChildNode("request_time_unix") is { } nullNodeRequestTimeUnix && nullNodeRequestTimeUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestTimeUnix = null;
+            if (parseNode.GetChildNode("extra_text") is null) { _explicitNullValueExtraText = default!; _explicitNullProperties?.Remove("extra_text"); }
+            else if (parseNode.GetChildNode("extra_text") is { } nullNodeExtraText && nullNodeExtraText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExtraText = null;
+            if (parseNode.GetChildNode("files") is null) { _explicitNullValueFiles = default!; _explicitNullProperties?.Remove("files"); }
+            else if (parseNode.GetChildNode("files") is { } nullNodeFiles && nullNodeFiles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Files = null;
+            if (parseNode.GetChildNode("request_time_unix") is null) { _explicitNullValueRequestTimeUnix = default!; _explicitNullProperties?.Remove("request_time_unix"); }
+            else if (parseNode.GetChildNode("request_time_unix") is { } nullNodeRequestTimeUnix && nullNodeRequestTimeUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestTimeUnix = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,25 +30,25 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The extra text of the manual verification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExtraText { get => _explicitNullValueExtraText; set { _explicitNullValueExtraText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extra_text"); else _explicitNullProperties?.Remove("extra_text"); } }
+        public string? ExtraText { get => _explicitNullValueExtraText; set { _explicitNullValueExtraText = value; AdditionalData?.Remove("extra_text"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extra_text"); else _explicitNullProperties?.Remove("extra_text"); } }
         private string? _explicitNullValueExtraText = default!;
 #nullable restore
 #else
-        public string ExtraText { get => _explicitNullValueExtraText; set { _explicitNullValueExtraText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extra_text"); else _explicitNullProperties?.Remove("extra_text"); } }
+        public string ExtraText { get => _explicitNullValueExtraText; set { _explicitNullValueExtraText = value; AdditionalData?.Remove("extra_text"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extra_text"); else _explicitNullProperties?.Remove("extra_text"); } }
         private string _explicitNullValueExtraText = default!;
 #endif
         /// <summary>The files of the manual verification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ManualVerificationFileResponseModel>? Files { get => _explicitNullValueFiles; set { _explicitNullValueFiles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("files"); else _explicitNullProperties?.Remove("files"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ManualVerificationFileResponseModel>? Files { get => _explicitNullValueFiles; set { _explicitNullValueFiles = value; AdditionalData?.Remove("files"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("files"); else _explicitNullProperties?.Remove("files"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ManualVerificationFileResponseModel>? _explicitNullValueFiles = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ManualVerificationFileResponseModel> Files { get => _explicitNullValueFiles; set { _explicitNullValueFiles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("files"); else _explicitNullProperties?.Remove("files"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ManualVerificationFileResponseModel> Files { get => _explicitNullValueFiles; set { _explicitNullValueFiles = value; AdditionalData?.Remove("files"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("files"); else _explicitNullProperties?.Remove("files"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ManualVerificationFileResponseModel> _explicitNullValueFiles = default!;
 #endif
         /// <summary>The date of the manual verification in Unix time.</summary>
-        public int? RequestTimeUnix { get => _explicitNullValueRequestTimeUnix; set { _explicitNullValueRequestTimeUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_time_unix"); else _explicitNullProperties?.Remove("request_time_unix"); } }
+        public int? RequestTimeUnix { get => _explicitNullValueRequestTimeUnix; set { _explicitNullValueRequestTimeUnix = value; AdditionalData?.Remove("request_time_unix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_time_unix"); else _explicitNullProperties?.Remove("request_time_unix"); } }
         private int? _explicitNullValueRequestTimeUnix = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ManualVerificationResponseModel"/> and sets the default values.

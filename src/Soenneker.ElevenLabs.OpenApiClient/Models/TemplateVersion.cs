@@ -18,11 +18,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("inputs") is { } nullNodeInputs && nullNodeInputs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Inputs = null;
-            if (parseNode.GetChildNode("is_latest") is { } nullNodeIsLatest && nullNodeIsLatest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsLatest = null;
-            if (parseNode.GetChildNode("outputs") is { } nullNodeOutputs && nullNodeOutputs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Outputs = null;
-            if (parseNode.GetChildNode("published_at_unix") is { } nullNodePublishedAtUnix && nullNodePublishedAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublishedAtUnix = null;
-            if (parseNode.GetChildNode("version_id") is { } nullNodeVersionId && nullNodeVersionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VersionId = null;
+            if (parseNode.GetChildNode("inputs") is null) { _explicitNullValueInputs = default!; _explicitNullProperties?.Remove("inputs"); }
+            else if (parseNode.GetChildNode("inputs") is { } nullNodeInputs && nullNodeInputs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Inputs = null;
+            if (parseNode.GetChildNode("is_latest") is null) { _explicitNullValueIsLatest = default!; _explicitNullProperties?.Remove("is_latest"); }
+            else if (parseNode.GetChildNode("is_latest") is { } nullNodeIsLatest && nullNodeIsLatest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsLatest = null;
+            if (parseNode.GetChildNode("outputs") is null) { _explicitNullValueOutputs = default!; _explicitNullProperties?.Remove("outputs"); }
+            else if (parseNode.GetChildNode("outputs") is { } nullNodeOutputs && nullNodeOutputs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Outputs = null;
+            if (parseNode.GetChildNode("published_at_unix") is null) { _explicitNullValuePublishedAtUnix = default!; _explicitNullProperties?.Remove("published_at_unix"); }
+            else if (parseNode.GetChildNode("published_at_unix") is { } nullNodePublishedAtUnix && nullNodePublishedAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublishedAtUnix = null;
+            if (parseNode.GetChildNode("version_id") is null) { _explicitNullValueVersionId = default!; _explicitNullProperties?.Remove("version_id"); }
+            else if (parseNode.GetChildNode("version_id") is { } nullNodeVersionId && nullNodeVersionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VersionId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,37 +35,37 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The inputs this version accepts, in canvas order. Every input is required on a run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TemplatePort>? Inputs { get => _explicitNullValueInputs; set { _explicitNullValueInputs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inputs"); else _explicitNullProperties?.Remove("inputs"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TemplatePort>? Inputs { get => _explicitNullValueInputs; set { _explicitNullValueInputs = value; AdditionalData?.Remove("inputs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inputs"); else _explicitNullProperties?.Remove("inputs"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TemplatePort>? _explicitNullValueInputs = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TemplatePort> Inputs { get => _explicitNullValueInputs; set { _explicitNullValueInputs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inputs"); else _explicitNullProperties?.Remove("inputs"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TemplatePort> Inputs { get => _explicitNullValueInputs; set { _explicitNullValueInputs = value; AdditionalData?.Remove("inputs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inputs"); else _explicitNullProperties?.Remove("inputs"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TemplatePort> _explicitNullValueInputs = default!;
 #endif
         /// <summary>Whether this is the version a run gets when `version_id` is omitted or set to `latest`.</summary>
-        public bool? IsLatest { get => _explicitNullValueIsLatest; set { _explicitNullValueIsLatest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_latest"); else _explicitNullProperties?.Remove("is_latest"); } }
+        public bool? IsLatest { get => _explicitNullValueIsLatest; set { _explicitNullValueIsLatest = value; AdditionalData?.Remove("is_latest"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_latest"); else _explicitNullProperties?.Remove("is_latest"); } }
         private bool? _explicitNullValueIsLatest = default!;
         /// <summary>The outputs this version produces, in canvas order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TemplatePort>? Outputs { get => _explicitNullValueOutputs; set { _explicitNullValueOutputs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outputs"); else _explicitNullProperties?.Remove("outputs"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TemplatePort>? Outputs { get => _explicitNullValueOutputs; set { _explicitNullValueOutputs = value; AdditionalData?.Remove("outputs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outputs"); else _explicitNullProperties?.Remove("outputs"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TemplatePort>? _explicitNullValueOutputs = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TemplatePort> Outputs { get => _explicitNullValueOutputs; set { _explicitNullValueOutputs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outputs"); else _explicitNullProperties?.Remove("outputs"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TemplatePort> Outputs { get => _explicitNullValueOutputs; set { _explicitNullValueOutputs = value; AdditionalData?.Remove("outputs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outputs"); else _explicitNullProperties?.Remove("outputs"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TemplatePort> _explicitNullValueOutputs = default!;
 #endif
         /// <summary>When this version was published, as a Unix timestamp in seconds.</summary>
-        public int? PublishedAtUnix { get => _explicitNullValuePublishedAtUnix; set { _explicitNullValuePublishedAtUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("published_at_unix"); else _explicitNullProperties?.Remove("published_at_unix"); } }
+        public int? PublishedAtUnix { get => _explicitNullValuePublishedAtUnix; set { _explicitNullValuePublishedAtUnix = value; AdditionalData?.Remove("published_at_unix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("published_at_unix"); else _explicitNullProperties?.Remove("published_at_unix"); } }
         private int? _explicitNullValuePublishedAtUnix = default!;
         /// <summary>Pass as `version_id` on `POST /v1/flows/templates/{template_id}/runs` to pin a run to this snapshot.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VersionId { get => _explicitNullValueVersionId; set { _explicitNullValueVersionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version_id"); else _explicitNullProperties?.Remove("version_id"); } }
+        public string? VersionId { get => _explicitNullValueVersionId; set { _explicitNullValueVersionId = value; AdditionalData?.Remove("version_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version_id"); else _explicitNullProperties?.Remove("version_id"); } }
         private string? _explicitNullValueVersionId = default!;
 #nullable restore
 #else
-        public string VersionId { get => _explicitNullValueVersionId; set { _explicitNullValueVersionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version_id"); else _explicitNullProperties?.Remove("version_id"); } }
+        public string VersionId { get => _explicitNullValueVersionId; set { _explicitNullValueVersionId = value; AdditionalData?.Remove("version_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version_id"); else _explicitNullProperties?.Remove("version_id"); } }
         private string _explicitNullValueVersionId = default!;
 #endif
         /// <summary>

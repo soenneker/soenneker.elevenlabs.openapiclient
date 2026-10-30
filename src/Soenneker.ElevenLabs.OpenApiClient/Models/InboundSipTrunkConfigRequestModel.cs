@@ -17,12 +17,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("allowed_addresses") is { } nullNodeAllowedAddresses && nullNodeAllowedAddresses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedAddresses = null;
-            if (parseNode.GetChildNode("allowed_numbers") is { } nullNodeAllowedNumbers && nullNodeAllowedNumbers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedNumbers = null;
-            if (parseNode.GetChildNode("attributes_to_headers") is { } nullNodeAttributesToHeaders && nullNodeAttributesToHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttributesToHeaders = null;
-            if (parseNode.GetChildNode("credentials") is { } nullNodeCredentials && nullNodeCredentials.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Credentials = null;
-            if (parseNode.GetChildNode("media_encryption") is { } nullNodeMediaEncryption && nullNodeMediaEncryption.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaEncryption = null;
-            if (parseNode.GetChildNode("remote_domains") is { } nullNodeRemoteDomains && nullNodeRemoteDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemoteDomains = null;
+            if (parseNode.GetChildNode("allowed_addresses") is null) { _explicitNullValueAllowedAddresses = default!; _explicitNullProperties?.Remove("allowed_addresses"); }
+            else if (parseNode.GetChildNode("allowed_addresses") is { } nullNodeAllowedAddresses && nullNodeAllowedAddresses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedAddresses = null;
+            if (parseNode.GetChildNode("allowed_numbers") is null) { _explicitNullValueAllowedNumbers = default!; _explicitNullProperties?.Remove("allowed_numbers"); }
+            else if (parseNode.GetChildNode("allowed_numbers") is { } nullNodeAllowedNumbers && nullNodeAllowedNumbers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedNumbers = null;
+            if (parseNode.GetChildNode("attributes_to_headers") is null) { _explicitNullValueAttributesToHeaders = default!; _explicitNullProperties?.Remove("attributes_to_headers"); }
+            else if (parseNode.GetChildNode("attributes_to_headers") is { } nullNodeAttributesToHeaders && nullNodeAttributesToHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttributesToHeaders = null;
+            if (parseNode.GetChildNode("credentials") is null) { _explicitNullValueCredentials = default!; _explicitNullProperties?.Remove("credentials"); }
+            else if (parseNode.GetChildNode("credentials") is { } nullNodeCredentials && nullNodeCredentials.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Credentials = null;
+            if (parseNode.GetChildNode("media_encryption") is null) { _explicitNullValueMediaEncryption = default!; _explicitNullProperties?.Remove("media_encryption"); }
+            else if (parseNode.GetChildNode("media_encryption") is { } nullNodeMediaEncryption && nullNodeMediaEncryption.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaEncryption = null;
+            if (parseNode.GetChildNode("remote_domains") is null) { _explicitNullValueRemoteDomains = default!; _explicitNullProperties?.Remove("remote_domains"); }
+            else if (parseNode.GetChildNode("remote_domains") is { } nullNodeRemoteDomains && nullNodeRemoteDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemoteDomains = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,54 +36,54 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>List of IP addresses that are allowed to use the trunk. Each item in the list can be an individual IP address or a Classless Inter-Domain Routing notation representing a CIDR block.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AllowedAddresses { get => _explicitNullValueAllowedAddresses; set { _explicitNullValueAllowedAddresses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_addresses"); else _explicitNullProperties?.Remove("allowed_addresses"); } }
+        public List<string>? AllowedAddresses { get => _explicitNullValueAllowedAddresses; set { _explicitNullValueAllowedAddresses = value; AdditionalData?.Remove("allowed_addresses"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_addresses"); else _explicitNullProperties?.Remove("allowed_addresses"); } }
         private List<string>? _explicitNullValueAllowedAddresses = default!;
 #nullable restore
 #else
-        public List<string> AllowedAddresses { get => _explicitNullValueAllowedAddresses; set { _explicitNullValueAllowedAddresses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_addresses"); else _explicitNullProperties?.Remove("allowed_addresses"); } }
+        public List<string> AllowedAddresses { get => _explicitNullValueAllowedAddresses; set { _explicitNullValueAllowedAddresses = value; AdditionalData?.Remove("allowed_addresses"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_addresses"); else _explicitNullProperties?.Remove("allowed_addresses"); } }
         private List<string> _explicitNullValueAllowedAddresses = default!;
 #endif
         /// <summary>List of phone numbers that are allowed to use the trunk.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AllowedNumbers { get => _explicitNullValueAllowedNumbers; set { _explicitNullValueAllowedNumbers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_numbers"); else _explicitNullProperties?.Remove("allowed_numbers"); } }
+        public List<string>? AllowedNumbers { get => _explicitNullValueAllowedNumbers; set { _explicitNullValueAllowedNumbers = value; AdditionalData?.Remove("allowed_numbers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_numbers"); else _explicitNullProperties?.Remove("allowed_numbers"); } }
         private List<string>? _explicitNullValueAllowedNumbers = default!;
 #nullable restore
 #else
-        public List<string> AllowedNumbers { get => _explicitNullValueAllowedNumbers; set { _explicitNullValueAllowedNumbers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_numbers"); else _explicitNullProperties?.Remove("allowed_numbers"); } }
+        public List<string> AllowedNumbers { get => _explicitNullValueAllowedNumbers; set { _explicitNullValueAllowedNumbers = value; AdditionalData?.Remove("allowed_numbers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_numbers"); else _explicitNullProperties?.Remove("allowed_numbers"); } }
         private List<string> _explicitNullValueAllowedNumbers = default!;
 #endif
         /// <summary>Map of dynamic variable name to header name for attributes_to_headers</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.InboundSipTrunkConfigRequestModelAttributesToHeadersProperty? AttributesToHeaders { get => _explicitNullValueAttributesToHeaders; set { _explicitNullValueAttributesToHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributes_to_headers"); else _explicitNullProperties?.Remove("attributes_to_headers"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.InboundSipTrunkConfigRequestModelAttributesToHeadersProperty? AttributesToHeaders { get => _explicitNullValueAttributesToHeaders; set { _explicitNullValueAttributesToHeaders = value; AdditionalData?.Remove("attributes_to_headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributes_to_headers"); else _explicitNullProperties?.Remove("attributes_to_headers"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.InboundSipTrunkConfigRequestModelAttributesToHeadersProperty? _explicitNullValueAttributesToHeaders = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.InboundSipTrunkConfigRequestModelAttributesToHeadersProperty AttributesToHeaders { get => _explicitNullValueAttributesToHeaders; set { _explicitNullValueAttributesToHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributes_to_headers"); else _explicitNullProperties?.Remove("attributes_to_headers"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.InboundSipTrunkConfigRequestModelAttributesToHeadersProperty AttributesToHeaders { get => _explicitNullValueAttributesToHeaders; set { _explicitNullValueAttributesToHeaders = value; AdditionalData?.Remove("attributes_to_headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributes_to_headers"); else _explicitNullProperties?.Remove("attributes_to_headers"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.InboundSipTrunkConfigRequestModelAttributesToHeadersProperty _explicitNullValueAttributesToHeaders = default!;
 #endif
         /// <summary>Optional digest authentication credentials (username/password).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SipTrunkCredentialsRequestModel? Credentials { get => _explicitNullValueCredentials; set { _explicitNullValueCredentials = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credentials"); else _explicitNullProperties?.Remove("credentials"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SipTrunkCredentialsRequestModel? Credentials { get => _explicitNullValueCredentials; set { _explicitNullValueCredentials = value; AdditionalData?.Remove("credentials"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credentials"); else _explicitNullProperties?.Remove("credentials"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.SipTrunkCredentialsRequestModel? _explicitNullValueCredentials = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SipTrunkCredentialsRequestModel Credentials { get => _explicitNullValueCredentials; set { _explicitNullValueCredentials = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credentials"); else _explicitNullProperties?.Remove("credentials"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SipTrunkCredentialsRequestModel Credentials { get => _explicitNullValueCredentials; set { _explicitNullValueCredentials = value; AdditionalData?.Remove("credentials"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credentials"); else _explicitNullProperties?.Remove("credentials"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.SipTrunkCredentialsRequestModel _explicitNullValueCredentials = default!;
 #endif
         /// <summary>The media_encryption property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SipMediaEncryptionEnum? MediaEncryption { get => _explicitNullValueMediaEncryption; set { _explicitNullValueMediaEncryption = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_encryption"); else _explicitNullProperties?.Remove("media_encryption"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SipMediaEncryptionEnum? MediaEncryption { get => _explicitNullValueMediaEncryption; set { _explicitNullValueMediaEncryption = value; AdditionalData?.Remove("media_encryption"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_encryption"); else _explicitNullProperties?.Remove("media_encryption"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.SipMediaEncryptionEnum? _explicitNullValueMediaEncryption = default!;
         /// <summary>Domains of remote SIP servers used to validate TLS certificates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RemoteDomains { get => _explicitNullValueRemoteDomains; set { _explicitNullValueRemoteDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remote_domains"); else _explicitNullProperties?.Remove("remote_domains"); } }
+        public List<string>? RemoteDomains { get => _explicitNullValueRemoteDomains; set { _explicitNullValueRemoteDomains = value; AdditionalData?.Remove("remote_domains"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remote_domains"); else _explicitNullProperties?.Remove("remote_domains"); } }
         private List<string>? _explicitNullValueRemoteDomains = default!;
 #nullable restore
 #else
-        public List<string> RemoteDomains { get => _explicitNullValueRemoteDomains; set { _explicitNullValueRemoteDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remote_domains"); else _explicitNullProperties?.Remove("remote_domains"); } }
+        public List<string> RemoteDomains { get => _explicitNullValueRemoteDomains; set { _explicitNullValueRemoteDomains = value; AdditionalData?.Remove("remote_domains"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remote_domains"); else _explicitNullProperties?.Remove("remote_domains"); } }
         private List<string> _explicitNullValueRemoteDomains = default!;
 #endif
         /// <summary>
@@ -109,7 +115,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "allowed_numbers", n => { AllowedNumbers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "attributes_to_headers", n => { AttributesToHeaders = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.InboundSipTrunkConfigRequestModelAttributesToHeadersProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.InboundSipTrunkConfigRequestModelAttributesToHeadersProperty.CreateFromDiscriminatorValue); } },
                 { "credentials", n => { Credentials = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SipTrunkCredentialsRequestModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SipTrunkCredentialsRequestModel.CreateFromDiscriminatorValue); } },
-                { "media_encryption", n => { MediaEncryption = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SipMediaEncryptionEnum>(); } },
+                { "media_encryption", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SipMediaEncryptionEnum>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMediaEncryption = default; _explicitNullProperties?.Remove("media_encryption"); AdditionalData["media_encryption"] = unknown; } else { MediaEncryption = parsed; AdditionalData.Remove("media_encryption"); } } },
                 { "remote_domains", n => { RemoteDomains = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }

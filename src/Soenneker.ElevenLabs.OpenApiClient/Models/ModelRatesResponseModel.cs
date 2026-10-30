@@ -17,17 +17,19 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("character_cost_multiplier") is { } nullNodeCharacterCostMultiplier && nullNodeCharacterCostMultiplier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CharacterCostMultiplier = null;
-            if (parseNode.GetChildNode("cost_discount_multiplier") is { } nullNodeCostDiscountMultiplier && nullNodeCostDiscountMultiplier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CostDiscountMultiplier = null;
+            if (parseNode.GetChildNode("character_cost_multiplier") is null) { _explicitNullValueCharacterCostMultiplier = default!; _explicitNullProperties?.Remove("character_cost_multiplier"); }
+            else if (parseNode.GetChildNode("character_cost_multiplier") is { } nullNodeCharacterCostMultiplier && nullNodeCharacterCostMultiplier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CharacterCostMultiplier = null;
+            if (parseNode.GetChildNode("cost_discount_multiplier") is null) { _explicitNullValueCostDiscountMultiplier = default!; _explicitNullProperties?.Remove("cost_discount_multiplier"); }
+            else if (parseNode.GetChildNode("cost_discount_multiplier") is { } nullNodeCostDiscountMultiplier && nullNodeCostDiscountMultiplier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CostDiscountMultiplier = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The cost multiplier for characters.</summary>
-        public double? CharacterCostMultiplier { get => _explicitNullValueCharacterCostMultiplier; set { _explicitNullValueCharacterCostMultiplier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("character_cost_multiplier"); else _explicitNullProperties?.Remove("character_cost_multiplier"); } }
+        public double? CharacterCostMultiplier { get => _explicitNullValueCharacterCostMultiplier; set { _explicitNullValueCharacterCostMultiplier = value; AdditionalData?.Remove("character_cost_multiplier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("character_cost_multiplier"); else _explicitNullProperties?.Remove("character_cost_multiplier"); } }
         private double? _explicitNullValueCharacterCostMultiplier = default!;
         /// <summary>Discount multiplier applied to cost estimates. Defaults to 1.0 (no discount).</summary>
-        public double? CostDiscountMultiplier { get => _explicitNullValueCostDiscountMultiplier; set { _explicitNullValueCostDiscountMultiplier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cost_discount_multiplier"); else _explicitNullProperties?.Remove("cost_discount_multiplier"); } }
+        public double? CostDiscountMultiplier { get => _explicitNullValueCostDiscountMultiplier; set { _explicitNullValueCostDiscountMultiplier = value; AdditionalData?.Remove("cost_discount_multiplier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cost_discount_multiplier"); else _explicitNullProperties?.Remove("cost_discount_multiplier"); } }
         private double? _explicitNullValueCostDiscountMultiplier = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ModelRatesResponseModel"/> and sets the default values.

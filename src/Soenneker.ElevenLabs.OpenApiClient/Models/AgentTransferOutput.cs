@@ -17,16 +17,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("agent_id") is { } nullNodeAgentId && nullNodeAgentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentId = null;
-            if (parseNode.GetChildNode("branch_id") is { } nullNodeBranchId && nullNodeBranchId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BranchId = null;
-            if (parseNode.GetChildNode("condition") is { } nullNodeCondition && nullNodeCondition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Condition = null;
-            if (parseNode.GetChildNode("delay_ms") is { } nullNodeDelayMs && nullNodeDelayMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DelayMs = null;
-            if (parseNode.GetChildNode("enable_transferred_agent_first_message") is { } nullNodeEnableTransferredAgentFirstMessage && nullNodeEnableTransferredAgentFirstMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableTransferredAgentFirstMessage = null;
-            if (parseNode.GetChildNode("is_workflow_node_transfer") is { } nullNodeIsWorkflowNodeTransfer && nullNodeIsWorkflowNodeTransfer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsWorkflowNodeTransfer = null;
-            if (parseNode.GetChildNode("node_id") is { } nullNodeNodeId && nullNodeNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NodeId = null;
-            if (parseNode.GetChildNode("preserve_client_tts_overrides") is { } nullNodePreserveClientTtsOverrides && nullNodePreserveClientTtsOverrides.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreserveClientTtsOverrides = null;
-            if (parseNode.GetChildNode("preserve_voice_settings") is { } nullNodePreserveVoiceSettings && nullNodePreserveVoiceSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreserveVoiceSettings = null;
-            if (parseNode.GetChildNode("transfer_message") is { } nullNodeTransferMessage && nullNodeTransferMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferMessage = null;
+            if (parseNode.GetChildNode("agent_id") is null) { _explicitNullValueAgentId = default!; _explicitNullProperties?.Remove("agent_id"); }
+            else if (parseNode.GetChildNode("agent_id") is { } nullNodeAgentId && nullNodeAgentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentId = null;
+            if (parseNode.GetChildNode("branch_id") is null) { _explicitNullValueBranchId = default!; _explicitNullProperties?.Remove("branch_id"); }
+            else if (parseNode.GetChildNode("branch_id") is { } nullNodeBranchId && nullNodeBranchId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BranchId = null;
+            if (parseNode.GetChildNode("condition") is null) { _explicitNullValueCondition = default!; _explicitNullProperties?.Remove("condition"); }
+            else if (parseNode.GetChildNode("condition") is { } nullNodeCondition && nullNodeCondition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Condition = null;
+            if (parseNode.GetChildNode("delay_ms") is null) { _explicitNullValueDelayMs = default!; _explicitNullProperties?.Remove("delay_ms"); }
+            else if (parseNode.GetChildNode("delay_ms") is { } nullNodeDelayMs && nullNodeDelayMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DelayMs = null;
+            if (parseNode.GetChildNode("enable_transferred_agent_first_message") is null) { _explicitNullValueEnableTransferredAgentFirstMessage = default!; _explicitNullProperties?.Remove("enable_transferred_agent_first_message"); }
+            else if (parseNode.GetChildNode("enable_transferred_agent_first_message") is { } nullNodeEnableTransferredAgentFirstMessage && nullNodeEnableTransferredAgentFirstMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableTransferredAgentFirstMessage = null;
+            if (parseNode.GetChildNode("is_workflow_node_transfer") is null) { _explicitNullValueIsWorkflowNodeTransfer = default!; _explicitNullProperties?.Remove("is_workflow_node_transfer"); }
+            else if (parseNode.GetChildNode("is_workflow_node_transfer") is { } nullNodeIsWorkflowNodeTransfer && nullNodeIsWorkflowNodeTransfer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsWorkflowNodeTransfer = null;
+            if (parseNode.GetChildNode("node_id") is null) { _explicitNullValueNodeId = default!; _explicitNullProperties?.Remove("node_id"); }
+            else if (parseNode.GetChildNode("node_id") is { } nullNodeNodeId && nullNodeNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NodeId = null;
+            if (parseNode.GetChildNode("preserve_client_tts_overrides") is null) { _explicitNullValuePreserveClientTtsOverrides = default!; _explicitNullProperties?.Remove("preserve_client_tts_overrides"); }
+            else if (parseNode.GetChildNode("preserve_client_tts_overrides") is { } nullNodePreserveClientTtsOverrides && nullNodePreserveClientTtsOverrides.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreserveClientTtsOverrides = null;
+            if (parseNode.GetChildNode("preserve_voice_settings") is null) { _explicitNullValuePreserveVoiceSettings = default!; _explicitNullProperties?.Remove("preserve_voice_settings"); }
+            else if (parseNode.GetChildNode("preserve_voice_settings") is { } nullNodePreserveVoiceSettings && nullNodePreserveVoiceSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreserveVoiceSettings = null;
+            if (parseNode.GetChildNode("transfer_message") is null) { _explicitNullValueTransferMessage = default!; _explicitNullProperties?.Remove("transfer_message"); }
+            else if (parseNode.GetChildNode("transfer_message") is { } nullNodeTransferMessage && nullNodeTransferMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferMessage = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -34,66 +44,66 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The agent_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
+        public string? AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; AdditionalData?.Remove("agent_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
         private string? _explicitNullValueAgentId = default!;
 #nullable restore
 #else
-        public string AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
+        public string AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; AdditionalData?.Remove("agent_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
         private string _explicitNullValueAgentId = default!;
 #endif
         /// <summary>The branch_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BranchId { get => _explicitNullValueBranchId; set { _explicitNullValueBranchId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch_id"); else _explicitNullProperties?.Remove("branch_id"); } }
+        public string? BranchId { get => _explicitNullValueBranchId; set { _explicitNullValueBranchId = value; AdditionalData?.Remove("branch_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch_id"); else _explicitNullProperties?.Remove("branch_id"); } }
         private string? _explicitNullValueBranchId = default!;
 #nullable restore
 #else
-        public string BranchId { get => _explicitNullValueBranchId; set { _explicitNullValueBranchId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch_id"); else _explicitNullProperties?.Remove("branch_id"); } }
+        public string BranchId { get => _explicitNullValueBranchId; set { _explicitNullValueBranchId = value; AdditionalData?.Remove("branch_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch_id"); else _explicitNullProperties?.Remove("branch_id"); } }
         private string _explicitNullValueBranchId = default!;
 #endif
         /// <summary>The condition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Condition { get => _explicitNullValueCondition; set { _explicitNullValueCondition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("condition"); else _explicitNullProperties?.Remove("condition"); } }
+        public string? Condition { get => _explicitNullValueCondition; set { _explicitNullValueCondition = value; AdditionalData?.Remove("condition"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("condition"); else _explicitNullProperties?.Remove("condition"); } }
         private string? _explicitNullValueCondition = default!;
 #nullable restore
 #else
-        public string Condition { get => _explicitNullValueCondition; set { _explicitNullValueCondition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("condition"); else _explicitNullProperties?.Remove("condition"); } }
+        public string Condition { get => _explicitNullValueCondition; set { _explicitNullValueCondition = value; AdditionalData?.Remove("condition"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("condition"); else _explicitNullProperties?.Remove("condition"); } }
         private string _explicitNullValueCondition = default!;
 #endif
         /// <summary>The delay_ms property</summary>
-        public int? DelayMs { get => _explicitNullValueDelayMs; set { _explicitNullValueDelayMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delay_ms"); else _explicitNullProperties?.Remove("delay_ms"); } }
+        public int? DelayMs { get => _explicitNullValueDelayMs; set { _explicitNullValueDelayMs = value; AdditionalData?.Remove("delay_ms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delay_ms"); else _explicitNullProperties?.Remove("delay_ms"); } }
         private int? _explicitNullValueDelayMs = default!;
         /// <summary>The enable_transferred_agent_first_message property</summary>
-        public bool? EnableTransferredAgentFirstMessage { get => _explicitNullValueEnableTransferredAgentFirstMessage; set { _explicitNullValueEnableTransferredAgentFirstMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enable_transferred_agent_first_message"); else _explicitNullProperties?.Remove("enable_transferred_agent_first_message"); } }
+        public bool? EnableTransferredAgentFirstMessage { get => _explicitNullValueEnableTransferredAgentFirstMessage; set { _explicitNullValueEnableTransferredAgentFirstMessage = value; AdditionalData?.Remove("enable_transferred_agent_first_message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enable_transferred_agent_first_message"); else _explicitNullProperties?.Remove("enable_transferred_agent_first_message"); } }
         private bool? _explicitNullValueEnableTransferredAgentFirstMessage = default!;
         /// <summary>The is_workflow_node_transfer property</summary>
-        public bool? IsWorkflowNodeTransfer { get => _explicitNullValueIsWorkflowNodeTransfer; set { _explicitNullValueIsWorkflowNodeTransfer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_workflow_node_transfer"); else _explicitNullProperties?.Remove("is_workflow_node_transfer"); } }
+        public bool? IsWorkflowNodeTransfer { get => _explicitNullValueIsWorkflowNodeTransfer; set { _explicitNullValueIsWorkflowNodeTransfer = value; AdditionalData?.Remove("is_workflow_node_transfer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_workflow_node_transfer"); else _explicitNullProperties?.Remove("is_workflow_node_transfer"); } }
         private bool? _explicitNullValueIsWorkflowNodeTransfer = default!;
         /// <summary>The node_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NodeId { get => _explicitNullValueNodeId; set { _explicitNullValueNodeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("node_id"); else _explicitNullProperties?.Remove("node_id"); } }
+        public string? NodeId { get => _explicitNullValueNodeId; set { _explicitNullValueNodeId = value; AdditionalData?.Remove("node_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("node_id"); else _explicitNullProperties?.Remove("node_id"); } }
         private string? _explicitNullValueNodeId = default!;
 #nullable restore
 #else
-        public string NodeId { get => _explicitNullValueNodeId; set { _explicitNullValueNodeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("node_id"); else _explicitNullProperties?.Remove("node_id"); } }
+        public string NodeId { get => _explicitNullValueNodeId; set { _explicitNullValueNodeId = value; AdditionalData?.Remove("node_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("node_id"); else _explicitNullProperties?.Remove("node_id"); } }
         private string _explicitNullValueNodeId = default!;
 #endif
         /// <summary>Defines whether TTS client overrides should be carried over to the transferred agent.</summary>
-        public bool? PreserveClientTtsOverrides { get => _explicitNullValuePreserveClientTtsOverrides; set { _explicitNullValuePreserveClientTtsOverrides = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preserve_client_tts_overrides"); else _explicitNullProperties?.Remove("preserve_client_tts_overrides"); } }
+        public bool? PreserveClientTtsOverrides { get => _explicitNullValuePreserveClientTtsOverrides; set { _explicitNullValuePreserveClientTtsOverrides = value; AdditionalData?.Remove("preserve_client_tts_overrides"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preserve_client_tts_overrides"); else _explicitNullProperties?.Remove("preserve_client_tts_overrides"); } }
         private bool? _explicitNullValuePreserveClientTtsOverrides = default!;
         /// <summary>Defines whether the base voice, TTS model and voice settings should be carried over to the transferred agent.</summary>
-        public bool? PreserveVoiceSettings { get => _explicitNullValuePreserveVoiceSettings; set { _explicitNullValuePreserveVoiceSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preserve_voice_settings"); else _explicitNullProperties?.Remove("preserve_voice_settings"); } }
+        public bool? PreserveVoiceSettings { get => _explicitNullValuePreserveVoiceSettings; set { _explicitNullValuePreserveVoiceSettings = value; AdditionalData?.Remove("preserve_voice_settings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preserve_voice_settings"); else _explicitNullProperties?.Remove("preserve_voice_settings"); } }
         private bool? _explicitNullValuePreserveVoiceSettings = default!;
         /// <summary>The transfer_message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TransferMessage { get => _explicitNullValueTransferMessage; set { _explicitNullValueTransferMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_message"); else _explicitNullProperties?.Remove("transfer_message"); } }
+        public string? TransferMessage { get => _explicitNullValueTransferMessage; set { _explicitNullValueTransferMessage = value; AdditionalData?.Remove("transfer_message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_message"); else _explicitNullProperties?.Remove("transfer_message"); } }
         private string? _explicitNullValueTransferMessage = default!;
 #nullable restore
 #else
-        public string TransferMessage { get => _explicitNullValueTransferMessage; set { _explicitNullValueTransferMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_message"); else _explicitNullProperties?.Remove("transfer_message"); } }
+        public string TransferMessage { get => _explicitNullValueTransferMessage; set { _explicitNullValueTransferMessage = value; AdditionalData?.Remove("transfer_message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_message"); else _explicitNullProperties?.Remove("transfer_message"); } }
         private string _explicitNullValueTransferMessage = default!;
 #endif
         /// <summary>

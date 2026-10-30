@@ -18,16 +18,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("conversation_goal_prompt") is { } nullNodeConversationGoalPrompt && nullNodeConversationGoalPrompt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationGoalPrompt = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("llm") is { } nullNodeLlm && nullNodeLlm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Llm = null;
-            if (parseNode.GetChildNode("max_score") is { } nullNodeMaxScore && nullNodeMaxScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxScore = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("scope") is { } nullNodeScope && nullNodeScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scope = null;
-            if (parseNode.GetChildNode("score_instructions") is { } nullNodeScoreInstructions && nullNodeScoreInstructions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScoreInstructions = null;
-            if (parseNode.GetChildNode("scoring_mode") is { } nullNodeScoringMode && nullNodeScoringMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScoringMode = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
-            if (parseNode.GetChildNode("use_knowledge_base") is { } nullNodeUseKnowledgeBase && nullNodeUseKnowledgeBase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UseKnowledgeBase = null;
+            if (parseNode.GetChildNode("conversation_goal_prompt") is null) { _explicitNullValueConversationGoalPrompt = default!; _explicitNullProperties?.Remove("conversation_goal_prompt"); }
+            else if (parseNode.GetChildNode("conversation_goal_prompt") is { } nullNodeConversationGoalPrompt && nullNodeConversationGoalPrompt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationGoalPrompt = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("llm") is null) { _explicitNullValueLlm = default!; _explicitNullProperties?.Remove("llm"); }
+            else if (parseNode.GetChildNode("llm") is { } nullNodeLlm && nullNodeLlm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Llm = null;
+            if (parseNode.GetChildNode("max_score") is null) { _explicitNullValueMaxScore = default!; _explicitNullProperties?.Remove("max_score"); }
+            else if (parseNode.GetChildNode("max_score") is { } nullNodeMaxScore && nullNodeMaxScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxScore = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("scope") is null) { _explicitNullValueScope = default!; _explicitNullProperties?.Remove("scope"); }
+            else if (parseNode.GetChildNode("scope") is { } nullNodeScope && nullNodeScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scope = null;
+            if (parseNode.GetChildNode("score_instructions") is null) { _explicitNullValueScoreInstructions = default!; _explicitNullProperties?.Remove("score_instructions"); }
+            else if (parseNode.GetChildNode("score_instructions") is { } nullNodeScoreInstructions && nullNodeScoreInstructions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScoreInstructions = null;
+            if (parseNode.GetChildNode("scoring_mode") is null) { _explicitNullValueScoringMode = default!; _explicitNullProperties?.Remove("scoring_mode"); }
+            else if (parseNode.GetChildNode("scoring_mode") is { } nullNodeScoringMode && nullNodeScoringMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScoringMode = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("use_knowledge_base") is null) { _explicitNullValueUseKnowledgeBase = default!; _explicitNullProperties?.Remove("use_knowledge_base"); }
+            else if (parseNode.GetChildNode("use_knowledge_base") is { } nullNodeUseKnowledgeBase && nullNodeUseKnowledgeBase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UseKnowledgeBase = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -35,60 +45,60 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The prompt that the agent should use to evaluate the conversation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConversationGoalPrompt { get => _explicitNullValueConversationGoalPrompt; set { _explicitNullValueConversationGoalPrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_goal_prompt"); else _explicitNullProperties?.Remove("conversation_goal_prompt"); } }
+        public string? ConversationGoalPrompt { get => _explicitNullValueConversationGoalPrompt; set { _explicitNullValueConversationGoalPrompt = value; AdditionalData?.Remove("conversation_goal_prompt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_goal_prompt"); else _explicitNullProperties?.Remove("conversation_goal_prompt"); } }
         private string? _explicitNullValueConversationGoalPrompt = default!;
 #nullable restore
 #else
-        public string ConversationGoalPrompt { get => _explicitNullValueConversationGoalPrompt; set { _explicitNullValueConversationGoalPrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_goal_prompt"); else _explicitNullProperties?.Remove("conversation_goal_prompt"); } }
+        public string ConversationGoalPrompt { get => _explicitNullValueConversationGoalPrompt; set { _explicitNullValueConversationGoalPrompt = value; AdditionalData?.Remove("conversation_goal_prompt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_goal_prompt"); else _explicitNullProperties?.Remove("conversation_goal_prompt"); } }
         private string _explicitNullValueConversationGoalPrompt = default!;
 #endif
         /// <summary>The unique identifier for the evaluation criteria</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>LLM model to use for this evaluation criteria. If not set, uses agent&apos;s analysis_llm default.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm? Llm { get => _explicitNullValueLlm; set { _explicitNullValueLlm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("llm"); else _explicitNullProperties?.Remove("llm"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm? Llm { get => _explicitNullValueLlm; set { _explicitNullValueLlm = value; AdditionalData?.Remove("llm"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("llm"); else _explicitNullProperties?.Remove("llm"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm? _explicitNullValueLlm = default!;
         /// <summary>Maximum value of the numeric score scale (minimum is always 0). Only used when scoring_mode is &apos;numeric_uniform&apos;.</summary>
-        public int? MaxScore { get => _explicitNullValueMaxScore; set { _explicitNullValueMaxScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_score"); else _explicitNullProperties?.Remove("max_score"); } }
+        public int? MaxScore { get => _explicitNullValueMaxScore; set { _explicitNullValueMaxScore = value; AdditionalData?.Remove("max_score"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_score"); else _explicitNullProperties?.Remove("max_score"); } }
         private int? _explicitNullValueMaxScore = default!;
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The scope of transcript context used when evaluating this criterion. &apos;conversation&apos; uses the full transcript; &apos;agent&apos; uses only the portion where the defining agent was active.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope? Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope? Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; AdditionalData?.Remove("scope"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope? _explicitNullValueScope = default!;
         /// <summary>Optional free-text instructions describing how to assign values on the numeric scale. Only used when scoring_mode is &apos;numeric_uniform&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ScoreInstructions { get => _explicitNullValueScoreInstructions; set { _explicitNullValueScoreInstructions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("score_instructions"); else _explicitNullProperties?.Remove("score_instructions"); } }
+        public string? ScoreInstructions { get => _explicitNullValueScoreInstructions; set { _explicitNullValueScoreInstructions = value; AdditionalData?.Remove("score_instructions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("score_instructions"); else _explicitNullProperties?.Remove("score_instructions"); } }
         private string? _explicitNullValueScoreInstructions = default!;
 #nullable restore
 #else
-        public string ScoreInstructions { get => _explicitNullValueScoreInstructions; set { _explicitNullValueScoreInstructions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("score_instructions"); else _explicitNullProperties?.Remove("score_instructions"); } }
+        public string ScoreInstructions { get => _explicitNullValueScoreInstructions; set { _explicitNullValueScoreInstructions = value; AdditionalData?.Remove("score_instructions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("score_instructions"); else _explicitNullProperties?.Remove("score_instructions"); } }
         private string _explicitNullValueScoreInstructions = default!;
 #endif
         /// <summary>How this criterion is scored. &apos;binary&apos; resolves to success/failure/unknown. &apos;numeric_uniform&apos; returns a number on the [0, max_score] scale which is normalized into the aggregate conversation success percentage.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CriteriaScoringMode? ScoringMode { get => _explicitNullValueScoringMode; set { _explicitNullValueScoringMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scoring_mode"); else _explicitNullProperties?.Remove("scoring_mode"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CriteriaScoringMode? ScoringMode { get => _explicitNullValueScoringMode; set { _explicitNullValueScoringMode = value; AdditionalData?.Remove("scoring_mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scoring_mode"); else _explicitNullProperties?.Remove("scoring_mode"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.CriteriaScoringMode? _explicitNullValueScoringMode = default!;
         /// <summary>The type of evaluation criteria</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptType? _explicitNullValueType = default!;
         /// <summary>When evaluating the prompt, should the agent&apos;s knowledge base be used.</summary>
-        public bool? UseKnowledgeBase { get => _explicitNullValueUseKnowledgeBase; set { _explicitNullValueUseKnowledgeBase = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("use_knowledge_base"); else _explicitNullProperties?.Remove("use_knowledge_base"); } }
+        public bool? UseKnowledgeBase { get => _explicitNullValueUseKnowledgeBase; set { _explicitNullValueUseKnowledgeBase = value; AdditionalData?.Remove("use_knowledge_base"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("use_knowledge_base"); else _explicitNullProperties?.Remove("use_knowledge_base"); } }
         private bool? _explicitNullValueUseKnowledgeBase = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptEvaluationCriteria"/> and sets the default values.
@@ -121,13 +131,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "conversation_goal_prompt", n => { ConversationGoalPrompt = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "llm", n => { Llm = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm>(); } },
+                { "llm", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueLlm = default; _explicitNullProperties?.Remove("llm"); AdditionalData["llm"] = unknown; } else { Llm = parsed; AdditionalData.Remove("llm"); } } },
                 { "max_score", n => { MaxScore = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "scope", n => { Scope = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope>(); } },
+                { "scope", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueScope = default; _explicitNullProperties?.Remove("scope"); AdditionalData["scope"] = unknown; } else { Scope = parsed; AdditionalData.Remove("scope"); } } },
                 { "score_instructions", n => { ScoreInstructions = n.GetStringValue(); } },
-                { "scoring_mode", n => { ScoringMode = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CriteriaScoringMode>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptType>(); } },
+                { "scoring_mode", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CriteriaScoringMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueScoringMode = default; _explicitNullProperties?.Remove("scoring_mode"); AdditionalData["scoring_mode"] = unknown; } else { ScoringMode = parsed; AdditionalData.Remove("scoring_mode"); } } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
                 { "use_knowledge_base", n => { UseKnowledgeBase = n.GetBoolValue(); } },
             };
         }

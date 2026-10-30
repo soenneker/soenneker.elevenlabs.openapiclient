@@ -18,7 +18,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("auth_connection_id") is { } nullNodeAuthConnectionId && nullNodeAuthConnectionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthConnectionId = null;
+            if (parseNode.GetChildNode("auth_connection_id") is null) { _explicitNullValueAuthConnectionId = default!; _explicitNullProperties?.Remove("auth_connection_id"); }
+            else if (parseNode.GetChildNode("auth_connection_id") is { } nullNodeAuthConnectionId && nullNodeAuthConnectionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthConnectionId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The auth_connection_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AuthConnectionId { get => _explicitNullValueAuthConnectionId; set { _explicitNullValueAuthConnectionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_connection_id"); else _explicitNullProperties?.Remove("auth_connection_id"); } }
+        public string? AuthConnectionId { get => _explicitNullValueAuthConnectionId; set { _explicitNullValueAuthConnectionId = value; AdditionalData?.Remove("auth_connection_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_connection_id"); else _explicitNullProperties?.Remove("auth_connection_id"); } }
         private string? _explicitNullValueAuthConnectionId = default!;
 #nullable restore
 #else
-        public string AuthConnectionId { get => _explicitNullValueAuthConnectionId; set { _explicitNullValueAuthConnectionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_connection_id"); else _explicitNullProperties?.Remove("auth_connection_id"); } }
+        public string AuthConnectionId { get => _explicitNullValueAuthConnectionId; set { _explicitNullValueAuthConnectionId = value; AdditionalData?.Remove("auth_connection_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_connection_id"); else _explicitNullProperties?.Remove("auth_connection_id"); } }
         private string _explicitNullValueAuthConnectionId = default!;
 #endif
         /// <summary>

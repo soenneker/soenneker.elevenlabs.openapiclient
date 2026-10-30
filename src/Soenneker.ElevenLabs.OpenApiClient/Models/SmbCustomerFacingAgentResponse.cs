@@ -18,70 +18,78 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("agent_exists") is { } nullNodeAgentExists && nullNodeAgentExists.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentExists = null;
-            if (parseNode.GetChildNode("agent_id") is { } nullNodeAgentId && nullNodeAgentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentId = null;
-            if (parseNode.GetChildNode("config") is { } nullNodeConfig && nullNodeConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Config = null;
-            if (parseNode.GetChildNode("deactivated_at_unix") is { } nullNodeDeactivatedAtUnix && nullNodeDeactivatedAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeactivatedAtUnix = null;
-            if (parseNode.GetChildNode("deactivation_reason") is { } nullNodeDeactivationReason && nullNodeDeactivationReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeactivationReason = null;
-            if (parseNode.GetChildNode("is_transfer_allowed") is { } nullNodeIsTransferAllowed && nullNodeIsTransferAllowed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsTransferAllowed = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("widget") is { } nullNodeWidget && nullNodeWidget.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Widget = null;
+            if (parseNode.GetChildNode("agent_exists") is null) { _explicitNullValueAgentExists = default!; _explicitNullProperties?.Remove("agent_exists"); }
+            else if (parseNode.GetChildNode("agent_exists") is { } nullNodeAgentExists && nullNodeAgentExists.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentExists = null;
+            if (parseNode.GetChildNode("agent_id") is null) { _explicitNullValueAgentId = default!; _explicitNullProperties?.Remove("agent_id"); }
+            else if (parseNode.GetChildNode("agent_id") is { } nullNodeAgentId && nullNodeAgentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentId = null;
+            if (parseNode.GetChildNode("config") is null) { _explicitNullValueConfig = default!; _explicitNullProperties?.Remove("config"); }
+            else if (parseNode.GetChildNode("config") is { } nullNodeConfig && nullNodeConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Config = null;
+            if (parseNode.GetChildNode("deactivated_at_unix") is null) { _explicitNullValueDeactivatedAtUnix = default!; _explicitNullProperties?.Remove("deactivated_at_unix"); }
+            else if (parseNode.GetChildNode("deactivated_at_unix") is { } nullNodeDeactivatedAtUnix && nullNodeDeactivatedAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeactivatedAtUnix = null;
+            if (parseNode.GetChildNode("deactivation_reason") is null) { _explicitNullValueDeactivationReason = default!; _explicitNullProperties?.Remove("deactivation_reason"); }
+            else if (parseNode.GetChildNode("deactivation_reason") is { } nullNodeDeactivationReason && nullNodeDeactivationReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeactivationReason = null;
+            if (parseNode.GetChildNode("is_transfer_allowed") is null) { _explicitNullValueIsTransferAllowed = default!; _explicitNullProperties?.Remove("is_transfer_allowed"); }
+            else if (parseNode.GetChildNode("is_transfer_allowed") is { } nullNodeIsTransferAllowed && nullNodeIsTransferAllowed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsTransferAllowed = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("widget") is null) { _explicitNullValueWidget = default!; _explicitNullProperties?.Remove("widget"); }
+            else if (parseNode.GetChildNode("widget") is { } nullNodeWidget && nullNodeWidget.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Widget = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the underlying ConvAI agent document still exists. False when the receptionist references a deleted agent and needs repair.</summary>
-        public bool? AgentExists { get => _explicitNullValueAgentExists; set { _explicitNullValueAgentExists = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_exists"); else _explicitNullProperties?.Remove("agent_exists"); } }
+        public bool? AgentExists { get => _explicitNullValueAgentExists; set { _explicitNullValueAgentExists = value; AdditionalData?.Remove("agent_exists"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_exists"); else _explicitNullProperties?.Remove("agent_exists"); } }
         private bool? _explicitNullValueAgentExists = default!;
         /// <summary>ConvAI agent id. Empty string is the placeholder seeded by the legacy API validator when migrating a single-agent payload; the agent-owning service resolves it from the workspace assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
+        public string? AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; AdditionalData?.Remove("agent_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
         private string? _explicitNullValueAgentId = default!;
 #nullable restore
 #else
-        public string AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
+        public string AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; AdditionalData?.Remove("agent_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
         private string _explicitNullValueAgentId = default!;
 #endif
         /// <summary>The config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomerFacingConfigOutput? Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomerFacingConfigOutput? Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; AdditionalData?.Remove("config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomerFacingConfigOutput? _explicitNullValueConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomerFacingConfigOutput Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomerFacingConfigOutput Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; AdditionalData?.Remove("config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomerFacingConfigOutput _explicitNullValueConfig = default!;
 #endif
         /// <summary>Unix timestamp when this receptionist was deactivated. None when active.</summary>
-        public int? DeactivatedAtUnix { get => _explicitNullValueDeactivatedAtUnix; set { _explicitNullValueDeactivatedAtUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deactivated_at_unix"); else _explicitNullProperties?.Remove("deactivated_at_unix"); } }
+        public int? DeactivatedAtUnix { get => _explicitNullValueDeactivatedAtUnix; set { _explicitNullValueDeactivatedAtUnix = value; AdditionalData?.Remove("deactivated_at_unix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deactivated_at_unix"); else _explicitNullProperties?.Remove("deactivated_at_unix"); } }
         private int? _explicitNullValueDeactivatedAtUnix = default!;
         /// <summary>Why this receptionist was deactivated. None when active.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbCustomerFacingAgentDeactivationReason? DeactivationReason { get => _explicitNullValueDeactivationReason; set { _explicitNullValueDeactivationReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deactivation_reason"); else _explicitNullProperties?.Remove("deactivation_reason"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbCustomerFacingAgentDeactivationReason? DeactivationReason { get => _explicitNullValueDeactivationReason; set { _explicitNullValueDeactivationReason = value; AdditionalData?.Remove("deactivation_reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deactivation_reason"); else _explicitNullProperties?.Remove("deactivation_reason"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbCustomerFacingAgentDeactivationReason? _explicitNullValueDeactivationReason = default!;
         /// <summary>The is_active property</summary>
         public bool? IsActive { get; private set; }
         /// <summary>Whether this receptionist can configure and use transfer rules.</summary>
-        public bool? IsTransferAllowed { get => _explicitNullValueIsTransferAllowed; set { _explicitNullValueIsTransferAllowed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_transfer_allowed"); else _explicitNullProperties?.Remove("is_transfer_allowed"); } }
+        public bool? IsTransferAllowed { get => _explicitNullValueIsTransferAllowed; set { _explicitNullValueIsTransferAllowed = value; AdditionalData?.Remove("is_transfer_allowed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_transfer_allowed"); else _explicitNullProperties?.Remove("is_transfer_allowed"); } }
         private bool? _explicitNullValueIsTransferAllowed = default!;
         /// <summary>Display name read from the ConvAI agent document (the single source of truth).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>How the website widget looks, read from the ConvAI agent&apos;s platform settings. Null when the agent document is missing. Unset labels mean the widget follows the agent&apos;s own language.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbWidgetAppearance? Widget { get => _explicitNullValueWidget; set { _explicitNullValueWidget = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("widget"); else _explicitNullProperties?.Remove("widget"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbWidgetAppearance? Widget { get => _explicitNullValueWidget; set { _explicitNullValueWidget = value; AdditionalData?.Remove("widget"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("widget"); else _explicitNullProperties?.Remove("widget"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbWidgetAppearance? _explicitNullValueWidget = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbWidgetAppearance Widget { get => _explicitNullValueWidget; set { _explicitNullValueWidget = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("widget"); else _explicitNullProperties?.Remove("widget"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbWidgetAppearance Widget { get => _explicitNullValueWidget; set { _explicitNullValueWidget = value; AdditionalData?.Remove("widget"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("widget"); else _explicitNullProperties?.Remove("widget"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbWidgetAppearance _explicitNullValueWidget = default!;
 #endif
         /// <summary>
@@ -116,7 +124,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
                 { "config", n => { Config = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomerFacingConfigOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomerFacingConfigOutput.CreateFromDiscriminatorValue); } },
                 { "deactivated_at_unix", n => { DeactivatedAtUnix = n.GetIntValue(); } },
-                { "deactivation_reason", n => { DeactivationReason = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbCustomerFacingAgentDeactivationReason>(); } },
+                { "deactivation_reason", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbCustomerFacingAgentDeactivationReason>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDeactivationReason = default; _explicitNullProperties?.Remove("deactivation_reason"); AdditionalData["deactivation_reason"] = unknown; } else { DeactivationReason = parsed; AdditionalData.Remove("deactivation_reason"); } } },
                 { "is_active", n => { IsActive = n.GetBoolValue(); } },
                 { "is_transfer_allowed", n => { IsTransferAllowed = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },

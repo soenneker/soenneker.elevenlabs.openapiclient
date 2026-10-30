@@ -18,76 +18,86 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("billable") is { } nullNodeBillable && nullNodeBillable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Billable = null;
-            if (parseNode.GetChildNode("delivered_at_unix") is { } nullNodeDeliveredAtUnix && nullNodeDeliveredAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeliveredAtUnix = null;
-            if (parseNode.GetChildNode("error_code") is { } nullNodeErrorCode && nullNodeErrorCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorCode = null;
-            if (parseNode.GetChildNode("failed_at_unix") is { } nullNodeFailedAtUnix && nullNodeFailedAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailedAtUnix = null;
-            if (parseNode.GetChildNode("pricing_category") is { } nullNodePricingCategory && nullNodePricingCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PricingCategory = null;
-            if (parseNode.GetChildNode("read_at_unix") is { } nullNodeReadAtUnix && nullNodeReadAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReadAtUnix = null;
-            if (parseNode.GetChildNode("replied_at_unix") is { } nullNodeRepliedAtUnix && nullNodeRepliedAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RepliedAtUnix = null;
-            if (parseNode.GetChildNode("sent_at_unix") is { } nullNodeSentAtUnix && nullNodeSentAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SentAtUnix = null;
-            if (parseNode.GetChildNode("template_name") is { } nullNodeTemplateName && nullNodeTemplateName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TemplateName = null;
-            if (parseNode.GetChildNode("wamid") is { } nullNodeWamid && nullNodeWamid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Wamid = null;
+            if (parseNode.GetChildNode("billable") is null) { _explicitNullValueBillable = default!; _explicitNullProperties?.Remove("billable"); }
+            else if (parseNode.GetChildNode("billable") is { } nullNodeBillable && nullNodeBillable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Billable = null;
+            if (parseNode.GetChildNode("delivered_at_unix") is null) { _explicitNullValueDeliveredAtUnix = default!; _explicitNullProperties?.Remove("delivered_at_unix"); }
+            else if (parseNode.GetChildNode("delivered_at_unix") is { } nullNodeDeliveredAtUnix && nullNodeDeliveredAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeliveredAtUnix = null;
+            if (parseNode.GetChildNode("error_code") is null) { _explicitNullValueErrorCode = default!; _explicitNullProperties?.Remove("error_code"); }
+            else if (parseNode.GetChildNode("error_code") is { } nullNodeErrorCode && nullNodeErrorCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorCode = null;
+            if (parseNode.GetChildNode("failed_at_unix") is null) { _explicitNullValueFailedAtUnix = default!; _explicitNullProperties?.Remove("failed_at_unix"); }
+            else if (parseNode.GetChildNode("failed_at_unix") is { } nullNodeFailedAtUnix && nullNodeFailedAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailedAtUnix = null;
+            if (parseNode.GetChildNode("pricing_category") is null) { _explicitNullValuePricingCategory = default!; _explicitNullProperties?.Remove("pricing_category"); }
+            else if (parseNode.GetChildNode("pricing_category") is { } nullNodePricingCategory && nullNodePricingCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PricingCategory = null;
+            if (parseNode.GetChildNode("read_at_unix") is null) { _explicitNullValueReadAtUnix = default!; _explicitNullProperties?.Remove("read_at_unix"); }
+            else if (parseNode.GetChildNode("read_at_unix") is { } nullNodeReadAtUnix && nullNodeReadAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReadAtUnix = null;
+            if (parseNode.GetChildNode("replied_at_unix") is null) { _explicitNullValueRepliedAtUnix = default!; _explicitNullProperties?.Remove("replied_at_unix"); }
+            else if (parseNode.GetChildNode("replied_at_unix") is { } nullNodeRepliedAtUnix && nullNodeRepliedAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RepliedAtUnix = null;
+            if (parseNode.GetChildNode("sent_at_unix") is null) { _explicitNullValueSentAtUnix = default!; _explicitNullProperties?.Remove("sent_at_unix"); }
+            else if (parseNode.GetChildNode("sent_at_unix") is { } nullNodeSentAtUnix && nullNodeSentAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SentAtUnix = null;
+            if (parseNode.GetChildNode("template_name") is null) { _explicitNullValueTemplateName = default!; _explicitNullProperties?.Remove("template_name"); }
+            else if (parseNode.GetChildNode("template_name") is { } nullNodeTemplateName && nullNodeTemplateName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TemplateName = null;
+            if (parseNode.GetChildNode("wamid") is null) { _explicitNullValueWamid = default!; _explicitNullProperties?.Remove("wamid"); }
+            else if (parseNode.GetChildNode("wamid") is { } nullNodeWamid && nullNodeWamid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Wamid = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The billable property</summary>
-        public bool? Billable { get => _explicitNullValueBillable; set { _explicitNullValueBillable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billable"); else _explicitNullProperties?.Remove("billable"); } }
+        public bool? Billable { get => _explicitNullValueBillable; set { _explicitNullValueBillable = value; AdditionalData?.Remove("billable"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billable"); else _explicitNullProperties?.Remove("billable"); } }
         private bool? _explicitNullValueBillable = default!;
         /// <summary>The delivered_at_unix property</summary>
-        public int? DeliveredAtUnix { get => _explicitNullValueDeliveredAtUnix; set { _explicitNullValueDeliveredAtUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delivered_at_unix"); else _explicitNullProperties?.Remove("delivered_at_unix"); } }
+        public int? DeliveredAtUnix { get => _explicitNullValueDeliveredAtUnix; set { _explicitNullValueDeliveredAtUnix = value; AdditionalData?.Remove("delivered_at_unix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delivered_at_unix"); else _explicitNullProperties?.Remove("delivered_at_unix"); } }
         private int? _explicitNullValueDeliveredAtUnix = default!;
         /// <summary>The error_code property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ErrorCode { get => _explicitNullValueErrorCode; set { _explicitNullValueErrorCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_code"); else _explicitNullProperties?.Remove("error_code"); } }
+        public string? ErrorCode { get => _explicitNullValueErrorCode; set { _explicitNullValueErrorCode = value; AdditionalData?.Remove("error_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_code"); else _explicitNullProperties?.Remove("error_code"); } }
         private string? _explicitNullValueErrorCode = default!;
 #nullable restore
 #else
-        public string ErrorCode { get => _explicitNullValueErrorCode; set { _explicitNullValueErrorCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_code"); else _explicitNullProperties?.Remove("error_code"); } }
+        public string ErrorCode { get => _explicitNullValueErrorCode; set { _explicitNullValueErrorCode = value; AdditionalData?.Remove("error_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_code"); else _explicitNullProperties?.Remove("error_code"); } }
         private string _explicitNullValueErrorCode = default!;
 #endif
         /// <summary>The failed_at_unix property</summary>
-        public int? FailedAtUnix { get => _explicitNullValueFailedAtUnix; set { _explicitNullValueFailedAtUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failed_at_unix"); else _explicitNullProperties?.Remove("failed_at_unix"); } }
+        public int? FailedAtUnix { get => _explicitNullValueFailedAtUnix; set { _explicitNullValueFailedAtUnix = value; AdditionalData?.Remove("failed_at_unix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failed_at_unix"); else _explicitNullProperties?.Remove("failed_at_unix"); } }
         private int? _explicitNullValueFailedAtUnix = default!;
         /// <summary>The pricing_category property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PricingCategory { get => _explicitNullValuePricingCategory; set { _explicitNullValuePricingCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pricing_category"); else _explicitNullProperties?.Remove("pricing_category"); } }
+        public string? PricingCategory { get => _explicitNullValuePricingCategory; set { _explicitNullValuePricingCategory = value; AdditionalData?.Remove("pricing_category"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pricing_category"); else _explicitNullProperties?.Remove("pricing_category"); } }
         private string? _explicitNullValuePricingCategory = default!;
 #nullable restore
 #else
-        public string PricingCategory { get => _explicitNullValuePricingCategory; set { _explicitNullValuePricingCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pricing_category"); else _explicitNullProperties?.Remove("pricing_category"); } }
+        public string PricingCategory { get => _explicitNullValuePricingCategory; set { _explicitNullValuePricingCategory = value; AdditionalData?.Remove("pricing_category"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pricing_category"); else _explicitNullProperties?.Remove("pricing_category"); } }
         private string _explicitNullValuePricingCategory = default!;
 #endif
         /// <summary>The read_at_unix property</summary>
-        public int? ReadAtUnix { get => _explicitNullValueReadAtUnix; set { _explicitNullValueReadAtUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("read_at_unix"); else _explicitNullProperties?.Remove("read_at_unix"); } }
+        public int? ReadAtUnix { get => _explicitNullValueReadAtUnix; set { _explicitNullValueReadAtUnix = value; AdditionalData?.Remove("read_at_unix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("read_at_unix"); else _explicitNullProperties?.Remove("read_at_unix"); } }
         private int? _explicitNullValueReadAtUnix = default!;
         /// <summary>The replied_at_unix property</summary>
-        public int? RepliedAtUnix { get => _explicitNullValueRepliedAtUnix; set { _explicitNullValueRepliedAtUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replied_at_unix"); else _explicitNullProperties?.Remove("replied_at_unix"); } }
+        public int? RepliedAtUnix { get => _explicitNullValueRepliedAtUnix; set { _explicitNullValueRepliedAtUnix = value; AdditionalData?.Remove("replied_at_unix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replied_at_unix"); else _explicitNullProperties?.Remove("replied_at_unix"); } }
         private int? _explicitNullValueRepliedAtUnix = default!;
         /// <summary>The sent_at_unix property</summary>
-        public int? SentAtUnix { get => _explicitNullValueSentAtUnix; set { _explicitNullValueSentAtUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sent_at_unix"); else _explicitNullProperties?.Remove("sent_at_unix"); } }
+        public int? SentAtUnix { get => _explicitNullValueSentAtUnix; set { _explicitNullValueSentAtUnix = value; AdditionalData?.Remove("sent_at_unix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sent_at_unix"); else _explicitNullProperties?.Remove("sent_at_unix"); } }
         private int? _explicitNullValueSentAtUnix = default!;
         /// <summary>The template_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TemplateName { get => _explicitNullValueTemplateName; set { _explicitNullValueTemplateName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("template_name"); else _explicitNullProperties?.Remove("template_name"); } }
+        public string? TemplateName { get => _explicitNullValueTemplateName; set { _explicitNullValueTemplateName = value; AdditionalData?.Remove("template_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("template_name"); else _explicitNullProperties?.Remove("template_name"); } }
         private string? _explicitNullValueTemplateName = default!;
 #nullable restore
 #else
-        public string TemplateName { get => _explicitNullValueTemplateName; set { _explicitNullValueTemplateName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("template_name"); else _explicitNullProperties?.Remove("template_name"); } }
+        public string TemplateName { get => _explicitNullValueTemplateName; set { _explicitNullValueTemplateName = value; AdditionalData?.Remove("template_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("template_name"); else _explicitNullProperties?.Remove("template_name"); } }
         private string _explicitNullValueTemplateName = default!;
 #endif
         /// <summary>The wamid property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Wamid { get => _explicitNullValueWamid; set { _explicitNullValueWamid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wamid"); else _explicitNullProperties?.Remove("wamid"); } }
+        public string? Wamid { get => _explicitNullValueWamid; set { _explicitNullValueWamid = value; AdditionalData?.Remove("wamid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wamid"); else _explicitNullProperties?.Remove("wamid"); } }
         private string? _explicitNullValueWamid = default!;
 #nullable restore
 #else
-        public string Wamid { get => _explicitNullValueWamid; set { _explicitNullValueWamid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wamid"); else _explicitNullProperties?.Remove("wamid"); } }
+        public string Wamid { get => _explicitNullValueWamid; set { _explicitNullValueWamid = value; AdditionalData?.Remove("wamid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wamid"); else _explicitNullProperties?.Remove("wamid"); } }
         private string _explicitNullValueWamid = default!;
 #endif
         /// <summary>

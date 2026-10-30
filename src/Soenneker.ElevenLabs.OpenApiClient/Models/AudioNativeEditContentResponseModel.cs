@@ -17,39 +17,43 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("converting") is { } nullNodeConverting && nullNodeConverting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Converting = null;
-            if (parseNode.GetChildNode("html_snippet") is { } nullNodeHtmlSnippet && nullNodeHtmlSnippet.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HtmlSnippet = null;
-            if (parseNode.GetChildNode("project_id") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
-            if (parseNode.GetChildNode("publishing") is { } nullNodePublishing && nullNodePublishing.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Publishing = null;
+            if (parseNode.GetChildNode("converting") is null) { _explicitNullValueConverting = default!; _explicitNullProperties?.Remove("converting"); }
+            else if (parseNode.GetChildNode("converting") is { } nullNodeConverting && nullNodeConverting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Converting = null;
+            if (parseNode.GetChildNode("html_snippet") is null) { _explicitNullValueHtmlSnippet = default!; _explicitNullProperties?.Remove("html_snippet"); }
+            else if (parseNode.GetChildNode("html_snippet") is { } nullNodeHtmlSnippet && nullNodeHtmlSnippet.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HtmlSnippet = null;
+            if (parseNode.GetChildNode("project_id") is null) { _explicitNullValueProjectId = default!; _explicitNullProperties?.Remove("project_id"); }
+            else if (parseNode.GetChildNode("project_id") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
+            if (parseNode.GetChildNode("publishing") is null) { _explicitNullValuePublishing = default!; _explicitNullProperties?.Remove("publishing"); }
+            else if (parseNode.GetChildNode("publishing") is { } nullNodePublishing && nullNodePublishing.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Publishing = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the project is currently being converted.</summary>
-        public bool? Converting { get => _explicitNullValueConverting; set { _explicitNullValueConverting = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("converting"); else _explicitNullProperties?.Remove("converting"); } }
+        public bool? Converting { get => _explicitNullValueConverting; set { _explicitNullValueConverting = value; AdditionalData?.Remove("converting"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("converting"); else _explicitNullProperties?.Remove("converting"); } }
         private bool? _explicitNullValueConverting = default!;
         /// <summary>The HTML snippet to embed the Audio Native player.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HtmlSnippet { get => _explicitNullValueHtmlSnippet; set { _explicitNullValueHtmlSnippet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("html_snippet"); else _explicitNullProperties?.Remove("html_snippet"); } }
+        public string? HtmlSnippet { get => _explicitNullValueHtmlSnippet; set { _explicitNullValueHtmlSnippet = value; AdditionalData?.Remove("html_snippet"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("html_snippet"); else _explicitNullProperties?.Remove("html_snippet"); } }
         private string? _explicitNullValueHtmlSnippet = default!;
 #nullable restore
 #else
-        public string HtmlSnippet { get => _explicitNullValueHtmlSnippet; set { _explicitNullValueHtmlSnippet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("html_snippet"); else _explicitNullProperties?.Remove("html_snippet"); } }
+        public string HtmlSnippet { get => _explicitNullValueHtmlSnippet; set { _explicitNullValueHtmlSnippet = value; AdditionalData?.Remove("html_snippet"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("html_snippet"); else _explicitNullProperties?.Remove("html_snippet"); } }
         private string _explicitNullValueHtmlSnippet = default!;
 #endif
         /// <summary>The ID of the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_id"); else _explicitNullProperties?.Remove("project_id"); } }
+        public string? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("project_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_id"); else _explicitNullProperties?.Remove("project_id"); } }
         private string? _explicitNullValueProjectId = default!;
 #nullable restore
 #else
-        public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_id"); else _explicitNullProperties?.Remove("project_id"); } }
+        public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("project_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_id"); else _explicitNullProperties?.Remove("project_id"); } }
         private string _explicitNullValueProjectId = default!;
 #endif
         /// <summary>Whether the project is currently being published.</summary>
-        public bool? Publishing { get => _explicitNullValuePublishing; set { _explicitNullValuePublishing = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publishing"); else _explicitNullProperties?.Remove("publishing"); } }
+        public bool? Publishing { get => _explicitNullValuePublishing; set { _explicitNullValuePublishing = value; AdditionalData?.Remove("publishing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publishing"); else _explicitNullProperties?.Remove("publishing"); } }
         private bool? _explicitNullValuePublishing = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioNativeEditContentResponseModel"/> and sets the default values.

@@ -17,9 +17,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("block_id") is { } nullNodeBlockId && nullNodeBlockId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlockId = null;
-            if (parseNode.GetChildNode("nodes") is { } nullNodeNodes && nullNodeNodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Nodes = null;
-            if (parseNode.GetChildNode("sub_type") is { } nullNodeSubType && nullNodeSubType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubType = null;
+            if (parseNode.GetChildNode("block_id") is null) { _explicitNullValueBlockId = default!; _explicitNullProperties?.Remove("block_id"); }
+            else if (parseNode.GetChildNode("block_id") is { } nullNodeBlockId && nullNodeBlockId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlockId = null;
+            if (parseNode.GetChildNode("nodes") is null) { _explicitNullValueNodes = default!; _explicitNullProperties?.Remove("nodes"); }
+            else if (parseNode.GetChildNode("nodes") is { } nullNodeNodes && nullNodeNodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Nodes = null;
+            if (parseNode.GetChildNode("sub_type") is null) { _explicitNullValueSubType = default!; _explicitNullProperties?.Remove("sub_type"); }
+            else if (parseNode.GetChildNode("sub_type") is { } nullNodeSubType && nullNodeSubType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,25 +30,25 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The block_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BlockId { get => _explicitNullValueBlockId; set { _explicitNullValueBlockId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("block_id"); else _explicitNullProperties?.Remove("block_id"); } }
+        public string? BlockId { get => _explicitNullValueBlockId; set { _explicitNullValueBlockId = value; AdditionalData?.Remove("block_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("block_id"); else _explicitNullProperties?.Remove("block_id"); } }
         private string? _explicitNullValueBlockId = default!;
 #nullable restore
 #else
-        public string BlockId { get => _explicitNullValueBlockId; set { _explicitNullValueBlockId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("block_id"); else _explicitNullProperties?.Remove("block_id"); } }
+        public string BlockId { get => _explicitNullValueBlockId; set { _explicitNullValueBlockId = value; AdditionalData?.Remove("block_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("block_id"); else _explicitNullProperties?.Remove("block_id"); } }
         private string _explicitNullValueBlockId = default!;
 #endif
         /// <summary>The nodes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentParagraphTtsNodeInputModel>? Nodes { get => _explicitNullValueNodes; set { _explicitNullValueNodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nodes"); else _explicitNullProperties?.Remove("nodes"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentParagraphTtsNodeInputModel>? Nodes { get => _explicitNullValueNodes; set { _explicitNullValueNodes = value; AdditionalData?.Remove("nodes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nodes"); else _explicitNullProperties?.Remove("nodes"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentParagraphTtsNodeInputModel>? _explicitNullValueNodes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentParagraphTtsNodeInputModel> Nodes { get => _explicitNullValueNodes; set { _explicitNullValueNodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nodes"); else _explicitNullProperties?.Remove("nodes"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentParagraphTtsNodeInputModel> Nodes { get => _explicitNullValueNodes; set { _explicitNullValueNodes = value; AdditionalData?.Remove("nodes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nodes"); else _explicitNullProperties?.Remove("nodes"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentParagraphTtsNodeInputModel> _explicitNullValueNodes = default!;
 #endif
         /// <summary>The sub_type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockInputModelSubType? SubType { get => _explicitNullValueSubType; set { _explicitNullValueSubType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sub_type"); else _explicitNullProperties?.Remove("sub_type"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockInputModelSubType? SubType { get => _explicitNullValueSubType; set { _explicitNullValueSubType = value; AdditionalData?.Remove("sub_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sub_type"); else _explicitNullProperties?.Remove("sub_type"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockInputModelSubType? _explicitNullValueSubType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockInputModel"/> and sets the default values.
@@ -74,7 +77,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "block_id", n => { BlockId = n.GetStringValue(); } },
                 { "nodes", n => { Nodes = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentParagraphTtsNodeInputModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentParagraphTtsNodeInputModel.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "sub_type", n => { SubType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockInputModelSubType>(); } },
+                { "sub_type", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockInputModelSubType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSubType = default; _explicitNullProperties?.Remove("sub_type"); AdditionalData["sub_type"] = unknown; } else { SubType = parsed; AdditionalData.Remove("sub_type"); } } },
             };
         }
         /// <summary>

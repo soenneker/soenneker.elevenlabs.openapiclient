@@ -17,48 +17,80 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("accent") is { } nullNodeAccent && nullNodeAccent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Accent = null;
-            if (parseNode.GetChildNode("age") is { } nullNodeAge && nullNodeAge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Age = null;
-            if (parseNode.GetChildNode("category") is { } nullNodeCategory && nullNodeCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Category = null;
-            if (parseNode.GetChildNode("cloned_by_count") is { } nullNodeClonedByCount && nullNodeClonedByCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClonedByCount = null;
-            if (parseNode.GetChildNode("date_unix") is { } nullNodeDateUnix && nullNodeDateUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateUnix = null;
-            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
-            if (parseNode.GetChildNode("descriptive") is { } nullNodeDescriptive && nullNodeDescriptive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Descriptive = null;
-            if (parseNode.GetChildNode("featured") is { } nullNodeFeatured && nullNodeFeatured.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Featured = null;
-            if (parseNode.GetChildNode("fiat_rate") is { } nullNodeFiatRate && nullNodeFiatRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FiatRate = null;
-            if (parseNode.GetChildNode("free_users_allowed") is { } nullNodeFreeUsersAllowed && nullNodeFreeUsersAllowed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FreeUsersAllowed = null;
-            if (parseNode.GetChildNode("gender") is { } nullNodeGender && nullNodeGender.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Gender = null;
-            if (parseNode.GetChildNode("image_url") is { } nullNodeImageUrl && nullNodeImageUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImageUrl = null;
-            if (parseNode.GetChildNode("instagram_username") is { } nullNodeInstagramUsername && nullNodeInstagramUsername.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstagramUsername = null;
-            if (parseNode.GetChildNode("is_added_by_user") is { } nullNodeIsAddedByUser && nullNodeIsAddedByUser.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsAddedByUser = null;
-            if (parseNode.GetChildNode("is_bookmarked") is { } nullNodeIsBookmarked && nullNodeIsBookmarked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsBookmarked = null;
-            if (parseNode.GetChildNode("language") is { } nullNodeLanguage && nullNodeLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Language = null;
-            if (parseNode.GetChildNode("live_moderation_enabled") is { } nullNodeLiveModerationEnabled && nullNodeLiveModerationEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LiveModerationEnabled = null;
-            if (parseNode.GetChildNode("locale") is { } nullNodeLocale && nullNodeLocale.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Locale = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("notice_period") is { } nullNodeNoticePeriod && nullNodeNoticePeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NoticePeriod = null;
-            if (parseNode.GetChildNode("play_api_usage_character_count_1y") is { } nullNodePlayApiUsageCharacterCount1y && nullNodePlayApiUsageCharacterCount1y.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlayApiUsageCharacterCount1y = null;
-            if (parseNode.GetChildNode("preview_url") is { } nullNodePreviewUrl && nullNodePreviewUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviewUrl = null;
-            if (parseNode.GetChildNode("public_owner_id") is { } nullNodePublicOwnerId && nullNodePublicOwnerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicOwnerId = null;
-            if (parseNode.GetChildNode("rate") is { } nullNodeRate && nullNodeRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rate = null;
-            if (parseNode.GetChildNode("tiktok_username") is { } nullNodeTiktokUsername && nullNodeTiktokUsername.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TiktokUsername = null;
-            if (parseNode.GetChildNode("twitter_username") is { } nullNodeTwitterUsername && nullNodeTwitterUsername.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TwitterUsername = null;
-            if (parseNode.GetChildNode("usage_character_count_1y") is { } nullNodeUsageCharacterCount1y && nullNodeUsageCharacterCount1y.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsageCharacterCount1y = null;
-            if (parseNode.GetChildNode("usage_character_count_7d") is { } nullNodeUsageCharacterCount7d && nullNodeUsageCharacterCount7d.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsageCharacterCount7d = null;
-            if (parseNode.GetChildNode("use_case") is { } nullNodeUseCase && nullNodeUseCase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UseCase = null;
-            if (parseNode.GetChildNode("verified_languages") is { } nullNodeVerifiedLanguages && nullNodeVerifiedLanguages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VerifiedLanguages = null;
-            if (parseNode.GetChildNode("voice_id") is { } nullNodeVoiceId && nullNodeVoiceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VoiceId = null;
-            if (parseNode.GetChildNode("youtube_username") is { } nullNodeYoutubeUsername && nullNodeYoutubeUsername.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) YoutubeUsername = null;
+            if (parseNode.GetChildNode("accent") is null) { _explicitNullValueAccent = default!; _explicitNullProperties?.Remove("accent"); }
+            else if (parseNode.GetChildNode("accent") is { } nullNodeAccent && nullNodeAccent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Accent = null;
+            if (parseNode.GetChildNode("age") is null) { _explicitNullValueAge = default!; _explicitNullProperties?.Remove("age"); }
+            else if (parseNode.GetChildNode("age") is { } nullNodeAge && nullNodeAge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Age = null;
+            if (parseNode.GetChildNode("category") is null) { _explicitNullValueCategory = default!; _explicitNullProperties?.Remove("category"); }
+            else if (parseNode.GetChildNode("category") is { } nullNodeCategory && nullNodeCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Category = null;
+            if (parseNode.GetChildNode("cloned_by_count") is null) { _explicitNullValueClonedByCount = default!; _explicitNullProperties?.Remove("cloned_by_count"); }
+            else if (parseNode.GetChildNode("cloned_by_count") is { } nullNodeClonedByCount && nullNodeClonedByCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClonedByCount = null;
+            if (parseNode.GetChildNode("date_unix") is null) { _explicitNullValueDateUnix = default!; _explicitNullProperties?.Remove("date_unix"); }
+            else if (parseNode.GetChildNode("date_unix") is { } nullNodeDateUnix && nullNodeDateUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateUnix = null;
+            if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
+            else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("descriptive") is null) { _explicitNullValueDescriptive = default!; _explicitNullProperties?.Remove("descriptive"); }
+            else if (parseNode.GetChildNode("descriptive") is { } nullNodeDescriptive && nullNodeDescriptive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Descriptive = null;
+            if (parseNode.GetChildNode("featured") is null) { _explicitNullValueFeatured = default!; _explicitNullProperties?.Remove("featured"); }
+            else if (parseNode.GetChildNode("featured") is { } nullNodeFeatured && nullNodeFeatured.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Featured = null;
+            if (parseNode.GetChildNode("fiat_rate") is null) { _explicitNullValueFiatRate = default!; _explicitNullProperties?.Remove("fiat_rate"); }
+            else if (parseNode.GetChildNode("fiat_rate") is { } nullNodeFiatRate && nullNodeFiatRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FiatRate = null;
+            if (parseNode.GetChildNode("free_users_allowed") is null) { _explicitNullValueFreeUsersAllowed = default!; _explicitNullProperties?.Remove("free_users_allowed"); }
+            else if (parseNode.GetChildNode("free_users_allowed") is { } nullNodeFreeUsersAllowed && nullNodeFreeUsersAllowed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FreeUsersAllowed = null;
+            if (parseNode.GetChildNode("gender") is null) { _explicitNullValueGender = default!; _explicitNullProperties?.Remove("gender"); }
+            else if (parseNode.GetChildNode("gender") is { } nullNodeGender && nullNodeGender.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Gender = null;
+            if (parseNode.GetChildNode("image_url") is null) { _explicitNullValueImageUrl = default!; _explicitNullProperties?.Remove("image_url"); }
+            else if (parseNode.GetChildNode("image_url") is { } nullNodeImageUrl && nullNodeImageUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImageUrl = null;
+            if (parseNode.GetChildNode("instagram_username") is null) { _explicitNullValueInstagramUsername = default!; _explicitNullProperties?.Remove("instagram_username"); }
+            else if (parseNode.GetChildNode("instagram_username") is { } nullNodeInstagramUsername && nullNodeInstagramUsername.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstagramUsername = null;
+            if (parseNode.GetChildNode("is_added_by_user") is null) { _explicitNullValueIsAddedByUser = default!; _explicitNullProperties?.Remove("is_added_by_user"); }
+            else if (parseNode.GetChildNode("is_added_by_user") is { } nullNodeIsAddedByUser && nullNodeIsAddedByUser.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsAddedByUser = null;
+            if (parseNode.GetChildNode("is_bookmarked") is null) { _explicitNullValueIsBookmarked = default!; _explicitNullProperties?.Remove("is_bookmarked"); }
+            else if (parseNode.GetChildNode("is_bookmarked") is { } nullNodeIsBookmarked && nullNodeIsBookmarked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsBookmarked = null;
+            if (parseNode.GetChildNode("language") is null) { _explicitNullValueLanguage = default!; _explicitNullProperties?.Remove("language"); }
+            else if (parseNode.GetChildNode("language") is { } nullNodeLanguage && nullNodeLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Language = null;
+            if (parseNode.GetChildNode("live_moderation_enabled") is null) { _explicitNullValueLiveModerationEnabled = default!; _explicitNullProperties?.Remove("live_moderation_enabled"); }
+            else if (parseNode.GetChildNode("live_moderation_enabled") is { } nullNodeLiveModerationEnabled && nullNodeLiveModerationEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LiveModerationEnabled = null;
+            if (parseNode.GetChildNode("locale") is null) { _explicitNullValueLocale = default!; _explicitNullProperties?.Remove("locale"); }
+            else if (parseNode.GetChildNode("locale") is { } nullNodeLocale && nullNodeLocale.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Locale = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("notice_period") is null) { _explicitNullValueNoticePeriod = default!; _explicitNullProperties?.Remove("notice_period"); }
+            else if (parseNode.GetChildNode("notice_period") is { } nullNodeNoticePeriod && nullNodeNoticePeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NoticePeriod = null;
+            if (parseNode.GetChildNode("play_api_usage_character_count_1y") is null) { _explicitNullValuePlayApiUsageCharacterCount1y = default!; _explicitNullProperties?.Remove("play_api_usage_character_count_1y"); }
+            else if (parseNode.GetChildNode("play_api_usage_character_count_1y") is { } nullNodePlayApiUsageCharacterCount1y && nullNodePlayApiUsageCharacterCount1y.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlayApiUsageCharacterCount1y = null;
+            if (parseNode.GetChildNode("preview_url") is null) { _explicitNullValuePreviewUrl = default!; _explicitNullProperties?.Remove("preview_url"); }
+            else if (parseNode.GetChildNode("preview_url") is { } nullNodePreviewUrl && nullNodePreviewUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviewUrl = null;
+            if (parseNode.GetChildNode("public_owner_id") is null) { _explicitNullValuePublicOwnerId = default!; _explicitNullProperties?.Remove("public_owner_id"); }
+            else if (parseNode.GetChildNode("public_owner_id") is { } nullNodePublicOwnerId && nullNodePublicOwnerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicOwnerId = null;
+            if (parseNode.GetChildNode("rate") is null) { _explicitNullValueRate = default!; _explicitNullProperties?.Remove("rate"); }
+            else if (parseNode.GetChildNode("rate") is { } nullNodeRate && nullNodeRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rate = null;
+            if (parseNode.GetChildNode("tiktok_username") is null) { _explicitNullValueTiktokUsername = default!; _explicitNullProperties?.Remove("tiktok_username"); }
+            else if (parseNode.GetChildNode("tiktok_username") is { } nullNodeTiktokUsername && nullNodeTiktokUsername.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TiktokUsername = null;
+            if (parseNode.GetChildNode("twitter_username") is null) { _explicitNullValueTwitterUsername = default!; _explicitNullProperties?.Remove("twitter_username"); }
+            else if (parseNode.GetChildNode("twitter_username") is { } nullNodeTwitterUsername && nullNodeTwitterUsername.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TwitterUsername = null;
+            if (parseNode.GetChildNode("usage_character_count_1y") is null) { _explicitNullValueUsageCharacterCount1y = default!; _explicitNullProperties?.Remove("usage_character_count_1y"); }
+            else if (parseNode.GetChildNode("usage_character_count_1y") is { } nullNodeUsageCharacterCount1y && nullNodeUsageCharacterCount1y.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsageCharacterCount1y = null;
+            if (parseNode.GetChildNode("usage_character_count_7d") is null) { _explicitNullValueUsageCharacterCount7d = default!; _explicitNullProperties?.Remove("usage_character_count_7d"); }
+            else if (parseNode.GetChildNode("usage_character_count_7d") is { } nullNodeUsageCharacterCount7d && nullNodeUsageCharacterCount7d.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsageCharacterCount7d = null;
+            if (parseNode.GetChildNode("use_case") is null) { _explicitNullValueUseCase = default!; _explicitNullProperties?.Remove("use_case"); }
+            else if (parseNode.GetChildNode("use_case") is { } nullNodeUseCase && nullNodeUseCase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UseCase = null;
+            if (parseNode.GetChildNode("verified_languages") is null) { _explicitNullValueVerifiedLanguages = default!; _explicitNullProperties?.Remove("verified_languages"); }
+            else if (parseNode.GetChildNode("verified_languages") is { } nullNodeVerifiedLanguages && nullNodeVerifiedLanguages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VerifiedLanguages = null;
+            if (parseNode.GetChildNode("voice_id") is null) { _explicitNullValueVoiceId = default!; _explicitNullProperties?.Remove("voice_id"); }
+            else if (parseNode.GetChildNode("voice_id") is { } nullNodeVoiceId && nullNodeVoiceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VoiceId = null;
+            if (parseNode.GetChildNode("youtube_username") is null) { _explicitNullValueYoutubeUsername = default!; _explicitNullProperties?.Remove("youtube_username"); }
+            else if (parseNode.GetChildNode("youtube_username") is { } nullNodeYoutubeUsername && nullNodeYoutubeUsername.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) YoutubeUsername = null;
         }
 
         /// <summary>The accent of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Accent { get => _explicitNullValueAccent; set { _explicitNullValueAccent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accent"); else _explicitNullProperties?.Remove("accent"); } }
+        public string? Accent { get => _explicitNullValueAccent; set { _explicitNullValueAccent = value; AdditionalData?.Remove("accent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accent"); else _explicitNullProperties?.Remove("accent"); } }
         private string? _explicitNullValueAccent = default!;
 #nullable restore
 #else
-        public string Accent { get => _explicitNullValueAccent; set { _explicitNullValueAccent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accent"); else _explicitNullProperties?.Remove("accent"); } }
+        public string Accent { get => _explicitNullValueAccent; set { _explicitNullValueAccent = value; AdditionalData?.Remove("accent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accent"); else _explicitNullProperties?.Remove("accent"); } }
         private string _explicitNullValueAccent = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -66,213 +98,213 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The age of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Age { get => _explicitNullValueAge; set { _explicitNullValueAge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("age"); else _explicitNullProperties?.Remove("age"); } }
+        public string? Age { get => _explicitNullValueAge; set { _explicitNullValueAge = value; AdditionalData?.Remove("age"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("age"); else _explicitNullProperties?.Remove("age"); } }
         private string? _explicitNullValueAge = default!;
 #nullable restore
 #else
-        public string Age { get => _explicitNullValueAge; set { _explicitNullValueAge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("age"); else _explicitNullProperties?.Remove("age"); } }
+        public string Age { get => _explicitNullValueAge; set { _explicitNullValueAge = value; AdditionalData?.Remove("age"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("age"); else _explicitNullProperties?.Remove("age"); } }
         private string _explicitNullValueAge = default!;
 #endif
         /// <summary>The category of the voice.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelCategory? Category { get => _explicitNullValueCategory; set { _explicitNullValueCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category"); else _explicitNullProperties?.Remove("category"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelCategory? Category { get => _explicitNullValueCategory; set { _explicitNullValueCategory = value; AdditionalData?.Remove("category"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category"); else _explicitNullProperties?.Remove("category"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelCategory? _explicitNullValueCategory = default!;
         /// <summary>The number of times the voice has been cloned.</summary>
-        public int? ClonedByCount { get => _explicitNullValueClonedByCount; set { _explicitNullValueClonedByCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloned_by_count"); else _explicitNullProperties?.Remove("cloned_by_count"); } }
+        public int? ClonedByCount { get => _explicitNullValueClonedByCount; set { _explicitNullValueClonedByCount = value; AdditionalData?.Remove("cloned_by_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloned_by_count"); else _explicitNullProperties?.Remove("cloned_by_count"); } }
         private int? _explicitNullValueClonedByCount = default!;
         /// <summary>The date the voice was added to the library in Unix time.</summary>
-        public int? DateUnix { get => _explicitNullValueDateUnix; set { _explicitNullValueDateUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date_unix"); else _explicitNullProperties?.Remove("date_unix"); } }
+        public int? DateUnix { get => _explicitNullValueDateUnix; set { _explicitNullValueDateUnix = value; AdditionalData?.Remove("date_unix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date_unix"); else _explicitNullProperties?.Remove("date_unix"); } }
         private int? _explicitNullValueDateUnix = default!;
         /// <summary>The description of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The descriptive of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Descriptive { get => _explicitNullValueDescriptive; set { _explicitNullValueDescriptive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("descriptive"); else _explicitNullProperties?.Remove("descriptive"); } }
+        public string? Descriptive { get => _explicitNullValueDescriptive; set { _explicitNullValueDescriptive = value; AdditionalData?.Remove("descriptive"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("descriptive"); else _explicitNullProperties?.Remove("descriptive"); } }
         private string? _explicitNullValueDescriptive = default!;
 #nullable restore
 #else
-        public string Descriptive { get => _explicitNullValueDescriptive; set { _explicitNullValueDescriptive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("descriptive"); else _explicitNullProperties?.Remove("descriptive"); } }
+        public string Descriptive { get => _explicitNullValueDescriptive; set { _explicitNullValueDescriptive = value; AdditionalData?.Remove("descriptive"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("descriptive"); else _explicitNullProperties?.Remove("descriptive"); } }
         private string _explicitNullValueDescriptive = default!;
 #endif
         /// <summary>Whether the voice is featured.</summary>
-        public bool? Featured { get => _explicitNullValueFeatured; set { _explicitNullValueFeatured = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("featured"); else _explicitNullProperties?.Remove("featured"); } }
+        public bool? Featured { get => _explicitNullValueFeatured; set { _explicitNullValueFeatured = value; AdditionalData?.Remove("featured"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("featured"); else _explicitNullProperties?.Remove("featured"); } }
         private bool? _explicitNullValueFeatured = default!;
         /// <summary>The rate of the voice in USD per 1000 credits. null if default</summary>
-        public double? FiatRate { get => _explicitNullValueFiatRate; set { _explicitNullValueFiatRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fiat_rate"); else _explicitNullProperties?.Remove("fiat_rate"); } }
+        public double? FiatRate { get => _explicitNullValueFiatRate; set { _explicitNullValueFiatRate = value; AdditionalData?.Remove("fiat_rate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fiat_rate"); else _explicitNullProperties?.Remove("fiat_rate"); } }
         private double? _explicitNullValueFiatRate = default!;
         /// <summary>Whether free users are allowed to use the voice.</summary>
-        public bool? FreeUsersAllowed { get => _explicitNullValueFreeUsersAllowed; set { _explicitNullValueFreeUsersAllowed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("free_users_allowed"); else _explicitNullProperties?.Remove("free_users_allowed"); } }
+        public bool? FreeUsersAllowed { get => _explicitNullValueFreeUsersAllowed; set { _explicitNullValueFreeUsersAllowed = value; AdditionalData?.Remove("free_users_allowed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("free_users_allowed"); else _explicitNullProperties?.Remove("free_users_allowed"); } }
         private bool? _explicitNullValueFreeUsersAllowed = default!;
         /// <summary>The gender of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Gender { get => _explicitNullValueGender; set { _explicitNullValueGender = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gender"); else _explicitNullProperties?.Remove("gender"); } }
+        public string? Gender { get => _explicitNullValueGender; set { _explicitNullValueGender = value; AdditionalData?.Remove("gender"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gender"); else _explicitNullProperties?.Remove("gender"); } }
         private string? _explicitNullValueGender = default!;
 #nullable restore
 #else
-        public string Gender { get => _explicitNullValueGender; set { _explicitNullValueGender = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gender"); else _explicitNullProperties?.Remove("gender"); } }
+        public string Gender { get => _explicitNullValueGender; set { _explicitNullValueGender = value; AdditionalData?.Remove("gender"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gender"); else _explicitNullProperties?.Remove("gender"); } }
         private string _explicitNullValueGender = default!;
 #endif
         /// <summary>The image URL of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ImageUrl { get => _explicitNullValueImageUrl; set { _explicitNullValueImageUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_url"); else _explicitNullProperties?.Remove("image_url"); } }
+        public string? ImageUrl { get => _explicitNullValueImageUrl; set { _explicitNullValueImageUrl = value; AdditionalData?.Remove("image_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_url"); else _explicitNullProperties?.Remove("image_url"); } }
         private string? _explicitNullValueImageUrl = default!;
 #nullable restore
 #else
-        public string ImageUrl { get => _explicitNullValueImageUrl; set { _explicitNullValueImageUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_url"); else _explicitNullProperties?.Remove("image_url"); } }
+        public string ImageUrl { get => _explicitNullValueImageUrl; set { _explicitNullValueImageUrl = value; AdditionalData?.Remove("image_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_url"); else _explicitNullProperties?.Remove("image_url"); } }
         private string _explicitNullValueImageUrl = default!;
 #endif
         /// <summary>The Instagram username of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InstagramUsername { get => _explicitNullValueInstagramUsername; set { _explicitNullValueInstagramUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instagram_username"); else _explicitNullProperties?.Remove("instagram_username"); } }
+        public string? InstagramUsername { get => _explicitNullValueInstagramUsername; set { _explicitNullValueInstagramUsername = value; AdditionalData?.Remove("instagram_username"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instagram_username"); else _explicitNullProperties?.Remove("instagram_username"); } }
         private string? _explicitNullValueInstagramUsername = default!;
 #nullable restore
 #else
-        public string InstagramUsername { get => _explicitNullValueInstagramUsername; set { _explicitNullValueInstagramUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instagram_username"); else _explicitNullProperties?.Remove("instagram_username"); } }
+        public string InstagramUsername { get => _explicitNullValueInstagramUsername; set { _explicitNullValueInstagramUsername = value; AdditionalData?.Remove("instagram_username"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instagram_username"); else _explicitNullProperties?.Remove("instagram_username"); } }
         private string _explicitNullValueInstagramUsername = default!;
 #endif
         /// <summary>Whether the voice was added by the user.</summary>
-        public bool? IsAddedByUser { get => _explicitNullValueIsAddedByUser; set { _explicitNullValueIsAddedByUser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_added_by_user"); else _explicitNullProperties?.Remove("is_added_by_user"); } }
+        public bool? IsAddedByUser { get => _explicitNullValueIsAddedByUser; set { _explicitNullValueIsAddedByUser = value; AdditionalData?.Remove("is_added_by_user"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_added_by_user"); else _explicitNullProperties?.Remove("is_added_by_user"); } }
         private bool? _explicitNullValueIsAddedByUser = default!;
         /// <summary>Whether the voice is bookmarked by the current user. Only relevant when is_added_by_user is True.</summary>
-        public bool? IsBookmarked { get => _explicitNullValueIsBookmarked; set { _explicitNullValueIsBookmarked = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_bookmarked"); else _explicitNullProperties?.Remove("is_bookmarked"); } }
+        public bool? IsBookmarked { get => _explicitNullValueIsBookmarked; set { _explicitNullValueIsBookmarked = value; AdditionalData?.Remove("is_bookmarked"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_bookmarked"); else _explicitNullProperties?.Remove("is_bookmarked"); } }
         private bool? _explicitNullValueIsBookmarked = default!;
         /// <summary>The language of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        public string? Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; AdditionalData?.Remove("language"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
         private string? _explicitNullValueLanguage = default!;
 #nullable restore
 #else
-        public string Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        public string Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; AdditionalData?.Remove("language"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
         private string _explicitNullValueLanguage = default!;
 #endif
         /// <summary>Whether live moderation is enabled for the voice.</summary>
-        public bool? LiveModerationEnabled { get => _explicitNullValueLiveModerationEnabled; set { _explicitNullValueLiveModerationEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("live_moderation_enabled"); else _explicitNullProperties?.Remove("live_moderation_enabled"); } }
+        public bool? LiveModerationEnabled { get => _explicitNullValueLiveModerationEnabled; set { _explicitNullValueLiveModerationEnabled = value; AdditionalData?.Remove("live_moderation_enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("live_moderation_enabled"); else _explicitNullProperties?.Remove("live_moderation_enabled"); } }
         private bool? _explicitNullValueLiveModerationEnabled = default!;
         /// <summary>The locale of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Locale { get => _explicitNullValueLocale; set { _explicitNullValueLocale = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locale"); else _explicitNullProperties?.Remove("locale"); } }
+        public string? Locale { get => _explicitNullValueLocale; set { _explicitNullValueLocale = value; AdditionalData?.Remove("locale"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locale"); else _explicitNullProperties?.Remove("locale"); } }
         private string? _explicitNullValueLocale = default!;
 #nullable restore
 #else
-        public string Locale { get => _explicitNullValueLocale; set { _explicitNullValueLocale = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locale"); else _explicitNullProperties?.Remove("locale"); } }
+        public string Locale { get => _explicitNullValueLocale; set { _explicitNullValueLocale = value; AdditionalData?.Remove("locale"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locale"); else _explicitNullProperties?.Remove("locale"); } }
         private string _explicitNullValueLocale = default!;
 #endif
         /// <summary>The name of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The notice period of the voice.</summary>
-        public int? NoticePeriod { get => _explicitNullValueNoticePeriod; set { _explicitNullValueNoticePeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notice_period"); else _explicitNullProperties?.Remove("notice_period"); } }
+        public int? NoticePeriod { get => _explicitNullValueNoticePeriod; set { _explicitNullValueNoticePeriod = value; AdditionalData?.Remove("notice_period"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notice_period"); else _explicitNullProperties?.Remove("notice_period"); } }
         private int? _explicitNullValueNoticePeriod = default!;
         /// <summary>The play API usage character count of the voice in the last year.</summary>
-        public int? PlayApiUsageCharacterCount1y { get => _explicitNullValuePlayApiUsageCharacterCount1y; set { _explicitNullValuePlayApiUsageCharacterCount1y = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("play_api_usage_character_count_1y"); else _explicitNullProperties?.Remove("play_api_usage_character_count_1y"); } }
+        public int? PlayApiUsageCharacterCount1y { get => _explicitNullValuePlayApiUsageCharacterCount1y; set { _explicitNullValuePlayApiUsageCharacterCount1y = value; AdditionalData?.Remove("play_api_usage_character_count_1y"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("play_api_usage_character_count_1y"); else _explicitNullProperties?.Remove("play_api_usage_character_count_1y"); } }
         private int? _explicitNullValuePlayApiUsageCharacterCount1y = default!;
         /// <summary>The preview URL of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviewUrl { get => _explicitNullValuePreviewUrl; set { _explicitNullValuePreviewUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preview_url"); else _explicitNullProperties?.Remove("preview_url"); } }
+        public string? PreviewUrl { get => _explicitNullValuePreviewUrl; set { _explicitNullValuePreviewUrl = value; AdditionalData?.Remove("preview_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preview_url"); else _explicitNullProperties?.Remove("preview_url"); } }
         private string? _explicitNullValuePreviewUrl = default!;
 #nullable restore
 #else
-        public string PreviewUrl { get => _explicitNullValuePreviewUrl; set { _explicitNullValuePreviewUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preview_url"); else _explicitNullProperties?.Remove("preview_url"); } }
+        public string PreviewUrl { get => _explicitNullValuePreviewUrl; set { _explicitNullValuePreviewUrl = value; AdditionalData?.Remove("preview_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preview_url"); else _explicitNullProperties?.Remove("preview_url"); } }
         private string _explicitNullValuePreviewUrl = default!;
 #endif
         /// <summary>The public owner id of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PublicOwnerId { get => _explicitNullValuePublicOwnerId; set { _explicitNullValuePublicOwnerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_owner_id"); else _explicitNullProperties?.Remove("public_owner_id"); } }
+        public string? PublicOwnerId { get => _explicitNullValuePublicOwnerId; set { _explicitNullValuePublicOwnerId = value; AdditionalData?.Remove("public_owner_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_owner_id"); else _explicitNullProperties?.Remove("public_owner_id"); } }
         private string? _explicitNullValuePublicOwnerId = default!;
 #nullable restore
 #else
-        public string PublicOwnerId { get => _explicitNullValuePublicOwnerId; set { _explicitNullValuePublicOwnerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_owner_id"); else _explicitNullProperties?.Remove("public_owner_id"); } }
+        public string PublicOwnerId { get => _explicitNullValuePublicOwnerId; set { _explicitNullValuePublicOwnerId = value; AdditionalData?.Remove("public_owner_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_owner_id"); else _explicitNullProperties?.Remove("public_owner_id"); } }
         private string _explicitNullValuePublicOwnerId = default!;
 #endif
         /// <summary>The rate multiplier of the voice.</summary>
-        public double? Rate { get => _explicitNullValueRate; set { _explicitNullValueRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rate"); else _explicitNullProperties?.Remove("rate"); } }
+        public double? Rate { get => _explicitNullValueRate; set { _explicitNullValueRate = value; AdditionalData?.Remove("rate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rate"); else _explicitNullProperties?.Remove("rate"); } }
         private double? _explicitNullValueRate = default!;
         /// <summary>The TikTok username of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TiktokUsername { get => _explicitNullValueTiktokUsername; set { _explicitNullValueTiktokUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tiktok_username"); else _explicitNullProperties?.Remove("tiktok_username"); } }
+        public string? TiktokUsername { get => _explicitNullValueTiktokUsername; set { _explicitNullValueTiktokUsername = value; AdditionalData?.Remove("tiktok_username"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tiktok_username"); else _explicitNullProperties?.Remove("tiktok_username"); } }
         private string? _explicitNullValueTiktokUsername = default!;
 #nullable restore
 #else
-        public string TiktokUsername { get => _explicitNullValueTiktokUsername; set { _explicitNullValueTiktokUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tiktok_username"); else _explicitNullProperties?.Remove("tiktok_username"); } }
+        public string TiktokUsername { get => _explicitNullValueTiktokUsername; set { _explicitNullValueTiktokUsername = value; AdditionalData?.Remove("tiktok_username"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tiktok_username"); else _explicitNullProperties?.Remove("tiktok_username"); } }
         private string _explicitNullValueTiktokUsername = default!;
 #endif
         /// <summary>The Twitter username of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TwitterUsername { get => _explicitNullValueTwitterUsername; set { _explicitNullValueTwitterUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("twitter_username"); else _explicitNullProperties?.Remove("twitter_username"); } }
+        public string? TwitterUsername { get => _explicitNullValueTwitterUsername; set { _explicitNullValueTwitterUsername = value; AdditionalData?.Remove("twitter_username"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("twitter_username"); else _explicitNullProperties?.Remove("twitter_username"); } }
         private string? _explicitNullValueTwitterUsername = default!;
 #nullable restore
 #else
-        public string TwitterUsername { get => _explicitNullValueTwitterUsername; set { _explicitNullValueTwitterUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("twitter_username"); else _explicitNullProperties?.Remove("twitter_username"); } }
+        public string TwitterUsername { get => _explicitNullValueTwitterUsername; set { _explicitNullValueTwitterUsername = value; AdditionalData?.Remove("twitter_username"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("twitter_username"); else _explicitNullProperties?.Remove("twitter_username"); } }
         private string _explicitNullValueTwitterUsername = default!;
 #endif
         /// <summary>The usage character count of the voice in the last year.</summary>
-        public int? UsageCharacterCount1y { get => _explicitNullValueUsageCharacterCount1y; set { _explicitNullValueUsageCharacterCount1y = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usage_character_count_1y"); else _explicitNullProperties?.Remove("usage_character_count_1y"); } }
+        public int? UsageCharacterCount1y { get => _explicitNullValueUsageCharacterCount1y; set { _explicitNullValueUsageCharacterCount1y = value; AdditionalData?.Remove("usage_character_count_1y"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usage_character_count_1y"); else _explicitNullProperties?.Remove("usage_character_count_1y"); } }
         private int? _explicitNullValueUsageCharacterCount1y = default!;
         /// <summary>The usage character count of the voice in the last 7 days.</summary>
-        public int? UsageCharacterCount7d { get => _explicitNullValueUsageCharacterCount7d; set { _explicitNullValueUsageCharacterCount7d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usage_character_count_7d"); else _explicitNullProperties?.Remove("usage_character_count_7d"); } }
+        public int? UsageCharacterCount7d { get => _explicitNullValueUsageCharacterCount7d; set { _explicitNullValueUsageCharacterCount7d = value; AdditionalData?.Remove("usage_character_count_7d"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usage_character_count_7d"); else _explicitNullProperties?.Remove("usage_character_count_7d"); } }
         private int? _explicitNullValueUsageCharacterCount7d = default!;
         /// <summary>The use case of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UseCase { get => _explicitNullValueUseCase; set { _explicitNullValueUseCase = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("use_case"); else _explicitNullProperties?.Remove("use_case"); } }
+        public string? UseCase { get => _explicitNullValueUseCase; set { _explicitNullValueUseCase = value; AdditionalData?.Remove("use_case"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("use_case"); else _explicitNullProperties?.Remove("use_case"); } }
         private string? _explicitNullValueUseCase = default!;
 #nullable restore
 #else
-        public string UseCase { get => _explicitNullValueUseCase; set { _explicitNullValueUseCase = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("use_case"); else _explicitNullProperties?.Remove("use_case"); } }
+        public string UseCase { get => _explicitNullValueUseCase; set { _explicitNullValueUseCase = value; AdditionalData?.Remove("use_case"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("use_case"); else _explicitNullProperties?.Remove("use_case"); } }
         private string _explicitNullValueUseCase = default!;
 #endif
         /// <summary>The verified languages of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VerifiedVoiceLanguageResponseModel>? VerifiedLanguages { get => _explicitNullValueVerifiedLanguages; set { _explicitNullValueVerifiedLanguages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verified_languages"); else _explicitNullProperties?.Remove("verified_languages"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VerifiedVoiceLanguageResponseModel>? VerifiedLanguages { get => _explicitNullValueVerifiedLanguages; set { _explicitNullValueVerifiedLanguages = value; AdditionalData?.Remove("verified_languages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verified_languages"); else _explicitNullProperties?.Remove("verified_languages"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VerifiedVoiceLanguageResponseModel>? _explicitNullValueVerifiedLanguages = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VerifiedVoiceLanguageResponseModel> VerifiedLanguages { get => _explicitNullValueVerifiedLanguages; set { _explicitNullValueVerifiedLanguages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verified_languages"); else _explicitNullProperties?.Remove("verified_languages"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VerifiedVoiceLanguageResponseModel> VerifiedLanguages { get => _explicitNullValueVerifiedLanguages; set { _explicitNullValueVerifiedLanguages = value; AdditionalData?.Remove("verified_languages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verified_languages"); else _explicitNullProperties?.Remove("verified_languages"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VerifiedVoiceLanguageResponseModel> _explicitNullValueVerifiedLanguages = default!;
 #endif
         /// <summary>The id of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VoiceId { get => _explicitNullValueVoiceId; set { _explicitNullValueVoiceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_id"); else _explicitNullProperties?.Remove("voice_id"); } }
+        public string? VoiceId { get => _explicitNullValueVoiceId; set { _explicitNullValueVoiceId = value; AdditionalData?.Remove("voice_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_id"); else _explicitNullProperties?.Remove("voice_id"); } }
         private string? _explicitNullValueVoiceId = default!;
 #nullable restore
 #else
-        public string VoiceId { get => _explicitNullValueVoiceId; set { _explicitNullValueVoiceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_id"); else _explicitNullProperties?.Remove("voice_id"); } }
+        public string VoiceId { get => _explicitNullValueVoiceId; set { _explicitNullValueVoiceId = value; AdditionalData?.Remove("voice_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_id"); else _explicitNullProperties?.Remove("voice_id"); } }
         private string _explicitNullValueVoiceId = default!;
 #endif
         /// <summary>The YouTube username of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? YoutubeUsername { get => _explicitNullValueYoutubeUsername; set { _explicitNullValueYoutubeUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("youtube_username"); else _explicitNullProperties?.Remove("youtube_username"); } }
+        public string? YoutubeUsername { get => _explicitNullValueYoutubeUsername; set { _explicitNullValueYoutubeUsername = value; AdditionalData?.Remove("youtube_username"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("youtube_username"); else _explicitNullProperties?.Remove("youtube_username"); } }
         private string? _explicitNullValueYoutubeUsername = default!;
 #nullable restore
 #else
-        public string YoutubeUsername { get => _explicitNullValueYoutubeUsername; set { _explicitNullValueYoutubeUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("youtube_username"); else _explicitNullProperties?.Remove("youtube_username"); } }
+        public string YoutubeUsername { get => _explicitNullValueYoutubeUsername; set { _explicitNullValueYoutubeUsername = value; AdditionalData?.Remove("youtube_username"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("youtube_username"); else _explicitNullProperties?.Remove("youtube_username"); } }
         private string _explicitNullValueYoutubeUsername = default!;
 #endif
         /// <summary>
@@ -302,7 +334,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "accent", n => { Accent = n.GetStringValue(); } },
                 { "age", n => { Age = n.GetStringValue(); } },
-                { "category", n => { Category = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelCategory>(); } },
+                { "category", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelCategory>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCategory = default; _explicitNullProperties?.Remove("category"); AdditionalData["category"] = unknown; } else { Category = parsed; AdditionalData.Remove("category"); } } },
                 { "cloned_by_count", n => { ClonedByCount = n.GetIntValue(); } },
                 { "date_unix", n => { DateUnix = n.GetIntValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },

@@ -17,71 +17,78 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("anonymous_access_level_override") is { } nullNodeAnonymousAccessLevelOverride && nullNodeAnonymousAccessLevelOverride.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AnonymousAccessLevelOverride = null;
-            if (parseNode.GetChildNode("creator_user_id") is { } nullNodeCreatorUserId && nullNodeCreatorUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatorUserId = null;
-            if (parseNode.GetChildNode("resource_id") is { } nullNodeResourceId && nullNodeResourceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourceId = null;
-            if (parseNode.GetChildNode("resource_name") is { } nullNodeResourceName && nullNodeResourceName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourceName = null;
-            if (parseNode.GetChildNode("resource_type") is { } nullNodeResourceType && nullNodeResourceType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourceType = null;
-            if (parseNode.GetChildNode("role_to_group_ids") is { } nullNodeRoleToGroupIds && nullNodeRoleToGroupIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RoleToGroupIds = null;
-            if (parseNode.GetChildNode("share_options") is { } nullNodeShareOptions && nullNodeShareOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShareOptions = null;
+            if (parseNode.GetChildNode("anonymous_access_level_override") is null) { _explicitNullValueAnonymousAccessLevelOverride = default!; _explicitNullProperties?.Remove("anonymous_access_level_override"); }
+            else if (parseNode.GetChildNode("anonymous_access_level_override") is { } nullNodeAnonymousAccessLevelOverride && nullNodeAnonymousAccessLevelOverride.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AnonymousAccessLevelOverride = null;
+            if (parseNode.GetChildNode("creator_user_id") is null) { _explicitNullValueCreatorUserId = default!; _explicitNullProperties?.Remove("creator_user_id"); }
+            else if (parseNode.GetChildNode("creator_user_id") is { } nullNodeCreatorUserId && nullNodeCreatorUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatorUserId = null;
+            if (parseNode.GetChildNode("resource_id") is null) { _explicitNullValueResourceId = default!; _explicitNullProperties?.Remove("resource_id"); }
+            else if (parseNode.GetChildNode("resource_id") is { } nullNodeResourceId && nullNodeResourceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourceId = null;
+            if (parseNode.GetChildNode("resource_name") is null) { _explicitNullValueResourceName = default!; _explicitNullProperties?.Remove("resource_name"); }
+            else if (parseNode.GetChildNode("resource_name") is { } nullNodeResourceName && nullNodeResourceName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourceName = null;
+            if (parseNode.GetChildNode("resource_type") is null) { _explicitNullValueResourceType = default!; _explicitNullProperties?.Remove("resource_type"); }
+            else if (parseNode.GetChildNode("resource_type") is { } nullNodeResourceType && nullNodeResourceType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourceType = null;
+            if (parseNode.GetChildNode("role_to_group_ids") is null) { _explicitNullValueRoleToGroupIds = default!; _explicitNullProperties?.Remove("role_to_group_ids"); }
+            else if (parseNode.GetChildNode("role_to_group_ids") is { } nullNodeRoleToGroupIds && nullNodeRoleToGroupIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RoleToGroupIds = null;
+            if (parseNode.GetChildNode("share_options") is null) { _explicitNullValueShareOptions = default!; _explicitNullProperties?.Remove("share_options"); }
+            else if (parseNode.GetChildNode("share_options") is { } nullNodeShareOptions && nullNodeShareOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShareOptions = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The access level for anonymous users. If None, the resource is not shared publicly.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceMetadataResponseModelAnonymousAccessLevelOverride? AnonymousAccessLevelOverride { get => _explicitNullValueAnonymousAccessLevelOverride; set { _explicitNullValueAnonymousAccessLevelOverride = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("anonymous_access_level_override"); else _explicitNullProperties?.Remove("anonymous_access_level_override"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceMetadataResponseModelAnonymousAccessLevelOverride? AnonymousAccessLevelOverride { get => _explicitNullValueAnonymousAccessLevelOverride; set { _explicitNullValueAnonymousAccessLevelOverride = value; AdditionalData?.Remove("anonymous_access_level_override"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("anonymous_access_level_override"); else _explicitNullProperties?.Remove("anonymous_access_level_override"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceMetadataResponseModelAnonymousAccessLevelOverride? _explicitNullValueAnonymousAccessLevelOverride = default!;
         /// <summary>The ID of the user who created the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatorUserId { get => _explicitNullValueCreatorUserId; set { _explicitNullValueCreatorUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creator_user_id"); else _explicitNullProperties?.Remove("creator_user_id"); } }
+        public string? CreatorUserId { get => _explicitNullValueCreatorUserId; set { _explicitNullValueCreatorUserId = value; AdditionalData?.Remove("creator_user_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creator_user_id"); else _explicitNullProperties?.Remove("creator_user_id"); } }
         private string? _explicitNullValueCreatorUserId = default!;
 #nullable restore
 #else
-        public string CreatorUserId { get => _explicitNullValueCreatorUserId; set { _explicitNullValueCreatorUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creator_user_id"); else _explicitNullProperties?.Remove("creator_user_id"); } }
+        public string CreatorUserId { get => _explicitNullValueCreatorUserId; set { _explicitNullValueCreatorUserId = value; AdditionalData?.Remove("creator_user_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creator_user_id"); else _explicitNullProperties?.Remove("creator_user_id"); } }
         private string _explicitNullValueCreatorUserId = default!;
 #endif
         /// <summary>The ID of the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceId { get => _explicitNullValueResourceId; set { _explicitNullValueResourceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource_id"); else _explicitNullProperties?.Remove("resource_id"); } }
+        public string? ResourceId { get => _explicitNullValueResourceId; set { _explicitNullValueResourceId = value; AdditionalData?.Remove("resource_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource_id"); else _explicitNullProperties?.Remove("resource_id"); } }
         private string? _explicitNullValueResourceId = default!;
 #nullable restore
 #else
-        public string ResourceId { get => _explicitNullValueResourceId; set { _explicitNullValueResourceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource_id"); else _explicitNullProperties?.Remove("resource_id"); } }
+        public string ResourceId { get => _explicitNullValueResourceId; set { _explicitNullValueResourceId = value; AdditionalData?.Remove("resource_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource_id"); else _explicitNullProperties?.Remove("resource_id"); } }
         private string _explicitNullValueResourceId = default!;
 #endif
         /// <summary>The name of the resource, if available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceName { get => _explicitNullValueResourceName; set { _explicitNullValueResourceName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource_name"); else _explicitNullProperties?.Remove("resource_name"); } }
+        public string? ResourceName { get => _explicitNullValueResourceName; set { _explicitNullValueResourceName = value; AdditionalData?.Remove("resource_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource_name"); else _explicitNullProperties?.Remove("resource_name"); } }
         private string? _explicitNullValueResourceName = default!;
 #nullable restore
 #else
-        public string ResourceName { get => _explicitNullValueResourceName; set { _explicitNullValueResourceName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource_name"); else _explicitNullProperties?.Remove("resource_name"); } }
+        public string ResourceName { get => _explicitNullValueResourceName; set { _explicitNullValueResourceName = value; AdditionalData?.Remove("resource_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource_name"); else _explicitNullProperties?.Remove("resource_name"); } }
         private string _explicitNullValueResourceName = default!;
 #endif
         /// <summary>The type of the resource.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceResourceType? ResourceType { get => _explicitNullValueResourceType; set { _explicitNullValueResourceType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource_type"); else _explicitNullProperties?.Remove("resource_type"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceResourceType? ResourceType { get => _explicitNullValueResourceType; set { _explicitNullValueResourceType = value; AdditionalData?.Remove("resource_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource_type"); else _explicitNullProperties?.Remove("resource_type"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceResourceType? _explicitNullValueResourceType = default!;
         /// <summary>A mapping of grant slots to group IDs. Keys are the preset access roles plus workspace custom-role ids (&apos;role_...&apos;). When the resource is shared with a user, the group id is the user&apos;s id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceMetadataResponseModelRoleToGroupIdsProperty? RoleToGroupIds { get => _explicitNullValueRoleToGroupIds; set { _explicitNullValueRoleToGroupIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role_to_group_ids"); else _explicitNullProperties?.Remove("role_to_group_ids"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceMetadataResponseModelRoleToGroupIdsProperty? RoleToGroupIds { get => _explicitNullValueRoleToGroupIds; set { _explicitNullValueRoleToGroupIds = value; AdditionalData?.Remove("role_to_group_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role_to_group_ids"); else _explicitNullProperties?.Remove("role_to_group_ids"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceMetadataResponseModelRoleToGroupIdsProperty? _explicitNullValueRoleToGroupIds = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceMetadataResponseModelRoleToGroupIdsProperty RoleToGroupIds { get => _explicitNullValueRoleToGroupIds; set { _explicitNullValueRoleToGroupIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role_to_group_ids"); else _explicitNullProperties?.Remove("role_to_group_ids"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceMetadataResponseModelRoleToGroupIdsProperty RoleToGroupIds { get => _explicitNullValueRoleToGroupIds; set { _explicitNullValueRoleToGroupIds = value; AdditionalData?.Remove("role_to_group_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role_to_group_ids"); else _explicitNullProperties?.Remove("role_to_group_ids"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceMetadataResponseModelRoleToGroupIdsProperty _explicitNullValueRoleToGroupIds = default!;
 #endif
         /// <summary>List of options for sharing the resource further in the workspace. These are users who don&apos;t have access to the resource yet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ShareOptionResponseModel>? ShareOptions { get => _explicitNullValueShareOptions; set { _explicitNullValueShareOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("share_options"); else _explicitNullProperties?.Remove("share_options"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ShareOptionResponseModel>? ShareOptions { get => _explicitNullValueShareOptions; set { _explicitNullValueShareOptions = value; AdditionalData?.Remove("share_options"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("share_options"); else _explicitNullProperties?.Remove("share_options"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ShareOptionResponseModel>? _explicitNullValueShareOptions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ShareOptionResponseModel> ShareOptions { get => _explicitNullValueShareOptions; set { _explicitNullValueShareOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("share_options"); else _explicitNullProperties?.Remove("share_options"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ShareOptionResponseModel> ShareOptions { get => _explicitNullValueShareOptions; set { _explicitNullValueShareOptions = value; AdditionalData?.Remove("share_options"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("share_options"); else _explicitNullProperties?.Remove("share_options"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ShareOptionResponseModel> _explicitNullValueShareOptions = default!;
 #endif
         /// <summary>
@@ -109,11 +116,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "anonymous_access_level_override", n => { AnonymousAccessLevelOverride = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceMetadataResponseModelAnonymousAccessLevelOverride>(); } },
+                { "anonymous_access_level_override", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceMetadataResponseModelAnonymousAccessLevelOverride>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAnonymousAccessLevelOverride = default; _explicitNullProperties?.Remove("anonymous_access_level_override"); AdditionalData["anonymous_access_level_override"] = unknown; } else { AnonymousAccessLevelOverride = parsed; AdditionalData.Remove("anonymous_access_level_override"); } } },
                 { "creator_user_id", n => { CreatorUserId = n.GetStringValue(); } },
                 { "resource_id", n => { ResourceId = n.GetStringValue(); } },
                 { "resource_name", n => { ResourceName = n.GetStringValue(); } },
-                { "resource_type", n => { ResourceType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceResourceType>(); } },
+                { "resource_type", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceResourceType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueResourceType = default; _explicitNullProperties?.Remove("resource_type"); AdditionalData["resource_type"] = unknown; } else { ResourceType = parsed; AdditionalData.Remove("resource_type"); } } },
                 { "role_to_group_ids", n => { RoleToGroupIds = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceMetadataResponseModelRoleToGroupIdsProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceMetadataResponseModelRoleToGroupIdsProperty.CreateFromDiscriminatorValue); } },
                 { "share_options", n => { ShareOptions = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ShareOptionResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ShareOptionResponseModel.CreateFromDiscriminatorValue)?.AsList(); } },
             };

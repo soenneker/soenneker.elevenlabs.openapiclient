@@ -17,9 +17,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("negative_ranges") is { } nullNodeNegativeRanges && nullNodeNegativeRanges.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NegativeRanges = null;
-            if (parseNode.GetChildNode("range") is { } nullNodeRange && nullNodeRange.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Range = null;
-            if (parseNode.GetChildNode("song_id") is { } nullNodeSongId && nullNodeSongId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SongId = null;
+            if (parseNode.GetChildNode("negative_ranges") is null) { _explicitNullValueNegativeRanges = default!; _explicitNullProperties?.Remove("negative_ranges"); }
+            else if (parseNode.GetChildNode("negative_ranges") is { } nullNodeNegativeRanges && nullNodeNegativeRanges.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NegativeRanges = null;
+            if (parseNode.GetChildNode("range") is null) { _explicitNullValueRange = default!; _explicitNullProperties?.Remove("range"); }
+            else if (parseNode.GetChildNode("range") is { } nullNodeRange && nullNodeRange.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Range = null;
+            if (parseNode.GetChildNode("song_id") is null) { _explicitNullValueSongId = default!; _explicitNullProperties?.Remove("song_id"); }
+            else if (parseNode.GetChildNode("song_id") is { } nullNodeSongId && nullNodeSongId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SongId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The ranges to exclude from the &apos;range&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TimeRange>? NegativeRanges { get => _explicitNullValueNegativeRanges; set { _explicitNullValueNegativeRanges = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("negative_ranges"); else _explicitNullProperties?.Remove("negative_ranges"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TimeRange>? NegativeRanges { get => _explicitNullValueNegativeRanges; set { _explicitNullValueNegativeRanges = value; AdditionalData?.Remove("negative_ranges"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("negative_ranges"); else _explicitNullProperties?.Remove("negative_ranges"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TimeRange>? _explicitNullValueNegativeRanges = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TimeRange> NegativeRanges { get => _explicitNullValueNegativeRanges; set { _explicitNullValueNegativeRanges = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("negative_ranges"); else _explicitNullProperties?.Remove("negative_ranges"); } }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TimeRange> NegativeRanges { get => _explicitNullValueNegativeRanges; set { _explicitNullValueNegativeRanges = value; AdditionalData?.Remove("negative_ranges"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("negative_ranges"); else _explicitNullProperties?.Remove("negative_ranges"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TimeRange> _explicitNullValueNegativeRanges = default!;
 #endif
         /// <summary>The range to extract from the source song.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TimeRange? Range { get => _explicitNullValueRange; set { _explicitNullValueRange = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("range"); else _explicitNullProperties?.Remove("range"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TimeRange? Range { get => _explicitNullValueRange; set { _explicitNullValueRange = value; AdditionalData?.Remove("range"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("range"); else _explicitNullProperties?.Remove("range"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.TimeRange? _explicitNullValueRange = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TimeRange Range { get => _explicitNullValueRange; set { _explicitNullValueRange = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("range"); else _explicitNullProperties?.Remove("range"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TimeRange Range { get => _explicitNullValueRange; set { _explicitNullValueRange = value; AdditionalData?.Remove("range"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("range"); else _explicitNullProperties?.Remove("range"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.TimeRange _explicitNullValueRange = default!;
 #endif
         /// <summary>The ID of the song to source the section from. You can find the song ID in the response headers when you generate a song.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SongId { get => _explicitNullValueSongId; set { _explicitNullValueSongId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("song_id"); else _explicitNullProperties?.Remove("song_id"); } }
+        public string? SongId { get => _explicitNullValueSongId; set { _explicitNullValueSongId = value; AdditionalData?.Remove("song_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("song_id"); else _explicitNullProperties?.Remove("song_id"); } }
         private string? _explicitNullValueSongId = default!;
 #nullable restore
 #else
-        public string SongId { get => _explicitNullValueSongId; set { _explicitNullValueSongId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("song_id"); else _explicitNullProperties?.Remove("song_id"); } }
+        public string SongId { get => _explicitNullValueSongId; set { _explicitNullValueSongId = value; AdditionalData?.Remove("song_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("song_id"); else _explicitNullProperties?.Remove("song_id"); } }
         private string _explicitNullValueSongId = default!;
 #endif
         /// <summary>

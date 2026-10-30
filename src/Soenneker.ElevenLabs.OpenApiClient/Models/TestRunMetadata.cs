@@ -17,10 +17,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ran_by_user_email") is { } nullNodeRanByUserEmail && nullNodeRanByUserEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RanByUserEmail = null;
-            if (parseNode.GetChildNode("test_name") is { } nullNodeTestName && nullNodeTestName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TestName = null;
-            if (parseNode.GetChildNode("test_type") is { } nullNodeTestType && nullNodeTestType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TestType = null;
-            if (parseNode.GetChildNode("workspace_id") is { } nullNodeWorkspaceId && nullNodeWorkspaceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkspaceId = null;
+            if (parseNode.GetChildNode("ran_by_user_email") is null) { _explicitNullValueRanByUserEmail = default!; _explicitNullProperties?.Remove("ran_by_user_email"); }
+            else if (parseNode.GetChildNode("ran_by_user_email") is { } nullNodeRanByUserEmail && nullNodeRanByUserEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RanByUserEmail = null;
+            if (parseNode.GetChildNode("test_name") is null) { _explicitNullValueTestName = default!; _explicitNullProperties?.Remove("test_name"); }
+            else if (parseNode.GetChildNode("test_name") is { } nullNodeTestName && nullNodeTestName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TestName = null;
+            if (parseNode.GetChildNode("test_type") is null) { _explicitNullValueTestType = default!; _explicitNullProperties?.Remove("test_type"); }
+            else if (parseNode.GetChildNode("test_type") is { } nullNodeTestType && nullNodeTestType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TestType = null;
+            if (parseNode.GetChildNode("workspace_id") is null) { _explicitNullValueWorkspaceId = default!; _explicitNullProperties?.Remove("workspace_id"); }
+            else if (parseNode.GetChildNode("workspace_id") is { } nullNodeWorkspaceId && nullNodeWorkspaceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkspaceId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,34 +32,34 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The ran_by_user_email property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RanByUserEmail { get => _explicitNullValueRanByUserEmail; set { _explicitNullValueRanByUserEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ran_by_user_email"); else _explicitNullProperties?.Remove("ran_by_user_email"); } }
+        public string? RanByUserEmail { get => _explicitNullValueRanByUserEmail; set { _explicitNullValueRanByUserEmail = value; AdditionalData?.Remove("ran_by_user_email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ran_by_user_email"); else _explicitNullProperties?.Remove("ran_by_user_email"); } }
         private string? _explicitNullValueRanByUserEmail = default!;
 #nullable restore
 #else
-        public string RanByUserEmail { get => _explicitNullValueRanByUserEmail; set { _explicitNullValueRanByUserEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ran_by_user_email"); else _explicitNullProperties?.Remove("ran_by_user_email"); } }
+        public string RanByUserEmail { get => _explicitNullValueRanByUserEmail; set { _explicitNullValueRanByUserEmail = value; AdditionalData?.Remove("ran_by_user_email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ran_by_user_email"); else _explicitNullProperties?.Remove("ran_by_user_email"); } }
         private string _explicitNullValueRanByUserEmail = default!;
 #endif
         /// <summary>The test_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TestName { get => _explicitNullValueTestName; set { _explicitNullValueTestName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("test_name"); else _explicitNullProperties?.Remove("test_name"); } }
+        public string? TestName { get => _explicitNullValueTestName; set { _explicitNullValueTestName = value; AdditionalData?.Remove("test_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("test_name"); else _explicitNullProperties?.Remove("test_name"); } }
         private string? _explicitNullValueTestName = default!;
 #nullable restore
 #else
-        public string TestName { get => _explicitNullValueTestName; set { _explicitNullValueTestName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("test_name"); else _explicitNullProperties?.Remove("test_name"); } }
+        public string TestName { get => _explicitNullValueTestName; set { _explicitNullValueTestName = value; AdditionalData?.Remove("test_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("test_name"); else _explicitNullProperties?.Remove("test_name"); } }
         private string _explicitNullValueTestName = default!;
 #endif
         /// <summary>The test_type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TestRunMetadataTestType? TestType { get => _explicitNullValueTestType; set { _explicitNullValueTestType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("test_type"); else _explicitNullProperties?.Remove("test_type"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TestRunMetadataTestType? TestType { get => _explicitNullValueTestType; set { _explicitNullValueTestType = value; AdditionalData?.Remove("test_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("test_type"); else _explicitNullProperties?.Remove("test_type"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.TestRunMetadataTestType? _explicitNullValueTestType = default!;
         /// <summary>The workspace_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WorkspaceId { get => _explicitNullValueWorkspaceId; set { _explicitNullValueWorkspaceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_id"); else _explicitNullProperties?.Remove("workspace_id"); } }
+        public string? WorkspaceId { get => _explicitNullValueWorkspaceId; set { _explicitNullValueWorkspaceId = value; AdditionalData?.Remove("workspace_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_id"); else _explicitNullProperties?.Remove("workspace_id"); } }
         private string? _explicitNullValueWorkspaceId = default!;
 #nullable restore
 #else
-        public string WorkspaceId { get => _explicitNullValueWorkspaceId; set { _explicitNullValueWorkspaceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_id"); else _explicitNullProperties?.Remove("workspace_id"); } }
+        public string WorkspaceId { get => _explicitNullValueWorkspaceId; set { _explicitNullValueWorkspaceId = value; AdditionalData?.Remove("workspace_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_id"); else _explicitNullProperties?.Remove("workspace_id"); } }
         private string _explicitNullValueWorkspaceId = default!;
 #endif
         /// <summary>
@@ -85,7 +89,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "ran_by_user_email", n => { RanByUserEmail = n.GetStringValue(); } },
                 { "test_name", n => { TestName = n.GetStringValue(); } },
-                { "test_type", n => { TestType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestRunMetadataTestType>(); } },
+                { "test_type", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestRunMetadataTestType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTestType = default; _explicitNullProperties?.Remove("test_type"); AdditionalData["test_type"] = unknown; } else { TestType = parsed; AdditionalData.Remove("test_type"); } } },
                 { "workspace_id", n => { WorkspaceId = n.GetStringValue(); } },
             };
         }

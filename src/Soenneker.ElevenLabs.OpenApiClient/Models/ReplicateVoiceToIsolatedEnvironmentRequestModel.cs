@@ -17,23 +17,25 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("preserve_voice_id") is { } nullNodePreserveVoiceId && nullNodePreserveVoiceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreserveVoiceId = null;
-            if (parseNode.GetChildNode("target_workspace_id") is { } nullNodeTargetWorkspaceId && nullNodeTargetWorkspaceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetWorkspaceId = null;
+            if (parseNode.GetChildNode("preserve_voice_id") is null) { _explicitNullValuePreserveVoiceId = default!; _explicitNullProperties?.Remove("preserve_voice_id"); }
+            else if (parseNode.GetChildNode("preserve_voice_id") is { } nullNodePreserveVoiceId && nullNodePreserveVoiceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreserveVoiceId = null;
+            if (parseNode.GetChildNode("target_workspace_id") is null) { _explicitNullValueTargetWorkspaceId = default!; _explicitNullProperties?.Remove("target_workspace_id"); }
+            else if (parseNode.GetChildNode("target_workspace_id") is { } nullNodeTargetWorkspaceId && nullNodeTargetWorkspaceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetWorkspaceId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When true (default) the replicated voice keeps the same voice ID in the target residency; set to false to assign a new voice ID.</summary>
-        public bool? PreserveVoiceId { get => _explicitNullValuePreserveVoiceId; set { _explicitNullValuePreserveVoiceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preserve_voice_id"); else _explicitNullProperties?.Remove("preserve_voice_id"); } }
+        public bool? PreserveVoiceId { get => _explicitNullValuePreserveVoiceId; set { _explicitNullValuePreserveVoiceId = value; AdditionalData?.Remove("preserve_voice_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preserve_voice_id"); else _explicitNullProperties?.Remove("preserve_voice_id"); } }
         private bool? _explicitNullValuePreserveVoiceId = default!;
         /// <summary>ID of the workspace to replicate the voice into. It must belong to the same consolidated billing group as the calling workspace; the target&apos;s data residency is derived from that link.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetWorkspaceId { get => _explicitNullValueTargetWorkspaceId; set { _explicitNullValueTargetWorkspaceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_workspace_id"); else _explicitNullProperties?.Remove("target_workspace_id"); } }
+        public string? TargetWorkspaceId { get => _explicitNullValueTargetWorkspaceId; set { _explicitNullValueTargetWorkspaceId = value; AdditionalData?.Remove("target_workspace_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_workspace_id"); else _explicitNullProperties?.Remove("target_workspace_id"); } }
         private string? _explicitNullValueTargetWorkspaceId = default!;
 #nullable restore
 #else
-        public string TargetWorkspaceId { get => _explicitNullValueTargetWorkspaceId; set { _explicitNullValueTargetWorkspaceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_workspace_id"); else _explicitNullProperties?.Remove("target_workspace_id"); } }
+        public string TargetWorkspaceId { get => _explicitNullValueTargetWorkspaceId; set { _explicitNullValueTargetWorkspaceId = value; AdditionalData?.Remove("target_workspace_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_workspace_id"); else _explicitNullProperties?.Remove("target_workspace_id"); } }
         private string _explicitNullValueTargetWorkspaceId = default!;
 #endif
         /// <summary>

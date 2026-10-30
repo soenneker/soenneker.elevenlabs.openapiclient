@@ -17,12 +17,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("criteria_id") is { } nullNodeCriteriaId && nullNodeCriteriaId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CriteriaId = null;
-            if (parseNode.GetChildNode("max_score") is { } nullNodeMaxScore && nullNodeMaxScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxScore = null;
-            if (parseNode.GetChildNode("rationale") is { } nullNodeRationale && nullNodeRationale.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rationale = null;
-            if (parseNode.GetChildNode("result") is { } nullNodeResult && nullNodeResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Result = null;
-            if (parseNode.GetChildNode("score") is { } nullNodeScore && nullNodeScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Score = null;
-            if (parseNode.GetChildNode("scoring_mode") is { } nullNodeScoringMode && nullNodeScoringMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScoringMode = null;
+            if (parseNode.GetChildNode("criteria_id") is null) { _explicitNullValueCriteriaId = default!; _explicitNullProperties?.Remove("criteria_id"); }
+            else if (parseNode.GetChildNode("criteria_id") is { } nullNodeCriteriaId && nullNodeCriteriaId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CriteriaId = null;
+            if (parseNode.GetChildNode("max_score") is null) { _explicitNullValueMaxScore = default!; _explicitNullProperties?.Remove("max_score"); }
+            else if (parseNode.GetChildNode("max_score") is { } nullNodeMaxScore && nullNodeMaxScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxScore = null;
+            if (parseNode.GetChildNode("rationale") is null) { _explicitNullValueRationale = default!; _explicitNullProperties?.Remove("rationale"); }
+            else if (parseNode.GetChildNode("rationale") is { } nullNodeRationale && nullNodeRationale.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rationale = null;
+            if (parseNode.GetChildNode("result") is null) { _explicitNullValueResult = default!; _explicitNullProperties?.Remove("result"); }
+            else if (parseNode.GetChildNode("result") is { } nullNodeResult && nullNodeResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Result = null;
+            if (parseNode.GetChildNode("score") is null) { _explicitNullValueScore = default!; _explicitNullProperties?.Remove("score"); }
+            else if (parseNode.GetChildNode("score") is { } nullNodeScore && nullNodeScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Score = null;
+            if (parseNode.GetChildNode("scoring_mode") is null) { _explicitNullValueScoringMode = default!; _explicitNullProperties?.Remove("scoring_mode"); }
+            else if (parseNode.GetChildNode("scoring_mode") is { } nullNodeScoringMode && nullNodeScoringMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScoringMode = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,34 +36,34 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The criteria_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CriteriaId { get => _explicitNullValueCriteriaId; set { _explicitNullValueCriteriaId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("criteria_id"); else _explicitNullProperties?.Remove("criteria_id"); } }
+        public string? CriteriaId { get => _explicitNullValueCriteriaId; set { _explicitNullValueCriteriaId = value; AdditionalData?.Remove("criteria_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("criteria_id"); else _explicitNullProperties?.Remove("criteria_id"); } }
         private string? _explicitNullValueCriteriaId = default!;
 #nullable restore
 #else
-        public string CriteriaId { get => _explicitNullValueCriteriaId; set { _explicitNullValueCriteriaId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("criteria_id"); else _explicitNullProperties?.Remove("criteria_id"); } }
+        public string CriteriaId { get => _explicitNullValueCriteriaId; set { _explicitNullValueCriteriaId = value; AdditionalData?.Remove("criteria_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("criteria_id"); else _explicitNullProperties?.Remove("criteria_id"); } }
         private string _explicitNullValueCriteriaId = default!;
 #endif
         /// <summary>The max_score property</summary>
-        public int? MaxScore { get => _explicitNullValueMaxScore; set { _explicitNullValueMaxScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_score"); else _explicitNullProperties?.Remove("max_score"); } }
+        public int? MaxScore { get => _explicitNullValueMaxScore; set { _explicitNullValueMaxScore = value; AdditionalData?.Remove("max_score"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_score"); else _explicitNullProperties?.Remove("max_score"); } }
         private int? _explicitNullValueMaxScore = default!;
         /// <summary>The rationale property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Rationale { get => _explicitNullValueRationale; set { _explicitNullValueRationale = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rationale"); else _explicitNullProperties?.Remove("rationale"); } }
+        public string? Rationale { get => _explicitNullValueRationale; set { _explicitNullValueRationale = value; AdditionalData?.Remove("rationale"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rationale"); else _explicitNullProperties?.Remove("rationale"); } }
         private string? _explicitNullValueRationale = default!;
 #nullable restore
 #else
-        public string Rationale { get => _explicitNullValueRationale; set { _explicitNullValueRationale = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rationale"); else _explicitNullProperties?.Remove("rationale"); } }
+        public string Rationale { get => _explicitNullValueRationale; set { _explicitNullValueRationale = value; AdditionalData?.Remove("rationale"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rationale"); else _explicitNullProperties?.Remove("rationale"); } }
         private string _explicitNullValueRationale = default!;
 #endif
         /// <summary>The result property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSuccessResult? Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSuccessResult? Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; AdditionalData?.Remove("result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSuccessResult? _explicitNullValueResult = default!;
         /// <summary>The score property</summary>
-        public int? Score { get => _explicitNullValueScore; set { _explicitNullValueScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("score"); else _explicitNullProperties?.Remove("score"); } }
+        public int? Score { get => _explicitNullValueScore; set { _explicitNullValueScore = value; AdditionalData?.Remove("score"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("score"); else _explicitNullProperties?.Remove("score"); } }
         private int? _explicitNullValueScore = default!;
         /// <summary>The scoring_mode property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CriteriaScoringMode? ScoringMode { get => _explicitNullValueScoringMode; set { _explicitNullValueScoringMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scoring_mode"); else _explicitNullProperties?.Remove("scoring_mode"); } }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CriteriaScoringMode? ScoringMode { get => _explicitNullValueScoringMode; set { _explicitNullValueScoringMode = value; AdditionalData?.Remove("scoring_mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scoring_mode"); else _explicitNullProperties?.Remove("scoring_mode"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.CriteriaScoringMode? _explicitNullValueScoringMode = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryEvaluationCriteriaResultCommonModel"/> and sets the default values.
@@ -87,9 +93,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "criteria_id", n => { CriteriaId = n.GetStringValue(); } },
                 { "max_score", n => { MaxScore = n.GetIntValue(); } },
                 { "rationale", n => { Rationale = n.GetStringValue(); } },
-                { "result", n => { Result = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSuccessResult>(); } },
+                { "result", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSuccessResult>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueResult = default; _explicitNullProperties?.Remove("result"); AdditionalData["result"] = unknown; } else { Result = parsed; AdditionalData.Remove("result"); } } },
                 { "score", n => { Score = n.GetIntValue(); } },
-                { "scoring_mode", n => { ScoringMode = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CriteriaScoringMode>(); } },
+                { "scoring_mode", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CriteriaScoringMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueScoringMode = default; _explicitNullProperties?.Remove("scoring_mode"); AdditionalData["scoring_mode"] = unknown; } else { ScoringMode = parsed; AdditionalData.Remove("scoring_mode"); } } },
             };
         }
         /// <summary>
