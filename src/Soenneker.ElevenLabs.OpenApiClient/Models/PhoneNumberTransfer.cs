@@ -71,12 +71,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>DTMF digits to send after call connects (e.g., &apos;ww1234&apos; for extension). Can be either a static value or a dynamic variable reference. Use &apos;w&apos; for 0.5s pause. Only supported for Twilio transfers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PostDialDigitsDynamicVariable? PostDialDigits { get => _explicitNullValuePostDialDigits; set { _explicitNullValuePostDialDigits = value; AdditionalData?.Remove("post_dial_digits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_dial_digits"); else _explicitNullProperties?.Remove("post_dial_digits"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.PostDialDigitsDynamicVariable? _explicitNullValuePostDialDigits = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferPostDialDigitsAnyOf1? PostDialDigits { get => _explicitNullValuePostDialDigits; set { _explicitNullValuePostDialDigits = value; AdditionalData?.Remove("post_dial_digits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_dial_digits"); else _explicitNullProperties?.Remove("post_dial_digits"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferPostDialDigitsAnyOf1? _explicitNullValuePostDialDigits = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PostDialDigitsDynamicVariable PostDialDigits { get => _explicitNullValuePostDialDigits; set { _explicitNullValuePostDialDigits = value; AdditionalData?.Remove("post_dial_digits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_dial_digits"); else _explicitNullProperties?.Remove("post_dial_digits"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.PostDialDigitsDynamicVariable _explicitNullValuePostDialDigits = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferPostDialDigitsAnyOf1 PostDialDigits { get => _explicitNullValuePostDialDigits; set { _explicitNullValuePostDialDigits = value; AdditionalData?.Remove("post_dial_digits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_dial_digits"); else _explicitNullProperties?.Remove("post_dial_digits"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferPostDialDigitsAnyOf1 _explicitNullValuePostDialDigits = default!;
 #endif
         /// <summary>When True, a ringing tone is played on the original call leg while a SIP REFER transfer completes. The tone is carried over RTP to the SIP peer executing the REFER, so disable this if the receiving system (e.g. an SBC or contact center) should not hear it. When disabled the caller hears silence until the transfer completes. SIP REFER transfers only.</summary>
         public bool? SipReferPlayDialtone { get => _explicitNullValueSipReferPlayDialtone; set { _explicitNullValueSipReferPlayDialtone = value; AdditionalData?.Remove("sip_refer_play_dialtone"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sip_refer_play_dialtone"); else _explicitNullProperties?.Remove("sip_refer_play_dialtone"); } }
@@ -134,7 +134,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "condition", n => { Condition = n.GetStringValue(); } },
                 { "custom_sip_headers", n => { CustomSipHeaders = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferCustomSipHeadersItem>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferCustomSipHeadersItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "phone_number", n => { PhoneNumber = n.GetStringValue(); } },
-                { "post_dial_digits", n => { PostDialDigits = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PostDialDigitsDynamicVariable>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PostDialDigitsDynamicVariable.CreateFromDiscriminatorValue); } },
+                { "post_dial_digits", n => { PostDialDigits = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferPostDialDigitsAnyOf1>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferPostDialDigitsAnyOf1.CreateFromDiscriminatorValue); } },
                 { "sip_refer_play_dialtone", n => { SipReferPlayDialtone = n.GetBoolValue(); } },
                 { "transfer_destination", n => { TransferDestination = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestination>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestination.CreateFromDiscriminatorValue); } },
                 { "transfer_type", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferTypeEnum>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTransferType = default; _explicitNullProperties?.Remove("transfer_type"); AdditionalData["transfer_type"] = unknown; } else { TransferType = parsed; AdditionalData.Remove("transfer_type"); } } },
@@ -151,7 +151,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("condition", Condition);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferCustomSipHeadersItem>("custom_sip_headers", CustomSipHeaders);
             writer.WriteStringValue("phone_number", PhoneNumber);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PostDialDigitsDynamicVariable>("post_dial_digits", PostDialDigits);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferPostDialDigitsAnyOf1>("post_dial_digits", PostDialDigits);
             writer.WriteBoolValue("sip_refer_play_dialtone", SipReferPlayDialtone);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestination>("transfer_destination", TransferDestination);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferTypeEnum>("transfer_type", TransferType);

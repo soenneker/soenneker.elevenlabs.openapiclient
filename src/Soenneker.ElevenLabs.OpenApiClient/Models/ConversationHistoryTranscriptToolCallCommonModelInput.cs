@@ -58,12 +58,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The tool_details property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetailsInput? ToolDetails { get => _explicitNullValueToolDetails; set { _explicitNullValueToolDetails = value; AdditionalData?.Remove("tool_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_details"); else _explicitNullProperties?.Remove("tool_details"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetailsInput? _explicitNullValueToolDetails = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallCommonModelInputToolDetailsAnyOf1? ToolDetails { get => _explicitNullValueToolDetails; set { _explicitNullValueToolDetails = value; AdditionalData?.Remove("tool_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_details"); else _explicitNullProperties?.Remove("tool_details"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallCommonModelInputToolDetailsAnyOf1? _explicitNullValueToolDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetailsInput ToolDetails { get => _explicitNullValueToolDetails; set { _explicitNullValueToolDetails = value; AdditionalData?.Remove("tool_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_details"); else _explicitNullProperties?.Remove("tool_details"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetailsInput _explicitNullValueToolDetails = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallCommonModelInputToolDetailsAnyOf1 ToolDetails { get => _explicitNullValueToolDetails; set { _explicitNullValueToolDetails = value; AdditionalData?.Remove("tool_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_details"); else _explicitNullProperties?.Remove("tool_details"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallCommonModelInputToolDetailsAnyOf1 _explicitNullValueToolDetails = default!;
 #endif
         /// <summary>The tool_has_been_called property</summary>
         public bool? ToolHasBeenCalled { get => _explicitNullValueToolHasBeenCalled; set { _explicitNullValueToolHasBeenCalled = value; AdditionalData?.Remove("tool_has_been_called"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_has_been_called"); else _explicitNullProperties?.Remove("tool_has_been_called"); } }
@@ -118,7 +118,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "params_as_json", n => { ParamsAsJson = n.GetStringValue(); } },
                 { "request_id", n => { RequestId = n.GetStringValue(); } },
-                { "tool_details", n => { ToolDetails = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetailsInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetailsInput.CreateFromDiscriminatorValue); } },
+                { "tool_details", n => { ToolDetails = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallCommonModelInputToolDetailsAnyOf1>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallCommonModelInputToolDetailsAnyOf1.CreateFromDiscriminatorValue); } },
                 { "tool_has_been_called", n => { ToolHasBeenCalled = n.GetBoolValue(); } },
                 { "tool_id", n => { ToolId = n.GetStringValue(); } },
                 { "tool_name", n => { ToolName = n.GetStringValue(); } },
@@ -134,7 +134,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("params_as_json", ParamsAsJson);
             writer.WriteStringValue("request_id", RequestId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetailsInput>("tool_details", ToolDetails);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallCommonModelInputToolDetailsAnyOf1>("tool_details", ToolDetails);
             writer.WriteBoolValue("tool_has_been_called", ToolHasBeenCalled);
             writer.WriteStringValue("tool_id", ToolId);
             writer.WriteStringValue("tool_name", ToolName);

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ClosedOutcome"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MergedOutcome"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenOutcome"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMergeProposalResponseOutcomeOneOf1"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMergeProposalResponseOutcomeOneOf2"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMergeProposalResponseOutcomeOneOf3"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AgentMergeProposalResponseOutcome : IComposedTypeWrapper, IParsable
@@ -18,29 +18,29 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ClosedOutcome"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMergeProposalResponseOutcomeOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ClosedOutcome? ClosedOutcome { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMergeProposalResponseOutcomeOneOf1? AgentMergeProposalResponseOutcomeOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ClosedOutcome ClosedOutcome { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMergeProposalResponseOutcomeOneOf1 AgentMergeProposalResponseOutcomeOneOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MergedOutcome"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMergeProposalResponseOutcomeOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MergedOutcome? MergedOutcome { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMergeProposalResponseOutcomeOneOf2? AgentMergeProposalResponseOutcomeOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MergedOutcome MergedOutcome { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMergeProposalResponseOutcomeOneOf2 AgentMergeProposalResponseOutcomeOneOf2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenOutcome"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMergeProposalResponseOutcomeOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenOutcome? OpenOutcome { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMergeProposalResponseOutcomeOneOf3? AgentMergeProposalResponseOutcomeOneOf3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenOutcome OpenOutcome { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMergeProposalResponseOutcomeOneOf3 AgentMergeProposalResponseOutcomeOneOf3 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -50,34 +50,34 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMergeProposalResponseOutcome CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("status")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMergeProposalResponseOutcome();
-            if("closed".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("AgentMergeProposalResponseOutcomeOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
-            else if("merged".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("AgentMergeProposalResponseOutcomeOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
-            else if("open".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("AgentMergeProposalResponseOutcomeOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && ((!shapeMembers1.ContainsKey("status") || (((shapeMembers1["status"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && (shapeMembers1["status"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal2 && "open".Equals(literal2.GetValue(), global::System.StringComparison.Ordinal)) && ((shapeMembers1["status"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal3 && "open".Equals(literal3.GetValue(), global::System.StringComparison.Ordinal))))) && global::System.Linq.Enumerable.All(shapeMembers1.Keys, key => key == "status"))))))();
-            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("version_id") && shapeMembers1.ContainsKey("at") && shapeMembers1.ContainsKey("by_user_id") && (!shapeMembers1.ContainsKey("status") || (((shapeMembers1["status"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && (shapeMembers1["status"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal2 && "merged".Equals(literal2.GetValue(), global::System.StringComparison.Ordinal)) && ((shapeMembers1["status"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal3 && "merged".Equals(literal3.GetValue(), global::System.StringComparison.Ordinal))))) && (!shapeMembers1.ContainsKey("version_id") || (((shapeMembers1["version_id"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("at") || ((((shapeMembers1["at"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger or global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong || (shapeMembers1["at"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble integral8 && integral8.GetValue() % 1 == 0) || (shapeMembers1["at"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal integral9 && integral9.GetValue() % 1 == 0) || (shapeMembers1["at"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat integral10 && integral10.GetValue() % 1 == 0)))))) && (!shapeMembers1.ContainsKey("by_user_id") || ((((shapeMembers1["by_user_id"] == null || shapeMembers1["by_user_id"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["by_user_id"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && global::System.Linq.Enumerable.All(shapeMembers1.Keys, key => key == "status" || key == "version_id" || key == "at" || key == "by_user_id"))))))();
-            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("reason") && shapeMembers1.ContainsKey("at") && shapeMembers1.ContainsKey("by_user_id") && (!shapeMembers1.ContainsKey("status") || (((shapeMembers1["status"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && (shapeMembers1["status"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal2 && "closed".Equals(literal2.GetValue(), global::System.StringComparison.Ordinal)) && ((shapeMembers1["status"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal3 && "closed".Equals(literal3.GetValue(), global::System.StringComparison.Ordinal))))) && (!shapeMembers1.ContainsKey("reason") || (((shapeMembers1["reason"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["reason"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal6 && "withdrawn".Equals(literal6.GetValue(), global::System.StringComparison.Ordinal)) || (shapeMembers1["reason"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal7 && "rejected".Equals(literal7.GetValue(), global::System.StringComparison.Ordinal)) || (shapeMembers1["reason"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal8 && "branch_archived".Equals(literal8.GetValue(), global::System.StringComparison.Ordinal))))) && (!shapeMembers1.ContainsKey("at") || ((((shapeMembers1["at"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger or global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong || (shapeMembers1["at"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble integral11 && integral11.GetValue() % 1 == 0) || (shapeMembers1["at"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal integral12 && integral12.GetValue() % 1 == 0) || (shapeMembers1["at"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat integral13 && integral13.GetValue() % 1 == 0)))))) && (!shapeMembers1.ContainsKey("by_user_id") || ((((shapeMembers1["by_user_id"] == null || shapeMembers1["by_user_id"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["by_user_id"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && global::System.Linq.Enumerable.All(shapeMembers1.Keys, key => key == "status" || key == "reason" || key == "at" || key == "by_user_id"))))))();
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("status") && (!shapeMembers1.ContainsKey("status") || (((shapeMembers1["status"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && (shapeMembers1["status"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal2 && "open".Equals(literal2.GetValue(), global::System.StringComparison.Ordinal)) && ((shapeMembers1["status"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal3 && "open".Equals(literal3.GetValue(), global::System.StringComparison.Ordinal))))) && global::System.Linq.Enumerable.All(shapeMembers1.Keys, key => key == "status"))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("version_id") && shapeMembers1.ContainsKey("at") && shapeMembers1.ContainsKey("by_user_id") && shapeMembers1.ContainsKey("status") && (!shapeMembers1.ContainsKey("status") || (((shapeMembers1["status"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && (shapeMembers1["status"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal2 && "merged".Equals(literal2.GetValue(), global::System.StringComparison.Ordinal)) && ((shapeMembers1["status"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal3 && "merged".Equals(literal3.GetValue(), global::System.StringComparison.Ordinal))))) && (!shapeMembers1.ContainsKey("version_id") || (((shapeMembers1["version_id"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("at") || ((((shapeMembers1["at"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger or global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong || (shapeMembers1["at"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble integral8 && integral8.GetValue() % 1 == 0) || (shapeMembers1["at"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal integral9 && integral9.GetValue() % 1 == 0) || (shapeMembers1["at"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat integral10 && integral10.GetValue() % 1 == 0)))))) && (!shapeMembers1.ContainsKey("by_user_id") || ((((shapeMembers1["by_user_id"] == null || shapeMembers1["by_user_id"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["by_user_id"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && global::System.Linq.Enumerable.All(shapeMembers1.Keys, key => key == "status" || key == "version_id" || key == "at" || key == "by_user_id"))))))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("reason") && shapeMembers1.ContainsKey("at") && shapeMembers1.ContainsKey("by_user_id") && shapeMembers1.ContainsKey("status") && (!shapeMembers1.ContainsKey("status") || (((shapeMembers1["status"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && (shapeMembers1["status"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal2 && "closed".Equals(literal2.GetValue(), global::System.StringComparison.Ordinal)) && ((shapeMembers1["status"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal3 && "closed".Equals(literal3.GetValue(), global::System.StringComparison.Ordinal))))) && (!shapeMembers1.ContainsKey("reason") || (((shapeMembers1["reason"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["reason"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal6 && "withdrawn".Equals(literal6.GetValue(), global::System.StringComparison.Ordinal)) || (shapeMembers1["reason"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal7 && "rejected".Equals(literal7.GetValue(), global::System.StringComparison.Ordinal)) || (shapeMembers1["reason"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal8 && "branch_archived".Equals(literal8.GetValue(), global::System.StringComparison.Ordinal))))) && (!shapeMembers1.ContainsKey("at") || ((((shapeMembers1["at"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger or global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong || (shapeMembers1["at"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble integral11 && integral11.GetValue() % 1 == 0) || (shapeMembers1["at"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal integral12 && integral12.GetValue() % 1 == 0) || (shapeMembers1["at"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat integral13 && integral13.GetValue() % 1 == 0)))))) && (!shapeMembers1.ContainsKey("by_user_id") || ((((shapeMembers1["by_user_id"] == null || shapeMembers1["by_user_id"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["by_user_id"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && global::System.Linq.Enumerable.All(shapeMembers1.Keys, key => key == "status" || key == "reason" || key == "at" || key == "by_user_id"))))))();
             int matchingUnionBranches = 0;
             if (matchesUnionBranch0) matchingUnionBranches++;
             if (matchesUnionBranch1) matchingUnionBranches++;
             if (matchesUnionBranch2) matchingUnionBranches++;
-            bool noSelectedUnionBranch = result.ClosedOutcome == null && result.MergedOutcome == null && result.OpenOutcome == null;
-            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.OpenOutcome = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenOutcome(), parseNode);
-            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.MergedOutcome = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.MergedOutcome(), parseNode);
-            if (noSelectedUnionBranch && matchesUnionBranch2 && matchingUnionBranches == 1) result.ClosedOutcome = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ClosedOutcome(), parseNode);
-            if (result.ClosedOutcome == null && result.MergedOutcome == null && result.OpenOutcome == null) result.UnrecognizedValue = unionPayload;
+            bool noSelectedUnionBranch = result.AgentMergeProposalResponseOutcomeOneOf1 == null && result.AgentMergeProposalResponseOutcomeOneOf2 == null && result.AgentMergeProposalResponseOutcomeOneOf3 == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.AgentMergeProposalResponseOutcomeOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMergeProposalResponseOutcomeOneOf1(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.AgentMergeProposalResponseOutcomeOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMergeProposalResponseOutcomeOneOf2(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch2 && matchingUnionBranches == 1) result.AgentMergeProposalResponseOutcomeOneOf3 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMergeProposalResponseOutcomeOneOf3(), parseNode);
+            if (result.AgentMergeProposalResponseOutcomeOneOf1 == null && result.AgentMergeProposalResponseOutcomeOneOf2 == null && result.AgentMergeProposalResponseOutcomeOneOf3 == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
         /// <summary>
@@ -88,17 +88,17 @@ return result;
         {
             if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
 
-            if(ClosedOutcome != null)
+            if(AgentMergeProposalResponseOutcomeOneOf1 != null)
             {
-                return ClosedOutcome.GetFieldDeserializers();
+                return AgentMergeProposalResponseOutcomeOneOf1.GetFieldDeserializers();
             }
-            else if(MergedOutcome != null)
+            else if(AgentMergeProposalResponseOutcomeOneOf2 != null)
             {
-                return MergedOutcome.GetFieldDeserializers();
+                return AgentMergeProposalResponseOutcomeOneOf2.GetFieldDeserializers();
             }
-            else if(OpenOutcome != null)
+            else if(AgentMergeProposalResponseOutcomeOneOf3 != null)
             {
-                return OpenOutcome.GetFieldDeserializers();
+                return AgentMergeProposalResponseOutcomeOneOf3.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -109,30 +109,30 @@ return result;
         public virtual void Serialize(ISerializationWriter writer)
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
-            if (ClosedOutcome == null && MergedOutcome == null && OpenOutcome == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (AgentMergeProposalResponseOutcomeOneOf1 == null && AgentMergeProposalResponseOutcomeOneOf2 == null && AgentMergeProposalResponseOutcomeOneOf3 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
             int selectedUnionBranches = 0;
-            if (ClosedOutcome != null) selectedUnionBranches++;
-            if (MergedOutcome != null) selectedUnionBranches++;
-            if (OpenOutcome != null) selectedUnionBranches++;
-            if (ClosedOutcome != null && selectedUnionBranches == 1) { if (ClosedOutcome is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ClosedOutcome); return; }
-            if (MergedOutcome != null && selectedUnionBranches == 1) { if (MergedOutcome is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, MergedOutcome); return; }
-            if (OpenOutcome != null && selectedUnionBranches == 1) { if (OpenOutcome is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, OpenOutcome); return; }
+            if (AgentMergeProposalResponseOutcomeOneOf1 != null) selectedUnionBranches++;
+            if (AgentMergeProposalResponseOutcomeOneOf2 != null) selectedUnionBranches++;
+            if (AgentMergeProposalResponseOutcomeOneOf3 != null) selectedUnionBranches++;
+            if (AgentMergeProposalResponseOutcomeOneOf1 != null && selectedUnionBranches == 1) { if (AgentMergeProposalResponseOutcomeOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AgentMergeProposalResponseOutcomeOneOf1); return; }
+            if (AgentMergeProposalResponseOutcomeOneOf2 != null && selectedUnionBranches == 1) { if (AgentMergeProposalResponseOutcomeOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AgentMergeProposalResponseOutcomeOneOf2); return; }
+            if (AgentMergeProposalResponseOutcomeOneOf3 != null && selectedUnionBranches == 1) { if (AgentMergeProposalResponseOutcomeOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AgentMergeProposalResponseOutcomeOneOf3); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(ClosedOutcome != null)
+            if(AgentMergeProposalResponseOutcomeOneOf1 != null)
             {
-                if (ClosedOutcome is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClosedOutcome>(null, ClosedOutcome);
+                if (AgentMergeProposalResponseOutcomeOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMergeProposalResponseOutcomeOneOf1>(null, AgentMergeProposalResponseOutcomeOneOf1);
             }
-            else if(MergedOutcome != null)
+            else if(AgentMergeProposalResponseOutcomeOneOf2 != null)
             {
-                if (MergedOutcome is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MergedOutcome>(null, MergedOutcome);
+                if (AgentMergeProposalResponseOutcomeOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMergeProposalResponseOutcomeOneOf2>(null, AgentMergeProposalResponseOutcomeOneOf2);
             }
-            else if(OpenOutcome != null)
+            else if(AgentMergeProposalResponseOutcomeOneOf3 != null)
             {
-                if (OpenOutcome is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenOutcome>(null, OpenOutcome);
+                if (AgentMergeProposalResponseOutcomeOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMergeProposalResponseOutcomeOneOf3>(null, AgentMergeProposalResponseOutcomeOneOf3);
             }
         }
     }

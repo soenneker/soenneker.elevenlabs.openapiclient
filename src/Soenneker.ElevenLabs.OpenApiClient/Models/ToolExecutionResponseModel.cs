@@ -141,12 +141,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The tool_call_details property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetailsOutput? ToolCallDetails { get => _explicitNullValueToolCallDetails; set { _explicitNullValueToolCallDetails = value; AdditionalData?.Remove("tool_call_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_call_details"); else _explicitNullProperties?.Remove("tool_call_details"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetailsOutput? _explicitNullValueToolCallDetails = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionResponseModelToolCallDetailsAnyOf1? ToolCallDetails { get => _explicitNullValueToolCallDetails; set { _explicitNullValueToolCallDetails = value; AdditionalData?.Remove("tool_call_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_call_details"); else _explicitNullProperties?.Remove("tool_call_details"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionResponseModelToolCallDetailsAnyOf1? _explicitNullValueToolCallDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetailsOutput ToolCallDetails { get => _explicitNullValueToolCallDetails; set { _explicitNullValueToolCallDetails = value; AdditionalData?.Remove("tool_call_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_call_details"); else _explicitNullProperties?.Remove("tool_call_details"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetailsOutput _explicitNullValueToolCallDetails = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionResponseModelToolCallDetailsAnyOf1 ToolCallDetails { get => _explicitNullValueToolCallDetails; set { _explicitNullValueToolCallDetails = value; AdditionalData?.Remove("tool_call_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_call_details"); else _explicitNullProperties?.Remove("tool_call_details"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionResponseModelToolCallDetailsAnyOf1 _explicitNullValueToolCallDetails = default!;
 #endif
         /// <summary>The ID of the tool that was executed</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -205,7 +205,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "request_payload", n => { RequestPayload = n.GetStringValue(); } },
                 { "response_payload", n => { ResponsePayload = n.GetStringValue(); } },
                 { "timestamp", n => { Timestamp = n.GetDoubleValue(); } },
-                { "tool_call_details", n => { ToolCallDetails = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetailsOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetailsOutput.CreateFromDiscriminatorValue); } },
+                { "tool_call_details", n => { ToolCallDetails = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionResponseModelToolCallDetailsAnyOf1>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionResponseModelToolCallDetailsAnyOf1.CreateFromDiscriminatorValue); } },
                 { "tool_id", n => { ToolId = n.GetStringValue(); } },
                 { "tool_request_id", n => { ToolRequestId = n.GetStringValue(); } },
             };
@@ -228,7 +228,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("request_payload", RequestPayload);
             writer.WriteStringValue("response_payload", ResponsePayload);
             writer.WriteDoubleValue("timestamp", Timestamp);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetailsOutput>("tool_call_details", ToolCallDetails);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionResponseModelToolCallDetailsAnyOf1>("tool_call_details", ToolCallDetails);
             writer.WriteStringValue("tool_id", ToolId);
             writer.WriteStringValue("tool_request_id", ToolRequestId);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

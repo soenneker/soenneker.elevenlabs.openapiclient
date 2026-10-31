@@ -50,12 +50,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>A detailed composition plan to guide music generation. Cannot be used in conjunction with `prompt`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? CompositionPlan { get => _explicitNullValueCompositionPlan; set { _explicitNullValueCompositionPlan = value; AdditionalData?.Remove("composition_plan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("composition_plan"); else _explicitNullProperties?.Remove("composition_plan"); } }
-        private UntypedNode? _explicitNullValueCompositionPlan = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComposeMusicV1MusicPostCompositionPlanAnyOf1? CompositionPlan { get => _explicitNullValueCompositionPlan; set { _explicitNullValueCompositionPlan = value; AdditionalData?.Remove("composition_plan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("composition_plan"); else _explicitNullProperties?.Remove("composition_plan"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComposeMusicV1MusicPostCompositionPlanAnyOf1? _explicitNullValueCompositionPlan = default!;
 #nullable restore
 #else
-        public UntypedNode CompositionPlan { get => _explicitNullValueCompositionPlan; set { _explicitNullValueCompositionPlan = value; AdditionalData?.Remove("composition_plan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("composition_plan"); else _explicitNullProperties?.Remove("composition_plan"); } }
-        private UntypedNode _explicitNullValueCompositionPlan = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComposeMusicV1MusicPostCompositionPlanAnyOf1 CompositionPlan { get => _explicitNullValueCompositionPlan; set { _explicitNullValueCompositionPlan = value; AdditionalData?.Remove("composition_plan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("composition_plan"); else _explicitNullProperties?.Remove("composition_plan"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComposeMusicV1MusicPostCompositionPlanAnyOf1 _explicitNullValueCompositionPlan = default!;
 #endif
         /// <summary>The ID of the finetune to use for the generation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -151,7 +151,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "composition_plan", n => { CompositionPlan = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "composition_plan", n => { CompositionPlan = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComposeMusicV1MusicPostCompositionPlanAnyOf1>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComposeMusicV1MusicPostCompositionPlanAnyOf1.CreateFromDiscriminatorValue); } },
                 { "finetune_id", n => { FinetuneId = n.GetStringValue(); } },
                 { "finetune_strength", n => { FinetuneStrength = n.GetDoubleValue(); } },
                 { "force_instrumental", n => { ForceInstrumental = n.GetBoolValue(); } },
@@ -173,7 +173,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("composition_plan", CompositionPlan);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComposeMusicV1MusicPostCompositionPlanAnyOf1>("composition_plan", CompositionPlan);
             writer.WriteStringValue("finetune_id", FinetuneId);
             writer.WriteDoubleValue("finetune_strength", FinetuneStrength);
             writer.WriteBoolValue("force_instrumental", ForceInstrumental);

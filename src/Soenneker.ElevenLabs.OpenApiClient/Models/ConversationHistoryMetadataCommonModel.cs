@@ -215,12 +215,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The phone_call property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistorySipTrunkingPhoneCallModel? PhoneCall { get => _explicitNullValuePhoneCall; set { _explicitNullValuePhoneCall = value; AdditionalData?.Remove("phone_call"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_call"); else _explicitNullProperties?.Remove("phone_call"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistorySipTrunkingPhoneCallModel? _explicitNullValuePhoneCall = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModelPhoneCallAnyOf1? PhoneCall { get => _explicitNullValuePhoneCall; set { _explicitNullValuePhoneCall = value; AdditionalData?.Remove("phone_call"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_call"); else _explicitNullProperties?.Remove("phone_call"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModelPhoneCallAnyOf1? _explicitNullValuePhoneCall = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistorySipTrunkingPhoneCallModel PhoneCall { get => _explicitNullValuePhoneCall; set { _explicitNullValuePhoneCall = value; AdditionalData?.Remove("phone_call"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_call"); else _explicitNullProperties?.Remove("phone_call"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistorySipTrunkingPhoneCallModel _explicitNullValuePhoneCall = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModelPhoneCallAnyOf1 PhoneCall { get => _explicitNullValuePhoneCall; set { _explicitNullValuePhoneCall = value; AdditionalData?.Remove("phone_call"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_call"); else _explicitNullProperties?.Remove("phone_call"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModelPhoneCallAnyOf1 _explicitNullValuePhoneCall = default!;
 #endif
         /// <summary>Seconds the caller was held in the concurrency wait queue. Excluded from call_duration_secs and from billed time. None when the conversation was never queued.</summary>
         public double? QueueWaitSecs { get => _explicitNullValueQueueWaitSecs; set { _explicitNullValueQueueWaitSecs = value; AdditionalData?.Remove("queue_wait_secs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queue_wait_secs"); else _explicitNullProperties?.Remove("queue_wait_secs"); } }
@@ -350,7 +350,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "feedback", n => { Feedback = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryFeedbackCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryFeedbackCommonModel.CreateFromDiscriminatorValue); } },
                 { "initiator_id", n => { InitiatorId = n.GetStringValue(); } },
                 { "main_language", n => { MainLanguage = n.GetStringValue(); } },
-                { "phone_call", n => { PhoneCall = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistorySipTrunkingPhoneCallModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistorySipTrunkingPhoneCallModel.CreateFromDiscriminatorValue); } },
+                { "phone_call", n => { PhoneCall = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModelPhoneCallAnyOf1>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModelPhoneCallAnyOf1.CreateFromDiscriminatorValue); } },
                 { "queue_wait_secs", n => { QueueWaitSecs = n.GetDoubleValue(); } },
                 { "rag_usage", n => { RagUsage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryRagUsageCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryRagUsageCommonModel.CreateFromDiscriminatorValue); } },
                 { "sms", n => { Sms = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmsConversationInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SmsConversationInfo.CreateFromDiscriminatorValue); } },
@@ -388,7 +388,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryFeedbackCommonModel>("feedback", Feedback);
             writer.WriteStringValue("initiator_id", InitiatorId);
             writer.WriteStringValue("main_language", MainLanguage);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistorySipTrunkingPhoneCallModel>("phone_call", PhoneCall);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModelPhoneCallAnyOf1>("phone_call", PhoneCall);
             writer.WriteDoubleValue("queue_wait_secs", QueueWaitSecs);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryRagUsageCommonModel>("rag_usage", RagUsage);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmsConversationInfo>("sms", Sms);

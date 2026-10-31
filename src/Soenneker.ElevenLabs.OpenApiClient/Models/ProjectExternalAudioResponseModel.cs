@@ -213,12 +213,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The source_context property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SfxSourceContext? SourceContext { get => _explicitNullValueSourceContext; set { _explicitNullValueSourceContext = value; AdditionalData?.Remove("source_context"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_context"); else _explicitNullProperties?.Remove("source_context"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SfxSourceContext? _explicitNullValueSourceContext = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExternalAudioResponseModelSourceContextAnyOf1? SourceContext { get => _explicitNullValueSourceContext; set { _explicitNullValueSourceContext = value; AdditionalData?.Remove("source_context"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_context"); else _explicitNullProperties?.Remove("source_context"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExternalAudioResponseModelSourceContextAnyOf1? _explicitNullValueSourceContext = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SfxSourceContext SourceContext { get => _explicitNullValueSourceContext; set { _explicitNullValueSourceContext = value; AdditionalData?.Remove("source_context"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_context"); else _explicitNullProperties?.Remove("source_context"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SfxSourceContext _explicitNullValueSourceContext = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExternalAudioResponseModelSourceContextAnyOf1 SourceContext { get => _explicitNullValueSourceContext; set { _explicitNullValueSourceContext = value; AdditionalData?.Remove("source_context"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_context"); else _explicitNullProperties?.Remove("source_context"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExternalAudioResponseModelSourceContextAnyOf1 _explicitNullValueSourceContext = default!;
 #endif
         /// <summary>The source_external_audio_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -324,7 +324,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "pending_task", n => { PendingTask = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingClipTask>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingClipTask.CreateFromDiscriminatorValue); } },
                 { "signed_url", n => { SignedUrl = n.GetStringValue(); } },
                 { "source_asset_id", n => { SourceAssetId = n.GetStringValue(); } },
-                { "source_context", n => { SourceContext = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SfxSourceContext>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SfxSourceContext.CreateFromDiscriminatorValue); } },
+                { "source_context", n => { SourceContext = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExternalAudioResponseModelSourceContextAnyOf1>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExternalAudioResponseModelSourceContextAnyOf1.CreateFromDiscriminatorValue); } },
                 { "source_external_audio_id", n => { SourceExternalAudioId = n.GetStringValue(); } },
                 { "source_platform_asset_id", n => { SourcePlatformAssetId = n.GetStringValue(); } },
                 { "speech_imported", n => { SpeechImported = n.GetBoolValue(); } },
@@ -361,7 +361,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingClipTask>("pending_task", PendingTask);
             writer.WriteStringValue("signed_url", SignedUrl);
             writer.WriteStringValue("source_asset_id", SourceAssetId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SfxSourceContext>("source_context", SourceContext);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExternalAudioResponseModelSourceContextAnyOf1>("source_context", SourceContext);
             writer.WriteStringValue("source_external_audio_id", SourceExternalAudioId);
             writer.WriteStringValue("source_platform_asset_id", SourcePlatformAssetId);
             writer.WriteBoolValue("speech_imported", SpeechImported);

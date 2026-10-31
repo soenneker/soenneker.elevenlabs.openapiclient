@@ -176,12 +176,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The test_info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SimulationTestModel? TestInfo { get => _explicitNullValueTestInfo; set { _explicitNullValueTestInfo = value; AdditionalData?.Remove("test_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("test_info"); else _explicitNullProperties?.Remove("test_info"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SimulationTestModel? _explicitNullValueTestInfo = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestRunResponseModelTestInfoAnyOf1? TestInfo { get => _explicitNullValueTestInfo; set { _explicitNullValueTestInfo = value; AdditionalData?.Remove("test_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("test_info"); else _explicitNullProperties?.Remove("test_info"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestRunResponseModelTestInfoAnyOf1? _explicitNullValueTestInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SimulationTestModel TestInfo { get => _explicitNullValueTestInfo; set { _explicitNullValueTestInfo = value; AdditionalData?.Remove("test_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("test_info"); else _explicitNullProperties?.Remove("test_info"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SimulationTestModel _explicitNullValueTestInfo = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestRunResponseModelTestInfoAnyOf1 TestInfo { get => _explicitNullValueTestInfo; set { _explicitNullValueTestInfo = value; AdditionalData?.Remove("test_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("test_info"); else _explicitNullProperties?.Remove("test_info"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestRunResponseModelTestInfoAnyOf1 _explicitNullValueTestInfo = default!;
 #endif
         /// <summary>The test_invocation_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -274,7 +274,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "root_folder_name", n => { RootFolderName = n.GetStringValue(); } },
                 { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestRunStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "test_id", n => { TestId = n.GetStringValue(); } },
-                { "test_info", n => { TestInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SimulationTestModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SimulationTestModel.CreateFromDiscriminatorValue); } },
+                { "test_info", n => { TestInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestRunResponseModelTestInfoAnyOf1>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestRunResponseModelTestInfoAnyOf1.CreateFromDiscriminatorValue); } },
                 { "test_invocation_id", n => { TestInvocationId = n.GetStringValue(); } },
                 { "test_name", n => { TestName = n.GetStringValue(); } },
                 { "test_run_id", n => { TestRunId = n.GetStringValue(); } },
@@ -303,7 +303,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("root_folder_name", RootFolderName);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestRunStatus>("status", Status);
             writer.WriteStringValue("test_id", TestId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SimulationTestModel>("test_info", TestInfo);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestRunResponseModelTestInfoAnyOf1>("test_info", TestInfo);
             writer.WriteStringValue("test_invocation_id", TestInvocationId);
             writer.WriteStringValue("test_name", TestName);
             writer.WriteStringValue("test_run_id", TestRunId);

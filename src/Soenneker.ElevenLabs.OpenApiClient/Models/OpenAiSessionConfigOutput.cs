@@ -113,12 +113,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The tracing property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Tracing { get => _explicitNullValueTracing; set { _explicitNullValueTracing = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tracing"); else _explicitNullProperties?.Remove("tracing"); } }
-        private UntypedNode? _explicitNullValueTracing = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiSessionConfigOutputTracingAnyOf1? Tracing { get => _explicitNullValueTracing; set { _explicitNullValueTracing = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tracing"); else _explicitNullProperties?.Remove("tracing"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiSessionConfigOutputTracingAnyOf1? _explicitNullValueTracing = default!;
 #nullable restore
 #else
-        public UntypedNode Tracing { get => _explicitNullValueTracing; set { _explicitNullValueTracing = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tracing"); else _explicitNullProperties?.Remove("tracing"); } }
-        private UntypedNode _explicitNullValueTracing = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiSessionConfigOutputTracingAnyOf1 Tracing { get => _explicitNullValueTracing; set { _explicitNullValueTracing = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tracing"); else _explicitNullProperties?.Remove("tracing"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiSessionConfigOutputTracingAnyOf1 _explicitNullValueTracing = default!;
 #endif
         /// <summary>The type property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiSessionConfigOutputType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
@@ -159,7 +159,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "temperature", n => { Temperature = n.GetDoubleValue(); } },
                 { "tool_choice", n => { ToolChoice = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiSessionConfigInputToolChoice>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiSessionConfigInputToolChoice.CreateFromDiscriminatorValue); } },
                 { "tools", n => { Tools = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiSessionConfigOutputToolsItem>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiSessionConfigOutputToolsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "tracing", n => { Tracing = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "tracing", n => { Tracing = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiSessionConfigOutputTracingAnyOf1>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiSessionConfigOutputTracingAnyOf1.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiSessionConfigOutputType>(); } },
             };
         }
@@ -179,7 +179,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteDoubleValue("temperature", Temperature);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiSessionConfigInputToolChoice>("tool_choice", ToolChoice);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiSessionConfigOutputToolsItem>("tools", Tools);
-            writer.WriteObjectValue<UntypedNode>("tracing", Tracing);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiSessionConfigOutputTracingAnyOf1>("tracing", Tracing);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiSessionConfigOutputType>("type", Type);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             
         }
