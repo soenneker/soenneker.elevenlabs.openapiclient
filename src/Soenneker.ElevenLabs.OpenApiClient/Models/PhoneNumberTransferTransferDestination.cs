@@ -51,10 +51,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "phone" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestinationPhoneNumberTransferTransferDestinationOneOf1(),
-                "phone_dynamic_variable" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestinationPhoneNumberTransferTransferDestinationOneOf3(),
-                "sip_uri" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestinationPhoneNumberTransferTransferDestinationOneOf2(),
-                "sip_uri_dynamic_variable" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestinationPhoneNumberTransferTransferDestinationOneOf4(),
+                "phone" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestinationOneOf1Variant(),
+                "phone_dynamic_variable" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestinationOneOf3Variant(),
+                "sip_uri" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestinationOneOf2Variant(),
+                "sip_uri_dynamic_variable" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestinationOneOf4Variant(),
                 _ => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestination(),
             };
         }

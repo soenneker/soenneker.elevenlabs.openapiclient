@@ -51,9 +51,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("status")?.GetStringValue();
             return mappingValue switch
             {
-                "closed" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMergeProposalResponseOutcomeAgentMergeProposalResponseOutcomeOneOf3(),
-                "merged" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMergeProposalResponseOutcomeAgentMergeProposalResponseOutcomeOneOf2(),
-                "open" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMergeProposalResponseOutcomeAgentMergeProposalResponseOutcomeOneOf1(),
+                "closed" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMergeProposalResponseOutcomeOneOf3Variant(),
+                "merged" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMergeProposalResponseOutcomeOneOf2Variant(),
+                "open" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMergeProposalResponseOutcomeOneOf1Variant(),
                 _ => new global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMergeProposalResponseOutcome(),
             };
         }

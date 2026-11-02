@@ -51,17 +51,17 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("system_tool_type")?.GetStringValue();
             return mappingValue switch
             {
-                "end_call" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsSystemToolConfigOutputParamsOneOf1(),
-                "end_procedure" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsSystemToolConfigOutputParamsOneOf11(),
-                "knowledge_base" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsSystemToolConfigOutputParamsOneOf9(),
-                "knowledge_base_rag" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsSystemToolConfigOutputParamsOneOf8(),
-                "language_detection" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsSystemToolConfigOutputParamsOneOf2(),
-                "play_keypad_touch_tone" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsSystemToolConfigOutputParamsOneOf6(),
-                "skip_turn" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsSystemToolConfigOutputParamsOneOf5(),
-                "start_procedure" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsSystemToolConfigOutputParamsOneOf10(),
-                "transfer_to_agent" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsSystemToolConfigOutputParamsOneOf3(),
-                "transfer_to_number" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsSystemToolConfigOutputParamsOneOf4(),
-                "voicemail_detection" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsSystemToolConfigOutputParamsOneOf7(),
+                "end_call" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf1Variant(),
+                "end_procedure" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf11Variant(),
+                "knowledge_base" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf9Variant(),
+                "knowledge_base_rag" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf8Variant(),
+                "language_detection" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf2Variant(),
+                "play_keypad_touch_tone" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf6Variant(),
+                "skip_turn" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf5Variant(),
+                "start_procedure" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf10Variant(),
+                "transfer_to_agent" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf3Variant(),
+                "transfer_to_number" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf4Variant(),
+                "voicemail_detection" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf7Variant(),
                 _ => new global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParams(),
             };
         }

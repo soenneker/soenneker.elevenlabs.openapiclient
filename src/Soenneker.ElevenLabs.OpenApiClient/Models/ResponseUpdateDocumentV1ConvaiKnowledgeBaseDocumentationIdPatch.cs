@@ -52,7 +52,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return mappingValue switch
             {
                 "file" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseUpdateDocumentV1ConvaiKnowledgeBaseDocumentationIdPatchGetKnowledgeBaseFileResponseModel(),
-                "folder" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseUpdateDocumentV1ConvaiKnowledgeBaseDocumentationIdPatchGetKnowledgeBaseFolderResponseModel(),
+                "folder" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.TaggedFolderVariant27535C596084A48F(),
                 "text" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseUpdateDocumentV1ConvaiKnowledgeBaseDocumentationIdPatchGetKnowledgeBaseTextResponseModel(),
                 "url" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseUpdateDocumentV1ConvaiKnowledgeBaseDocumentationIdPatchGetKnowledgeBaseUrlResponseModel(),
                 _ => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseUpdateDocumentV1ConvaiKnowledgeBaseDocumentationIdPatch(),

@@ -51,9 +51,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("provider")?.GetStringValue();
             return mappingValue switch
             {
-                "exotel" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.MergePreviewResponseModelPhoneNumbersItemMergePreviewResponseModelPhoneNumbersItemOneOf2(),
-                "sip_trunk" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.MergePreviewResponseModelPhoneNumbersItemMergePreviewResponseModelPhoneNumbersItemOneOf3(),
-                "twilio" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.MergePreviewResponseModelPhoneNumbersItemMergePreviewResponseModelPhoneNumbersItemOneOf1(),
+                "exotel" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.MergePreviewResponseModelPhoneNumbersItemOneOf2Variant(),
+                "sip_trunk" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.MergePreviewResponseModelPhoneNumbersItemOneOf3Variant(),
+                "twilio" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.MergePreviewResponseModelPhoneNumbersItemOneOf1Variant(),
                 _ => new global::Soenneker.ElevenLabs.OpenApiClient.Models.MergePreviewResponseModelPhoneNumbersItem(),
             };
         }

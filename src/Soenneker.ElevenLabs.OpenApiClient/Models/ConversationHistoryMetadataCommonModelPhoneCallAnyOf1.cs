@@ -51,8 +51,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "exotel" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModelPhoneCallAnyOf1ConversationHistoryMetadataCommonModelPhoneCallAnyOf1OneOf2(),
-                "sip_trunking" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModelPhoneCallAnyOf1ConversationHistorySipTrunkingPhoneCallModel(),
+                "exotel" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModelPhoneCallAnyOf1OneOf2Variant(),
+                "sip_trunking" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.TaggedSipTrunkingVariant2F00B625B2C00FB4(),
                 "twilio" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModelPhoneCallAnyOf1ConversationHistoryTwilioPhoneCallModel(),
                 _ => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModelPhoneCallAnyOf1(),
             };

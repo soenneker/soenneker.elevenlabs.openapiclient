@@ -51,9 +51,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "edge" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolResponseModelOutputStepsItemWorkflowToolResponseModelOutputStepsItemOneOf1(),
-                "max_iterations_exceeded" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolResponseModelOutputStepsItemWorkflowToolResponseModelOutputStepsItemOneOf3(),
-                "nested_tools" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolResponseModelOutputStepsItemWorkflowToolResponseModelOutputStepsItemOneOf2(),
+                "edge" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolResponseModelOutputStepsItemOneOf1Variant(),
+                "max_iterations_exceeded" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolResponseModelOutputStepsItemOneOf3Variant(),
+                "nested_tools" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolResponseModelOutputStepsItemOneOf2Variant(),
                 _ => new global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolResponseModelOutputStepsItem(),
             };
         }

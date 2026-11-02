@@ -51,9 +51,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("provider")?.GetStringValue();
             return mappingValue switch
             {
-                "exotel" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseListPhoneNumbersV1ConvaiPhoneNumbersGetSchemaItemResponseListPhoneNumbersV1ConvaiPhoneNumbersGetSchemaItemOneOf2(),
-                "sip_trunk" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseListPhoneNumbersV1ConvaiPhoneNumbersGetSchemaItemResponseListPhoneNumbersV1ConvaiPhoneNumbersGetSchemaItemOneOf3(),
-                "twilio" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseListPhoneNumbersV1ConvaiPhoneNumbersGetSchemaItemResponseListPhoneNumbersV1ConvaiPhoneNumbersGetSchemaItemOneOf1(),
+                "exotel" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseListPhoneNumbersV1ConvaiPhoneNumbersGetSchemaItemOneOf2Variant(),
+                "sip_trunk" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseListPhoneNumbersV1ConvaiPhoneNumbersGetSchemaItemOneOf3Variant(),
+                "twilio" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseListPhoneNumbersV1ConvaiPhoneNumbersGetSchemaItemOneOf1Variant(),
                 _ => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseListPhoneNumbersV1ConvaiPhoneNumbersGetSchemaItem(),
             };
         }

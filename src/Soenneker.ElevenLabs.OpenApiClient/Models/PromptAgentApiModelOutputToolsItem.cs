@@ -53,11 +53,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return mappingValue switch
             {
                 "api_integration_webhook" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputToolsItemApiIntegrationWebhookToolConfigOutput(),
-                "client" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputToolsItemPromptAgentApiModelOutputToolsItemOneOf2(),
-                "mcp" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputToolsItemPromptAgentApiModelOutputToolsItemOneOf4(),
-                "smb" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputToolsItemPromptAgentApiModelOutputToolsItemOneOf6(),
-                "system" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputToolsItemPromptAgentApiModelOutputToolsItemOneOf3(),
-                "webhook" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputToolsItemPromptAgentApiModelOutputToolsItemOneOf1(),
+                "client" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputToolsItemOneOf2Variant(),
+                "mcp" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputToolsItemOneOf4Variant(),
+                "smb" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputToolsItemOneOf6Variant(),
+                "system" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputToolsItemOneOf3Variant(),
+                "webhook" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputToolsItemOneOf1Variant(),
                 _ => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputToolsItem(),
             };
         }

@@ -51,10 +51,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "document" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParamsParametersItemWhatsAppTemplateHeaderComponentParamsParametersItemOneOf3(),
-                "image" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParamsParametersItemWhatsAppTemplateHeaderComponentParamsParametersItemOneOf2(),
-                "location" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParamsParametersItemWhatsAppTemplateHeaderComponentParamsParametersItemOneOf4(),
-                "text" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParamsParametersItemWhatsAppTemplateHeaderComponentParamsParametersItemOneOf1(),
+                "document" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf3Variant(),
+                "image" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf2Variant(),
+                "location" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf4Variant(),
+                "text" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf1Variant(),
                 _ => new global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParamsParametersItem(),
             };
         }

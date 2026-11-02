@@ -51,9 +51,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "llm" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseUpdateAgentResponseTestV1ConvaiAgentTestingTestIdPutResponseUpdateAgentResponseTestV1ConvaiAgentTestingTestIdPutOneOf1(),
-                "simulation" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseUpdateAgentResponseTestV1ConvaiAgentTestingTestIdPutResponseUpdateAgentResponseTestV1ConvaiAgentTestingTestIdPutOneOf3(),
-                "tool" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseUpdateAgentResponseTestV1ConvaiAgentTestingTestIdPutResponseUpdateAgentResponseTestV1ConvaiAgentTestingTestIdPutOneOf2(),
+                "llm" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseUpdateAgentResponseTestV1ConvaiAgentTestingTestIdPutOneOf1Variant(),
+                "simulation" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseUpdateAgentResponseTestV1ConvaiAgentTestingTestIdPutOneOf3Variant(),
+                "tool" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseUpdateAgentResponseTestV1ConvaiAgentTestingTestIdPutOneOf2Variant(),
                 _ => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseUpdateAgentResponseTestV1ConvaiAgentTestingTestIdPut(),
             };
         }

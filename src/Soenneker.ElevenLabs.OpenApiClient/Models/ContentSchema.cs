@@ -51,16 +51,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "array" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentSchemaContentSchemaOneOf10(),
-                "audio" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentSchemaContentSchemaOneOf7(),
-                "boolean" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentSchemaContentSchemaOneOf4(),
-                "image" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentSchemaContentSchemaOneOf5(),
-                "integer" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentSchemaContentSchemaOneOf3(),
-                "number" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentSchemaContentSchemaOneOf2(),
-                "object" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentSchemaContentSchemaOneOf9(),
-                "string" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentSchemaContentSchemaOneOf1(),
-                "video" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentSchemaContentSchemaOneOf6(),
-                "voice" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentSchemaContentSchemaOneOf8(),
+                "array" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentSchemaOneOf10Variant(),
+                "audio" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentSchemaOneOf7Variant(),
+                "boolean" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentSchemaOneOf4Variant(),
+                "image" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentSchemaOneOf5Variant(),
+                "integer" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentSchemaOneOf3Variant(),
+                "number" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentSchemaOneOf2Variant(),
+                "object" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentSchemaOneOf9Variant(),
+                "string" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentSchemaOneOf1Variant(),
+                "video" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentSchemaOneOf6Variant(),
+                "voice" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentSchemaOneOf8Variant(),
                 _ => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentSchema(),
             };
         }

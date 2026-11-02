@@ -51,10 +51,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "api_integration_webhook" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallCommonModelInputToolDetailsAnyOf1ConversationHistoryTranscriptToolCallCommonModelInputToolDetailsAnyOf1OneOf4(),
-                "client" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallCommonModelInputToolDetailsAnyOf1ConversationHistoryTranscriptToolCallCommonModelInputToolDetailsAnyOf1OneOf2(),
-                "mcp" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallCommonModelInputToolDetailsAnyOf1ConversationHistoryTranscriptToolCallCommonModelInputToolDetailsAnyOf1OneOf3(),
-                "webhook" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallCommonModelInputToolDetailsAnyOf1ConversationHistoryTranscriptToolCallCommonModelInputToolDetailsAnyOf1OneOf1(),
+                "api_integration_webhook" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallCommonModelInputToolDetailsAnyOf1OneOf4Variant(),
+                "client" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallCommonModelInputToolDetailsAnyOf1OneOf2Variant(),
+                "mcp" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallCommonModelInputToolDetailsAnyOf1OneOf3Variant(),
+                "webhook" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallCommonModelInputToolDetailsAnyOf1OneOf1Variant(),
                 _ => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallCommonModelInputToolDetailsAnyOf1(),
             };
         }

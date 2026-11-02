@@ -51,9 +51,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("source_type")?.GetStringValue();
             return mappingValue switch
             {
-                "music_explore_song" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExternalAudioResponseModelSourceContextAnyOf1ProjectExternalAudioResponseModelSourceContextAnyOf1OneOf2(),
-                "sfx" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExternalAudioResponseModelSourceContextAnyOf1ProjectExternalAudioResponseModelSourceContextAnyOf1OneOf3(),
-                "song" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExternalAudioResponseModelSourceContextAnyOf1ProjectExternalAudioResponseModelSourceContextAnyOf1OneOf1(),
+                "music_explore_song" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExternalAudioResponseModelSourceContextAnyOf1OneOf2Variant(),
+                "sfx" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExternalAudioResponseModelSourceContextAnyOf1OneOf3Variant(),
+                "song" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExternalAudioResponseModelSourceContextAnyOf1OneOf1Variant(),
                 _ => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExternalAudioResponseModelSourceContextAnyOf1(),
             };
         }

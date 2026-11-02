@@ -52,12 +52,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "api_integration_webhook" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputToolsItemPromptAgentApiModelInputToolsItemOneOf5(),
-                "client" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputToolsItemPromptAgentApiModelInputToolsItemOneOf2(),
-                "mcp" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputToolsItemPromptAgentApiModelInputToolsItemOneOf4(),
-                "smb" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputToolsItemPromptAgentApiModelInputToolsItemOneOf6(),
-                "system" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputToolsItemPromptAgentApiModelInputToolsItemOneOf3(),
-                "webhook" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputToolsItemPromptAgentApiModelInputToolsItemOneOf1(),
+                "api_integration_webhook" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputToolsItemOneOf5Variant(),
+                "client" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputToolsItemOneOf2Variant(),
+                "mcp" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputToolsItemOneOf4Variant(),
+                "smb" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputToolsItemOneOf6Variant(),
+                "system" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputToolsItemOneOf3Variant(),
+                "webhook" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputToolsItemOneOf1Variant(),
                 _ => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputToolsItem(),
             };
         }

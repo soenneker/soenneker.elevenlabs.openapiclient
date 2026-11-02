@@ -51,8 +51,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "alias" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostRulesItemPronunciationDictionaryAliasRuleRequestModel(),
-                "phoneme" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostRulesItemPronunciationDictionaryPhonemeRuleRequestModel(),
+                "alias" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.TaggedAliasVariant03D70EA4F5C0C398(),
+                "phoneme" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.TaggedPhonemeVariantEE10D0A218B14E31(),
                 _ => new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostRulesItem(),
             };
         }

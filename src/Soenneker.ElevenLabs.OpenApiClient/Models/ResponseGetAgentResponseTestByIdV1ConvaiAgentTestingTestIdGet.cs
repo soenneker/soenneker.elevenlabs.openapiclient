@@ -51,9 +51,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "llm" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf1(),
-                "simulation" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf3(),
-                "tool" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf2(),
+                "llm" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf1Variant(),
+                "simulation" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf3Variant(),
+                "tool" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf2Variant(),
                 _ => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGet(),
             };
         }

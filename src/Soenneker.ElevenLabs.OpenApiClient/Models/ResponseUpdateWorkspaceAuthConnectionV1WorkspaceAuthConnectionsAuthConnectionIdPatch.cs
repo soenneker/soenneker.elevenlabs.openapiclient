@@ -52,19 +52,19 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("auth_type")?.GetStringValue();
             return mappingValue switch
             {
-                "api_integration_oauth2_auth_code" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseUpdateWorkspaceAuthConnectionV1WorkspaceAuthConnectionsAuthConnectionIdPatchResponseUpdateWorkspaceAuthConnectionV1WorkspaceAuthConnectionsAuthConnectionIdPatchOneOf9(),
-                "api_integration_oauth2_custom_app" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseUpdateWorkspaceAuthConnectionV1WorkspaceAuthConnectionsAuthConnectionIdPatchResponseUpdateWorkspaceAuthConnectionV1WorkspaceAuthConnectionsAuthConnectionIdPatchOneOf10(),
-                "basic_auth" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseUpdateWorkspaceAuthConnectionV1WorkspaceAuthConnectionsAuthConnectionIdPatchResponseUpdateWorkspaceAuthConnectionV1WorkspaceAuthConnectionsAuthConnectionIdPatchOneOf3(),
-                "bearer_auth" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseUpdateWorkspaceAuthConnectionV1WorkspaceAuthConnectionsAuthConnectionIdPatchResponseUpdateWorkspaceAuthConnectionV1WorkspaceAuthConnectionsAuthConnectionIdPatchOneOf4(),
-                "custom_header_auth" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseUpdateWorkspaceAuthConnectionV1WorkspaceAuthConnectionsAuthConnectionIdPatchResponseUpdateWorkspaceAuthConnectionV1WorkspaceAuthConnectionsAuthConnectionIdPatchOneOf8(),
-                "mtls" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseUpdateWorkspaceAuthConnectionV1WorkspaceAuthConnectionsAuthConnectionIdPatchResponseUpdateWorkspaceAuthConnectionV1WorkspaceAuthConnectionsAuthConnectionIdPatchOneOf7(),
-                "oauth2_client_credentials" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseUpdateWorkspaceAuthConnectionV1WorkspaceAuthConnectionsAuthConnectionIdPatchResponseUpdateWorkspaceAuthConnectionV1WorkspaceAuthConnectionsAuthConnectionIdPatchOneOf1(),
-                "oauth2_jwt" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseUpdateWorkspaceAuthConnectionV1WorkspaceAuthConnectionsAuthConnectionIdPatchResponseUpdateWorkspaceAuthConnectionV1WorkspaceAuthConnectionsAuthConnectionIdPatchOneOf5(),
-                "private_key_jwt" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseUpdateWorkspaceAuthConnectionV1WorkspaceAuthConnectionsAuthConnectionIdPatchResponseUpdateWorkspaceAuthConnectionV1WorkspaceAuthConnectionsAuthConnectionIdPatchOneOf6(),
-                "refresh_token_auth" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseUpdateWorkspaceAuthConnectionV1WorkspaceAuthConnectionsAuthConnectionIdPatchResponseUpdateWorkspaceAuthConnectionV1WorkspaceAuthConnectionsAuthConnectionIdPatchOneOf2(),
-                "slack_bot_auth" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseUpdateWorkspaceAuthConnectionV1WorkspaceAuthConnectionsAuthConnectionIdPatchResponseUpdateWorkspaceAuthConnectionV1WorkspaceAuthConnectionsAuthConnectionIdPatchOneOf12(),
-                "url_secret" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseUpdateWorkspaceAuthConnectionV1WorkspaceAuthConnectionsAuthConnectionIdPatchResponseUpdateWorkspaceAuthConnectionV1WorkspaceAuthConnectionsAuthConnectionIdPatchOneOf13(),
-                "whatsapp_auth" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseUpdateWorkspaceAuthConnectionV1WorkspaceAuthConnectionsAuthConnectionIdPatchResponseUpdateWorkspaceAuthConnectionV1WorkspaceAuthConnectionsAuthConnectionIdPatchOneOf11(),
+                "api_integration_oauth2_auth_code" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.TaggedApiIntegrationOauth2AuthCodeVariantBF6F47B124E9DD7C(),
+                "api_integration_oauth2_custom_app" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.TaggedApiIntegrationOauth2CustomAppVariant3A129B6EAA526ED1(),
+                "basic_auth" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.TaggedBasicAuthVariant0838F3686901A110(),
+                "bearer_auth" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.TaggedBearerAuthVariant740DAB4159F3F8B3(),
+                "custom_header_auth" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.TaggedCustomHeaderAuthVariantE3E344092B04CEB5(),
+                "mtls" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.TaggedMtlsVariantFC86D10FD429656B(),
+                "oauth2_client_credentials" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.TaggedOauth2ClientCredentialsVariantA2BDCF9D801EC881(),
+                "oauth2_jwt" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.TaggedOauth2JwtVariantA55FA382591AA8CA(),
+                "private_key_jwt" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.TaggedPrivateKeyJwtVariant1550CFA6DFF9F514(),
+                "refresh_token_auth" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.TaggedRefreshTokenAuthVariant5459AD1373582F14(),
+                "slack_bot_auth" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.TaggedSlackBotAuthVariant0A0624B4791A684C(),
+                "url_secret" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.TaggedUrlSecretVariant0C4E5C567938B615(),
+                "whatsapp_auth" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.TaggedWhatsappAuthVariant3CC098D2C73CE967(),
                 _ => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseUpdateWorkspaceAuthConnectionV1WorkspaceAuthConnectionsAuthConnectionIdPatch(),
             };
         }

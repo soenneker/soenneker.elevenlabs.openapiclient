@@ -51,8 +51,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "dynamic" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferPostDialDigitsAnyOf1PhoneNumberTransferPostDialDigitsAnyOf1OneOf2(),
-                "static" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferPostDialDigitsAnyOf1PhoneNumberTransferPostDialDigitsAnyOf1OneOf1(),
+                "dynamic" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferPostDialDigitsAnyOf1OneOf2Variant(),
+                "static" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferPostDialDigitsAnyOf1OneOf1Variant(),
                 _ => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferPostDialDigitsAnyOf1(),
             };
         }

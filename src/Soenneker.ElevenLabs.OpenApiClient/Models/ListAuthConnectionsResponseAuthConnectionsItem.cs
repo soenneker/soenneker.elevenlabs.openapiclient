@@ -52,19 +52,19 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("auth_type")?.GetStringValue();
             return mappingValue switch
             {
-                "api_integration_oauth2_auth_code" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ListAuthConnectionsResponseAuthConnectionsItemListAuthConnectionsResponseAuthConnectionsItemOneOf9(),
-                "api_integration_oauth2_custom_app" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ListAuthConnectionsResponseAuthConnectionsItemListAuthConnectionsResponseAuthConnectionsItemOneOf10(),
-                "basic_auth" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ListAuthConnectionsResponseAuthConnectionsItemListAuthConnectionsResponseAuthConnectionsItemOneOf3(),
-                "bearer_auth" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ListAuthConnectionsResponseAuthConnectionsItemListAuthConnectionsResponseAuthConnectionsItemOneOf4(),
-                "custom_header_auth" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ListAuthConnectionsResponseAuthConnectionsItemListAuthConnectionsResponseAuthConnectionsItemOneOf8(),
-                "mtls" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ListAuthConnectionsResponseAuthConnectionsItemListAuthConnectionsResponseAuthConnectionsItemOneOf7(),
-                "oauth2_client_credentials" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ListAuthConnectionsResponseAuthConnectionsItemListAuthConnectionsResponseAuthConnectionsItemOneOf1(),
-                "oauth2_jwt" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ListAuthConnectionsResponseAuthConnectionsItemListAuthConnectionsResponseAuthConnectionsItemOneOf5(),
-                "private_key_jwt" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ListAuthConnectionsResponseAuthConnectionsItemListAuthConnectionsResponseAuthConnectionsItemOneOf6(),
-                "refresh_token_auth" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ListAuthConnectionsResponseAuthConnectionsItemListAuthConnectionsResponseAuthConnectionsItemOneOf2(),
-                "slack_bot_auth" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ListAuthConnectionsResponseAuthConnectionsItemListAuthConnectionsResponseAuthConnectionsItemOneOf12(),
-                "url_secret" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ListAuthConnectionsResponseAuthConnectionsItemListAuthConnectionsResponseAuthConnectionsItemOneOf13(),
-                "whatsapp_auth" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ListAuthConnectionsResponseAuthConnectionsItemListAuthConnectionsResponseAuthConnectionsItemOneOf11(),
+                "api_integration_oauth2_auth_code" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ListAuthConnectionsResponseAuthConnectionsItemOneOf9Variant(),
+                "api_integration_oauth2_custom_app" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ListAuthConnectionsResponseAuthConnectionsItemOneOf10Variant(),
+                "basic_auth" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ListAuthConnectionsResponseAuthConnectionsItemOneOf3Variant(),
+                "bearer_auth" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ListAuthConnectionsResponseAuthConnectionsItemOneOf4Variant(),
+                "custom_header_auth" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ListAuthConnectionsResponseAuthConnectionsItemOneOf8Variant(),
+                "mtls" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ListAuthConnectionsResponseAuthConnectionsItemOneOf7Variant(),
+                "oauth2_client_credentials" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ListAuthConnectionsResponseAuthConnectionsItemOneOf1Variant(),
+                "oauth2_jwt" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ListAuthConnectionsResponseAuthConnectionsItemOneOf5Variant(),
+                "private_key_jwt" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ListAuthConnectionsResponseAuthConnectionsItemOneOf6Variant(),
+                "refresh_token_auth" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ListAuthConnectionsResponseAuthConnectionsItemOneOf2Variant(),
+                "slack_bot_auth" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ListAuthConnectionsResponseAuthConnectionsItemOneOf12Variant(),
+                "url_secret" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ListAuthConnectionsResponseAuthConnectionsItemOneOf13Variant(),
+                "whatsapp_auth" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ListAuthConnectionsResponseAuthConnectionsItemOneOf11Variant(),
                 _ => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ListAuthConnectionsResponseAuthConnectionsItem(),
             };
         }

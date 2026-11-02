@@ -52,7 +52,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return mappingValue switch
             {
                 "dynamic" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferCustomSipHeadersItemCustomSipHeaderWithDynamicVariable(),
-                "static" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferCustomSipHeadersItemPhoneNumberTransferCustomSipHeadersItemOneOf1(),
+                "static" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferCustomSipHeadersItemOneOf1Variant(),
                 _ => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferCustomSipHeadersItem(),
             };
         }

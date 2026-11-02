@@ -52,9 +52,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("preference")?.GetStringValue();
             return mappingValue switch
             {
-                "default" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputBackupLlmConfigPromptAgentApiModelInputBackupLlmConfigOneOf1(),
-                "disabled" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputBackupLlmConfigPromptAgentApiModelInputBackupLlmConfigOneOf2(),
-                "override" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputBackupLlmConfigPromptAgentApiModelInputBackupLlmConfigOneOf3(),
+                "default" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputBackupLlmConfigOneOf1Variant(),
+                "disabled" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputBackupLlmConfigOneOf2Variant(),
+                "override" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputBackupLlmConfigOneOf3Variant(),
                 _ => new global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputBackupLlmConfig(),
             };
         }

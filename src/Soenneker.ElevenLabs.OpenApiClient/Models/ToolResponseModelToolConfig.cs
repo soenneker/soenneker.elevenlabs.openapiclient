@@ -52,10 +52,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "client" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModelToolConfigToolResponseModelToolConfigOneOf2(),
-                "mcp" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModelToolConfigToolResponseModelToolConfigOneOf4(),
-                "system" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModelToolConfigToolResponseModelToolConfigOneOf3(),
-                "webhook" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModelToolConfigToolResponseModelToolConfigOneOf1(),
+                "client" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModelToolConfigOneOf2Variant(),
+                "mcp" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModelToolConfigOneOf4Variant(),
+                "system" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModelToolConfigOneOf3Variant(),
+                "webhook" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModelToolConfigOneOf1Variant(),
                 _ => new global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModelToolConfig(),
             };
         }
