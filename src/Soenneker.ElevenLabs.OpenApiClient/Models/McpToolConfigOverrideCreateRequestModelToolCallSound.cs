@@ -52,6 +52,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             }
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool? matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? (bool?)null : (bool?)false;
+            int matchingUnionBranches = 0;
+            if (matchesUnionBranch0 != false) matchingUnionBranches++;
+            bool noSelectedUnionBranch = result.McpToolConfigOverrideCreateRequestModelToolCallSoundAnyOf2 == null && result.McpToolConfigOverrideCreateRequestModelToolCallSoundMember1 == null && result.ToolCallSoundType == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 == true && matchingUnionBranches == 1) result.McpToolConfigOverrideCreateRequestModelToolCallSoundMember1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideCreateRequestModelToolCallSoundMember1(), parseNode);
             if (result.McpToolConfigOverrideCreateRequestModelToolCallSoundAnyOf2 == null && result.McpToolConfigOverrideCreateRequestModelToolCallSoundMember1 == null && result.ToolCallSoundType == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
