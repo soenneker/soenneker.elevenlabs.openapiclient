@@ -34,8 +34,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>End of the time range as a Unix timestamp in milliseconds.</summary>
-        public int? EndTime { get => _explicitNullValueEndTime; set { _explicitNullValueEndTime = value; AdditionalData?.Remove("end_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_time"); else _explicitNullProperties?.Remove("end_time"); } }
-        private int? _explicitNullValueEndTime = default!;
+        public long? EndTime { get => _explicitNullValueEndTime; set { _explicitNullValueEndTime = value; AdditionalData?.Remove("end_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_time"); else _explicitNullProperties?.Remove("end_time"); } }
+        private long? _explicitNullValueEndTime = default!;
         /// <summary>The filters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -60,11 +60,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         private string _explicitNullValueSearch = default!;
 #endif
         /// <summary>Optional timestamp sort direction. If omitted, defaults to desc when end_time is provided, otherwise asc.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyListApiRequestsV1WorkspaceAnalyticsRequestsPostSort? Sort { get => _explicitNullValueSort; set { _explicitNullValueSort = value; AdditionalData?.Remove("sort"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort"); else _explicitNullProperties?.Remove("sort"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyListApiRequestsV1WorkspaceAnalyticsRequestsPostSort? _explicitNullValueSort = default!;
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyListApiRequestsV1WorkspaceAnalyticsRequestsPostSort Sort { get => _explicitNullValueSort; set { _explicitNullValueSort = value; AdditionalData?.Remove("sort"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort"); else _explicitNullProperties?.Remove("sort"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyListApiRequestsV1WorkspaceAnalyticsRequestsPostSort _explicitNullValueSort = default!;
+#endif
         /// <summary>Start of the time range as a Unix timestamp in milliseconds.</summary>
-        public int? StartTime { get => _explicitNullValueStartTime; set { _explicitNullValueStartTime = value; AdditionalData?.Remove("start_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_time"); else _explicitNullProperties?.Remove("start_time"); } }
-        private int? _explicitNullValueStartTime = default!;
+        public long? StartTime { get => _explicitNullValueStartTime; set { _explicitNullValueStartTime = value; AdditionalData?.Remove("start_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_time"); else _explicitNullProperties?.Remove("start_time"); } }
+        private long? _explicitNullValueStartTime = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyListApiRequestsV1WorkspaceAnalyticsRequestsPost"/> and sets the default values.
         /// </summary>
@@ -91,12 +98,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "end_time", n => { EndTime = n.GetIntValue(); } },
+                { "end_time", n => { EndTime = n.GetLongValue(); } },
                 { "filters", n => { Filters = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ColumnFilter>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ColumnFilter.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "limit", n => { Limit = n.GetIntValue(); } },
                 { "search", n => { Search = n.GetStringValue(); } },
-                { "sort", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyListApiRequestsV1WorkspaceAnalyticsRequestsPostSort>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSort = default; _explicitNullProperties?.Remove("sort"); AdditionalData["sort"] = unknown; } else { Sort = parsed; AdditionalData.Remove("sort"); } } },
-                { "start_time", n => { StartTime = n.GetIntValue(); } },
+                { "sort", n => { Sort = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyListApiRequestsV1WorkspaceAnalyticsRequestsPostSort>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyListApiRequestsV1WorkspaceAnalyticsRequestsPostSort.CreateFromDiscriminatorValue); } },
+                { "start_time", n => { StartTime = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -106,12 +113,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("end_time", EndTime);
+            writer.WriteLongValue("end_time", EndTime);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ColumnFilter>("filters", Filters);
             writer.WriteIntValue("limit", Limit);
             writer.WriteStringValue("search", Search);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyListApiRequestsV1WorkspaceAnalyticsRequestsPostSort>("sort", Sort);
-            writer.WriteIntValue("start_time", StartTime);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyListApiRequestsV1WorkspaceAnalyticsRequestsPostSort>("sort", Sort);
+            writer.WriteLongValue("start_time", StartTime);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

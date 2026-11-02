@@ -91,12 +91,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Definition for a custom LLM if LLM field is set to &apos;CUSTOM_LLM&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlm? CustomLlm { get => _explicitNullValueCustomLlm; set { _explicitNullValueCustomLlm = value; AdditionalData?.Remove("custom_llm"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_llm"); else _explicitNullProperties?.Remove("custom_llm"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlm? _explicitNullValueCustomLlm = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputCustomLlm? CustomLlm { get => _explicitNullValueCustomLlm; set { _explicitNullValueCustomLlm = value; AdditionalData?.Remove("custom_llm"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_llm"); else _explicitNullProperties?.Remove("custom_llm"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputCustomLlm? _explicitNullValueCustomLlm = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlm CustomLlm { get => _explicitNullValueCustomLlm; set { _explicitNullValueCustomLlm = value; AdditionalData?.Remove("custom_llm"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_llm"); else _explicitNullProperties?.Remove("custom_llm"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlm _explicitNullValueCustomLlm = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputCustomLlm CustomLlm { get => _explicitNullValueCustomLlm; set { _explicitNullValueCustomLlm = value; AdditionalData?.Remove("custom_llm"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_llm"); else _explicitNullProperties?.Remove("custom_llm"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputCustomLlm _explicitNullValueCustomLlm = default!;
 #endif
         /// <summary>Enable parallel tool calling. When enabled, the agent can execute multiple tools in parallel within a single turn. Not supported by all models.</summary>
         public bool? EnableParallelToolCalls { get => _explicitNullValueEnableParallelToolCalls; set { _explicitNullValueEnableParallelToolCalls = value; AdditionalData?.Remove("enable_parallel_tool_calls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enable_parallel_tool_calls"); else _explicitNullProperties?.Remove("enable_parallel_tool_calls"); } }
@@ -244,7 +244,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "backup_llm_config", n => { BackupLlmConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputBackupLlmConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputBackupLlmConfig.CreateFromDiscriminatorValue); } },
                 { "built_in_tools", n => { BuiltInTools = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutput.CreateFromDiscriminatorValue); } },
                 { "cascade_timeout_seconds", n => { CascadeTimeoutSeconds = n.GetDoubleValue(); } },
-                { "custom_llm", n => { CustomLlm = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlm>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlm.CreateFromDiscriminatorValue); } },
+                { "custom_llm", n => { CustomLlm = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputCustomLlm>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputCustomLlm.CreateFromDiscriminatorValue); } },
                 { "enable_parallel_tool_calls", n => { EnableParallelToolCalls = n.GetBoolValue(); } },
                 { "enable_reasoning_summary", n => { EnableReasoningSummary = n.GetBoolValue(); } },
                 { "ignore_default_personality", n => { IgnoreDefaultPersonality = n.GetBoolValue(); } },
@@ -275,7 +275,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputBackupLlmConfig>("backup_llm_config", BackupLlmConfig);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutput>("built_in_tools", BuiltInTools);
             writer.WriteDoubleValue("cascade_timeout_seconds", CascadeTimeoutSeconds);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlm>("custom_llm", CustomLlm);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputCustomLlm>("custom_llm", CustomLlm);
             writer.WriteBoolValue("enable_parallel_tool_calls", EnableParallelToolCalls);
             writer.WriteBoolValue("enable_reasoning_summary", EnableReasoningSummary);
             writer.WriteBoolValue("ignore_default_personality", IgnoreDefaultPersonality);

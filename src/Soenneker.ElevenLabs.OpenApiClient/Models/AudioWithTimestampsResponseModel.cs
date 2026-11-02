@@ -30,12 +30,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Timestamp information for each character in the original text</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentResponseModel? Alignment { get => _explicitNullValueAlignment; set { _explicitNullValueAlignment = value; AdditionalData?.Remove("alignment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alignment"); else _explicitNullProperties?.Remove("alignment"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentResponseModel? _explicitNullValueAlignment = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioWithTimestampsAndVoiceSegmentsResponseModelAlignment? Alignment { get => _explicitNullValueAlignment; set { _explicitNullValueAlignment = value; AdditionalData?.Remove("alignment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alignment"); else _explicitNullProperties?.Remove("alignment"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioWithTimestampsAndVoiceSegmentsResponseModelAlignment? _explicitNullValueAlignment = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentResponseModel Alignment { get => _explicitNullValueAlignment; set { _explicitNullValueAlignment = value; AdditionalData?.Remove("alignment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alignment"); else _explicitNullProperties?.Remove("alignment"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentResponseModel _explicitNullValueAlignment = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioWithTimestampsAndVoiceSegmentsResponseModelAlignment Alignment { get => _explicitNullValueAlignment; set { _explicitNullValueAlignment = value; AdditionalData?.Remove("alignment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alignment"); else _explicitNullProperties?.Remove("alignment"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioWithTimestampsAndVoiceSegmentsResponseModelAlignment _explicitNullValueAlignment = default!;
 #endif
         /// <summary>Base64 encoded audio data</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -50,12 +50,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Timestamp information for each character in the normalized text</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentResponseModel? NormalizedAlignment { get => _explicitNullValueNormalizedAlignment; set { _explicitNullValueNormalizedAlignment = value; AdditionalData?.Remove("normalized_alignment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("normalized_alignment"); else _explicitNullProperties?.Remove("normalized_alignment"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentResponseModel? _explicitNullValueNormalizedAlignment = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioWithTimestampsAndVoiceSegmentsResponseModelNormalizedAlignment? NormalizedAlignment { get => _explicitNullValueNormalizedAlignment; set { _explicitNullValueNormalizedAlignment = value; AdditionalData?.Remove("normalized_alignment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("normalized_alignment"); else _explicitNullProperties?.Remove("normalized_alignment"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioWithTimestampsAndVoiceSegmentsResponseModelNormalizedAlignment? _explicitNullValueNormalizedAlignment = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentResponseModel NormalizedAlignment { get => _explicitNullValueNormalizedAlignment; set { _explicitNullValueNormalizedAlignment = value; AdditionalData?.Remove("normalized_alignment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("normalized_alignment"); else _explicitNullProperties?.Remove("normalized_alignment"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentResponseModel _explicitNullValueNormalizedAlignment = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioWithTimestampsAndVoiceSegmentsResponseModelNormalizedAlignment NormalizedAlignment { get => _explicitNullValueNormalizedAlignment; set { _explicitNullValueNormalizedAlignment = value; AdditionalData?.Remove("normalized_alignment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("normalized_alignment"); else _explicitNullProperties?.Remove("normalized_alignment"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioWithTimestampsAndVoiceSegmentsResponseModelNormalizedAlignment _explicitNullValueNormalizedAlignment = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioWithTimestampsResponseModel"/> and sets the default values.
@@ -82,9 +82,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "alignment", n => { Alignment = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentResponseModel.CreateFromDiscriminatorValue); } },
+                { "alignment", n => { Alignment = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioWithTimestampsAndVoiceSegmentsResponseModelAlignment>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioWithTimestampsAndVoiceSegmentsResponseModelAlignment.CreateFromDiscriminatorValue); } },
                 { "audio_base64", n => { AudioBase64 = n.GetStringValue(); } },
-                { "normalized_alignment", n => { NormalizedAlignment = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentResponseModel.CreateFromDiscriminatorValue); } },
+                { "normalized_alignment", n => { NormalizedAlignment = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioWithTimestampsAndVoiceSegmentsResponseModelNormalizedAlignment>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioWithTimestampsAndVoiceSegmentsResponseModelNormalizedAlignment.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -94,9 +94,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentResponseModel>("alignment", Alignment);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioWithTimestampsAndVoiceSegmentsResponseModelAlignment>("alignment", Alignment);
             writer.WriteStringValue("audio_base64", AudioBase64);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentResponseModel>("normalized_alignment", NormalizedAlignment);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioWithTimestampsAndVoiceSegmentsResponseModelNormalizedAlignment>("normalized_alignment", NormalizedAlignment);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

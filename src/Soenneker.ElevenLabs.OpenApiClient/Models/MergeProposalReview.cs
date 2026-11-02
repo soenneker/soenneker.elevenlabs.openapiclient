@@ -42,8 +42,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         private string _explicitNullValueComment = default!;
 #endif
         /// <summary>The reviewer_role property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.MergeProposalReviewReviewerRole? ReviewerRole { get => _explicitNullValueReviewerRole; set { _explicitNullValueReviewerRole = value; AdditionalData?.Remove("reviewer_role"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reviewer_role"); else _explicitNullProperties?.Remove("reviewer_role"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.MergeProposalReviewReviewerRole? _explicitNullValueReviewerRole = default!;
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MergeProposalReviewReviewerRole ReviewerRole { get => _explicitNullValueReviewerRole; set { _explicitNullValueReviewerRole = value; AdditionalData?.Remove("reviewer_role"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reviewer_role"); else _explicitNullProperties?.Remove("reviewer_role"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.MergeProposalReviewReviewerRole _explicitNullValueReviewerRole = default!;
+#endif
         /// <summary>The state property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.MergeProposalReviewState? State { get => _explicitNullValueState; set { _explicitNullValueState = value; AdditionalData?.Remove("state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.MergeProposalReviewState? _explicitNullValueState = default!;
@@ -86,7 +93,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "comment", n => { Comment = n.GetStringValue(); } },
-                { "reviewer_role", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MergeProposalReviewReviewerRole>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueReviewerRole = default; _explicitNullProperties?.Remove("reviewer_role"); AdditionalData["reviewer_role"] = unknown; } else { ReviewerRole = parsed; AdditionalData.Remove("reviewer_role"); } } },
+                { "reviewer_role", n => { ReviewerRole = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MergeProposalReviewReviewerRole>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MergeProposalReviewReviewerRole.CreateFromDiscriminatorValue); } },
                 { "state", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MergeProposalReviewState>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueState = default; _explicitNullProperties?.Remove("state"); AdditionalData["state"] = unknown; } else { State = parsed; AdditionalData.Remove("state"); } } },
                 { "submitted_at", n => { SubmittedAt = n.GetIntValue(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
@@ -100,7 +107,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("comment", Comment);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MergeProposalReviewReviewerRole>("reviewer_role", ReviewerRole);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MergeProposalReviewReviewerRole>("reviewer_role", ReviewerRole);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MergeProposalReviewState>("state", State);
             writer.WriteIntValue("submitted_at", SubmittedAt);
             writer.WriteStringValue("user_id", UserId);

@@ -79,12 +79,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Optional source to extract the section from. Used for inpainting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SectionSource? SourceFrom { get => _explicitNullValueSourceFrom; set { _explicitNullValueSourceFrom = value; AdditionalData?.Remove("source_from"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_from"); else _explicitNullProperties?.Remove("source_from"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SectionSource? _explicitNullValueSourceFrom = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SongSectionSourceFrom? SourceFrom { get => _explicitNullValueSourceFrom; set { _explicitNullValueSourceFrom = value; AdditionalData?.Remove("source_from"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_from"); else _explicitNullProperties?.Remove("source_from"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SongSectionSourceFrom? _explicitNullValueSourceFrom = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SectionSource SourceFrom { get => _explicitNullValueSourceFrom; set { _explicitNullValueSourceFrom = value; AdditionalData?.Remove("source_from"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_from"); else _explicitNullProperties?.Remove("source_from"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SectionSource _explicitNullValueSourceFrom = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SongSectionSourceFrom SourceFrom { get => _explicitNullValueSourceFrom; set { _explicitNullValueSourceFrom = value; AdditionalData?.Remove("source_from"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_from"); else _explicitNullProperties?.Remove("source_from"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SongSectionSourceFrom _explicitNullValueSourceFrom = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SongSection"/> and sets the default values.
@@ -116,7 +116,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "negative_local_styles", n => { NegativeLocalStyles = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "positive_local_styles", n => { PositiveLocalStyles = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "section_name", n => { SectionName = n.GetStringValue(); } },
-                { "source_from", n => { SourceFrom = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SectionSource>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SectionSource.CreateFromDiscriminatorValue); } },
+                { "source_from", n => { SourceFrom = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SongSectionSourceFrom>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SongSectionSourceFrom.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -131,7 +131,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("negative_local_styles", NegativeLocalStyles);
             writer.WriteCollectionOfPrimitiveValues<string>("positive_local_styles", PositiveLocalStyles);
             writer.WriteStringValue("section_name", SectionName);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SectionSource>("source_from", SourceFrom);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SongSectionSourceFrom>("source_from", SourceFrom);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

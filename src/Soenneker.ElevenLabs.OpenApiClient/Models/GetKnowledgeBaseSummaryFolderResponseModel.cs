@@ -62,12 +62,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The auto_sync_info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoSyncInfo? AutoSyncInfo { get => _explicitNullValueAutoSyncInfo; set { _explicitNullValueAutoSyncInfo = value; AdditionalData?.Remove("auto_sync_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_sync_info"); else _explicitNullProperties?.Remove("auto_sync_info"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoSyncInfo? _explicitNullValueAutoSyncInfo = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelAutoSyncInfo? AutoSyncInfo { get => _explicitNullValueAutoSyncInfo; set { _explicitNullValueAutoSyncInfo = value; AdditionalData?.Remove("auto_sync_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_sync_info"); else _explicitNullProperties?.Remove("auto_sync_info"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelAutoSyncInfo? _explicitNullValueAutoSyncInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoSyncInfo AutoSyncInfo { get => _explicitNullValueAutoSyncInfo; set { _explicitNullValueAutoSyncInfo = value; AdditionalData?.Remove("auto_sync_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_sync_info"); else _explicitNullProperties?.Remove("auto_sync_info"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoSyncInfo _explicitNullValueAutoSyncInfo = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelAutoSyncInfo AutoSyncInfo { get => _explicitNullValueAutoSyncInfo; set { _explicitNullValueAutoSyncInfo = value; AdditionalData?.Remove("auto_sync_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_sync_info"); else _explicitNullProperties?.Remove("auto_sync_info"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelAutoSyncInfo _explicitNullValueAutoSyncInfo = default!;
 #endif
         /// <summary>The children_count property</summary>
         public int? ChildrenCount { get => _explicitNullValueChildrenCount; set { _explicitNullValueChildrenCount = value; AdditionalData?.Remove("children_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("children_count"); else _explicitNullProperties?.Remove("children_count"); } }
@@ -86,15 +86,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Number of non-folder documents anywhere in this folder&apos;s subtree (recursive). Counting stops past 1000;</summary>
         public int? DocumentCount { get => _explicitNullValueDocumentCount; set { _explicitNullValueDocumentCount = value; AdditionalData?.Remove("document_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_count"); else _explicitNullProperties?.Remove("document_count"); } }
         private int? _explicitNullValueDocumentCount = default!;
-        /// <summary>The external_sync_info property</summary>
+        /// <summary>Metadata for a KB folder that mirrors an external source folder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalFolderSyncInfo? ExternalSyncInfo { get => _explicitNullValueExternalSyncInfo; set { _explicitNullValueExternalSyncInfo = value; AdditionalData?.Remove("external_sync_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_sync_info"); else _explicitNullProperties?.Remove("external_sync_info"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalFolderSyncInfo? _explicitNullValueExternalSyncInfo = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFolderResponseModelExternalSyncInfo? ExternalSyncInfo { get => _explicitNullValueExternalSyncInfo; set { _explicitNullValueExternalSyncInfo = value; AdditionalData?.Remove("external_sync_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_sync_info"); else _explicitNullProperties?.Remove("external_sync_info"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFolderResponseModelExternalSyncInfo? _explicitNullValueExternalSyncInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalFolderSyncInfo ExternalSyncInfo { get => _explicitNullValueExternalSyncInfo; set { _explicitNullValueExternalSyncInfo = value; AdditionalData?.Remove("external_sync_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_sync_info"); else _explicitNullProperties?.Remove("external_sync_info"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalFolderSyncInfo _explicitNullValueExternalSyncInfo = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFolderResponseModelExternalSyncInfo ExternalSyncInfo { get => _explicitNullValueExternalSyncInfo; set { _explicitNullValueExternalSyncInfo = value; AdditionalData?.Remove("external_sync_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_sync_info"); else _explicitNullProperties?.Remove("external_sync_info"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFolderResponseModelExternalSyncInfo _explicitNullValueExternalSyncInfo = default!;
 #endif
         /// <summary>The ID of the parent folder, or null if the document is at the root level.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -189,11 +189,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "access_info", n => { AccessInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo.CreateFromDiscriminatorValue); } },
-                { "auto_sync_info", n => { AutoSyncInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoSyncInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoSyncInfo.CreateFromDiscriminatorValue); } },
+                { "auto_sync_info", n => { AutoSyncInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelAutoSyncInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelAutoSyncInfo.CreateFromDiscriminatorValue); } },
                 { "children_count", n => { ChildrenCount = n.GetIntValue(); } },
                 { "dependent_agents", n => { DependentAgents = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFolderResponseModelDependentAgentsItem>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFolderResponseModelDependentAgentsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "document_count", n => { DocumentCount = n.GetIntValue(); } },
-                { "external_sync_info", n => { ExternalSyncInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalFolderSyncInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalFolderSyncInfo.CreateFromDiscriminatorValue); } },
+                { "external_sync_info", n => { ExternalSyncInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFolderResponseModelExternalSyncInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFolderResponseModelExternalSyncInfo.CreateFromDiscriminatorValue); } },
                 { "folder_parent_id", n => { FolderParentId = n.GetStringValue(); } },
                 { "folder_path", n => { FolderPath = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseFolderPathSegmentSummaryResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseFolderPathSegmentSummaryResponseModel.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -212,11 +212,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo>("access_info", AccessInfo);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoSyncInfo>("auto_sync_info", AutoSyncInfo);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelAutoSyncInfo>("auto_sync_info", AutoSyncInfo);
             writer.WriteIntValue("children_count", ChildrenCount);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFolderResponseModelDependentAgentsItem>("dependent_agents", DependentAgents);
             writer.WriteIntValue("document_count", DocumentCount);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalFolderSyncInfo>("external_sync_info", ExternalSyncInfo);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFolderResponseModelExternalSyncInfo>("external_sync_info", ExternalSyncInfo);
             writer.WriteStringValue("folder_parent_id", FolderParentId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseFolderPathSegmentSummaryResponseModel>("folder_path", FolderPath);
             writer.WriteStringValue("id", Id);

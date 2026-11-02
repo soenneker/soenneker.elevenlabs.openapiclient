@@ -62,12 +62,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Configure DTMF (keypad) input collection during phone calls</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DtmfInputConfig? DtmfInputSettings { get => _explicitNullValueDtmfInputSettings; set { _explicitNullValueDtmfInputSettings = value; AdditionalData?.Remove("dtmf_input_settings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dtmf_input_settings"); else _explicitNullProperties?.Remove("dtmf_input_settings"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DtmfInputConfig? _explicitNullValueDtmfInputSettings = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigInputDtmfInputSettings? DtmfInputSettings { get => _explicitNullValueDtmfInputSettings; set { _explicitNullValueDtmfInputSettings = value; AdditionalData?.Remove("dtmf_input_settings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dtmf_input_settings"); else _explicitNullProperties?.Remove("dtmf_input_settings"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigInputDtmfInputSettings? _explicitNullValueDtmfInputSettings = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DtmfInputConfig DtmfInputSettings { get => _explicitNullValueDtmfInputSettings; set { _explicitNullValueDtmfInputSettings = value; AdditionalData?.Remove("dtmf_input_settings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dtmf_input_settings"); else _explicitNullProperties?.Remove("dtmf_input_settings"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DtmfInputConfig _explicitNullValueDtmfInputSettings = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigInputDtmfInputSettings DtmfInputSettings { get => _explicitNullValueDtmfInputSettings; set { _explicitNullValueDtmfInputSettings = value; AdditionalData?.Remove("dtmf_input_settings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dtmf_input_settings"); else _explicitNullProperties?.Remove("dtmf_input_settings"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigInputDtmfInputSettings _explicitNullValueDtmfInputSettings = default!;
 #endif
         /// <summary>Configuration for file input (image/PDF uploads) during conversations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -132,7 +132,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "background_sound", n => { BackgroundSound = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BackgroundSoundConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BackgroundSoundConfig.CreateFromDiscriminatorValue); } },
                 { "client_events", n => { ClientEvents = n.GetCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientEvent>()?.AsList(); } },
-                { "dtmf_input_settings", n => { DtmfInputSettings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DtmfInputConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DtmfInputConfig.CreateFromDiscriminatorValue); } },
+                { "dtmf_input_settings", n => { DtmfInputSettings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigInputDtmfInputSettings>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigInputDtmfInputSettings.CreateFromDiscriminatorValue); } },
                 { "file_input", n => { FileInput = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FileInputConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FileInputConfig.CreateFromDiscriminatorValue); } },
                 { "max_duration_seconds", n => { MaxDurationSeconds = n.GetIntValue(); } },
                 { "monitoring_enabled", n => { MonitoringEnabled = n.GetBoolValue(); } },
@@ -150,7 +150,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BackgroundSoundConfig>("background_sound", BackgroundSound);
             writer.WriteCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientEvent>("client_events", ClientEvents);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DtmfInputConfig>("dtmf_input_settings", DtmfInputSettings);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigInputDtmfInputSettings>("dtmf_input_settings", DtmfInputSettings);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FileInputConfig>("file_input", FileInput);
             writer.WriteIntValue("max_duration_seconds", MaxDurationSeconds);
             writer.WriteBoolValue("monitoring_enabled", MonitoringEnabled);

@@ -68,22 +68,22 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Agent-level alerting configuration overriding workspace settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettingsResponse? Alerting { get => _explicitNullValueAlerting; set { _explicitNullValueAlerting = value; AdditionalData?.Remove("alerting"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alerting"); else _explicitNullProperties?.Remove("alerting"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettingsResponse? _explicitNullValueAlerting = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModelAlerting? Alerting { get => _explicitNullValueAlerting; set { _explicitNullValueAlerting = value; AdditionalData?.Remove("alerting"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alerting"); else _explicitNullProperties?.Remove("alerting"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModelAlerting? _explicitNullValueAlerting = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettingsResponse Alerting { get => _explicitNullValueAlerting; set { _explicitNullValueAlerting = value; AdditionalData?.Remove("alerting"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alerting"); else _explicitNullProperties?.Remove("alerting"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettingsResponse _explicitNullValueAlerting = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModelAlerting Alerting { get => _explicitNullValueAlerting; set { _explicitNullValueAlerting = value; AdditionalData?.Remove("alerting"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alerting"); else _explicitNullProperties?.Remove("alerting"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModelAlerting _explicitNullValueAlerting = default!;
 #endif
         /// <summary>Evaluation + data-collection items attached by reference. None means the agent has not been migrated onto analysis items yet (distinct from an empty, migrated set); reads fall back to the legacy evaluation/data_collection fields in that case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAnalysisItemsOutput? AnalysisItems { get => _explicitNullValueAnalysisItems; set { _explicitNullValueAnalysisItems = value; AdditionalData?.Remove("analysis_items"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analysis_items"); else _explicitNullProperties?.Remove("analysis_items"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAnalysisItemsOutput? _explicitNullValueAnalysisItems = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModelAnalysisItems? AnalysisItems { get => _explicitNullValueAnalysisItems; set { _explicitNullValueAnalysisItems = value; AdditionalData?.Remove("analysis_items"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analysis_items"); else _explicitNullProperties?.Remove("analysis_items"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModelAnalysisItems? _explicitNullValueAnalysisItems = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAnalysisItemsOutput AnalysisItems { get => _explicitNullValueAnalysisItems; set { _explicitNullValueAnalysisItems = value; AdditionalData?.Remove("analysis_items"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analysis_items"); else _explicitNullProperties?.Remove("analysis_items"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAnalysisItemsOutput _explicitNullValueAnalysisItems = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModelAnalysisItems AnalysisItems { get => _explicitNullValueAnalysisItems; set { _explicitNullValueAnalysisItems = value; AdditionalData?.Remove("analysis_items"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analysis_items"); else _explicitNullProperties?.Remove("analysis_items"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModelAnalysisItems _explicitNullValueAnalysisItems = default!;
 #endif
         /// <summary>The analysis_llm property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm? AnalysisLlm { get => _explicitNullValueAnalysisLlm; set { _explicitNullValueAnalysisLlm = value; AdditionalData?.Remove("analysis_llm"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analysis_llm"); else _explicitNullProperties?.Remove("analysis_llm"); } }
@@ -284,8 +284,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "alerting", n => { Alerting = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettingsResponse>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettingsResponse.CreateFromDiscriminatorValue); } },
-                { "analysis_items", n => { AnalysisItems = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAnalysisItemsOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAnalysisItemsOutput.CreateFromDiscriminatorValue); } },
+                { "alerting", n => { Alerting = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModelAlerting>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModelAlerting.CreateFromDiscriminatorValue); } },
+                { "analysis_items", n => { AnalysisItems = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModelAnalysisItems>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModelAnalysisItems.CreateFromDiscriminatorValue); } },
                 { "analysis_llm", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAnalysisLlm = default; _explicitNullProperties?.Remove("analysis_llm"); AdditionalData["analysis_llm"] = unknown; } else { AnalysisLlm = parsed; AdditionalData.Remove("analysis_llm"); } } },
                 { "archived", n => { Archived = n.GetBoolValue(); } },
                 { "auth", n => { Auth = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthSettings>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthSettings.CreateFromDiscriminatorValue); } },
@@ -315,8 +315,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettingsResponse>("alerting", Alerting);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAnalysisItemsOutput>("analysis_items", AnalysisItems);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModelAlerting>("alerting", Alerting);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModelAnalysisItems>("analysis_items", AnalysisItems);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm>("analysis_llm", AnalysisLlm);
             writer.WriteBoolValue("archived", Archived);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthSettings>("auth", Auth);

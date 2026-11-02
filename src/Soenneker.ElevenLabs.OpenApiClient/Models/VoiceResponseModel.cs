@@ -115,12 +115,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Fine-tuning information for the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModel? FineTuning { get => _explicitNullValueFineTuning; set { _explicitNullValueFineTuning = value; AdditionalData?.Remove("fine_tuning"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fine_tuning"); else _explicitNullProperties?.Remove("fine_tuning"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModel? _explicitNullValueFineTuning = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelFineTuning? FineTuning { get => _explicitNullValueFineTuning; set { _explicitNullValueFineTuning = value; AdditionalData?.Remove("fine_tuning"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fine_tuning"); else _explicitNullProperties?.Remove("fine_tuning"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelFineTuning? _explicitNullValueFineTuning = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModel FineTuning { get => _explicitNullValueFineTuning; set { _explicitNullValueFineTuning = value; AdditionalData?.Remove("fine_tuning"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fine_tuning"); else _explicitNullProperties?.Remove("fine_tuning"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModel _explicitNullValueFineTuning = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelFineTuning FineTuning { get => _explicitNullValueFineTuning; set { _explicitNullValueFineTuning = value; AdditionalData?.Remove("fine_tuning"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fine_tuning"); else _explicitNullProperties?.Remove("fine_tuning"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelFineTuning _explicitNullValueFineTuning = default!;
 #endif
         /// <summary>The base model IDs for high-quality voices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -145,8 +145,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public bool? IsOwner { get => _explicitNullValueIsOwner; set { _explicitNullValueIsOwner = value; AdditionalData?.Remove("is_owner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_owner"); else _explicitNullProperties?.Remove("is_owner"); } }
         private bool? _explicitNullValueIsOwner = default!;
         /// <summary>The review pipeline status of the voice.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelLabellingStatus? LabellingStatus { get => _explicitNullValueLabellingStatus; set { _explicitNullValueLabellingStatus = value; AdditionalData?.Remove("labelling_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("labelling_status"); else _explicitNullProperties?.Remove("labelling_status"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelLabellingStatus? _explicitNullValueLabellingStatus = default!;
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelLabellingStatus LabellingStatus { get => _explicitNullValueLabellingStatus; set { _explicitNullValueLabellingStatus = value; AdditionalData?.Remove("labelling_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("labelling_status"); else _explicitNullProperties?.Remove("labelling_status"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelLabellingStatus _explicitNullValueLabellingStatus = default!;
+#endif
         /// <summary>Labels associated with the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -188,8 +195,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         private string _explicitNullValuePreviewUrl = default!;
 #endif
         /// <summary>The recording quality of the voice as determined by the review pipeline.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelRecordingQuality? RecordingQuality { get => _explicitNullValueRecordingQuality; set { _explicitNullValueRecordingQuality = value; AdditionalData?.Remove("recording_quality"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recording_quality"); else _explicitNullProperties?.Remove("recording_quality"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelRecordingQuality? _explicitNullValueRecordingQuality = default!;
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelRecordingQuality RecordingQuality { get => _explicitNullValueRecordingQuality; set { _explicitNullValueRecordingQuality = value; AdditionalData?.Remove("recording_quality"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recording_quality"); else _explicitNullProperties?.Remove("recording_quality"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelRecordingQuality _explicitNullValueRecordingQuality = default!;
+#endif
         /// <summary>The reason for the recording quality assessment, as determined by the review pipeline.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -201,8 +215,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         private string _explicitNullValueRecordingQualityReason = default!;
 #endif
         /// <summary>The safety controls of the voice.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelSafetyControl? SafetyControl { get => _explicitNullValueSafetyControl; set { _explicitNullValueSafetyControl = value; AdditionalData?.Remove("safety_control"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("safety_control"); else _explicitNullProperties?.Remove("safety_control"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelSafetyControl? _explicitNullValueSafetyControl = default!;
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelSafetyControl SafetyControl { get => _explicitNullValueSafetyControl; set { _explicitNullValueSafetyControl = value; AdditionalData?.Remove("safety_control"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("safety_control"); else _explicitNullProperties?.Remove("safety_control"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelSafetyControl _explicitNullValueSafetyControl = default!;
+#endif
         /// <summary>List of samples associated with the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -216,22 +237,22 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The settings of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettingsResponseModel? Settings { get => _explicitNullValueSettings; set { _explicitNullValueSettings = value; AdditionalData?.Remove("settings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("settings"); else _explicitNullProperties?.Remove("settings"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettingsResponseModel? _explicitNullValueSettings = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelSettings? Settings { get => _explicitNullValueSettings; set { _explicitNullValueSettings = value; AdditionalData?.Remove("settings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("settings"); else _explicitNullProperties?.Remove("settings"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelSettings? _explicitNullValueSettings = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettingsResponseModel Settings { get => _explicitNullValueSettings; set { _explicitNullValueSettings = value; AdditionalData?.Remove("settings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("settings"); else _explicitNullProperties?.Remove("settings"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettingsResponseModel _explicitNullValueSettings = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelSettings Settings { get => _explicitNullValueSettings; set { _explicitNullValueSettings = value; AdditionalData?.Remove("settings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("settings"); else _explicitNullProperties?.Remove("settings"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelSettings _explicitNullValueSettings = default!;
 #endif
         /// <summary>The sharing information of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingResponseModel? Sharing { get => _explicitNullValueSharing; set { _explicitNullValueSharing = value; AdditionalData?.Remove("sharing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sharing"); else _explicitNullProperties?.Remove("sharing"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingResponseModel? _explicitNullValueSharing = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelSharing? Sharing { get => _explicitNullValueSharing; set { _explicitNullValueSharing = value; AdditionalData?.Remove("sharing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sharing"); else _explicitNullProperties?.Remove("sharing"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelSharing? _explicitNullValueSharing = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingResponseModel Sharing { get => _explicitNullValueSharing; set { _explicitNullValueSharing = value; AdditionalData?.Remove("sharing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sharing"); else _explicitNullProperties?.Remove("sharing"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingResponseModel _explicitNullValueSharing = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelSharing Sharing { get => _explicitNullValueSharing; set { _explicitNullValueSharing = value; AdditionalData?.Remove("sharing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sharing"); else _explicitNullProperties?.Remove("sharing"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelSharing _explicitNullValueSharing = default!;
 #endif
         /// <summary>The verified languages of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -256,12 +277,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The voice verification of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceVerificationResponseModel? VoiceVerification { get => _explicitNullValueVoiceVerification; set { _explicitNullValueVoiceVerification = value; AdditionalData?.Remove("voice_verification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_verification"); else _explicitNullProperties?.Remove("voice_verification"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceVerificationResponseModel? _explicitNullValueVoiceVerification = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelVoiceVerification? VoiceVerification { get => _explicitNullValueVoiceVerification; set { _explicitNullValueVoiceVerification = value; AdditionalData?.Remove("voice_verification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_verification"); else _explicitNullProperties?.Remove("voice_verification"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelVoiceVerification? _explicitNullValueVoiceVerification = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceVerificationResponseModel VoiceVerification { get => _explicitNullValueVoiceVerification; set { _explicitNullValueVoiceVerification = value; AdditionalData?.Remove("voice_verification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_verification"); else _explicitNullProperties?.Remove("voice_verification"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceVerificationResponseModel _explicitNullValueVoiceVerification = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelVoiceVerification VoiceVerification { get => _explicitNullValueVoiceVerification; set { _explicitNullValueVoiceVerification = value; AdditionalData?.Remove("voice_verification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_verification"); else _explicitNullProperties?.Remove("voice_verification"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelVoiceVerification _explicitNullValueVoiceVerification = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModel"/> and sets the default values.
@@ -296,26 +317,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "created_at_unix", n => { CreatedAtUnix = n.GetIntValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "favorited_at_unix", n => { FavoritedAtUnix = n.GetIntValue(); } },
-                { "fine_tuning", n => { FineTuning = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModel.CreateFromDiscriminatorValue); } },
+                { "fine_tuning", n => { FineTuning = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelFineTuning>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelFineTuning.CreateFromDiscriminatorValue); } },
                 { "high_quality_base_model_ids", n => { HighQualityBaseModelIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "is_bookmarked", n => { IsBookmarked = n.GetBoolValue(); } },
                 { "is_legacy", n => { IsLegacy = n.GetBoolValue(); } },
                 { "is_mixed", n => { IsMixed = n.GetBoolValue(); } },
                 { "is_owner", n => { IsOwner = n.GetBoolValue(); } },
-                { "labelling_status", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelLabellingStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueLabellingStatus = default; _explicitNullProperties?.Remove("labelling_status"); AdditionalData["labelling_status"] = unknown; } else { LabellingStatus = parsed; AdditionalData.Remove("labelling_status"); } } },
+                { "labelling_status", n => { LabellingStatus = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelLabellingStatus>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelLabellingStatus.CreateFromDiscriminatorValue); } },
                 { "labels", n => { Labels = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelLabelsProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelLabelsProperty.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "permission_on_resource", n => { PermissionOnResource = n.GetStringValue(); } },
                 { "preview_url", n => { PreviewUrl = n.GetStringValue(); } },
-                { "recording_quality", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelRecordingQuality>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRecordingQuality = default; _explicitNullProperties?.Remove("recording_quality"); AdditionalData["recording_quality"] = unknown; } else { RecordingQuality = parsed; AdditionalData.Remove("recording_quality"); } } },
+                { "recording_quality", n => { RecordingQuality = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelRecordingQuality>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelRecordingQuality.CreateFromDiscriminatorValue); } },
                 { "recording_quality_reason", n => { RecordingQualityReason = n.GetStringValue(); } },
-                { "safety_control", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelSafetyControl>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSafetyControl = default; _explicitNullProperties?.Remove("safety_control"); AdditionalData["safety_control"] = unknown; } else { SafetyControl = parsed; AdditionalData.Remove("safety_control"); } } },
+                { "safety_control", n => { SafetyControl = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelSafetyControl>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelSafetyControl.CreateFromDiscriminatorValue); } },
                 { "samples", n => { Samples = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModel.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettingsResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettingsResponseModel.CreateFromDiscriminatorValue); } },
-                { "sharing", n => { Sharing = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingResponseModel.CreateFromDiscriminatorValue); } },
+                { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelSettings>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelSettings.CreateFromDiscriminatorValue); } },
+                { "sharing", n => { Sharing = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelSharing>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelSharing.CreateFromDiscriminatorValue); } },
                 { "verified_languages", n => { VerifiedLanguages = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.VerifiedVoiceLanguageResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VerifiedVoiceLanguageResponseModel.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "voice_id", n => { VoiceId = n.GetStringValue(); } },
-                { "voice_verification", n => { VoiceVerification = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceVerificationResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceVerificationResponseModel.CreateFromDiscriminatorValue); } },
+                { "voice_verification", n => { VoiceVerification = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelVoiceVerification>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelVoiceVerification.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -331,26 +352,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("created_at_unix", CreatedAtUnix);
             writer.WriteStringValue("description", Description);
             writer.WriteIntValue("favorited_at_unix", FavoritedAtUnix);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModel>("fine_tuning", FineTuning);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelFineTuning>("fine_tuning", FineTuning);
             writer.WriteCollectionOfPrimitiveValues<string>("high_quality_base_model_ids", HighQualityBaseModelIds);
             writer.WriteBoolValue("is_bookmarked", IsBookmarked);
             writer.WriteBoolValue("is_legacy", IsLegacy);
             writer.WriteBoolValue("is_mixed", IsMixed);
             writer.WriteBoolValue("is_owner", IsOwner);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelLabellingStatus>("labelling_status", LabellingStatus);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelLabellingStatus>("labelling_status", LabellingStatus);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelLabelsProperty>("labels", Labels);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("permission_on_resource", PermissionOnResource);
             writer.WriteStringValue("preview_url", PreviewUrl);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelRecordingQuality>("recording_quality", RecordingQuality);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelRecordingQuality>("recording_quality", RecordingQuality);
             writer.WriteStringValue("recording_quality_reason", RecordingQualityReason);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelSafetyControl>("safety_control", SafetyControl);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelSafetyControl>("safety_control", SafetyControl);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModel>("samples", Samples);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettingsResponseModel>("settings", Settings);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingResponseModel>("sharing", Sharing);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelSettings>("settings", Settings);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelSharing>("sharing", Sharing);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.VerifiedVoiceLanguageResponseModel>("verified_languages", VerifiedLanguages);
             writer.WriteStringValue("voice_id", VoiceId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceVerificationResponseModel>("voice_verification", VoiceVerification);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelVoiceVerification>("voice_verification", VoiceVerification);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -85,12 +85,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>How the website widget looks, read from the ConvAI agent&apos;s platform settings. Null when the agent document is missing. Unset labels mean the widget follows the agent&apos;s own language.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbWidgetAppearance? Widget { get => _explicitNullValueWidget; set { _explicitNullValueWidget = value; AdditionalData?.Remove("widget"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("widget"); else _explicitNullProperties?.Remove("widget"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbWidgetAppearance? _explicitNullValueWidget = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbCustomerFacingAgentResponseWidget? Widget { get => _explicitNullValueWidget; set { _explicitNullValueWidget = value; AdditionalData?.Remove("widget"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("widget"); else _explicitNullProperties?.Remove("widget"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbCustomerFacingAgentResponseWidget? _explicitNullValueWidget = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbWidgetAppearance Widget { get => _explicitNullValueWidget; set { _explicitNullValueWidget = value; AdditionalData?.Remove("widget"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("widget"); else _explicitNullProperties?.Remove("widget"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbWidgetAppearance _explicitNullValueWidget = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbCustomerFacingAgentResponseWidget Widget { get => _explicitNullValueWidget; set { _explicitNullValueWidget = value; AdditionalData?.Remove("widget"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("widget"); else _explicitNullProperties?.Remove("widget"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbCustomerFacingAgentResponseWidget _explicitNullValueWidget = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbCustomerFacingAgentResponse"/> and sets the default values.
@@ -128,7 +128,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "is_active", n => { IsActive = n.GetBoolValue(); } },
                 { "is_transfer_allowed", n => { IsTransferAllowed = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "widget", n => { Widget = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbWidgetAppearance>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbWidgetAppearance.CreateFromDiscriminatorValue); } },
+                { "widget", n => { Widget = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbCustomerFacingAgentResponseWidget>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbCustomerFacingAgentResponseWidget.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -145,7 +145,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbCustomerFacingAgentDeactivationReason>("deactivation_reason", DeactivationReason);
             writer.WriteBoolValue("is_transfer_allowed", IsTransferAllowed);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbWidgetAppearance>("widget", Widget);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbCustomerFacingAgentResponseWidget>("widget", Widget);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -45,12 +45,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Requested additional formats of the transcript.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AdditionalFormatResponseModel>? AdditionalFormats { get => _explicitNullValueAdditionalFormats; set { _explicitNullValueAdditionalFormats = value; AdditionalData?.Remove("additional_formats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additional_formats"); else _explicitNullProperties?.Remove("additional_formats"); } }
-        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AdditionalFormatResponseModel>? _explicitNullValueAdditionalFormats = default!;
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextChunkResponseModelAdditionalFormatsItem>? AdditionalFormats { get => _explicitNullValueAdditionalFormats; set { _explicitNullValueAdditionalFormats = value; AdditionalData?.Remove("additional_formats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additional_formats"); else _explicitNullProperties?.Remove("additional_formats"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextChunkResponseModelAdditionalFormatsItem>? _explicitNullValueAdditionalFormats = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AdditionalFormatResponseModel> AdditionalFormats { get => _explicitNullValueAdditionalFormats; set { _explicitNullValueAdditionalFormats = value; AdditionalData?.Remove("additional_formats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additional_formats"); else _explicitNullProperties?.Remove("additional_formats"); } }
-        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AdditionalFormatResponseModel> _explicitNullValueAdditionalFormats = default!;
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextChunkResponseModelAdditionalFormatsItem> AdditionalFormats { get => _explicitNullValueAdditionalFormats; set { _explicitNullValueAdditionalFormats = value; AdditionalData?.Remove("additional_formats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additional_formats"); else _explicitNullProperties?.Remove("additional_formats"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextChunkResponseModelAdditionalFormatsItem> _explicitNullValueAdditionalFormats = default!;
 #endif
         /// <summary>The duration of the audio that was transcribed in seconds.</summary>
         public double? AudioDurationSecs { get => _explicitNullValueAudioDurationSecs; set { _explicitNullValueAudioDurationSecs = value; AdditionalData?.Remove("audio_duration_secs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_duration_secs"); else _explicitNullProperties?.Remove("audio_duration_secs"); } }
@@ -146,7 +146,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "additional_formats", n => { AdditionalFormats = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AdditionalFormatResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AdditionalFormatResponseModel.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "additional_formats", n => { AdditionalFormats = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextChunkResponseModelAdditionalFormatsItem>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextChunkResponseModelAdditionalFormatsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "audio_duration_secs", n => { AudioDurationSecs = n.GetDoubleValue(); } },
                 { "channel_index", n => { ChannelIndex = n.GetIntValue(); } },
                 { "edited_transcript", n => { EditedTranscript = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextChunkResponseModelEditedTranscriptAnyOf1>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextChunkResponseModelEditedTranscriptAnyOf1.CreateFromDiscriminatorValue); } },
@@ -165,7 +165,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AdditionalFormatResponseModel>("additional_formats", AdditionalFormats);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextChunkResponseModelAdditionalFormatsItem>("additional_formats", AdditionalFormats);
             writer.WriteDoubleValue("audio_duration_secs", AudioDurationSecs);
             writer.WriteIntValue("channel_index", ChannelIndex);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextChunkResponseModelEditedTranscriptAnyOf1>("edited_transcript", EditedTranscript);

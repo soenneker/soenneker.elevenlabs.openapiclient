@@ -46,8 +46,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The algorithm property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestAlgorithm? Algorithm { get => _explicitNullValueAlgorithm; set { _explicitNullValueAlgorithm = value; AdditionalData?.Remove("algorithm"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("algorithm"); else _explicitNullProperties?.Remove("algorithm"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestAlgorithm? _explicitNullValueAlgorithm = default!;
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestAlgorithm Algorithm { get => _explicitNullValueAlgorithm; set { _explicitNullValueAlgorithm = value; AdditionalData?.Remove("algorithm"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("algorithm"); else _explicitNullProperties?.Remove("algorithm"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestAlgorithm _explicitNullValueAlgorithm = default!;
+#endif
         /// <summary>The audience property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -135,8 +142,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         private string _explicitNullValueSubject = default!;
 #endif
         /// <summary>The token_response_field property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestTokenResponseField? TokenResponseField { get => _explicitNullValueTokenResponseField; set { _explicitNullValueTokenResponseField = value; AdditionalData?.Remove("token_response_field"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token_response_field"); else _explicitNullProperties?.Remove("token_response_field"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestTokenResponseField? _explicitNullValueTokenResponseField = default!;
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestTokenResponseField TokenResponseField { get => _explicitNullValueTokenResponseField; set { _explicitNullValueTokenResponseField = value; AdditionalData?.Remove("token_response_field"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token_response_field"); else _explicitNullProperties?.Remove("token_response_field"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestTokenResponseField _explicitNullValueTokenResponseField = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequest"/> and sets the default values.
         /// </summary>
@@ -162,7 +176,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "algorithm", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestAlgorithm>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAlgorithm = default; _explicitNullProperties?.Remove("algorithm"); AdditionalData["algorithm"] = unknown; } else { Algorithm = parsed; AdditionalData.Remove("algorithm"); } } },
+                { "algorithm", n => { Algorithm = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestAlgorithm>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestAlgorithm.CreateFromDiscriminatorValue); } },
                 { "audience", n => { Audience = n.GetStringValue(); } },
                 { "auth_type", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestAuthType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAuthType = default; _explicitNullProperties?.Remove("auth_type"); AdditionalData["auth_type"] = unknown; } else { AuthType = parsed; AdditionalData.Remove("auth_type"); } } },
                 { "expiration_seconds", n => { ExpirationSeconds = n.GetIntValue(); } },
@@ -173,7 +187,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "scopes", n => { Scopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "secret_key", n => { SecretKey = n.GetStringValue(); } },
                 { "subject", n => { Subject = n.GetStringValue(); } },
-                { "token_response_field", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestTokenResponseField>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTokenResponseField = default; _explicitNullProperties?.Remove("token_response_field"); AdditionalData["token_response_field"] = unknown; } else { TokenResponseField = parsed; AdditionalData.Remove("token_response_field"); } } },
+                { "token_response_field", n => { TokenResponseField = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestTokenResponseField>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestTokenResponseField.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -183,7 +197,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestAlgorithm>("algorithm", Algorithm);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestAlgorithm>("algorithm", Algorithm);
             writer.WriteStringValue("audience", Audience);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestAuthType>("auth_type", AuthType);
             writer.WriteIntValue("expiration_seconds", ExpirationSeconds);
@@ -194,7 +208,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("scopes", Scopes);
             writer.WriteStringValue("secret_key", SecretKey);
             writer.WriteStringValue("subject", Subject);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestTokenResponseField>("token_response_field", TokenResponseField);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestTokenResponseField>("token_response_field", TokenResponseField);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -40,15 +40,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The annotations property</summary>
+        /// <summary>Additional properties describing a Tool to clients.NOTE: all properties in ToolAnnotations are **hints**.They are not guaranteed to provide a faithful description oftool behavior (including descriptive properties like `title`).Clients should never make tool use decisions based on ToolAnnotationsreceived from untrusted servers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotations? Annotations { get => _explicitNullValueAnnotations; set { _explicitNullValueAnnotations = value; AdditionalData?.Remove("annotations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("annotations"); else _explicitNullProperties?.Remove("annotations"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotations? _explicitNullValueAnnotations = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotationsComposed? Annotations { get => _explicitNullValueAnnotations; set { _explicitNullValueAnnotations = value; AdditionalData?.Remove("annotations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("annotations"); else _explicitNullProperties?.Remove("annotations"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotationsComposed? _explicitNullValueAnnotations = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotations Annotations { get => _explicitNullValueAnnotations; set { _explicitNullValueAnnotations = value; AdditionalData?.Remove("annotations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("annotations"); else _explicitNullProperties?.Remove("annotations"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotations _explicitNullValueAnnotations = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotationsComposed Annotations { get => _explicitNullValueAnnotations; set { _explicitNullValueAnnotations = value; AdditionalData?.Remove("annotations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("annotations"); else _explicitNullProperties?.Remove("annotations"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotationsComposed _explicitNullValueAnnotations = default!;
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -60,15 +60,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string _explicitNullValueDescription = default!;
 #endif
-        /// <summary>The execution property</summary>
+        /// <summary>Execution-related properties for a tool (2025-11-25 only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecution? Execution { get => _explicitNullValueExecution; set { _explicitNullValueExecution = value; AdditionalData?.Remove("execution"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execution"); else _explicitNullProperties?.Remove("execution"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecution? _explicitNullValueExecution = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionComposed? Execution { get => _explicitNullValueExecution; set { _explicitNullValueExecution = value; AdditionalData?.Remove("execution"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execution"); else _explicitNullProperties?.Remove("execution"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionComposed? _explicitNullValueExecution = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecution Execution { get => _explicitNullValueExecution; set { _explicitNullValueExecution = value; AdditionalData?.Remove("execution"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execution"); else _explicitNullProperties?.Remove("execution"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecution _explicitNullValueExecution = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionComposed Execution { get => _explicitNullValueExecution; set { _explicitNullValueExecution = value; AdditionalData?.Remove("execution"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execution"); else _explicitNullProperties?.Remove("execution"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionComposed _explicitNullValueExecution = default!;
 #endif
         /// <summary>The icons property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -155,9 +155,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "annotations", n => { Annotations = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotations>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotations.CreateFromDiscriminatorValue); } },
+                { "annotations", n => { Annotations = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotationsComposed>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotationsComposed.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "execution", n => { Execution = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecution>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecution.CreateFromDiscriminatorValue); } },
+                { "execution", n => { Execution = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionComposed>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionComposed.CreateFromDiscriminatorValue); } },
                 { "icons", n => { Icons = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.Icon>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Icon.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "inputSchema", n => { InputSchema = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolInputSchemaProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolInputSchemaProperty.CreateFromDiscriminatorValue); } },
                 { "_meta", n => { Meta = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolMetaProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolMetaProperty.CreateFromDiscriminatorValue); } },
@@ -173,9 +173,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotations>("annotations", Annotations);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotationsComposed>("annotations", Annotations);
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecution>("execution", Execution);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionComposed>("execution", Execution);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.Icon>("icons", Icons);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolInputSchemaProperty>("inputSchema", InputSchema);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolMetaProperty>("_meta", Meta);

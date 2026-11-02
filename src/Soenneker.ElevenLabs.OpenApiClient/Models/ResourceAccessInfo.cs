@@ -32,13 +32,27 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         }
 
         /// <summary>Why the requesting user has access to this resource. &apos;creator&apos; = caller is the owner. &apos;explicit&apos; = caller (or one of their workspace groups) is listed in role_to_group_ids beyond the workspace-wide everyone group. &apos;workspace_default&apos; = the workspace-wide everyone group is listed in role_to_group_ids (every non-anon workspace member, including admins, sees this resource). &apos;workspace_admin&apos; = caller is a workspace admin and the admin seat is the *only* path to access; reserved for docs nobody else can see. Lets the UI disclose why an admin-bypass viewer sees a doc that wasn&apos;t explicitly shared with them.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfoAccessSource? AccessSource { get => _explicitNullValueAccessSource; set { _explicitNullValueAccessSource = value; AdditionalData?.Remove("access_source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_source"); else _explicitNullProperties?.Remove("access_source"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfoAccessSource? _explicitNullValueAccessSource = default!;
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfoAccessSource AccessSource { get => _explicitNullValueAccessSource; set { _explicitNullValueAccessSource = value; AdditionalData?.Remove("access_source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_source"); else _explicitNullProperties?.Remove("access_source"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfoAccessSource _explicitNullValueAccessSource = default!;
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The access level for anonymous users. If None, the resource is not shared publicly.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfoAnonymousAccessLevelOverride? AnonymousAccessLevelOverride { get => _explicitNullValueAnonymousAccessLevelOverride; set { _explicitNullValueAnonymousAccessLevelOverride = value; AdditionalData?.Remove("anonymous_access_level_override"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("anonymous_access_level_override"); else _explicitNullProperties?.Remove("anonymous_access_level_override"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfoAnonymousAccessLevelOverride? _explicitNullValueAnonymousAccessLevelOverride = default!;
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfoAnonymousAccessLevelOverride AnonymousAccessLevelOverride { get => _explicitNullValueAnonymousAccessLevelOverride; set { _explicitNullValueAnonymousAccessLevelOverride = value; AdditionalData?.Remove("anonymous_access_level_override"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("anonymous_access_level_override"); else _explicitNullProperties?.Remove("anonymous_access_level_override"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfoAnonymousAccessLevelOverride _explicitNullValueAnonymousAccessLevelOverride = default!;
+#endif
         /// <summary>Email of the agent&apos;s creator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -90,8 +104,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "access_source", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfoAccessSource>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAccessSource = default; _explicitNullProperties?.Remove("access_source"); AdditionalData["access_source"] = unknown; } else { AccessSource = parsed; AdditionalData.Remove("access_source"); } } },
-                { "anonymous_access_level_override", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfoAnonymousAccessLevelOverride>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAnonymousAccessLevelOverride = default; _explicitNullProperties?.Remove("anonymous_access_level_override"); AdditionalData["anonymous_access_level_override"] = unknown; } else { AnonymousAccessLevelOverride = parsed; AdditionalData.Remove("anonymous_access_level_override"); } } },
+                { "access_source", n => { AccessSource = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfoAccessSource>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfoAccessSource.CreateFromDiscriminatorValue); } },
+                { "anonymous_access_level_override", n => { AnonymousAccessLevelOverride = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfoAnonymousAccessLevelOverride>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfoAnonymousAccessLevelOverride.CreateFromDiscriminatorValue); } },
                 { "creator_email", n => { CreatorEmail = n.GetStringValue(); } },
                 { "creator_name", n => { CreatorName = n.GetStringValue(); } },
                 { "is_creator", n => { IsCreator = n.GetBoolValue(); } },
@@ -105,8 +119,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfoAccessSource>("access_source", AccessSource);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfoAnonymousAccessLevelOverride>("anonymous_access_level_override", AnonymousAccessLevelOverride);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfoAccessSource>("access_source", AccessSource);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfoAnonymousAccessLevelOverride>("anonymous_access_level_override", AnonymousAccessLevelOverride);
             writer.WriteStringValue("creator_email", CreatorEmail);
             writer.WriteStringValue("creator_name", CreatorName);
             writer.WriteBoolValue("is_creator", IsCreator);

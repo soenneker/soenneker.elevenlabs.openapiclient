@@ -32,12 +32,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The json property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscript? Json { get => _explicitNullValueJson; set { _explicitNullValueJson = value; AdditionalData?.Remove("json"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json"); else _explicitNullProperties?.Remove("json"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscript? _explicitNullValueJson = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptsResponseModelJson? Json { get => _explicitNullValueJson; set { _explicitNullValueJson = value; AdditionalData?.Remove("json"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json"); else _explicitNullProperties?.Remove("json"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptsResponseModelJson? _explicitNullValueJson = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscript Json { get => _explicitNullValueJson; set { _explicitNullValueJson = value; AdditionalData?.Remove("json"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json"); else _explicitNullProperties?.Remove("json"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscript _explicitNullValueJson = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptsResponseModelJson Json { get => _explicitNullValueJson; set { _explicitNullValueJson = value; AdditionalData?.Remove("json"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json"); else _explicitNullProperties?.Remove("json"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptsResponseModelJson _explicitNullValueJson = default!;
 #endif
         /// <summary>The srt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -87,7 +87,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "json", n => { Json = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscript>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscript.CreateFromDiscriminatorValue); } },
+                { "json", n => { Json = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptsResponseModelJson>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptsResponseModelJson.CreateFromDiscriminatorValue); } },
                 { "srt", n => { Srt = n.GetStringValue(); } },
                 { "transcript_format", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptsResponseModelTranscriptFormat>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTranscriptFormat = default; _explicitNullProperties?.Remove("transcript_format"); AdditionalData["transcript_format"] = unknown; } else { TranscriptFormat = parsed; AdditionalData.Remove("transcript_format"); } } },
                 { "webvtt", n => { Webvtt = n.GetStringValue(); } },
@@ -100,7 +100,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscript>("json", Json);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptsResponseModelJson>("json", Json);
             writer.WriteStringValue("srt", Srt);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptsResponseModelTranscriptFormat>("transcript_format", TranscriptFormat);
             writer.WriteStringValue("webvtt", Webvtt);

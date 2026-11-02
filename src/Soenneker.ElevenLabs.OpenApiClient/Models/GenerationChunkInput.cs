@@ -38,12 +38,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The audio reference to condition the generation on. The first chunk is the most important as it will influence the generation of all subsequent chunks. Thus, if you want to apply conditioning to the entire song, start conditioning from the first chunk.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioRefChunk? ConditioningRef { get => _explicitNullValueConditioningRef; set { _explicitNullValueConditioningRef = value; AdditionalData?.Remove("conditioning_ref"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conditioning_ref"); else _explicitNullProperties?.Remove("conditioning_ref"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioRefChunk? _explicitNullValueConditioningRef = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationChunkInputConditioningRef? ConditioningRef { get => _explicitNullValueConditioningRef; set { _explicitNullValueConditioningRef = value; AdditionalData?.Remove("conditioning_ref"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conditioning_ref"); else _explicitNullProperties?.Remove("conditioning_ref"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationChunkInputConditioningRef? _explicitNullValueConditioningRef = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioRefChunk ConditioningRef { get => _explicitNullValueConditioningRef; set { _explicitNullValueConditioningRef = value; AdditionalData?.Remove("conditioning_ref"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conditioning_ref"); else _explicitNullProperties?.Remove("conditioning_ref"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioRefChunk _explicitNullValueConditioningRef = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationChunkInputConditioningRef ConditioningRef { get => _explicitNullValueConditioningRef; set { _explicitNullValueConditioningRef = value; AdditionalData?.Remove("conditioning_ref"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conditioning_ref"); else _explicitNullProperties?.Remove("conditioning_ref"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationChunkInputConditioningRef _explicitNullValueConditioningRef = default!;
 #endif
         /// <summary>How strongly the model adheres to the conditioning reference. Low strength means the model will be more creative and deviate from the reference. High strength means the model will be more consistent with the reference.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConditionStrength? ConditionStrength { get => _explicitNullValueConditionStrength; set { _explicitNullValueConditionStrength = value; AdditionalData?.Remove("condition_strength"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("condition_strength"); else _explicitNullProperties?.Remove("condition_strength"); } }
@@ -110,7 +110,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "condition_strength", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConditionStrength>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueConditionStrength = default; _explicitNullProperties?.Remove("condition_strength"); AdditionalData["condition_strength"] = unknown; } else { ConditionStrength = parsed; AdditionalData.Remove("condition_strength"); } } },
-                { "conditioning_ref", n => { ConditioningRef = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioRefChunk>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioRefChunk.CreateFromDiscriminatorValue); } },
+                { "conditioning_ref", n => { ConditioningRef = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationChunkInputConditioningRef>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationChunkInputConditioningRef.CreateFromDiscriminatorValue); } },
                 { "context_adherence", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationChunkInputContextAdherence>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueContextAdherence = default; _explicitNullProperties?.Remove("context_adherence"); AdditionalData["context_adherence"] = unknown; } else { ContextAdherence = parsed; AdditionalData.Remove("context_adherence"); } } },
                 { "duration_ms", n => { DurationMs = n.GetIntValue(); } },
                 { "negative_styles", n => { NegativeStyles = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -125,7 +125,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioRefChunk>("conditioning_ref", ConditioningRef);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationChunkInputConditioningRef>("conditioning_ref", ConditioningRef);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConditionStrength>("condition_strength", ConditionStrength);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationChunkInputContextAdherence>("context_adherence", ContextAdherence);
             writer.WriteIntValue("duration_ms", DurationMs);

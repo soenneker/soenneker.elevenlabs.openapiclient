@@ -28,15 +28,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The has_affected_events property</summary>
         public bool? HasAffectedEvents { get => _explicitNullValueHasAffectedEvents; set { _explicitNullValueHasAffectedEvents = value; AdditionalData?.Remove("has_affected_events"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_affected_events"); else _explicitNullProperties?.Remove("has_affected_events"); } }
         private bool? _explicitNullValueHasAffectedEvents = default!;
-        /// <summary>The service property</summary>
+        /// <summary>Represents a bookable service (e.g., haircut, massage, consultation).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbServiceDbModel? Service { get => _explicitNullValueService; set { _explicitNullValueService = value; AdditionalData?.Remove("service"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service"); else _explicitNullProperties?.Remove("service"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbServiceDbModel? _explicitNullValueService = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ServiceUpdateResponseService? Service { get => _explicitNullValueService; set { _explicitNullValueService = value; AdditionalData?.Remove("service"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service"); else _explicitNullProperties?.Remove("service"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ServiceUpdateResponseService? _explicitNullValueService = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbServiceDbModel Service { get => _explicitNullValueService; set { _explicitNullValueService = value; AdditionalData?.Remove("service"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service"); else _explicitNullProperties?.Remove("service"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbServiceDbModel _explicitNullValueService = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ServiceUpdateResponseService Service { get => _explicitNullValueService; set { _explicitNullValueService = value; AdditionalData?.Remove("service"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service"); else _explicitNullProperties?.Remove("service"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ServiceUpdateResponseService _explicitNullValueService = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ServiceUpdateResponse"/> and sets the default values.
@@ -64,7 +64,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "has_affected_events", n => { HasAffectedEvents = n.GetBoolValue(); } },
-                { "service", n => { Service = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbServiceDbModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbServiceDbModel.CreateFromDiscriminatorValue); } },
+                { "service", n => { Service = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ServiceUpdateResponseService>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ServiceUpdateResponseService.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -75,7 +75,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("has_affected_events", HasAffectedEvents);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbServiceDbModel>("service", Service);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ServiceUpdateResponseService>("service", Service);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

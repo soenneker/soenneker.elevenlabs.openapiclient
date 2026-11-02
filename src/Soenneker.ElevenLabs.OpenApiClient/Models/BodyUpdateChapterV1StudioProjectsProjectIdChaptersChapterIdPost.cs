@@ -28,12 +28,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The chapter content to use.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentInputModel? Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; AdditionalData?.Remove("content"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentInputModel? _explicitNullValueContent = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateChapterV1StudioProjectsProjectIdChaptersChapterIdPostContent? Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; AdditionalData?.Remove("content"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateChapterV1StudioProjectsProjectIdChaptersChapterIdPostContent? _explicitNullValueContent = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentInputModel Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; AdditionalData?.Remove("content"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentInputModel _explicitNullValueContent = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateChapterV1StudioProjectsProjectIdChaptersChapterIdPostContent Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; AdditionalData?.Remove("content"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateChapterV1StudioProjectsProjectIdChaptersChapterIdPostContent _explicitNullValueContent = default!;
 #endif
         /// <summary>The name of the chapter, used for identification only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -70,7 +70,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "content", n => { Content = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentInputModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentInputModel.CreateFromDiscriminatorValue); } },
+                { "content", n => { Content = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateChapterV1StudioProjectsProjectIdChaptersChapterIdPostContent>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateChapterV1StudioProjectsProjectIdChaptersChapterIdPostContent.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
         }
@@ -81,7 +81,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentInputModel>("content", Content);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateChapterV1StudioProjectsProjectIdChaptersChapterIdPostContent>("content", Content);
             writer.WriteStringValue("name", Name);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

@@ -36,8 +36,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The access level for anonymous users. If None, the resource is not shared publicly.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceMetadataResponseModelAnonymousAccessLevelOverride? AnonymousAccessLevelOverride { get => _explicitNullValueAnonymousAccessLevelOverride; set { _explicitNullValueAnonymousAccessLevelOverride = value; AdditionalData?.Remove("anonymous_access_level_override"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("anonymous_access_level_override"); else _explicitNullProperties?.Remove("anonymous_access_level_override"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceMetadataResponseModelAnonymousAccessLevelOverride? _explicitNullValueAnonymousAccessLevelOverride = default!;
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceMetadataResponseModelAnonymousAccessLevelOverride AnonymousAccessLevelOverride { get => _explicitNullValueAnonymousAccessLevelOverride; set { _explicitNullValueAnonymousAccessLevelOverride = value; AdditionalData?.Remove("anonymous_access_level_override"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("anonymous_access_level_override"); else _explicitNullProperties?.Remove("anonymous_access_level_override"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceMetadataResponseModelAnonymousAccessLevelOverride _explicitNullValueAnonymousAccessLevelOverride = default!;
+#endif
         /// <summary>The ID of the user who created the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -116,7 +123,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "anonymous_access_level_override", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceMetadataResponseModelAnonymousAccessLevelOverride>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAnonymousAccessLevelOverride = default; _explicitNullProperties?.Remove("anonymous_access_level_override"); AdditionalData["anonymous_access_level_override"] = unknown; } else { AnonymousAccessLevelOverride = parsed; AdditionalData.Remove("anonymous_access_level_override"); } } },
+                { "anonymous_access_level_override", n => { AnonymousAccessLevelOverride = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceMetadataResponseModelAnonymousAccessLevelOverride>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceMetadataResponseModelAnonymousAccessLevelOverride.CreateFromDiscriminatorValue); } },
                 { "creator_user_id", n => { CreatorUserId = n.GetStringValue(); } },
                 { "resource_id", n => { ResourceId = n.GetStringValue(); } },
                 { "resource_name", n => { ResourceName = n.GetStringValue(); } },
@@ -132,7 +139,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceMetadataResponseModelAnonymousAccessLevelOverride>("anonymous_access_level_override", AnonymousAccessLevelOverride);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceMetadataResponseModelAnonymousAccessLevelOverride>("anonymous_access_level_override", AnonymousAccessLevelOverride);
             writer.WriteStringValue("creator_user_id", CreatorUserId);
             writer.WriteStringValue("resource_id", ResourceId);
             writer.WriteStringValue("resource_name", ResourceName);

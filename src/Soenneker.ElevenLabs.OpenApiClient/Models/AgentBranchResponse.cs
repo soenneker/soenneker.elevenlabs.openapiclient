@@ -48,12 +48,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Access information for the branch</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo? AccessInfo { get => _explicitNullValueAccessInfo; set { _explicitNullValueAccessInfo = value; AdditionalData?.Remove("access_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_info"); else _explicitNullProperties?.Remove("access_info"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo? _explicitNullValueAccessInfo = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchResponseAccessInfo? AccessInfo { get => _explicitNullValueAccessInfo; set { _explicitNullValueAccessInfo = value; AdditionalData?.Remove("access_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_info"); else _explicitNullProperties?.Remove("access_info"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchResponseAccessInfo? _explicitNullValueAccessInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo AccessInfo { get => _explicitNullValueAccessInfo; set { _explicitNullValueAccessInfo = value; AdditionalData?.Remove("access_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_info"); else _explicitNullProperties?.Remove("access_info"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo _explicitNullValueAccessInfo = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchResponseAccessInfo AccessInfo { get => _explicitNullValueAccessInfo; set { _explicitNullValueAccessInfo = value; AdditionalData?.Remove("access_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_info"); else _explicitNullProperties?.Remove("access_info"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchResponseAccessInfo _explicitNullValueAccessInfo = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -125,12 +125,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Parent branch of the branch</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchBasicInfo? ParentBranch { get => _explicitNullValueParentBranch; set { _explicitNullValueParentBranch = value; AdditionalData?.Remove("parent_branch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_branch"); else _explicitNullProperties?.Remove("parent_branch"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchBasicInfo? _explicitNullValueParentBranch = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchResponseParentBranch? ParentBranch { get => _explicitNullValueParentBranch; set { _explicitNullValueParentBranch = value; AdditionalData?.Remove("parent_branch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_branch"); else _explicitNullProperties?.Remove("parent_branch"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchResponseParentBranch? _explicitNullValueParentBranch = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchBasicInfo ParentBranch { get => _explicitNullValueParentBranch; set { _explicitNullValueParentBranch = value; AdditionalData?.Remove("parent_branch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_branch"); else _explicitNullProperties?.Remove("parent_branch"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchBasicInfo _explicitNullValueParentBranch = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchResponseParentBranch ParentBranch { get => _explicitNullValueParentBranch; set { _explicitNullValueParentBranch = value; AdditionalData?.Remove("parent_branch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_branch"); else _explicitNullProperties?.Remove("parent_branch"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchResponseParentBranch _explicitNullValueParentBranch = default!;
 #endif
         /// <summary>The protection_status property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.BranchProtectionStatus? ProtectionStatus { get => _explicitNullValueProtectionStatus; set { _explicitNullValueProtectionStatus = value; AdditionalData?.Remove("protection_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("protection_status"); else _explicitNullProperties?.Remove("protection_status"); } }
@@ -163,7 +163,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "access_info", n => { AccessInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo.CreateFromDiscriminatorValue); } },
+                { "access_info", n => { AccessInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchResponseAccessInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchResponseAccessInfo.CreateFromDiscriminatorValue); } },
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
                 { "auto_rebase", n => { AutoRebase = n.GetBoolValue(); } },
                 { "created_at", n => { CreatedAt = n.GetIntValue(); } },
@@ -174,7 +174,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "last_committed_at", n => { LastCommittedAt = n.GetIntValue(); } },
                 { "most_recent_versions", n => { MostRecentVersions = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentVersionMetadata>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentVersionMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "parent_branch", n => { ParentBranch = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchBasicInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchBasicInfo.CreateFromDiscriminatorValue); } },
+                { "parent_branch", n => { ParentBranch = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchResponseParentBranch>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchResponseParentBranch.CreateFromDiscriminatorValue); } },
                 { "protection_status", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BranchProtectionStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueProtectionStatus = default; _explicitNullProperties?.Remove("protection_status"); AdditionalData["protection_status"] = unknown; } else { ProtectionStatus = parsed; AdditionalData.Remove("protection_status"); } } },
             };
         }
@@ -185,7 +185,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo>("access_info", AccessInfo);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchResponseAccessInfo>("access_info", AccessInfo);
             writer.WriteStringValue("agent_id", AgentId);
             writer.WriteBoolValue("auto_rebase", AutoRebase);
             writer.WriteIntValue("created_at", CreatedAt);
@@ -196,7 +196,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("last_committed_at", LastCommittedAt);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentVersionMetadata>("most_recent_versions", MostRecentVersions);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchBasicInfo>("parent_branch", ParentBranch);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchResponseParentBranch>("parent_branch", ParentBranch);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BranchProtectionStatus>("protection_status", ProtectionStatus);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

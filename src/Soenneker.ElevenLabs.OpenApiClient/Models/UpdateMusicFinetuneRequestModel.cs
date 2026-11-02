@@ -60,8 +60,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         private List<string> _explicitNullValueTags = default!;
 #endif
         /// <summary>Finetune visibility. Only &apos;private&apos; and &apos;workspace&apos; can be set.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateMusicFinetuneRequestModelVisibility? Visibility { get => _explicitNullValueVisibility; set { _explicitNullValueVisibility = value; AdditionalData?.Remove("visibility"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("visibility"); else _explicitNullProperties?.Remove("visibility"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateMusicFinetuneRequestModelVisibility? _explicitNullValueVisibility = default!;
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateMusicFinetuneRequestModelVisibility Visibility { get => _explicitNullValueVisibility; set { _explicitNullValueVisibility = value; AdditionalData?.Remove("visibility"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("visibility"); else _explicitNullProperties?.Remove("visibility"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateMusicFinetuneRequestModelVisibility _explicitNullValueVisibility = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateMusicFinetuneRequestModel"/> and sets the default values.
         /// </summary>
@@ -90,7 +97,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "primary_genre", n => { PrimaryGenre = n.GetStringValue(); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "visibility", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateMusicFinetuneRequestModelVisibility>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueVisibility = default; _explicitNullProperties?.Remove("visibility"); AdditionalData["visibility"] = unknown; } else { Visibility = parsed; AdditionalData.Remove("visibility"); } } },
+                { "visibility", n => { Visibility = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateMusicFinetuneRequestModelVisibility>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateMusicFinetuneRequestModelVisibility.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -103,7 +110,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("primary_genre", PrimaryGenre);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateMusicFinetuneRequestModelVisibility>("visibility", Visibility);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateMusicFinetuneRequestModelVisibility>("visibility", Visibility);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

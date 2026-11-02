@@ -46,12 +46,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The conversation_initiation_client_data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestInput? ConversationInitiationClientData { get => _explicitNullValueConversationInitiationClientData; set { _explicitNullValueConversationInitiationClientData = value; AdditionalData?.Remove("conversation_initiation_client_data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_initiation_client_data"); else _explicitNullProperties?.Remove("conversation_initiation_client_data"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestInput? _explicitNullValueConversationInitiationClientData = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyHandleAnOutboundCallViaExotelV1ConvaiExotelOutboundCallPostConversationInitiationClientData? ConversationInitiationClientData { get => _explicitNullValueConversationInitiationClientData; set { _explicitNullValueConversationInitiationClientData = value; AdditionalData?.Remove("conversation_initiation_client_data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_initiation_client_data"); else _explicitNullProperties?.Remove("conversation_initiation_client_data"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyHandleAnOutboundCallViaExotelV1ConvaiExotelOutboundCallPostConversationInitiationClientData? _explicitNullValueConversationInitiationClientData = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestInput ConversationInitiationClientData { get => _explicitNullValueConversationInitiationClientData; set { _explicitNullValueConversationInitiationClientData = value; AdditionalData?.Remove("conversation_initiation_client_data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_initiation_client_data"); else _explicitNullProperties?.Remove("conversation_initiation_client_data"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestInput _explicitNullValueConversationInitiationClientData = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyHandleAnOutboundCallViaExotelV1ConvaiExotelOutboundCallPostConversationInitiationClientData ConversationInitiationClientData { get => _explicitNullValueConversationInitiationClientData; set { _explicitNullValueConversationInitiationClientData = value; AdditionalData?.Remove("conversation_initiation_client_data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_initiation_client_data"); else _explicitNullProperties?.Remove("conversation_initiation_client_data"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyHandleAnOutboundCallViaExotelV1ConvaiExotelOutboundCallPostConversationInitiationClientData _explicitNullValueConversationInitiationClientData = default!;
 #endif
         /// <summary>The whatsapp_call_permission_request_template_language_code property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -119,7 +119,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
-                { "conversation_initiation_client_data", n => { ConversationInitiationClientData = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestInput.CreateFromDiscriminatorValue); } },
+                { "conversation_initiation_client_data", n => { ConversationInitiationClientData = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyHandleAnOutboundCallViaExotelV1ConvaiExotelOutboundCallPostConversationInitiationClientData>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyHandleAnOutboundCallViaExotelV1ConvaiExotelOutboundCallPostConversationInitiationClientData.CreateFromDiscriminatorValue); } },
                 { "whatsapp_call_permission_request_template_language_code", n => { WhatsappCallPermissionRequestTemplateLanguageCode = n.GetStringValue(); } },
                 { "whatsapp_call_permission_request_template_name", n => { WhatsappCallPermissionRequestTemplateName = n.GetStringValue(); } },
                 { "whatsapp_phone_number_id", n => { WhatsappPhoneNumberId = n.GetStringValue(); } },
@@ -134,7 +134,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("agent_id", AgentId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestInput>("conversation_initiation_client_data", ConversationInitiationClientData);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyHandleAnOutboundCallViaExotelV1ConvaiExotelOutboundCallPostConversationInitiationClientData>("conversation_initiation_client_data", ConversationInitiationClientData);
             writer.WriteStringValue("whatsapp_call_permission_request_template_language_code", WhatsappCallPermissionRequestTemplateLanguageCode);
             writer.WriteStringValue("whatsapp_call_permission_request_template_name", WhatsappCallPermissionRequestTemplateName);
             writer.WriteStringValue("whatsapp_phone_number_id", WhatsappPhoneNumberId);

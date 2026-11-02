@@ -45,12 +45,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The recording of the verification attempt.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.RecordingResponseModel? Recording { get => _explicitNullValueRecording; set { _explicitNullValueRecording = value; AdditionalData?.Remove("recording"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recording"); else _explicitNullProperties?.Remove("recording"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.RecordingResponseModel? _explicitNullValueRecording = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VerificationAttemptResponseModelRecording? Recording { get => _explicitNullValueRecording; set { _explicitNullValueRecording = value; AdditionalData?.Remove("recording"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recording"); else _explicitNullProperties?.Remove("recording"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.VerificationAttemptResponseModelRecording? _explicitNullValueRecording = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.RecordingResponseModel Recording { get => _explicitNullValueRecording; set { _explicitNullValueRecording = value; AdditionalData?.Remove("recording"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recording"); else _explicitNullProperties?.Remove("recording"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.RecordingResponseModel _explicitNullValueRecording = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VerificationAttemptResponseModelRecording Recording { get => _explicitNullValueRecording; set { _explicitNullValueRecording = value; AdditionalData?.Remove("recording"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recording"); else _explicitNullProperties?.Remove("recording"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.VerificationAttemptResponseModelRecording _explicitNullValueRecording = default!;
 #endif
         /// <summary>The similarity of the verification attempt.</summary>
         public double? Similarity { get => _explicitNullValueSimilarity; set { _explicitNullValueSimilarity = value; AdditionalData?.Remove("similarity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("similarity"); else _explicitNullProperties?.Remove("similarity"); } }
@@ -93,7 +93,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "accepted", n => { Accepted = n.GetBoolValue(); } },
                 { "date_unix", n => { DateUnix = n.GetIntValue(); } },
                 { "levenshtein_distance", n => { LevenshteinDistance = n.GetDoubleValue(); } },
-                { "recording", n => { Recording = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RecordingResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.RecordingResponseModel.CreateFromDiscriminatorValue); } },
+                { "recording", n => { Recording = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VerificationAttemptResponseModelRecording>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VerificationAttemptResponseModelRecording.CreateFromDiscriminatorValue); } },
                 { "similarity", n => { Similarity = n.GetDoubleValue(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
             };
@@ -108,7 +108,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("accepted", Accepted);
             writer.WriteIntValue("date_unix", DateUnix);
             writer.WriteDoubleValue("levenshtein_distance", LevenshteinDistance);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RecordingResponseModel>("recording", Recording);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VerificationAttemptResponseModelRecording>("recording", Recording);
             writer.WriteDoubleValue("similarity", Similarity);
             writer.WriteStringValue("text", Text);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

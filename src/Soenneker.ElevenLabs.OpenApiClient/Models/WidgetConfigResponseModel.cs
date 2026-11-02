@@ -230,12 +230,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Configuration for feedback collected at the end of the conversation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetEndFeedbackConfig? EndFeedback { get => _explicitNullValueEndFeedback; set { _explicitNullValueEndFeedback = value; AdditionalData?.Remove("end_feedback"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_feedback"); else _explicitNullProperties?.Remove("end_feedback"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetEndFeedbackConfig? _explicitNullValueEndFeedback = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigInputEndFeedback? EndFeedback { get => _explicitNullValueEndFeedback; set { _explicitNullValueEndFeedback = value; AdditionalData?.Remove("end_feedback"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_feedback"); else _explicitNullProperties?.Remove("end_feedback"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigInputEndFeedback? _explicitNullValueEndFeedback = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetEndFeedbackConfig EndFeedback { get => _explicitNullValueEndFeedback; set { _explicitNullValueEndFeedback = value; AdditionalData?.Remove("end_feedback"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_feedback"); else _explicitNullProperties?.Remove("end_feedback"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetEndFeedbackConfig _explicitNullValueEndFeedback = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigInputEndFeedback EndFeedback { get => _explicitNullValueEndFeedback; set { _explicitNullValueEndFeedback = value; AdditionalData?.Remove("end_feedback"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_feedback"); else _explicitNullProperties?.Remove("end_feedback"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigInputEndFeedback _explicitNullValueEndFeedback = default!;
 #endif
         /// <summary>Whether the widget is expandable</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetExpandable? Expandable { get => _explicitNullValueExpandable; set { _explicitNullValueExpandable = value; AdditionalData?.Remove("expandable"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expandable"); else _explicitNullProperties?.Remove("expandable"); } }
@@ -420,8 +420,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public bool? SupportsTextOnly { get => _explicitNullValueSupportsTextOnly; set { _explicitNullValueSupportsTextOnly = value; AdditionalData?.Remove("supports_text_only"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supports_text_only"); else _explicitNullProperties?.Remove("supports_text_only"); } }
         private bool? _explicitNullValueSupportsTextOnly = default!;
         /// <summary>Theme for code block syntax highlighting. Defaults to auto-detection by the widget when not set.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelSyntaxHighlightTheme? SyntaxHighlightTheme { get => _explicitNullValueSyntaxHighlightTheme; set { _explicitNullValueSyntaxHighlightTheme = value; AdditionalData?.Remove("syntax_highlight_theme"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("syntax_highlight_theme"); else _explicitNullProperties?.Remove("syntax_highlight_theme"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelSyntaxHighlightTheme? _explicitNullValueSyntaxHighlightTheme = default!;
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelSyntaxHighlightTheme SyntaxHighlightTheme { get => _explicitNullValueSyntaxHighlightTheme; set { _explicitNullValueSyntaxHighlightTheme = value; AdditionalData?.Remove("syntax_highlight_theme"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("syntax_highlight_theme"); else _explicitNullProperties?.Remove("syntax_highlight_theme"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelSyntaxHighlightTheme _explicitNullValueSyntaxHighlightTheme = default!;
+#endif
         /// <summary>The HTML to display for terms and conditions</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -561,7 +568,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "dismissible", n => { Dismissible = n.GetBoolValue(); } },
                 { "end_call_text", n => { EndCallText = n.GetStringValue(); } },
                 { "end_confirmation_enabled", n => { EndConfirmationEnabled = n.GetBoolValue(); } },
-                { "end_feedback", n => { EndFeedback = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetEndFeedbackConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetEndFeedbackConfig.CreateFromDiscriminatorValue); } },
+                { "end_feedback", n => { EndFeedback = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigInputEndFeedback>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigInputEndFeedback.CreateFromDiscriminatorValue); } },
                 { "expand_text", n => { ExpandText = n.GetStringValue(); } },
                 { "expandable", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetExpandable>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueExpandable = default; _explicitNullProperties?.Remove("expandable"); AdditionalData["expandable"] = unknown; } else { Expandable = parsed; AdditionalData.Remove("expandable"); } } },
                 { "feedback_mode", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetFeedbackMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFeedbackMode = default; _explicitNullProperties?.Remove("feedback_mode"); AdditionalData["feedback_mode"] = unknown; } else { FeedbackMode = parsed; AdditionalData.Remove("feedback_mode"); } } },
@@ -590,7 +597,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "styles", n => { Styles = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles.CreateFromDiscriminatorValue); } },
                 { "supported_language_overrides", n => { SupportedLanguageOverrides = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "supports_text_only", n => { SupportsTextOnly = n.GetBoolValue(); } },
-                { "syntax_highlight_theme", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelSyntaxHighlightTheme>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSyntaxHighlightTheme = default; _explicitNullProperties?.Remove("syntax_highlight_theme"); AdditionalData["syntax_highlight_theme"] = unknown; } else { SyntaxHighlightTheme = parsed; AdditionalData.Remove("syntax_highlight_theme"); } } },
+                { "syntax_highlight_theme", n => { SyntaxHighlightTheme = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelSyntaxHighlightTheme>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelSyntaxHighlightTheme.CreateFromDiscriminatorValue); } },
                 { "terms_html", n => { TermsHtml = n.GetStringValue(); } },
                 { "terms_key", n => { TermsKey = n.GetStringValue(); } },
                 { "terms_text", n => { TermsText = n.GetStringValue(); } },
@@ -626,7 +633,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("dismissible", Dismissible);
             writer.WriteStringValue("end_call_text", EndCallText);
             writer.WriteBoolValue("end_confirmation_enabled", EndConfirmationEnabled);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetEndFeedbackConfig>("end_feedback", EndFeedback);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigInputEndFeedback>("end_feedback", EndFeedback);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetExpandable>("expandable", Expandable);
             writer.WriteStringValue("expand_text", ExpandText);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetFeedbackMode>("feedback_mode", FeedbackMode);
@@ -655,7 +662,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles>("styles", Styles);
             writer.WriteCollectionOfPrimitiveValues<string>("supported_language_overrides", SupportedLanguageOverrides);
             writer.WriteBoolValue("supports_text_only", SupportsTextOnly);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelSyntaxHighlightTheme>("syntax_highlight_theme", SyntaxHighlightTheme);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelSyntaxHighlightTheme>("syntax_highlight_theme", SyntaxHighlightTheme);
             writer.WriteStringValue("terms_html", TermsHtml);
             writer.WriteStringValue("terms_key", TermsKey);
             writer.WriteStringValue("terms_text", TermsText);

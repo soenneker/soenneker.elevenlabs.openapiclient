@@ -72,12 +72,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The analysis property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageAnalysis? Analysis { get => _explicitNullValueAnalysis; set { _explicitNullValueAnalysis = value; AdditionalData?.Remove("analysis"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analysis"); else _explicitNullProperties?.Remove("analysis"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageAnalysis? _explicitNullValueAnalysis = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModelAnalysis? Analysis { get => _explicitNullValueAnalysis; set { _explicitNullValueAnalysis = value; AdditionalData?.Remove("analysis"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analysis"); else _explicitNullProperties?.Remove("analysis"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModelAnalysis? _explicitNullValueAnalysis = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageAnalysis Analysis { get => _explicitNullValueAnalysis; set { _explicitNullValueAnalysis = value; AdditionalData?.Remove("analysis"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analysis"); else _explicitNullProperties?.Remove("analysis"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageAnalysis _explicitNullValueAnalysis = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModelAnalysis Analysis { get => _explicitNullValueAnalysis; set { _explicitNullValueAnalysis = value; AdditionalData?.Remove("analysis"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analysis"); else _explicitNullProperties?.Remove("analysis"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModelAnalysis _explicitNullValueAnalysis = default!;
 #endif
         /// <summary>The animation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -170,12 +170,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The pending_task property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingClipTask? PendingTask { get => _explicitNullValuePendingTask; set { _explicitNullValuePendingTask = value; AdditionalData?.Remove("pending_task"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pending_task"); else _explicitNullProperties?.Remove("pending_task"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingClipTask? _explicitNullValuePendingTask = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExternalAudioResponseModelPendingTask? PendingTask { get => _explicitNullValuePendingTask; set { _explicitNullValuePendingTask = value; AdditionalData?.Remove("pending_task"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pending_task"); else _explicitNullProperties?.Remove("pending_task"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExternalAudioResponseModelPendingTask? _explicitNullValuePendingTask = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingClipTask PendingTask { get => _explicitNullValuePendingTask; set { _explicitNullValuePendingTask = value; AdditionalData?.Remove("pending_task"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pending_task"); else _explicitNullProperties?.Remove("pending_task"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingClipTask _explicitNullValuePendingTask = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExternalAudioResponseModelPendingTask PendingTask { get => _explicitNullValuePendingTask; set { _explicitNullValuePendingTask = value; AdditionalData?.Remove("pending_task"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pending_task"); else _explicitNullProperties?.Remove("pending_task"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExternalAudioResponseModelPendingTask _explicitNullValuePendingTask = default!;
 #endif
         /// <summary>The signed_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -266,7 +266,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "analysis", n => { Analysis = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageAnalysis>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageAnalysis.CreateFromDiscriminatorValue); } },
+                { "analysis", n => { Analysis = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModelAnalysis>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModelAnalysis.CreateFromDiscriminatorValue); } },
                 { "animation", n => { Animation = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClipAnimation>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ClipAnimation.CreateFromDiscriminatorValue); } },
                 { "canvas_placement", n => { CanvasPlacement = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CanvasPlacement>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CanvasPlacement.CreateFromDiscriminatorValue); } },
                 { "created_at_ms", n => { CreatedAtMs = n.GetIntValue(); } },
@@ -280,7 +280,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "offset_ms", n => { OffsetMs = n.GetIntValue(); } },
                 { "opacity", n => { Opacity = n.GetDoubleValue(); } },
                 { "order", n => { Order = n.GetStringValue(); } },
-                { "pending_task", n => { PendingTask = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingClipTask>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingClipTask.CreateFromDiscriminatorValue); } },
+                { "pending_task", n => { PendingTask = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExternalAudioResponseModelPendingTask>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExternalAudioResponseModelPendingTask.CreateFromDiscriminatorValue); } },
                 { "signed_url", n => { SignedUrl = n.GetStringValue(); } },
                 { "source", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UploadSource>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSource = default; _explicitNullProperties?.Remove("source"); AdditionalData["source"] = unknown; } else { Source = parsed; AdditionalData.Remove("source"); } } },
                 { "source_asset_id", n => { SourceAssetId = n.GetStringValue(); } },
@@ -299,7 +299,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageAnalysis>("analysis", Analysis);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModelAnalysis>("analysis", Analysis);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClipAnimation>("animation", Animation);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CanvasPlacement>("canvas_placement", CanvasPlacement);
             writer.WriteIntValue("created_at_ms", CreatedAtMs);
@@ -313,7 +313,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("offset_ms", OffsetMs);
             writer.WriteDoubleValue("opacity", Opacity);
             writer.WriteStringValue("order", Order);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingClipTask>("pending_task", PendingTask);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExternalAudioResponseModelPendingTask>("pending_task", PendingTask);
             writer.WriteStringValue("signed_url", SignedUrl);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UploadSource>("source", Source);
             writer.WriteStringValue("source_asset_id", SourceAssetId);

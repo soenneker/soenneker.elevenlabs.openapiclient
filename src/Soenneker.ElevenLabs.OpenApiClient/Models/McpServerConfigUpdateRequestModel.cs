@@ -109,12 +109,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Optional secret token for authentication with this MCP server</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiSecretLocator? SecretToken { get => _explicitNullValueSecretToken; set { _explicitNullValueSecretToken = value; AdditionalData?.Remove("secret_token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret_token"); else _explicitNullProperties?.Remove("secret_token"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiSecretLocator? _explicitNullValueSecretToken = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigUpdateRequestModelSecretToken? SecretToken { get => _explicitNullValueSecretToken; set { _explicitNullValueSecretToken = value; AdditionalData?.Remove("secret_token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret_token"); else _explicitNullProperties?.Remove("secret_token"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigUpdateRequestModelSecretToken? _explicitNullValueSecretToken = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiSecretLocator SecretToken { get => _explicitNullValueSecretToken; set { _explicitNullValueSecretToken = value; AdditionalData?.Remove("secret_token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret_token"); else _explicitNullProperties?.Remove("secret_token"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiSecretLocator _explicitNullValueSecretToken = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigUpdateRequestModelSecretToken SecretToken { get => _explicitNullValueSecretToken; set { _explicitNullValueSecretToken = value; AdditionalData?.Remove("secret_token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret_token"); else _explicitNullProperties?.Remove("secret_token"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigUpdateRequestModelSecretToken _explicitNullValueSecretToken = default!;
 #endif
         /// <summary>Predefined tool call sound type to play during tool execution for all tools from this MCP server</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType? ToolCallSound { get => _explicitNullValueToolCallSound; set { _explicitNullValueToolCallSound = value; AdditionalData?.Remove("tool_call_sound"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_call_sound"); else _explicitNullProperties?.Remove("tool_call_sound"); } }
@@ -158,7 +158,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "request_headers", n => { RequestHeaders = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigUpdateRequestModelRequestHeadersProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigUpdateRequestModelRequestHeadersProperty.CreateFromDiscriminatorValue); } },
                 { "request_meta", n => { RequestMeta = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigUpdateRequestModelRequestMetaProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigUpdateRequestModelRequestMetaProperty.CreateFromDiscriminatorValue); } },
                 { "response_timeout_secs", n => { ResponseTimeoutSecs = n.GetIntValue(); } },
-                { "secret_token", n => { SecretToken = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiSecretLocator>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiSecretLocator.CreateFromDiscriminatorValue); } },
+                { "secret_token", n => { SecretToken = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigUpdateRequestModelSecretToken>(global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigUpdateRequestModelSecretToken.CreateFromDiscriminatorValue); } },
                 { "tool_call_sound", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueToolCallSound = default; _explicitNullProperties?.Remove("tool_call_sound"); AdditionalData["tool_call_sound"] = unknown; } else { ToolCallSound = parsed; AdditionalData.Remove("tool_call_sound"); } } },
                 { "tool_call_sound_behavior", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehavior>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueToolCallSoundBehavior = default; _explicitNullProperties?.Remove("tool_call_sound_behavior"); AdditionalData["tool_call_sound_behavior"] = unknown; } else { ToolCallSoundBehavior = parsed; AdditionalData.Remove("tool_call_sound_behavior"); } } },
             };
@@ -181,7 +181,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigUpdateRequestModelRequestHeadersProperty>("request_headers", RequestHeaders);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigUpdateRequestModelRequestMetaProperty>("request_meta", RequestMeta);
             writer.WriteIntValue("response_timeout_secs", ResponseTimeoutSecs);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiSecretLocator>("secret_token", SecretToken);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigUpdateRequestModelSecretToken>("secret_token", SecretToken);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType>("tool_call_sound", ToolCallSound);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehavior>("tool_call_sound_behavior", ToolCallSoundBehavior);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

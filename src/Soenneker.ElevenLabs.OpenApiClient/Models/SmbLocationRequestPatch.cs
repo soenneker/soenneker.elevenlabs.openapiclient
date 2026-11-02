@@ -84,12 +84,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Per-location operating hours. On create, omit to have the server prefill from the most recently added active location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkingHours? OperatingHours { get => _explicitNullValueOperatingHours; set { _explicitNullValueOperatingHours = value; AdditionalData?.Remove("operating_hours"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operating_hours"); else _explicitNullProperties?.Remove("operating_hours"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkingHours? _explicitNullValueOperatingHours = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbLocationRequestOperatingHours? OperatingHours { get => _explicitNullValueOperatingHours; set { _explicitNullValueOperatingHours = value; AdditionalData?.Remove("operating_hours"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operating_hours"); else _explicitNullProperties?.Remove("operating_hours"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbLocationRequestOperatingHours? _explicitNullValueOperatingHours = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkingHours OperatingHours { get => _explicitNullValueOperatingHours; set { _explicitNullValueOperatingHours = value; AdditionalData?.Remove("operating_hours"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operating_hours"); else _explicitNullProperties?.Remove("operating_hours"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkingHours _explicitNullValueOperatingHours = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbLocationRequestOperatingHours OperatingHours { get => _explicitNullValueOperatingHours; set { _explicitNullValueOperatingHours = value; AdditionalData?.Remove("operating_hours"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operating_hours"); else _explicitNullProperties?.Remove("operating_hours"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbLocationRequestOperatingHours _explicitNullValueOperatingHours = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbLocationRequestPatch"/> and sets the default values.
@@ -122,7 +122,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "max_concurrent_appointments", n => { MaxConcurrentAppointments = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
-                { "operating_hours", n => { OperatingHours = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkingHours>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkingHours.CreateFromDiscriminatorValue); } },
+                { "operating_hours", n => { OperatingHours = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbLocationRequestOperatingHours>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbLocationRequestOperatingHours.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -138,7 +138,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("max_concurrent_appointments", MaxConcurrentAppointments);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("notes", Notes);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkingHours>("operating_hours", OperatingHours);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbLocationRequestOperatingHours>("operating_hours", OperatingHours);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

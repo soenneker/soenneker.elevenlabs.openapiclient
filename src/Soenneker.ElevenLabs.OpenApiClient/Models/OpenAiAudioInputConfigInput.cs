@@ -45,22 +45,22 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The transcription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiAudioInputTranscription? Transcription { get => _explicitNullValueTranscription; set { _explicitNullValueTranscription = value; AdditionalData?.Remove("transcription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transcription"); else _explicitNullProperties?.Remove("transcription"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiAudioInputTranscription? _explicitNullValueTranscription = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiAudioInputConfigInputTranscription? Transcription { get => _explicitNullValueTranscription; set { _explicitNullValueTranscription = value; AdditionalData?.Remove("transcription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transcription"); else _explicitNullProperties?.Remove("transcription"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiAudioInputConfigInputTranscription? _explicitNullValueTranscription = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiAudioInputTranscription Transcription { get => _explicitNullValueTranscription; set { _explicitNullValueTranscription = value; AdditionalData?.Remove("transcription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transcription"); else _explicitNullProperties?.Remove("transcription"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiAudioInputTranscription _explicitNullValueTranscription = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiAudioInputConfigInputTranscription Transcription { get => _explicitNullValueTranscription; set { _explicitNullValueTranscription = value; AdditionalData?.Remove("transcription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transcription"); else _explicitNullProperties?.Remove("transcription"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiAudioInputConfigInputTranscription _explicitNullValueTranscription = default!;
 #endif
         /// <summary>The turn_detection property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiTurnDetection? TurnDetection { get => _explicitNullValueTurnDetection; set { _explicitNullValueTurnDetection = value; AdditionalData?.Remove("turn_detection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("turn_detection"); else _explicitNullProperties?.Remove("turn_detection"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiTurnDetection? _explicitNullValueTurnDetection = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiAudioInputConfigInputTurnDetection? TurnDetection { get => _explicitNullValueTurnDetection; set { _explicitNullValueTurnDetection = value; AdditionalData?.Remove("turn_detection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("turn_detection"); else _explicitNullProperties?.Remove("turn_detection"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiAudioInputConfigInputTurnDetection? _explicitNullValueTurnDetection = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiTurnDetection TurnDetection { get => _explicitNullValueTurnDetection; set { _explicitNullValueTurnDetection = value; AdditionalData?.Remove("turn_detection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("turn_detection"); else _explicitNullProperties?.Remove("turn_detection"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiTurnDetection _explicitNullValueTurnDetection = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiAudioInputConfigInputTurnDetection TurnDetection { get => _explicitNullValueTurnDetection; set { _explicitNullValueTurnDetection = value; AdditionalData?.Remove("turn_detection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("turn_detection"); else _explicitNullProperties?.Remove("turn_detection"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiAudioInputConfigInputTurnDetection _explicitNullValueTurnDetection = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiAudioInputConfigInput"/> and sets the default values.
@@ -90,8 +90,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "format", n => { Format = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiAudioInputFormat>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiAudioInputFormat.CreateFromDiscriminatorValue); } },
                 { "pacing", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioInputPacing>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePacing = default; _explicitNullProperties?.Remove("pacing"); AdditionalData["pacing"] = unknown; } else { Pacing = parsed; AdditionalData.Remove("pacing"); } } },
-                { "transcription", n => { Transcription = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiAudioInputTranscription>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiAudioInputTranscription.CreateFromDiscriminatorValue); } },
-                { "turn_detection", n => { TurnDetection = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiTurnDetection>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiTurnDetection.CreateFromDiscriminatorValue); } },
+                { "transcription", n => { Transcription = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiAudioInputConfigInputTranscription>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiAudioInputConfigInputTranscription.CreateFromDiscriminatorValue); } },
+                { "turn_detection", n => { TurnDetection = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiAudioInputConfigInputTurnDetection>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiAudioInputConfigInputTurnDetection.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -103,8 +103,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiAudioInputFormat>("format", Format);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioInputPacing>("pacing", Pacing);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiAudioInputTranscription>("transcription", Transcription);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiTurnDetection>("turn_detection", TurnDetection);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiAudioInputConfigInputTranscription>("transcription", Transcription);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiAudioInputConfigInputTurnDetection>("turn_detection", TurnDetection);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

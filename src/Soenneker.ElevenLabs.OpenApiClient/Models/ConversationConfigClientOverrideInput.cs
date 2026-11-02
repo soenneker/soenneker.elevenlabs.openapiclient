@@ -34,52 +34,52 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Agent specific configuration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigOverrideInput? Agent { get => _explicitNullValueAgent; set { _explicitNullValueAgent = value; AdditionalData?.Remove("agent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent"); else _explicitNullProperties?.Remove("agent"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigOverrideInput? _explicitNullValueAgent = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideInputAgent? Agent { get => _explicitNullValueAgent; set { _explicitNullValueAgent = value; AdditionalData?.Remove("agent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent"); else _explicitNullProperties?.Remove("agent"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideInputAgent? _explicitNullValueAgent = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigOverrideInput Agent { get => _explicitNullValueAgent; set { _explicitNullValueAgent = value; AdditionalData?.Remove("agent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent"); else _explicitNullProperties?.Remove("agent"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigOverrideInput _explicitNullValueAgent = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideInputAgent Agent { get => _explicitNullValueAgent; set { _explicitNullValueAgent = value; AdditionalData?.Remove("agent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent"); else _explicitNullProperties?.Remove("agent"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideInputAgent _explicitNullValueAgent = default!;
 #endif
         /// <summary>Configuration for conversational transcription</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfigOverride? Asr { get => _explicitNullValueAsr; set { _explicitNullValueAsr = value; AdditionalData?.Remove("asr"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asr"); else _explicitNullProperties?.Remove("asr"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfigOverride? _explicitNullValueAsr = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideInputAsr? Asr { get => _explicitNullValueAsr; set { _explicitNullValueAsr = value; AdditionalData?.Remove("asr"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asr"); else _explicitNullProperties?.Remove("asr"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideInputAsr? _explicitNullValueAsr = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfigOverride Asr { get => _explicitNullValueAsr; set { _explicitNullValueAsr = value; AdditionalData?.Remove("asr"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asr"); else _explicitNullProperties?.Remove("asr"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfigOverride _explicitNullValueAsr = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideInputAsr Asr { get => _explicitNullValueAsr; set { _explicitNullValueAsr = value; AdditionalData?.Remove("asr"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asr"); else _explicitNullProperties?.Remove("asr"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideInputAsr _explicitNullValueAsr = default!;
 #endif
         /// <summary>Configuration for conversational events</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOverride? Conversation { get => _explicitNullValueConversation; set { _explicitNullValueConversation = value; AdditionalData?.Remove("conversation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation"); else _explicitNullProperties?.Remove("conversation"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOverride? _explicitNullValueConversation = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideInputConversation? Conversation { get => _explicitNullValueConversation; set { _explicitNullValueConversation = value; AdditionalData?.Remove("conversation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation"); else _explicitNullProperties?.Remove("conversation"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideInputConversation? _explicitNullValueConversation = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOverride Conversation { get => _explicitNullValueConversation; set { _explicitNullValueConversation = value; AdditionalData?.Remove("conversation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation"); else _explicitNullProperties?.Remove("conversation"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOverride _explicitNullValueConversation = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideInputConversation Conversation { get => _explicitNullValueConversation; set { _explicitNullValueConversation = value; AdditionalData?.Remove("conversation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation"); else _explicitNullProperties?.Remove("conversation"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideInputConversation _explicitNullValueConversation = default!;
 #endif
         /// <summary>Configuration for conversational text to speech</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOverride? Tts { get => _explicitNullValueTts; set { _explicitNullValueTts = value; AdditionalData?.Remove("tts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tts"); else _explicitNullProperties?.Remove("tts"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOverride? _explicitNullValueTts = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideInputTts? Tts { get => _explicitNullValueTts; set { _explicitNullValueTts = value; AdditionalData?.Remove("tts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tts"); else _explicitNullProperties?.Remove("tts"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideInputTts? _explicitNullValueTts = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOverride Tts { get => _explicitNullValueTts; set { _explicitNullValueTts = value; AdditionalData?.Remove("tts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tts"); else _explicitNullProperties?.Remove("tts"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOverride _explicitNullValueTts = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideInputTts Tts { get => _explicitNullValueTts; set { _explicitNullValueTts = value; AdditionalData?.Remove("tts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tts"); else _explicitNullProperties?.Remove("tts"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideInputTts _explicitNullValueTts = default!;
 #endif
         /// <summary>Configuration for turn detection</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnConfigOverride? Turn { get => _explicitNullValueTurn; set { _explicitNullValueTurn = value; AdditionalData?.Remove("turn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("turn"); else _explicitNullProperties?.Remove("turn"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnConfigOverride? _explicitNullValueTurn = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideInputTurn? Turn { get => _explicitNullValueTurn; set { _explicitNullValueTurn = value; AdditionalData?.Remove("turn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("turn"); else _explicitNullProperties?.Remove("turn"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideInputTurn? _explicitNullValueTurn = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnConfigOverride Turn { get => _explicitNullValueTurn; set { _explicitNullValueTurn = value; AdditionalData?.Remove("turn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("turn"); else _explicitNullProperties?.Remove("turn"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnConfigOverride _explicitNullValueTurn = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideInputTurn Turn { get => _explicitNullValueTurn; set { _explicitNullValueTurn = value; AdditionalData?.Remove("turn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("turn"); else _explicitNullProperties?.Remove("turn"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideInputTurn _explicitNullValueTurn = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideInput"/> and sets the default values.
@@ -106,11 +106,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "agent", n => { Agent = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigOverrideInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigOverrideInput.CreateFromDiscriminatorValue); } },
-                { "asr", n => { Asr = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfigOverride>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfigOverride.CreateFromDiscriminatorValue); } },
-                { "conversation", n => { Conversation = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOverride>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOverride.CreateFromDiscriminatorValue); } },
-                { "tts", n => { Tts = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOverride>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOverride.CreateFromDiscriminatorValue); } },
-                { "turn", n => { Turn = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnConfigOverride>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnConfigOverride.CreateFromDiscriminatorValue); } },
+                { "agent", n => { Agent = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideInputAgent>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideInputAgent.CreateFromDiscriminatorValue); } },
+                { "asr", n => { Asr = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideInputAsr>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideInputAsr.CreateFromDiscriminatorValue); } },
+                { "conversation", n => { Conversation = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideInputConversation>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideInputConversation.CreateFromDiscriminatorValue); } },
+                { "tts", n => { Tts = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideInputTts>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideInputTts.CreateFromDiscriminatorValue); } },
+                { "turn", n => { Turn = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideInputTurn>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideInputTurn.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -120,11 +120,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigOverrideInput>("agent", Agent);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfigOverride>("asr", Asr);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOverride>("conversation", Conversation);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOverride>("tts", Tts);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnConfigOverride>("turn", Turn);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideInputAgent>("agent", Agent);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideInputAsr>("asr", Asr);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideInputConversation>("conversation", Conversation);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideInputTts>("tts", Tts);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideInputTurn>("turn", Turn);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -165,12 +165,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Custom working hours for this staff member. None means follow the assigned location&apos;s operating_hours (requires location_id).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkingHours? WorkingHours { get => _explicitNullValueWorkingHours; set { _explicitNullValueWorkingHours = value; AdditionalData?.Remove("working_hours"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("working_hours"); else _explicitNullProperties?.Remove("working_hours"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkingHours? _explicitNullValueWorkingHours = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbCreateStaffRequestWorkingHours? WorkingHours { get => _explicitNullValueWorkingHours; set { _explicitNullValueWorkingHours = value; AdditionalData?.Remove("working_hours"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("working_hours"); else _explicitNullProperties?.Remove("working_hours"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbCreateStaffRequestWorkingHours? _explicitNullValueWorkingHours = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkingHours WorkingHours { get => _explicitNullValueWorkingHours; set { _explicitNullValueWorkingHours = value; AdditionalData?.Remove("working_hours"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("working_hours"); else _explicitNullProperties?.Remove("working_hours"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkingHours _explicitNullValueWorkingHours = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbCreateStaffRequestWorkingHours WorkingHours { get => _explicitNullValueWorkingHours; set { _explicitNullValueWorkingHours = value; AdditionalData?.Remove("working_hours"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("working_hours"); else _explicitNullProperties?.Remove("working_hours"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbCreateStaffRequestWorkingHours _explicitNullValueWorkingHours = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbStaffResourceDbModel"/> and sets the default values.
@@ -215,7 +215,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "sms_notifications_opted_in", n => { SmsNotificationsOptedIn = n.GetBoolValue(); } },
                 { "ungrouped_rank", n => { UngroupedRank = n.GetIntValue(); } },
                 { "updated_at_unix", n => { UpdatedAtUnix = n.GetIntValue(); } },
-                { "working_hours", n => { WorkingHours = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkingHours>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkingHours.CreateFromDiscriminatorValue); } },
+                { "working_hours", n => { WorkingHours = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbCreateStaffRequestWorkingHours>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbCreateStaffRequestWorkingHours.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -240,7 +240,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("sms_notifications_opted_in", SmsNotificationsOptedIn);
             writer.WriteIntValue("ungrouped_rank", UngroupedRank);
             writer.WriteIntValue("updated_at_unix", UpdatedAtUnix);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkingHours>("working_hours", WorkingHours);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbCreateStaffRequestWorkingHours>("working_hours", WorkingHours);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

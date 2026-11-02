@@ -155,12 +155,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The next invoice for the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.InvoiceResponseModel? NextInvoice { get => _explicitNullValueNextInvoice; set { _explicitNullValueNextInvoice = value; AdditionalData?.Remove("next_invoice"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_invoice"); else _explicitNullProperties?.Remove("next_invoice"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.InvoiceResponseModel? _explicitNullValueNextInvoice = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelNextInvoice? NextInvoice { get => _explicitNullValueNextInvoice; set { _explicitNullValueNextInvoice = value; AdditionalData?.Remove("next_invoice"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_invoice"); else _explicitNullProperties?.Remove("next_invoice"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelNextInvoice? _explicitNullValueNextInvoice = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.InvoiceResponseModel NextInvoice { get => _explicitNullValueNextInvoice; set { _explicitNullValueNextInvoice = value; AdditionalData?.Remove("next_invoice"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_invoice"); else _explicitNullProperties?.Remove("next_invoice"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.InvoiceResponseModel _explicitNullValueNextInvoice = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelNextInvoice NextInvoice { get => _explicitNullValueNextInvoice; set { _explicitNullValueNextInvoice = value; AdditionalData?.Remove("next_invoice"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_invoice"); else _explicitNullProperties?.Remove("next_invoice"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelNextInvoice _explicitNullValueNextInvoice = default!;
 #endif
         /// <summary>The open invoices for the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -260,7 +260,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "max_credit_limit_extension", n => { MaxCreditLimitExtension = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelMaxCreditLimitExtension>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelMaxCreditLimitExtension.CreateFromDiscriminatorValue); } },
                 { "max_voice_add_edits", n => { MaxVoiceAddEdits = n.GetIntValue(); } },
                 { "next_character_count_reset_unix", n => { NextCharacterCountResetUnix = n.GetIntValue(); } },
-                { "next_invoice", n => { NextInvoice = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.InvoiceResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.InvoiceResponseModel.CreateFromDiscriminatorValue); } },
+                { "next_invoice", n => { NextInvoice = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelNextInvoice>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelNextInvoice.CreateFromDiscriminatorValue); } },
                 { "open_invoices", n => { OpenInvoices = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.InvoiceResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.InvoiceResponseModel.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "pending_change", n => { PendingChange = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelPendingChange>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelPendingChange.CreateFromDiscriminatorValue); } },
                 { "professional_voice_limit", n => { ProfessionalVoiceLimit = n.GetIntValue(); } },
@@ -299,7 +299,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelMaxCreditLimitExtension>("max_credit_limit_extension", MaxCreditLimitExtension);
             writer.WriteIntValue("max_voice_add_edits", MaxVoiceAddEdits);
             writer.WriteIntValue("next_character_count_reset_unix", NextCharacterCountResetUnix);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.InvoiceResponseModel>("next_invoice", NextInvoice);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelNextInvoice>("next_invoice", NextInvoice);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.InvoiceResponseModel>("open_invoices", OpenInvoices);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelPendingChange>("pending_change", PendingChange);
             writer.WriteIntValue("professional_voice_limit", ProfessionalVoiceLimit);

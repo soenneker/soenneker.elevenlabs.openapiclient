@@ -96,12 +96,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Per-channel response behavior overrides for text conversations. Built-in channel defaults apply when unset.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelInputTextBehaviorOverridesAnyOf1? TextBehaviorOverrides { get => _explicitNullValueTextBehaviorOverrides; set { _explicitNullValueTextBehaviorOverrides = value; AdditionalData?.Remove("text_behavior_overrides"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text_behavior_overrides"); else _explicitNullProperties?.Remove("text_behavior_overrides"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelInputTextBehaviorOverridesAnyOf1? _explicitNullValueTextBehaviorOverrides = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelInputTextBehaviorOverrides? TextBehaviorOverrides { get => _explicitNullValueTextBehaviorOverrides; set { _explicitNullValueTextBehaviorOverrides = value; AdditionalData?.Remove("text_behavior_overrides"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text_behavior_overrides"); else _explicitNullProperties?.Remove("text_behavior_overrides"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelInputTextBehaviorOverrides? _explicitNullValueTextBehaviorOverrides = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelInputTextBehaviorOverridesAnyOf1 TextBehaviorOverrides { get => _explicitNullValueTextBehaviorOverrides; set { _explicitNullValueTextBehaviorOverrides = value; AdditionalData?.Remove("text_behavior_overrides"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text_behavior_overrides"); else _explicitNullProperties?.Remove("text_behavior_overrides"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelInputTextBehaviorOverridesAnyOf1 _explicitNullValueTextBehaviorOverrides = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelInputTextBehaviorOverrides TextBehaviorOverrides { get => _explicitNullValueTextBehaviorOverrides; set { _explicitNullValueTextBehaviorOverrides = value; AdditionalData?.Remove("text_behavior_overrides"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text_behavior_overrides"); else _explicitNullProperties?.Remove("text_behavior_overrides"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelInputTextBehaviorOverrides _explicitNullValueTextBehaviorOverrides = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelInput"/> and sets the default values.
@@ -138,7 +138,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "language", n => { Language = n.GetStringValue(); } },
                 { "max_conversation_duration_message", n => { MaxConversationDurationMessage = n.GetStringValue(); } },
                 { "prompt", n => { Prompt = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInput.CreateFromDiscriminatorValue); } },
-                { "text_behavior_overrides", n => { TextBehaviorOverrides = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelInputTextBehaviorOverridesAnyOf1>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelInputTextBehaviorOverridesAnyOf1.CreateFromDiscriminatorValue); } },
+                { "text_behavior_overrides", n => { TextBehaviorOverrides = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelInputTextBehaviorOverrides>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelInputTextBehaviorOverrides.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -155,7 +155,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("language", Language);
             writer.WriteStringValue("max_conversation_duration_message", MaxConversationDurationMessage);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInput>("prompt", Prompt);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelInputTextBehaviorOverridesAnyOf1>("text_behavior_overrides", TextBehaviorOverrides);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelInputTextBehaviorOverrides>("text_behavior_overrides", TextBehaviorOverrides);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

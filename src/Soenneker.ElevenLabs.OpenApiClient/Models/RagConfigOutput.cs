@@ -46,12 +46,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>When set, the agent uses the knowledge_base tool instead of the legacy knowledge_base_rag tool. None means the agent is not opted in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseToolInfo? KnowledgeBaseToolInfo { get => _explicitNullValueKnowledgeBaseToolInfo; set { _explicitNullValueKnowledgeBaseToolInfo = value; AdditionalData?.Remove("knowledge_base_tool_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("knowledge_base_tool_info"); else _explicitNullProperties?.Remove("knowledge_base_tool_info"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseToolInfo? _explicitNullValueKnowledgeBaseToolInfo = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfigInputKnowledgeBaseToolInfo? KnowledgeBaseToolInfo { get => _explicitNullValueKnowledgeBaseToolInfo; set { _explicitNullValueKnowledgeBaseToolInfo = value; AdditionalData?.Remove("knowledge_base_tool_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("knowledge_base_tool_info"); else _explicitNullProperties?.Remove("knowledge_base_tool_info"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfigInputKnowledgeBaseToolInfo? _explicitNullValueKnowledgeBaseToolInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseToolInfo KnowledgeBaseToolInfo { get => _explicitNullValueKnowledgeBaseToolInfo; set { _explicitNullValueKnowledgeBaseToolInfo = value; AdditionalData?.Remove("knowledge_base_tool_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("knowledge_base_tool_info"); else _explicitNullProperties?.Remove("knowledge_base_tool_info"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseToolInfo _explicitNullValueKnowledgeBaseToolInfo = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfigInputKnowledgeBaseToolInfo KnowledgeBaseToolInfo { get => _explicitNullValueKnowledgeBaseToolInfo; set { _explicitNullValueKnowledgeBaseToolInfo = value; AdditionalData?.Remove("knowledge_base_tool_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("knowledge_base_tool_info"); else _explicitNullProperties?.Remove("knowledge_base_tool_info"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfigInputKnowledgeBaseToolInfo _explicitNullValueKnowledgeBaseToolInfo = default!;
 #endif
         /// <summary>Maximum total length of document chunks retrieved from RAG.</summary>
         public int? MaxDocumentsLength { get => _explicitNullValueMaxDocumentsLength; set { _explicitNullValueMaxDocumentsLength = value; AdditionalData?.Remove("max_documents_length"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_documents_length"); else _explicitNullProperties?.Remove("max_documents_length"); } }
@@ -107,7 +107,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "embedding_model", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EmbeddingModelEnum>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEmbeddingModel = default; _explicitNullProperties?.Remove("embedding_model"); AdditionalData["embedding_model"] = unknown; } else { EmbeddingModel = parsed; AdditionalData.Remove("embedding_model"); } } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "knowledge_base_tool_info", n => { KnowledgeBaseToolInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseToolInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseToolInfo.CreateFromDiscriminatorValue); } },
+                { "knowledge_base_tool_info", n => { KnowledgeBaseToolInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfigInputKnowledgeBaseToolInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfigInputKnowledgeBaseToolInfo.CreateFromDiscriminatorValue); } },
                 { "max_documents_length", n => { MaxDocumentsLength = n.GetIntValue(); } },
                 { "max_retrieved_rag_chunks_count", n => { MaxRetrievedRagChunksCount = n.GetIntValue(); } },
                 { "max_vector_distance", n => { MaxVectorDistance = n.GetDoubleValue(); } },
@@ -124,7 +124,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EmbeddingModelEnum>("embedding_model", EmbeddingModel);
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseToolInfo>("knowledge_base_tool_info", KnowledgeBaseToolInfo);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfigInputKnowledgeBaseToolInfo>("knowledge_base_tool_info", KnowledgeBaseToolInfo);
             writer.WriteIntValue("max_documents_length", MaxDocumentsLength);
             writer.WriteIntValue("max_retrieved_rag_chunks_count", MaxRetrievedRagChunksCount);
             writer.WriteDoubleValue("max_vector_distance", MaxVectorDistance);

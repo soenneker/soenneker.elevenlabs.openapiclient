@@ -34,12 +34,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Configuration overrides to use for testing. If not provided, the agent&apos;s default configuration will be used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AdhocAgentConfigOverrideForTestRequestModel? AgentConfigOverride { get => _explicitNullValueAgentConfigOverride; set { _explicitNullValueAgentConfigOverride = value; AdditionalData?.Remove("agent_config_override"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_config_override"); else _explicitNullProperties?.Remove("agent_config_override"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AdhocAgentConfigOverrideForTestRequestModel? _explicitNullValueAgentConfigOverride = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResubmitTestsRequestModelAgentConfigOverride? AgentConfigOverride { get => _explicitNullValueAgentConfigOverride; set { _explicitNullValueAgentConfigOverride = value; AdditionalData?.Remove("agent_config_override"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_config_override"); else _explicitNullProperties?.Remove("agent_config_override"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResubmitTestsRequestModelAgentConfigOverride? _explicitNullValueAgentConfigOverride = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AdhocAgentConfigOverrideForTestRequestModel AgentConfigOverride { get => _explicitNullValueAgentConfigOverride; set { _explicitNullValueAgentConfigOverride = value; AdditionalData?.Remove("agent_config_override"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_config_override"); else _explicitNullProperties?.Remove("agent_config_override"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AdhocAgentConfigOverrideForTestRequestModel _explicitNullValueAgentConfigOverride = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResubmitTestsRequestModelAgentConfigOverride AgentConfigOverride { get => _explicitNullValueAgentConfigOverride; set { _explicitNullValueAgentConfigOverride = value; AdditionalData?.Remove("agent_config_override"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_config_override"); else _explicitNullProperties?.Remove("agent_config_override"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResubmitTestsRequestModelAgentConfigOverride _explicitNullValueAgentConfigOverride = default!;
 #endif
         /// <summary>ID of the branch to run the tests on. If not provided, the tests will be run on the agent&apos;s main branch.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,7 +100,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "agent_config_override", n => { AgentConfigOverride = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AdhocAgentConfigOverrideForTestRequestModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AdhocAgentConfigOverrideForTestRequestModel.CreateFromDiscriminatorValue); } },
+                { "agent_config_override", n => { AgentConfigOverride = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResubmitTestsRequestModelAgentConfigOverride>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ResubmitTestsRequestModelAgentConfigOverride.CreateFromDiscriminatorValue); } },
                 { "branch_id", n => { BranchId = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "repeat_count", n => { RepeatCount = n.GetIntValue(); } },
@@ -114,7 +114,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AdhocAgentConfigOverrideForTestRequestModel>("agent_config_override", AgentConfigOverride);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResubmitTestsRequestModelAgentConfigOverride>("agent_config_override", AgentConfigOverride);
             writer.WriteStringValue("branch_id", BranchId);
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("repeat_count", RepeatCount);

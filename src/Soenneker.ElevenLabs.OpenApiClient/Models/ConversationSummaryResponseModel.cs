@@ -178,12 +178,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The sentiment_analysis property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSentimentAnalysis? SentimentAnalysis { get => _explicitNullValueSentimentAnalysis; set { _explicitNullValueSentimentAnalysis = value; AdditionalData?.Remove("sentiment_analysis"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sentiment_analysis"); else _explicitNullProperties?.Remove("sentiment_analysis"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSentimentAnalysis? _explicitNullValueSentimentAnalysis = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelSentimentAnalysis? SentimentAnalysis { get => _explicitNullValueSentimentAnalysis; set { _explicitNullValueSentimentAnalysis = value; AdditionalData?.Remove("sentiment_analysis"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sentiment_analysis"); else _explicitNullProperties?.Remove("sentiment_analysis"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelSentimentAnalysis? _explicitNullValueSentimentAnalysis = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSentimentAnalysis SentimentAnalysis { get => _explicitNullValueSentimentAnalysis; set { _explicitNullValueSentimentAnalysis = value; AdditionalData?.Remove("sentiment_analysis"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sentiment_analysis"); else _explicitNullProperties?.Remove("sentiment_analysis"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSentimentAnalysis _explicitNullValueSentimentAnalysis = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelSentimentAnalysis SentimentAnalysis { get => _explicitNullValueSentimentAnalysis; set { _explicitNullValueSentimentAnalysis = value; AdditionalData?.Remove("sentiment_analysis"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sentiment_analysis"); else _explicitNullProperties?.Remove("sentiment_analysis"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelSentimentAnalysis _explicitNullValueSentimentAnalysis = default!;
 #endif
         /// <summary>The start_time_unix_secs property</summary>
         public int? StartTimeUnixSecs { get => _explicitNullValueStartTimeUnixSecs; set { _explicitNullValueStartTimeUnixSecs = value; AdditionalData?.Remove("start_time_unix_secs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_time_unix_secs"); else _explicitNullProperties?.Remove("start_time_unix_secs"); } }
@@ -285,7 +285,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "main_language", n => { MainLanguage = n.GetStringValue(); } },
                 { "message_count", n => { MessageCount = n.GetIntValue(); } },
                 { "rating", n => { Rating = n.GetDoubleValue(); } },
-                { "sentiment_analysis", n => { SentimentAnalysis = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSentimentAnalysis>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSentimentAnalysis.CreateFromDiscriminatorValue); } },
+                { "sentiment_analysis", n => { SentimentAnalysis = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelSentimentAnalysis>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelSentimentAnalysis.CreateFromDiscriminatorValue); } },
                 { "start_time_unix_secs", n => { StartTimeUnixSecs = n.GetIntValue(); } },
                 { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "tag_ids", n => { TagIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -319,7 +319,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("main_language", MainLanguage);
             writer.WriteIntValue("message_count", MessageCount);
             writer.WriteDoubleValue("rating", Rating);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSentimentAnalysis>("sentiment_analysis", SentimentAnalysis);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelSentimentAnalysis>("sentiment_analysis", SentimentAnalysis);
             writer.WriteIntValue("start_time_unix_secs", StartTimeUnixSecs);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelStatus>("status", Status);
             writer.WriteCollectionOfPrimitiveValues<string>("tag_ids", TagIds);

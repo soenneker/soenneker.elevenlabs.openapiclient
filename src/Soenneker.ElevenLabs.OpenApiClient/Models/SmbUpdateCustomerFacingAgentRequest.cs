@@ -27,15 +27,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The config property</summary>
+        /// <summary>The endpoint-managed lists are written through their own routes, never here.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomerFacingConfigPatch? Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; AdditionalData?.Remove("config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomerFacingConfigPatch? _explicitNullValueConfig = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbUpdateCustomerFacingAgentRequestConfig? Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; AdditionalData?.Remove("config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbUpdateCustomerFacingAgentRequestConfig? _explicitNullValueConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomerFacingConfigPatch Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; AdditionalData?.Remove("config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomerFacingConfigPatch _explicitNullValueConfig = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbUpdateCustomerFacingAgentRequestConfig Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; AdditionalData?.Remove("config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbUpdateCustomerFacingAgentRequestConfig _explicitNullValueConfig = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -47,15 +47,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
-        /// <summary>The widget property</summary>
+        /// <summary>How the website widget looks -- the only part of its config SMB exposes.Unlike the rest of a receptionist&apos;s settings this is not SMB data: it iswritten straight onto the ConvAI agent&apos;s ``platform_settings.widget``. Thevalue types mirror ConvAI&apos;s ``WidgetConfig`` by hand because``xi_reception`` must not depend on ``xi_agents``; they are the widget&apos;spublic API, so they are stable.A ``None`` label means &quot;no override&quot;, which keeps the widget following theagent&apos;s language instead of freezing today&apos;s translation into the config.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbWidgetAppearance? Widget { get => _explicitNullValueWidget; set { _explicitNullValueWidget = value; AdditionalData?.Remove("widget"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("widget"); else _explicitNullProperties?.Remove("widget"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbWidgetAppearance? _explicitNullValueWidget = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbUpdateCustomerFacingAgentRequestWidget? Widget { get => _explicitNullValueWidget; set { _explicitNullValueWidget = value; AdditionalData?.Remove("widget"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("widget"); else _explicitNullProperties?.Remove("widget"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbUpdateCustomerFacingAgentRequestWidget? _explicitNullValueWidget = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbWidgetAppearance Widget { get => _explicitNullValueWidget; set { _explicitNullValueWidget = value; AdditionalData?.Remove("widget"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("widget"); else _explicitNullProperties?.Remove("widget"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbWidgetAppearance _explicitNullValueWidget = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbUpdateCustomerFacingAgentRequestWidget Widget { get => _explicitNullValueWidget; set { _explicitNullValueWidget = value; AdditionalData?.Remove("widget"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("widget"); else _explicitNullProperties?.Remove("widget"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbUpdateCustomerFacingAgentRequestWidget _explicitNullValueWidget = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbUpdateCustomerFacingAgentRequest"/> and sets the default values.
@@ -82,9 +82,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "config", n => { Config = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomerFacingConfigPatch>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomerFacingConfigPatch.CreateFromDiscriminatorValue); } },
+                { "config", n => { Config = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbUpdateCustomerFacingAgentRequestConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbUpdateCustomerFacingAgentRequestConfig.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "widget", n => { Widget = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbWidgetAppearance>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbWidgetAppearance.CreateFromDiscriminatorValue); } },
+                { "widget", n => { Widget = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbUpdateCustomerFacingAgentRequestWidget>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbUpdateCustomerFacingAgentRequestWidget.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -94,9 +94,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomerFacingConfigPatch>("config", Config);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbUpdateCustomerFacingAgentRequestConfig>("config", Config);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbWidgetAppearance>("widget", Widget);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbUpdateCustomerFacingAgentRequestWidget>("widget", Widget);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

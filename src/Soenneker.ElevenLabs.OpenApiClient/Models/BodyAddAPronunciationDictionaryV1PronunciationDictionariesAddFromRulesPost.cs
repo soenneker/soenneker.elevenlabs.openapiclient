@@ -60,8 +60,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostRulesItem> _explicitNullValueRules = default!;
 #endif
         /// <summary>Should be one of &apos;admin&apos;, &apos;editor&apos; or &apos;viewer&apos;. If not provided, defaults to no access.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostWorkspaceAccess? WorkspaceAccess { get => _explicitNullValueWorkspaceAccess; set { _explicitNullValueWorkspaceAccess = value; AdditionalData?.Remove("workspace_access"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_access"); else _explicitNullProperties?.Remove("workspace_access"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostWorkspaceAccess? _explicitNullValueWorkspaceAccess = default!;
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostWorkspaceAccess WorkspaceAccess { get => _explicitNullValueWorkspaceAccess; set { _explicitNullValueWorkspaceAccess = value; AdditionalData?.Remove("workspace_access"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_access"); else _explicitNullProperties?.Remove("workspace_access"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostWorkspaceAccess _explicitNullValueWorkspaceAccess = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPost"/> and sets the default values.
         /// </summary>
@@ -90,7 +97,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "rules", n => { Rules = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostRulesItem>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostRulesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "workspace_access", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostWorkspaceAccess>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueWorkspaceAccess = default; _explicitNullProperties?.Remove("workspace_access"); AdditionalData["workspace_access"] = unknown; } else { WorkspaceAccess = parsed; AdditionalData.Remove("workspace_access"); } } },
+                { "workspace_access", n => { WorkspaceAccess = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostWorkspaceAccess>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostWorkspaceAccess.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -103,7 +110,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostRulesItem>("rules", Rules);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostWorkspaceAccess>("workspace_access", WorkspaceAccess);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostWorkspaceAccess>("workspace_access", WorkspaceAccess);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

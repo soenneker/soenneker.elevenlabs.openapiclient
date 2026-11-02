@@ -31,10 +31,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Custom hold audio played to queued callers; when unset, callers hear the default hold tone. Read-only: set it by uploading a file through the agent hold-audio endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentHoldAudioConfig? HoldAudio { get; private set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentQueueingConfigHoldAudio? HoldAudio { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentHoldAudioConfig HoldAudio { get; private set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentQueueingConfigHoldAudio HoldAudio { get; private set; }
 #endif
         /// <summary>Maximum time a caller can wait in the queue before being rejected</summary>
         public int? WaitTimeoutSeconds { get => _explicitNullValueWaitTimeoutSeconds; set { _explicitNullValueWaitTimeoutSeconds = value; AdditionalData?.Remove("wait_timeout_seconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wait_timeout_seconds"); else _explicitNullProperties?.Remove("wait_timeout_seconds"); } }
@@ -67,7 +67,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "hold_audio", n => { HoldAudio = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentHoldAudioConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentHoldAudioConfig.CreateFromDiscriminatorValue); } },
+                { "hold_audio", n => { HoldAudio = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentQueueingConfigHoldAudio>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentQueueingConfigHoldAudio.CreateFromDiscriminatorValue); } },
                 { "wait_timeout_seconds", n => { WaitTimeoutSeconds = n.GetIntValue(); } },
             };
         }

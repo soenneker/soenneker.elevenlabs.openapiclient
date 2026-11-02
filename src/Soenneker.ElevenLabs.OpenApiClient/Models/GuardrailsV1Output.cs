@@ -66,12 +66,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The moderation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ModerationGuardrailOutput? Moderation { get => _explicitNullValueModeration; set { _explicitNullValueModeration = value; AdditionalData?.Remove("moderation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("moderation"); else _explicitNullProperties?.Remove("moderation"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ModerationGuardrailOutput? _explicitNullValueModeration = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailsV1OutputModeration? Moderation { get => _explicitNullValueModeration; set { _explicitNullValueModeration = value; AdditionalData?.Remove("moderation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("moderation"); else _explicitNullProperties?.Remove("moderation"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailsV1OutputModeration? _explicitNullValueModeration = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ModerationGuardrailOutput Moderation { get => _explicitNullValueModeration; set { _explicitNullValueModeration = value; AdditionalData?.Remove("moderation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("moderation"); else _explicitNullProperties?.Remove("moderation"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ModerationGuardrailOutput _explicitNullValueModeration = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailsV1OutputModeration Moderation { get => _explicitNullValueModeration; set { _explicitNullValueModeration = value; AdditionalData?.Remove("moderation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("moderation"); else _explicitNullProperties?.Remove("moderation"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailsV1OutputModeration _explicitNullValueModeration = default!;
 #endif
         /// <summary>The prompt_injection property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -114,7 +114,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "content", n => { Content = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentGuardrailOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentGuardrailOutput.CreateFromDiscriminatorValue); } },
                 { "custom", n => { Custom = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailOutput.CreateFromDiscriminatorValue); } },
                 { "focus", n => { Focus = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FocusGuardrail>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FocusGuardrail.CreateFromDiscriminatorValue); } },
-                { "moderation", n => { Moderation = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ModerationGuardrailOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ModerationGuardrailOutput.CreateFromDiscriminatorValue); } },
+                { "moderation", n => { Moderation = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailsV1OutputModeration>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailsV1OutputModeration.CreateFromDiscriminatorValue); } },
                 { "prompt_injection", n => { PromptInjection = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptInjectionGuardrail>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptInjectionGuardrail.CreateFromDiscriminatorValue); } },
                 { "version", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailsV1OutputVersion>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueVersion = default; _explicitNullProperties?.Remove("version"); AdditionalData["version"] = unknown; } else { Version = parsed; AdditionalData.Remove("version"); } } },
             };
@@ -129,7 +129,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentGuardrailOutput>("content", Content);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailOutput>("custom", Custom);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FocusGuardrail>("focus", Focus);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ModerationGuardrailOutput>("moderation", Moderation);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailsV1OutputModeration>("moderation", Moderation);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptInjectionGuardrail>("prompt_injection", PromptInjection);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailsV1OutputVersion>("version", Version);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

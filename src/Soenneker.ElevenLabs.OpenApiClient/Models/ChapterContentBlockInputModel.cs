@@ -48,8 +48,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentParagraphTtsNodeInputModel> _explicitNullValueNodes = default!;
 #endif
         /// <summary>The sub_type property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockInputModelSubType? SubType { get => _explicitNullValueSubType; set { _explicitNullValueSubType = value; AdditionalData?.Remove("sub_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sub_type"); else _explicitNullProperties?.Remove("sub_type"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockInputModelSubType? _explicitNullValueSubType = default!;
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockInputModelSubType SubType { get => _explicitNullValueSubType; set { _explicitNullValueSubType = value; AdditionalData?.Remove("sub_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sub_type"); else _explicitNullProperties?.Remove("sub_type"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockInputModelSubType _explicitNullValueSubType = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockInputModel"/> and sets the default values.
         /// </summary>
@@ -77,7 +84,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "block_id", n => { BlockId = n.GetStringValue(); } },
                 { "nodes", n => { Nodes = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentParagraphTtsNodeInputModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentParagraphTtsNodeInputModel.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "sub_type", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockInputModelSubType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSubType = default; _explicitNullProperties?.Remove("sub_type"); AdditionalData["sub_type"] = unknown; } else { SubType = parsed; AdditionalData.Remove("sub_type"); } } },
+                { "sub_type", n => { SubType = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockInputModelSubType>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockInputModelSubType.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -89,7 +96,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("block_id", BlockId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentParagraphTtsNodeInputModel>("nodes", Nodes);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockInputModelSubType>("sub_type", SubType);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockInputModelSubType>("sub_type", SubType);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

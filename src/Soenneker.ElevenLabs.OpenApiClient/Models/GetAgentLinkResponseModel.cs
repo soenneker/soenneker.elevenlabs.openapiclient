@@ -38,12 +38,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The token data for the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTokenResponseModel? Token { get => _explicitNullValueToken; set { _explicitNullValueToken = value; AdditionalData?.Remove("token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token"); else _explicitNullProperties?.Remove("token"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTokenResponseModel? _explicitNullValueToken = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentLinkResponseModelToken? Token { get => _explicitNullValueToken; set { _explicitNullValueToken = value; AdditionalData?.Remove("token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token"); else _explicitNullProperties?.Remove("token"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentLinkResponseModelToken? _explicitNullValueToken = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTokenResponseModel Token { get => _explicitNullValueToken; set { _explicitNullValueToken = value; AdditionalData?.Remove("token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token"); else _explicitNullProperties?.Remove("token"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTokenResponseModel _explicitNullValueToken = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentLinkResponseModelToken Token { get => _explicitNullValueToken; set { _explicitNullValueToken = value; AdditionalData?.Remove("token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token"); else _explicitNullProperties?.Remove("token"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentLinkResponseModelToken _explicitNullValueToken = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentLinkResponseModel"/> and sets the default values.
@@ -71,7 +71,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
-                { "token", n => { Token = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTokenResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTokenResponseModel.CreateFromDiscriminatorValue); } },
+                { "token", n => { Token = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentLinkResponseModelToken>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentLinkResponseModelToken.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -82,7 +82,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("agent_id", AgentId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTokenResponseModel>("token", Token);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentLinkResponseModelToken>("token", Token);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

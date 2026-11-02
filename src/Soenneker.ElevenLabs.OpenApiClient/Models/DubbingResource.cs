@@ -44,22 +44,22 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The background property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaReference? Background { get => _explicitNullValueBackground; set { _explicitNullValueBackground = value; AdditionalData?.Remove("background"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("background"); else _explicitNullProperties?.Remove("background"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaReference? _explicitNullValueBackground = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbedSegmentMediaRef? Background { get => _explicitNullValueBackground; set { _explicitNullValueBackground = value; AdditionalData?.Remove("background"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("background"); else _explicitNullProperties?.Remove("background"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbedSegmentMediaRef? _explicitNullValueBackground = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaReference Background { get => _explicitNullValueBackground; set { _explicitNullValueBackground = value; AdditionalData?.Remove("background"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("background"); else _explicitNullProperties?.Remove("background"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaReference _explicitNullValueBackground = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbedSegmentMediaRef Background { get => _explicitNullValueBackground; set { _explicitNullValueBackground = value; AdditionalData?.Remove("background"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("background"); else _explicitNullProperties?.Remove("background"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbedSegmentMediaRef _explicitNullValueBackground = default!;
 #endif
         /// <summary>The foreground property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaReference? Foreground { get => _explicitNullValueForeground; set { _explicitNullValueForeground = value; AdditionalData?.Remove("foreground"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("foreground"); else _explicitNullProperties?.Remove("foreground"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaReference? _explicitNullValueForeground = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbedSegmentMediaRef? Foreground { get => _explicitNullValueForeground; set { _explicitNullValueForeground = value; AdditionalData?.Remove("foreground"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("foreground"); else _explicitNullProperties?.Remove("foreground"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbedSegmentMediaRef? _explicitNullValueForeground = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaReference Foreground { get => _explicitNullValueForeground; set { _explicitNullValueForeground = value; AdditionalData?.Remove("foreground"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("foreground"); else _explicitNullProperties?.Remove("foreground"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaReference _explicitNullValueForeground = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbedSegmentMediaRef Foreground { get => _explicitNullValueForeground; set { _explicitNullValueForeground = value; AdditionalData?.Remove("foreground"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("foreground"); else _explicitNullProperties?.Remove("foreground"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbedSegmentMediaRef _explicitNullValueForeground = default!;
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -159,8 +159,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "background", n => { Background = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaReference>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaReference.CreateFromDiscriminatorValue); } },
-                { "foreground", n => { Foreground = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaReference>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaReference.CreateFromDiscriminatorValue); } },
+                { "background", n => { Background = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbedSegmentMediaRef>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbedSegmentMediaRef.CreateFromDiscriminatorValue); } },
+                { "foreground", n => { Foreground = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbedSegmentMediaRef>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbedSegmentMediaRef.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "input", n => { Input = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaReference>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaReference.CreateFromDiscriminatorValue); } },
                 { "renders", n => { Renders = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingResourceRendersProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingResourceRendersProperty.CreateFromDiscriminatorValue); } },
@@ -178,8 +178,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaReference>("background", Background);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaReference>("foreground", Foreground);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbedSegmentMediaRef>("background", Background);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbedSegmentMediaRef>("foreground", Foreground);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaReference>("input", Input);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingResourceRendersProperty>("renders", Renders);

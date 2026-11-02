@@ -70,12 +70,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The inbound_trunk_config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.InboundSipTrunkConfigRequestModel? InboundTrunkConfig { get => _explicitNullValueInboundTrunkConfig; set { _explicitNullValueInboundTrunkConfig = value; AdditionalData?.Remove("inbound_trunk_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inbound_trunk_config"); else _explicitNullProperties?.Remove("inbound_trunk_config"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.InboundSipTrunkConfigRequestModel? _explicitNullValueInboundTrunkConfig = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateSipTrunkPhoneNumberRequestV2InboundTrunkConfig? InboundTrunkConfig { get => _explicitNullValueInboundTrunkConfig; set { _explicitNullValueInboundTrunkConfig = value; AdditionalData?.Remove("inbound_trunk_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inbound_trunk_config"); else _explicitNullProperties?.Remove("inbound_trunk_config"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateSipTrunkPhoneNumberRequestV2InboundTrunkConfig? _explicitNullValueInboundTrunkConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.InboundSipTrunkConfigRequestModel InboundTrunkConfig { get => _explicitNullValueInboundTrunkConfig; set { _explicitNullValueInboundTrunkConfig = value; AdditionalData?.Remove("inbound_trunk_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inbound_trunk_config"); else _explicitNullProperties?.Remove("inbound_trunk_config"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.InboundSipTrunkConfigRequestModel _explicitNullValueInboundTrunkConfig = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateSipTrunkPhoneNumberRequestV2InboundTrunkConfig InboundTrunkConfig { get => _explicitNullValueInboundTrunkConfig; set { _explicitNullValueInboundTrunkConfig = value; AdditionalData?.Remove("inbound_trunk_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inbound_trunk_config"); else _explicitNullProperties?.Remove("inbound_trunk_config"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateSipTrunkPhoneNumberRequestV2InboundTrunkConfig _explicitNullValueInboundTrunkConfig = default!;
 #endif
         /// <summary>The label property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -93,12 +93,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The outbound_trunk_config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundSipTrunkConfigRequestModel? OutboundTrunkConfig { get => _explicitNullValueOutboundTrunkConfig; set { _explicitNullValueOutboundTrunkConfig = value; AdditionalData?.Remove("outbound_trunk_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outbound_trunk_config"); else _explicitNullProperties?.Remove("outbound_trunk_config"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundSipTrunkConfigRequestModel? _explicitNullValueOutboundTrunkConfig = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateSipTrunkPhoneNumberRequestV2OutboundTrunkConfig? OutboundTrunkConfig { get => _explicitNullValueOutboundTrunkConfig; set { _explicitNullValueOutboundTrunkConfig = value; AdditionalData?.Remove("outbound_trunk_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outbound_trunk_config"); else _explicitNullProperties?.Remove("outbound_trunk_config"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateSipTrunkPhoneNumberRequestV2OutboundTrunkConfig? _explicitNullValueOutboundTrunkConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundSipTrunkConfigRequestModel OutboundTrunkConfig { get => _explicitNullValueOutboundTrunkConfig; set { _explicitNullValueOutboundTrunkConfig = value; AdditionalData?.Remove("outbound_trunk_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outbound_trunk_config"); else _explicitNullProperties?.Remove("outbound_trunk_config"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundSipTrunkConfigRequestModel _explicitNullValueOutboundTrunkConfig = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateSipTrunkPhoneNumberRequestV2OutboundTrunkConfig OutboundTrunkConfig { get => _explicitNullValueOutboundTrunkConfig; set { _explicitNullValueOutboundTrunkConfig = value; AdditionalData?.Remove("outbound_trunk_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outbound_trunk_config"); else _explicitNullProperties?.Remove("outbound_trunk_config"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateSipTrunkPhoneNumberRequestV2OutboundTrunkConfig _explicitNullValueOutboundTrunkConfig = default!;
 #endif
         /// <summary>The store_sip_messages property</summary>
         public bool? StoreSipMessages { get => _explicitNullValueStoreSipMessages; set { _explicitNullValueStoreSipMessages = value; AdditionalData?.Remove("store_sip_messages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("store_sip_messages"); else _explicitNullProperties?.Remove("store_sip_messages"); } }
@@ -131,10 +131,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
                 { "branch_id", n => { BranchId = n.GetStringValue(); } },
                 { "environment", n => { Environment = n.GetStringValue(); } },
-                { "inbound_trunk_config", n => { InboundTrunkConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.InboundSipTrunkConfigRequestModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.InboundSipTrunkConfigRequestModel.CreateFromDiscriminatorValue); } },
+                { "inbound_trunk_config", n => { InboundTrunkConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateSipTrunkPhoneNumberRequestV2InboundTrunkConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateSipTrunkPhoneNumberRequestV2InboundTrunkConfig.CreateFromDiscriminatorValue); } },
                 { "label", n => { Label = n.GetStringValue(); } },
                 { "livekit_stack", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LivekitStackType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueLivekitStack = default; _explicitNullProperties?.Remove("livekit_stack"); AdditionalData["livekit_stack"] = unknown; } else { LivekitStack = parsed; AdditionalData.Remove("livekit_stack"); } } },
-                { "outbound_trunk_config", n => { OutboundTrunkConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundSipTrunkConfigRequestModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundSipTrunkConfigRequestModel.CreateFromDiscriminatorValue); } },
+                { "outbound_trunk_config", n => { OutboundTrunkConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateSipTrunkPhoneNumberRequestV2OutboundTrunkConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateSipTrunkPhoneNumberRequestV2OutboundTrunkConfig.CreateFromDiscriminatorValue); } },
                 { "store_sip_messages", n => { StoreSipMessages = n.GetBoolValue(); } },
             };
         }
@@ -148,10 +148,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("agent_id", AgentId);
             writer.WriteStringValue("branch_id", BranchId);
             writer.WriteStringValue("environment", Environment);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.InboundSipTrunkConfigRequestModel>("inbound_trunk_config", InboundTrunkConfig);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateSipTrunkPhoneNumberRequestV2InboundTrunkConfig>("inbound_trunk_config", InboundTrunkConfig);
             writer.WriteStringValue("label", Label);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LivekitStackType>("livekit_stack", LivekitStack);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundSipTrunkConfigRequestModel>("outbound_trunk_config", OutboundTrunkConfig);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateSipTrunkPhoneNumberRequestV2OutboundTrunkConfig>("outbound_trunk_config", OutboundTrunkConfig);
             writer.WriteBoolValue("store_sip_messages", StoreSipMessages);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

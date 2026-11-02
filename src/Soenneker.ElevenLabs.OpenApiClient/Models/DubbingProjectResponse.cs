@@ -53,12 +53,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Why the project failed; null unless `status` is `failed`. Also null for the few projects that failed before failure reporting was introduced.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingError? Error { get => _explicitNullValueError; set { _explicitNullValueError = value; AdditionalData?.Remove("error"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingError? _explicitNullValueError = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectResponseError? Error { get => _explicitNullValueError; set { _explicitNullValueError = value; AdditionalData?.Remove("error"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectResponseError? _explicitNullValueError = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingError Error { get => _explicitNullValueError; set { _explicitNullValueError = value; AdditionalData?.Remove("error"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingError _explicitNullValueError = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectResponseError Error { get => _explicitNullValueError; set { _explicitNullValueError = value; AdditionalData?.Remove("error"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectResponseError _explicitNullValueError = default!;
 #endif
         /// <summary>Identifiers of the language targets under this project. Populated when a single project is fetched, and on create when `target_language` creates one. Always empty in list responses — list the project&apos;s language targets instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,12 +73,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Source media metadata, populated once the source has been fetched and decoded (shortly after create, before the project is `ready`); null until then.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingSourceMediaInfo? Media { get => _explicitNullValueMedia; set { _explicitNullValueMedia = value; AdditionalData?.Remove("media"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media"); else _explicitNullProperties?.Remove("media"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingSourceMediaInfo? _explicitNullValueMedia = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectResponseMedia? Media { get => _explicitNullValueMedia; set { _explicitNullValueMedia = value; AdditionalData?.Remove("media"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media"); else _explicitNullProperties?.Remove("media"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectResponseMedia? _explicitNullValueMedia = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingSourceMediaInfo Media { get => _explicitNullValueMedia; set { _explicitNullValueMedia = value; AdditionalData?.Remove("media"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media"); else _explicitNullProperties?.Remove("media"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingSourceMediaInfo _explicitNullValueMedia = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectResponseMedia Media { get => _explicitNullValueMedia; set { _explicitNullValueMedia = value; AdditionalData?.Remove("media"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media"); else _explicitNullProperties?.Remove("media"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectResponseMedia _explicitNullValueMedia = default!;
 #endif
         /// <summary>Dubbing model every language target of this project is dubbed with. Fixed at create time and not selectable per language.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -175,9 +175,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "error", n => { Error = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingError>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingError.CreateFromDiscriminatorValue); } },
+                { "error", n => { Error = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectResponseError>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectResponseError.CreateFromDiscriminatorValue); } },
                 { "language_ids", n => { LanguageIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "media", n => { Media = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingSourceMediaInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingSourceMediaInfo.CreateFromDiscriminatorValue); } },
+                { "media", n => { Media = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectResponseMedia>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectResponseMedia.CreateFromDiscriminatorValue); } },
                 { "model_id", n => { ModelId = n.GetStringValue(); } },
                 { "project_id", n => { ProjectId = n.GetStringValue(); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
@@ -197,9 +197,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingError>("error", Error);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectResponseError>("error", Error);
             writer.WriteCollectionOfPrimitiveValues<string>("language_ids", LanguageIds);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingSourceMediaInfo>("media", Media);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectResponseMedia>("media", Media);
             writer.WriteStringValue("model_id", ModelId);
             writer.WriteStringValue("project_id", ProjectId);
             writer.WriteStringValue("reference", Reference);

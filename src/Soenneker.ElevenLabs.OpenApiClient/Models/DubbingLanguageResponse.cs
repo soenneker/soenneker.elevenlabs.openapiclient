@@ -53,12 +53,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Why this language failed; null unless `status` is `failed`, and also null for the few languages that failed before failure reporting was introduced. A code of `project_failed` means the parent project failed, so read the project for the underlying cause.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingError? Error { get => _explicitNullValueError; set { _explicitNullValueError = value; AdditionalData?.Remove("error"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingError? _explicitNullValueError = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageResponseError? Error { get => _explicitNullValueError; set { _explicitNullValueError = value; AdditionalData?.Remove("error"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageResponseError? _explicitNullValueError = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingError Error { get => _explicitNullValueError; set { _explicitNullValueError = value; AdditionalData?.Remove("error"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingError _explicitNullValueError = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageResponseError Error { get => _explicitNullValueError; set { _explicitNullValueError = value; AdditionalData?.Remove("error"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageResponseError _explicitNullValueError = default!;
 #endif
         /// <summary>Unique identifier of the language target.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -86,12 +86,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Signed output URLs; null until the target has produced an output (present once `completed`, and kept while `stale` — compare `output_revision` against `revision` to tell whether the output is up to date).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageOutputs? Outputs { get => _explicitNullValueOutputs; set { _explicitNullValueOutputs = value; AdditionalData?.Remove("outputs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outputs"); else _explicitNullProperties?.Remove("outputs"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageOutputs? _explicitNullValueOutputs = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageResponseOutputs? Outputs { get => _explicitNullValueOutputs; set { _explicitNullValueOutputs = value; AdditionalData?.Remove("outputs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outputs"); else _explicitNullProperties?.Remove("outputs"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageResponseOutputs? _explicitNullValueOutputs = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageOutputs Outputs { get => _explicitNullValueOutputs; set { _explicitNullValueOutputs = value; AdditionalData?.Remove("outputs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outputs"); else _explicitNullProperties?.Remove("outputs"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageOutputs _explicitNullValueOutputs = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageResponseOutputs Outputs { get => _explicitNullValueOutputs; set { _explicitNullValueOutputs = value; AdditionalData?.Remove("outputs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outputs"); else _explicitNullProperties?.Remove("outputs"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageResponseOutputs _explicitNullValueOutputs = default!;
 #endif
         /// <summary>Identifier of the parent dubbing project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -125,12 +125,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Voice settings applied to every speaker in this language, or null if the defaults apply.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettings? VoiceSettings { get => _explicitNullValueVoiceSettings; set { _explicitNullValueVoiceSettings = value; AdditionalData?.Remove("voice_settings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_settings"); else _explicitNullProperties?.Remove("voice_settings"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettings? _explicitNullValueVoiceSettings = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageResponseVoiceSettings? VoiceSettings { get => _explicitNullValueVoiceSettings; set { _explicitNullValueVoiceSettings = value; AdditionalData?.Remove("voice_settings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_settings"); else _explicitNullProperties?.Remove("voice_settings"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageResponseVoiceSettings? _explicitNullValueVoiceSettings = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettings VoiceSettings { get => _explicitNullValueVoiceSettings; set { _explicitNullValueVoiceSettings = value; AdditionalData?.Remove("voice_settings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_settings"); else _explicitNullProperties?.Remove("voice_settings"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettings _explicitNullValueVoiceSettings = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageResponseVoiceSettings VoiceSettings { get => _explicitNullValueVoiceSettings; set { _explicitNullValueVoiceSettings = value; AdditionalData?.Remove("voice_settings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_settings"); else _explicitNullProperties?.Remove("voice_settings"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageResponseVoiceSettings _explicitNullValueVoiceSettings = default!;
 #endif
         /// <summary>Non-fatal conditions raised while dubbing this language, empty when there are none. Reflects the latest generation. Conditions raised while preparing the source are reported on the project instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -168,17 +168,17 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "error", n => { Error = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingError>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingError.CreateFromDiscriminatorValue); } },
+                { "error", n => { Error = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageResponseError>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageResponseError.CreateFromDiscriminatorValue); } },
                 { "language_id", n => { LanguageId = n.GetStringValue(); } },
                 { "model_id", n => { ModelId = n.GetStringValue(); } },
                 { "output_revision", n => { OutputRevision = n.GetIntValue(); } },
-                { "outputs", n => { Outputs = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageOutputs>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageOutputs.CreateFromDiscriminatorValue); } },
+                { "outputs", n => { Outputs = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageResponseOutputs>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageResponseOutputs.CreateFromDiscriminatorValue); } },
                 { "project_id", n => { ProjectId = n.GetStringValue(); } },
                 { "revision", n => { Revision = n.GetIntValue(); } },
                 { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageResponseStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "target_language", n => { TargetLanguage = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                { "voice_settings", n => { VoiceSettings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettings>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettings.CreateFromDiscriminatorValue); } },
+                { "voice_settings", n => { VoiceSettings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageResponseVoiceSettings>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageResponseVoiceSettings.CreateFromDiscriminatorValue); } },
                 { "warnings", n => { Warnings = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicesNotPermittedWarning>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicesNotPermittedWarning.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -190,17 +190,17 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingError>("error", Error);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageResponseError>("error", Error);
             writer.WriteStringValue("language_id", LanguageId);
             writer.WriteStringValue("model_id", ModelId);
             writer.WriteIntValue("output_revision", OutputRevision);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageOutputs>("outputs", Outputs);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageResponseOutputs>("outputs", Outputs);
             writer.WriteStringValue("project_id", ProjectId);
             writer.WriteIntValue("revision", Revision);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageResponseStatus>("status", Status);
             writer.WriteStringValue("target_language", TargetLanguage);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettings>("voice_settings", VoiceSettings);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageResponseVoiceSettings>("voice_settings", VoiceSettings);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicesNotPermittedWarning>("warnings", Warnings);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

@@ -97,12 +97,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>User-to-User Information (RFC 7433) to attach to SIP REFER transfers. Carries call context such as CRM identifiers or escalation reason across the transfer boundary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UuiTransferConfig? Uui { get => _explicitNullValueUui; set { _explicitNullValueUui = value; AdditionalData?.Remove("uui"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uui"); else _explicitNullProperties?.Remove("uui"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.UuiTransferConfig? _explicitNullValueUui = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferUui? Uui { get => _explicitNullValueUui; set { _explicitNullValueUui = value; AdditionalData?.Remove("uui"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uui"); else _explicitNullProperties?.Remove("uui"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferUui? _explicitNullValueUui = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UuiTransferConfig Uui { get => _explicitNullValueUui; set { _explicitNullValueUui = value; AdditionalData?.Remove("uui"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uui"); else _explicitNullProperties?.Remove("uui"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.UuiTransferConfig _explicitNullValueUui = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferUui Uui { get => _explicitNullValueUui; set { _explicitNullValueUui = value; AdditionalData?.Remove("uui"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uui"); else _explicitNullProperties?.Remove("uui"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferUui _explicitNullValueUui = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransfer"/> and sets the default values.
@@ -138,7 +138,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "sip_refer_play_dialtone", n => { SipReferPlayDialtone = n.GetBoolValue(); } },
                 { "transfer_destination", n => { TransferDestination = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestination>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestination.CreateFromDiscriminatorValue); } },
                 { "transfer_type", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferTypeEnum>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTransferType = default; _explicitNullProperties?.Remove("transfer_type"); AdditionalData["transfer_type"] = unknown; } else { TransferType = parsed; AdditionalData.Remove("transfer_type"); } } },
-                { "uui", n => { Uui = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UuiTransferConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UuiTransferConfig.CreateFromDiscriminatorValue); } },
+                { "uui", n => { Uui = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferUui>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferUui.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -155,7 +155,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("sip_refer_play_dialtone", SipReferPlayDialtone);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestination>("transfer_destination", TransferDestination);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferTypeEnum>("transfer_type", TransferType);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UuiTransferConfig>("uui", Uui);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferUui>("uui", Uui);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

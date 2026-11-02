@@ -101,8 +101,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The permission on the resource of the pronunciation dictionary.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryWithRulesResponseModelPermissionOnResource? PermissionOnResource { get => _explicitNullValuePermissionOnResource; set { _explicitNullValuePermissionOnResource = value; AdditionalData?.Remove("permission_on_resource"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permission_on_resource"); else _explicitNullProperties?.Remove("permission_on_resource"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryWithRulesResponseModelPermissionOnResource? _explicitNullValuePermissionOnResource = default!;
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryWithRulesResponseModelPermissionOnResource PermissionOnResource { get => _explicitNullValuePermissionOnResource; set { _explicitNullValuePermissionOnResource = value; AdditionalData?.Remove("permission_on_resource"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permission_on_resource"); else _explicitNullProperties?.Remove("permission_on_resource"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryWithRulesResponseModelPermissionOnResource _explicitNullValuePermissionOnResource = default!;
+#endif
         /// <summary>The rules in the latest version of the pronunciation dictionary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -146,7 +153,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "latest_version_id", n => { LatestVersionId = n.GetStringValue(); } },
                 { "latest_version_rules_num", n => { LatestVersionRulesNum = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "permission_on_resource", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryWithRulesResponseModelPermissionOnResource>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePermissionOnResource = default; _explicitNullProperties?.Remove("permission_on_resource"); AdditionalData["permission_on_resource"] = unknown; } else { PermissionOnResource = parsed; AdditionalData.Remove("permission_on_resource"); } } },
+                { "permission_on_resource", n => { PermissionOnResource = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryWithRulesResponseModelPermissionOnResource>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryWithRulesResponseModelPermissionOnResource.CreateFromDiscriminatorValue); } },
                 { "rules", n => { Rules = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryWithRulesResponseModelRulesItem>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryWithRulesResponseModelRulesItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -165,7 +172,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("latest_version_id", LatestVersionId);
             writer.WriteIntValue("latest_version_rules_num", LatestVersionRulesNum);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryWithRulesResponseModelPermissionOnResource>("permission_on_resource", PermissionOnResource);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryWithRulesResponseModelPermissionOnResource>("permission_on_resource", PermissionOnResource);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryWithRulesResponseModelRulesItem>("rules", Rules);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

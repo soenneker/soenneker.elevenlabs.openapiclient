@@ -72,12 +72,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The reseller-managed subscription, when this workspace has one. None means nothing is sold here yet and a tier can be assigned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSubscription? Subscription { get => _explicitNullValueSubscription; set { _explicitNullValueSubscription = value; AdditionalData?.Remove("subscription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscription"); else _explicitNullProperties?.Remove("subscription"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSubscription? _explicitNullValueSubscription = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProvisionResellerWorkspaceResponseSubscription? Subscription { get => _explicitNullValueSubscription; set { _explicitNullValueSubscription = value; AdditionalData?.Remove("subscription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscription"); else _explicitNullProperties?.Remove("subscription"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ProvisionResellerWorkspaceResponseSubscription? _explicitNullValueSubscription = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSubscription Subscription { get => _explicitNullValueSubscription; set { _explicitNullValueSubscription = value; AdditionalData?.Remove("subscription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscription"); else _explicitNullProperties?.Remove("subscription"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSubscription _explicitNullValueSubscription = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProvisionResellerWorkspaceResponseSubscription Subscription { get => _explicitNullValueSubscription; set { _explicitNullValueSubscription = value; AdditionalData?.Remove("subscription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscription"); else _explicitNullProperties?.Remove("subscription"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ProvisionResellerWorkspaceResponseSubscription _explicitNullValueSubscription = default!;
 #endif
         /// <summary>The workspace_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -121,7 +121,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "created_at_unix", n => { CreatedAtUnix = n.GetIntValue(); } },
                 { "has_payment_issue", n => { HasPaymentIssue = n.GetBoolValue(); } },
                 { "receptionist_count", n => { ReceptionistCount = n.GetIntValue(); } },
-                { "subscription", n => { Subscription = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSubscription>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSubscription.CreateFromDiscriminatorValue); } },
+                { "subscription", n => { Subscription = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProvisionResellerWorkspaceResponseSubscription>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProvisionResellerWorkspaceResponseSubscription.CreateFromDiscriminatorValue); } },
                 { "workspace_id", n => { WorkspaceId = n.GetStringValue(); } },
             };
         }
@@ -138,7 +138,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("created_at_unix", CreatedAtUnix);
             writer.WriteBoolValue("has_payment_issue", HasPaymentIssue);
             writer.WriteIntValue("receptionist_count", ReceptionistCount);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSubscription>("subscription", Subscription);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProvisionResellerWorkspaceResponseSubscription>("subscription", Subscription);
             writer.WriteStringValue("workspace_id", WorkspaceId);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

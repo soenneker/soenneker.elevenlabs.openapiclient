@@ -28,12 +28,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The webhook to send conversation initiation client data to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataWebhook? ConversationInitiationClientDataWebhook { get => _explicitNullValueConversationInitiationClientDataWebhook; set { _explicitNullValueConversationInitiationClientDataWebhook = value; AdditionalData?.Remove("conversation_initiation_client_data_webhook"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_initiation_client_data_webhook"); else _explicitNullProperties?.Remove("conversation_initiation_client_data_webhook"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataWebhook? _explicitNullValueConversationInitiationClientDataWebhook = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkspaceOverridesInputConversationInitiationClientDataWebhook? ConversationInitiationClientDataWebhook { get => _explicitNullValueConversationInitiationClientDataWebhook; set { _explicitNullValueConversationInitiationClientDataWebhook = value; AdditionalData?.Remove("conversation_initiation_client_data_webhook"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_initiation_client_data_webhook"); else _explicitNullProperties?.Remove("conversation_initiation_client_data_webhook"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkspaceOverridesInputConversationInitiationClientDataWebhook? _explicitNullValueConversationInitiationClientDataWebhook = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataWebhook ConversationInitiationClientDataWebhook { get => _explicitNullValueConversationInitiationClientDataWebhook; set { _explicitNullValueConversationInitiationClientDataWebhook = value; AdditionalData?.Remove("conversation_initiation_client_data_webhook"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_initiation_client_data_webhook"); else _explicitNullProperties?.Remove("conversation_initiation_client_data_webhook"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataWebhook _explicitNullValueConversationInitiationClientDataWebhook = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkspaceOverridesInputConversationInitiationClientDataWebhook ConversationInitiationClientDataWebhook { get => _explicitNullValueConversationInitiationClientDataWebhook; set { _explicitNullValueConversationInitiationClientDataWebhook = value; AdditionalData?.Remove("conversation_initiation_client_data_webhook"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_initiation_client_data_webhook"); else _explicitNullProperties?.Remove("conversation_initiation_client_data_webhook"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkspaceOverridesInputConversationInitiationClientDataWebhook _explicitNullValueConversationInitiationClientDataWebhook = default!;
 #endif
         /// <summary>The webhooks property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -70,7 +70,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "conversation_initiation_client_data_webhook", n => { ConversationInitiationClientDataWebhook = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataWebhook>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataWebhook.CreateFromDiscriminatorValue); } },
+                { "conversation_initiation_client_data_webhook", n => { ConversationInitiationClientDataWebhook = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkspaceOverridesInputConversationInitiationClientDataWebhook>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkspaceOverridesInputConversationInitiationClientDataWebhook.CreateFromDiscriminatorValue); } },
                 { "webhooks", n => { Webhooks = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiWebhooks>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiWebhooks.CreateFromDiscriminatorValue); } },
             };
         }
@@ -81,7 +81,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataWebhook>("conversation_initiation_client_data_webhook", ConversationInitiationClientDataWebhook);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkspaceOverridesInputConversationInitiationClientDataWebhook>("conversation_initiation_client_data_webhook", ConversationInitiationClientDataWebhook);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiWebhooks>("webhooks", Webhooks);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

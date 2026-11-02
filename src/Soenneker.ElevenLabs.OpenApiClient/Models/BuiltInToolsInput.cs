@@ -39,72 +39,72 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The end call tool</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput? EndCall { get => _explicitNullValueEndCall; set { _explicitNullValueEndCall = value; AdditionalData?.Remove("end_call"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_call"); else _explicitNullProperties?.Remove("end_call"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput? _explicitNullValueEndCall = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputEndCall? EndCall { get => _explicitNullValueEndCall; set { _explicitNullValueEndCall = value; AdditionalData?.Remove("end_call"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_call"); else _explicitNullProperties?.Remove("end_call"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputEndCall? _explicitNullValueEndCall = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput EndCall { get => _explicitNullValueEndCall; set { _explicitNullValueEndCall = value; AdditionalData?.Remove("end_call"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_call"); else _explicitNullProperties?.Remove("end_call"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput _explicitNullValueEndCall = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputEndCall EndCall { get => _explicitNullValueEndCall; set { _explicitNullValueEndCall = value; AdditionalData?.Remove("end_call"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_call"); else _explicitNullProperties?.Remove("end_call"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputEndCall _explicitNullValueEndCall = default!;
 #endif
         /// <summary>The language detection tool</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput? LanguageDetection { get => _explicitNullValueLanguageDetection; set { _explicitNullValueLanguageDetection = value; AdditionalData?.Remove("language_detection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language_detection"); else _explicitNullProperties?.Remove("language_detection"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput? _explicitNullValueLanguageDetection = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputLanguageDetection? LanguageDetection { get => _explicitNullValueLanguageDetection; set { _explicitNullValueLanguageDetection = value; AdditionalData?.Remove("language_detection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language_detection"); else _explicitNullProperties?.Remove("language_detection"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputLanguageDetection? _explicitNullValueLanguageDetection = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput LanguageDetection { get => _explicitNullValueLanguageDetection; set { _explicitNullValueLanguageDetection = value; AdditionalData?.Remove("language_detection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language_detection"); else _explicitNullProperties?.Remove("language_detection"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput _explicitNullValueLanguageDetection = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputLanguageDetection LanguageDetection { get => _explicitNullValueLanguageDetection; set { _explicitNullValueLanguageDetection = value; AdditionalData?.Remove("language_detection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language_detection"); else _explicitNullProperties?.Remove("language_detection"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputLanguageDetection _explicitNullValueLanguageDetection = default!;
 #endif
         /// <summary>The play DTMF tool</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput? PlayKeypadTouchTone { get => _explicitNullValuePlayKeypadTouchTone; set { _explicitNullValuePlayKeypadTouchTone = value; AdditionalData?.Remove("play_keypad_touch_tone"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("play_keypad_touch_tone"); else _explicitNullProperties?.Remove("play_keypad_touch_tone"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput? _explicitNullValuePlayKeypadTouchTone = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputPlayKeypadTouchTone? PlayKeypadTouchTone { get => _explicitNullValuePlayKeypadTouchTone; set { _explicitNullValuePlayKeypadTouchTone = value; AdditionalData?.Remove("play_keypad_touch_tone"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("play_keypad_touch_tone"); else _explicitNullProperties?.Remove("play_keypad_touch_tone"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputPlayKeypadTouchTone? _explicitNullValuePlayKeypadTouchTone = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput PlayKeypadTouchTone { get => _explicitNullValuePlayKeypadTouchTone; set { _explicitNullValuePlayKeypadTouchTone = value; AdditionalData?.Remove("play_keypad_touch_tone"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("play_keypad_touch_tone"); else _explicitNullProperties?.Remove("play_keypad_touch_tone"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput _explicitNullValuePlayKeypadTouchTone = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputPlayKeypadTouchTone PlayKeypadTouchTone { get => _explicitNullValuePlayKeypadTouchTone; set { _explicitNullValuePlayKeypadTouchTone = value; AdditionalData?.Remove("play_keypad_touch_tone"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("play_keypad_touch_tone"); else _explicitNullProperties?.Remove("play_keypad_touch_tone"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputPlayKeypadTouchTone _explicitNullValuePlayKeypadTouchTone = default!;
 #endif
         /// <summary>The skip turn tool</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput? SkipTurn { get => _explicitNullValueSkipTurn; set { _explicitNullValueSkipTurn = value; AdditionalData?.Remove("skip_turn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skip_turn"); else _explicitNullProperties?.Remove("skip_turn"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput? _explicitNullValueSkipTurn = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputSkipTurn? SkipTurn { get => _explicitNullValueSkipTurn; set { _explicitNullValueSkipTurn = value; AdditionalData?.Remove("skip_turn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skip_turn"); else _explicitNullProperties?.Remove("skip_turn"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputSkipTurn? _explicitNullValueSkipTurn = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput SkipTurn { get => _explicitNullValueSkipTurn; set { _explicitNullValueSkipTurn = value; AdditionalData?.Remove("skip_turn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skip_turn"); else _explicitNullProperties?.Remove("skip_turn"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput _explicitNullValueSkipTurn = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputSkipTurn SkipTurn { get => _explicitNullValueSkipTurn; set { _explicitNullValueSkipTurn = value; AdditionalData?.Remove("skip_turn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skip_turn"); else _explicitNullProperties?.Remove("skip_turn"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputSkipTurn _explicitNullValueSkipTurn = default!;
 #endif
         /// <summary>The transfer to agent tool</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput? TransferToAgent { get => _explicitNullValueTransferToAgent; set { _explicitNullValueTransferToAgent = value; AdditionalData?.Remove("transfer_to_agent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_to_agent"); else _explicitNullProperties?.Remove("transfer_to_agent"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput? _explicitNullValueTransferToAgent = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputTransferToAgent? TransferToAgent { get => _explicitNullValueTransferToAgent; set { _explicitNullValueTransferToAgent = value; AdditionalData?.Remove("transfer_to_agent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_to_agent"); else _explicitNullProperties?.Remove("transfer_to_agent"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputTransferToAgent? _explicitNullValueTransferToAgent = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput TransferToAgent { get => _explicitNullValueTransferToAgent; set { _explicitNullValueTransferToAgent = value; AdditionalData?.Remove("transfer_to_agent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_to_agent"); else _explicitNullProperties?.Remove("transfer_to_agent"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput _explicitNullValueTransferToAgent = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputTransferToAgent TransferToAgent { get => _explicitNullValueTransferToAgent; set { _explicitNullValueTransferToAgent = value; AdditionalData?.Remove("transfer_to_agent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_to_agent"); else _explicitNullProperties?.Remove("transfer_to_agent"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputTransferToAgent _explicitNullValueTransferToAgent = default!;
 #endif
         /// <summary>The transfer to number tool</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput? TransferToNumber { get => _explicitNullValueTransferToNumber; set { _explicitNullValueTransferToNumber = value; AdditionalData?.Remove("transfer_to_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_to_number"); else _explicitNullProperties?.Remove("transfer_to_number"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput? _explicitNullValueTransferToNumber = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputTransferToNumber? TransferToNumber { get => _explicitNullValueTransferToNumber; set { _explicitNullValueTransferToNumber = value; AdditionalData?.Remove("transfer_to_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_to_number"); else _explicitNullProperties?.Remove("transfer_to_number"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputTransferToNumber? _explicitNullValueTransferToNumber = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput TransferToNumber { get => _explicitNullValueTransferToNumber; set { _explicitNullValueTransferToNumber = value; AdditionalData?.Remove("transfer_to_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_to_number"); else _explicitNullProperties?.Remove("transfer_to_number"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput _explicitNullValueTransferToNumber = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputTransferToNumber TransferToNumber { get => _explicitNullValueTransferToNumber; set { _explicitNullValueTransferToNumber = value; AdditionalData?.Remove("transfer_to_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_to_number"); else _explicitNullProperties?.Remove("transfer_to_number"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputTransferToNumber _explicitNullValueTransferToNumber = default!;
 #endif
         /// <summary>The voicemail detection tool</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput? VoicemailDetection { get => _explicitNullValueVoicemailDetection; set { _explicitNullValueVoicemailDetection = value; AdditionalData?.Remove("voicemail_detection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voicemail_detection"); else _explicitNullProperties?.Remove("voicemail_detection"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput? _explicitNullValueVoicemailDetection = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputVoicemailDetection? VoicemailDetection { get => _explicitNullValueVoicemailDetection; set { _explicitNullValueVoicemailDetection = value; AdditionalData?.Remove("voicemail_detection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voicemail_detection"); else _explicitNullProperties?.Remove("voicemail_detection"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputVoicemailDetection? _explicitNullValueVoicemailDetection = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput VoicemailDetection { get => _explicitNullValueVoicemailDetection; set { _explicitNullValueVoicemailDetection = value; AdditionalData?.Remove("voicemail_detection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voicemail_detection"); else _explicitNullProperties?.Remove("voicemail_detection"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput _explicitNullValueVoicemailDetection = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputVoicemailDetection VoicemailDetection { get => _explicitNullValueVoicemailDetection; set { _explicitNullValueVoicemailDetection = value; AdditionalData?.Remove("voicemail_detection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voicemail_detection"); else _explicitNullProperties?.Remove("voicemail_detection"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputVoicemailDetection _explicitNullValueVoicemailDetection = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInput"/> and sets the default values.
@@ -131,13 +131,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "end_call", n => { EndCall = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput.CreateFromDiscriminatorValue); } },
-                { "language_detection", n => { LanguageDetection = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput.CreateFromDiscriminatorValue); } },
-                { "play_keypad_touch_tone", n => { PlayKeypadTouchTone = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput.CreateFromDiscriminatorValue); } },
-                { "skip_turn", n => { SkipTurn = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput.CreateFromDiscriminatorValue); } },
-                { "transfer_to_agent", n => { TransferToAgent = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput.CreateFromDiscriminatorValue); } },
-                { "transfer_to_number", n => { TransferToNumber = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput.CreateFromDiscriminatorValue); } },
-                { "voicemail_detection", n => { VoicemailDetection = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput.CreateFromDiscriminatorValue); } },
+                { "end_call", n => { EndCall = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputEndCall>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputEndCall.CreateFromDiscriminatorValue); } },
+                { "language_detection", n => { LanguageDetection = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputLanguageDetection>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputLanguageDetection.CreateFromDiscriminatorValue); } },
+                { "play_keypad_touch_tone", n => { PlayKeypadTouchTone = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputPlayKeypadTouchTone>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputPlayKeypadTouchTone.CreateFromDiscriminatorValue); } },
+                { "skip_turn", n => { SkipTurn = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputSkipTurn>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputSkipTurn.CreateFromDiscriminatorValue); } },
+                { "transfer_to_agent", n => { TransferToAgent = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputTransferToAgent>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputTransferToAgent.CreateFromDiscriminatorValue); } },
+                { "transfer_to_number", n => { TransferToNumber = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputTransferToNumber>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputTransferToNumber.CreateFromDiscriminatorValue); } },
+                { "voicemail_detection", n => { VoicemailDetection = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputVoicemailDetection>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputVoicemailDetection.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -147,13 +147,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput>("end_call", EndCall);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput>("language_detection", LanguageDetection);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput>("play_keypad_touch_tone", PlayKeypadTouchTone);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput>("skip_turn", SkipTurn);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput>("transfer_to_agent", TransferToAgent);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput>("transfer_to_number", TransferToNumber);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput>("voicemail_detection", VoicemailDetection);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputEndCall>("end_call", EndCall);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputLanguageDetection>("language_detection", LanguageDetection);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputPlayKeypadTouchTone>("play_keypad_touch_tone", PlayKeypadTouchTone);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputSkipTurn>("skip_turn", SkipTurn);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputTransferToAgent>("transfer_to_agent", TransferToAgent);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputTransferToNumber>("transfer_to_number", TransferToNumber);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInputVoicemailDetection>("voicemail_detection", VoicemailDetection);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

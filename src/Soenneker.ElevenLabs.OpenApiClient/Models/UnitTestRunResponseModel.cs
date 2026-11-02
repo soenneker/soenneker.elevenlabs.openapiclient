@@ -94,22 +94,22 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Finalized billing and provider-usage breakdown for this test run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModel? Charging { get => _explicitNullValueCharging; set { _explicitNullValueCharging = value; AdditionalData?.Remove("charging"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("charging"); else _explicitNullProperties?.Remove("charging"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModel? _explicitNullValueCharging = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestRunResponseModelCharging? Charging { get => _explicitNullValueCharging; set { _explicitNullValueCharging = value; AdditionalData?.Remove("charging"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("charging"); else _explicitNullProperties?.Remove("charging"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestRunResponseModelCharging? _explicitNullValueCharging = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModel Charging { get => _explicitNullValueCharging; set { _explicitNullValueCharging = value; AdditionalData?.Remove("charging"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("charging"); else _explicitNullProperties?.Remove("charging"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModel _explicitNullValueCharging = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestRunResponseModelCharging Charging { get => _explicitNullValueCharging; set { _explicitNullValueCharging = value; AdditionalData?.Remove("charging"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("charging"); else _explicitNullProperties?.Remove("charging"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestRunResponseModelCharging _explicitNullValueCharging = default!;
 #endif
         /// <summary>The condition_result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TestConditionResultCommonModel? ConditionResult { get => _explicitNullValueConditionResult; set { _explicitNullValueConditionResult = value; AdditionalData?.Remove("condition_result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("condition_result"); else _explicitNullProperties?.Remove("condition_result"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.TestConditionResultCommonModel? _explicitNullValueConditionResult = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestRunResponseModelConditionResult? ConditionResult { get => _explicitNullValueConditionResult; set { _explicitNullValueConditionResult = value; AdditionalData?.Remove("condition_result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("condition_result"); else _explicitNullProperties?.Remove("condition_result"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestRunResponseModelConditionResult? _explicitNullValueConditionResult = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TestConditionResultCommonModel ConditionResult { get => _explicitNullValueConditionResult; set { _explicitNullValueConditionResult = value; AdditionalData?.Remove("condition_result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("condition_result"); else _explicitNullProperties?.Remove("condition_result"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.TestConditionResultCommonModel _explicitNullValueConditionResult = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestRunResponseModelConditionResult ConditionResult { get => _explicitNullValueConditionResult; set { _explicitNullValueConditionResult = value; AdditionalData?.Remove("condition_result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("condition_result"); else _explicitNullProperties?.Remove("condition_result"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestRunResponseModelConditionResult _explicitNullValueConditionResult = default!;
 #endif
         /// <summary>Credits billed for this test run. None for runs created before cost tracking.</summary>
         public int? CreditsUsed { get => _explicitNullValueCreditsUsed; set { _explicitNullValueCreditsUsed = value; AdditionalData?.Remove("credits_used"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credits_used"); else _explicitNullProperties?.Remove("credits_used"); } }
@@ -130,12 +130,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TestRunMetadata? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.TestRunMetadata? _explicitNullValueMetadata = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestRunResponseModelMetadata? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestRunResponseModelMetadata? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TestRunMetadata Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.TestRunMetadata _explicitNullValueMetadata = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestRunResponseModelMetadata Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestRunResponseModelMetadata _explicitNullValueMetadata = default!;
 #endif
         /// <summary>The ran_against_draft property</summary>
         public bool? RanAgainstDraft { get => _explicitNullValueRanAgainstDraft; set { _explicitNullValueRanAgainstDraft = value; AdditionalData?.Remove("ran_against_draft"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ran_against_draft"); else _explicitNullProperties?.Remove("ran_against_draft"); } }
@@ -263,12 +263,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
                 { "agent_responses", n => { AgentResponses = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelOutput.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "branch_id", n => { BranchId = n.GetStringValue(); } },
-                { "charging", n => { Charging = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModel.CreateFromDiscriminatorValue); } },
-                { "condition_result", n => { ConditionResult = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestConditionResultCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TestConditionResultCommonModel.CreateFromDiscriminatorValue); } },
+                { "charging", n => { Charging = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestRunResponseModelCharging>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestRunResponseModelCharging.CreateFromDiscriminatorValue); } },
+                { "condition_result", n => { ConditionResult = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestRunResponseModelConditionResult>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestRunResponseModelConditionResult.CreateFromDiscriminatorValue); } },
                 { "credits_used", n => { CreditsUsed = n.GetIntValue(); } },
                 { "environment", n => { Environment = n.GetStringValue(); } },
                 { "last_updated_at_unix", n => { LastUpdatedAtUnix = n.GetIntValue(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestRunMetadata>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TestRunMetadata.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestRunResponseModelMetadata>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestRunResponseModelMetadata.CreateFromDiscriminatorValue); } },
                 { "ran_against_draft", n => { RanAgainstDraft = n.GetBoolValue(); } },
                 { "root_folder_id", n => { RootFolderId = n.GetStringValue(); } },
                 { "root_folder_name", n => { RootFolderName = n.GetStringValue(); } },
@@ -292,12 +292,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("agent_id", AgentId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelOutput>("agent_responses", AgentResponses);
             writer.WriteStringValue("branch_id", BranchId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModel>("charging", Charging);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestConditionResultCommonModel>("condition_result", ConditionResult);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestRunResponseModelCharging>("charging", Charging);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestRunResponseModelConditionResult>("condition_result", ConditionResult);
             writer.WriteIntValue("credits_used", CreditsUsed);
             writer.WriteStringValue("environment", Environment);
             writer.WriteIntValue("last_updated_at_unix", LastUpdatedAtUnix);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestRunMetadata>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestRunResponseModelMetadata>("metadata", Metadata);
             writer.WriteBoolValue("ran_against_draft", RanAgainstDraft);
             writer.WriteStringValue("root_folder_id", RootFolderId);
             writer.WriteStringValue("root_folder_name", RootFolderName);

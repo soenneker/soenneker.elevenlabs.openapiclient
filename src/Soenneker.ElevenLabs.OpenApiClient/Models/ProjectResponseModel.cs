@@ -97,16 +97,23 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Agent-related settings for the project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioAgentSettingsModel? AgentSettings { get => _explicitNullValueAgentSettings; set { _explicitNullValueAgentSettings = value; AdditionalData?.Remove("agent_settings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_settings"); else _explicitNullProperties?.Remove("agent_settings"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioAgentSettingsModel? _explicitNullValueAgentSettings = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelAgentSettings? AgentSettings { get => _explicitNullValueAgentSettings; set { _explicitNullValueAgentSettings = value; AdditionalData?.Remove("agent_settings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_settings"); else _explicitNullProperties?.Remove("agent_settings"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelAgentSettings? _explicitNullValueAgentSettings = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioAgentSettingsModel AgentSettings { get => _explicitNullValueAgentSettings; set { _explicitNullValueAgentSettings = value; AdditionalData?.Remove("agent_settings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_settings"); else _explicitNullProperties?.Remove("agent_settings"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioAgentSettingsModel _explicitNullValueAgentSettings = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelAgentSettings AgentSettings { get => _explicitNullValueAgentSettings; set { _explicitNullValueAgentSettings = value; AdditionalData?.Remove("agent_settings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_settings"); else _explicitNullProperties?.Remove("agent_settings"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelAgentSettings _explicitNullValueAgentSettings = default!;
 #endif
         /// <summary>The aspect ratio of the project.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelAspectRatio? AspectRatio { get => _explicitNullValueAspectRatio; set { _explicitNullValueAspectRatio = value; AdditionalData?.Remove("aspect_ratio"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aspect_ratio"); else _explicitNullProperties?.Remove("aspect_ratio"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelAspectRatio? _explicitNullValueAspectRatio = default!;
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelAspectRatio AspectRatio { get => _explicitNullValueAspectRatio; set { _explicitNullValueAspectRatio = value; AdditionalData?.Remove("aspect_ratio"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aspect_ratio"); else _explicitNullProperties?.Remove("aspect_ratio"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelAspectRatio _explicitNullValueAspectRatio = default!;
+#endif
         /// <summary>The author of the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -126,12 +133,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Global styling to be applied to all captions</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModel? CaptionStyle { get => _explicitNullValueCaptionStyle; set { _explicitNullValueCaptionStyle = value; AdditionalData?.Remove("caption_style"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("caption_style"); else _explicitNullProperties?.Remove("caption_style"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModel? _explicitNullValueCaptionStyle = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelCaptionStyle? CaptionStyle { get => _explicitNullValueCaptionStyle; set { _explicitNullValueCaptionStyle = value; AdditionalData?.Remove("caption_style"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("caption_style"); else _explicitNullProperties?.Remove("caption_style"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelCaptionStyle? _explicitNullValueCaptionStyle = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModel CaptionStyle { get => _explicitNullValueCaptionStyle; set { _explicitNullValueCaptionStyle = value; AdditionalData?.Remove("caption_style"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("caption_style"); else _explicitNullProperties?.Remove("caption_style"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModel _explicitNullValueCaptionStyle = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelCaptionStyle CaptionStyle { get => _explicitNullValueCaptionStyle; set { _explicitNullValueCaptionStyle = value; AdditionalData?.Remove("caption_style"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("caption_style"); else _explicitNullProperties?.Remove("caption_style"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelCaptionStyle _explicitNullValueCaptionStyle = default!;
 #endif
         /// <summary>Styling changes that have been made to the provided templates</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -182,12 +189,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The creation meta of the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectCreationMetaResponseModel? CreationMeta { get => _explicitNullValueCreationMeta; set { _explicitNullValueCreationMeta = value; AdditionalData?.Remove("creation_meta"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creation_meta"); else _explicitNullProperties?.Remove("creation_meta"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectCreationMetaResponseModel? _explicitNullValueCreationMeta = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelCreationMeta? CreationMeta { get => _explicitNullValueCreationMeta; set { _explicitNullValueCreationMeta = value; AdditionalData?.Remove("creation_meta"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creation_meta"); else _explicitNullProperties?.Remove("creation_meta"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelCreationMeta? _explicitNullValueCreationMeta = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectCreationMetaResponseModel CreationMeta { get => _explicitNullValueCreationMeta; set { _explicitNullValueCreationMeta = value; AdditionalData?.Remove("creation_meta"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creation_meta"); else _explicitNullProperties?.Remove("creation_meta"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectCreationMetaResponseModel _explicitNullValueCreationMeta = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelCreationMeta CreationMeta { get => _explicitNullValueCreationMeta; set { _explicitNullValueCreationMeta = value; AdditionalData?.Remove("creation_meta"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creation_meta"); else _explicitNullProperties?.Remove("creation_meta"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelCreationMeta _explicitNullValueCreationMeta = default!;
 #endif
         /// <summary>The default model ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -248,8 +255,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>Whether the project is fiction.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelFiction? Fiction { get => _explicitNullValueFiction; set { _explicitNullValueFiction = value; AdditionalData?.Remove("fiction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fiction"); else _explicitNullProperties?.Remove("fiction"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelFiction? _explicitNullValueFiction = default!;
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelFiction Fiction { get => _explicitNullValueFiction; set { _explicitNullValueFiction = value; AdditionalData?.Remove("fiction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fiction"); else _explicitNullProperties?.Remove("fiction"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelFiction _explicitNullValueFiction = default!;
+#endif
         /// <summary>List of genres of the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -335,14 +349,28 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public bool? QualityCheckOnWhenBulkConvert { get => _explicitNullValueQualityCheckOnWhenBulkConvert; set { _explicitNullValueQualityCheckOnWhenBulkConvert = value; AdditionalData?.Remove("quality_check_on_when_bulk_convert"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quality_check_on_when_bulk_convert"); else _explicitNullProperties?.Remove("quality_check_on_when_bulk_convert"); } }
         private bool? _explicitNullValueQualityCheckOnWhenBulkConvert = default!;
         /// <summary>The source type of the project.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelSourceType? SourceType { get => _explicitNullValueSourceType; set { _explicitNullValueSourceType = value; AdditionalData?.Remove("source_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_type"); else _explicitNullProperties?.Remove("source_type"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelSourceType? _explicitNullValueSourceType = default!;
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelSourceType SourceType { get => _explicitNullValueSourceType; set { _explicitNullValueSourceType = value; AdditionalData?.Remove("source_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_type"); else _explicitNullProperties?.Remove("source_type"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelSourceType _explicitNullValueSourceType = default!;
+#endif
         /// <summary>The state of the project.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelState? State { get => _explicitNullValueState; set { _explicitNullValueState = value; AdditionalData?.Remove("state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelState? _explicitNullValueState = default!;
         /// <summary>The target audience of the project.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelTargetAudience? TargetAudience { get => _explicitNullValueTargetAudience; set { _explicitNullValueTargetAudience = value; AdditionalData?.Remove("target_audience"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_audience"); else _explicitNullProperties?.Remove("target_audience"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelTargetAudience? _explicitNullValueTargetAudience = default!;
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelTargetAudience TargetAudience { get => _explicitNullValueTargetAudience; set { _explicitNullValueTargetAudience = value; AdditionalData?.Remove("target_audience"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_audience"); else _explicitNullProperties?.Remove("target_audience"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelTargetAudience _explicitNullValueTargetAudience = default!;
+#endif
         /// <summary>The title of the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -384,11 +412,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "access_level", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelAccessLevel>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAccessLevel = default; _explicitNullProperties?.Remove("access_level"); AdditionalData["access_level"] = unknown; } else { AccessLevel = parsed; AdditionalData.Remove("access_level"); } } },
-                { "agent_settings", n => { AgentSettings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioAgentSettingsModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioAgentSettingsModel.CreateFromDiscriminatorValue); } },
-                { "aspect_ratio", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelAspectRatio>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAspectRatio = default; _explicitNullProperties?.Remove("aspect_ratio"); AdditionalData["aspect_ratio"] = unknown; } else { AspectRatio = parsed; AdditionalData.Remove("aspect_ratio"); } } },
+                { "agent_settings", n => { AgentSettings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelAgentSettings>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelAgentSettings.CreateFromDiscriminatorValue); } },
+                { "aspect_ratio", n => { AspectRatio = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelAspectRatio>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelAspectRatio.CreateFromDiscriminatorValue); } },
                 { "author", n => { Author = n.GetStringValue(); } },
                 { "can_be_downloaded", n => { CanBeDownloaded = n.GetBoolValue(); } },
-                { "caption_style", n => { CaptionStyle = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModel.CreateFromDiscriminatorValue); } },
+                { "caption_style", n => { CaptionStyle = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelCaptionStyle>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelCaptionStyle.CreateFromDiscriminatorValue); } },
                 { "caption_style_template_overrides", n => { CaptionStyleTemplateOverrides = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelCaptionStyleTemplateOverridesProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelCaptionStyleTemplateOverridesProperty.CreateFromDiscriminatorValue); } },
                 { "captions_enabled", n => { CaptionsEnabled = n.GetBoolValue(); } },
                 { "chapters_enabled", n => { ChaptersEnabled = n.GetBoolValue(); } },
@@ -396,14 +424,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "cover_image_url", n => { CoverImageUrl = n.GetStringValue(); } },
                 { "create_date_unix", n => { CreateDateUnix = n.GetIntValue(); } },
                 { "created_by_user_id", n => { CreatedByUserId = n.GetStringValue(); } },
-                { "creation_meta", n => { CreationMeta = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectCreationMetaResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectCreationMetaResponseModel.CreateFromDiscriminatorValue); } },
+                { "creation_meta", n => { CreationMeta = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelCreationMeta>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelCreationMeta.CreateFromDiscriminatorValue); } },
                 { "default_model_id", n => { DefaultModelId = n.GetStringValue(); } },
                 { "default_paragraph_voice_id", n => { DefaultParagraphVoiceId = n.GetStringValue(); } },
                 { "default_paragraph_voice_ref_id", n => { DefaultParagraphVoiceRefId = n.GetStringValue(); } },
                 { "default_title_voice_id", n => { DefaultTitleVoiceId = n.GetStringValue(); } },
                 { "default_title_voice_ref_id", n => { DefaultTitleVoiceRefId = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "fiction", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelFiction>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFiction = default; _explicitNullProperties?.Remove("fiction"); AdditionalData["fiction"] = unknown; } else { Fiction = parsed; AdditionalData.Remove("fiction"); } } },
+                { "fiction", n => { Fiction = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelFiction>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelFiction.CreateFromDiscriminatorValue); } },
                 { "genres", n => { Genres = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "isbn_number", n => { IsbnNumber = n.GetStringValue(); } },
                 { "language", n => { Language = n.GetStringValue(); } },
@@ -415,9 +443,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "public_share_id", n => { PublicShareId = n.GetStringValue(); } },
                 { "quality_check_on", n => { QualityCheckOn = n.GetBoolValue(); } },
                 { "quality_check_on_when_bulk_convert", n => { QualityCheckOnWhenBulkConvert = n.GetBoolValue(); } },
-                { "source_type", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelSourceType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSourceType = default; _explicitNullProperties?.Remove("source_type"); AdditionalData["source_type"] = unknown; } else { SourceType = parsed; AdditionalData.Remove("source_type"); } } },
+                { "source_type", n => { SourceType = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelSourceType>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelSourceType.CreateFromDiscriminatorValue); } },
                 { "state", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelState>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueState = default; _explicitNullProperties?.Remove("state"); AdditionalData["state"] = unknown; } else { State = parsed; AdditionalData.Remove("state"); } } },
-                { "target_audience", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelTargetAudience>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTargetAudience = default; _explicitNullProperties?.Remove("target_audience"); AdditionalData["target_audience"] = unknown; } else { TargetAudience = parsed; AdditionalData.Remove("target_audience"); } } },
+                { "target_audience", n => { TargetAudience = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelTargetAudience>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelTargetAudience.CreateFromDiscriminatorValue); } },
                 { "title", n => { Title = n.GetStringValue(); } },
                 { "volume_normalization", n => { VolumeNormalization = n.GetBoolValue(); } },
             };
@@ -430,24 +458,24 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelAccessLevel>("access_level", AccessLevel);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioAgentSettingsModel>("agent_settings", AgentSettings);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelAspectRatio>("aspect_ratio", AspectRatio);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelAgentSettings>("agent_settings", AgentSettings);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelAspectRatio>("aspect_ratio", AspectRatio);
             writer.WriteStringValue("author", Author);
             writer.WriteBoolValue("can_be_downloaded", CanBeDownloaded);
             writer.WriteBoolValue("captions_enabled", CaptionsEnabled);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModel>("caption_style", CaptionStyle);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelCaptionStyle>("caption_style", CaptionStyle);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelCaptionStyleTemplateOverridesProperty>("caption_style_template_overrides", CaptionStyleTemplateOverrides);
             writer.WriteBoolValue("chapters_enabled", ChaptersEnabled);
             writer.WriteStringValue("content_type", ContentType);
             writer.WriteStringValue("cover_image_url", CoverImageUrl);
             writer.WriteIntValue("create_date_unix", CreateDateUnix);
             writer.WriteStringValue("created_by_user_id", CreatedByUserId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectCreationMetaResponseModel>("creation_meta", CreationMeta);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelCreationMeta>("creation_meta", CreationMeta);
             writer.WriteStringValue("default_model_id", DefaultModelId);
             writer.WriteStringValue("default_paragraph_voice_ref_id", DefaultParagraphVoiceRefId);
             writer.WriteStringValue("default_title_voice_ref_id", DefaultTitleVoiceRefId);
             writer.WriteStringValue("description", Description);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelFiction>("fiction", Fiction);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelFiction>("fiction", Fiction);
             writer.WriteCollectionOfPrimitiveValues<string>("genres", Genres);
             writer.WriteStringValue("isbn_number", IsbnNumber);
             writer.WriteStringValue("language", Language);
@@ -459,9 +487,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("public_share_id", PublicShareId);
             writer.WriteBoolValue("quality_check_on", QualityCheckOn);
             writer.WriteBoolValue("quality_check_on_when_bulk_convert", QualityCheckOnWhenBulkConvert);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelSourceType>("source_type", SourceType);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelSourceType>("source_type", SourceType);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelState>("state", State);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelTargetAudience>("target_audience", TargetAudience);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelTargetAudience>("target_audience", TargetAudience);
             writer.WriteStringValue("title", Title);
             writer.WriteBoolValue("volume_normalization", VolumeNormalization);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

@@ -41,15 +41,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string DataCollectionId { get => _explicitNullValueDataCollectionId; set { _explicitNullValueDataCollectionId = value; AdditionalData?.Remove("data_collection_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data_collection_id"); else _explicitNullProperties?.Remove("data_collection_id"); } }
         private string _explicitNullValueDataCollectionId = default!;
 #endif
-        /// <summary>The json_schema property</summary>
+        /// <summary>Schema property for literal JSON types. IMPORTANT: Only ONE of the following fields can be set: description (LLM provides value), dynamic_variable (value from variable), is_system_provided (system provides value), constant_value (fixed value), or is_omitted (parameter is omitted). These are mutually exclusive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaProperty? JsonSchema { get => _explicitNullValueJsonSchema; set { _explicitNullValueJsonSchema = value; AdditionalData?.Remove("json_schema"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json_schema"); else _explicitNullProperties?.Remove("json_schema"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaProperty? _explicitNullValueJsonSchema = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DataCollectionResultCommonModelJsonSchema? JsonSchema { get => _explicitNullValueJsonSchema; set { _explicitNullValueJsonSchema = value; AdditionalData?.Remove("json_schema"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json_schema"); else _explicitNullProperties?.Remove("json_schema"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DataCollectionResultCommonModelJsonSchema? _explicitNullValueJsonSchema = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaProperty JsonSchema { get => _explicitNullValueJsonSchema; set { _explicitNullValueJsonSchema = value; AdditionalData?.Remove("json_schema"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json_schema"); else _explicitNullProperties?.Remove("json_schema"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaProperty _explicitNullValueJsonSchema = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DataCollectionResultCommonModelJsonSchema JsonSchema { get => _explicitNullValueJsonSchema; set { _explicitNullValueJsonSchema = value; AdditionalData?.Remove("json_schema"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json_schema"); else _explicitNullProperties?.Remove("json_schema"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DataCollectionResultCommonModelJsonSchema _explicitNullValueJsonSchema = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -107,7 +107,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "data_collection_id", n => { DataCollectionId = n.GetStringValue(); } },
-                { "json_schema", n => { JsonSchema = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaProperty.CreateFromDiscriminatorValue); } },
+                { "json_schema", n => { JsonSchema = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DataCollectionResultCommonModelJsonSchema>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DataCollectionResultCommonModelJsonSchema.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "rationale", n => { Rationale = n.GetStringValue(); } },
                 { "value", n => { Value = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
@@ -121,7 +121,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("data_collection_id", DataCollectionId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaProperty>("json_schema", JsonSchema);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DataCollectionResultCommonModelJsonSchema>("json_schema", JsonSchema);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("rationale", Rationale);
             writer.WriteObjectValue<UntypedNode>("value", Value);

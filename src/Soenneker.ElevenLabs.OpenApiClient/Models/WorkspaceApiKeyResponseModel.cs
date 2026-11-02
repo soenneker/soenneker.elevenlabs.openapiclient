@@ -132,12 +132,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Per-API-key concurrency limits (TTS/dubbing/music). Enterprise-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PlatformLimits? PlatformLimits { get => _explicitNullValuePlatformLimits; set { _explicitNullValuePlatformLimits = value; AdditionalData?.Remove("platform_limits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform_limits"); else _explicitNullProperties?.Remove("platform_limits"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.PlatformLimits? _explicitNullValuePlatformLimits = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModelPlatformLimits? PlatformLimits { get => _explicitNullValuePlatformLimits; set { _explicitNullValuePlatformLimits = value; AdditionalData?.Remove("platform_limits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform_limits"); else _explicitNullProperties?.Remove("platform_limits"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModelPlatformLimits? _explicitNullValuePlatformLimits = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PlatformLimits PlatformLimits { get => _explicitNullValuePlatformLimits; set { _explicitNullValuePlatformLimits = value; AdditionalData?.Remove("platform_limits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform_limits"); else _explicitNullProperties?.Remove("platform_limits"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.PlatformLimits _explicitNullValuePlatformLimits = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModelPlatformLimits PlatformLimits { get => _explicitNullValuePlatformLimits; set { _explicitNullValuePlatformLimits = value; AdditionalData?.Remove("platform_limits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform_limits"); else _explicitNullProperties?.Remove("platform_limits"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModelPlatformLimits _explicitNullValuePlatformLimits = default!;
 #endif
         /// <summary>The service_account_user_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -190,7 +190,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "key_id", n => { KeyId = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "permissions", n => { Permissions = n.GetCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PermissionType>()?.AsList(); } },
-                { "platform_limits", n => { PlatformLimits = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PlatformLimits>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PlatformLimits.CreateFromDiscriminatorValue); } },
+                { "platform_limits", n => { PlatformLimits = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModelPlatformLimits>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModelPlatformLimits.CreateFromDiscriminatorValue); } },
                 { "service_account_user_id", n => { ServiceAccountUserId = n.GetStringValue(); } },
                 { "third_party_disable_allowed", n => { ThirdPartyDisableAllowed = n.GetBoolValue(); } },
             };
@@ -214,7 +214,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("key_id", KeyId);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PermissionType>("permissions", Permissions);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PlatformLimits>("platform_limits", PlatformLimits);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModelPlatformLimits>("platform_limits", PlatformLimits);
             writer.WriteStringValue("service_account_user_id", ServiceAccountUserId);
             writer.WriteBoolValue("third_party_disable_allowed", ThirdPartyDisableAllowed);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

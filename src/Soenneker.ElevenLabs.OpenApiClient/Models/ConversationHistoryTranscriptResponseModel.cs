@@ -80,52 +80,52 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The agent_metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadata? AgentMetadata { get => _explicitNullValueAgentMetadata; set { _explicitNullValueAgentMetadata = value; AdditionalData?.Remove("agent_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_metadata"); else _explicitNullProperties?.Remove("agent_metadata"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadata? _explicitNullValueAgentMetadata = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputAgentMetadata? AgentMetadata { get => _explicitNullValueAgentMetadata; set { _explicitNullValueAgentMetadata = value; AdditionalData?.Remove("agent_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_metadata"); else _explicitNullProperties?.Remove("agent_metadata"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputAgentMetadata? _explicitNullValueAgentMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadata AgentMetadata { get => _explicitNullValueAgentMetadata; set { _explicitNullValueAgentMetadata = value; AdditionalData?.Remove("agent_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_metadata"); else _explicitNullProperties?.Remove("agent_metadata"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadata _explicitNullValueAgentMetadata = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputAgentMetadata AgentMetadata { get => _explicitNullValueAgentMetadata; set { _explicitNullValueAgentMetadata = value; AdditionalData?.Remove("agent_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_metadata"); else _explicitNullProperties?.Remove("agent_metadata"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputAgentMetadata _explicitNullValueAgentMetadata = default!;
 #endif
         /// <summary>The contextual_update_info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContextualUpdateInfo? ContextualUpdateInfo { get => _explicitNullValueContextualUpdateInfo; set { _explicitNullValueContextualUpdateInfo = value; AdditionalData?.Remove("contextual_update_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contextual_update_info"); else _explicitNullProperties?.Remove("contextual_update_info"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ContextualUpdateInfo? _explicitNullValueContextualUpdateInfo = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModelContextualUpdateInfo? ContextualUpdateInfo { get => _explicitNullValueContextualUpdateInfo; set { _explicitNullValueContextualUpdateInfo = value; AdditionalData?.Remove("contextual_update_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contextual_update_info"); else _explicitNullProperties?.Remove("contextual_update_info"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModelContextualUpdateInfo? _explicitNullValueContextualUpdateInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContextualUpdateInfo ContextualUpdateInfo { get => _explicitNullValueContextualUpdateInfo; set { _explicitNullValueContextualUpdateInfo = value; AdditionalData?.Remove("contextual_update_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contextual_update_info"); else _explicitNullProperties?.Remove("contextual_update_info"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ContextualUpdateInfo _explicitNullValueContextualUpdateInfo = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModelContextualUpdateInfo ContextualUpdateInfo { get => _explicitNullValueContextualUpdateInfo; set { _explicitNullValueContextualUpdateInfo = value; AdditionalData?.Remove("contextual_update_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contextual_update_info"); else _explicitNullProperties?.Remove("contextual_update_info"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModelContextualUpdateInfo _explicitNullValueContextualUpdateInfo = default!;
 #endif
         /// <summary>The conversation_turn_metrics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTurnMetrics? ConversationTurnMetrics { get => _explicitNullValueConversationTurnMetrics; set { _explicitNullValueConversationTurnMetrics = value; AdditionalData?.Remove("conversation_turn_metrics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_turn_metrics"); else _explicitNullProperties?.Remove("conversation_turn_metrics"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTurnMetrics? _explicitNullValueConversationTurnMetrics = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputConversationTurnMetrics? ConversationTurnMetrics { get => _explicitNullValueConversationTurnMetrics; set { _explicitNullValueConversationTurnMetrics = value; AdditionalData?.Remove("conversation_turn_metrics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_turn_metrics"); else _explicitNullProperties?.Remove("conversation_turn_metrics"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputConversationTurnMetrics? _explicitNullValueConversationTurnMetrics = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTurnMetrics ConversationTurnMetrics { get => _explicitNullValueConversationTurnMetrics; set { _explicitNullValueConversationTurnMetrics = value; AdditionalData?.Remove("conversation_turn_metrics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_turn_metrics"); else _explicitNullProperties?.Remove("conversation_turn_metrics"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTurnMetrics _explicitNullValueConversationTurnMetrics = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputConversationTurnMetrics ConversationTurnMetrics { get => _explicitNullValueConversationTurnMetrics; set { _explicitNullValueConversationTurnMetrics = value; AdditionalData?.Remove("conversation_turn_metrics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_turn_metrics"); else _explicitNullProperties?.Remove("conversation_turn_metrics"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputConversationTurnMetrics _explicitNullValueConversationTurnMetrics = default!;
 #endif
         /// <summary>The feedback property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedback? Feedback { get => _explicitNullValueFeedback; set { _explicitNullValueFeedback = value; AdditionalData?.Remove("feedback"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feedback"); else _explicitNullProperties?.Remove("feedback"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedback? _explicitNullValueFeedback = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputFeedback? Feedback { get => _explicitNullValueFeedback; set { _explicitNullValueFeedback = value; AdditionalData?.Remove("feedback"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feedback"); else _explicitNullProperties?.Remove("feedback"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputFeedback? _explicitNullValueFeedback = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedback Feedback { get => _explicitNullValueFeedback; set { _explicitNullValueFeedback = value; AdditionalData?.Remove("feedback"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feedback"); else _explicitNullProperties?.Remove("feedback"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedback _explicitNullValueFeedback = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputFeedback Feedback { get => _explicitNullValueFeedback; set { _explicitNullValueFeedback = value; AdditionalData?.Remove("feedback"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feedback"); else _explicitNullProperties?.Remove("feedback"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputFeedback _explicitNullValueFeedback = default!;
 #endif
         /// <summary>Deprecated: the first attachment on this turn. Use `file_inputs` to see every attachment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptFileInputResponseModel? FileInput { get => _explicitNullValueFileInput; set { _explicitNullValueFileInput = value; AdditionalData?.Remove("file_input"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_input"); else _explicitNullProperties?.Remove("file_input"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptFileInputResponseModel? _explicitNullValueFileInput = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModelFileInput? FileInput { get => _explicitNullValueFileInput; set { _explicitNullValueFileInput = value; AdditionalData?.Remove("file_input"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_input"); else _explicitNullProperties?.Remove("file_input"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModelFileInput? _explicitNullValueFileInput = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptFileInputResponseModel FileInput { get => _explicitNullValueFileInput; set { _explicitNullValueFileInput = value; AdditionalData?.Remove("file_input"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_input"); else _explicitNullProperties?.Remove("file_input"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptFileInputResponseModel _explicitNullValueFileInput = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModelFileInput FileInput { get => _explicitNullValueFileInput; set { _explicitNullValueFileInput = value; AdditionalData?.Remove("file_input"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_input"); else _explicitNullProperties?.Remove("file_input"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModelFileInput _explicitNullValueFileInput = default!;
 #endif
         /// <summary>All files attached to this turn, in the order the user attached them.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -166,12 +166,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The llm_usage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageOutput? LlmUsage { get => _explicitNullValueLlmUsage; set { _explicitNullValueLlmUsage = value; AdditionalData?.Remove("llm_usage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("llm_usage"); else _explicitNullProperties?.Remove("llm_usage"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageOutput? _explicitNullValueLlmUsage = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelOutputLlmUsage? LlmUsage { get => _explicitNullValueLlmUsage; set { _explicitNullValueLlmUsage = value; AdditionalData?.Remove("llm_usage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("llm_usage"); else _explicitNullProperties?.Remove("llm_usage"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelOutputLlmUsage? _explicitNullValueLlmUsage = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageOutput LlmUsage { get => _explicitNullValueLlmUsage; set { _explicitNullValueLlmUsage = value; AdditionalData?.Remove("llm_usage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("llm_usage"); else _explicitNullProperties?.Remove("llm_usage"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageOutput _explicitNullValueLlmUsage = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelOutputLlmUsage LlmUsage { get => _explicitNullValueLlmUsage; set { _explicitNullValueLlmUsage = value; AdditionalData?.Remove("llm_usage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("llm_usage"); else _explicitNullProperties?.Remove("llm_usage"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelOutputLlmUsage _explicitNullValueLlmUsage = default!;
 #endif
         /// <summary>The message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -183,15 +183,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; AdditionalData?.Remove("message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
         private string _explicitNullValueMessage = default!;
 #endif
-        /// <summary>The multivoice_message property</summary>
+        /// <summary>Represents a message from a multi-voice agent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMultivoiceMessageModel? MultivoiceMessage { get => _explicitNullValueMultivoiceMessage; set { _explicitNullValueMultivoiceMessage = value; AdditionalData?.Remove("multivoice_message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("multivoice_message"); else _explicitNullProperties?.Remove("multivoice_message"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMultivoiceMessageModel? _explicitNullValueMultivoiceMessage = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputMultivoiceMessage? MultivoiceMessage { get => _explicitNullValueMultivoiceMessage; set { _explicitNullValueMultivoiceMessage = value; AdditionalData?.Remove("multivoice_message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("multivoice_message"); else _explicitNullProperties?.Remove("multivoice_message"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputMultivoiceMessage? _explicitNullValueMultivoiceMessage = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMultivoiceMessageModel MultivoiceMessage { get => _explicitNullValueMultivoiceMessage; set { _explicitNullValueMultivoiceMessage = value; AdditionalData?.Remove("multivoice_message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("multivoice_message"); else _explicitNullProperties?.Remove("multivoice_message"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMultivoiceMessageModel _explicitNullValueMultivoiceMessage = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputMultivoiceMessage MultivoiceMessage { get => _explicitNullValueMultivoiceMessage; set { _explicitNullValueMultivoiceMessage = value; AdditionalData?.Remove("multivoice_message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("multivoice_message"); else _explicitNullProperties?.Remove("multivoice_message"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputMultivoiceMessage _explicitNullValueMultivoiceMessage = default!;
 #endif
         /// <summary>The original_message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -219,12 +219,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The rag_retrieval_info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.RagRetrievalInfo? RagRetrievalInfo { get => _explicitNullValueRagRetrievalInfo; set { _explicitNullValueRagRetrievalInfo = value; AdditionalData?.Remove("rag_retrieval_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rag_retrieval_info"); else _explicitNullProperties?.Remove("rag_retrieval_info"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.RagRetrievalInfo? _explicitNullValueRagRetrievalInfo = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputRagRetrievalInfo? RagRetrievalInfo { get => _explicitNullValueRagRetrievalInfo; set { _explicitNullValueRagRetrievalInfo = value; AdditionalData?.Remove("rag_retrieval_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rag_retrieval_info"); else _explicitNullProperties?.Remove("rag_retrieval_info"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputRagRetrievalInfo? _explicitNullValueRagRetrievalInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.RagRetrievalInfo RagRetrievalInfo { get => _explicitNullValueRagRetrievalInfo; set { _explicitNullValueRagRetrievalInfo = value; AdditionalData?.Remove("rag_retrieval_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rag_retrieval_info"); else _explicitNullProperties?.Remove("rag_retrieval_info"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.RagRetrievalInfo _explicitNullValueRagRetrievalInfo = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputRagRetrievalInfo RagRetrievalInfo { get => _explicitNullValueRagRetrievalInfo; set { _explicitNullValueRagRetrievalInfo = value; AdditionalData?.Remove("rag_retrieval_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rag_retrieval_info"); else _explicitNullProperties?.Remove("rag_retrieval_info"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputRagRetrievalInfo _explicitNullValueRagRetrievalInfo = default!;
 #endif
         /// <summary>The reasoned property</summary>
         public bool? Reasoned { get => _explicitNullValueReasoned; set { _explicitNullValueReasoned = value; AdditionalData?.Remove("reasoned"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reasoned"); else _explicitNullProperties?.Remove("reasoned"); } }
@@ -329,23 +329,23 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "agent_metadata", n => { AgentMetadata = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadata>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadata.CreateFromDiscriminatorValue); } },
-                { "contextual_update_info", n => { ContextualUpdateInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ContextualUpdateInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ContextualUpdateInfo.CreateFromDiscriminatorValue); } },
-                { "conversation_turn_metrics", n => { ConversationTurnMetrics = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTurnMetrics>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTurnMetrics.CreateFromDiscriminatorValue); } },
-                { "feedback", n => { Feedback = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedback>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedback.CreateFromDiscriminatorValue); } },
-                { "file_input", n => { FileInput = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptFileInputResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptFileInputResponseModel.CreateFromDiscriminatorValue); } },
+                { "agent_metadata", n => { AgentMetadata = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputAgentMetadata>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputAgentMetadata.CreateFromDiscriminatorValue); } },
+                { "contextual_update_info", n => { ContextualUpdateInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModelContextualUpdateInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModelContextualUpdateInfo.CreateFromDiscriminatorValue); } },
+                { "conversation_turn_metrics", n => { ConversationTurnMetrics = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputConversationTurnMetrics>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputConversationTurnMetrics.CreateFromDiscriminatorValue); } },
+                { "feedback", n => { Feedback = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputFeedback>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputFeedback.CreateFromDiscriminatorValue); } },
+                { "file_input", n => { FileInput = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModelFileInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModelFileInput.CreateFromDiscriminatorValue); } },
                 { "file_inputs", n => { FileInputs = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptFileInputResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptFileInputResponseModel.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "ignored_as_backchannel", n => { IgnoredAsBackchannel = n.GetBoolValue(); } },
                 { "interrupted", n => { Interrupted = n.GetBoolValue(); } },
                 { "llm_override", n => { LlmOverride = n.GetStringValue(); } },
-                { "llm_usage", n => { LlmUsage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageOutput.CreateFromDiscriminatorValue); } },
+                { "llm_usage", n => { LlmUsage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelOutputLlmUsage>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelOutputLlmUsage.CreateFromDiscriminatorValue); } },
                 { "message", n => { Message = n.GetStringValue(); } },
-                { "multivoice_message", n => { MultivoiceMessage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMultivoiceMessageModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMultivoiceMessageModel.CreateFromDiscriminatorValue); } },
+                { "multivoice_message", n => { MultivoiceMessage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputMultivoiceMessage>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputMultivoiceMessage.CreateFromDiscriminatorValue); } },
                 { "original_message", n => { OriginalMessage = n.GetStringValue(); } },
                 { "platform_event", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TranscriptPlatformEvent>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePlatformEvent = default; _explicitNullProperties?.Remove("platform_event"); AdditionalData["platform_event"] = unknown; } else { PlatformEvent = parsed; AdditionalData.Remove("platform_event"); } } },
                 { "producing_llm", n => { ProducingLlm = n.GetStringValue(); } },
-                { "rag_retrieval_info", n => { RagRetrievalInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RagRetrievalInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.RagRetrievalInfo.CreateFromDiscriminatorValue); } },
+                { "rag_retrieval_info", n => { RagRetrievalInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputRagRetrievalInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputRagRetrievalInfo.CreateFromDiscriminatorValue); } },
                 { "reasoned", n => { Reasoned = n.GetBoolValue(); } },
                 { "reasoning", n => { Reasoning = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationReasoningModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationReasoningModel.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "role", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModelRole>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRole = default; _explicitNullProperties?.Remove("role"); AdditionalData["role"] = unknown; } else { Role = parsed; AdditionalData.Remove("role"); } } },
@@ -366,23 +366,23 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadata>("agent_metadata", AgentMetadata);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ContextualUpdateInfo>("contextual_update_info", ContextualUpdateInfo);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTurnMetrics>("conversation_turn_metrics", ConversationTurnMetrics);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedback>("feedback", Feedback);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptFileInputResponseModel>("file_input", FileInput);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputAgentMetadata>("agent_metadata", AgentMetadata);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModelContextualUpdateInfo>("contextual_update_info", ContextualUpdateInfo);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputConversationTurnMetrics>("conversation_turn_metrics", ConversationTurnMetrics);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputFeedback>("feedback", Feedback);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModelFileInput>("file_input", FileInput);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptFileInputResponseModel>("file_inputs", FileInputs);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("ignored_as_backchannel", IgnoredAsBackchannel);
             writer.WriteBoolValue("interrupted", Interrupted);
             writer.WriteStringValue("llm_override", LlmOverride);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageOutput>("llm_usage", LlmUsage);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelOutputLlmUsage>("llm_usage", LlmUsage);
             writer.WriteStringValue("message", Message);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMultivoiceMessageModel>("multivoice_message", MultivoiceMessage);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputMultivoiceMessage>("multivoice_message", MultivoiceMessage);
             writer.WriteStringValue("original_message", OriginalMessage);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TranscriptPlatformEvent>("platform_event", PlatformEvent);
             writer.WriteStringValue("producing_llm", ProducingLlm);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RagRetrievalInfo>("rag_retrieval_info", RagRetrievalInfo);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputRagRetrievalInfo>("rag_retrieval_info", RagRetrievalInfo);
             writer.WriteBoolValue("reasoned", Reasoned);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationReasoningModel>("reasoning", Reasoning);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModelRole>("role", Role);

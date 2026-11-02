@@ -91,12 +91,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Updated workflow definition</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModel? Workflow { get => _explicitNullValueWorkflow; set { _explicitNullValueWorkflow = value; AdditionalData?.Remove("workflow"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow"); else _explicitNullProperties?.Remove("workflow"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModel? _explicitNullValueWorkflow = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPostWorkflow? Workflow { get => _explicitNullValueWorkflow; set { _explicitNullValueWorkflow = value; AdditionalData?.Remove("workflow"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow"); else _explicitNullProperties?.Remove("workflow"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPostWorkflow? _explicitNullValueWorkflow = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModel Workflow { get => _explicitNullValueWorkflow; set { _explicitNullValueWorkflow = value; AdditionalData?.Remove("workflow"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow"); else _explicitNullProperties?.Remove("workflow"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModel _explicitNullValueWorkflow = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPostWorkflow Workflow { get => _explicitNullValueWorkflow; set { _explicitNullValueWorkflow = value; AdditionalData?.Remove("workflow"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow"); else _explicitNullProperties?.Remove("workflow"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPostWorkflow _explicitNullValueWorkflow = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPost"/> and sets the default values.
@@ -130,7 +130,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "parent_version_id", n => { ParentVersionId = n.GetStringValue(); } },
                 { "platform_settings", n => { PlatformSettings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPostPlatformSettingsProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPostPlatformSettingsProperty.CreateFromDiscriminatorValue); } },
-                { "workflow", n => { Workflow = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModel.CreateFromDiscriminatorValue); } },
+                { "workflow", n => { Workflow = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPostWorkflow>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPostWorkflow.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -146,7 +146,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("parent_version_id", ParentVersionId);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPostPlatformSettingsProperty>("platform_settings", PlatformSettings);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModel>("workflow", Workflow);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPostWorkflow>("workflow", Workflow);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

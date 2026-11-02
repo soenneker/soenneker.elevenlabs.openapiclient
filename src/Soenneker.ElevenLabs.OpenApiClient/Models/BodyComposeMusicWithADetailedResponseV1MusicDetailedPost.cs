@@ -109,12 +109,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicPrompt? MusicPrompt { get => _explicitNullValueMusicPrompt; set { _explicitNullValueMusicPrompt = value; AdditionalData?.Remove("music_prompt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("music_prompt"); else _explicitNullProperties?.Remove("music_prompt"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicPrompt? _explicitNullValueMusicPrompt = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComposeMusicV1MusicPostMusicPrompt? MusicPrompt { get => _explicitNullValueMusicPrompt; set { _explicitNullValueMusicPrompt = value; AdditionalData?.Remove("music_prompt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("music_prompt"); else _explicitNullProperties?.Remove("music_prompt"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComposeMusicV1MusicPostMusicPrompt? _explicitNullValueMusicPrompt = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicPrompt MusicPrompt { get => _explicitNullValueMusicPrompt; set { _explicitNullValueMusicPrompt = value; AdditionalData?.Remove("music_prompt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("music_prompt"); else _explicitNullProperties?.Remove("music_prompt"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicPrompt _explicitNullValueMusicPrompt = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComposeMusicV1MusicPostMusicPrompt MusicPrompt { get => _explicitNullValueMusicPrompt; set { _explicitNullValueMusicPrompt = value; AdditionalData?.Remove("music_prompt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("music_prompt"); else _explicitNullProperties?.Remove("music_prompt"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComposeMusicV1MusicPostMusicPrompt _explicitNullValueMusicPrompt = default!;
 #endif
         /// <summary>A simple text prompt to generate a song from. Cannot be used in conjunction with `composition_plan`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -189,7 +189,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "model_id", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicModelId>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueModelId = default; _explicitNullProperties?.Remove("model_id"); AdditionalData["model_id"] = unknown; } else { ModelId = parsed; AdditionalData.Remove("model_id"); } } },
                 { "model_style_prefix", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComposeMusicWithADetailedResponseV1MusicDetailedPostModelStylePrefix>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueModelStylePrefix = default; _explicitNullProperties?.Remove("model_style_prefix"); AdditionalData["model_style_prefix"] = unknown; } else { ModelStylePrefix = parsed; AdditionalData.Remove("model_style_prefix"); } } },
                 { "music_length_ms", n => { MusicLengthMs = n.GetIntValue(); } },
-                { "music_prompt", n => { MusicPrompt = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicPrompt>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicPrompt.CreateFromDiscriminatorValue); } },
+                { "music_prompt", n => { MusicPrompt = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComposeMusicV1MusicPostMusicPrompt>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComposeMusicV1MusicPostMusicPrompt.CreateFromDiscriminatorValue); } },
                 { "prompt", n => { Prompt = n.GetStringValue(); } },
                 { "respect_sections_durations", n => { RespectSectionsDurations = n.GetBoolValue(); } },
                 { "seed", n => { Seed = n.GetIntValue(); } },
@@ -216,7 +216,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicModelId>("model_id", ModelId);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComposeMusicWithADetailedResponseV1MusicDetailedPostModelStylePrefix>("model_style_prefix", ModelStylePrefix);
             writer.WriteIntValue("music_length_ms", MusicLengthMs);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicPrompt>("music_prompt", MusicPrompt);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComposeMusicV1MusicPostMusicPrompt>("music_prompt", MusicPrompt);
             writer.WriteStringValue("prompt", Prompt);
             writer.WriteBoolValue("respect_sections_durations", RespectSectionsDurations);
             writer.WriteIntValue("seed", Seed);

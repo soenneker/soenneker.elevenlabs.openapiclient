@@ -68,12 +68,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Metadata, such as the length in seconds and content type, of the dubbed content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaMetadata? MediaMetadata { get => _explicitNullValueMediaMetadata; set { _explicitNullValueMediaMetadata = value; AdditionalData?.Remove("media_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_metadata"); else _explicitNullProperties?.Remove("media_metadata"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaMetadata? _explicitNullValueMediaMetadata = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMetadataResponseMediaMetadata? MediaMetadata { get => _explicitNullValueMediaMetadata; set { _explicitNullValueMediaMetadata = value; AdditionalData?.Remove("media_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_metadata"); else _explicitNullProperties?.Remove("media_metadata"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMetadataResponseMediaMetadata? _explicitNullValueMediaMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaMetadata MediaMetadata { get => _explicitNullValueMediaMetadata; set { _explicitNullValueMediaMetadata = value; AdditionalData?.Remove("media_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_metadata"); else _explicitNullProperties?.Remove("media_metadata"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaMetadata _explicitNullValueMediaMetadata = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMetadataResponseMediaMetadata MediaMetadata { get => _explicitNullValueMediaMetadata; set { _explicitNullValueMediaMetadata = value; AdditionalData?.Remove("media_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_metadata"); else _explicitNullProperties?.Remove("media_metadata"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMetadataResponseMediaMetadata _explicitNullValueMediaMetadata = default!;
 #endif
         /// <summary>The name of the dubbing project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -145,7 +145,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "dubbing_id", n => { DubbingId = n.GetStringValue(); } },
                 { "editable", n => { Editable = n.GetBoolValue(); } },
                 { "error", n => { Error = n.GetStringValue(); } },
-                { "media_metadata", n => { MediaMetadata = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaMetadata>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaMetadata.CreateFromDiscriminatorValue); } },
+                { "media_metadata", n => { MediaMetadata = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMetadataResponseMediaMetadata>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMetadataResponseMediaMetadata.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "source_language", n => { SourceLanguage = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
@@ -163,7 +163,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("dubbing_id", DubbingId);
             writer.WriteBoolValue("editable", Editable);
             writer.WriteStringValue("error", Error);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaMetadata>("media_metadata", MediaMetadata);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMetadataResponseMediaMetadata>("media_metadata", MediaMetadata);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("source_language", SourceLanguage);
             writer.WriteStringValue("status", Status);

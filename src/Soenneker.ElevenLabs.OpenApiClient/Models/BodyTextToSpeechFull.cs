@@ -58,12 +58,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Audio effects applied to the generated audio. Unknown IDs return 404 with `param` naming the field. Reverb (`environment_id` with `send_level` above 0) and a non-zero `pan` produce stereo audio and are rejected with 400 for `ulaw_*`, `alaw_*`, and `pcm_*` output formats. Effects don&apos;t change the cost of the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EffectsSpecInput? AudioEffects { get => _explicitNullValueAudioEffects; set { _explicitNullValueAudioEffects = value; AdditionalData?.Remove("audio_effects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_effects"); else _explicitNullProperties?.Remove("audio_effects"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.EffectsSpecInput? _explicitNullValueAudioEffects = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueFullWithTimestampsAudioEffects? AudioEffects { get => _explicitNullValueAudioEffects; set { _explicitNullValueAudioEffects = value; AdditionalData?.Remove("audio_effects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_effects"); else _explicitNullProperties?.Remove("audio_effects"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueFullWithTimestampsAudioEffects? _explicitNullValueAudioEffects = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EffectsSpecInput AudioEffects { get => _explicitNullValueAudioEffects; set { _explicitNullValueAudioEffects = value; AdditionalData?.Remove("audio_effects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_effects"); else _explicitNullProperties?.Remove("audio_effects"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.EffectsSpecInput _explicitNullValueAudioEffects = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueFullWithTimestampsAudioEffects AudioEffects { get => _explicitNullValueAudioEffects; set { _explicitNullValueAudioEffects = value; AdditionalData?.Remove("audio_effects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_effects"); else _explicitNullProperties?.Remove("audio_effects"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueFullWithTimestampsAudioEffects _explicitNullValueAudioEffects = default!;
 #endif
         /// <summary>Language code (ISO 639-1) used to enforce a language for the model and text normalization. If the model does not support the provided language code, it will be ignored. This parameter is not supported for multilingual_v2 models.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -154,12 +154,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Voice settings overriding stored settings for the given voice. They are applied only on the given request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettingsResponseModel? VoiceSettings { get => _explicitNullValueVoiceSettings; set { _explicitNullValueVoiceSettings = value; AdditionalData?.Remove("voice_settings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_settings"); else _explicitNullProperties?.Remove("voice_settings"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettingsResponseModel? _explicitNullValueVoiceSettings = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFullVoiceSettings? VoiceSettings { get => _explicitNullValueVoiceSettings; set { _explicitNullValueVoiceSettings = value; AdditionalData?.Remove("voice_settings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_settings"); else _explicitNullProperties?.Remove("voice_settings"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFullVoiceSettings? _explicitNullValueVoiceSettings = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettingsResponseModel VoiceSettings { get => _explicitNullValueVoiceSettings; set { _explicitNullValueVoiceSettings = value; AdditionalData?.Remove("voice_settings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_settings"); else _explicitNullProperties?.Remove("voice_settings"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettingsResponseModel _explicitNullValueVoiceSettings = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFullVoiceSettings VoiceSettings { get => _explicitNullValueVoiceSettings; set { _explicitNullValueVoiceSettings = value; AdditionalData?.Remove("voice_settings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_settings"); else _explicitNullProperties?.Remove("voice_settings"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFullVoiceSettings _explicitNullValueVoiceSettings = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFull"/> and sets the default values.
@@ -190,7 +190,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "apply_language_text_normalization", n => { ApplyLanguageTextNormalization = n.GetBoolValue(); } },
                 { "apply_text_normalization", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFullApplyTextNormalization>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueApplyTextNormalization = default; _explicitNullProperties?.Remove("apply_text_normalization"); AdditionalData["apply_text_normalization"] = unknown; } else { ApplyTextNormalization = parsed; AdditionalData.Remove("apply_text_normalization"); } } },
-                { "audio_effects", n => { AudioEffects = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EffectsSpecInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.EffectsSpecInput.CreateFromDiscriminatorValue); } },
+                { "audio_effects", n => { AudioEffects = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueFullWithTimestampsAudioEffects>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueFullWithTimestampsAudioEffects.CreateFromDiscriminatorValue); } },
                 { "language_code", n => { LanguageCode = n.GetStringValue(); } },
                 { "model_id", n => { ModelId = n.GetStringValue(); } },
                 { "next_request_ids", n => { NextRequestIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -201,7 +201,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "seed", n => { Seed = n.GetIntValue(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
                 { "use_pvc_as_ivc", n => { UsePvcAsIvc = n.GetBoolValue(); } },
-                { "voice_settings", n => { VoiceSettings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettingsResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettingsResponseModel.CreateFromDiscriminatorValue); } },
+                { "voice_settings", n => { VoiceSettings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFullVoiceSettings>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFullVoiceSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -213,7 +213,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("apply_language_text_normalization", ApplyLanguageTextNormalization);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFullApplyTextNormalization>("apply_text_normalization", ApplyTextNormalization);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EffectsSpecInput>("audio_effects", AudioEffects);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueFullWithTimestampsAudioEffects>("audio_effects", AudioEffects);
             writer.WriteStringValue("language_code", LanguageCode);
             writer.WriteStringValue("model_id", ModelId);
             writer.WriteCollectionOfPrimitiveValues<string>("next_request_ids", NextRequestIds);
@@ -224,7 +224,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("seed", Seed);
             writer.WriteStringValue("text", Text);
             writer.WriteBoolValue("use_pvc_as_ivc", UsePvcAsIvc);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettingsResponseModel>("voice_settings", VoiceSettings);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFullVoiceSettings>("voice_settings", VoiceSettings);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -141,11 +141,25 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.History
             public string Search { get; set; }
 #endif
             /// <summary>Sort direction for the results.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("sort_direction")]
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSpeechHistorySortDirectionParameter? SortDirection { get; set; }
+            public string? SortDirection { get; set; }
+#nullable restore
+#else
+            [QueryParameter("sort_direction")]
+            public string SortDirection { get; set; }
+#endif
             /// <summary>Source of the generated history item</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("source")]
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSpeechHistorySourceParameter? Source { get; set; }
+            public string? Source { get; set; }
+#nullable restore
+#else
+            [QueryParameter("source")]
+            public string Source { get; set; }
+#endif
             /// <summary>After which ID to start fetching, use this parameter to paginate across a large collection of history items. In case this parameter is not provided history items will be fetched starting from the most recently created one ordered descending by their creation date.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

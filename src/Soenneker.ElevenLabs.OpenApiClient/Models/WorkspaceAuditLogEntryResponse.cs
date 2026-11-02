@@ -106,22 +106,22 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Device information</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DeviceModel? Device { get => _explicitNullValueDevice; set { _explicitNullValueDevice = value; AdditionalData?.Remove("device"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("device"); else _explicitNullProperties?.Remove("device"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DeviceModel? _explicitNullValueDevice = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponseDevice? Device { get => _explicitNullValueDevice; set { _explicitNullValueDevice = value; AdditionalData?.Remove("device"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("device"); else _explicitNullProperties?.Remove("device"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponseDevice? _explicitNullValueDevice = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DeviceModel Device { get => _explicitNullValueDevice; set { _explicitNullValueDevice = value; AdditionalData?.Remove("device"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("device"); else _explicitNullProperties?.Remove("device"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DeviceModel _explicitNullValueDevice = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponseDevice Device { get => _explicitNullValueDevice; set { _explicitNullValueDevice = value; AdditionalData?.Remove("device"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("device"); else _explicitNullProperties?.Remove("device"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponseDevice _explicitNullValueDevice = default!;
 #endif
         /// <summary>HTTP request details</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpRequestModel? HttpRequest { get => _explicitNullValueHttpRequest; set { _explicitNullValueHttpRequest = value; AdditionalData?.Remove("http_request"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("http_request"); else _explicitNullProperties?.Remove("http_request"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpRequestModel? _explicitNullValueHttpRequest = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponseHttpRequest? HttpRequest { get => _explicitNullValueHttpRequest; set { _explicitNullValueHttpRequest = value; AdditionalData?.Remove("http_request"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("http_request"); else _explicitNullProperties?.Remove("http_request"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponseHttpRequest? _explicitNullValueHttpRequest = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpRequestModel HttpRequest { get => _explicitNullValueHttpRequest; set { _explicitNullValueHttpRequest = value; AdditionalData?.Remove("http_request"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("http_request"); else _explicitNullProperties?.Remove("http_request"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpRequestModel _explicitNullValueHttpRequest = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponseHttpRequest HttpRequest { get => _explicitNullValueHttpRequest; set { _explicitNullValueHttpRequest = value; AdditionalData?.Remove("http_request"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("http_request"); else _explicitNullProperties?.Remove("http_request"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponseHttpRequest _explicitNullValueHttpRequest = default!;
 #endif
         /// <summary>Firestore document ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -226,8 +226,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "category_uid", n => { CategoryUid = n.GetIntValue(); } },
                 { "class_name", n => { ClassName = n.GetStringValue(); } },
                 { "class_uid", n => { ClassUid = n.GetIntValue(); } },
-                { "device", n => { Device = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DeviceModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DeviceModel.CreateFromDiscriminatorValue); } },
-                { "http_request", n => { HttpRequest = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpRequestModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpRequestModel.CreateFromDiscriminatorValue); } },
+                { "device", n => { Device = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponseDevice>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponseDevice.CreateFromDiscriminatorValue); } },
+                { "http_request", n => { HttpRequest = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponseHttpRequest>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponseHttpRequest.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponseMetadataProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponseMetadataProperty.CreateFromDiscriminatorValue); } },
@@ -254,8 +254,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("category_uid", CategoryUid);
             writer.WriteStringValue("class_name", ClassName);
             writer.WriteIntValue("class_uid", ClassUid);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DeviceModel>("device", Device);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpRequestModel>("http_request", HttpRequest);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponseDevice>("device", Device);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponseHttpRequest>("http_request", HttpRequest);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("message", Message);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponseMetadataProperty>("metadata", Metadata);

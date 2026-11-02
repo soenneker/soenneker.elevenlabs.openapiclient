@@ -50,12 +50,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The quoted price for this item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.QuoteInfo? Quote { get => _explicitNullValueQuote; set { _explicitNullValueQuote = value; AdditionalData?.Remove("quote"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quote"); else _explicitNullProperties?.Remove("quote"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.QuoteInfo? _explicitNullValueQuote = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemInfoQuote? Quote { get => _explicitNullValueQuote; set { _explicitNullValueQuote = value; AdditionalData?.Remove("quote"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quote"); else _explicitNullProperties?.Remove("quote"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemInfoQuote? _explicitNullValueQuote = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.QuoteInfo Quote { get => _explicitNullValueQuote; set { _explicitNullValueQuote = value; AdditionalData?.Remove("quote"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quote"); else _explicitNullProperties?.Remove("quote"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.QuoteInfo _explicitNullValueQuote = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemInfoQuote Quote { get => _explicitNullValueQuote; set { _explicitNullValueQuote = value; AdditionalData?.Remove("quote"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quote"); else _explicitNullProperties?.Remove("quote"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemInfoQuote _explicitNullValueQuote = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemInfo"/> and sets the default values.
@@ -84,7 +84,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "item", n => { Item = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemRequestOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemRequestOutput.CreateFromDiscriminatorValue); } },
                 { "item_id", n => { ItemId = n.GetStringValue(); } },
-                { "quote", n => { Quote = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.QuoteInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.QuoteInfo.CreateFromDiscriminatorValue); } },
+                { "quote", n => { Quote = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemInfoQuote>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemInfoQuote.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -96,7 +96,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemRequestOutput>("item", Item);
             writer.WriteStringValue("item_id", ItemId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.QuoteInfo>("quote", Quote);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemInfoQuote>("quote", Quote);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

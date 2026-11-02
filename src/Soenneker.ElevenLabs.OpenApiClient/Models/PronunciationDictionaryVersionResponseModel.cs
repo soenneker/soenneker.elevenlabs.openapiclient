@@ -66,8 +66,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         private string _explicitNullValueDictionaryName = default!;
 #endif
         /// <summary>The permission_on_resource property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionResponseModelPermissionOnResource? PermissionOnResource { get => _explicitNullValuePermissionOnResource; set { _explicitNullValuePermissionOnResource = value; AdditionalData?.Remove("permission_on_resource"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permission_on_resource"); else _explicitNullProperties?.Remove("permission_on_resource"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionResponseModelPermissionOnResource? _explicitNullValuePermissionOnResource = default!;
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionResponseModelPermissionOnResource PermissionOnResource { get => _explicitNullValuePermissionOnResource; set { _explicitNullValuePermissionOnResource = value; AdditionalData?.Remove("permission_on_resource"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permission_on_resource"); else _explicitNullProperties?.Remove("permission_on_resource"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionResponseModelPermissionOnResource _explicitNullValuePermissionOnResource = default!;
+#endif
         /// <summary>The pronunciation_dictionary_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -130,7 +137,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "created_by", n => { CreatedBy = n.GetStringValue(); } },
                 { "creation_time_unix", n => { CreationTimeUnix = n.GetIntValue(); } },
                 { "dictionary_name", n => { DictionaryName = n.GetStringValue(); } },
-                { "permission_on_resource", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionResponseModelPermissionOnResource>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePermissionOnResource = default; _explicitNullProperties?.Remove("permission_on_resource"); AdditionalData["permission_on_resource"] = unknown; } else { PermissionOnResource = parsed; AdditionalData.Remove("permission_on_resource"); } } },
+                { "permission_on_resource", n => { PermissionOnResource = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionResponseModelPermissionOnResource>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionResponseModelPermissionOnResource.CreateFromDiscriminatorValue); } },
                 { "pronunciation_dictionary_id", n => { PronunciationDictionaryId = n.GetStringValue(); } },
                 { "version_id", n => { VersionId = n.GetStringValue(); } },
                 { "version_name", n => { VersionName = n.GetStringValue(); } },
@@ -148,7 +155,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("created_by", CreatedBy);
             writer.WriteIntValue("creation_time_unix", CreationTimeUnix);
             writer.WriteStringValue("dictionary_name", DictionaryName);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionResponseModelPermissionOnResource>("permission_on_resource", PermissionOnResource);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionResponseModelPermissionOnResource>("permission_on_resource", PermissionOnResource);
             writer.WriteStringValue("pronunciation_dictionary_id", PronunciationDictionaryId);
             writer.WriteStringValue("version_id", VersionId);
             writer.WriteStringValue("version_name", VersionName);

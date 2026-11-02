@@ -103,12 +103,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The speaker_separation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModel? SpeakerSeparation { get => _explicitNullValueSpeakerSeparation; set { _explicitNullValueSpeakerSeparation = value; AdditionalData?.Remove("speaker_separation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speaker_separation"); else _explicitNullProperties?.Remove("speaker_separation"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModel? _explicitNullValueSpeakerSeparation = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModelSpeakerSeparation? SpeakerSeparation { get => _explicitNullValueSpeakerSeparation; set { _explicitNullValueSpeakerSeparation = value; AdditionalData?.Remove("speaker_separation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speaker_separation"); else _explicitNullProperties?.Remove("speaker_separation"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModelSpeakerSeparation? _explicitNullValueSpeakerSeparation = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModel SpeakerSeparation { get => _explicitNullValueSpeakerSeparation; set { _explicitNullValueSpeakerSeparation = value; AdditionalData?.Remove("speaker_separation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speaker_separation"); else _explicitNullProperties?.Remove("speaker_separation"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModel _explicitNullValueSpeakerSeparation = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModelSpeakerSeparation SpeakerSeparation { get => _explicitNullValueSpeakerSeparation; set { _explicitNullValueSpeakerSeparation = value; AdditionalData?.Remove("speaker_separation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speaker_separation"); else _explicitNullProperties?.Remove("speaker_separation"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModelSpeakerSeparation _explicitNullValueSpeakerSeparation = default!;
 #endif
         /// <summary>The trim_end property</summary>
         public int? TrimEnd { get => _explicitNullValueTrimEnd; set { _explicitNullValueTrimEnd = value; AdditionalData?.Remove("trim_end"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trim_end"); else _explicitNullProperties?.Remove("trim_end"); } }
@@ -150,7 +150,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "remove_background_noise", n => { RemoveBackgroundNoise = n.GetBoolValue(); } },
                 { "sample_id", n => { SampleId = n.GetStringValue(); } },
                 { "size_bytes", n => { SizeBytes = n.GetIntValue(); } },
-                { "speaker_separation", n => { SpeakerSeparation = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModel.CreateFromDiscriminatorValue); } },
+                { "speaker_separation", n => { SpeakerSeparation = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModelSpeakerSeparation>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModelSpeakerSeparation.CreateFromDiscriminatorValue); } },
                 { "trim_end", n => { TrimEnd = n.GetIntValue(); } },
                 { "trim_start", n => { TrimStart = n.GetIntValue(); } },
             };
@@ -171,7 +171,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("remove_background_noise", RemoveBackgroundNoise);
             writer.WriteStringValue("sample_id", SampleId);
             writer.WriteIntValue("size_bytes", SizeBytes);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModel>("speaker_separation", SpeakerSeparation);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModelSpeakerSeparation>("speaker_separation", SpeakerSeparation);
             writer.WriteIntValue("trim_end", TrimEnd);
             writer.WriteIntValue("trim_start", TrimStart);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

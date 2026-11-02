@@ -34,8 +34,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>End of the time range as a Unix timestamp in milliseconds. Must be at least 2020-01-01.</summary>
-        public int? EndTime { get => _explicitNullValueEndTime; set { _explicitNullValueEndTime = value; AdditionalData?.Remove("end_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_time"); else _explicitNullProperties?.Remove("end_time"); } }
-        private int? _explicitNullValueEndTime = default!;
+        public long? EndTime { get => _explicitNullValueEndTime; set { _explicitNullValueEndTime = value; AdditionalData?.Remove("end_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_time"); else _explicitNullProperties?.Remove("end_time"); } }
+        private long? _explicitNullValueEndTime = default!;
         /// <summary>The filters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -60,8 +60,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public int? IntervalSeconds { get => _explicitNullValueIntervalSeconds; set { _explicitNullValueIntervalSeconds = value; AdditionalData?.Remove("interval_seconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interval_seconds"); else _explicitNullProperties?.Remove("interval_seconds"); } }
         private int? _explicitNullValueIntervalSeconds = default!;
         /// <summary>Start of the time range as a Unix timestamp in milliseconds. Must be at least 2020-01-01.</summary>
-        public int? StartTime { get => _explicitNullValueStartTime; set { _explicitNullValueStartTime = value; AdditionalData?.Remove("start_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_time"); else _explicitNullProperties?.Remove("start_time"); } }
-        private int? _explicitNullValueStartTime = default!;
+        public long? StartTime { get => _explicitNullValueStartTime; set { _explicitNullValueStartTime = value; AdditionalData?.Remove("start_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_time"); else _explicitNullProperties?.Remove("start_time"); } }
+        private long? _explicitNullValueStartTime = default!;
         /// <summary>IANA time zone identifier (e.g. &apos;America/New_York&apos;, &apos;Europe/London&apos;, &apos;UTC&apos;) used to align bucket boundaries for eligible `interval_seconds` values. Week multiples (e.g. 604800) are calendar weeks that start Monday at local midnight. Whole-day multiples that are not whole weeks start at local midnight; whole-hour multiples up to 24 hours align to local hour boundaries from midnight. Sub-hour intervals and other bucket sizes remain UTC-anchored regardless of this setting. Defaults to UTC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -99,11 +99,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "end_time", n => { EndTime = n.GetIntValue(); } },
+                { "end_time", n => { EndTime = n.GetLongValue(); } },
                 { "filters", n => { Filters = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ColumnFilter>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ColumnFilter.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "group_by", n => { GroupBy = n.GetCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGetWorkspaceUsageV1WorkspaceAnalyticsQueryUsageByProductOverTimePostGroupByItem>()?.AsList(); } },
                 { "interval_seconds", n => { IntervalSeconds = n.GetIntValue(); } },
-                { "start_time", n => { StartTime = n.GetIntValue(); } },
+                { "start_time", n => { StartTime = n.GetLongValue(); } },
                 { "time_zone", n => { TimeZone = n.GetStringValue(); } },
             };
         }
@@ -114,11 +114,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("end_time", EndTime);
+            writer.WriteLongValue("end_time", EndTime);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ColumnFilter>("filters", Filters);
             writer.WriteCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGetWorkspaceUsageV1WorkspaceAnalyticsQueryUsageByProductOverTimePostGroupByItem>("group_by", GroupBy);
             writer.WriteIntValue("interval_seconds", IntervalSeconds);
-            writer.WriteIntValue("start_time", StartTime);
+            writer.WriteLongValue("start_time", StartTime);
             writer.WriteStringValue("time_zone", TimeZone);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

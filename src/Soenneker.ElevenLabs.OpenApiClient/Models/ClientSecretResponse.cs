@@ -33,12 +33,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The session property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiSessionConfigOutput? Session { get => _explicitNullValueSession; set { _explicitNullValueSession = value; AdditionalData?.Remove("session"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session"); else _explicitNullProperties?.Remove("session"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiSessionConfigOutput? _explicitNullValueSession = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientSecretResponseSession? Session { get => _explicitNullValueSession; set { _explicitNullValueSession = value; AdditionalData?.Remove("session"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session"); else _explicitNullProperties?.Remove("session"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientSecretResponseSession? _explicitNullValueSession = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiSessionConfigOutput Session { get => _explicitNullValueSession; set { _explicitNullValueSession = value; AdditionalData?.Remove("session"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session"); else _explicitNullProperties?.Remove("session"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiSessionConfigOutput _explicitNullValueSession = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientSecretResponseSession Session { get => _explicitNullValueSession; set { _explicitNullValueSession = value; AdditionalData?.Remove("session"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session"); else _explicitNullProperties?.Remove("session"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientSecretResponseSession _explicitNullValueSession = default!;
 #endif
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -76,7 +76,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "expires_at", n => { ExpiresAt = n.GetIntValue(); } },
-                { "session", n => { Session = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiSessionConfigOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiSessionConfigOutput.CreateFromDiscriminatorValue); } },
+                { "session", n => { Session = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientSecretResponseSession>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientSecretResponseSession.CreateFromDiscriminatorValue); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -88,7 +88,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("expires_at", ExpiresAt);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiSessionConfigOutput>("session", Session);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientSecretResponseSession>("session", Session);
             writer.WriteStringValue("value", Value);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

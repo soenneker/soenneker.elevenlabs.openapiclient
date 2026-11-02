@@ -180,12 +180,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Where the list&apos;s `search` query matched. Set only on searched lists.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketSearchMatchResponseModel? SearchMatch { get => _explicitNullValueSearchMatch; set { _explicitNullValueSearchMatch = value; AdditionalData?.Remove("search_match"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("search_match"); else _explicitNullProperties?.Remove("search_match"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketSearchMatchResponseModel? _explicitNullValueSearchMatch = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketResponseModelSearchMatch? SearchMatch { get => _explicitNullValueSearchMatch; set { _explicitNullValueSearchMatch = value; AdditionalData?.Remove("search_match"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("search_match"); else _explicitNullProperties?.Remove("search_match"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketResponseModelSearchMatch? _explicitNullValueSearchMatch = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketSearchMatchResponseModel SearchMatch { get => _explicitNullValueSearchMatch; set { _explicitNullValueSearchMatch = value; AdditionalData?.Remove("search_match"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("search_match"); else _explicitNullProperties?.Remove("search_match"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketSearchMatchResponseModel _explicitNullValueSearchMatch = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketResponseModelSearchMatch SearchMatch { get => _explicitNullValueSearchMatch; set { _explicitNullValueSearchMatch = value; AdditionalData?.Remove("search_match"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("search_match"); else _explicitNullProperties?.Remove("search_match"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketResponseModelSearchMatch _explicitNullValueSearchMatch = default!;
 #endif
         /// <summary>The source property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketSource? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; AdditionalData?.Remove("source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
@@ -286,7 +286,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "priority", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketPriority>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePriority = default; _explicitNullProperties?.Remove("priority"); AdditionalData["priority"] = unknown; } else { Priority = parsed; AdditionalData.Remove("priority"); } } },
                 { "priority_changes", n => { PriorityChanges = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketPriorityChangeResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketPriorityChangeResponseModel.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "qa_comment", n => { QaComment = n.GetStringValue(); } },
-                { "search_match", n => { SearchMatch = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketSearchMatchResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketSearchMatchResponseModel.CreateFromDiscriminatorValue); } },
+                { "search_match", n => { SearchMatch = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketResponseModelSearchMatch>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketResponseModelSearchMatch.CreateFromDiscriminatorValue); } },
                 { "source", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketSource>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSource = default; _explicitNullProperties?.Remove("source"); AdditionalData["source"] = unknown; } else { Source = parsed; AdditionalData.Remove("source"); } } },
                 { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "status_changes", n => { StatusChanges = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketStatusChangeResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketStatusChangeResponseModel.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -319,7 +319,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketPriority>("priority", Priority);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketPriorityChangeResponseModel>("priority_changes", PriorityChanges);
             writer.WriteStringValue("qa_comment", QaComment);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketSearchMatchResponseModel>("search_match", SearchMatch);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketResponseModelSearchMatch>("search_match", SearchMatch);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketSource>("source", Source);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketStatus>("status", Status);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketStatusChangeResponseModel>("status_changes", StatusChanges);

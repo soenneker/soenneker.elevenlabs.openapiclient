@@ -196,12 +196,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The whatsapp_params property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallWhatsAppParams? WhatsappParams { get => _explicitNullValueWhatsappParams; set { _explicitNullValueWhatsappParams = value; AdditionalData?.Remove("whatsapp_params"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whatsapp_params"); else _explicitNullProperties?.Remove("whatsapp_params"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallWhatsAppParams? _explicitNullValueWhatsappParams = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallDetailedResponseWhatsappParams? WhatsappParams { get => _explicitNullValueWhatsappParams; set { _explicitNullValueWhatsappParams = value; AdditionalData?.Remove("whatsapp_params"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whatsapp_params"); else _explicitNullProperties?.Remove("whatsapp_params"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallDetailedResponseWhatsappParams? _explicitNullValueWhatsappParams = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallWhatsAppParams WhatsappParams { get => _explicitNullValueWhatsappParams; set { _explicitNullValueWhatsappParams = value; AdditionalData?.Remove("whatsapp_params"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whatsapp_params"); else _explicitNullProperties?.Remove("whatsapp_params"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallWhatsAppParams _explicitNullValueWhatsappParams = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallDetailedResponseWhatsappParams WhatsappParams { get => _explicitNullValueWhatsappParams; set { _explicitNullValueWhatsappParams = value; AdditionalData?.Remove("whatsapp_params"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whatsapp_params"); else _explicitNullProperties?.Remove("whatsapp_params"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallDetailedResponseWhatsappParams _explicitNullValueWhatsappParams = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallResponse"/> and sets the default values.
@@ -252,7 +252,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "total_calls_dispatched", n => { TotalCallsDispatched = n.GetIntValue(); } },
                 { "total_calls_finished", n => { TotalCallsFinished = n.GetIntValue(); } },
                 { "total_calls_scheduled", n => { TotalCallsScheduled = n.GetIntValue(); } },
-                { "whatsapp_params", n => { WhatsappParams = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallWhatsAppParams>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallWhatsAppParams.CreateFromDiscriminatorValue); } },
+                { "whatsapp_params", n => { WhatsappParams = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallDetailedResponseWhatsappParams>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallDetailedResponseWhatsappParams.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -282,7 +282,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("total_calls_dispatched", TotalCallsDispatched);
             writer.WriteIntValue("total_calls_finished", TotalCallsFinished);
             writer.WriteIntValue("total_calls_scheduled", TotalCallsScheduled);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallWhatsAppParams>("whatsapp_params", WhatsappParams);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallDetailedResponseWhatsappParams>("whatsapp_params", WhatsappParams);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

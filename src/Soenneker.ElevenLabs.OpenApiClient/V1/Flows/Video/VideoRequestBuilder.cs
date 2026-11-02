@@ -178,8 +178,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Flows.Video
             [QueryParameter("page_size")]
             public int? PageSize { get; set; }
             /// <summary>Only return generations with this lifecycle status.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("status")]
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.ListVideoGenerationsStatusParameter? Status { get; set; }
+            public string? Status { get; set; }
+#nullable restore
+#else
+            [QueryParameter("status")]
+            public string Status { get; set; }
+#endif
         }
     }
 }

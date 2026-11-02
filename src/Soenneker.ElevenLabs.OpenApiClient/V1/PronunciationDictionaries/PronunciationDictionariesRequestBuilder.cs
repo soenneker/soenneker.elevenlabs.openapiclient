@@ -134,8 +134,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.PronunciationDictionaries
             [QueryParameter("page_size")]
             public int? PageSize { get; set; }
             /// <summary>Which field to sort by, one of &apos;created_at_unix&apos; or &apos;name&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("sort")]
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionariesMetadataSortParameter? Sort { get; set; }
+            public string? Sort { get; set; }
+#nullable restore
+#else
+            [QueryParameter("sort")]
+            public string Sort { get; set; }
+#endif
             /// <summary>Which direction to sort the voices in. &apos;ascending&apos; or &apos;descending&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

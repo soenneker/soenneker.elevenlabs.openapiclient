@@ -35,8 +35,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Cadence being billed. None only for a subscription mid-provisioning.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSubscriptionBillingPeriod? BillingPeriod { get => _explicitNullValueBillingPeriod; set { _explicitNullValueBillingPeriod = value; AdditionalData?.Remove("billing_period"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_period"); else _explicitNullProperties?.Remove("billing_period"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSubscriptionBillingPeriod? _explicitNullValueBillingPeriod = default!;
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSubscriptionBillingPeriod BillingPeriod { get => _explicitNullValueBillingPeriod; set { _explicitNullValueBillingPeriod = value; AdditionalData?.Remove("billing_period"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_period"); else _explicitNullProperties?.Remove("billing_period"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSubscriptionBillingPeriod _explicitNullValueBillingPeriod = default!;
+#endif
         /// <summary>When the current period ends, and so when a deferred change lands.</summary>
         public int? BillingPeriodEndUnix { get => _explicitNullValueBillingPeriodEndUnix; set { _explicitNullValueBillingPeriodEndUnix = value; AdditionalData?.Remove("billing_period_end_unix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_period_end_unix"); else _explicitNullProperties?.Remove("billing_period_end_unix"); } }
         private int? _explicitNullValueBillingPeriodEndUnix = default!;
@@ -91,7 +98,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "billing_period", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSubscriptionBillingPeriod>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBillingPeriod = default; _explicitNullProperties?.Remove("billing_period"); AdditionalData["billing_period"] = unknown; } else { BillingPeriod = parsed; AdditionalData.Remove("billing_period"); } } },
+                { "billing_period", n => { BillingPeriod = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSubscriptionBillingPeriod>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSubscriptionBillingPeriod.CreateFromDiscriminatorValue); } },
                 { "billing_period_end_unix", n => { BillingPeriodEndUnix = n.GetIntValue(); } },
                 { "cancel_at_unix", n => { CancelAtUnix = n.GetIntValue(); } },
                 { "pending_downgrade_at_unix", n => { PendingDowngradeAtUnix = n.GetIntValue(); } },
@@ -106,7 +113,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSubscriptionBillingPeriod>("billing_period", BillingPeriod);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSubscriptionBillingPeriod>("billing_period", BillingPeriod);
             writer.WriteIntValue("billing_period_end_unix", BillingPeriodEndUnix);
             writer.WriteIntValue("cancel_at_unix", CancelAtUnix);
             writer.WriteIntValue("pending_downgrade_at_unix", PendingDowngradeAtUnix);

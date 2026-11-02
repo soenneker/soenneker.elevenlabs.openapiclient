@@ -53,12 +53,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Audio effects applied to the generated audio. Unknown IDs return 404 with `param` naming the field. Reverb (`environment_id` with `send_level` above 0) and a non-zero `pan` produce stereo audio and are rejected with 400 for `ulaw_*`, `alaw_*`, and `pcm_*` output formats. Effects don&apos;t change the cost of the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EffectsSpecInput? AudioEffects { get => _explicitNullValueAudioEffects; set { _explicitNullValueAudioEffects = value; AdditionalData?.Remove("audio_effects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_effects"); else _explicitNullProperties?.Remove("audio_effects"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.EffectsSpecInput? _explicitNullValueAudioEffects = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueFullWithTimestampsAudioEffects? AudioEffects { get => _explicitNullValueAudioEffects; set { _explicitNullValueAudioEffects = value; AdditionalData?.Remove("audio_effects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_effects"); else _explicitNullProperties?.Remove("audio_effects"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueFullWithTimestampsAudioEffects? _explicitNullValueAudioEffects = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EffectsSpecInput AudioEffects { get => _explicitNullValueAudioEffects; set { _explicitNullValueAudioEffects = value; AdditionalData?.Remove("audio_effects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_effects"); else _explicitNullProperties?.Remove("audio_effects"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.EffectsSpecInput _explicitNullValueAudioEffects = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueFullWithTimestampsAudioEffects AudioEffects { get => _explicitNullValueAudioEffects; set { _explicitNullValueAudioEffects = value; AdditionalData?.Remove("audio_effects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_effects"); else _explicitNullProperties?.Remove("audio_effects"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueFullWithTimestampsAudioEffects _explicitNullValueAudioEffects = default!;
 #endif
         /// <summary>The text that comes immediately after this generation, used to condition the model for prosodic continuity. A maximum of 100 characters can be sent. Not supported by every model.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -146,12 +146,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Settings controlling the dialogue generation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToDialogueSettingsResponseModel? Settings { get => _explicitNullValueSettings; set { _explicitNullValueSettings = value; AdditionalData?.Remove("settings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("settings"); else _explicitNullProperties?.Remove("settings"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ToDialogueSettingsResponseModel? _explicitNullValueSettings = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueFullWithTimestampsSettings? Settings { get => _explicitNullValueSettings; set { _explicitNullValueSettings = value; AdditionalData?.Remove("settings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("settings"); else _explicitNullProperties?.Remove("settings"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueFullWithTimestampsSettings? _explicitNullValueSettings = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToDialogueSettingsResponseModel Settings { get => _explicitNullValueSettings; set { _explicitNullValueSettings = value; AdditionalData?.Remove("settings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("settings"); else _explicitNullProperties?.Remove("settings"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ToDialogueSettingsResponseModel _explicitNullValueSettings = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueFullWithTimestampsSettings Settings { get => _explicitNullValueSettings; set { _explicitNullValueSettings = value; AdditionalData?.Remove("settings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("settings"); else _explicitNullProperties?.Remove("settings"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueFullWithTimestampsSettings _explicitNullValueSettings = default!;
 #endif
         /// <summary>Whether to use the IVC version of a professional voice. This may improve expressiveness and reduce latency.</summary>
         [Obsolete("")]
@@ -184,7 +184,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "apply_text_normalization", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueMultiVoiceStreamingV1TextToDialogueStreamPostApplyTextNormalization>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueApplyTextNormalization = default; _explicitNullProperties?.Remove("apply_text_normalization"); AdditionalData["apply_text_normalization"] = unknown; } else { ApplyTextNormalization = parsed; AdditionalData.Remove("apply_text_normalization"); } } },
-                { "audio_effects", n => { AudioEffects = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EffectsSpecInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.EffectsSpecInput.CreateFromDiscriminatorValue); } },
+                { "audio_effects", n => { AudioEffects = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueFullWithTimestampsAudioEffects>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueFullWithTimestampsAudioEffects.CreateFromDiscriminatorValue); } },
                 { "future_text", n => { FutureText = n.GetStringValue(); } },
                 { "inputs", n => { Inputs = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DialogueInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DialogueInput.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "language_code", n => { LanguageCode = n.GetStringValue(); } },
@@ -194,7 +194,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "previous_text", n => { PreviousText = n.GetStringValue(); } },
                 { "pronunciation_dictionary_locators", n => { PronunciationDictionaryLocators = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionLocatorRequestModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionLocatorRequestModel.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "seed", n => { Seed = n.GetIntValue(); } },
-                { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToDialogueSettingsResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToDialogueSettingsResponseModel.CreateFromDiscriminatorValue); } },
+                { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueFullWithTimestampsSettings>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueFullWithTimestampsSettings.CreateFromDiscriminatorValue); } },
                 { "use_pvc_as_ivc", n => { UsePvcAsIvc = n.GetBoolValue(); } },
             };
         }
@@ -206,7 +206,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueMultiVoiceStreamingV1TextToDialogueStreamPostApplyTextNormalization>("apply_text_normalization", ApplyTextNormalization);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EffectsSpecInput>("audio_effects", AudioEffects);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueFullWithTimestampsAudioEffects>("audio_effects", AudioEffects);
             writer.WriteStringValue("future_text", FutureText);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DialogueInput>("inputs", Inputs);
             writer.WriteStringValue("language_code", LanguageCode);
@@ -216,7 +216,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("previous_text", PreviousText);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionLocatorRequestModel>("pronunciation_dictionary_locators", PronunciationDictionaryLocators);
             writer.WriteIntValue("seed", Seed);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToDialogueSettingsResponseModel>("settings", Settings);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueFullWithTimestampsSettings>("settings", Settings);
             writer.WriteBoolValue("use_pvc_as_ivc", UsePvcAsIvc);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
