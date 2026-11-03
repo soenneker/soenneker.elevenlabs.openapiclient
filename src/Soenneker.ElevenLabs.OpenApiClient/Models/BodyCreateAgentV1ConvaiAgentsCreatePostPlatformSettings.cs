@@ -74,7 +74,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModelAlerting Alerting { get => _explicitNullValueAlerting; set { _explicitNullValueAlerting = value; AdditionalData?.Remove("alerting"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alerting"); else _explicitNullProperties?.Remove("alerting"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModelAlerting _explicitNullValueAlerting = default!;
 #endif
-        /// <summary>Evaluation + data-collection items attached by reference. None means the agent has not been migrated onto analysis items yet (distinct from an empty, migrated set); reads fall back to the legacy evaluation/data_collection fields in that case.</summary>
+        /// <summary>Analysis items (evaluation criteria and data collection fields) attached to the agent by reference. They are the source of truth for the agent&apos;s analysis. Writing evaluation.criteria or data_collection inline is still supported: a new entry creates an item, and changing an entry publishes a new version of its attached item, which every agent using that item picks up. To attach or detach an existing item, use the analysis item attachments endpoint. None means the agent has no attached items yet, and its inline fields are used as they are.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModelAnalysisItems? AnalysisItems { get => _explicitNullValueAnalysisItems; set { _explicitNullValueAnalysisItems = value; AdditionalData?.Remove("analysis_items"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analysis_items"); else _explicitNullProperties?.Remove("analysis_items"); } }
@@ -113,7 +113,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentCallLimits CallLimits { get => _explicitNullValueCallLimits; set { _explicitNullValueCallLimits = value; AdditionalData?.Remove("call_limits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("call_limits"); else _explicitNullProperties?.Remove("call_limits"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentCallLimits _explicitNullValueCallLimits = default!;
 #endif
-        /// <summary>Data collection settings</summary>
+        /// <summary>Data collection fields, keyed by ID. Each field is stored as an analysis item attached to the agent (see analysis_items).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModelDataCollectionProperty? DataCollection { get => _explicitNullValueDataCollection; set { _explicitNullValueDataCollection = value; AdditionalData?.Remove("data_collection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data_collection"); else _explicitNullProperties?.Remove("data_collection"); } }

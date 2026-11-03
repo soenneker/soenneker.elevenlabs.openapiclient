@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Data collection settings
+    /// Data collection fields, keyed by ID. Each field is stored as an analysis item attached to the agent (see analysis_items).
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AgentPlatformSettingsRequestModelDataCollectionProperty : IAdditionalDataHolder, IParsable

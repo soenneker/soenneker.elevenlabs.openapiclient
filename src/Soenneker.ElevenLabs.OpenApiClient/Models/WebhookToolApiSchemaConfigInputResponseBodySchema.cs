@@ -105,8 +105,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInputRequiredConstraints _explicitNullValueRequiredConstraints = default!;
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectValueType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectValueType? _explicitNullValueType = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInputType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInputType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigInputResponseBodySchema"/> and sets the default values.
         /// </summary>
@@ -142,7 +142,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "property_kind", n => { PropertyKind = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInputPropertyKind>(); } },
                 { "required", n => { Required = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "required_constraints", n => { RequiredConstraints = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInputRequiredConstraints>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInputRequiredConstraints.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectValueType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInputType>(); } },
             };
         }
         /// <summary>
@@ -160,7 +160,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInputPropertyKind>("property_kind", PropertyKind);
             writer.WriteCollectionOfPrimitiveValues<string>("required", Required);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInputRequiredConstraints>("required_constraints", RequiredConstraints);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectValueType>("type", Type);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInputType>("type", Type);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             
         }
     }

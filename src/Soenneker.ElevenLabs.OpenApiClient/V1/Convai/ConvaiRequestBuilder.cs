@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agent;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.AgentTesting;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.AnalysisItems;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Analytics;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.BatchCalling;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversation;
@@ -56,6 +57,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.AgentTesting.AgentTestingRequestBuilder AgentTesting
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.AgentTesting.AgentTestingRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The analysisItems property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.AnalysisItems.AnalysisItemsRequestBuilder AnalysisItems
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.AnalysisItems.AnalysisItemsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The analytics property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Analytics.AnalyticsRequestBuilder Analytics

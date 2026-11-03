@@ -3,6 +3,8 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Realtime.Client_secrets;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Realtime.ConversationGroups;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Realtime.Conversations;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -19,6 +21,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Realtime
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Realtime.Client_secrets.Client_secretsRequestBuilder Client_secrets
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Realtime.Client_secrets.Client_secretsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The conversationGroups property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Realtime.ConversationGroups.ConversationGroupsRequestBuilder ConversationGroups
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Realtime.ConversationGroups.ConversationGroupsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The conversations property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Realtime.Conversations.ConversationsRequestBuilder Conversations
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Realtime.Conversations.ConversationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Realtime.RealtimeRequestBuilder"/> and sets the default values.

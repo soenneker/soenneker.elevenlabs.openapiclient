@@ -19,6 +19,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("asr") is null) { _explicitNullValueAsr = default!; _explicitNullProperties?.Remove("asr"); }
             else if (parseNode.GetChildNode("asr") is { } nullNodeAsr && nullNodeAsr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Asr = null;
+            if (parseNode.GetChildNode("auth") is null) { _explicitNullValueAuth = default!; _explicitNullProperties?.Remove("auth"); }
+            else if (parseNode.GetChildNode("auth") is { } nullNodeAuth && nullNodeAuth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Auth = null;
             if (parseNode.GetChildNode("call_limits") is null) { _explicitNullValueCallLimits = default!; _explicitNullProperties?.Remove("call_limits"); }
             else if (parseNode.GetChildNode("call_limits") is { } nullNodeCallLimits && nullNodeCallLimits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CallLimits = null;
             if (parseNode.GetChildNode("cascade_timeout_seconds") is null) { _explicitNullValueCascadeTimeoutSeconds = default!; _explicitNullProperties?.Remove("cascade_timeout_seconds"); }
@@ -56,6 +58,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateSpeechEngineRequestAsr Asr { get => _explicitNullValueAsr; set { _explicitNullValueAsr = value; AdditionalData?.Remove("asr"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asr"); else _explicitNullProperties?.Remove("asr"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateSpeechEngineRequestAsr _explicitNullValueAsr = default!;
+#endif
+        /// <summary>Who may start a conversation with this speech engine</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateSpeechEngineRequestAuth? Auth { get => _explicitNullValueAuth; set { _explicitNullValueAuth = value; AdditionalData?.Remove("auth"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth"); else _explicitNullProperties?.Remove("auth"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateSpeechEngineRequestAuth? _explicitNullValueAuth = default!;
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateSpeechEngineRequestAuth Auth { get => _explicitNullValueAuth; set { _explicitNullValueAuth = value; AdditionalData?.Remove("auth"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth"); else _explicitNullProperties?.Remove("auth"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateSpeechEngineRequestAuth _explicitNullValueAuth = default!;
 #endif
         /// <summary>The call_limits property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -196,6 +208,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "asr", n => { Asr = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateSpeechEngineRequestAsr>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateSpeechEngineRequestAsr.CreateFromDiscriminatorValue); } },
+                { "auth", n => { Auth = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateSpeechEngineRequestAuth>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateSpeechEngineRequestAuth.CreateFromDiscriminatorValue); } },
                 { "call_limits", n => { CallLimits = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateSpeechEngineRequestCallLimits>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateSpeechEngineRequestCallLimits.CreateFromDiscriminatorValue); } },
                 { "cascade_timeout_seconds", n => { CascadeTimeoutSeconds = n.GetDoubleValue(); } },
                 { "conversation", n => { Conversation = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateSpeechEngineRequestConversation>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateSpeechEngineRequestConversation.CreateFromDiscriminatorValue); } },
@@ -218,6 +231,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateSpeechEngineRequestAsr>("asr", Asr);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateSpeechEngineRequestAuth>("auth", Auth);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateSpeechEngineRequestCallLimits>("call_limits", CallLimits);
             writer.WriteDoubleValue("cascade_timeout_seconds", CascadeTimeoutSeconds);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateSpeechEngineRequestConversation>("conversation", Conversation);
