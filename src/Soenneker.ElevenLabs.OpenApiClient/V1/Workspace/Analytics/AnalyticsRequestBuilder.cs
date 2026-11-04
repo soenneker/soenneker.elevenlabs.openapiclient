@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Analytics.Query;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Analytics.Requests;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Analytics.Usage;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -25,6 +26,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Analytics
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Analytics.Requests.RequestsRequestBuilder Requests
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Analytics.Requests.RequestsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The usage property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Analytics.Usage.UsageRequestBuilder Usage
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Analytics.Usage.UsageRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Analytics.AnalyticsRequestBuilder"/> and sets the default values.

@@ -18,6 +18,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("clone_strength") is null) { _explicitNullValueCloneStrength = default!; _explicitNullProperties?.Remove("clone_strength"); }
+            else if (parseNode.GetChildNode("clone_strength") is { } nullNodeCloneStrength && nullNodeCloneStrength.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CloneStrength = null;
             if (parseNode.GetChildNode("model_id") is null) { _explicitNullValueModelId = default!; _explicitNullProperties?.Remove("model_id"); }
             else if (parseNode.GetChildNode("model_id") is { } nullNodeModelId && nullNodeModelId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModelId = null;
             if (parseNode.GetChildNode("pronunciation_dictionary_locators") is null) { _explicitNullValuePronunciationDictionaryLocators = default!; _explicitNullProperties?.Remove("pronunciation_dictionary_locators"); }
@@ -36,6 +38,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The clone strength for generated speech</summary>
+        public double? CloneStrength { get => _explicitNullValueCloneStrength; set { _explicitNullValueCloneStrength = value; AdditionalData?.Remove("clone_strength"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clone_strength"); else _explicitNullProperties?.Remove("clone_strength"); } }
+        private double? _explicitNullValueCloneStrength = default!;
         /// <summary>The model to use for TTS</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalModel? ModelId { get => _explicitNullValueModelId; set { _explicitNullValueModelId = value; AdditionalData?.Remove("model_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model_id"); else _explicitNullProperties?.Remove("model_id"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalModel? _explicitNullValueModelId = default!;
@@ -105,6 +110,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "clone_strength", n => { CloneStrength = n.GetDoubleValue(); } },
                 { "model_id", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalModel>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueModelId = default; _explicitNullProperties?.Remove("model_id"); AdditionalData["model_id"] = unknown; } else { ModelId = parsed; AdditionalData.Remove("model_id"); } } },
                 { "pronunciation_dictionary_locators", n => { PronunciationDictionaryLocators = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PydanticPronunciationDictionaryVersionLocator>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PydanticPronunciationDictionaryVersionLocator.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "similarity_boost", n => { SimilarityBoost = n.GetDoubleValue(); } },
@@ -121,6 +127,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteDoubleValue("clone_strength", CloneStrength);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalModel>("model_id", ModelId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PydanticPronunciationDictionaryVersionLocator>("pronunciation_dictionary_locators", PronunciationDictionaryLocators);
             writer.WriteDoubleValue("similarity_boost", SimilarityBoost);

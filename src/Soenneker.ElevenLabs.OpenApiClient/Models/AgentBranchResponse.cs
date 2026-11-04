@@ -43,6 +43,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if (parseNode.GetChildNode("parent_branch") is { } nullNodeParentBranch && nullNodeParentBranch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentBranch = null;
             if (parseNode.GetChildNode("protection_status") is null) { _explicitNullValueProtectionStatus = default!; _explicitNullProperties?.Remove("protection_status"); }
             else if (parseNode.GetChildNode("protection_status") is { } nullNodeProtectionStatus && nullNodeProtectionStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProtectionStatus = null;
+            if (parseNode.GetChildNode("sync_status") is null) { _explicitNullValueSyncStatus = default!; _explicitNullProperties?.Remove("sync_status"); }
+            else if (parseNode.GetChildNode("sync_status") is { } nullNodeSyncStatus && nullNodeSyncStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SyncStatus = null;
         }
 
         /// <summary>Access information for the branch</summary>
@@ -135,6 +137,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The protection_status property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.BranchProtectionStatus? ProtectionStatus { get => _explicitNullValueProtectionStatus; set { _explicitNullValueProtectionStatus = value; AdditionalData?.Remove("protection_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("protection_status"); else _explicitNullProperties?.Remove("protection_status"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.BranchProtectionStatus? _explicitNullValueProtectionStatus = default!;
+        /// <summary>Set while the branch is kept in sync with another branch (Main today), pulling in its new versions automatically. Null when it is not synced.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchResponseSyncStatus? SyncStatus { get => _explicitNullValueSyncStatus; set { _explicitNullValueSyncStatus = value; AdditionalData?.Remove("sync_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sync_status"); else _explicitNullProperties?.Remove("sync_status"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchResponseSyncStatus? _explicitNullValueSyncStatus = default!;
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchResponseSyncStatus SyncStatus { get => _explicitNullValueSyncStatus; set { _explicitNullValueSyncStatus = value; AdditionalData?.Remove("sync_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sync_status"); else _explicitNullProperties?.Remove("sync_status"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchResponseSyncStatus _explicitNullValueSyncStatus = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchResponse"/> and sets the default values.
         /// </summary>
@@ -176,6 +188,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "parent_branch", n => { ParentBranch = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchResponseParentBranch>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchResponseParentBranch.CreateFromDiscriminatorValue); } },
                 { "protection_status", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BranchProtectionStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueProtectionStatus = default; _explicitNullProperties?.Remove("protection_status"); AdditionalData["protection_status"] = unknown; } else { ProtectionStatus = parsed; AdditionalData.Remove("protection_status"); } } },
+                { "sync_status", n => { SyncStatus = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchResponseSyncStatus>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchResponseSyncStatus.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -198,6 +211,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchResponseParentBranch>("parent_branch", ParentBranch);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BranchProtectionStatus>("protection_status", ProtectionStatus);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchResponseSyncStatus>("sync_status", SyncStatus);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

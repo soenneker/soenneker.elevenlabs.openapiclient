@@ -16,9 +16,5 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         AudioPcmu,
         #pragma warning restore CS1591
-        [EnumMember(Value = "audio/pcma")]
-        #pragma warning disable CS1591
-        AudioPcma,
-        #pragma warning restore CS1591
     }
 }

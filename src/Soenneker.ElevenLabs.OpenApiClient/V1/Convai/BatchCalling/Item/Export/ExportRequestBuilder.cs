@@ -34,7 +34,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.BatchCalling.Item.Export
         {
         }
         /// <summary>
-        /// Download all recipients and conversation results for a terminal batch call as CSV.
+        /// Download all recipients and conversation results for a batch call as CSV, including calls that are still in progress.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.BatchCalling.Item.Export
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Download all recipients and conversation results for a terminal batch call as CSV.
+        /// Download all recipients and conversation results for a batch call as CSV, including calls that are still in progress.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -87,7 +87,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.BatchCalling.Item.Export
             return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.BatchCalling.Item.Export.ExportRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Download all recipients and conversation results for a terminal batch call as CSV.
+        /// Download all recipients and conversation results for a batch call as CSV, including calls that are still in progress.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ExportRequestBuilderGetQueryParameters 

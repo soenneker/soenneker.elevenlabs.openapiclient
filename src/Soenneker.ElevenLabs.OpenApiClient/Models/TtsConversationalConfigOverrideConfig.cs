@@ -17,6 +17,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("clone_strength") is null) { _explicitNullValueCloneStrength = default!; _explicitNullProperties?.Remove("clone_strength"); }
+            else if (parseNode.GetChildNode("clone_strength") is { } nullNodeCloneStrength && nullNodeCloneStrength.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CloneStrength = null;
             if (parseNode.GetChildNode("model_id") is null) { _explicitNullValueModelId = default!; _explicitNullProperties?.Remove("model_id"); }
             else if (parseNode.GetChildNode("model_id") is { } nullNodeModelId && nullNodeModelId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModelId = null;
             if (parseNode.GetChildNode("pronunciation_dictionary_locators") is null) { _explicitNullValuePronunciationDictionaryLocators = default!; _explicitNullProperties?.Remove("pronunciation_dictionary_locators"); }
@@ -35,6 +37,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Whether to allow overriding the clone_strength field.</summary>
+        public bool? CloneStrength { get => _explicitNullValueCloneStrength; set { _explicitNullValueCloneStrength = value; AdditionalData?.Remove("clone_strength"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clone_strength"); else _explicitNullProperties?.Remove("clone_strength"); } }
+        private bool? _explicitNullValueCloneStrength = default!;
         /// <summary>Whether to allow overriding the model_id field.</summary>
         public bool? ModelId { get => _explicitNullValueModelId; set { _explicitNullValueModelId = value; AdditionalData?.Remove("model_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model_id"); else _explicitNullProperties?.Remove("model_id"); } }
         private bool? _explicitNullValueModelId = default!;
@@ -62,6 +67,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public TtsConversationalConfigOverrideConfig()
         {
             AdditionalData = new Dictionary<string, object>();
+            CloneStrength = false;
             ModelId = false;
             PronunciationDictionaryLocators = false;
             SimilarityBoost = false;
@@ -88,6 +94,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "clone_strength", n => { CloneStrength = n.GetBoolValue(); } },
                 { "model_id", n => { ModelId = n.GetBoolValue(); } },
                 { "pronunciation_dictionary_locators", n => { PronunciationDictionaryLocators = n.GetBoolValue(); } },
                 { "similarity_boost", n => { SimilarityBoost = n.GetBoolValue(); } },
@@ -104,6 +111,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("clone_strength", CloneStrength);
             writer.WriteBoolValue("model_id", ModelId);
             writer.WriteBoolValue("pronunciation_dictionary_locators", PronunciationDictionaryLocators);
             writer.WriteBoolValue("similarity_boost", SimilarityBoost);

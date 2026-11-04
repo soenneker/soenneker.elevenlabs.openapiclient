@@ -37,6 +37,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if (parseNode.GetChildNode("conversation_id") is { } nullNodeConversationId && nullNodeConversationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationId = null;
             if (parseNode.GetChildNode("conversation_initiation_source") is null) { _explicitNullValueConversationInitiationSource = default!; _explicitNullProperties?.Remove("conversation_initiation_source"); }
             else if (parseNode.GetChildNode("conversation_initiation_source") is { } nullNodeConversationInitiationSource && nullNodeConversationInitiationSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationInitiationSource = null;
+            if (parseNode.GetChildNode("cost") is null) { _explicitNullValueCost = default!; _explicitNullProperties?.Remove("cost"); }
+            else if (parseNode.GetChildNode("cost") is { } nullNodeCost && nullNodeCost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cost = null;
+            if (parseNode.GetChildNode("cost_fiat") is null) { _explicitNullValueCostFiat = default!; _explicitNullProperties?.Remove("cost_fiat"); }
+            else if (parseNode.GetChildNode("cost_fiat") is { } nullNodeCostFiat && nullNodeCostFiat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CostFiat = null;
             if (parseNode.GetChildNode("data_collection_results") is null) { _explicitNullValueDataCollectionResults = default!; _explicitNullProperties?.Remove("data_collection_results"); }
             else if (parseNode.GetChildNode("data_collection_results") is { } nullNodeDataCollectionResults && nullNodeDataCollectionResults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataCollectionResults = null;
             if (parseNode.GetChildNode("direction") is null) { _explicitNullValueDirection = default!; _explicitNullProperties?.Remove("direction"); }
@@ -136,6 +140,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The conversation_initiation_source property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSource? ConversationInitiationSource { get => _explicitNullValueConversationInitiationSource; set { _explicitNullValueConversationInitiationSource = value; AdditionalData?.Remove("conversation_initiation_source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_initiation_source"); else _explicitNullProperties?.Remove("conversation_initiation_source"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSource? _explicitNullValueConversationInitiationSource = default!;
+        /// <summary>Total cost of the conversation in credits.</summary>
+        public int? Cost { get => _explicitNullValueCost; set { _explicitNullValueCost = value; AdditionalData?.Remove("cost"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cost"); else _explicitNullProperties?.Remove("cost"); } }
+        private int? _explicitNullValueCost = default!;
+        /// <summary>Total fiat cost of the conversation in USD. `None` for conversations that predate fiat cost tracking.</summary>
+        public double? CostFiat { get => _explicitNullValueCostFiat; set { _explicitNullValueCostFiat = value; AdditionalData?.Remove("cost_fiat"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cost_fiat"); else _explicitNullProperties?.Remove("cost_fiat"); } }
+        private double? _explicitNullValueCostFiat = default!;
         /// <summary>The data_collection_results property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -279,6 +289,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "call_summary_title", n => { CallSummaryTitle = n.GetStringValue(); } },
                 { "conversation_id", n => { ConversationId = n.GetStringValue(); } },
                 { "conversation_initiation_source", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSource>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueConversationInitiationSource = default; _explicitNullProperties?.Remove("conversation_initiation_source"); AdditionalData["conversation_initiation_source"] = unknown; } else { ConversationInitiationSource = parsed; AdditionalData.Remove("conversation_initiation_source"); } } },
+                { "cost", n => { Cost = n.GetIntValue(); } },
+                { "cost_fiat", n => { CostFiat = n.GetDoubleValue(); } },
                 { "data_collection_results", n => { DataCollectionResults = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelDataCollectionResultsProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelDataCollectionResultsProperty.CreateFromDiscriminatorValue); } },
                 { "direction", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyDirection>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDirection = default; _explicitNullProperties?.Remove("direction"); AdditionalData["direction"] = unknown; } else { Direction = parsed; AdditionalData.Remove("direction"); } } },
                 { "evaluation_criteria_results", n => { EvaluationCriteriaResults = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelEvaluationCriteriaResultsProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelEvaluationCriteriaResultsProperty.CreateFromDiscriminatorValue); } },
@@ -313,6 +325,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("call_summary_title", CallSummaryTitle);
             writer.WriteStringValue("conversation_id", ConversationId);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSource>("conversation_initiation_source", ConversationInitiationSource);
+            writer.WriteIntValue("cost", Cost);
+            writer.WriteDoubleValue("cost_fiat", CostFiat);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelDataCollectionResultsProperty>("data_collection_results", DataCollectionResults);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyDirection>("direction", Direction);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelEvaluationCriteriaResultsProperty>("evaluation_criteria_results", EvaluationCriteriaResults);

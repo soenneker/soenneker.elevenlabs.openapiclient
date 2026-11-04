@@ -43,7 +43,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Automatically discover and add new pages linked from already-crawled pages during auto-sync. Requires enable_auto_sync=true.</summary>
+        /// <summary>Automatically discover and add new pages during auto-sync: pages linked from already-crawled pages for website crawls, or new sitemap entries matching `pattern` and `exclude_patterns` for sitemap crawls. Requires enable_auto_sync=true.</summary>
         public bool? AutoDiscover { get => _explicitNullValueAutoDiscover; set { _explicitNullValueAutoDiscover = value; AdditionalData?.Remove("auto_discover"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_discover"); else _explicitNullProperties?.Remove("auto_discover"); } }
         private bool? _explicitNullValueAutoDiscover = default!;
         /// <summary>Whether to automatically remove the document if the URL becomes unavailable. Only applicable when auto-sync is enabled.</summary>

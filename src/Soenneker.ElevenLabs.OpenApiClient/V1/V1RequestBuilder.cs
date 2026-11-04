@@ -15,6 +15,7 @@ using Soenneker.ElevenLabs.OpenApiClient.V1.ModelsRequests;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Music;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Productions;
 using Soenneker.ElevenLabs.OpenApiClient.V1.PronunciationDictionaries;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Reception;
 using Soenneker.ElevenLabs.OpenApiClient.V1.ServiceAccounts;
 using Soenneker.ElevenLabs.OpenApiClient.V1.SharedVoices;
 using Soenneker.ElevenLabs.OpenApiClient.V1.SimilarVoices;
@@ -109,6 +110,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.PronunciationDictionaries.PronunciationDictionariesRequestBuilder PronunciationDictionaries
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.PronunciationDictionaries.PronunciationDictionariesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The reception property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Reception.ReceptionRequestBuilder Reception
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Reception.ReceptionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The serviceAccounts property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.ServiceAccounts.ServiceAccountsRequestBuilder ServiceAccounts

@@ -17,6 +17,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("library_voice_match") is null) { _explicitNullValueLibraryVoiceMatch = default!; _explicitNullProperties?.Remove("library_voice_match"); }
+            else if (parseNode.GetChildNode("library_voice_match") is { } nullNodeLibraryVoiceMatch && nullNodeLibraryVoiceMatch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LibraryVoiceMatch = null;
             if (parseNode.GetChildNode("requires_verification") is null) { _explicitNullValueRequiresVerification = default!; _explicitNullProperties?.Remove("requires_verification"); }
             else if (parseNode.GetChildNode("requires_verification") is { } nullNodeRequiresVerification && nullNodeRequiresVerification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequiresVerification = null;
             if (parseNode.GetChildNode("voice_id") is null) { _explicitNullValueVoiceId = default!; _explicitNullProperties?.Remove("voice_id"); }
@@ -25,6 +27,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Set when the samples match a protected voice that is available in the Voice Library. The new voice requires verification before use; adding the library voice is the alternative.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AddVoiceIvcResponseModelLibraryVoiceMatch? LibraryVoiceMatch { get => _explicitNullValueLibraryVoiceMatch; set { _explicitNullValueLibraryVoiceMatch = value; AdditionalData?.Remove("library_voice_match"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("library_voice_match"); else _explicitNullProperties?.Remove("library_voice_match"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AddVoiceIvcResponseModelLibraryVoiceMatch? _explicitNullValueLibraryVoiceMatch = default!;
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AddVoiceIvcResponseModelLibraryVoiceMatch LibraryVoiceMatch { get => _explicitNullValueLibraryVoiceMatch; set { _explicitNullValueLibraryVoiceMatch = value; AdditionalData?.Remove("library_voice_match"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("library_voice_match"); else _explicitNullProperties?.Remove("library_voice_match"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AddVoiceIvcResponseModelLibraryVoiceMatch _explicitNullValueLibraryVoiceMatch = default!;
+#endif
         /// <summary>Whether the voice requires verification</summary>
         public bool? RequiresVerification { get => _explicitNullValueRequiresVerification; set { _explicitNullValueRequiresVerification = value; AdditionalData?.Remove("requires_verification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requires_verification"); else _explicitNullProperties?.Remove("requires_verification"); } }
         private bool? _explicitNullValueRequiresVerification = default!;
@@ -63,6 +75,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "library_voice_match", n => { LibraryVoiceMatch = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AddVoiceIvcResponseModelLibraryVoiceMatch>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AddVoiceIvcResponseModelLibraryVoiceMatch.CreateFromDiscriminatorValue); } },
                 { "requires_verification", n => { RequiresVerification = n.GetBoolValue(); } },
                 { "voice_id", n => { VoiceId = n.GetStringValue(); } },
             };
@@ -74,6 +87,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AddVoiceIvcResponseModelLibraryVoiceMatch>("library_voice_match", LibraryVoiceMatch);
             writer.WriteBoolValue("requires_verification", RequiresVerification);
             writer.WriteStringValue("voice_id", VoiceId);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

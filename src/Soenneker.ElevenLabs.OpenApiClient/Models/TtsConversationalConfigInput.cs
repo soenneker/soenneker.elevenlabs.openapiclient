@@ -21,6 +21,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if (parseNode.GetChildNode("agent_output_audio_format") is { } nullNodeAgentOutputAudioFormat && nullNodeAgentOutputAudioFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentOutputAudioFormat = null;
             if (parseNode.GetChildNode("audio_effects") is null) { _explicitNullValueAudioEffects = default!; _explicitNullProperties?.Remove("audio_effects"); }
             else if (parseNode.GetChildNode("audio_effects") is { } nullNodeAudioEffects && nullNodeAudioEffects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudioEffects = null;
+            if (parseNode.GetChildNode("clone_strength") is null) { _explicitNullValueCloneStrength = default!; _explicitNullProperties?.Remove("clone_strength"); }
+            else if (parseNode.GetChildNode("clone_strength") is { } nullNodeCloneStrength && nullNodeCloneStrength.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CloneStrength = null;
             if (parseNode.GetChildNode("enable_phoneme_tags") is null) { _explicitNullValueEnablePhonemeTags = default!; _explicitNullProperties?.Remove("enable_phoneme_tags"); }
             else if (parseNode.GetChildNode("enable_phoneme_tags") is { } nullNodeEnablePhonemeTags && nullNodeEnablePhonemeTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnablePhonemeTags = null;
             if (parseNode.GetChildNode("expressive_mode") is null) { _explicitNullValueExpressiveMode = default!; _explicitNullProperties?.Remove("expressive_mode"); }
@@ -62,6 +64,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigInputAudioEffects AudioEffects { get => _explicitNullValueAudioEffects; set { _explicitNullValueAudioEffects = value; AdditionalData?.Remove("audio_effects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_effects"); else _explicitNullProperties?.Remove("audio_effects"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigInputAudioEffects _explicitNullValueAudioEffects = default!;
 #endif
+        /// <summary>The clone strength for generated speech</summary>
+        public double? CloneStrength { get => _explicitNullValueCloneStrength; set { _explicitNullValueCloneStrength = value; AdditionalData?.Remove("clone_strength"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clone_strength"); else _explicitNullProperties?.Remove("clone_strength"); } }
+        private double? _explicitNullValueCloneStrength = default!;
         /// <summary>Opt-in to SSML phoneme tag handling for V3 models. When enabled, phoneme tags (inline and from pronunciation dictionaries) are parsed into inline IPA before being sent to the model.</summary>
         public bool? EnablePhonemeTags { get => _explicitNullValueEnablePhonemeTags; set { _explicitNullValueEnablePhonemeTags = value; AdditionalData?.Remove("enable_phoneme_tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enable_phoneme_tags"); else _explicitNullProperties?.Remove("enable_phoneme_tags"); } }
         private bool? _explicitNullValueEnablePhonemeTags = default!;
@@ -132,6 +137,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public TtsConversationalConfigInput()
         {
             AdditionalData = new Dictionary<string, object>();
+            CloneStrength = 0.0;
             EnablePhonemeTags = true;
             ExpressiveMode = true;
             SimilarityBoost = 0.8;
@@ -160,6 +166,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "agent_output_audio_format", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsOutputFormat>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAgentOutputAudioFormat = default; _explicitNullProperties?.Remove("agent_output_audio_format"); AdditionalData["agent_output_audio_format"] = unknown; } else { AgentOutputAudioFormat = parsed; AdditionalData.Remove("agent_output_audio_format"); } } },
                 { "audio_effects", n => { AudioEffects = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigInputAudioEffects>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigInputAudioEffects.CreateFromDiscriminatorValue); } },
+                { "clone_strength", n => { CloneStrength = n.GetDoubleValue(); } },
                 { "enable_phoneme_tags", n => { EnablePhonemeTags = n.GetBoolValue(); } },
                 { "expressive_mode", n => { ExpressiveMode = n.GetBoolValue(); } },
                 { "model_id", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalModel>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueModelId = default; _explicitNullProperties?.Remove("model_id"); AdditionalData["model_id"] = unknown; } else { ModelId = parsed; AdditionalData.Remove("model_id"); } } },
@@ -183,6 +190,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsOutputFormat>("agent_output_audio_format", AgentOutputAudioFormat);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigInputAudioEffects>("audio_effects", AudioEffects);
+            writer.WriteDoubleValue("clone_strength", CloneStrength);
             writer.WriteBoolValue("enable_phoneme_tags", EnablePhonemeTags);
             writer.WriteBoolValue("expressive_mode", ExpressiveMode);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalModel>("model_id", ModelId);

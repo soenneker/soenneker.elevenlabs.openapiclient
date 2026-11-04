@@ -47,7 +47,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConversationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/conversations{?agent_id*,branch_id*,call_duration_max_secs*,call_duration_min_secs*,call_start_after_unix*,call_start_before_unix*,call_successful*,conversation_initiation_source*,conversation_product_type*,cursor*,custom_guardrail_names*,data_collection_ids*,data_collection_params*,dynamic_variable_params*,evaluation_criteria_ids*,evaluation_params*,exclude_statuses*,guardrail_types*,has_feedback_comment*,include_invalid_tool_calls*,main_languages*,page_size*,parent_conversation_id*,rating_max*,rating_min*,search*,sort_direction*,summary_mode*,tag_ids*,termination_reasons*,text_only*,tool_names*,tool_names_errored*,tool_names_successful*,topic_ids*,triggered_procedure_ids*,user_id*,version_id*,visited_agent_branch_ids*,visited_agent_ids*,workflow_node_entered_id*}", pathParameters)
+        public ConversationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/conversations{?agent_id*,branch_id*,call_duration_max_secs*,call_duration_min_secs*,call_start_after_unix*,call_start_before_unix*,call_successful*,conversation_initiation_source*,conversation_product_type*,cursor*,custom_guardrail_names*,data_collection_filter*,data_collection_ids*,data_collection_params*,dynamic_variable_filter*,dynamic_variable_params*,evaluation_criteria_ids*,evaluation_params*,exclude_statuses*,guardrail_types*,has_feedback_comment*,include_invalid_tool_calls*,main_languages*,page_size*,parent_conversation_id*,rating_max*,rating_min*,search*,sort_direction*,summary_mode*,tag_ids*,termination_reasons*,text_only*,tool_names*,tool_names_errored*,tool_names_successful*,topic_ids*,triggered_procedure_ids*,user_id*,version_id*,visited_agent_branch_ids*,visited_agent_ids*,workflow_node_entered_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConversationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/conversations{?agent_id*,branch_id*,call_duration_max_secs*,call_duration_min_secs*,call_start_after_unix*,call_start_before_unix*,call_successful*,conversation_initiation_source*,conversation_product_type*,cursor*,custom_guardrail_names*,data_collection_ids*,data_collection_params*,dynamic_variable_params*,evaluation_criteria_ids*,evaluation_params*,exclude_statuses*,guardrail_types*,has_feedback_comment*,include_invalid_tool_calls*,main_languages*,page_size*,parent_conversation_id*,rating_max*,rating_min*,search*,sort_direction*,summary_mode*,tag_ids*,termination_reasons*,text_only*,tool_names*,tool_names_errored*,tool_names_successful*,topic_ids*,triggered_procedure_ids*,user_id*,version_id*,visited_agent_branch_ids*,visited_agent_ids*,workflow_node_entered_id*}", rawUrl)
+        public ConversationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/conversations{?agent_id*,branch_id*,call_duration_max_secs*,call_duration_min_secs*,call_start_after_unix*,call_start_before_unix*,call_successful*,conversation_initiation_source*,conversation_product_type*,cursor*,custom_guardrail_names*,data_collection_filter*,data_collection_ids*,data_collection_params*,dynamic_variable_filter*,dynamic_variable_params*,evaluation_criteria_ids*,evaluation_params*,exclude_statuses*,guardrail_types*,has_feedback_comment*,include_invalid_tool_calls*,main_languages*,page_size*,parent_conversation_id*,rating_max*,rating_min*,search*,sort_direction*,summary_mode*,tag_ids*,termination_reasons*,text_only*,tool_names*,tool_names_errored*,tool_names_successful*,topic_ids*,triggered_procedure_ids*,user_id*,version_id*,visited_agent_branch_ids*,visited_agent_ids*,workflow_node_entered_id*}", rawUrl)
         {
         }
         /// <summary>
@@ -202,6 +202,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations
             [QueryParameter("custom_guardrail_names")]
             public string[] CustomGuardrailNames { get; set; }
 #endif
+            /// <summary>A single data collection filter, for callers that can only send one scalar value per query param. Same format as data_collection_params (id:op:value); combined with it when both are given.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("data_collection_filter")]
+            public string? DataCollectionFilter { get; set; }
+#nullable restore
+#else
+            [QueryParameter("data_collection_filter")]
+            public string DataCollectionFilter { get; set; }
+#endif
             /// <summary>Data collection field IDs to include in each conversation summary. Repeat param. When omitted, data_collection_results is not returned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -221,6 +231,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations
 #else
             [QueryParameter("data_collection_params")]
             public string[] DataCollectionParams { get; set; }
+#endif
+            /// <summary>A single dynamic variable filter, for callers that can only send one scalar value per query param. Same format as dynamic_variable_params (name:op:value); combined with it when both are given.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("dynamic_variable_filter")]
+            public string? DynamicVariableFilter { get; set; }
+#nullable restore
+#else
+            [QueryParameter("dynamic_variable_filter")]
+            public string DynamicVariableFilter { get; set; }
 #endif
             /// <summary>Dynamic variable filters. Repeat param. Format: name:op:value where op is one of eq|neq|gt|gte|lt|lte|in. For in, pipe-delimit values. An empty value matches conversations where the variable was not set (name:eq:), and neq with an empty value matches where it was (name:neq:). eq is exact equality. gt|gte|lt|lte require a numeric value. Names containing &apos;:&apos; cannot be expressed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

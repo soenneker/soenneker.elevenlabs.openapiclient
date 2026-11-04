@@ -92,7 +92,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.AuditLogs
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AuditLogsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Filter by audit activity name (e.g. Subscription Creation)</summary>
+            /// <summary>Filter by audit activity name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("activity_name")]
@@ -112,7 +112,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.AuditLogs
             [QueryParameter("actor_uid")]
             public string ActorUid { get; set; }
 #endif
-            /// <summary>Filter by OCSF event class name (e.g. Account Change)</summary>
+            /// <summary>Filter by OCSF event class name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("class_name")]
