@@ -12868,6 +12868,79 @@
         "x-fern-sdk-method-name": "update"
       }
     },
+    "/v1/workspace/members/{userId}/usage-limit": {
+      "put": {
+        "tags": [
+          "workspace"
+        ],
+        "summary": "Update Member Usage Limit",
+        "description": "Sets or clears the monthly credit usage limit of a workspace member or service account. This endpoint may only be called by workspace administrators.",
+        "operationId": "UpdateWorkspaceMemberUsageLimit",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "description": "User ID of the target user.",
+            "required": true,
+            "schema": {
+              "title": "User Id",
+              "type": "string",
+              "description": "User ID of the target user."
+            }
+          },
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": [
+                "null",
+                "string"
+              ],
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website."
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateMemberUsageLimitRequestModel"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateMemberUsageLimitResponseModel"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationError"
+                }
+              }
+            }
+          }
+        },
+        "x-fern-sdk-group-name": [
+          "workspace",
+          "members"
+        ],
+        "x-fern-sdk-method-name": "update_usage_limit"
+      }
+    },
     "/v1/workspace/resources/{resourceId}": {
       "get": {
         "tags": [
@@ -19985,9 +20058,9 @@
           {
             "name": "sort_by",
             "in": "query",
-            "description": "Order by most recently created, or by priority (most urgent first, then most recently created).",
+            "description": "Order by most recently created, by priority (most urgent first, then most recently created), or by most recently reported (the newest report merged into the issue, else its creation).",
             "schema": {
-              "description": "Order by most recently created, or by priority (most urgent first, then most recently created).",
+              "description": "Order by most recently created, by priority (most urgent first, then most recently created), or by most recently reported (the newest report merged into the issue, else its creation).",
               "default": "created_at",
               "$ref": "#/components/schemas/AgentConversationTicketSortBy"
             }
@@ -20282,9 +20355,9 @@
           {
             "name": "sort_by",
             "in": "query",
-            "description": "Order by most recently created, or by priority (most urgent first, then most recently created).",
+            "description": "Order by most recently created, by priority (most urgent first, then most recently created), or by most recently reported (the newest report merged into the issue, else its creation).",
             "schema": {
-              "description": "Order by most recently created, or by priority (most urgent first, then most recently created).",
+              "description": "Order by most recently created, by priority (most urgent first, then most recently created), or by most recently reported (the newest report merged into the issue, else its creation).",
               "default": "created_at",
               "$ref": "#/components/schemas/AgentConversationTicketSortBy"
             }
@@ -44485,7 +44558,8 @@
         "title": "AgentConversationTicketSortBy",
         "enum": [
           "created_at",
-          "priority"
+          "priority",
+          "last_reported"
         ],
         "type": "string",
         "x-ms-enum": {
@@ -44499,6 +44573,10 @@
             {
               "value": "priority",
               "name": "Priority"
+            },
+            {
+              "value": "last_reported",
+              "name": "LastReported"
             }
           ]
         }
@@ -44575,6 +44653,7 @@
           "api",
           "template",
           "architect",
+          "mcp",
           "unknown"
         ],
         "type": "string",
@@ -44601,6 +44680,10 @@
             {
               "value": "architect",
               "name": "Architect"
+            },
+            {
+              "value": "mcp",
+              "name": "Mcp"
             },
             {
               "value": "unknown",
@@ -48168,6 +48251,7 @@
           "API Key Deletion",
           "API Key Management",
           "API Key Update",
+          "Architect Member Spend Limits Update",
           "Auth Connection Creation",
           "Auth Connection Deletion",
           "Auth Connection Management",
@@ -48348,6 +48432,10 @@
             {
               "value": "API Key Update",
               "name": "ApiKeyUpdate"
+            },
+            {
+              "value": "Architect Member Spend Limits Update",
+              "name": "ArchitectMemberSpendLimitsUpdate"
             },
             {
               "value": "Auth Connection Creation",
@@ -58237,14 +58325,16 @@
             "type": [
               "null",
               "number"
-            ]
+            ],
+            "description": "Total LLM price in USD. Equals the sum of the prices in \u0060llm_usage.initiated_generation\u0060."
           },
           "llm_charge": {
             "title": "Llm Charge",
             "type": [
               "null",
               "integer"
-            ]
+            ],
+            "description": "Credits charged for LLM usage."
           },
           "call_charge": {
             "title": "Call Charge",
@@ -61823,6 +61913,9 @@
           "extra_params": {
             "$ref": "#/components/schemas/CreateOAuth2JwtRequestExtraParamsProperty"
           },
+          "extra_headers": {
+            "$ref": "#/components/schemas/CreateOAuth2JwtRequestExtraHeadersProperty"
+          },
           "token_url": {
             "title": "Token Url",
             "type": "string",
@@ -61838,6 +61931,9 @@
           },
           "token_response_field": {
             "$ref": "#/components/schemas/CreateOAuth2JwtRequestTokenResponseField"
+          },
+          "jwt_usage": {
+            "$ref": "#/components/schemas/CreateOAuth2JwtRequestJwtUsage"
           },
           "secret_key": {
             "title": "Secret Key",
@@ -61971,6 +62067,9 @@
           },
           "extra_params": {
             "$ref": "#/components/schemas/CreatePrivateKeyJwtRequestExtraParamsProperty"
+          },
+          "extra_headers": {
+            "$ref": "#/components/schemas/CreatePrivateKeyJwtRequestExtraHeadersProperty"
           },
           "secret_key": {
             "title": "Secret Key",
@@ -70841,7 +70940,8 @@
           "initiated_generation": {
             "$ref": "#/components/schemas/LlmUsageOutput"
           }
-        }
+        },
+        "description": "LLM usage of a conversation, split by whether the generated response reached the user."
       },
       "LlmDeprecationConfigModel": {
         "title": "LLMDeprecationConfigModel",
@@ -71142,11 +71242,13 @@
           "tokens": {
             "title": "Tokens",
             "type": "integer",
+            "description": "Number of tokens in this category.",
             "default": 0
           },
           "price": {
             "title": "Price",
             "type": "number",
+            "description": "Price of these tokens in USD.",
             "default": 0.0
           }
         }
@@ -74874,6 +74976,7 @@
           "rate": {
             "title": "Rate",
             "type": "integer",
+            "description": "Sample rate in Hz of \u0060audio/pcm\u0060 input. Only 24000 is supported; G.711 formats are always 8000 and ignore this field.",
             "default": 24000
           }
         }
@@ -79086,6 +79189,12 @@
             "title": "Llm",
             "type": "boolean",
             "description": "Whether to allow overriding the llm field.",
+            "default": false
+          },
+          "reasoning_effort": {
+            "title": "Reasoning Effort",
+            "type": "boolean",
+            "description": "Whether to allow overriding the reasoning_effort field.",
             "default": false
           },
           "tool_ids": {
@@ -89773,6 +89882,14 @@
               "$ref": "#/components/schemas/ConversationHistoryTranscriptCommonModelOutput"
             }
           },
+          "triggered_guardrails": {
+            "title": "Triggered Guardrails",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TriggeredGuardrailCommonModel"
+            },
+            "description": "Guardrails observed during this run, including blocks before an agent response."
+          },
           "test_id": {
             "title": "Test Id",
             "type": "string"
@@ -90022,6 +90139,37 @@
           }
         }
       },
+      "UpdateMemberUsageLimitRequestModel": {
+        "title": "UpdateMemberUsageLimitRequestModel",
+        "required": [
+          "usage_limit"
+        ],
+        "type": "object",
+        "properties": {
+          "usage_limit": {
+            "title": "Usage Limit",
+            "minimum": 0.0,
+            "type": [
+              "null",
+              "integer"
+            ],
+            "description": "Monthly credit usage limit for the member. Set to null to remove the limit."
+          }
+        }
+      },
+      "UpdateMemberUsageLimitResponseModel": {
+        "title": "UpdateMemberUsageLimitResponseModel",
+        "required": [
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "title": "Status",
+            "type": "string"
+          }
+        }
+      },
       "UpdateMusicFinetuneRequestModel": {
         "title": "UpdateMusicFinetuneRequestModel",
         "type": "object",
@@ -90183,6 +90331,12 @@
           },
           "token_response_field": {
             "$ref": "#/components/schemas/UpdateOAuth2JwtRequestTokenResponseField"
+          },
+          "jwt_usage": {
+            "$ref": "#/components/schemas/UpdateOAuth2JwtRequestJwtUsage"
+          },
+          "extra_headers": {
+            "$ref": "#/components/schemas/UpdateOAuth2JwtRequestExtraHeadersProperty"
           },
           "secret_key": {
             "title": "Secret Key",
@@ -97760,6 +97914,9 @@
           "llm": {
             "$ref": "#/components/schemas/PromptAgentApiModelOverrideInputLlm"
           },
+          "reasoning_effort": {
+            "$ref": "#/components/schemas/PromptAgentApiModelInputReasoningEffort"
+          },
           "tool_ids": {
             "title": "Tool Ids",
             "type": [
@@ -97843,6 +98000,9 @@
           },
           "llm": {
             "$ref": "#/components/schemas/PromptAgentApiModelOverrideInputLlm"
+          },
+          "reasoning_effort": {
+            "$ref": "#/components/schemas/PromptAgentApiModelInputReasoningEffort"
           },
           "tool_ids": {
             "title": "Tool Ids",
@@ -99136,6 +99296,17 @@
             }
           ]
         }
+      },
+      "AsyncConversationMetadataPlatformMetadata": {
+        "title": "Platform Metadata",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/AsyncConversationMetadataPlatformMetadataAnyOf1"
+          },
+          {
+            "type": "null"
+          }
+        ]
       },
       "AudioAnalysisData": {
         "title": "AudioAnalysisResult",
@@ -104820,6 +104991,16 @@
               "null",
               "string"
             ]
+          },
+          "integration_trigger_id": {
+            "title": "Integration Trigger Id",
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "platform_metadata": {
+            "$ref": "#/components/schemas/AsyncConversationMetadataPlatformMetadata"
           }
         },
         "description": "Metadata for async conversation delivery (Zendesk, Slack, etc.).",
@@ -113323,7 +113504,9 @@
           }
         ],
         "description": "Reasoning effort of the model. Only available for some models.",
-        "x-convai-runtime-override": true
+        "x-convai-client-override": true,
+        "x-convai-runtime-override": true,
+        "x-convai-soft-override-disallowed": true
       },
       "PromptAgentApiModelInputCustomLlm": {
         "title": "CustomLLM",
@@ -117141,14 +117324,16 @@
             "type": [
               "null",
               "number"
-            ]
+            ],
+            "description": "Total LLM price in USD. Equals the sum of the prices in \u0060llm_usage.initiated_generation\u0060."
           },
           "llm_charge": {
             "title": "Llm Charge",
             "type": [
               "null",
               "integer"
-            ]
+            ],
+            "description": "Credits charged for LLM usage."
           },
           "call_charge": {
             "title": "Call Charge",
@@ -123293,6 +123478,14 @@
         },
         "description": "Additional custom claims to include in the JWT"
       },
+      "CreateOAuth2JwtRequestExtraHeadersProperty": {
+        "title": "Extra Headers",
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        },
+        "description": "Additional JWT header parameters (e.g. x5t). \u0027alg\u0027 and \u0027kid\u0027 are set from algorithm and key_id."
+      },
       "CreatePrivateKeyJwtRequestExtraParamsProperty": {
         "title": "Extra Params",
         "type": "object",
@@ -123300,6 +123493,14 @@
           "type": "string"
         },
         "description": "Additional custom claims to include in the JWT"
+      },
+      "CreatePrivateKeyJwtRequestExtraHeadersProperty": {
+        "title": "Extra Headers",
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        },
+        "description": "Additional JWT header parameters (e.g. x5t). \u0027alg\u0027 and \u0027kid\u0027 are set from algorithm and key_id."
       },
       "CreateResponseUnitTestRequestDynamicVariablesProperty": {
         "title": "Dynamic Variables",
@@ -123539,7 +123740,8 @@
         "type": "object",
         "additionalProperties": {
           "$ref": "#/components/schemas/LlmInputOutputTokensUsage"
-        }
+        },
+        "description": "Token usage and USD price per LLM, keyed by model ID and broken down by token category."
       },
       "LlmUsageOutputModelUsageProperty": {
         "propertyNames": {
@@ -123549,7 +123751,8 @@
         "type": "object",
         "additionalProperties": {
           "$ref": "#/components/schemas/LlmInputOutputTokensUsage"
-        }
+        },
+        "description": "Token usage and USD price per LLM, keyed by model ID and broken down by token category."
       },
       "ListAssetsParamsListKwargsProperty": {
         "title": "List Kwargs",
@@ -123744,6 +123947,14 @@
         },
         "description": "Additional custom claims to include in the JWT"
       },
+      "OAuth2JwtResponseExtraHeadersProperty": {
+        "title": "Extra Headers",
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        },
+        "description": "Additional JWT header parameters (e.g. x5t). \u0027alg\u0027 and \u0027kid\u0027 are set from algorithm and key_id."
+      },
       "ObjectJsonSchemaPropertyInputConstantValueProperty": {
         "title": "Constant Value",
         "type": [
@@ -123838,6 +124049,14 @@
           "type": "string"
         },
         "description": "Additional custom claims to include in the JWT"
+      },
+      "PrivateKeyJwtResponseExtraHeadersProperty": {
+        "title": "Extra Headers",
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        },
+        "description": "Additional JWT header parameters (e.g. x5t). \u0027alg\u0027 and \u0027kid\u0027 are set from algorithm and key_id."
       },
       "ProjectExtendedResponseModelCaptionStyleTemplateOverridesProperty": {
         "title": "Caption Style Template Overrides",
@@ -124138,6 +124357,16 @@
       },
       "UpdateOAuth2JwtRequestExtraParamsProperty": {
         "title": "Extra Params",
+        "type": [
+          "null",
+          "object"
+        ],
+        "additionalProperties": {
+          "type": "string"
+        }
+      },
+      "UpdateOAuth2JwtRequestExtraHeadersProperty": {
+        "title": "Extra Headers",
         "type": [
           "null",
           "object"
@@ -128626,7 +128855,10 @@
           "HS512",
           "RS256",
           "RS384",
-          "RS512"
+          "RS512",
+          "PS256",
+          "PS384",
+          "PS512"
         ],
         "type": "string",
         "description": "JWT signing algorithm",
@@ -128657,6 +128889,18 @@
             {
               "value": "RS512",
               "name": "Rs512"
+            },
+            {
+              "value": "PS256",
+              "name": "Ps256"
+            },
+            {
+              "value": "PS384",
+              "name": "Ps384"
+            },
+            {
+              "value": "PS512",
+              "name": "Ps512"
             }
           ]
         }
@@ -128680,6 +128924,29 @@
             {
               "value": "id_token",
               "name": "IdToken"
+            }
+          ]
+        }
+      },
+      "CreateOAuth2JwtRequestJwtUsage": {
+        "title": "Jwt Usage",
+        "enum": [
+          "authorization_grant",
+          "client_authentication"
+        ],
+        "type": "string",
+        "description": "How the JWT is used at the token endpoint. \u0027authorization_grant\u0027 sends it as a jwt-bearer grant. \u0027client_authentication\u0027 sends it as a client_assertion on a client_credentials request, with the subject as client_id and scopes in the request body.",
+        "x-ms-enum": {
+          "name": "CreateOAuth2JwtRequestJwtUsage",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "authorization_grant",
+              "name": "AuthorizationGrant"
+            },
+            {
+              "value": "client_authentication",
+              "name": "ClientAuthentication"
             }
           ]
         }
@@ -128710,7 +128977,10 @@
           "HS512",
           "RS256",
           "RS384",
-          "RS512"
+          "RS512",
+          "PS256",
+          "PS384",
+          "PS512"
         ],
         "type": "string",
         "description": "JWT signing algorithm",
@@ -128741,6 +129011,18 @@
             {
               "value": "RS512",
               "name": "Rs512"
+            },
+            {
+              "value": "PS256",
+              "name": "Ps256"
+            },
+            {
+              "value": "PS384",
+              "name": "Ps384"
+            },
+            {
+              "value": "PS512",
+              "name": "Ps512"
             }
           ]
         }
@@ -132290,7 +132572,10 @@
           "HS512",
           "RS256",
           "RS384",
-          "RS512"
+          "RS512",
+          "PS256",
+          "PS384",
+          "PS512"
         ],
         "type": "string",
         "description": "JWT signing algorithm",
@@ -132321,6 +132606,18 @@
             {
               "value": "RS512",
               "name": "Rs512"
+            },
+            {
+              "value": "PS256",
+              "name": "Ps256"
+            },
+            {
+              "value": "PS384",
+              "name": "Ps384"
+            },
+            {
+              "value": "PS512",
+              "name": "Ps512"
             }
           ]
         }
@@ -132344,6 +132641,29 @@
             {
               "value": "id_token",
               "name": "IdToken"
+            }
+          ]
+        }
+      },
+      "OAuth2JwtResponseJwtUsage": {
+        "title": "Jwt Usage",
+        "enum": [
+          "authorization_grant",
+          "client_authentication"
+        ],
+        "type": "string",
+        "description": "How the JWT is used at the token endpoint. \u0027authorization_grant\u0027 sends it as a jwt-bearer grant. \u0027client_authentication\u0027 sends it as a client_assertion on a client_credentials request, with the subject as client_id and scopes in the request body.",
+        "x-ms-enum": {
+          "name": "OAuth2JwtResponseJwtUsage",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "authorization_grant",
+              "name": "AuthorizationGrant"
+            },
+            {
+              "value": "client_authentication",
+              "name": "ClientAuthentication"
             }
           ]
         }
@@ -132839,7 +133159,10 @@
           "HS512",
           "RS256",
           "RS384",
-          "RS512"
+          "RS512",
+          "PS256",
+          "PS384",
+          "PS512"
         ],
         "type": "string",
         "description": "JWT signing algorithm",
@@ -132870,6 +133193,18 @@
             {
               "value": "RS512",
               "name": "Rs512"
+            },
+            {
+              "value": "PS256",
+              "name": "Ps256"
+            },
+            {
+              "value": "PS384",
+              "name": "Ps384"
+            },
+            {
+              "value": "PS512",
+              "name": "Ps512"
             }
           ]
         }
@@ -136479,7 +136814,10 @@
               "HS512",
               "RS256",
               "RS384",
-              "RS512"
+              "RS512",
+              "PS256",
+              "PS384",
+              "PS512"
             ],
             "type": "string",
             "x-ms-enum": {
@@ -136509,6 +136847,18 @@
                 {
                   "value": "RS512",
                   "name": "Rs512"
+                },
+                {
+                  "value": "PS256",
+                  "name": "Ps256"
+                },
+                {
+                  "value": "PS384",
+                  "name": "Ps384"
+                },
+                {
+                  "value": "PS512",
+                  "name": "Ps512"
                 }
               ]
             }
@@ -136539,6 +136889,36 @@
                 {
                   "value": "id_token",
                   "name": "IdToken"
+                }
+              ]
+            }
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "UpdateOAuth2JwtRequestJwtUsage": {
+        "title": "Jwt Usage",
+        "anyOf": [
+          {
+            "title": "Jwt Usage",
+            "enum": [
+              "authorization_grant",
+              "client_authentication"
+            ],
+            "type": "string",
+            "x-ms-enum": {
+              "name": "UpdateOAuth2JwtRequestJwtUsage",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "authorization_grant",
+                  "name": "AuthorizationGrant"
+                },
+                {
+                  "value": "client_authentication",
+                  "name": "ClientAuthentication"
                 }
               ]
             }
@@ -141818,6 +142198,55 @@
           "trueExpression",
           "falseExpression",
           "type"
+        ]
+      },
+      "AsyncConversationMetadataPlatformMetadataAnyOf1": {
+        "x-client-original-discriminator": {
+          "propertyName": "conversation_initiation_source",
+          "mapping": {
+            "plain_integration": "#/components/schemas/PlainPlatformMetadata",
+            "zendesk_integration": "#/components/schemas/ZendeskPlatformMetadata"
+          }
+        },
+        "discriminator": {
+          "propertyName": "conversation_initiation_source",
+          "mapping": {
+            "plain_integration": "#/components/schemas/AsyncConversationMetadataPlatformMetadataAnyOf1OneOf1Variant",
+            "zendesk_integration": "#/components/schemas/AsyncConversationMetadataPlatformMetadataAnyOf1OneOf2Variant"
+          }
+        },
+        "x-client-original-tagged-union": {
+          "oneOf": [
+            {
+              "$ref": "#/components/schemas/AsyncConversationMetadataPlatformMetadataAnyOf1OneOf1"
+            },
+            {
+              "$ref": "#/components/schemas/AsyncConversationMetadataPlatformMetadataAnyOf1OneOf2"
+            }
+          ],
+          "x-client-original-discriminator": {
+            "propertyName": "conversation_initiation_source",
+            "mapping": {
+              "plain_integration": "#/components/schemas/PlainPlatformMetadata",
+              "zendesk_integration": "#/components/schemas/ZendeskPlatformMetadata"
+            }
+          },
+          "discriminator": {
+            "propertyName": "conversation_initiation_source",
+            "mapping": {
+              "plain_integration": "#/components/schemas/AsyncConversationMetadataPlatformMetadataAnyOf1OneOf1",
+              "zendesk_integration": "#/components/schemas/AsyncConversationMetadataPlatformMetadataAnyOf1OneOf2"
+            }
+          }
+        },
+        "type": "object",
+        "properties": {
+          "conversation_initiation_source": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "conversation_initiation_source"
         ]
       },
       "BodyComposeMusicV1MusicPostCompositionPlanAnyOf1": {
@@ -153292,6 +153721,9 @@
               "extra_params": {
                 "$ref": "#/components/schemas/OAuth2JwtResponseExtraParamsProperty"
               },
+              "extra_headers": {
+                "$ref": "#/components/schemas/OAuth2JwtResponseExtraHeadersProperty"
+              },
               "token_url": {
                 "title": "Token Url",
                 "type": "string",
@@ -153307,6 +153739,9 @@
               },
               "token_response_field": {
                 "$ref": "#/components/schemas/OAuth2JwtResponseTokenResponseField"
+              },
+              "jwt_usage": {
+                "$ref": "#/components/schemas/OAuth2JwtResponseJwtUsage"
               },
               "id": {
                 "title": "Id",
@@ -153418,6 +153853,9 @@
               },
               "extra_params": {
                 "$ref": "#/components/schemas/PrivateKeyJwtResponseExtraParamsProperty"
+              },
+              "extra_headers": {
+                "$ref": "#/components/schemas/PrivateKeyJwtResponseExtraHeadersProperty"
               },
               "id": {
                 "title": "Id",
@@ -165164,6 +165602,9 @@
               "extra_params": {
                 "$ref": "#/components/schemas/OAuth2JwtResponseExtraParamsProperty"
               },
+              "extra_headers": {
+                "$ref": "#/components/schemas/OAuth2JwtResponseExtraHeadersProperty"
+              },
               "token_url": {
                 "title": "Token Url",
                 "type": "string",
@@ -165179,6 +165620,9 @@
               },
               "token_response_field": {
                 "$ref": "#/components/schemas/OAuth2JwtResponseTokenResponseField"
+              },
+              "jwt_usage": {
+                "$ref": "#/components/schemas/OAuth2JwtResponseJwtUsage"
               },
               "id": {
                 "title": "Id",
@@ -165290,6 +165734,9 @@
               },
               "extra_params": {
                 "$ref": "#/components/schemas/PrivateKeyJwtResponseExtraParamsProperty"
+              },
+              "extra_headers": {
+                "$ref": "#/components/schemas/PrivateKeyJwtResponseExtraHeadersProperty"
               },
               "id": {
                 "title": "Id",
@@ -166302,6 +166749,9 @@
               "extra_params": {
                 "$ref": "#/components/schemas/OAuth2JwtResponseExtraParamsProperty"
               },
+              "extra_headers": {
+                "$ref": "#/components/schemas/OAuth2JwtResponseExtraHeadersProperty"
+              },
               "token_url": {
                 "title": "Token Url",
                 "type": "string",
@@ -166317,6 +166767,9 @@
               },
               "token_response_field": {
                 "$ref": "#/components/schemas/OAuth2JwtResponseTokenResponseField"
+              },
+              "jwt_usage": {
+                "$ref": "#/components/schemas/OAuth2JwtResponseJwtUsage"
               },
               "id": {
                 "title": "Id",
@@ -166428,6 +166881,9 @@
               },
               "extra_params": {
                 "$ref": "#/components/schemas/PrivateKeyJwtResponseExtraParamsProperty"
+              },
+              "extra_headers": {
+                "$ref": "#/components/schemas/PrivateKeyJwtResponseExtraHeadersProperty"
               },
               "id": {
                 "title": "Id",
@@ -168725,6 +169181,87 @@
               "phone_number_id",
               "livekit_stack",
               "provider"
+            ]
+          }
+        ]
+      },
+      "AsyncConversationMetadataPlatformMetadataAnyOf1OneOf1Variant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/AsyncConversationMetadataPlatformMetadataAnyOf1"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "conversation_initiation_source": {
+                "title": "Conversation Initiation Source",
+                "enum": [
+                  "plain_integration"
+                ],
+                "type": "string",
+                "x-client-original-const": "plain_integration",
+                "x-ms-enum": {
+                  "name": "ConversationInitiationSource",
+                  "modelAsString": false,
+                  "values": [
+                    {
+                      "value": "plain_integration",
+                      "name": "PlainIntegration"
+                    }
+                  ]
+                }
+              },
+              "thread_id": {
+                "title": "Thread Id",
+                "type": "string"
+              },
+              "workspace_id": {
+                "title": "Workspace Id",
+                "type": "string"
+              }
+            },
+            "required": [
+              "thread_id",
+              "workspace_id",
+              "conversation_initiation_source"
+            ]
+          }
+        ]
+      },
+      "AsyncConversationMetadataPlatformMetadataAnyOf1OneOf2Variant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/AsyncConversationMetadataPlatformMetadataAnyOf1"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "conversation_initiation_source": {
+                "title": "Conversation Initiation Source",
+                "enum": [
+                  "zendesk_integration"
+                ],
+                "type": "string",
+                "x-client-original-const": "zendesk_integration",
+                "x-ms-enum": {
+                  "name": "ConversationInitiationSource",
+                  "modelAsString": false,
+                  "values": [
+                    {
+                      "value": "zendesk_integration",
+                      "name": "ZendeskIntegration"
+                    }
+                  ]
+                }
+              },
+              "ticket_id": {
+                "title": "Ticket Id",
+                "type": "string"
+              }
+            },
+            "required": [
+              "ticket_id",
+              "conversation_initiation_source"
             ]
           }
         ]
@@ -174976,6 +175513,16 @@
             "null",
             "string"
           ]
+        },
+        "integration_trigger_id": {
+          "title": "Integration Trigger Id",
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "platform_metadata": {
+          "$ref": "#/components/schemas/AsyncConversationMetadataPlatformMetadata"
         }
       },
       "description": "Metadata for async conversation delivery (Zendesk, Slack, etc.)."
@@ -184975,6 +185522,9 @@
         "extra_params": {
           "$ref": "#/components/schemas/OAuth2JwtResponseExtraParamsProperty"
         },
+        "extra_headers": {
+          "$ref": "#/components/schemas/OAuth2JwtResponseExtraHeadersProperty"
+        },
         "token_url": {
           "title": "Token Url",
           "type": "string",
@@ -184990,6 +185540,9 @@
         },
         "token_response_field": {
           "$ref": "#/components/schemas/OAuth2JwtResponseTokenResponseField"
+        },
+        "jwt_usage": {
+          "$ref": "#/components/schemas/OAuth2JwtResponseJwtUsage"
         },
         "id": {
           "title": "Id",
@@ -185512,6 +186065,19 @@
         }
       }
     },
+    "OptionValue": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "boolean"
+        }
+      ]
+    },
     "OrderId": {
       "pattern": "^prodorder_[a-z0-9]{26}$",
       "type": "string"
@@ -185890,6 +186456,27 @@
         }
       }
     },
+    "PlainPlatformMetadata": {
+      "title": "PlainPlatformMetadata",
+      "required": [
+        "thread_id",
+        "workspace_id"
+      ],
+      "type": "object",
+      "properties": {
+        "conversation_initiation_source": {
+          "$ref": "#/components/schemas/PlainIntegrationConversationInitiationSource"
+        },
+        "thread_id": {
+          "title": "Thread Id",
+          "type": "string"
+        },
+        "workspace_id": {
+          "title": "Workspace Id",
+          "type": "string"
+        }
+      }
+    },
     "PlatformLimits": {
       "title": "PlatformLimits",
       "type": "object",
@@ -186144,6 +186731,9 @@
         "extra_params": {
           "$ref": "#/components/schemas/PrivateKeyJwtResponseExtraParamsProperty"
         },
+        "extra_headers": {
+          "$ref": "#/components/schemas/PrivateKeyJwtResponseExtraHeadersProperty"
+        },
         "id": {
           "title": "Id",
           "type": "string"
@@ -186229,6 +186819,9 @@
         "llm": {
           "$ref": "#/components/schemas/PromptAgentApiModelOverrideInputLlm"
         },
+        "reasoning_effort": {
+          "$ref": "#/components/schemas/PromptAgentApiModelInputReasoningEffort"
+        },
         "tool_ids": {
           "title": "Tool Ids",
           "type": [
@@ -186297,6 +186890,9 @@
         },
         "llm": {
           "$ref": "#/components/schemas/PromptAgentApiModelOverrideInputLlm"
+        },
+        "reasoning_effort": {
+          "$ref": "#/components/schemas/PromptAgentApiModelInputReasoningEffort"
         },
         "tool_ids": {
           "title": "Tool Ids",
@@ -195301,6 +195897,22 @@
         }
       }
     },
+    "ZendeskPlatformMetadata": {
+      "title": "ZendeskPlatformMetadata",
+      "required": [
+        "ticket_id"
+      ],
+      "type": "object",
+      "properties": {
+        "conversation_initiation_source": {
+          "$ref": "#/components/schemas/ZendeskIntegrationConversationInitiationSource"
+        },
+        "ticket_id": {
+          "title": "Ticket Id",
+          "type": "string"
+        }
+      }
+    },
     "AstllmNodeInputAstllmNode": {
       "title": "ASTLLMNode",
       "required": [
@@ -204037,7 +204649,9 @@
         }
       ],
       "description": "Reasoning effort of the model. Only available for some models.",
-      "x-convai-runtime-override": true
+      "x-convai-client-override": true,
+      "x-convai-runtime-override": true,
+      "x-convai-soft-override-disallowed": true
     },
     "PromptAgentApiModelOutputCustomLlm": {
       "title": "CustomLLM",
@@ -204096,6 +204710,20 @@
         "description": "Definition for a custom LLM if LLM field is set to \u0027CUSTOM_LLM\u0027"
       }
     },
+    "PromptAgentApiModelOverrideInputReasoningEffort": {
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/LlmReasoningEffort"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Reasoning effort of the model. Only available for some models.",
+      "x-convai-client-override": true,
+      "x-convai-runtime-override": true,
+      "x-convai-soft-override-disallowed": true
+    },
     "PromptAgentApiModelOverrideOutputLlm": {
       "anyOf": [
         {
@@ -204108,6 +204736,20 @@
       "description": "The LLM to query with the prompt and the chat history. If using data residency, the LLM must be supported in the data residency environment",
       "x-convai-client-override": true,
       "x-convai-runtime-override": true
+    },
+    "PromptAgentApiModelOverrideOutputReasoningEffort": {
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/LlmReasoningEffort"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Reasoning effort of the model. Only available for some models.",
+      "x-convai-client-override": true,
+      "x-convai-runtime-override": true,
+      "x-convai-soft-override-disallowed": true
     },
     "PromptAgentApiModelWorkflowOverrideInputLlm": {
       "anyOf": [
@@ -204132,7 +204774,9 @@
         }
       ],
       "description": "Reasoning effort of the model. Only available for some models.",
-      "x-convai-runtime-override": true
+      "x-convai-client-override": true,
+      "x-convai-runtime-override": true,
+      "x-convai-soft-override-disallowed": true
     },
     "PromptAgentApiModelWorkflowOverrideInputCustomLlm": {
       "title": "CustomLLM",
@@ -204214,7 +204858,9 @@
         }
       ],
       "description": "Reasoning effort of the model. Only available for some models.",
-      "x-convai-runtime-override": true
+      "x-convai-client-override": true,
+      "x-convai-runtime-override": true,
+      "x-convai-soft-override-disallowed": true
     },
     "PromptAgentApiModelWorkflowOverrideOutputServiceTier": {
       "anyOf": [
@@ -207700,6 +208346,14 @@
       },
       "description": "Additional custom claims to include in the JWT"
     },
+    "CreateOAuth2JwtRequestExtraHeaders": {
+      "title": "Extra Headers",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Additional JWT header parameters (e.g. x5t). \u0027alg\u0027 and \u0027kid\u0027 are set from algorithm and key_id."
+    },
     "CreatePrivateKeyJwtRequestExtraParams": {
       "title": "Extra Params",
       "type": "object",
@@ -207707,6 +208361,14 @@
         "type": "string"
       },
       "description": "Additional custom claims to include in the JWT"
+    },
+    "CreatePrivateKeyJwtRequestExtraHeaders": {
+      "title": "Extra Headers",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Additional JWT header parameters (e.g. x5t). \u0027alg\u0027 and \u0027kid\u0027 are set from algorithm and key_id."
     },
     "CreateResponseUnitTestRequestDynamicVariables": {
       "title": "Dynamic Variables",
@@ -207960,7 +208622,8 @@
       "type": "object",
       "additionalProperties": {
         "$ref": "#/components/schemas/LlmInputOutputTokensUsage"
-      }
+      },
+      "description": "Token usage and USD price per LLM, keyed by model ID and broken down by token category."
     },
     "LlmUsageOutputModelUsage": {
       "propertyNames": {
@@ -207970,7 +208633,8 @@
       "type": "object",
       "additionalProperties": {
         "$ref": "#/components/schemas/LlmInputOutputTokensUsage"
-      }
+      },
+      "description": "Token usage and USD price per LLM, keyed by model ID and broken down by token category."
     },
     "ListAssetsParamsListKwargs": {
       "title": "List Kwargs",
@@ -208165,6 +208829,14 @@
       },
       "description": "Additional custom claims to include in the JWT"
     },
+    "OAuth2JwtResponseExtraHeaders": {
+      "title": "Extra Headers",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Additional JWT header parameters (e.g. x5t). \u0027alg\u0027 and \u0027kid\u0027 are set from algorithm and key_id."
+    },
     "OTelAttributeValue": {
       "title": "Value",
       "type": "object",
@@ -208266,6 +208938,14 @@
         "type": "string"
       },
       "description": "Additional custom claims to include in the JWT"
+    },
+    "PrivateKeyJwtResponseExtraHeaders": {
+      "title": "Extra Headers",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Additional JWT header parameters (e.g. x5t). \u0027alg\u0027 and \u0027kid\u0027 are set from algorithm and key_id."
     },
     "ProjectExtendedResponseModelCaptionStyleTemplateOverrides": {
       "title": "Caption Style Template Overrides",
@@ -208589,6 +209269,16 @@
     },
     "UpdateOAuth2JwtRequestExtraParams": {
       "title": "Extra Params",
+      "type": [
+        "null",
+        "object"
+      ],
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "UpdateOAuth2JwtRequestExtraHeaders": {
+      "title": "Extra Headers",
       "type": [
         "null",
         "object"
@@ -212510,6 +213200,24 @@
         ]
       }
     },
+    "PlainIntegrationConversationInitiationSource": {
+      "title": "Conversation Initiation Source",
+      "enum": [
+        "plain_integration"
+      ],
+      "type": "string",
+      "x-client-original-const": "plain_integration",
+      "x-ms-enum": {
+        "name": "PlainIntegrationConversationInitiationSource",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "plain_integration",
+            "name": "PlainIntegration"
+          }
+        ]
+      }
+    },
     "PlayDtmfErrorResultType": {
       "title": "Result Type",
       "enum": [
@@ -214294,6 +215002,24 @@
           {
             "value": "unconditional",
             "name": "Unconditional"
+          }
+        ]
+      }
+    },
+    "ZendeskIntegrationConversationInitiationSource": {
+      "title": "Conversation Initiation Source",
+      "enum": [
+        "zendesk_integration"
+      ],
+      "type": "string",
+      "x-client-original-const": "zendesk_integration",
+      "x-ms-enum": {
+        "name": "ZendeskIntegrationConversationInitiationSource",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "zendesk_integration",
+            "name": "ZendeskIntegration"
           }
         ]
       }
@@ -218445,6 +219171,9 @@
         "extra_params": {
           "$ref": "#/components/schemas/OAuth2JwtResponseExtraParamsProperty"
         },
+        "extra_headers": {
+          "$ref": "#/components/schemas/OAuth2JwtResponseExtraHeadersProperty"
+        },
         "token_url": {
           "title": "Token Url",
           "type": "string",
@@ -218460,6 +219189,9 @@
         },
         "token_response_field": {
           "$ref": "#/components/schemas/OAuth2JwtResponseTokenResponseField"
+        },
+        "jwt_usage": {
+          "$ref": "#/components/schemas/OAuth2JwtResponseJwtUsage"
         },
         "id": {
           "title": "Id",
@@ -218564,6 +219296,9 @@
         },
         "extra_params": {
           "$ref": "#/components/schemas/PrivateKeyJwtResponseExtraParamsProperty"
+        },
+        "extra_headers": {
+          "$ref": "#/components/schemas/PrivateKeyJwtResponseExtraHeadersProperty"
         },
         "id": {
           "title": "Id",
@@ -228427,6 +229162,9 @@
         "extra_params": {
           "$ref": "#/components/schemas/OAuth2JwtResponseExtraParamsProperty"
         },
+        "extra_headers": {
+          "$ref": "#/components/schemas/OAuth2JwtResponseExtraHeadersProperty"
+        },
         "token_url": {
           "title": "Token Url",
           "type": "string",
@@ -228442,6 +229180,9 @@
         },
         "token_response_field": {
           "$ref": "#/components/schemas/OAuth2JwtResponseTokenResponseField"
+        },
+        "jwt_usage": {
+          "$ref": "#/components/schemas/OAuth2JwtResponseJwtUsage"
         },
         "id": {
           "title": "Id",
@@ -228546,6 +229287,9 @@
         },
         "extra_params": {
           "$ref": "#/components/schemas/PrivateKeyJwtResponseExtraParamsProperty"
+        },
+        "extra_headers": {
+          "$ref": "#/components/schemas/PrivateKeyJwtResponseExtraHeadersProperty"
         },
         "id": {
           "title": "Id",
@@ -229474,6 +230218,9 @@
         "extra_params": {
           "$ref": "#/components/schemas/OAuth2JwtResponseExtraParamsProperty"
         },
+        "extra_headers": {
+          "$ref": "#/components/schemas/OAuth2JwtResponseExtraHeadersProperty"
+        },
         "token_url": {
           "title": "Token Url",
           "type": "string",
@@ -229489,6 +230236,9 @@
         },
         "token_response_field": {
           "$ref": "#/components/schemas/OAuth2JwtResponseTokenResponseField"
+        },
+        "jwt_usage": {
+          "$ref": "#/components/schemas/OAuth2JwtResponseJwtUsage"
         },
         "id": {
           "title": "Id",
@@ -229593,6 +230343,9 @@
         },
         "extra_params": {
           "$ref": "#/components/schemas/PrivateKeyJwtResponseExtraParamsProperty"
+        },
+        "extra_headers": {
+          "$ref": "#/components/schemas/PrivateKeyJwtResponseExtraHeadersProperty"
         },
         "id": {
           "title": "Id",
@@ -231529,6 +232282,73 @@
         "phone_number_id",
         "livekit_stack",
         "provider"
+      ]
+    },
+    "AsyncConversationMetadataPlatformMetadataAnyOf1OneOf1": {
+      "type": "object",
+      "properties": {
+        "conversation_initiation_source": {
+          "title": "Conversation Initiation Source",
+          "enum": [
+            "plain_integration"
+          ],
+          "type": "string",
+          "x-client-original-const": "plain_integration",
+          "x-ms-enum": {
+            "name": "ConversationInitiationSource",
+            "modelAsString": false,
+            "values": [
+              {
+                "value": "plain_integration",
+                "name": "PlainIntegration"
+              }
+            ]
+          }
+        },
+        "thread_id": {
+          "title": "Thread Id",
+          "type": "string"
+        },
+        "workspace_id": {
+          "title": "Workspace Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "thread_id",
+        "workspace_id",
+        "conversation_initiation_source"
+      ]
+    },
+    "AsyncConversationMetadataPlatformMetadataAnyOf1OneOf2": {
+      "type": "object",
+      "properties": {
+        "conversation_initiation_source": {
+          "title": "Conversation Initiation Source",
+          "enum": [
+            "zendesk_integration"
+          ],
+          "type": "string",
+          "x-client-original-const": "zendesk_integration",
+          "x-ms-enum": {
+            "name": "ConversationInitiationSource",
+            "modelAsString": false,
+            "values": [
+              {
+                "value": "zendesk_integration",
+                "name": "ZendeskIntegration"
+              }
+            ]
+          }
+        },
+        "ticket_id": {
+          "title": "Ticket Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "ticket_id",
+        "conversation_initiation_source"
       ]
     },
     "ConversationHistoryMetadataCommonModelPhoneCallAnyOf1OneOf2": {

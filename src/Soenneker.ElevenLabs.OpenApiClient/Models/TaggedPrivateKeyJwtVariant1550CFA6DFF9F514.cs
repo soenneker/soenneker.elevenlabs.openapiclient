@@ -24,6 +24,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if (parseNode.GetChildNode("audience") is { } nullNodeAudience && nullNodeAudience.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Audience = null;
             if (parseNode.GetChildNode("expiration_seconds") is null) { _explicitNullValueExpirationSeconds = default!; _explicitNullProperties?.Remove("expiration_seconds"); }
             else if (parseNode.GetChildNode("expiration_seconds") is { } nullNodeExpirationSeconds && nullNodeExpirationSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpirationSeconds = null;
+            if (parseNode.GetChildNode("extra_headers") is null) { _explicitNullValueExtraHeaders = default!; _explicitNullProperties?.Remove("extra_headers"); }
+            else if (parseNode.GetChildNode("extra_headers") is { } nullNodeExtraHeaders && nullNodeExtraHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExtraHeaders = null;
             if (parseNode.GetChildNode("extra_params") is null) { _explicitNullValueExtraParams = default!; _explicitNullProperties?.Remove("extra_params"); }
             else if (parseNode.GetChildNode("extra_params") is { } nullNodeExtraParams && nullNodeExtraParams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExtraParams = null;
             if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
@@ -64,6 +66,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Token expiration time in seconds</summary>
         public int? ExpirationSeconds { get => _explicitNullValueExpirationSeconds; set { _explicitNullValueExpirationSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiration_seconds"); else _explicitNullProperties?.Remove("expiration_seconds"); } }
         private int? _explicitNullValueExpirationSeconds = default!;
+        /// <summary>Additional JWT header parameters (e.g. x5t). &apos;alg&apos; and &apos;kid&apos; are set from algorithm and key_id.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivateKeyJwtResponseExtraHeadersProperty? ExtraHeaders { get => _explicitNullValueExtraHeaders; set { _explicitNullValueExtraHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extra_headers"); else _explicitNullProperties?.Remove("extra_headers"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivateKeyJwtResponseExtraHeadersProperty? _explicitNullValueExtraHeaders = default!;
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivateKeyJwtResponseExtraHeadersProperty ExtraHeaders { get => _explicitNullValueExtraHeaders; set { _explicitNullValueExtraHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extra_headers"); else _explicitNullProperties?.Remove("extra_headers"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivateKeyJwtResponseExtraHeadersProperty _explicitNullValueExtraHeaders = default!;
+#endif
         /// <summary>Additional custom claims to include in the JWT</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -196,6 +208,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "algorithm", n => { Algorithm = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivateKeyJwtResponseAlgorithm>(); } },
                 { "audience", n => { Audience = n.GetStringValue(); } },
                 { "expiration_seconds", n => { ExpirationSeconds = n.GetIntValue(); } },
+                { "extra_headers", n => { ExtraHeaders = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivateKeyJwtResponseExtraHeadersProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivateKeyJwtResponseExtraHeadersProperty.CreateFromDiscriminatorValue); } },
                 { "extra_params", n => { ExtraParams = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivateKeyJwtResponseExtraParamsProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivateKeyJwtResponseExtraParamsProperty.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "issuer", n => { Issuer = n.GetStringValue(); } },
@@ -220,6 +233,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivateKeyJwtResponseAlgorithm>("algorithm", Algorithm);
             writer.WriteStringValue("audience", Audience);
             writer.WriteIntValue("expiration_seconds", ExpirationSeconds);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivateKeyJwtResponseExtraHeadersProperty>("extra_headers", ExtraHeaders);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivateKeyJwtResponseExtraParamsProperty>("extra_params", ExtraParams);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("issuer", Issuer);

@@ -30,10 +30,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if (parseNode.GetChildNode("external_link") is { } nullNodeExternalLink && nullNodeExternalLink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalLink = null;
             if (parseNode.GetChildNode("external_system") is null) { _explicitNullValueExternalSystem = default!; _explicitNullProperties?.Remove("external_system"); }
             else if (parseNode.GetChildNode("external_system") is { } nullNodeExternalSystem && nullNodeExternalSystem.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalSystem = null;
+            if (parseNode.GetChildNode("integration_trigger_id") is null) { _explicitNullValueIntegrationTriggerId = default!; _explicitNullProperties?.Remove("integration_trigger_id"); }
+            else if (parseNode.GetChildNode("integration_trigger_id") is { } nullNodeIntegrationTriggerId && nullNodeIntegrationTriggerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationTriggerId = null;
             if (parseNode.GetChildNode("last_processed_external_message_id") is null) { _explicitNullValueLastProcessedExternalMessageId = default!; _explicitNullProperties?.Remove("last_processed_external_message_id"); }
             else if (parseNode.GetChildNode("last_processed_external_message_id") is { } nullNodeLastProcessedExternalMessageId && nullNodeLastProcessedExternalMessageId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastProcessedExternalMessageId = null;
             if (parseNode.GetChildNode("last_retry_timestamp") is null) { _explicitNullValueLastRetryTimestamp = default!; _explicitNullProperties?.Remove("last_retry_timestamp"); }
             else if (parseNode.GetChildNode("last_retry_timestamp") is { } nullNodeLastRetryTimestamp && nullNodeLastRetryTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastRetryTimestamp = null;
+            if (parseNode.GetChildNode("platform_metadata") is null) { _explicitNullValuePlatformMetadata = default!; _explicitNullProperties?.Remove("platform_metadata"); }
+            else if (parseNode.GetChildNode("platform_metadata") is { } nullNodePlatformMetadata && nullNodePlatformMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlatformMetadata = null;
             if (parseNode.GetChildNode("retry_count") is null) { _explicitNullValueRetryCount = default!; _explicitNullProperties?.Remove("retry_count"); }
             else if (parseNode.GetChildNode("retry_count") is { } nullNodeRetryCount && nullNodeRetryCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RetryCount = null;
         }
@@ -86,6 +90,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string ExternalSystem { get => _explicitNullValueExternalSystem; set { _explicitNullValueExternalSystem = value; AdditionalData?.Remove("external_system"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_system"); else _explicitNullProperties?.Remove("external_system"); } }
         private string _explicitNullValueExternalSystem = default!;
 #endif
+        /// <summary>The integration_trigger_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IntegrationTriggerId { get => _explicitNullValueIntegrationTriggerId; set { _explicitNullValueIntegrationTriggerId = value; AdditionalData?.Remove("integration_trigger_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration_trigger_id"); else _explicitNullProperties?.Remove("integration_trigger_id"); } }
+        private string? _explicitNullValueIntegrationTriggerId = default!;
+#nullable restore
+#else
+        public string IntegrationTriggerId { get => _explicitNullValueIntegrationTriggerId; set { _explicitNullValueIntegrationTriggerId = value; AdditionalData?.Remove("integration_trigger_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration_trigger_id"); else _explicitNullProperties?.Remove("integration_trigger_id"); } }
+        private string _explicitNullValueIntegrationTriggerId = default!;
+#endif
         /// <summary>The last_processed_external_message_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -99,6 +113,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The last_retry_timestamp property</summary>
         public int? LastRetryTimestamp { get => _explicitNullValueLastRetryTimestamp; set { _explicitNullValueLastRetryTimestamp = value; AdditionalData?.Remove("last_retry_timestamp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_retry_timestamp"); else _explicitNullProperties?.Remove("last_retry_timestamp"); } }
         private int? _explicitNullValueLastRetryTimestamp = default!;
+        /// <summary>The platform_metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AsyncConversationMetadataPlatformMetadataAnyOf1? PlatformMetadata { get => _explicitNullValuePlatformMetadata; set { _explicitNullValuePlatformMetadata = value; AdditionalData?.Remove("platform_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform_metadata"); else _explicitNullProperties?.Remove("platform_metadata"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AsyncConversationMetadataPlatformMetadataAnyOf1? _explicitNullValuePlatformMetadata = default!;
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AsyncConversationMetadataPlatformMetadataAnyOf1 PlatformMetadata { get => _explicitNullValuePlatformMetadata; set { _explicitNullValuePlatformMetadata = value; AdditionalData?.Remove("platform_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform_metadata"); else _explicitNullProperties?.Remove("platform_metadata"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AsyncConversationMetadataPlatformMetadataAnyOf1 _explicitNullValuePlatformMetadata = default!;
+#endif
         /// <summary>The retry_count property</summary>
         public int? RetryCount { get => _explicitNullValueRetryCount; set { _explicitNullValueRetryCount = value; AdditionalData?.Remove("retry_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retry_count"); else _explicitNullProperties?.Remove("retry_count"); } }
         private int? _explicitNullValueRetryCount = default!;
@@ -136,8 +160,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "external_id", n => { ExternalId = n.GetStringValue(); } },
                 { "external_link", n => { ExternalLink = n.GetStringValue(); } },
                 { "external_system", n => { ExternalSystem = n.GetStringValue(); } },
+                { "integration_trigger_id", n => { IntegrationTriggerId = n.GetStringValue(); } },
                 { "last_processed_external_message_id", n => { LastProcessedExternalMessageId = n.GetStringValue(); } },
                 { "last_retry_timestamp", n => { LastRetryTimestamp = n.GetIntValue(); } },
+                { "platform_metadata", n => { PlatformMetadata = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AsyncConversationMetadataPlatformMetadataAnyOf1>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AsyncConversationMetadataPlatformMetadataAnyOf1.CreateFromDiscriminatorValue); } },
                 { "retry_count", n => { RetryCount = n.GetIntValue(); } },
             };
         }
@@ -154,8 +180,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("external_id", ExternalId);
             writer.WriteStringValue("external_link", ExternalLink);
             writer.WriteStringValue("external_system", ExternalSystem);
+            writer.WriteStringValue("integration_trigger_id", IntegrationTriggerId);
             writer.WriteStringValue("last_processed_external_message_id", LastProcessedExternalMessageId);
             writer.WriteIntValue("last_retry_timestamp", LastRetryTimestamp);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AsyncConversationMetadataPlatformMetadataAnyOf1>("platform_metadata", PlatformMetadata);
             writer.WriteIntValue("retry_count", RetryCount);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

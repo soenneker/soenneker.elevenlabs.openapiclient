@@ -88,13 +88,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The is_burst property</summary>
         public bool? IsBurst { get => _explicitNullValueIsBurst; set { _explicitNullValueIsBurst = value; AdditionalData?.Remove("is_burst"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_burst"); else _explicitNullProperties?.Remove("is_burst"); } }
         private bool? _explicitNullValueIsBurst = default!;
-        /// <summary>The llm_charge property</summary>
+        /// <summary>Credits charged for LLM usage.</summary>
         public int? LlmCharge { get => _explicitNullValueLlmCharge; set { _explicitNullValueLlmCharge = value; AdditionalData?.Remove("llm_charge"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("llm_charge"); else _explicitNullProperties?.Remove("llm_charge"); } }
         private int? _explicitNullValueLlmCharge = default!;
-        /// <summary>The llm_price property</summary>
+        /// <summary>Total LLM price in USD. Equals the sum of the prices in `llm_usage.initiated_generation`.</summary>
         public double? LlmPrice { get => _explicitNullValueLlmPrice; set { _explicitNullValueLlmPrice = value; AdditionalData?.Remove("llm_price"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("llm_price"); else _explicitNullProperties?.Remove("llm_price"); } }
         private double? _explicitNullValueLlmPrice = default!;
-        /// <summary>The llm_usage property</summary>
+        /// <summary>LLM usage of a conversation, split by whether the generated response reached the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmCategoryUsage? LlmUsage { get => _explicitNullValueLlmUsage; set { _explicitNullValueLlmUsage = value; AdditionalData?.Remove("llm_usage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("llm_usage"); else _explicitNullProperties?.Remove("llm_usage"); } }

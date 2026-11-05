@@ -31,5 +31,17 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         Rs512,
         #pragma warning restore CS1591
+        [EnumMember(Value = "PS256")]
+        #pragma warning disable CS1591
+        Ps256,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PS384")]
+        #pragma warning disable CS1591
+        Ps384,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PS512")]
+        #pragma warning disable CS1591
+        Ps512,
+        #pragma warning restore CS1591
     }
 }

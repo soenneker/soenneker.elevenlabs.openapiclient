@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
-    /// <summary>Order by most recently created, or by priority (most urgent first, then most recently created).</summary>
+    /// <summary>Order by most recently created, by priority (most urgent first, then most recently created), or by most recently reported (the newest report merged into the issue, else its creation).</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum AgentConversationTicketSortBy
     {
@@ -14,6 +14,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         [EnumMember(Value = "priority")]
         #pragma warning disable CS1591
         Priority,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "last_reported")]
+        #pragma warning disable CS1591
+        LastReported,
         #pragma warning restore CS1591
     }
 }

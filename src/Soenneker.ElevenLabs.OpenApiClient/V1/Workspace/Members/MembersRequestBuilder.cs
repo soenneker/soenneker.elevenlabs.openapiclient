@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.ElevenLabs.OpenApiClient.Models;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Members.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -17,6 +18,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Members
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MembersRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Gets an item from the Soenneker.ElevenLabs.OpenApiClient.v1.workspace.members.item collection</summary>
+        /// <param name="position">User ID of the target user.</param>
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Members.Item.WithUserItemRequestBuilder"/></returns>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Members.Item.WithUserItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("userId", position);
+                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Members.Item.WithUserItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Members.MembersRequestBuilder"/> and sets the default values.
         /// </summary>

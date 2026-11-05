@@ -247,7 +247,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TriageTickets
             [QueryParameter("search")]
             public string Search { get; set; }
 #endif
-            /// <summary>Order by most recently created, or by priority (most urgent first, then most recently created).</summary>
+            /// <summary>Order by most recently created, by priority (most urgent first, then most recently created), or by most recently reported (the newest report merged into the issue, else its creation).</summary>
             [QueryParameter("sort_by")]
             public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketSortBy? SortBy { get; set; }
             /// <summary>Filter tickets by how they were raised (qa, agent, manual). Repeat the parameter to filter by multiple sources.</summary>

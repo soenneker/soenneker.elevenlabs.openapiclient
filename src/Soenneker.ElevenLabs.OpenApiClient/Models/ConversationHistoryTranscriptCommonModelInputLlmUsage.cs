@@ -23,7 +23,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The model_usage property</summary>
+        /// <summary>Token usage and USD price per LLM, keyed by model ID and broken down by token category.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageInputModelUsageProperty? ModelUsage { get => _explicitNullValueModelUsage; set { _explicitNullValueModelUsage = value; AdditionalData?.Remove("model_usage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model_usage"); else _explicitNullProperties?.Remove("model_usage"); } }

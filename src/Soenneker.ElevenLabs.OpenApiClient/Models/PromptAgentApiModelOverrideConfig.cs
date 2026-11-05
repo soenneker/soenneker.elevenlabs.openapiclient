@@ -25,6 +25,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if (parseNode.GetChildNode("native_mcp_server_ids") is { } nullNodeNativeMcpServerIds && nullNodeNativeMcpServerIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NativeMcpServerIds = null;
             if (parseNode.GetChildNode("prompt") is null) { _explicitNullValuePrompt = default!; _explicitNullProperties?.Remove("prompt"); }
             else if (parseNode.GetChildNode("prompt") is { } nullNodePrompt && nullNodePrompt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Prompt = null;
+            if (parseNode.GetChildNode("reasoning_effort") is null) { _explicitNullValueReasoningEffort = default!; _explicitNullProperties?.Remove("reasoning_effort"); }
+            else if (parseNode.GetChildNode("reasoning_effort") is { } nullNodeReasoningEffort && nullNodeReasoningEffort.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReasoningEffort = null;
             if (parseNode.GetChildNode("tool_ids") is null) { _explicitNullValueToolIds = default!; _explicitNullProperties?.Remove("tool_ids"); }
             else if (parseNode.GetChildNode("tool_ids") is { } nullNodeToolIds && nullNodeToolIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolIds = null;
             if (parseNode.GetChildNode("tool_ids_strict") is null) { _explicitNullValueToolIdsStrict = default!; _explicitNullProperties?.Remove("tool_ids_strict"); }
@@ -45,6 +47,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Whether to allow overriding the prompt field.</summary>
         public bool? Prompt { get => _explicitNullValuePrompt; set { _explicitNullValuePrompt = value; AdditionalData?.Remove("prompt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt"); else _explicitNullProperties?.Remove("prompt"); } }
         private bool? _explicitNullValuePrompt = default!;
+        /// <summary>Whether to allow overriding the reasoning_effort field.</summary>
+        public bool? ReasoningEffort { get => _explicitNullValueReasoningEffort; set { _explicitNullValueReasoningEffort = value; AdditionalData?.Remove("reasoning_effort"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reasoning_effort"); else _explicitNullProperties?.Remove("reasoning_effort"); } }
+        private bool? _explicitNullValueReasoningEffort = default!;
         /// <summary>Whether to allow overriding the tool_ids field.</summary>
         public bool? ToolIds { get => _explicitNullValueToolIds; set { _explicitNullValueToolIds = value; AdditionalData?.Remove("tool_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_ids"); else _explicitNullProperties?.Remove("tool_ids"); } }
         private bool? _explicitNullValueToolIds = default!;
@@ -61,6 +66,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             Llm = false;
             NativeMcpServerIds = false;
             Prompt = false;
+            ReasoningEffort = false;
             ToolIds = false;
             ToolIdsStrict = false;
         }
@@ -86,6 +92,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "llm", n => { Llm = n.GetBoolValue(); } },
                 { "native_mcp_server_ids", n => { NativeMcpServerIds = n.GetBoolValue(); } },
                 { "prompt", n => { Prompt = n.GetBoolValue(); } },
+                { "reasoning_effort", n => { ReasoningEffort = n.GetBoolValue(); } },
                 { "tool_ids", n => { ToolIds = n.GetBoolValue(); } },
                 { "tool_ids_strict", n => { ToolIdsStrict = n.GetBoolValue(); } },
             };
@@ -101,6 +108,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("llm", Llm);
             writer.WriteBoolValue("native_mcp_server_ids", NativeMcpServerIds);
             writer.WriteBoolValue("prompt", Prompt);
+            writer.WriteBoolValue("reasoning_effort", ReasoningEffort);
             writer.WriteBoolValue("tool_ids", ToolIds);
             writer.WriteBoolValue("tool_ids_strict", ToolIdsStrict);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

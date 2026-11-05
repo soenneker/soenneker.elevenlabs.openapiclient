@@ -25,10 +25,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if (parseNode.GetChildNode("auth_type") is { } nullNodeAuthType && nullNodeAuthType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthType = null;
             if (parseNode.GetChildNode("expiration_seconds") is null) { _explicitNullValueExpirationSeconds = default!; _explicitNullProperties?.Remove("expiration_seconds"); }
             else if (parseNode.GetChildNode("expiration_seconds") is { } nullNodeExpirationSeconds && nullNodeExpirationSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpirationSeconds = null;
+            if (parseNode.GetChildNode("extra_headers") is null) { _explicitNullValueExtraHeaders = default!; _explicitNullProperties?.Remove("extra_headers"); }
+            else if (parseNode.GetChildNode("extra_headers") is { } nullNodeExtraHeaders && nullNodeExtraHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExtraHeaders = null;
             if (parseNode.GetChildNode("extra_params") is null) { _explicitNullValueExtraParams = default!; _explicitNullProperties?.Remove("extra_params"); }
             else if (parseNode.GetChildNode("extra_params") is { } nullNodeExtraParams && nullNodeExtraParams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExtraParams = null;
             if (parseNode.GetChildNode("issuer") is null) { _explicitNullValueIssuer = default!; _explicitNullProperties?.Remove("issuer"); }
             else if (parseNode.GetChildNode("issuer") is { } nullNodeIssuer && nullNodeIssuer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Issuer = null;
+            if (parseNode.GetChildNode("jwt_usage") is null) { _explicitNullValueJwtUsage = default!; _explicitNullProperties?.Remove("jwt_usage"); }
+            else if (parseNode.GetChildNode("jwt_usage") is { } nullNodeJwtUsage && nullNodeJwtUsage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JwtUsage = null;
             if (parseNode.GetChildNode("key_id") is null) { _explicitNullValueKeyId = default!; _explicitNullProperties?.Remove("key_id"); }
             else if (parseNode.GetChildNode("key_id") is { } nullNodeKeyId && nullNodeKeyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeyId = null;
             if (parseNode.GetChildNode("provider") is null) { _explicitNullValueProvider = default!; _explicitNullProperties?.Remove("provider"); }
@@ -71,6 +75,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The expiration_seconds property</summary>
         public int? ExpirationSeconds { get => _explicitNullValueExpirationSeconds; set { _explicitNullValueExpirationSeconds = value; AdditionalData?.Remove("expiration_seconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiration_seconds"); else _explicitNullProperties?.Remove("expiration_seconds"); } }
         private int? _explicitNullValueExpirationSeconds = default!;
+        /// <summary>The extra_headers property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestExtraHeadersProperty? ExtraHeaders { get => _explicitNullValueExtraHeaders; set { _explicitNullValueExtraHeaders = value; AdditionalData?.Remove("extra_headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extra_headers"); else _explicitNullProperties?.Remove("extra_headers"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestExtraHeadersProperty? _explicitNullValueExtraHeaders = default!;
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestExtraHeadersProperty ExtraHeaders { get => _explicitNullValueExtraHeaders; set { _explicitNullValueExtraHeaders = value; AdditionalData?.Remove("extra_headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extra_headers"); else _explicitNullProperties?.Remove("extra_headers"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestExtraHeadersProperty _explicitNullValueExtraHeaders = default!;
+#endif
         /// <summary>The extra_params property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -90,6 +104,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Issuer { get => _explicitNullValueIssuer; set { _explicitNullValueIssuer = value; AdditionalData?.Remove("issuer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuer"); else _explicitNullProperties?.Remove("issuer"); } }
         private string _explicitNullValueIssuer = default!;
+#endif
+        /// <summary>The jwt_usage property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestJwtUsage? JwtUsage { get => _explicitNullValueJwtUsage; set { _explicitNullValueJwtUsage = value; AdditionalData?.Remove("jwt_usage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jwt_usage"); else _explicitNullProperties?.Remove("jwt_usage"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestJwtUsage? _explicitNullValueJwtUsage = default!;
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestJwtUsage JwtUsage { get => _explicitNullValueJwtUsage; set { _explicitNullValueJwtUsage = value; AdditionalData?.Remove("jwt_usage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jwt_usage"); else _explicitNullProperties?.Remove("jwt_usage"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestJwtUsage _explicitNullValueJwtUsage = default!;
 #endif
         /// <summary>The key_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -180,8 +204,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "audience", n => { Audience = n.GetStringValue(); } },
                 { "auth_type", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestAuthType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAuthType = default; _explicitNullProperties?.Remove("auth_type"); AdditionalData["auth_type"] = unknown; } else { AuthType = parsed; AdditionalData.Remove("auth_type"); } } },
                 { "expiration_seconds", n => { ExpirationSeconds = n.GetIntValue(); } },
+                { "extra_headers", n => { ExtraHeaders = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestExtraHeadersProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestExtraHeadersProperty.CreateFromDiscriminatorValue); } },
                 { "extra_params", n => { ExtraParams = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestExtraParamsProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestExtraParamsProperty.CreateFromDiscriminatorValue); } },
                 { "issuer", n => { Issuer = n.GetStringValue(); } },
+                { "jwt_usage", n => { JwtUsage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestJwtUsage>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestJwtUsage.CreateFromDiscriminatorValue); } },
                 { "key_id", n => { KeyId = n.GetStringValue(); } },
                 { "provider", n => { Provider = n.GetStringValue(); } },
                 { "scopes", n => { Scopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -201,8 +227,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("audience", Audience);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestAuthType>("auth_type", AuthType);
             writer.WriteIntValue("expiration_seconds", ExpirationSeconds);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestExtraHeadersProperty>("extra_headers", ExtraHeaders);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestExtraParamsProperty>("extra_params", ExtraParams);
             writer.WriteStringValue("issuer", Issuer);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestJwtUsage>("jwt_usage", JwtUsage);
             writer.WriteStringValue("key_id", KeyId);
             writer.WriteStringValue("provider", Provider);
             writer.WriteCollectionOfPrimitiveValues<string>("scopes", Scopes);

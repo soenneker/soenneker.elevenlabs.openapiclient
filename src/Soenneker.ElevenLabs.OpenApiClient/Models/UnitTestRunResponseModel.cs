@@ -53,6 +53,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if (parseNode.GetChildNode("test_name") is { } nullNodeTestName && nullNodeTestName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TestName = null;
             if (parseNode.GetChildNode("test_run_id") is null) { _explicitNullValueTestRunId = default!; _explicitNullProperties?.Remove("test_run_id"); }
             else if (parseNode.GetChildNode("test_run_id") is { } nullNodeTestRunId && nullNodeTestRunId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TestRunId = null;
+            if (parseNode.GetChildNode("triggered_guardrails") is null) { _explicitNullValueTriggeredGuardrails = default!; _explicitNullProperties?.Remove("triggered_guardrails"); }
+            else if (parseNode.GetChildNode("triggered_guardrails") is { } nullNodeTriggeredGuardrails && nullNodeTriggeredGuardrails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TriggeredGuardrails = null;
             if (parseNode.GetChildNode("version_id") is null) { _explicitNullValueVersionId = default!; _explicitNullProperties?.Remove("version_id"); }
             else if (parseNode.GetChildNode("version_id") is { } nullNodeVersionId && nullNodeVersionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VersionId = null;
             if (parseNode.GetChildNode("workflow_node_id") is null) { _explicitNullValueWorkflowNodeId = default!; _explicitNullProperties?.Remove("workflow_node_id"); }
@@ -213,6 +215,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string TestRunId { get => _explicitNullValueTestRunId; set { _explicitNullValueTestRunId = value; AdditionalData?.Remove("test_run_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("test_run_id"); else _explicitNullProperties?.Remove("test_run_id"); } }
         private string _explicitNullValueTestRunId = default!;
 #endif
+        /// <summary>Guardrails observed during this run, including blocks before an agent response.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TriggeredGuardrailCommonModel>? TriggeredGuardrails { get => _explicitNullValueTriggeredGuardrails; set { _explicitNullValueTriggeredGuardrails = value; AdditionalData?.Remove("triggered_guardrails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triggered_guardrails"); else _explicitNullProperties?.Remove("triggered_guardrails"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TriggeredGuardrailCommonModel>? _explicitNullValueTriggeredGuardrails = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TriggeredGuardrailCommonModel> TriggeredGuardrails { get => _explicitNullValueTriggeredGuardrails; set { _explicitNullValueTriggeredGuardrails = value; AdditionalData?.Remove("triggered_guardrails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triggered_guardrails"); else _explicitNullProperties?.Remove("triggered_guardrails"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TriggeredGuardrailCommonModel> _explicitNullValueTriggeredGuardrails = default!;
+#endif
         /// <summary>The version_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -278,6 +290,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "test_invocation_id", n => { TestInvocationId = n.GetStringValue(); } },
                 { "test_name", n => { TestName = n.GetStringValue(); } },
                 { "test_run_id", n => { TestRunId = n.GetStringValue(); } },
+                { "triggered_guardrails", n => { TriggeredGuardrails = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.TriggeredGuardrailCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TriggeredGuardrailCommonModel.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "version_id", n => { VersionId = n.GetStringValue(); } },
                 { "workflow_node_id", n => { WorkflowNodeId = n.GetStringValue(); } },
             };
@@ -307,6 +320,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("test_invocation_id", TestInvocationId);
             writer.WriteStringValue("test_name", TestName);
             writer.WriteStringValue("test_run_id", TestRunId);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.TriggeredGuardrailCommonModel>("triggered_guardrails", TriggeredGuardrails);
             writer.WriteStringValue("version_id", VersionId);
             writer.WriteStringValue("workflow_node_id", WorkflowNodeId);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
