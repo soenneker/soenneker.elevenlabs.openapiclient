@@ -21,6 +21,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if (parseNode.GetChildNode("agent_metadata") is { } nullNodeAgentMetadata && nullNodeAgentMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentMetadata = null;
             if (parseNode.GetChildNode("conversation_turn_metrics") is null) { _explicitNullValueConversationTurnMetrics = default!; _explicitNullProperties?.Remove("conversation_turn_metrics"); }
             else if (parseNode.GetChildNode("conversation_turn_metrics") is { } nullNodeConversationTurnMetrics && nullNodeConversationTurnMetrics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationTurnMetrics = null;
+            if (parseNode.GetChildNode("created_at_unix_ms") is null) { _explicitNullValueCreatedAtUnixMs = default!; _explicitNullProperties?.Remove("created_at_unix_ms"); }
+            else if (parseNode.GetChildNode("created_at_unix_ms") is { } nullNodeCreatedAtUnixMs && nullNodeCreatedAtUnixMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAtUnixMs = null;
             if (parseNode.GetChildNode("feedback") is null) { _explicitNullValueFeedback = default!; _explicitNullProperties?.Remove("feedback"); }
             else if (parseNode.GetChildNode("feedback") is { } nullNodeFeedback && nullNodeFeedback.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Feedback = null;
             if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
@@ -89,6 +91,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputConversationTurnMetrics ConversationTurnMetrics { get => _explicitNullValueConversationTurnMetrics; set { _explicitNullValueConversationTurnMetrics = value; AdditionalData?.Remove("conversation_turn_metrics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_turn_metrics"); else _explicitNullProperties?.Remove("conversation_turn_metrics"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputConversationTurnMetrics _explicitNullValueConversationTurnMetrics = default!;
 #endif
+        /// <summary>The created_at_unix_ms property</summary>
+        public int? CreatedAtUnixMs { get => _explicitNullValueCreatedAtUnixMs; set { _explicitNullValueCreatedAtUnixMs = value; AdditionalData?.Remove("created_at_unix_ms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at_unix_ms"); else _explicitNullProperties?.Remove("created_at_unix_ms"); } }
+        private int? _explicitNullValueCreatedAtUnixMs = default!;
         /// <summary>The feedback property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -289,6 +294,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "agent_metadata", n => { AgentMetadata = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputAgentMetadata>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputAgentMetadata.CreateFromDiscriminatorValue); } },
                 { "conversation_turn_metrics", n => { ConversationTurnMetrics = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputConversationTurnMetrics>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputConversationTurnMetrics.CreateFromDiscriminatorValue); } },
+                { "created_at_unix_ms", n => { CreatedAtUnixMs = n.GetIntValue(); } },
                 { "feedback", n => { Feedback = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputFeedback>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputFeedback.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "ignored_as_backchannel", n => { IgnoredAsBackchannel = n.GetBoolValue(); } },
@@ -322,6 +328,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputAgentMetadata>("agent_metadata", AgentMetadata);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputConversationTurnMetrics>("conversation_turn_metrics", ConversationTurnMetrics);
+            writer.WriteIntValue("created_at_unix_ms", CreatedAtUnixMs);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputFeedback>("feedback", Feedback);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("ignored_as_backchannel", IgnoredAsBackchannel);

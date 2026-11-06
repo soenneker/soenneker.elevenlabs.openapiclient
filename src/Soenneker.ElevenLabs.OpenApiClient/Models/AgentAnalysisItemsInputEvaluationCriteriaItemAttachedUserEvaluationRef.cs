@@ -53,7 +53,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Transcript context (&apos;conversation&apos; or &apos;agent&apos;) used when running this item.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope? Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope? _explicitNullValueScope = default!;
-        /// <summary>Primary item version whose result feeds scoring. None tracks the item&apos;s latest published version.</summary>
+        /// <summary>Primary item version whose result feeds scoring. &apos;latest&apos; tracks the item&apos;s latest published version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VersionId { get => _explicitNullValueVersionId; set { _explicitNullValueVersionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version_id"); else _explicitNullProperties?.Remove("version_id"); } }
@@ -72,6 +72,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public AgentAnalysisItemsInputEvaluationCriteriaItemAttachedUserEvaluationRef() : base()
         {
             Scope = global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope.Conversation;
+            VersionId = "latest";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

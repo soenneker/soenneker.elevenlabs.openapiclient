@@ -31,7 +31,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The billing_period property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ChangeResellerTierRequestBillingPeriod? BillingPeriod { get => _explicitNullValueBillingPeriod; set { _explicitNullValueBillingPeriod = value; AdditionalData?.Remove("billing_period"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_period"); else _explicitNullProperties?.Remove("billing_period"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ChangeResellerTierRequestBillingPeriod? _explicitNullValueBillingPeriod = default!;
-        /// <summary>Client-generated key so a retried request cannot create or apply the same subscription change twice.</summary>
+        /// <summary>Client-generated key that makes a retry safe. The same key and body within 24 hours returns the first result without running again. While that first request is still running, a retry gets 409 `idempotency_key_in_progress`; a different body with the same key gets 400 `idempotency_key_reused`. A request that fails is not saved, so it can be retried with the same key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IdempotencyKey { get => _explicitNullValueIdempotencyKey; set { _explicitNullValueIdempotencyKey = value; AdditionalData?.Remove("idempotency_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("idempotency_key"); else _explicitNullProperties?.Remove("idempotency_key"); } }

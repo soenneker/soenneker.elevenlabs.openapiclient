@@ -17,25 +17,39 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("documents") is null) { _explicitNullValueDocuments = default!; _explicitNullProperties?.Remove("documents"); }
+            else if (parseNode.GetChildNode("documents") is { } nullNodeDocuments && nullNodeDocuments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Documents = null;
             if (parseNode.GetChildNode("max_documents_length") is null) { _explicitNullValueMaxDocumentsLength = default!; _explicitNullProperties?.Remove("max_documents_length"); }
             else if (parseNode.GetChildNode("max_documents_length") is { } nullNodeMaxDocumentsLength && nullNodeMaxDocumentsLength.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxDocumentsLength = null;
             if (parseNode.GetChildNode("max_retrieved_rag_chunks_count") is null) { _explicitNullValueMaxRetrievedRagChunksCount = default!; _explicitNullProperties?.Remove("max_retrieved_rag_chunks_count"); }
             else if (parseNode.GetChildNode("max_retrieved_rag_chunks_count") is { } nullNodeMaxRetrievedRagChunksCount && nullNodeMaxRetrievedRagChunksCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxRetrievedRagChunksCount = null;
             if (parseNode.GetChildNode("query") is null) { _explicitNullValueQuery = default!; _explicitNullProperties?.Remove("query"); }
             else if (parseNode.GetChildNode("query") is { } nullNodeQuery && nullNodeQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Query = null;
+            if (parseNode.GetChildNode("strategy") is null) { _explicitNullValueStrategy = default!; _explicitNullProperties?.Remove("strategy"); }
+            else if (parseNode.GetChildNode("strategy") is { } nullNodeStrategy && nullNodeStrategy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Strategy = null;
             if (parseNode.GetChildNode("use_agent_defaults") is null) { _explicitNullValueUseAgentDefaults = default!; _explicitNullProperties?.Remove("use_agent_defaults"); }
             else if (parseNode.GetChildNode("use_agent_defaults") is { } nullNodeUseAgentDefaults && nullNodeUseAgentDefaults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UseAgentDefaults = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>IDs or names of knowledge base documents or folders. Semantic and keyword search only search these entries; cat reads the single document given; ls lists the single folder given, or the top level of the knowledge base when omitted.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Documents { get => _explicitNullValueDocuments; set { _explicitNullValueDocuments = value; AdditionalData?.Remove("documents"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("documents"); else _explicitNullProperties?.Remove("documents"); } }
+        private List<string>? _explicitNullValueDocuments = default!;
+#nullable restore
+#else
+        public List<string> Documents { get => _explicitNullValueDocuments; set { _explicitNullValueDocuments = value; AdditionalData?.Remove("documents"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("documents"); else _explicitNullProperties?.Remove("documents"); } }
+        private List<string> _explicitNullValueDocuments = default!;
+#endif
         /// <summary>Optional maximum total character length of document chunks returned. Overrides the selected RAG settings for this query only.</summary>
         public int? MaxDocumentsLength { get => _explicitNullValueMaxDocumentsLength; set { _explicitNullValueMaxDocumentsLength = value; AdditionalData?.Remove("max_documents_length"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_documents_length"); else _explicitNullProperties?.Remove("max_documents_length"); } }
         private int? _explicitNullValueMaxDocumentsLength = default!;
         /// <summary>Optional maximum number of document chunks retrieved. Overrides the selected RAG settings for this query only.</summary>
         public int? MaxRetrievedRagChunksCount { get => _explicitNullValueMaxRetrievedRagChunksCount; set { _explicitNullValueMaxRetrievedRagChunksCount = value; AdditionalData?.Remove("max_retrieved_rag_chunks_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_retrieved_rag_chunks_count"); else _explicitNullProperties?.Remove("max_retrieved_rag_chunks_count"); } }
         private int? _explicitNullValueMaxRetrievedRagChunksCount = default!;
-        /// <summary>Query to run against the agent&apos;s knowledge base RAG index.</summary>
+        /// <summary>Query to search the knowledge base for. Required for the semantic and keyword strategies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; AdditionalData?.Remove("query"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
@@ -45,6 +59,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; AdditionalData?.Remove("query"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
         private string _explicitNullValueQuery = default!;
 #endif
+        /// <summary>Retrieval strategy to run, as in the agent&apos;s knowledge_base tool: semantic or keyword search for a query, cat to read one document in full, or ls to list the entries of a folder. Any strategy runs, whether or not the agent has it enabled.</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SearchStrategy? Strategy { get => _explicitNullValueStrategy; set { _explicitNullValueStrategy = value; AdditionalData?.Remove("strategy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("strategy"); else _explicitNullProperties?.Remove("strategy"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SearchStrategy? _explicitNullValueStrategy = default!;
         /// <summary>When true (the default), retrieval uses the agent&apos;s own RAG settings, reproducing exactly what the agent would retrieve. Set to false to retrieve with neutral default RAG settings instead (the agent&apos;s embedding model is always kept, since it determines which vector index exists). Useful for auditing the knowledge base independently of how a particular agent is tuned.</summary>
         public bool? UseAgentDefaults { get => _explicitNullValueUseAgentDefaults; set { _explicitNullValueUseAgentDefaults = value; AdditionalData?.Remove("use_agent_defaults"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("use_agent_defaults"); else _explicitNullProperties?.Remove("use_agent_defaults"); } }
         private bool? _explicitNullValueUseAgentDefaults = default!;
@@ -54,6 +71,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public AgentKnowledgeBaseRagQueryRequestModel()
         {
             AdditionalData = new Dictionary<string, object>();
+            Strategy = global::Soenneker.ElevenLabs.OpenApiClient.Models.SearchStrategy.Semantic;
             UseAgentDefaults = true;
         }
         /// <summary>
@@ -74,9 +92,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "documents", n => { Documents = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "max_documents_length", n => { MaxDocumentsLength = n.GetIntValue(); } },
                 { "max_retrieved_rag_chunks_count", n => { MaxRetrievedRagChunksCount = n.GetIntValue(); } },
                 { "query", n => { Query = n.GetStringValue(); } },
+                { "strategy", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SearchStrategy>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStrategy = default; _explicitNullProperties?.Remove("strategy"); AdditionalData["strategy"] = unknown; } else { Strategy = parsed; AdditionalData.Remove("strategy"); } } },
                 { "use_agent_defaults", n => { UseAgentDefaults = n.GetBoolValue(); } },
             };
         }
@@ -87,9 +107,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfPrimitiveValues<string>("documents", Documents);
             writer.WriteIntValue("max_documents_length", MaxDocumentsLength);
             writer.WriteIntValue("max_retrieved_rag_chunks_count", MaxRetrievedRagChunksCount);
             writer.WriteStringValue("query", Query);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SearchStrategy>("strategy", Strategy);
             writer.WriteBoolValue("use_agent_defaults", UseAgentDefaults);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

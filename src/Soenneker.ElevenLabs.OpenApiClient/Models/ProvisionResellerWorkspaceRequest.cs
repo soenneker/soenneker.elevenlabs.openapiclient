@@ -21,6 +21,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if (parseNode.GetChildNode("business_name") is { } nullNodeBusinessName && nullNodeBusinessName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BusinessName = null;
             if (parseNode.GetChildNode("complete_onboarding") is null) { _explicitNullValueCompleteOnboarding = default!; _explicitNullProperties?.Remove("complete_onboarding"); }
             else if (parseNode.GetChildNode("complete_onboarding") is { } nullNodeCompleteOnboarding && nullNodeCompleteOnboarding.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompleteOnboarding = null;
+            if (parseNode.GetChildNode("idempotency_key") is null) { _explicitNullValueIdempotencyKey = default!; _explicitNullProperties?.Remove("idempotency_key"); }
+            else if (parseNode.GetChildNode("idempotency_key") is { } nullNodeIdempotencyKey && nullNodeIdempotencyKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdempotencyKey = null;
             if (parseNode.GetChildNode("members") is null) { _explicitNullValueMembers = default!; _explicitNullProperties?.Remove("members"); }
             else if (parseNode.GetChildNode("members") is { } nullNodeMembers && nullNodeMembers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Members = null;
             if (parseNode.GetChildNode("phone_number") is null) { _explicitNullValuePhoneNumber = default!; _explicitNullProperties?.Remove("phone_number"); }
@@ -44,6 +46,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Finish setup right away, as `POST /v1/reception/reseller/workspaces/{workspace_id}/complete-onboarding` does. Best-effort: `onboarding_completed_at_unix` stays null on failure, and that call can be retried.</summary>
         public bool? CompleteOnboarding { get => _explicitNullValueCompleteOnboarding; set { _explicitNullValueCompleteOnboarding = value; AdditionalData?.Remove("complete_onboarding"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("complete_onboarding"); else _explicitNullProperties?.Remove("complete_onboarding"); } }
         private bool? _explicitNullValueCompleteOnboarding = default!;
+        /// <summary>Client-generated key that makes a retry safe. The same key and body within 24 hours returns the first result without running again. While that first request is still running, a retry gets 409 `idempotency_key_in_progress`; a different body with the same key gets 400 `idempotency_key_reused`. A request that fails is not saved, so it can be retried with the same key.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IdempotencyKey { get => _explicitNullValueIdempotencyKey; set { _explicitNullValueIdempotencyKey = value; AdditionalData?.Remove("idempotency_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("idempotency_key"); else _explicitNullProperties?.Remove("idempotency_key"); } }
+        private string? _explicitNullValueIdempotencyKey = default!;
+#nullable restore
+#else
+        public string IdempotencyKey { get => _explicitNullValueIdempotencyKey; set { _explicitNullValueIdempotencyKey = value; AdditionalData?.Remove("idempotency_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("idempotency_key"); else _explicitNullProperties?.Remove("idempotency_key"); } }
+        private string _explicitNullValueIdempotencyKey = default!;
+#endif
         /// <summary>People to invite once the workspace exists, capped by the tier&apos;s team size. Best-effort: each outcome is in `member_results`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,6 +114,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "business_name", n => { BusinessName = n.GetStringValue(); } },
                 { "complete_onboarding", n => { CompleteOnboarding = n.GetBoolValue(); } },
+                { "idempotency_key", n => { IdempotencyKey = n.GetStringValue(); } },
                 { "members", n => { Members = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.TeamInviteRequest>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TeamInviteRequest.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "phone_number", n => { PhoneNumber = n.GetStringValue(); } },
                 { "subscription", n => { Subscription = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProvisionResellerWorkspaceRequestSubscription>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProvisionResellerWorkspaceRequestSubscription.CreateFromDiscriminatorValue); } },
@@ -116,6 +129,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("business_name", BusinessName);
             writer.WriteBoolValue("complete_onboarding", CompleteOnboarding);
+            writer.WriteStringValue("idempotency_key", IdempotencyKey);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.TeamInviteRequest>("members", Members);
             writer.WriteStringValue("phone_number", PhoneNumber);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProvisionResellerWorkspaceRequestSubscription>("subscription", Subscription);

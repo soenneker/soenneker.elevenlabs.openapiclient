@@ -97,9 +97,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string PhoneNumber { get => _explicitNullValuePhoneNumber; set { _explicitNullValuePhoneNumber = value; AdditionalData?.Remove("phone_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_number"); else _explicitNullProperties?.Remove("phone_number"); } }
         private string _explicitNullValuePhoneNumber = default!;
 #endif
-        /// <summary>Telephony provider for this phone number.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbPhoneAssignmentDbModelProvider? Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; AdditionalData?.Remove("provider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbPhoneAssignmentDbModelProvider? _explicitNullValueProvider = default!;
+        /// <summary>How calls to the number reach ElevenLabs: through Twilio or a SIP trunk.</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbPhoneProvider? Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; AdditionalData?.Remove("provider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbPhoneProvider? _explicitNullValueProvider = default!;
         /// <summary>ISO country the regulated number was issued in. Null for numbers that need no paperwork.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -156,7 +156,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "is_byo", n => { IsByo = n.GetBoolValue(); } },
                 { "nanp_area_code", n => { NanpAreaCode = n.GetIntValue(); } },
                 { "phone_number", n => { PhoneNumber = n.GetStringValue(); } },
-                { "provider", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbPhoneAssignmentDbModelProvider>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueProvider = default; _explicitNullProperties?.Remove("provider"); AdditionalData["provider"] = unknown; } else { Provider = parsed; AdditionalData.Remove("provider"); } } },
+                { "provider", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbPhoneProvider>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueProvider = default; _explicitNullProperties?.Remove("provider"); AdditionalData["provider"] = unknown; } else { Provider = parsed; AdditionalData.Remove("provider"); } } },
                 { "regulatory_country", n => { RegulatoryCountry = n.GetStringValue(); } },
                 { "regulatory_number_type", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ApplicationNumberType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRegulatoryNumberType = default; _explicitNullProperties?.Remove("regulatory_number_type"); AdditionalData["regulatory_number_type"] = unknown; } else { RegulatoryNumberType = parsed; AdditionalData.Remove("regulatory_number_type"); } } },
                 { "regulatory_status", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbPhoneRegulatoryStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRegulatoryStatus = default; _explicitNullProperties?.Remove("regulatory_status"); AdditionalData["regulatory_status"] = unknown; } else { RegulatoryStatus = parsed; AdditionalData.Remove("regulatory_status"); } } },
@@ -178,7 +178,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("is_byo", IsByo);
             writer.WriteIntValue("nanp_area_code", NanpAreaCode);
             writer.WriteStringValue("phone_number", PhoneNumber);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbPhoneAssignmentDbModelProvider>("provider", Provider);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbPhoneProvider>("provider", Provider);
             writer.WriteStringValue("regulatory_country", RegulatoryCountry);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ApplicationNumberType>("regulatory_number_type", RegulatoryNumberType);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbPhoneRegulatoryStatus>("regulatory_status", RegulatoryStatus);

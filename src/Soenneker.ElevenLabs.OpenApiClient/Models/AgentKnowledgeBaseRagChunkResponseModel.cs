@@ -47,7 +47,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string ChunkId { get => _explicitNullValueChunkId; set { _explicitNullValueChunkId = value; AdditionalData?.Remove("chunk_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chunk_id"); else _explicitNullProperties?.Remove("chunk_id"); } }
         private string _explicitNullValueChunkId = default!;
 #endif
-        /// <summary>Format of the chunk text. Markdown chunks contain raw markdown; HTML chunks contain HTML.</summary>
+        /// <summary>Format of the chunk text. Markdown chunks contain raw markdown; HTML chunks contain HTML. Keyword search always returns markdown, including the plain text it indexes for HTML documents.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentFormat? ContentFormat { get => _explicitNullValueContentFormat; set { _explicitNullValueContentFormat = value; AdditionalData?.Remove("content_format"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_format"); else _explicitNullProperties?.Remove("content_format"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentFormat? _explicitNullValueContentFormat = default!;
         /// <summary>ID of the source knowledge base document.</summary>

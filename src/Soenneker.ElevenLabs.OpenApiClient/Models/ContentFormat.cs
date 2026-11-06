@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
-    /// <summary>Format of the chunk text. Markdown chunks contain raw markdown; HTML chunks contain HTML.</summary>
+    /// <summary>Format of the chunk text. Markdown chunks contain raw markdown; HTML chunks contain HTML. Keyword search always returns markdown, including the plain text it indexes for HTML documents.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ContentFormat
     {

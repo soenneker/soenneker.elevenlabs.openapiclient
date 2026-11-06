@@ -23679,7 +23679,7 @@
           "Agents Platform"
         ],
         "summary": "Query Agent Knowledge Base Rag",
-        "description": "Run the agent\u0027s exact RAG retrieval for an ad-hoc query and return the ranked chunks the agent would retrieve. Read-only: no conversation is created. The response reflects current retrieval internals and may evolve.",
+        "description": "Run one of the agent\u0027s exact knowledge base retrieval strategies for an ad-hoc request and return what the agent would retrieve: ranked chunks for semantic or keyword search, a document\u0027s content for cat, or the entries of a folder for ls. Read-only: no conversation is created. The response reflects current retrieval internals and may evolve.",
         "operationId": "QueryAgentKnowledgeBaseRagRoute",
         "parameters": [
           {
@@ -40421,7 +40421,7 @@
           "reception"
         ],
         "summary": "Assign Phone Number",
-        "description": "Give a receptionist a phone number. A number the workspace already holds but has not attached is used first. Otherwise, in the US and Canada, a number with one of the requested \u0060area_codes\u0060 is taken from the pool or bought, falling back to any number in the business\u0027s country. In countries that require paperwork, the number is issued right away but takes public calls only once the workspace\u0027s own registration is approved (see \u0060accepts_public_calls\u0060). Counts toward the plan\u0027s phone number limit, and free plans can take only a few new numbers a day. Returns 404 when no number is available and 403 \u0060telephony_managed_by_reseller\u0060 when the reseller supplies the workspace\u0027s numbers from its own Twilio account and none is free.",
+        "description": "Give a receptionist a phone number. A number the workspace already holds but has not attached is used first. Otherwise, in the US and Canada, a number with one of the requested \u0060area_codes\u0060 is taken from the pool or bought, falling back to any number in the business\u0027s country. In countries that require paperwork, the number is issued right away but takes public calls only once the workspace\u0027s own registration is approved (see \u0060accepts_public_calls\u0060). Counts toward the plan\u0027s phone number limit, and free plans can take only a few new numbers a day. Returns 404 when no number is available and 403 \u0060telephony_managed_by_reseller\u0060 when the reseller supplies the workspace\u0027s numbers from its own Twilio account or SIP trunk and none is free.",
         "operationId": "SmbAssignPhoneNumber",
         "parameters": [
           {
@@ -40509,7 +40509,7 @@
           "reception"
         ],
         "summary": "Release Phone Number",
-        "description": "Remove a phone number from the workspace. A pool number goes back to the pool it came from. A number the business brought from its own Twilio account, or one issued in a country that requires paperwork, is released at Twilio and cannot be recovered. Returns 403 \u0060telephony_managed_by_reseller\u0060 when the reseller supplies the workspace\u0027s numbers from its own Twilio account.",
+        "description": "Remove a phone number from the workspace. A pool number goes back to the pool it came from. A number the business brought from its own Twilio account, or one issued in a country that requires paperwork, is released at Twilio and cannot be recovered. Returns 403 \u0060telephony_managed_by_reseller\u0060 when the reseller supplies the workspace\u0027s numbers from its own Twilio account or SIP trunk.",
         "operationId": "SmbReleasePhoneAssignment",
         "parameters": [
           {
@@ -40576,7 +40576,7 @@
           "reception"
         ],
         "summary": "Move Phone Number",
-        "description": "Move a phone number to a different receptionist in the same workspace, which answers its calls from then on. Returns 409 \u0060phone_number_not_attached\u0060 for a number no receptionist answers yet (attach it with \u0060POST /v1/reception/phone-numbers/assignments\u0060), and 403 \u0060telephony_managed_by_reseller\u0060 when the reseller supplies the workspace\u0027s numbers from its own Twilio account.",
+        "description": "Move a phone number to a different receptionist in the same workspace, which answers its calls from then on. Returns 409 \u0060phone_number_not_attached\u0060 for a number no receptionist answers yet (attach it with \u0060POST /v1/reception/phone-numbers/assignments\u0060).",
         "operationId": "SmbReassignPhoneToAgent",
         "parameters": [
           {
@@ -44948,7 +44948,7 @@
             "description": "Similarity distance when exposed by the retrieval strategy."
           },
           "content_format": {
-            "description": "Format of the chunk text. Markdown chunks contain raw markdown; HTML chunks contain HTML.",
+            "description": "Format of the chunk text. Markdown chunks contain raw markdown; HTML chunks contain HTML. Keyword search always returns markdown, including the plain text it indexes for HTML documents.",
             "$ref": "#/components/schemas/ContentFormat"
           },
           "document_type": {
@@ -44957,21 +44957,70 @@
           }
         }
       },
-      "AgentKnowledgeBaseRagQueryRequestModel": {
-        "title": "AgentKnowledgeBaseRagQueryRequestModel",
+      "AgentKnowledgeBaseRagListingEntryResponseModel": {
+        "title": "AgentKnowledgeBaseRagListingEntryResponseModel",
         "required": [
-          "query"
+          "id",
+          "name",
+          "is_folder"
         ],
         "type": "object",
         "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string",
+            "description": "ID of the document or folder."
+          },
+          "name": {
+            "title": "Name",
+            "type": "string",
+            "description": "Name of the document or folder."
+          },
+          "is_folder": {
+            "title": "Is Folder",
+            "type": "boolean",
+            "description": "Whether the entry is a folder."
+          }
+        }
+      },
+      "AgentKnowledgeBaseRagQueryRequestModel": {
+        "title": "AgentKnowledgeBaseRagQueryRequestModel",
+        "type": "object",
+        "properties": {
+          "strategy": {
+            "description": "Retrieval strategy to run, as in the agent\u0027s knowledge_base tool: semantic or keyword search for a query, cat to read one document in full, or ls to list the entries of a folder. Any strategy runs, whether or not the agent has it enabled.",
+            "default": "semantic",
+            "$ref": "#/components/schemas/SearchStrategy"
+          },
           "query": {
             "examples": [
               "How do I reset my password?"
             ],
             "title": "Query",
             "minLength": 1,
-            "type": "string",
-            "description": "Query to run against the agent\u0027s knowledge base RAG index."
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Query to search the knowledge base for. Required for the semantic and keyword strategies."
+          },
+          "documents": {
+            "examples": [
+              [
+                "Account FAQ"
+              ]
+            ],
+            "title": "Documents",
+            "maxItems": 100,
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "description": "IDs or names of knowledge base documents or folders. Semantic and keyword search only search these entries; cat reads the single document given; ls lists the single folder given, or the top level of the knowledge base when omitted."
           },
           "use_agent_defaults": {
             "title": "Use Agent Defaults",
@@ -45004,15 +45053,23 @@
       "AgentKnowledgeBaseRagQueryResponseModel": {
         "title": "AgentKnowledgeBaseRagQueryResponseModel",
         "required": [
+          "strategy",
           "retrieval_query",
           "chunks"
         ],
         "type": "object",
         "properties": {
+          "strategy": {
+            "description": "Retrieval strategy that ran.",
+            "$ref": "#/components/schemas/SearchStrategy"
+          },
           "retrieval_query": {
             "title": "Retrieval Query",
-            "type": "string",
-            "description": "Raw query used for retrieval (echoes the request query)."
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Raw query used for retrieval (echoes the request query), or null for the cat and ls strategies."
           },
           "chunks": {
             "title": "Chunks",
@@ -45020,7 +45077,13 @@
             "items": {
               "$ref": "#/components/schemas/AgentKnowledgeBaseRagChunkResponseModel"
             },
-            "description": "Ranked chunks the agent would retrieve, after distance and length filtering."
+            "description": "Ranked chunks the agent would retrieve with semantic or keyword search, after distance and length filtering. Empty for the cat and ls strategies."
+          },
+          "document": {
+            "$ref": "#/components/schemas/AgentKnowledgeBaseRagQueryResponseModelDocument"
+          },
+          "listing": {
+            "$ref": "#/components/schemas/AgentKnowledgeBaseRagQueryResponseModelListing"
           }
         },
         "example": {
@@ -45036,7 +45099,8 @@
               "vector_distance": 0.21
             }
           ],
-          "retrieval_query": "How do I reset my password?"
+          "retrieval_query": "How do I reset my password?",
+          "strategy": "semantic"
         }
       },
       "AgentMergeProposalResponse": {
@@ -47528,7 +47592,7 @@
               "null",
               "string"
             ],
-            "description": "Client-generated key so a retried request cannot create or apply the same subscription change twice."
+            "description": "Client-generated key that makes a retry safe. The same key and body within 24 hours returns the first result without running again. While that first request is still running, a retry gets 409 \u0060idempotency_key_in_progress\u0060; a different body with the same key gets 400 \u0060idempotency_key_reused\u0060. A request that fails is not saved, so it can be retried with the same key."
           }
         },
         "description": "Put a workspace with no subscription onto one of the reseller\u0027s tiers."
@@ -56577,7 +56641,7 @@
               "null",
               "string"
             ],
-            "description": "Client-generated key so a retried request cannot create or apply the same subscription change twice."
+            "description": "Client-generated key that makes a retry safe. The same key and body within 24 hours returns the first result without running again. While that first request is still running, a retry gets 409 \u0060idempotency_key_in_progress\u0060; a different body with the same key gets 400 \u0060idempotency_key_reused\u0060. A request that fails is not saved, so it can be retried with the same key."
           }
         },
         "description": "Move a workspace to another of the reseller\u0027s tiers."
@@ -59431,6 +59495,13 @@
               "string"
             ]
           },
+          "created_at_unix_ms": {
+            "title": "Created At Unix Ms",
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
           "triggered_guardrails": {
             "title": "Triggered Guardrails",
             "type": "array",
@@ -59564,6 +59635,13 @@
             "type": [
               "null",
               "string"
+            ]
+          },
+          "created_at_unix_ms": {
+            "title": "Created At Unix Ms",
+            "type": [
+              "null",
+              "integer"
             ]
           },
           "triggered_guardrails": {
@@ -59790,6 +59868,13 @@
             "type": [
               "null",
               "string"
+            ]
+          },
+          "created_at_unix_ms": {
+            "title": "Created At Unix Ms",
+            "type": [
+              "null",
+              "integer"
             ]
           },
           "triggered_guardrails": {
@@ -61990,6 +62075,15 @@
           },
           "number_type": {
             "$ref": "#/components/schemas/CreatePhoneAssignmentRequestNumberType"
+          },
+          "idempotency_key": {
+            "title": "Idempotency Key",
+            "maxLength": 255,
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Client-generated key that makes a retry safe. The same key and body within 24 hours returns the first result without running again. While that first request is still running, a retry gets 409 \u0060idempotency_key_in_progress\u0060; a different body with the same key gets 400 \u0060idempotency_key_reused\u0060. A request that fails is not saved, so it can be retried with the same key."
           }
         },
         "description": "Body for giving a receptionist a phone number."
@@ -79534,6 +79628,15 @@
             "type": "boolean",
             "description": "Finish setup right away, as \u0060POST /v1/reception/reseller/workspaces/{workspace_id}/complete-onboarding\u0060 does. Best-effort: \u0060onboarding_completed_at_unix\u0060 stays null on failure, and that call can be retried.",
             "default": false
+          },
+          "idempotency_key": {
+            "title": "Idempotency Key",
+            "maxLength": 255,
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Client-generated key that makes a retry safe. The same key and body within 24 hours returns the first result without running again. While that first request is still running, a retry gets 409 \u0060idempotency_key_in_progress\u0060; a different body with the same key gets 400 \u0060idempotency_key_reused\u0060. A request that fails is not saved, so it can be retried with the same key."
           }
         }
       },
@@ -82706,7 +82809,7 @@
             "default": false
           },
           "provider": {
-            "$ref": "#/components/schemas/SmbPhoneAssignmentDbModelProvider"
+            "$ref": "#/components/schemas/SmbPhoneProvider"
           },
           "nanp_area_code": {
             "title": "Nanp Area Code",
@@ -82796,6 +82899,29 @@
             {
               "value": "user",
               "name": "User"
+            }
+          ]
+        }
+      },
+      "SmbPhoneProvider": {
+        "title": "SMBPhoneProvider",
+        "enum": [
+          "twilio",
+          "sip_trunk"
+        ],
+        "type": "string",
+        "description": "How calls to the number reach ElevenLabs: through Twilio or a SIP trunk.",
+        "x-ms-enum": {
+          "name": "SmbPhoneProvider",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "twilio",
+              "name": "Twilio"
+            },
+            {
+              "value": "sip_trunk",
+              "name": "SipTrunk"
             }
           ]
         }
@@ -98210,6 +98336,110 @@
             }
           ],
           "description": "Access information for the deployment, including who created it"
+        }
+      },
+      "AgentKnowledgeBaseRagQueryResponseModelDocument": {
+        "title": "AgentKnowledgeBaseRagDocumentResponseModel",
+        "required": [
+          "document_id",
+          "document_name",
+          "source_url",
+          "content",
+          "truncated",
+          "content_format",
+          "document_type"
+        ],
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "document_id": {
+            "title": "Document Id",
+            "type": "string",
+            "description": "ID of the knowledge base document."
+          },
+          "document_name": {
+            "title": "Document Name",
+            "type": "string",
+            "description": "Name of the knowledge base document."
+          },
+          "source_url": {
+            "title": "Source Url",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Tracked source URL for URL documents, or null for other document types."
+          },
+          "content": {
+            "title": "Content",
+            "type": "string",
+            "description": "Content the agent would read, cut to the maximum documents length. Empty when the document has no extractable content."
+          },
+          "truncated": {
+            "title": "Truncated",
+            "type": "boolean",
+            "description": "Whether the content was cut to the maximum documents length."
+          },
+          "content_format": {
+            "description": "Format of the document content.",
+            "$ref": "#/components/schemas/ContentFormat"
+          },
+          "document_type": {
+            "description": "Type of the knowledge base document.",
+            "$ref": "#/components/schemas/KnowledgeBaseDocumentType"
+          }
+        },
+        "description": "Document read by the cat strategy, or null when the reference matched no document or another strategy ran.",
+        "x-client-original-nullable-union": {
+          "anyOf": [
+            {
+              "$ref": "#/components/schemas/AgentKnowledgeBaseRagDocumentResponseModel"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Document read by the cat strategy, or null when the reference matched no document or another strategy ran."
+        }
+      },
+      "AgentKnowledgeBaseRagQueryResponseModelListing": {
+        "title": "AgentKnowledgeBaseRagListingResponseModel",
+        "required": [
+          "entries",
+          "total_count"
+        ],
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "entries": {
+            "title": "Entries",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AgentKnowledgeBaseRagListingEntryResponseModel"
+            },
+            "description": "Entries the agent would be shown, folders first and then by name. Large folders are cut to the number of entries the agent is shown."
+          },
+          "total_count": {
+            "title": "Total Count",
+            "type": "integer",
+            "description": "Number of entries in the listed folder, including any not returned."
+          }
+        },
+        "description": "Entries listed by the ls strategy, or null when the reference matched nothing or another strategy ran.",
+        "x-client-original-nullable-union": {
+          "anyOf": [
+            {
+              "$ref": "#/components/schemas/AgentKnowledgeBaseRagListingResponseModel"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Entries listed by the ls strategy, or null when the reference matched nothing or another strategy ran."
         }
       },
       "AgentMergeProposalResponseOutcome": {
@@ -134741,29 +134971,6 @@
           ]
         }
       },
-      "SmbPhoneAssignmentDbModelProvider": {
-        "title": "Provider",
-        "enum": [
-          "twilio",
-          "sip_trunk"
-        ],
-        "type": "string",
-        "description": "Telephony provider for this phone number.",
-        "x-ms-enum": {
-          "name": "SmbPhoneAssignmentDbModelProvider",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "twilio",
-              "name": "Twilio"
-            },
-            {
-              "value": "sip_trunk",
-              "name": "SipTrunk"
-            }
-          ]
-        }
-      },
       "SmbUpdateAgentInfoRequestCurrency": {
         "title": "Currency",
         "enum": [
@@ -149216,11 +149423,9 @@
               },
               "version_id": {
                 "title": "Version Id",
-                "type": [
-                  "null",
-                  "string"
-                ],
-                "description": "Primary item version whose result feeds scoring. None tracks the item\u0027s latest published version."
+                "type": "string",
+                "description": "Primary item version whose result feeds scoring. \u0027latest\u0027 tracks the item\u0027s latest published version.",
+                "default": "latest"
               },
               "additional_version_ids": {
                 "title": "Additional Version Ids",
@@ -149307,11 +149512,9 @@
               },
               "version_id": {
                 "title": "Version Id",
-                "type": [
-                  "null",
-                  "string"
-                ],
-                "description": "Pinned item version. None tracks the item\u0027s latest published version."
+                "type": "string",
+                "description": "Pinned item version. \u0027latest\u0027 tracks the item\u0027s latest published version.",
+                "default": "latest"
               },
               "scope": {
                 "description": "Transcript context (\u0027conversation\u0027 or \u0027agent\u0027) used when running this item.",
@@ -174705,6 +174908,80 @@
         }
       }
     },
+    "AgentKnowledgeBaseRagDocumentResponseModel": {
+      "title": "AgentKnowledgeBaseRagDocumentResponseModel",
+      "required": [
+        "document_id",
+        "document_name",
+        "source_url",
+        "content",
+        "truncated",
+        "content_format",
+        "document_type"
+      ],
+      "type": "object",
+      "properties": {
+        "document_id": {
+          "title": "Document Id",
+          "type": "string",
+          "description": "ID of the knowledge base document."
+        },
+        "document_name": {
+          "title": "Document Name",
+          "type": "string",
+          "description": "Name of the knowledge base document."
+        },
+        "source_url": {
+          "title": "Source Url",
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Tracked source URL for URL documents, or null for other document types."
+        },
+        "content": {
+          "title": "Content",
+          "type": "string",
+          "description": "Content the agent would read, cut to the maximum documents length. Empty when the document has no extractable content."
+        },
+        "truncated": {
+          "title": "Truncated",
+          "type": "boolean",
+          "description": "Whether the content was cut to the maximum documents length."
+        },
+        "content_format": {
+          "description": "Format of the document content.",
+          "$ref": "#/components/schemas/ContentFormat"
+        },
+        "document_type": {
+          "description": "Type of the knowledge base document.",
+          "$ref": "#/components/schemas/KnowledgeBaseDocumentType"
+        }
+      }
+    },
+    "AgentKnowledgeBaseRagListingResponseModel": {
+      "title": "AgentKnowledgeBaseRagListingResponseModel",
+      "required": [
+        "entries",
+        "total_count"
+      ],
+      "type": "object",
+      "properties": {
+        "entries": {
+          "title": "Entries",
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/AgentKnowledgeBaseRagListingEntryResponseModel"
+          },
+          "description": "Entries the agent would be shown, folders first and then by name. Large folders are cut to the number of entries the agent is shown."
+        },
+        "total_count": {
+          "title": "Total Count",
+          "type": "integer",
+          "description": "Number of entries in the listed folder, including any not returned."
+        }
+      }
+    },
     "AgentMetadata": {
       "title": "AgentMetadata",
       "required": [
@@ -175597,11 +175874,9 @@
         },
         "version_id": {
           "title": "Version Id",
-          "type": [
-            "null",
-            "string"
-          ],
-          "description": "Pinned item version. None tracks the item\u0027s latest published version."
+          "type": "string",
+          "description": "Pinned item version. \u0027latest\u0027 tracks the item\u0027s latest published version.",
+          "default": "latest"
         },
         "scope": {
           "description": "Transcript context (\u0027conversation\u0027 or \u0027agent\u0027) used when running this item.",
@@ -175628,11 +175903,9 @@
         },
         "version_id": {
           "title": "Version Id",
-          "type": [
-            "null",
-            "string"
-          ],
-          "description": "Primary item version whose result feeds scoring. None tracks the item\u0027s latest published version."
+          "type": "string",
+          "description": "Primary item version whose result feeds scoring. \u0027latest\u0027 tracks the item\u0027s latest published version.",
+          "default": "latest"
         },
         "additional_version_ids": {
           "title": "Additional Version Ids",

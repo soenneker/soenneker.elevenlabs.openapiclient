@@ -19,13 +19,19 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("chunks") is null) { _explicitNullValueChunks = default!; _explicitNullProperties?.Remove("chunks"); }
             else if (parseNode.GetChildNode("chunks") is { } nullNodeChunks && nullNodeChunks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Chunks = null;
+            if (parseNode.GetChildNode("document") is null) { _explicitNullValueDocument = default!; _explicitNullProperties?.Remove("document"); }
+            else if (parseNode.GetChildNode("document") is { } nullNodeDocument && nullNodeDocument.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Document = null;
+            if (parseNode.GetChildNode("listing") is null) { _explicitNullValueListing = default!; _explicitNullProperties?.Remove("listing"); }
+            else if (parseNode.GetChildNode("listing") is { } nullNodeListing && nullNodeListing.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Listing = null;
             if (parseNode.GetChildNode("retrieval_query") is null) { _explicitNullValueRetrievalQuery = default!; _explicitNullProperties?.Remove("retrieval_query"); }
             else if (parseNode.GetChildNode("retrieval_query") is { } nullNodeRetrievalQuery && nullNodeRetrievalQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RetrievalQuery = null;
+            if (parseNode.GetChildNode("strategy") is null) { _explicitNullValueStrategy = default!; _explicitNullProperties?.Remove("strategy"); }
+            else if (parseNode.GetChildNode("strategy") is { } nullNodeStrategy && nullNodeStrategy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Strategy = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Ranked chunks the agent would retrieve, after distance and length filtering.</summary>
+        /// <summary>Ranked chunks the agent would retrieve with semantic or keyword search, after distance and length filtering. Empty for the cat and ls strategies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentKnowledgeBaseRagChunkResponseModel>? Chunks { get => _explicitNullValueChunks; set { _explicitNullValueChunks = value; AdditionalData?.Remove("chunks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chunks"); else _explicitNullProperties?.Remove("chunks"); } }
@@ -35,7 +41,27 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentKnowledgeBaseRagChunkResponseModel> Chunks { get => _explicitNullValueChunks; set { _explicitNullValueChunks = value; AdditionalData?.Remove("chunks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chunks"); else _explicitNullProperties?.Remove("chunks"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentKnowledgeBaseRagChunkResponseModel> _explicitNullValueChunks = default!;
 #endif
-        /// <summary>Raw query used for retrieval (echoes the request query).</summary>
+        /// <summary>Document read by the cat strategy, or null when the reference matched no document or another strategy ran.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentKnowledgeBaseRagQueryResponseModelDocument? Document { get => _explicitNullValueDocument; set { _explicitNullValueDocument = value; AdditionalData?.Remove("document"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document"); else _explicitNullProperties?.Remove("document"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentKnowledgeBaseRagQueryResponseModelDocument? _explicitNullValueDocument = default!;
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentKnowledgeBaseRagQueryResponseModelDocument Document { get => _explicitNullValueDocument; set { _explicitNullValueDocument = value; AdditionalData?.Remove("document"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document"); else _explicitNullProperties?.Remove("document"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentKnowledgeBaseRagQueryResponseModelDocument _explicitNullValueDocument = default!;
+#endif
+        /// <summary>Entries listed by the ls strategy, or null when the reference matched nothing or another strategy ran.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentKnowledgeBaseRagQueryResponseModelListing? Listing { get => _explicitNullValueListing; set { _explicitNullValueListing = value; AdditionalData?.Remove("listing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("listing"); else _explicitNullProperties?.Remove("listing"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentKnowledgeBaseRagQueryResponseModelListing? _explicitNullValueListing = default!;
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentKnowledgeBaseRagQueryResponseModelListing Listing { get => _explicitNullValueListing; set { _explicitNullValueListing = value; AdditionalData?.Remove("listing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("listing"); else _explicitNullProperties?.Remove("listing"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentKnowledgeBaseRagQueryResponseModelListing _explicitNullValueListing = default!;
+#endif
+        /// <summary>Raw query used for retrieval (echoes the request query), or null for the cat and ls strategies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RetrievalQuery { get => _explicitNullValueRetrievalQuery; set { _explicitNullValueRetrievalQuery = value; AdditionalData?.Remove("retrieval_query"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retrieval_query"); else _explicitNullProperties?.Remove("retrieval_query"); } }
@@ -45,6 +71,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string RetrievalQuery { get => _explicitNullValueRetrievalQuery; set { _explicitNullValueRetrievalQuery = value; AdditionalData?.Remove("retrieval_query"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retrieval_query"); else _explicitNullProperties?.Remove("retrieval_query"); } }
         private string _explicitNullValueRetrievalQuery = default!;
 #endif
+        /// <summary>Retrieval strategy that ran.</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SearchStrategy? Strategy { get => _explicitNullValueStrategy; set { _explicitNullValueStrategy = value; AdditionalData?.Remove("strategy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("strategy"); else _explicitNullProperties?.Remove("strategy"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SearchStrategy? _explicitNullValueStrategy = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentKnowledgeBaseRagQueryResponseModel"/> and sets the default values.
         /// </summary>
@@ -71,7 +100,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "chunks", n => { Chunks = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentKnowledgeBaseRagChunkResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentKnowledgeBaseRagChunkResponseModel.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "document", n => { Document = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentKnowledgeBaseRagQueryResponseModelDocument>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentKnowledgeBaseRagQueryResponseModelDocument.CreateFromDiscriminatorValue); } },
+                { "listing", n => { Listing = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentKnowledgeBaseRagQueryResponseModelListing>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentKnowledgeBaseRagQueryResponseModelListing.CreateFromDiscriminatorValue); } },
                 { "retrieval_query", n => { RetrievalQuery = n.GetStringValue(); } },
+                { "strategy", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SearchStrategy>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStrategy = default; _explicitNullProperties?.Remove("strategy"); AdditionalData["strategy"] = unknown; } else { Strategy = parsed; AdditionalData.Remove("strategy"); } } },
             };
         }
         /// <summary>
@@ -82,7 +114,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentKnowledgeBaseRagChunkResponseModel>("chunks", Chunks);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentKnowledgeBaseRagQueryResponseModelDocument>("document", Document);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentKnowledgeBaseRagQueryResponseModelListing>("listing", Listing);
             writer.WriteStringValue("retrieval_query", RetrievalQuery);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SearchStrategy>("strategy", Strategy);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

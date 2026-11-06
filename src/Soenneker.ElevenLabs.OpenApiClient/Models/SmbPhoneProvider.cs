@@ -3,9 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
-    /// <summary>Telephony provider for this phone number.</summary>
+    /// <summary>How calls to the number reach ElevenLabs: through Twilio or a SIP trunk.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum SmbPhoneAssignmentDbModelProvider
+    public enum SmbPhoneProvider
     {
         [EnumMember(Value = "twilio")]
         #pragma warning disable CS1591
