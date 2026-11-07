@@ -17,6 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("evaluated_agent_id") is null) { _explicitNullValueEvaluatedAgentId = default!; _explicitNullProperties?.Remove("evaluated_agent_id"); }
+            else if (parseNode.GetChildNode("evaluated_agent_id") is { } nullNodeEvaluatedAgentId && nullNodeEvaluatedAgentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EvaluatedAgentId = null;
+            if (parseNode.GetChildNode("evaluated_branch_id") is null) { _explicitNullValueEvaluatedBranchId = default!; _explicitNullProperties?.Remove("evaluated_branch_id"); }
+            else if (parseNode.GetChildNode("evaluated_branch_id") is { } nullNodeEvaluatedBranchId && nullNodeEvaluatedBranchId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EvaluatedBranchId = null;
             if (parseNode.GetChildNode("evaluation_id") is null) { _explicitNullValueEvaluationId = default!; _explicitNullProperties?.Remove("evaluation_id"); }
             else if (parseNode.GetChildNode("evaluation_id") is { } nullNodeEvaluationId && nullNodeEvaluationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EvaluationId = null;
             if (parseNode.GetChildNode("scope") is null) { _explicitNullValueScope = default!; _explicitNullProperties?.Remove("scope"); }
@@ -25,6 +29,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>ID of the agent whose evaluation result to rerun, for conversations that transferred between agents. If omitted, a conversation-scoped evaluation reruns for the agent that started the conversation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EvaluatedAgentId { get => _explicitNullValueEvaluatedAgentId; set { _explicitNullValueEvaluatedAgentId = value; AdditionalData?.Remove("evaluated_agent_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluated_agent_id"); else _explicitNullProperties?.Remove("evaluated_agent_id"); } }
+        private string? _explicitNullValueEvaluatedAgentId = default!;
+#nullable restore
+#else
+        public string EvaluatedAgentId { get => _explicitNullValueEvaluatedAgentId; set { _explicitNullValueEvaluatedAgentId = value; AdditionalData?.Remove("evaluated_agent_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluated_agent_id"); else _explicitNullProperties?.Remove("evaluated_agent_id"); } }
+        private string _explicitNullValueEvaluatedAgentId = default!;
+#endif
+        /// <summary>Branch of `evaluated_agent_id` whose evaluation result to rerun, for conversations that visited the agent on more than one branch. If omitted, the result reruns for every branch of that agent.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EvaluatedBranchId { get => _explicitNullValueEvaluatedBranchId; set { _explicitNullValueEvaluatedBranchId = value; AdditionalData?.Remove("evaluated_branch_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluated_branch_id"); else _explicitNullProperties?.Remove("evaluated_branch_id"); } }
+        private string? _explicitNullValueEvaluatedBranchId = default!;
+#nullable restore
+#else
+        public string EvaluatedBranchId { get => _explicitNullValueEvaluatedBranchId; set { _explicitNullValueEvaluatedBranchId = value; AdditionalData?.Remove("evaluated_branch_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluated_branch_id"); else _explicitNullProperties?.Remove("evaluated_branch_id"); } }
+        private string _explicitNullValueEvaluatedBranchId = default!;
+#endif
         /// <summary>ID of the single evaluation criterion to rerun.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,6 +88,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "evaluated_agent_id", n => { EvaluatedAgentId = n.GetStringValue(); } },
+                { "evaluated_branch_id", n => { EvaluatedBranchId = n.GetStringValue(); } },
                 { "evaluation_id", n => { EvaluationId = n.GetStringValue(); } },
                 { "scope", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueScope = default; _explicitNullProperties?.Remove("scope"); AdditionalData["scope"] = unknown; } else { Scope = parsed; AdditionalData.Remove("scope"); } } },
             };
@@ -75,6 +101,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("evaluated_agent_id", EvaluatedAgentId);
+            writer.WriteStringValue("evaluated_branch_id", EvaluatedBranchId);
             writer.WriteStringValue("evaluation_id", EvaluationId);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope>("scope", Scope);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
