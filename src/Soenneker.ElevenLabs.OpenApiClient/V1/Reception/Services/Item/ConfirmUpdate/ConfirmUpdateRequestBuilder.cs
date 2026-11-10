@@ -97,10 +97,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Reception.Services.Item.ConfirmU
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ConfirmUpdateRequestBuilderPostQueryParameters 
         {
-            #pragma warning disable CS1591
+            /// <summary>Also update the price on the service&apos;s future bookings.</summary>
             [QueryParameter("reprice")]
             public bool? Reprice { get; set; }
-            #pragma warning restore CS1591
         }
     }
 }

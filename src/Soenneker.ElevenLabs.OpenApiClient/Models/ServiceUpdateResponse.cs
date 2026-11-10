@@ -25,10 +25,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The has_affected_events property</summary>
+        /// <summary>True when the update changes the price of upcoming bookings and was not saved; send it again to the confirm-update endpoint to apply it.</summary>
         public bool? HasAffectedEvents { get => _explicitNullValueHasAffectedEvents; set { _explicitNullValueHasAffectedEvents = value; AdditionalData?.Remove("has_affected_events"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_affected_events"); else _explicitNullProperties?.Remove("has_affected_events"); } }
         private bool? _explicitNullValueHasAffectedEvents = default!;
-        /// <summary>Represents a bookable service (e.g., haircut, massage, consultation).</summary>
+        /// <summary>The updated service, or null when the update was held back because it reprices existing bookings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ServiceUpdateResponseService? Service { get => _explicitNullValueService; set { _explicitNullValueService = value; AdditionalData?.Remove("service"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service"); else _explicitNullProperties?.Remove("service"); } }

@@ -29,10 +29,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The created_at_unix property</summary>
+        /// <summary>When the invite was sent, as a Unix timestamp in seconds.</summary>
         public int? CreatedAtUnix { get => _explicitNullValueCreatedAtUnix; set { _explicitNullValueCreatedAtUnix = value; AdditionalData?.Remove("created_at_unix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at_unix"); else _explicitNullProperties?.Remove("created_at_unix"); } }
         private int? _explicitNullValueCreatedAtUnix = default!;
-        /// <summary>The email property</summary>
+        /// <summary>The invited email address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; AdditionalData?.Remove("email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
@@ -42,7 +42,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; AdditionalData?.Remove("email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
         private string _explicitNullValueEmail = default!;
 #endif
-        /// <summary>The inviting_user_email property</summary>
+        /// <summary>Email address of the member who sent the invite, if known.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InvitingUserEmail { get => _explicitNullValueInvitingUserEmail; set { _explicitNullValueInvitingUserEmail = value; AdditionalData?.Remove("inviting_user_email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inviting_user_email"); else _explicitNullProperties?.Remove("inviting_user_email"); } }
@@ -52,7 +52,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string InvitingUserEmail { get => _explicitNullValueInvitingUserEmail; set { _explicitNullValueInvitingUserEmail = value; AdditionalData?.Remove("inviting_user_email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inviting_user_email"); else _explicitNullProperties?.Remove("inviting_user_email"); } }
         private string _explicitNullValueInvitingUserEmail = default!;
 #endif
-        /// <summary>Seat types for workspace members.</summary>
+        /// <summary>The role the invitee joins with.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType? SeatType { get => _explicitNullValueSeatType; set { _explicitNullValueSeatType = value; AdditionalData?.Remove("seat_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("seat_type"); else _explicitNullProperties?.Remove("seat_type"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType? _explicitNullValueSeatType = default!;
         /// <summary>

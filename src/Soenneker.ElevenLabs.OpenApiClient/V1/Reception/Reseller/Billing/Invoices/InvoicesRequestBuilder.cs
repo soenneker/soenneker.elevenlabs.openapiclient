@@ -19,7 +19,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Reception.Reseller.Billing.Invoi
     public partial class InvoicesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.ElevenLabs.OpenApiClient.v1.reception.reseller.billing.invoices.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">ID of the invoice. List them with `GET /v1/reception/reseller/billing/invoices`.</param>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Reception.Reseller.Billing.Invoices.Item.WithInvoiceItemRequestBuilder"/></returns>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Reception.Reseller.Billing.Invoices.Item.WithInvoiceItemRequestBuilder this[string position]
         {

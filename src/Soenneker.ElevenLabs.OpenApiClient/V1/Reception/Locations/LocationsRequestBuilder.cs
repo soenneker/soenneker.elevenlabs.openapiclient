@@ -19,7 +19,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Reception.Locations
     public partial class LocationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.ElevenLabs.OpenApiClient.v1.reception.locations.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">ID of the location. Returned when you create one; list them with `GET /v1/reception/locations`.</param>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Reception.Locations.Item.WithLocationItemRequestBuilder"/></returns>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Reception.Locations.Item.WithLocationItemRequestBuilder this[string position]
         {

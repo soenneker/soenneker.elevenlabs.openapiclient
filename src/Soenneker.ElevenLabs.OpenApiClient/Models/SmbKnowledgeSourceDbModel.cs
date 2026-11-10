@@ -54,7 +54,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The content_preview property</summary>
+        /// <summary>A short plain-text preview of the content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContentPreview { get => _explicitNullValueContentPreview; set { _explicitNullValueContentPreview = value; AdditionalData?.Remove("content_preview"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_preview"); else _explicitNullProperties?.Remove("content_preview"); } }
@@ -64,7 +64,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string ContentPreview { get => _explicitNullValueContentPreview; set { _explicitNullValueContentPreview = value; AdditionalData?.Remove("content_preview"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_preview"); else _explicitNullProperties?.Remove("content_preview"); } }
         private string _explicitNullValueContentPreview = default!;
 #endif
-        /// <summary>The content_type property</summary>
+        /// <summary>The uploaded file&apos;s MIME type; empty for URLs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContentType { get => _explicitNullValueContentType; set { _explicitNullValueContentType = value; AdditionalData?.Remove("content_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_type"); else _explicitNullProperties?.Remove("content_type"); } }
@@ -74,13 +74,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string ContentType { get => _explicitNullValueContentType; set { _explicitNullValueContentType = value; AdditionalData?.Remove("content_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_type"); else _explicitNullProperties?.Remove("content_type"); } }
         private string _explicitNullValueContentType = default!;
 #endif
-        /// <summary>The crawl_entire_site property</summary>
+        /// <summary>Whether the whole site was crawled rather than the single page at source_url.</summary>
         public bool? CrawlEntireSite { get => _explicitNullValueCrawlEntireSite; set { _explicitNullValueCrawlEntireSite = value; AdditionalData?.Remove("crawl_entire_site"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crawl_entire_site"); else _explicitNullProperties?.Remove("crawl_entire_site"); } }
         private bool? _explicitNullValueCrawlEntireSite = default!;
         /// <summary>Unix timestamp (seconds since epoch)</summary>
         public int? CreatedAtUnix { get => _explicitNullValueCreatedAtUnix; set { _explicitNullValueCreatedAtUnix = value; AdditionalData?.Remove("created_at_unix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at_unix"); else _explicitNullProperties?.Remove("created_at_unix"); } }
         private int? _explicitNullValueCreatedAtUnix = default!;
-        /// <summary>The error_message property</summary>
+        /// <summary>Why processing failed, when status is &apos;error&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ErrorMessage { get => _explicitNullValueErrorMessage; set { _explicitNullValueErrorMessage = value; AdditionalData?.Remove("error_message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_message"); else _explicitNullProperties?.Remove("error_message"); } }
@@ -90,13 +90,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string ErrorMessage { get => _explicitNullValueErrorMessage; set { _explicitNullValueErrorMessage = value; AdditionalData?.Remove("error_message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_message"); else _explicitNullProperties?.Remove("error_message"); } }
         private string _explicitNullValueErrorMessage = default!;
 #endif
-        /// <summary>The failure_reason property</summary>
+        /// <summary>Machine-readable cause of the failure, when status is &apos;error&apos;.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.IngestFailure? FailureReason { get => _explicitNullValueFailureReason; set { _explicitNullValueFailureReason = value; AdditionalData?.Remove("failure_reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failure_reason"); else _explicitNullProperties?.Remove("failure_reason"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.IngestFailure? _explicitNullValueFailureReason = default!;
-        /// <summary>The file_size_bytes property</summary>
+        /// <summary>The uploaded file&apos;s size in bytes; 0 for URLs.</summary>
         public int? FileSizeBytes { get => _explicitNullValueFileSizeBytes; set { _explicitNullValueFileSizeBytes = value; AdditionalData?.Remove("file_size_bytes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_size_bytes"); else _explicitNullProperties?.Remove("file_size_bytes"); } }
         private int? _explicitNullValueFileSizeBytes = default!;
-        /// <summary>The id property</summary>
+        /// <summary>The knowledge source&apos;s ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_id"); else _explicitNullProperties?.Remove("_id"); } }
@@ -106,10 +106,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_id"); else _explicitNullProperties?.Remove("_id"); } }
         private string _explicitNullValueId = default!;
 #endif
-        /// <summary>The last_scraped_at_unix property</summary>
+        /// <summary>When the URL was last read, as a Unix timestamp in seconds.</summary>
         public int? LastScrapedAtUnix { get => _explicitNullValueLastScrapedAtUnix; set { _explicitNullValueLastScrapedAtUnix = value; AdditionalData?.Remove("last_scraped_at_unix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_scraped_at_unix"); else _explicitNullProperties?.Remove("last_scraped_at_unix"); } }
         private int? _explicitNullValueLastScrapedAtUnix = default!;
-        /// <summary>The original_filename property</summary>
+        /// <summary>The uploaded file&apos;s name for &apos;file&apos; sources; empty for URLs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OriginalFilename { get => _explicitNullValueOriginalFilename; set { _explicitNullValueOriginalFilename = value; AdditionalData?.Remove("original_filename"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original_filename"); else _explicitNullProperties?.Remove("original_filename"); } }
@@ -119,16 +119,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string OriginalFilename { get => _explicitNullValueOriginalFilename; set { _explicitNullValueOriginalFilename = value; AdditionalData?.Remove("original_filename"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original_filename"); else _explicitNullProperties?.Remove("original_filename"); } }
         private string _explicitNullValueOriginalFilename = default!;
 #endif
-        /// <summary>The processing_started_at_unix property</summary>
+        /// <summary>When processing started, as a Unix timestamp in seconds.</summary>
         public int? ProcessingStartedAtUnix { get => _explicitNullValueProcessingStartedAtUnix; set { _explicitNullValueProcessingStartedAtUnix = value; AdditionalData?.Remove("processing_started_at_unix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processing_started_at_unix"); else _explicitNullProperties?.Remove("processing_started_at_unix"); } }
         private int? _explicitNullValueProcessingStartedAtUnix = default!;
-        /// <summary>The scraped_pages_count property</summary>
+        /// <summary>How many pages were read for &apos;url&apos; sources.</summary>
         public int? ScrapedPagesCount { get => _explicitNullValueScrapedPagesCount; set { _explicitNullValueScrapedPagesCount = value; AdditionalData?.Remove("scraped_pages_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scraped_pages_count"); else _explicitNullProperties?.Remove("scraped_pages_count"); } }
         private int? _explicitNullValueScrapedPagesCount = default!;
-        /// <summary>Type of knowledge source.</summary>
+        /// <summary>Whether the source is an uploaded file or a web page or site.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeSourceType? SourceType { get => _explicitNullValueSourceType; set { _explicitNullValueSourceType = value; AdditionalData?.Remove("source_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_type"); else _explicitNullProperties?.Remove("source_type"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeSourceType? _explicitNullValueSourceType = default!;
-        /// <summary>The source_url property</summary>
+        /// <summary>The page or site URL for &apos;url&apos; sources.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceUrl { get => _explicitNullValueSourceUrl; set { _explicitNullValueSourceUrl = value; AdditionalData?.Remove("source_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_url"); else _explicitNullProperties?.Remove("source_url"); } }
@@ -138,7 +138,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string SourceUrl { get => _explicitNullValueSourceUrl; set { _explicitNullValueSourceUrl = value; AdditionalData?.Remove("source_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_url"); else _explicitNullProperties?.Remove("source_url"); } }
         private string _explicitNullValueSourceUrl = default!;
 #endif
-        /// <summary>Processing status for knowledge sources.- `processing`: the file or site is being read.- `ready`: done; the results are available.- `error`: it failed and can be retried.See `progress` for detail.</summary>
+        /// <summary>Where processing stands: &apos;processing&apos;, &apos;ready&apos; or &apos;error&apos;.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeSourceStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeSourceStatus? _explicitNullValueStatus = default!;
         /// <summary>Unix timestamp (seconds since epoch)</summary>

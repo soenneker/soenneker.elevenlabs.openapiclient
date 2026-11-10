@@ -19,7 +19,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Reception.Assets
     public partial class AssetsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.ElevenLabs.OpenApiClient.v1.reception.assets.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">ID of the asset. Returned when you create one; list them with `GET /v1/reception/assets`.</param>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Reception.Assets.Item.WithAssetItemRequestBuilder"/></returns>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Reception.Assets.Item.WithAssetItemRequestBuilder this[string position]
         {

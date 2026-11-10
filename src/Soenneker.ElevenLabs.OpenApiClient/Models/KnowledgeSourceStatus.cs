@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
-    /// <summary>Processing status for knowledge sources.- `processing`: the file or site is being read.- `ready`: done; the results are available.- `error`: it failed and can be retried.See `progress` for detail.</summary>
+    /// <summary>Where processing stands: &apos;processing&apos;, &apos;ready&apos; or &apos;error&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum KnowledgeSourceStatus
     {

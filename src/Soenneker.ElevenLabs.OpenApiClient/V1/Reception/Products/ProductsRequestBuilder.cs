@@ -19,7 +19,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Reception.Products
     public partial class ProductsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.ElevenLabs.OpenApiClient.v1.reception.products.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">ID of the product. Returned when you create one; list them with `GET /v1/reception/products`.</param>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Reception.Products.Item.WithProductItemRequestBuilder"/></returns>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Reception.Products.Item.WithProductItemRequestBuilder this[string position]
         {
@@ -155,23 +155,19 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Reception.Products
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ProductsRequestBuilderGetQueryParameters 
         {
+            /// <summary>Only products filed under the group with this label.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            #pragma warning disable CS1591
             [QueryParameter("group")]
             public string? Group { get; set; }
-            #pragma warning restore CS1591
 #nullable restore
 #else
-            #pragma warning disable CS1591
             [QueryParameter("group")]
             public string Group { get; set; }
-            #pragma warning restore CS1591
 #endif
-            #pragma warning disable CS1591
+            /// <summary>Only active (`true`) or inactive (`false`) products.</summary>
             [QueryParameter("is_active")]
             public bool? IsActive { get; set; }
-            #pragma warning restore CS1591
         }
     }
 }

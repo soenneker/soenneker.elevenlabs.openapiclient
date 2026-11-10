@@ -19,7 +19,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Files
     public partial class FilesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.ElevenLabs.OpenApiClient.v1.convai.conversations.item.files.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The file ID returned when it was uploaded.</param>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Files.Item.WithFileItemRequestBuilder"/></returns>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Files.Item.WithFileItemRequestBuilder this[string position]
         {

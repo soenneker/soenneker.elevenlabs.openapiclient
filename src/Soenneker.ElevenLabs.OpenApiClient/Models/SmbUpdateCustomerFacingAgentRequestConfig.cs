@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Rules, procedures and transfer rules are changed through their own endpoints, not here.
+    /// Receptionist settings to change; omitted settings keep their value.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SmbUpdateCustomerFacingAgentRequestConfig : IAdditionalDataHolder, IParsable

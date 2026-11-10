@@ -66,7 +66,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Why this location was deactivated. None when active.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbLocationDeactivationReason? DeactivationReason { get => _explicitNullValueDeactivationReason; set { _explicitNullValueDeactivationReason = value; AdditionalData?.Remove("deactivation_reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deactivation_reason"); else _explicitNullProperties?.Remove("deactivation_reason"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbLocationDeactivationReason? _explicitNullValueDeactivationReason = default!;
-        /// <summary>The id property</summary>
+        /// <summary>The location&apos;s ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_id"); else _explicitNullProperties?.Remove("_id"); } }
@@ -76,7 +76,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_id"); else _explicitNullProperties?.Remove("_id"); } }
         private string _explicitNullValueId = default!;
 #endif
-        /// <summary>The is_active property</summary>
+        /// <summary>Whether the location is active. Inactive locations take no bookings.</summary>
         public bool? IsActive { get; private set; }
         /// <summary>Maximum number of appointments that may overlap at this location at a single instant. Only enforced while the booking page setting concurrent_limit_enabled is on.</summary>
         public int? MaxConcurrentAppointments { get => _explicitNullValueMaxConcurrentAppointments; set { _explicitNullValueMaxConcurrentAppointments = value; AdditionalData?.Remove("max_concurrent_appointments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_concurrent_appointments"); else _explicitNullProperties?.Remove("max_concurrent_appointments"); } }
@@ -101,7 +101,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string Notes { get => _explicitNullValueNotes; set { _explicitNullValueNotes = value; AdditionalData?.Remove("notes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notes"); else _explicitNullProperties?.Remove("notes"); } }
         private string _explicitNullValueNotes = default!;
 #endif
-        /// <summary>The operating_hours property</summary>
+        /// <summary>When this location is open.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkingHours? OperatingHours { get => _explicitNullValueOperatingHours; set { _explicitNullValueOperatingHours = value; AdditionalData?.Remove("operating_hours"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operating_hours"); else _explicitNullProperties?.Remove("operating_hours"); } }

@@ -30,15 +30,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Unix timestamp in milliseconds when this was generated</summary>
-        public int? FetchedAtMs { get => _explicitNullValueFetchedAtMs; set { _explicitNullValueFetchedAtMs = value; AdditionalData?.Remove("fetched_at_ms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fetched_at_ms"); else _explicitNullProperties?.Remove("fetched_at_ms"); } }
-        private int? _explicitNullValueFetchedAtMs = default!;
+        public long? FetchedAtMs { get => _explicitNullValueFetchedAtMs; set { _explicitNullValueFetchedAtMs = value; AdditionalData?.Remove("fetched_at_ms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fetched_at_ms"); else _explicitNullProperties?.Remove("fetched_at_ms"); } }
+        private long? _explicitNullValueFetchedAtMs = default!;
         /// <summary>Current hour (0-23)</summary>
         public int? Hour { get => _explicitNullValueHour; set { _explicitNullValueHour = value; AdditionalData?.Remove("hour"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hour"); else _explicitNullProperties?.Remove("hour"); } }
         private int? _explicitNullValueHour = default!;
         /// <summary>Current minute (0-59)</summary>
         public int? Minute { get => _explicitNullValueMinute; set { _explicitNullValueMinute = value; AdditionalData?.Remove("minute"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minute"); else _explicitNullProperties?.Remove("minute"); } }
         private int? _explicitNullValueMinute = default!;
-        /// <summary>Represents a calendar date as individual numeric components.</summary>
+        /// <summary>Current date in the business&apos;s timezone.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.DateModel? Today { get => _explicitNullValueToday; set { _explicitNullValueToday = value; AdditionalData?.Remove("today"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("today"); else _explicitNullProperties?.Remove("today"); } }
@@ -73,7 +73,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "fetched_at_ms", n => { FetchedAtMs = n.GetIntValue(); } },
+                { "fetched_at_ms", n => { FetchedAtMs = n.GetLongValue(); } },
                 { "hour", n => { Hour = n.GetIntValue(); } },
                 { "minute", n => { Minute = n.GetIntValue(); } },
                 { "today", n => { Today = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DateModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DateModel.CreateFromDiscriminatorValue); } },
@@ -86,7 +86,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("fetched_at_ms", FetchedAtMs);
+            writer.WriteLongValue("fetched_at_ms", FetchedAtMs);
             writer.WriteIntValue("hour", Hour);
             writer.WriteIntValue("minute", Minute);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DateModel>("today", Today);

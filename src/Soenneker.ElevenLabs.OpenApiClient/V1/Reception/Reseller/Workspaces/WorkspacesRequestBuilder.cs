@@ -19,7 +19,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Reception.Reseller.Workspaces
     public partial class WorkspacesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.ElevenLabs.OpenApiClient.v1.reception.reseller.workspaces.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">ID of the customer workspace. Returned when you provision one; list them with `GET /v1/reception/reseller/workspaces`.</param>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Reception.Reseller.Workspaces.Item.WithWorkspaceItemRequestBuilder"/></returns>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Reception.Reseller.Workspaces.Item.WithWorkspaceItemRequestBuilder this[string position]
         {

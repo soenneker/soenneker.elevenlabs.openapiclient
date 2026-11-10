@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
-    /// <summary>Answer shape for a per-item intake question.</summary>
+    /// <summary>The answer&apos;s shape: free text, a number, or one of options.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum IntakeQuestionKind
     {

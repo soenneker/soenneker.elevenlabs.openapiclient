@@ -19,7 +19,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Reception.CustomerFacingAgents.I
     public partial class RulesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.ElevenLabs.OpenApiClient.v1.reception.customerFacingAgents.item.rules.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">ID of the rule. Returned when you add one, and listed in the receptionist&apos;s `config.agent_rules`.</param>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Reception.CustomerFacingAgents.Item.Rules.Item.WithRuleItemRequestBuilder"/></returns>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Reception.CustomerFacingAgents.Item.Rules.Item.WithRuleItemRequestBuilder this[string position]
         {

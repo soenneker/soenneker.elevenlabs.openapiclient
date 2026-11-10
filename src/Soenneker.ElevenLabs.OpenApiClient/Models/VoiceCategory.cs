@@ -24,9 +24,5 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         Professional,
         #pragma warning restore CS1591
-        [EnumMember(Value = "famous")]
-        #pragma warning disable CS1591
-        Famous,
-        #pragma warning restore CS1591
     }
 }

@@ -46,10 +46,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The created_at_unix property</summary>
+        /// <summary>When the entry was created, as a Unix timestamp in seconds.</summary>
         public int? CreatedAtUnix { get => _explicitNullValueCreatedAtUnix; set { _explicitNullValueCreatedAtUnix = value; AdditionalData?.Remove("created_at_unix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at_unix"); else _explicitNullProperties?.Remove("created_at_unix"); } }
         private int? _explicitNullValueCreatedAtUnix = default!;
-        /// <summary>Represents a calendar date as individual numeric components.</summary>
+        /// <summary>Last day of the closure or time off, inclusive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.DateModel? EndDate { get => _explicitNullValueEndDate; set { _explicitNullValueEndDate = value; AdditionalData?.Remove("end_date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_date"); else _explicitNullProperties?.Remove("end_date"); } }
@@ -59,10 +59,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.DateModel EndDate { get => _explicitNullValueEndDate; set { _explicitNullValueEndDate = value; AdditionalData?.Remove("end_date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_date"); else _explicitNullProperties?.Remove("end_date"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.DateModel _explicitNullValueEndDate = default!;
 #endif
-        /// <summary>The holiday_type property</summary>
+        /// <summary>&apos;closed&apos; for no availability, or &apos;override&apos; to use override_hours instead of the regular hours.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.HolidayType? HolidayType { get => _explicitNullValueHolidayType; set { _explicitNullValueHolidayType = value; AdditionalData?.Remove("holiday_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("holiday_type"); else _explicitNullProperties?.Remove("holiday_type"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.HolidayType? _explicitNullValueHolidayType = default!;
-        /// <summary>The id property</summary>
+        /// <summary>The closure or time-off entry&apos;s ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
@@ -82,7 +82,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string LocationId { get => _explicitNullValueLocationId; set { _explicitNullValueLocationId = value; AdditionalData?.Remove("location_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location_id"); else _explicitNullProperties?.Remove("location_id"); } }
         private string _explicitNullValueLocationId = default!;
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>Display name of the closure or time off.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
@@ -102,7 +102,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TimeRangeModel> OverrideHours { get => _explicitNullValueOverrideHours; set { _explicitNullValueOverrideHours = value; AdditionalData?.Remove("override_hours"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("override_hours"); else _explicitNullProperties?.Remove("override_hours"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TimeRangeModel> _explicitNullValueOverrideHours = default!;
 #endif
-        /// <summary>The reason property</summary>
+        /// <summary>Optional note on why the closure or time off happens, up to 500 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; AdditionalData?.Remove("reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
@@ -112,7 +112,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; AdditionalData?.Remove("reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
         private string _explicitNullValueReason = default!;
 #endif
-        /// <summary>The resource_id property</summary>
+        /// <summary>The staff member or asset ID; required when time_off_type is &apos;staff&apos; or &apos;asset&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ResourceId { get => _explicitNullValueResourceId; set { _explicitNullValueResourceId = value; AdditionalData?.Remove("resource_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource_id"); else _explicitNullProperties?.Remove("resource_id"); } }
@@ -122,7 +122,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string ResourceId { get => _explicitNullValueResourceId; set { _explicitNullValueResourceId = value; AdditionalData?.Remove("resource_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource_id"); else _explicitNullProperties?.Remove("resource_id"); } }
         private string _explicitNullValueResourceId = default!;
 #endif
-        /// <summary>Represents a calendar date as individual numeric components.</summary>
+        /// <summary>First day of the closure or time off, inclusive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.DateModel? StartDate { get => _explicitNullValueStartDate; set { _explicitNullValueStartDate = value; AdditionalData?.Remove("start_date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_date"); else _explicitNullProperties?.Remove("start_date"); } }
@@ -132,10 +132,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.DateModel StartDate { get => _explicitNullValueStartDate; set { _explicitNullValueStartDate = value; AdditionalData?.Remove("start_date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_date"); else _explicitNullProperties?.Remove("start_date"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.DateModel _explicitNullValueStartDate = default!;
 #endif
-        /// <summary>The time_off_type property</summary>
+        /// <summary>What the entry applies to: a location, a staff member, or an asset.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.TimeOffType? TimeOffType { get => _explicitNullValueTimeOffType; set { _explicitNullValueTimeOffType = value; AdditionalData?.Remove("time_off_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_off_type"); else _explicitNullProperties?.Remove("time_off_type"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.TimeOffType? _explicitNullValueTimeOffType = default!;
-        /// <summary>The updated_at_unix property</summary>
+        /// <summary>When the entry was last updated, as a Unix timestamp in seconds.</summary>
         public int? UpdatedAtUnix { get => _explicitNullValueUpdatedAtUnix; set { _explicitNullValueUpdatedAtUnix = value; AdditionalData?.Remove("updated_at_unix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at_unix"); else _explicitNullProperties?.Remove("updated_at_unix"); } }
         private int? _explicitNullValueUpdatedAtUnix = default!;
         /// <summary>

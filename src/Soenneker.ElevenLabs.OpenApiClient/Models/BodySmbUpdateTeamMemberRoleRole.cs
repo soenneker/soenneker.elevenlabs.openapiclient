@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
+    /// <summary>The member&apos;s new role.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum BodySmbUpdateTeamMemberRoleRole
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "workspace_admin")]
         #pragma warning disable CS1591

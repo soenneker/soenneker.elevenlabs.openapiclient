@@ -23,7 +23,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The role property</summary>
+        /// <summary>The member&apos;s new role.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodySmbUpdateTeamMemberRoleRole? Role { get => _explicitNullValueRole; set { _explicitNullValueRole = value; AdditionalData?.Remove("role"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role"); else _explicitNullProperties?.Remove("role"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodySmbUpdateTeamMemberRoleRole? _explicitNullValueRole = default!;
         /// <summary>

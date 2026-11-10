@@ -17,6 +17,7 @@ using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Llm;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.LlmUsage;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.McpServers;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.OutboundCampaigns;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Realtime;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Secrets;
@@ -117,6 +118,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.McpServers.McpServersRequestBuilder McpServers
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.McpServers.McpServersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The outboundCampaigns property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.OutboundCampaigns.OutboundCampaignsRequestBuilder OutboundCampaigns
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.OutboundCampaigns.OutboundCampaignsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The phoneNumbers property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers.PhoneNumbersRequestBuilder PhoneNumbers

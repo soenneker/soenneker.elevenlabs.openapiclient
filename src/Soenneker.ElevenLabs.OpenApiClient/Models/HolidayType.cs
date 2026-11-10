@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
+    /// <summary>&apos;closed&apos; for no availability, or &apos;override&apos; to use override_hours instead of the regular hours.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum HolidayType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "closed")]
         #pragma warning disable CS1591

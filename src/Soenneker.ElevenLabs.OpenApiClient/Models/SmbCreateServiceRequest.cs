@@ -82,10 +82,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>How far into the future customer-facing channels (public booking page, voice agent) may book this service. Applies to every kind.</summary>
         public int? AdvanceBookingMinutes { get => _explicitNullValueAdvanceBookingMinutes; set { _explicitNullValueAdvanceBookingMinutes = value; AdditionalData?.Remove("advance_booking_minutes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("advance_booking_minutes"); else _explicitNullProperties?.Remove("advance_booking_minutes"); } }
         private int? _explicitNullValueAdvanceBookingMinutes = default!;
-        /// <summary>The any_staff_member property</summary>
+        /// <summary>Whether any staff member can deliver the service. When false, only the staff in `staff_ids` can. Ignored for rentals.</summary>
         public bool? AnyStaffMember { get => _explicitNullValueAnyStaffMember; set { _explicitNullValueAnyStaffMember = value; AdditionalData?.Remove("any_staff_member"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("any_staff_member"); else _explicitNullProperties?.Remove("any_staff_member"); } }
         private bool? _explicitNullValueAnyStaffMember = default!;
-        /// <summary>The asset_ids property</summary>
+        /// <summary>Assets, such as rooms or equipment, this service can be booked on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AssetIds { get => _explicitNullValueAssetIds; set { _explicitNullValueAssetIds = value; AdditionalData?.Remove("asset_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asset_ids"); else _explicitNullProperties?.Remove("asset_ids"); } }
@@ -98,7 +98,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Turnover/cleanup time reserved after each booking. Applies to every service kind; default 0 means no buffer.</summary>
         public int? BufferMinutes { get => _explicitNullValueBufferMinutes; set { _explicitNullValueBufferMinutes = value; AdditionalData?.Remove("buffer_minutes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buffer_minutes"); else _explicitNullProperties?.Remove("buffer_minutes"); } }
         private int? _explicitNullValueBufferMinutes = default!;
-        /// <summary>The capacity property</summary>
+        /// <summary>Not used to limit bookings; set `max_participants` on group services instead.</summary>
         public int? Capacity { get => _explicitNullValueCapacity; set { _explicitNullValueCapacity = value; AdditionalData?.Remove("capacity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("capacity"); else _explicitNullProperties?.Remove("capacity"); } }
         private int? _explicitNullValueCapacity = default!;
         /// <summary>The description property</summary>
@@ -111,7 +111,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string _explicitNullValueDescription = default!;
 #endif
-        /// <summary>The display_on_booking_page property</summary>
+        /// <summary>Whether the service is listed on the public booking page.</summary>
         public bool? DisplayOnBookingPage { get => _explicitNullValueDisplayOnBookingPage; set { _explicitNullValueDisplayOnBookingPage = value; AdditionalData?.Remove("display_on_booking_page"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_on_booking_page"); else _explicitNullProperties?.Remove("display_on_booking_page"); } }
         private bool? _explicitNullValueDisplayOnBookingPage = default!;
         /// <summary>Group memberships for this item. Each entry carries the group label and the item&apos;s 0-based rank within that group.</summary>
@@ -134,7 +134,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbIntakeQuestion> IntakeQuestions { get => _explicitNullValueIntakeQuestions; set { _explicitNullValueIntakeQuestions = value; AdditionalData?.Remove("intake_questions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("intake_questions"); else _explicitNullProperties?.Remove("intake_questions"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbIntakeQuestion> _explicitNullValueIntakeQuestions = default!;
 #endif
-        /// <summary>The is_active property</summary>
+        /// <summary>Whether the service is offered; inactive services can&apos;t be booked.</summary>
         public bool? IsActive { get => _explicitNullValueIsActive; set { _explicitNullValueIsActive = value; AdditionalData?.Remove("is_active"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_active"); else _explicitNullProperties?.Remove("is_active"); } }
         private bool? _explicitNullValueIsActive = default!;
         /// <summary>What a service books.- `classic`: a staff-delivered service (haircut, consultation, massage, ...).- `rental`: an asset reservation (court, room, equipment).- `group`: seats in a multi-participant session (class, workshop, tour).</summary>

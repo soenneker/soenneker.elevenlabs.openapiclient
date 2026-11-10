@@ -38,15 +38,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string DisplayName { get => _explicitNullValueDisplayName; set { _explicitNullValueDisplayName = value; AdditionalData?.Remove("display_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_name"); else _explicitNullProperties?.Remove("display_name"); } }
         private string _explicitNullValueDisplayName = default!;
 #endif
-        /// <summary>A tier&apos;s prices and quotas, in the fields a tier is created with.</summary>
+        /// <summary>A tier&apos;s prices and the limits shown on its tier card.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbTierEconomics? TierEconomics { get => _explicitNullValueTierEconomics; set { _explicitNullValueTierEconomics = value; AdditionalData?.Remove("tier_economics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tier_economics"); else _explicitNullProperties?.Remove("tier_economics"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbTierEconomics? _explicitNullValueTierEconomics = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerTierEconomics? TierEconomics { get => _explicitNullValueTierEconomics; set { _explicitNullValueTierEconomics = value; AdditionalData?.Remove("tier_economics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tier_economics"); else _explicitNullProperties?.Remove("tier_economics"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerTierEconomics? _explicitNullValueTierEconomics = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbTierEconomics TierEconomics { get => _explicitNullValueTierEconomics; set { _explicitNullValueTierEconomics = value; AdditionalData?.Remove("tier_economics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tier_economics"); else _explicitNullProperties?.Remove("tier_economics"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbTierEconomics _explicitNullValueTierEconomics = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerTierEconomics TierEconomics { get => _explicitNullValueTierEconomics; set { _explicitNullValueTierEconomics = value; AdditionalData?.Remove("tier_economics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tier_economics"); else _explicitNullProperties?.Remove("tier_economics"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerTierEconomics _explicitNullValueTierEconomics = default!;
 #endif
         /// <summary>The tier_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -84,7 +84,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "display_name", n => { DisplayName = n.GetStringValue(); } },
-                { "tier_economics", n => { TierEconomics = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbTierEconomics>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbTierEconomics.CreateFromDiscriminatorValue); } },
+                { "tier_economics", n => { TierEconomics = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerTierEconomics>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerTierEconomics.CreateFromDiscriminatorValue); } },
                 { "tier_id", n => { TierId = n.GetStringValue(); } },
             };
         }
@@ -96,7 +96,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("display_name", DisplayName);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbTierEconomics>("tier_economics", TierEconomics);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerTierEconomics>("tier_economics", TierEconomics);
             writer.WriteStringValue("tier_id", TierId);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

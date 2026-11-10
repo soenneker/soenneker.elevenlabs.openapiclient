@@ -67,7 +67,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Why this receptionist was deactivated. None when active.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbCustomerFacingAgentDeactivationReason? DeactivationReason { get => _explicitNullValueDeactivationReason; set { _explicitNullValueDeactivationReason = value; AdditionalData?.Remove("deactivation_reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deactivation_reason"); else _explicitNullProperties?.Remove("deactivation_reason"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbCustomerFacingAgentDeactivationReason? _explicitNullValueDeactivationReason = default!;
-        /// <summary>The is_active property</summary>
+        /// <summary>Whether the receptionist is active. Inactive receptionists take no live calls.</summary>
         public bool? IsActive { get; private set; }
         /// <summary>Whether this receptionist can configure and use transfer rules.</summary>
         public bool? IsTransferAllowed { get => _explicitNullValueIsTransferAllowed; set { _explicitNullValueIsTransferAllowed = value; AdditionalData?.Remove("is_transfer_allowed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_transfer_allowed"); else _explicitNullProperties?.Remove("is_transfer_allowed"); } }

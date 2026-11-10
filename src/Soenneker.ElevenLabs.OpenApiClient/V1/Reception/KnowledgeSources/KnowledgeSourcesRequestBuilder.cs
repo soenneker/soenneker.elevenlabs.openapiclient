@@ -25,7 +25,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Reception.KnowledgeSources
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Reception.KnowledgeSources.Urls.UrlsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.ElevenLabs.OpenApiClient.v1.reception.knowledgeSources.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">ID of the knowledge source. Returned when you add one; list them with `GET /v1/reception/knowledge-sources`.</param>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Reception.KnowledgeSources.Item.WithSourceItemRequestBuilder"/></returns>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Reception.KnowledgeSources.Item.WithSourceItemRequestBuilder this[string position]
         {

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// How the website widget looks. A null label follows the receptionist&apos;s language.
+    /// New website widget appearance.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SmbUpdateCustomerFacingAgentRequestWidget : IAdditionalDataHolder, IParsable
@@ -36,10 +36,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The dismissible property</summary>
+        /// <summary>Whether visitors can close the widget.</summary>
         public bool? Dismissible { get => _explicitNullValueDismissible; set { _explicitNullValueDismissible = value; AdditionalData?.Remove("dismissible"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dismissible"); else _explicitNullProperties?.Remove("dismissible"); } }
         private bool? _explicitNullValueDismissible = default!;
-        /// <summary>The main_label property</summary>
+        /// <summary>Text shown on the widget; null uses the default for the receptionist&apos;s language.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MainLabel { get => _explicitNullValueMainLabel; set { _explicitNullValueMainLabel = value; AdditionalData?.Remove("main_label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("main_label"); else _explicitNullProperties?.Remove("main_label"); } }
@@ -49,7 +49,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string MainLabel { get => _explicitNullValueMainLabel; set { _explicitNullValueMainLabel = value; AdditionalData?.Remove("main_label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("main_label"); else _explicitNullProperties?.Remove("main_label"); } }
         private string _explicitNullValueMainLabel = default!;
 #endif
-        /// <summary>The orb_color_1 property</summary>
+        /// <summary>First color of the widget&apos;s orb gradient, as a hex color.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrbColor1 { get => _explicitNullValueOrbColor1; set { _explicitNullValueOrbColor1 = value; AdditionalData?.Remove("orb_color_1"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orb_color_1"); else _explicitNullProperties?.Remove("orb_color_1"); } }
@@ -59,7 +59,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string OrbColor1 { get => _explicitNullValueOrbColor1; set { _explicitNullValueOrbColor1 = value; AdditionalData?.Remove("orb_color_1"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orb_color_1"); else _explicitNullProperties?.Remove("orb_color_1"); } }
         private string _explicitNullValueOrbColor1 = default!;
 #endif
-        /// <summary>The orb_color_2 property</summary>
+        /// <summary>Second color of the widget&apos;s orb gradient, as a hex color.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrbColor2 { get => _explicitNullValueOrbColor2; set { _explicitNullValueOrbColor2 = value; AdditionalData?.Remove("orb_color_2"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orb_color_2"); else _explicitNullProperties?.Remove("orb_color_2"); } }
@@ -69,10 +69,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string OrbColor2 { get => _explicitNullValueOrbColor2; set { _explicitNullValueOrbColor2 = value; AdditionalData?.Remove("orb_color_2"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orb_color_2"); else _explicitNullProperties?.Remove("orb_color_2"); } }
         private string _explicitNullValueOrbColor2 = default!;
 #endif
-        /// <summary>The placement property</summary>
+        /// <summary>Where on the page the widget sits.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbWidgetAppearancePlacement? Placement { get => _explicitNullValuePlacement; set { _explicitNullValuePlacement = value; AdditionalData?.Remove("placement"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("placement"); else _explicitNullProperties?.Remove("placement"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbWidgetAppearancePlacement? _explicitNullValuePlacement = default!;
-        /// <summary>The start_call property</summary>
+        /// <summary>Text on the button that starts a call; null uses the default for the receptionist&apos;s language.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StartCall { get => _explicitNullValueStartCall; set { _explicitNullValueStartCall = value; AdditionalData?.Remove("start_call"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_call"); else _explicitNullProperties?.Remove("start_call"); } }
@@ -82,7 +82,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string StartCall { get => _explicitNullValueStartCall; set { _explicitNullValueStartCall = value; AdditionalData?.Remove("start_call"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_call"); else _explicitNullProperties?.Remove("start_call"); } }
         private string _explicitNullValueStartCall = default!;
 #endif
-        /// <summary>The variant property</summary>
+        /// <summary>Widget size, from the smallest (&apos;tiny&apos;) to the largest (&apos;full&apos;).</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbWidgetAppearanceVariant? Variant { get => _explicitNullValueVariant; set { _explicitNullValueVariant = value; AdditionalData?.Remove("variant"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variant"); else _explicitNullProperties?.Remove("variant"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbWidgetAppearanceVariant? _explicitNullValueVariant = default!;
         /// <summary>

@@ -17,6 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("execution_mode") is null) { _explicitNullValueExecutionMode = default!; _explicitNullProperties?.Remove("execution_mode"); }
+            else if (parseNode.GetChildNode("execution_mode") is { } nullNodeExecutionMode && nullNodeExecutionMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExecutionMode = null;
+            if (parseNode.GetChildNode("guardrail_details") is null) { _explicitNullValueGuardrailDetails = default!; _explicitNullProperties?.Remove("guardrail_details"); }
+            else if (parseNode.GetChildNode("guardrail_details") is { } nullNodeGuardrailDetails && nullNodeGuardrailDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GuardrailDetails = null;
             if (parseNode.GetChildNode("guardrail_name") is null) { _explicitNullValueGuardrailName = default!; _explicitNullProperties?.Remove("guardrail_name"); }
             else if (parseNode.GetChildNode("guardrail_name") is { } nullNodeGuardrailName && nullNodeGuardrailName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GuardrailName = null;
             if (parseNode.GetChildNode("guardrail_type") is null) { _explicitNullValueGuardrailType = default!; _explicitNullProperties?.Remove("guardrail_type"); }
@@ -25,6 +29,19 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>`blocking` if the agent&apos;s response waited for the guardrail, `streaming` if the guardrail ran while the response was sent.</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailExecutionMode? ExecutionMode { get => _explicitNullValueExecutionMode; set { _explicitNullValueExecutionMode = value; AdditionalData?.Remove("execution_mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execution_mode"); else _explicitNullProperties?.Remove("execution_mode"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailExecutionMode? _explicitNullValueExecutionMode = default!;
+        /// <summary>Why the guardrail triggered: the LLM&apos;s rationale for custom guardrails, or the score and threshold for moderation and content guardrails.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TriggeredGuardrailCommonModelGuardrailDetailsAnyOf1? GuardrailDetails { get => _explicitNullValueGuardrailDetails; set { _explicitNullValueGuardrailDetails = value; AdditionalData?.Remove("guardrail_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guardrail_details"); else _explicitNullProperties?.Remove("guardrail_details"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.TriggeredGuardrailCommonModelGuardrailDetailsAnyOf1? _explicitNullValueGuardrailDetails = default!;
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TriggeredGuardrailCommonModelGuardrailDetailsAnyOf1 GuardrailDetails { get => _explicitNullValueGuardrailDetails; set { _explicitNullValueGuardrailDetails = value; AdditionalData?.Remove("guardrail_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guardrail_details"); else _explicitNullProperties?.Remove("guardrail_details"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.TriggeredGuardrailCommonModelGuardrailDetailsAnyOf1 _explicitNullValueGuardrailDetails = default!;
+#endif
         /// <summary>The guardrail_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,6 +80,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "execution_mode", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailExecutionMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueExecutionMode = default; _explicitNullProperties?.Remove("execution_mode"); AdditionalData["execution_mode"] = unknown; } else { ExecutionMode = parsed; AdditionalData.Remove("execution_mode"); } } },
+                { "guardrail_details", n => { GuardrailDetails = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TriggeredGuardrailCommonModelGuardrailDetailsAnyOf1>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TriggeredGuardrailCommonModelGuardrailDetailsAnyOf1.CreateFromDiscriminatorValue); } },
                 { "guardrail_name", n => { GuardrailName = n.GetStringValue(); } },
                 { "guardrail_type", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueGuardrailType = default; _explicitNullProperties?.Remove("guardrail_type"); AdditionalData["guardrail_type"] = unknown; } else { GuardrailType = parsed; AdditionalData.Remove("guardrail_type"); } } },
             };
@@ -74,6 +93,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailExecutionMode>("execution_mode", ExecutionMode);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TriggeredGuardrailCommonModelGuardrailDetailsAnyOf1>("guardrail_details", GuardrailDetails);
             writer.WriteStringValue("guardrail_name", GuardrailName);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailType>("guardrail_type", GuardrailType);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

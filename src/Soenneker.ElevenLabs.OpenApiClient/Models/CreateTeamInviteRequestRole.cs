@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
+    /// <summary>The role the invitee joins with: &apos;workspace_admin&apos; or &apos;workspace_member&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum CreateTeamInviteRequestRole
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "workspace_admin")]
         #pragma warning disable CS1591

@@ -63,10 +63,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public List<int?> DaysOfWeek { get => _explicitNullValueDaysOfWeek; set { _explicitNullValueDaysOfWeek = value; AdditionalData?.Remove("days_of_week"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("days_of_week"); else _explicitNullProperties?.Remove("days_of_week"); } }
         private List<int?> _explicitNullValueDaysOfWeek = default!;
 #endif
-        /// <summary>The end_date property</summary>
+        /// <summary>Last day the promotion applies, inclusive; on or after `start_date`.</summary>
         public Date? EndDate { get => _explicitNullValueEndDate; set { _explicitNullValueEndDate = value; AdditionalData?.Remove("end_date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_date"); else _explicitNullProperties?.Remove("end_date"); } }
         private Date? _explicitNullValueEndDate = default!;
-        /// <summary>The id property</summary>
+        /// <summary>Stable ID of this promotion.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
@@ -76,7 +76,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
-        /// <summary>The is_active property</summary>
+        /// <summary>Whether the promotion applies; inactive promotions are ignored.</summary>
         public bool? IsActive { get => _explicitNullValueIsActive; set { _explicitNullValueIsActive = value; AdditionalData?.Remove("is_active"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_active"); else _explicitNullProperties?.Remove("is_active"); } }
         private bool? _explicitNullValueIsActive = default!;
         /// <summary>The name property</summary>
@@ -92,7 +92,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The final price when this promotion is applied to a matching line item.</summary>
         public double? PromotionalPrice { get => _explicitNullValuePromotionalPrice; set { _explicitNullValuePromotionalPrice = value; AdditionalData?.Remove("promotional_price"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("promotional_price"); else _explicitNullProperties?.Remove("promotional_price"); } }
         private double? _explicitNullValuePromotionalPrice = default!;
-        /// <summary>The start_date property</summary>
+        /// <summary>First day the promotion applies, inclusive.</summary>
         public Date? StartDate { get => _explicitNullValueStartDate; set { _explicitNullValueStartDate = value; AdditionalData?.Remove("start_date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_date"); else _explicitNullProperties?.Remove("start_date"); } }
         private Date? _explicitNullValueStartDate = default!;
         /// <summary>Whether this promotion targets the service/variant price or add-on prices.</summary>

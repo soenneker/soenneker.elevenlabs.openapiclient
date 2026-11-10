@@ -47,7 +47,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Retired questions are deactivated rather than deleted, so answers already stored against them keep resolving.</summary>
         public bool? IsActive { get => _explicitNullValueIsActive; set { _explicitNullValueIsActive = value; AdditionalData?.Remove("is_active"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_active"); else _explicitNullProperties?.Remove("is_active"); } }
         private bool? _explicitNullValueIsActive = default!;
-        /// <summary>Answer shape for a per-item intake question.</summary>
+        /// <summary>The answer&apos;s shape: free text, a number, or one of options.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.IntakeQuestionKind? Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; AdditionalData?.Remove("kind"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.IntakeQuestionKind? _explicitNullValueKind = default!;
         /// <summary>The label property</summary>

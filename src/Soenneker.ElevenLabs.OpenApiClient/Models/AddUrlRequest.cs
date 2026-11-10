@@ -26,10 +26,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The crawl_entire_site property</summary>
+        /// <summary>Crawl the whole site instead of only the page at url.</summary>
         public bool? CrawlEntireSite { get => _explicitNullValueCrawlEntireSite; set { _explicitNullValueCrawlEntireSite = value; AdditionalData?.Remove("crawl_entire_site"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crawl_entire_site"); else _explicitNullProperties?.Remove("crawl_entire_site"); } }
         private bool? _explicitNullValueCrawlEntireSite = default!;
-        /// <summary>The url property</summary>
+        /// <summary>The HTTPS page or site to read.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }

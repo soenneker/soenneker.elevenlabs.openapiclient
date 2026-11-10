@@ -19,7 +19,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Reception.Services
     public partial class ServicesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.ElevenLabs.OpenApiClient.v1.reception.services.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">ID of the service. Returned when you create one; list them with `GET /v1/reception/services`.</param>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Reception.Services.Item.WithServiceItemRequestBuilder"/></returns>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Reception.Services.Item.WithServiceItemRequestBuilder this[string position]
         {
@@ -155,48 +155,38 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Reception.Services
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ServicesRequestBuilderGetQueryParameters 
         {
+            /// <summary>Only services that book this asset.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            #pragma warning disable CS1591
             [QueryParameter("asset_id")]
             public string? AssetId { get; set; }
-            #pragma warning restore CS1591
 #nullable restore
 #else
-            #pragma warning disable CS1591
             [QueryParameter("asset_id")]
             public string AssetId { get; set; }
-            #pragma warning restore CS1591
 #endif
-            #pragma warning disable CS1591
+            /// <summary>Only active (`true`) or inactive (`false`) services.</summary>
             [QueryParameter("is_active")]
             public bool? IsActive { get; set; }
-            #pragma warning restore CS1591
+            /// <summary>Only services of this kind.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            #pragma warning disable CS1591
             [QueryParameter("kind")]
             public string? Kind { get; set; }
-            #pragma warning restore CS1591
 #nullable restore
 #else
-            #pragma warning disable CS1591
             [QueryParameter("kind")]
             public string Kind { get; set; }
-            #pragma warning restore CS1591
 #endif
+            /// <summary>Only services this staff member performs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            #pragma warning disable CS1591
             [QueryParameter("staff_id")]
             public string? StaffId { get; set; }
-            #pragma warning restore CS1591
 #nullable restore
 #else
-            #pragma warning disable CS1591
             [QueryParameter("staff_id")]
             public string StaffId { get; set; }
-            #pragma warning restore CS1591
 #endif
         }
     }

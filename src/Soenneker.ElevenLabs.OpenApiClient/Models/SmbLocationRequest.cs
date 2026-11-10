@@ -56,7 +56,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string CustomerFacingName { get => _explicitNullValueCustomerFacingName; set { _explicitNullValueCustomerFacingName = value; AdditionalData?.Remove("customer_facing_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_facing_name"); else _explicitNullProperties?.Remove("customer_facing_name"); } }
         private string _explicitNullValueCustomerFacingName = default!;
 #endif
-        /// <summary>The is_active property</summary>
+        /// <summary>Whether the location is active. Inactive locations take no bookings.</summary>
         public bool? IsActive { get => _explicitNullValueIsActive; set { _explicitNullValueIsActive = value; AdditionalData?.Remove("is_active"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_active"); else _explicitNullProperties?.Remove("is_active"); } }
         private bool? _explicitNullValueIsActive = default!;
         /// <summary>Maximum number of appointments that may overlap at this location at a single instant. Only enforced while the booking page setting concurrent_limit_enabled is on.</summary>

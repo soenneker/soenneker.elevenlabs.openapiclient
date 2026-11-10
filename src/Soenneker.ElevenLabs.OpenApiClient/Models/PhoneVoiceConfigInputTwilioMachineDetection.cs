@@ -11,7 +11,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// Configuration for Twilio&apos;s carrier-level answering machine detection (AMD). Omit or set to null to disable it. Ignored for non-Twilio providers and for inbound calls. The resulting verdict is delivered as its own `answering_machine_detection` webhook event, which requires that event to be enabled on the workspace or agent webhook settings; it is not part of the conversation or the post-call webhook. Detection runs asynchronously so it never delays the start of the conversation, and the verdict can arrive at any point during the call -- with `detect_message_end`, even after it has ended. Twilio bills separately for AMD.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class TelephonyCallConfigInputTwilioMachineDetection : IAdditionalDataHolder, IParsable
+    public partial class PhoneVoiceConfigInputTwilioMachineDetection : IAdditionalDataHolder, IParsable
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -40,9 +40,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioMachineDetectionMode? Mode { get => _explicitNullValueMode; set { _explicitNullValueMode = value; AdditionalData?.Remove("mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mode"); else _explicitNullProperties?.Remove("mode"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioMachineDetectionMode? _explicitNullValueMode = default!;
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfigInputTwilioMachineDetection"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneVoiceConfigInputTwilioMachineDetection"/> and sets the default values.
         /// </summary>
-        public TelephonyCallConfigInputTwilioMachineDetection()
+        public PhoneVoiceConfigInputTwilioMachineDetection()
         {
             AdditionalData = new Dictionary<string, object>();
             Mode = global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioMachineDetectionMode.Enable;
@@ -50,14 +50,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfigInputTwilioMachineDetection"/></returns>
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneVoiceConfigInputTwilioMachineDetection"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfigInputTwilioMachineDetection CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneVoiceConfigInputTwilioMachineDetection CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             // Preserve a nullable root response.
             if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
-            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfigInputTwilioMachineDetection(), parseNode);
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneVoiceConfigInputTwilioMachineDetection(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model

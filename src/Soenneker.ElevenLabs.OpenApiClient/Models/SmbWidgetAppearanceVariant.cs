@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
+    /// <summary>Widget size, from the smallest (&apos;tiny&apos;) to the largest (&apos;full&apos;).</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum SmbWidgetAppearanceVariant
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "tiny")]
         #pragma warning disable CS1591

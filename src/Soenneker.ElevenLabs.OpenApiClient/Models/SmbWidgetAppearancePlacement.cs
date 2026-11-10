@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
+    /// <summary>Where on the page the widget sits.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum SmbWidgetAppearancePlacement
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "top-left")]
         #pragma warning disable CS1591

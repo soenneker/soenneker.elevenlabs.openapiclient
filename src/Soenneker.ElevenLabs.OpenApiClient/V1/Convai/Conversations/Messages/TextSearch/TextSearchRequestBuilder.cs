@@ -22,7 +22,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Messages.Te
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TextSearchRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/conversations/messages/text-search?text_query={text_query}{&agent_id*,branch_id*,call_duration_max_secs*,call_duration_min_secs*,call_start_after_unix*,call_start_before_unix*,call_successful*,conversation_initiation_source*,conversation_product_type*,cursor*,data_collection_params*,dynamic_variable_params*,evaluation_params*,exclude_statuses*,has_feedback_comment*,include_invalid_tool_calls*,main_languages*,page_size*,rating_max*,rating_min*,sort_by*,summary_mode*,termination_reasons*,text_only*,tool_names*,tool_names_errored*,tool_names_successful*,topic_ids*,triggered_procedure_ids*,user_id*,version_id*,visited_agent_branch_ids*,visited_agent_ids*}", pathParameters)
+        public TextSearchRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/conversations/messages/text-search?text_query={text_query}{&agent_id*,branch_id*,call_duration_max_secs*,call_duration_min_secs*,call_start_after_unix*,call_start_before_unix*,call_successful*,conversation_initiation_source*,conversation_product_type*,cursor*,data_collection_params*,dynamic_variable_params*,evaluation_params*,exclude_statuses*,has_feedback_comment*,include_invalid_tool_calls*,main_languages*,page_size*,phone_number_ids*,rating_max*,rating_min*,sort_by*,summary_mode*,termination_reasons*,text_only*,tool_ids*,tool_ids_errored*,tool_ids_successful*,tool_names*,tool_names_errored*,tool_names_successful*,topic_ids*,triggered_procedure_ids*,user_id*,version_id*,visited_agent_branch_ids*,visited_agent_ids*,whatsapp_phone_number_ids*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Messages.Te
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TextSearchRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/conversations/messages/text-search?text_query={text_query}{&agent_id*,branch_id*,call_duration_max_secs*,call_duration_min_secs*,call_start_after_unix*,call_start_before_unix*,call_successful*,conversation_initiation_source*,conversation_product_type*,cursor*,data_collection_params*,dynamic_variable_params*,evaluation_params*,exclude_statuses*,has_feedback_comment*,include_invalid_tool_calls*,main_languages*,page_size*,rating_max*,rating_min*,sort_by*,summary_mode*,termination_reasons*,text_only*,tool_names*,tool_names_errored*,tool_names_successful*,topic_ids*,triggered_procedure_ids*,user_id*,version_id*,visited_agent_branch_ids*,visited_agent_ids*}", rawUrl)
+        public TextSearchRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/conversations/messages/text-search?text_query={text_query}{&agent_id*,branch_id*,call_duration_max_secs*,call_duration_min_secs*,call_start_after_unix*,call_start_before_unix*,call_successful*,conversation_initiation_source*,conversation_product_type*,cursor*,data_collection_params*,dynamic_variable_params*,evaluation_params*,exclude_statuses*,has_feedback_comment*,include_invalid_tool_calls*,main_languages*,page_size*,phone_number_ids*,rating_max*,rating_min*,sort_by*,summary_mode*,termination_reasons*,text_only*,tool_ids*,tool_ids_errored*,tool_ids_successful*,tool_names*,tool_names_errored*,tool_names_successful*,topic_ids*,triggered_procedure_ids*,user_id*,version_id*,visited_agent_branch_ids*,visited_agent_ids*,whatsapp_phone_number_ids*}", rawUrl)
         {
         }
         /// <summary>
@@ -226,6 +226,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Messages.Te
             /// <summary>Number of results per page. Max 50.</summary>
             [QueryParameter("page_size")]
             public int? PageSize { get; set; }
+            /// <summary>Filter conversations by agent phone number IDs.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("phone_number_ids")]
+            public string[]? PhoneNumberIds { get; set; }
+#nullable restore
+#else
+            [QueryParameter("phone_number_ids")]
+            public string[] PhoneNumberIds { get; set; }
+#endif
             /// <summary>Maximum overall rating (1-5).</summary>
             [QueryParameter("rating_max")]
             public int? RatingMax { get; set; }
@@ -261,6 +271,36 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Messages.Te
 #else
             [QueryParameter("text_query")]
             public string TextQuery { get; set; }
+#endif
+            /// <summary>Filter conversations by IDs of tools used during the call. Use &apos;__system_&lt;tool_name&gt;&apos; for system tools. Unlike tool_names, distinguishes between tools that share a name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("tool_ids")]
+            public string[]? ToolIds { get; set; }
+#nullable restore
+#else
+            [QueryParameter("tool_ids")]
+            public string[] ToolIds { get; set; }
+#endif
+            /// <summary>Filter conversations by IDs of tools that had errored calls.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("tool_ids_errored")]
+            public string[]? ToolIdsErrored { get; set; }
+#nullable restore
+#else
+            [QueryParameter("tool_ids_errored")]
+            public string[] ToolIdsErrored { get; set; }
+#endif
+            /// <summary>Filter conversations by IDs of tools that had successful calls.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("tool_ids_successful")]
+            public string[]? ToolIdsSuccessful { get; set; }
+#nullable restore
+#else
+            [QueryParameter("tool_ids_successful")]
+            public string[] ToolIdsSuccessful { get; set; }
 #endif
             /// <summary>Filter conversations by tool names used during the call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -351,6 +391,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Messages.Te
 #else
             [QueryParameter("visited_agent_ids")]
             public string[] VisitedAgentIds { get; set; }
+#endif
+            /// <summary>Filter conversations by agent WhatsApp number IDs.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("whatsapp_phone_number_ids")]
+            public string[]? WhatsappPhoneNumberIds { get; set; }
+#nullable restore
+#else
+            [QueryParameter("whatsapp_phone_number_ids")]
+            public string[] WhatsappPhoneNumberIds { get; set; }
 #endif
         }
     }

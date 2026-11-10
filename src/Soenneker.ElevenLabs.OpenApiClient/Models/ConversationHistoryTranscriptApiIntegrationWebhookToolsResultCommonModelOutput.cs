@@ -39,6 +39,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if (parseNode.GetChildNode("result_value") is { } nullNodeResultValue && nullNodeResultValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResultValue = null;
             if (parseNode.GetChildNode("tool_has_been_called") is null) { _explicitNullValueToolHasBeenCalled = default!; _explicitNullProperties?.Remove("tool_has_been_called"); }
             else if (parseNode.GetChildNode("tool_has_been_called") is { } nullNodeToolHasBeenCalled && nullNodeToolHasBeenCalled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolHasBeenCalled = null;
+            if (parseNode.GetChildNode("tool_id") is null) { _explicitNullValueToolId = default!; _explicitNullProperties?.Remove("tool_id"); }
+            else if (parseNode.GetChildNode("tool_id") is { } nullNodeToolId && nullNodeToolId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolId = null;
             if (parseNode.GetChildNode("tool_latency_secs") is null) { _explicitNullValueToolLatencySecs = default!; _explicitNullProperties?.Remove("tool_latency_secs"); }
             else if (parseNode.GetChildNode("tool_latency_secs") is { } nullNodeToolLatencySecs && nullNodeToolLatencySecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolLatencySecs = null;
             if (parseNode.GetChildNode("tool_name") is null) { _explicitNullValueToolName = default!; _explicitNullProperties?.Remove("tool_name"); }
@@ -138,6 +140,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The tool_has_been_called property</summary>
         public bool? ToolHasBeenCalled { get => _explicitNullValueToolHasBeenCalled; set { _explicitNullValueToolHasBeenCalled = value; AdditionalData?.Remove("tool_has_been_called"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_has_been_called"); else _explicitNullProperties?.Remove("tool_has_been_called"); } }
         private bool? _explicitNullValueToolHasBeenCalled = default!;
+        /// <summary>ID of the tool that produced this result: a workspace tool ID, &apos;mcp:&lt;server_id&gt;:&lt;tool_name&gt;&apos; for MCP tools, or &apos;__system_&lt;tool_name&gt;&apos; for system tools. Not set for conversations recorded before tool IDs were tracked.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ToolId { get => _explicitNullValueToolId; set { _explicitNullValueToolId = value; AdditionalData?.Remove("tool_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_id"); else _explicitNullProperties?.Remove("tool_id"); } }
+        private string? _explicitNullValueToolId = default!;
+#nullable restore
+#else
+        public string ToolId { get => _explicitNullValueToolId; set { _explicitNullValueToolId = value; AdditionalData?.Remove("tool_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_id"); else _explicitNullProperties?.Remove("tool_id"); } }
+        private string _explicitNullValueToolId = default!;
+#endif
         /// <summary>The tool_latency_secs property</summary>
         public double? ToolLatencySecs { get => _explicitNullValueToolLatencySecs; set { _explicitNullValueToolLatencySecs = value; AdditionalData?.Remove("tool_latency_secs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_latency_secs"); else _explicitNullProperties?.Remove("tool_latency_secs"); } }
         private double? _explicitNullValueToolLatencySecs = default!;
@@ -192,6 +204,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "request_id", n => { RequestId = n.GetStringValue(); } },
                 { "result_value", n => { ResultValue = n.GetStringValue(); } },
                 { "tool_has_been_called", n => { ToolHasBeenCalled = n.GetBoolValue(); } },
+                { "tool_id", n => { ToolId = n.GetStringValue(); } },
                 { "tool_latency_secs", n => { ToolLatencySecs = n.GetDoubleValue(); } },
                 { "tool_name", n => { ToolName = n.GetStringValue(); } },
                 { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptApiIntegrationWebhookToolsResultCommonModelOutputType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
@@ -215,6 +228,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("request_id", RequestId);
             writer.WriteStringValue("result_value", ResultValue);
             writer.WriteBoolValue("tool_has_been_called", ToolHasBeenCalled);
+            writer.WriteStringValue("tool_id", ToolId);
             writer.WriteDoubleValue("tool_latency_secs", ToolLatencySecs);
             writer.WriteStringValue("tool_name", ToolName);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptApiIntegrationWebhookToolsResultCommonModelOutputType>("type", Type);

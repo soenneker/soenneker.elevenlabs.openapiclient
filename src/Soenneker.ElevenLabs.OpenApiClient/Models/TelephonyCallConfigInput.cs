@@ -36,12 +36,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Configuration for Twilio&apos;s carrier-level answering machine detection (AMD). Omit or set to null to disable it. Ignored for non-Twilio providers and for inbound calls. The resulting verdict is delivered as its own `answering_machine_detection` webhook event, which requires that event to be enabled on the workspace or agent webhook settings; it is not part of the conversation or the post-call webhook. Detection runs asynchronously so it never delays the start of the conversation, and the verdict can arrive at any point during the call -- with `detect_message_end`, even after it has ended. Twilio bills separately for AMD.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfigInputTwilioMachineDetection? TwilioMachineDetection { get => _explicitNullValueTwilioMachineDetection; set { _explicitNullValueTwilioMachineDetection = value; AdditionalData?.Remove("twilio_machine_detection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("twilio_machine_detection"); else _explicitNullProperties?.Remove("twilio_machine_detection"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfigInputTwilioMachineDetection? _explicitNullValueTwilioMachineDetection = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneVoiceConfigInputTwilioMachineDetection? TwilioMachineDetection { get => _explicitNullValueTwilioMachineDetection; set { _explicitNullValueTwilioMachineDetection = value; AdditionalData?.Remove("twilio_machine_detection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("twilio_machine_detection"); else _explicitNullProperties?.Remove("twilio_machine_detection"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneVoiceConfigInputTwilioMachineDetection? _explicitNullValueTwilioMachineDetection = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfigInputTwilioMachineDetection TwilioMachineDetection { get => _explicitNullValueTwilioMachineDetection; set { _explicitNullValueTwilioMachineDetection = value; AdditionalData?.Remove("twilio_machine_detection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("twilio_machine_detection"); else _explicitNullProperties?.Remove("twilio_machine_detection"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfigInputTwilioMachineDetection _explicitNullValueTwilioMachineDetection = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneVoiceConfigInputTwilioMachineDetection TwilioMachineDetection { get => _explicitNullValueTwilioMachineDetection; set { _explicitNullValueTwilioMachineDetection = value; AdditionalData?.Remove("twilio_machine_detection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("twilio_machine_detection"); else _explicitNullProperties?.Remove("twilio_machine_detection"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneVoiceConfigInputTwilioMachineDetection _explicitNullValueTwilioMachineDetection = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfigInput"/> and sets the default values.
@@ -72,7 +72,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "ringing_timeout_secs", n => { RingingTimeoutSecs = n.GetIntValue(); } },
                 { "twilio_call_recording_enabled", n => { TwilioCallRecordingEnabled = n.GetBoolValue(); } },
-                { "twilio_machine_detection", n => { TwilioMachineDetection = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfigInputTwilioMachineDetection>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfigInputTwilioMachineDetection.CreateFromDiscriminatorValue); } },
+                { "twilio_machine_detection", n => { TwilioMachineDetection = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneVoiceConfigInputTwilioMachineDetection>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneVoiceConfigInputTwilioMachineDetection.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -84,7 +84,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("ringing_timeout_secs", RingingTimeoutSecs);
             writer.WriteBoolValue("twilio_call_recording_enabled", TwilioCallRecordingEnabled);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfigInputTwilioMachineDetection>("twilio_machine_detection", TwilioMachineDetection);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneVoiceConfigInputTwilioMachineDetection>("twilio_machine_detection", TwilioMachineDetection);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
