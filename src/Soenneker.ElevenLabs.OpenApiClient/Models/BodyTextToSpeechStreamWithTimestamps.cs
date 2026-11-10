@@ -50,6 +50,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>This parameter controls language text normalization. This helps with proper pronunciation of text in some supported languages. WARNING: This parameter can heavily increase the latency of the request. Currently only supported for Japanese.</summary>
+        [Obsolete("")]
         public bool? ApplyLanguageTextNormalization { get => _explicitNullValueApplyLanguageTextNormalization; set { _explicitNullValueApplyLanguageTextNormalization = value; AdditionalData?.Remove("apply_language_text_normalization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apply_language_text_normalization"); else _explicitNullProperties?.Remove("apply_language_text_normalization"); } }
         private bool? _explicitNullValueApplyLanguageTextNormalization = default!;
         /// <summary>This parameter controls text normalization with three modes: &apos;auto&apos;, &apos;on&apos;, and &apos;off&apos;. When set to &apos;auto&apos;, the system will automatically decide whether to apply text normalization (e.g., spelling out numbers). With &apos;on&apos;, text normalization will always be applied, while with &apos;off&apos;, it will be skipped.</summary>

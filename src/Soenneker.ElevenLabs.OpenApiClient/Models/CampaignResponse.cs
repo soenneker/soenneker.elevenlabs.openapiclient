@@ -39,8 +39,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if (parseNode.GetChildNode("environment") is { } nullNodeEnvironment && nullNodeEnvironment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Environment = null;
             if (parseNode.GetChildNode("mode") is null) { _explicitNullValueMode = default!; _explicitNullProperties?.Remove("mode"); }
             else if (parseNode.GetChildNode("mode") is { } nullNodeMode && nullNodeMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mode = null;
-            if (parseNode.GetChildNode("outcome") is null) { _explicitNullValueOutcome = default!; _explicitNullProperties?.Remove("outcome"); }
-            else if (parseNode.GetChildNode("outcome") is { } nullNodeOutcome && nullNodeOutcome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Outcome = null;
             if (parseNode.GetChildNode("policy") is null) { _explicitNullValuePolicy = default!; _explicitNullProperties?.Remove("policy"); }
             else if (parseNode.GetChildNode("policy") is { } nullNodePolicy && nullNodePolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Policy = null;
             if (parseNode.GetChildNode("scheduled_time_unix") is null) { _explicitNullValueScheduledTimeUnix = default!; _explicitNullProperties?.Remove("scheduled_time_unix"); }
@@ -148,16 +146,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The mode property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundMode? Mode { get => _explicitNullValueMode; set { _explicitNullValueMode = value; AdditionalData?.Remove("mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mode"); else _explicitNullProperties?.Remove("mode"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundMode? _explicitNullValueMode = default!;
-        /// <summary>The result that counts as success for the campaign&apos;s calls.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CampaignResponseOutcomeAnyOf1? Outcome { get => _explicitNullValueOutcome; set { _explicitNullValueOutcome = value; AdditionalData?.Remove("outcome"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outcome"); else _explicitNullProperties?.Remove("outcome"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CampaignResponseOutcomeAnyOf1? _explicitNullValueOutcome = default!;
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CampaignResponseOutcomeAnyOf1 Outcome { get => _explicitNullValueOutcome; set { _explicitNullValueOutcome = value; AdditionalData?.Remove("outcome"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outcome"); else _explicitNullProperties?.Remove("outcome"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CampaignResponseOutcomeAnyOf1 _explicitNullValueOutcome = default!;
-#endif
         /// <summary>The policy the campaign took when it was created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -222,7 +210,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "created_at_unix", n => { CreatedAtUnix = n.GetIntValue(); } },
                 { "environment", n => { Environment = n.GetStringValue(); } },
                 { "mode", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMode = default; _explicitNullProperties?.Remove("mode"); AdditionalData["mode"] = unknown; } else { Mode = parsed; AdditionalData.Remove("mode"); } } },
-                { "outcome", n => { Outcome = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CampaignResponseOutcomeAnyOf1>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CampaignResponseOutcomeAnyOf1.CreateFromDiscriminatorValue); } },
                 { "policy", n => { Policy = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CampaignPolicySnapshot>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CampaignPolicySnapshot.CreateFromDiscriminatorValue); } },
                 { "scheduled_time_unix", n => { ScheduledTimeUnix = n.GetIntValue(); } },
                 { "source", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CampaignSource>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSource = default; _explicitNullProperties?.Remove("source"); AdditionalData["source"] = unknown; } else { Source = parsed; AdditionalData.Remove("source"); } } },
@@ -250,7 +237,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("created_at_unix", CreatedAtUnix);
             writer.WriteStringValue("environment", Environment);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundMode>("mode", Mode);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CampaignResponseOutcomeAnyOf1>("outcome", Outcome);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CampaignPolicySnapshot>("policy", Policy);
             writer.WriteIntValue("scheduled_time_unix", ScheduledTimeUnix);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CampaignSource>("source", Source);

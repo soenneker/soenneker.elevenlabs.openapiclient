@@ -104,7 +104,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The number of clones on the voice.</summary>
         public int? ClonedByCount { get => _explicitNullValueClonedByCount; set { _explicitNullValueClonedByCount = value; AdditionalData?.Remove("cloned_by_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloned_by_count"); else _explicitNullProperties?.Remove("cloned_by_count"); } }
         private int? _explicitNullValueClonedByCount = default!;
-        /// <summary>The date of the voice sharing in Unix time.</summary>
+        /// <summary>The Unix time, in seconds, at which the voice was shared.</summary>
         public int? DateUnix { get => _explicitNullValueDateUnix; set { _explicitNullValueDateUnix = value; AdditionalData?.Remove("date_unix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date_unix"); else _explicitNullProperties?.Remove("date_unix"); } }
         private int? _explicitNullValueDateUnix = default!;
         /// <summary>The description of the voice.</summary>
@@ -117,7 +117,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string _explicitNullValueDescription = default!;
 #endif
-        /// <summary>The date of the voice sharing in Unix time.</summary>
+        /// <summary>The Unix time, in seconds, at which users who added the voice from the Voice Library lose access to it.</summary>
         public int? DisableAtUnix { get => _explicitNullValueDisableAtUnix; set { _explicitNullValueDisableAtUnix = value; AdditionalData?.Remove("disable_at_unix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disable_at_unix"); else _explicitNullProperties?.Remove("disable_at_unix"); } }
         private int? _explicitNullValueDisableAtUnix = default!;
         /// <summary>Whether the voice is enabled in the library.</summary>

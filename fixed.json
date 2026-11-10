@@ -31707,77 +31707,6 @@
         "x-fern-sdk-method-name": "delete"
       }
     },
-    "/v1/convai/outbound-campaigns/campaigns/{campaignId}/outcome": {
-      "put": {
-        "tags": [
-          "Agents Platform"
-        ],
-        "summary": "Set An Outbound Campaign Outcome",
-        "description": "Set or clear the result that counts as success for an outbound campaign\u0027s calls.",
-        "operationId": "SetCampaignOutcome",
-        "parameters": [
-          {
-            "name": "campaignId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "title": "Campaign Id",
-              "type": "string"
-            }
-          },
-          {
-            "name": "xi-api-key",
-            "in": "header",
-            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
-            "schema": {
-              "title": "Xi-Api-Key",
-              "type": [
-                "null",
-                "string"
-              ],
-              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website."
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/SetCampaignOutcomeRequest"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CampaignResponse"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HttpValidationError"
-                }
-              }
-            }
-          }
-        },
-        "x-fern-sdk-group-name": [
-          "conversational_ai",
-          "outbound_campaigns"
-        ],
-        "x-fern-sdk-method-name": "set_outcome"
-      }
-    },
     "/v1/convai/outbound-campaigns/campaigns/{campaignId}/pause": {
       "post": {
         "tags": [
@@ -55440,7 +55369,8 @@
           "model_id": {
             "examples": [
               "scribe_v2",
-              "scribe_v2_medical"
+              "scribe_v2_medical",
+              "scribe_v3"
             ],
             "title": "Model Id",
             "type": "string",
@@ -55462,6 +55392,20 @@
               "string"
             ],
             "description": "An ISO-639-1 or ISO-639-3 language_code corresponding to the language of the audio file. Can sometimes improve transcription performance if known beforehand. Defaults to null, in this case the language is predicted automatically."
+          },
+          "secondary_language_codes": {
+            "title": "Secondary Language Codes",
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "type": "string"
+            },
+            "description": "Additional ISO-639-1 or ISO-639-3 language codes that may be present in the audio, alongside language_code. Improves transcription accuracy for multilingual audio. Supported by scribe_v3."
+          },
+          "numbers_format": {
+            "$ref": "#/components/schemas/BodySpeechToTextV1SpeechToTextPostNumbersFormat"
           },
           "transcript_edit": {
             "title": "Transcript Edit",
@@ -55601,7 +55545,7 @@
           "no_verbatim": {
             "title": "No Verbatim",
             "type": "boolean",
-            "description": "If true, the transcription will not have any filler words, false starts and non-speech sounds.",
+            "description": "If true, the transcription will not have any filler words, false starts and non-speech sounds. Supported by scribe_v2, scribe_v2_medical and scribe_v3.",
             "default": false
           },
           "use_speaker_library": {
@@ -57830,7 +57774,8 @@
             "title": "Apply Language Text Normalization",
             "type": "boolean",
             "description": "This parameter controls language text normalization. This helps with proper pronunciation of text in some supported languages. WARNING: This parameter can heavily increase the latency of the request. Currently only supported for Japanese.",
-            "default": false
+            "default": false,
+            "deprecated": true
           },
           "audio_effects": {
             "$ref": "#/components/schemas/BodyTextToDialogueFullWithTimestampsAudioEffects"
@@ -57972,7 +57917,8 @@
             "title": "Apply Language Text Normalization",
             "type": "boolean",
             "description": "This parameter controls language text normalization. This helps with proper pronunciation of text in some supported languages. WARNING: This parameter can heavily increase the latency of the request. Currently only supported for Japanese.",
-            "default": false
+            "default": false,
+            "deprecated": true
           },
           "audio_effects": {
             "$ref": "#/components/schemas/BodyTextToDialogueFullWithTimestampsAudioEffects"
@@ -58123,7 +58069,8 @@
             "title": "Apply Language Text Normalization",
             "type": "boolean",
             "description": "This parameter controls language text normalization. This helps with proper pronunciation of text in some supported languages. WARNING: This parameter can heavily increase the latency of the request. Currently only supported for Japanese.",
-            "default": false
+            "default": false,
+            "deprecated": true
           },
           "audio_effects": {
             "$ref": "#/components/schemas/BodyTextToDialogueFullWithTimestampsAudioEffects"
@@ -58274,7 +58221,8 @@
             "title": "Apply Language Text Normalization",
             "type": "boolean",
             "description": "This parameter controls language text normalization. This helps with proper pronunciation of text in some supported languages. WARNING: This parameter can heavily increase the latency of the request. Currently only supported for Japanese.",
-            "default": false
+            "default": false,
+            "deprecated": true
           },
           "audio_effects": {
             "$ref": "#/components/schemas/BodyTextToDialogueFullWithTimestampsAudioEffects"
@@ -58951,7 +58899,6 @@
           "policy",
           "variant",
           "source",
-          "outcome",
           "created_at_unix",
           "scheduled_time_unix",
           "updated_at_unix",
@@ -58994,9 +58941,6 @@
           },
           "source": {
             "$ref": "#/components/schemas/CampaignResponseSource"
-          },
-          "outcome": {
-            "$ref": "#/components/schemas/CampaignResponseOutcome"
           },
           "created_at_unix": {
             "title": "Created At Unix",
@@ -68819,6 +68763,12 @@
             "title": "Has Open Invoices",
             "type": "boolean",
             "description": "Whether the user has open invoices."
+          },
+          "cancels_immediately": {
+            "title": "Cancels Immediately",
+            "type": "boolean",
+            "description": "Whether cancelling the subscription now ends it immediately, because an unpaid invoice is being collected, rather than at the end of the billing period.",
+            "default": false
           },
           "pending_change": {
             "$ref": "#/components/schemas/ExtendedSubscriptionResponseModelPendingChange"
@@ -89426,15 +89376,6 @@
           }
         }
       },
-      "SetCampaignOutcomeRequest": {
-        "title": "SetCampaignOutcomeRequest",
-        "type": "object",
-        "properties": {
-          "outcome": {
-            "$ref": "#/components/schemas/SetCampaignOutcomeRequestOutcome"
-          }
-        }
-      },
       "SetConversationGroupRequestModel": {
         "title": "SetConversationGroupRequestModel",
         "required": [
@@ -91137,9 +91078,6 @@
               "string"
             ],
             "description": "Makes the request safe to retry: a repeat with the same key returns the campaign it created."
-          },
-          "outcome": {
-            "$ref": "#/components/schemas/SubmitCampaignRequestOutcome"
           },
           "policy": {
             "$ref": "#/components/schemas/SubmitCampaignRequestPolicy"
@@ -108857,18 +108795,6 @@
         ],
         "description": "Whether the campaign was created in the app or through the API."
       },
-      "CampaignResponseOutcome": {
-        "title": "Outcome",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/CampaignResponseOutcomeAnyOf1"
-          },
-          {
-            "type": "null"
-          }
-        ],
-        "description": "The result that counts as success for the campaign\u0027s calls."
-      },
       "CampaignSummaryCountsDelivery": {
         "title": "RecipientDeliveryCounts",
         "type": [
@@ -112840,19 +112766,6 @@
           }
         ],
         "description": "Reasoning effort for the receptionist\u0027s model, up to \u0060medium\u0060 and only among the efforts the model supports. Null uses the model\u0027s default."
-      },
-      "DataCollectionOutcomeEqualsItem": {
-        "anyOf": [
-          {
-            "type": "string"
-          },
-          {
-            "type": "number"
-          },
-          {
-            "type": "boolean"
-          }
-        ]
       },
       "DataCollectionResultCommonModelJsonSchema": {
         "title": "LiteralJsonSchemaProperty",
@@ -121826,18 +121739,6 @@
           "description": "The updated service, or null when the update was held back because it reprices existing bookings."
         }
       },
-      "SetCampaignOutcomeRequestOutcome": {
-        "title": "Outcome",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/SetCampaignOutcomeRequestOutcomeAnyOf1"
-          },
-          {
-            "type": "null"
-          }
-        ],
-        "description": "Omit or send \u0060null\u0060 to clear the outcome."
-      },
       "SongSectionSourceFrom": {
         "title": "SectionSource",
         "required": [
@@ -122137,18 +122038,6 @@
           ],
           "description": "Dynamic variables and overrides for this recipient\u0027s calls."
         }
-      },
-      "SubmitCampaignRequestOutcome": {
-        "title": "Outcome",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/SubmitCampaignRequestOutcomeAnyOf1"
-          },
-          {
-            "type": "null"
-          }
-        ],
-        "description": "The result that counts as success for the campaign\u0027s calls."
       },
       "SubmitCampaignRequestPolicy": {
         "title": "PolicyConfig",
@@ -124929,7 +124818,7 @@
           "date_unix": {
             "title": "Date Unix",
             "type": "integer",
-            "description": "The date of the voice sharing in Unix time."
+            "description": "The Unix time, in seconds, at which the voice was shared."
           },
           "whitelisted_emails": {
             "title": "Whitelisted Emails",
@@ -124991,7 +124880,7 @@
               "null",
               "integer"
             ],
-            "description": "The date of the voice sharing in Unix time."
+            "description": "The Unix time, in seconds, at which users who added the voice from the Voice Library lose access to it."
           },
           "voice_mixing_allowed": {
             "title": "Voice Mixing Allowed",
@@ -132755,6 +132644,38 @@
             }
           ]
         }
+      },
+      "BodySpeechToTextV1SpeechToTextPostNumbersFormat": {
+        "title": "Numbers Format",
+        "description": "How numbers are formatted in the transcript: \u0027digits\u0027 (e.g. \u002742\u0027) or \u0027words\u0027 (e.g. \u0027forty-two\u0027). Supported by scribe_v3.",
+        "anyOf": [
+          {
+            "title": "Numbers Format",
+            "enum": [
+              "digits",
+              "words"
+            ],
+            "type": "string",
+            "description": "How numbers are formatted in the transcript: \u0027digits\u0027 (e.g. \u002742\u0027) or \u0027words\u0027 (e.g. \u0027forty-two\u0027). Supported by scribe_v3.",
+            "x-ms-enum": {
+              "name": "BodySpeechToTextV1SpeechToTextPostNumbersFormat",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "digits",
+                  "name": "Digits"
+                },
+                {
+                  "value": "words",
+                  "name": "Words"
+                }
+              ]
+            }
+          },
+          {
+            "type": "null"
+          }
+        ]
       },
       "BodySpeechToTextV1SpeechToTextPostTimestampsGranularity": {
         "title": "Timestamps Granularity",
@@ -148825,55 +148746,6 @@
           }
         ]
       },
-      "CampaignResponseOutcomeAnyOf1": {
-        "x-client-original-discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "data_collection": "#/components/schemas/DataCollectionOutcome",
-            "evaluation_criteria": "#/components/schemas/EvaluationCriterionOutcome"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "evaluation_criteria": "#/components/schemas/CampaignResponseOutcomeAnyOf1OneOf1Variant",
-            "data_collection": "#/components/schemas/CampaignResponseOutcomeAnyOf1OneOf2Variant"
-          }
-        },
-        "x-client-original-tagged-union": {
-          "oneOf": [
-            {
-              "$ref": "#/components/schemas/CampaignResponseOutcomeAnyOf1OneOf1"
-            },
-            {
-              "$ref": "#/components/schemas/CampaignResponseOutcomeAnyOf1OneOf2"
-            }
-          ],
-          "x-client-original-discriminator": {
-            "propertyName": "type",
-            "mapping": {
-              "data_collection": "#/components/schemas/DataCollectionOutcome",
-              "evaluation_criteria": "#/components/schemas/EvaluationCriterionOutcome"
-            }
-          },
-          "discriminator": {
-            "propertyName": "type",
-            "mapping": {
-              "evaluation_criteria": "#/components/schemas/CampaignResponseOutcomeAnyOf1OneOf1",
-              "data_collection": "#/components/schemas/CampaignResponseOutcomeAnyOf1OneOf2"
-            }
-          }
-        },
-        "type": "object",
-        "properties": {
-          "type": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "type"
-        ]
-      },
       "ConversationHistoryMetadataCommonModelPhoneCallAnyOf1": {
         "x-client-original-discriminator": {
           "propertyName": "type",
@@ -150123,55 +149995,6 @@
           "type"
         ]
       },
-      "SetCampaignOutcomeRequestOutcomeAnyOf1": {
-        "x-client-original-discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "data_collection": "#/components/schemas/DataCollectionOutcome",
-            "evaluation_criteria": "#/components/schemas/EvaluationCriterionOutcome"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "evaluation_criteria": "#/components/schemas/SetCampaignOutcomeRequestOutcomeAnyOf1OneOf1Variant",
-            "data_collection": "#/components/schemas/SetCampaignOutcomeRequestOutcomeAnyOf1OneOf2Variant"
-          }
-        },
-        "x-client-original-tagged-union": {
-          "oneOf": [
-            {
-              "$ref": "#/components/schemas/SetCampaignOutcomeRequestOutcomeAnyOf1OneOf1"
-            },
-            {
-              "$ref": "#/components/schemas/SetCampaignOutcomeRequestOutcomeAnyOf1OneOf2"
-            }
-          ],
-          "x-client-original-discriminator": {
-            "propertyName": "type",
-            "mapping": {
-              "data_collection": "#/components/schemas/DataCollectionOutcome",
-              "evaluation_criteria": "#/components/schemas/EvaluationCriterionOutcome"
-            }
-          },
-          "discriminator": {
-            "propertyName": "type",
-            "mapping": {
-              "evaluation_criteria": "#/components/schemas/SetCampaignOutcomeRequestOutcomeAnyOf1OneOf1",
-              "data_collection": "#/components/schemas/SetCampaignOutcomeRequestOutcomeAnyOf1OneOf2"
-            }
-          }
-        },
-        "type": "object",
-        "properties": {
-          "type": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "type"
-        ]
-      },
       "SpeechToTextChunkResponseModelEditedTranscriptAnyOf1": {
         "x-client-original-discriminator": {
           "propertyName": "kind",
@@ -150219,55 +150042,6 @@
         },
         "required": [
           "kind"
-        ]
-      },
-      "SubmitCampaignRequestOutcomeAnyOf1": {
-        "x-client-original-discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "data_collection": "#/components/schemas/DataCollectionOutcome",
-            "evaluation_criteria": "#/components/schemas/EvaluationCriterionOutcome"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "evaluation_criteria": "#/components/schemas/SubmitCampaignRequestOutcomeAnyOf1OneOf1Variant",
-            "data_collection": "#/components/schemas/SubmitCampaignRequestOutcomeAnyOf1OneOf2Variant"
-          }
-        },
-        "x-client-original-tagged-union": {
-          "oneOf": [
-            {
-              "$ref": "#/components/schemas/SubmitCampaignRequestOutcomeAnyOf1OneOf1"
-            },
-            {
-              "$ref": "#/components/schemas/SubmitCampaignRequestOutcomeAnyOf1OneOf2"
-            }
-          ],
-          "x-client-original-discriminator": {
-            "propertyName": "type",
-            "mapping": {
-              "data_collection": "#/components/schemas/DataCollectionOutcome",
-              "evaluation_criteria": "#/components/schemas/EvaluationCriterionOutcome"
-            }
-          },
-          "discriminator": {
-            "propertyName": "type",
-            "mapping": {
-              "evaluation_criteria": "#/components/schemas/SubmitCampaignRequestOutcomeAnyOf1OneOf1",
-              "data_collection": "#/components/schemas/SubmitCampaignRequestOutcomeAnyOf1OneOf2"
-            }
-          }
-        },
-        "type": "object",
-        "properties": {
-          "type": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "type"
         ]
       },
       "ToolExecutionResponseModelToolCallDetailsAnyOf1": {
@@ -176338,97 +176112,6 @@
           }
         ]
       },
-      "CampaignResponseOutcomeAnyOf1OneOf1Variant": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/CampaignResponseOutcomeAnyOf1"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "type": {
-                "title": "Type",
-                "enum": [
-                  "evaluation_criteria"
-                ],
-                "type": "string",
-                "x-client-original-const": "evaluation_criteria",
-                "x-ms-enum": {
-                  "name": "Type",
-                  "modelAsString": false,
-                  "values": [
-                    {
-                      "value": "evaluation_criteria",
-                      "name": "EvaluationCriteria"
-                    }
-                  ]
-                }
-              },
-              "criteria_id": {
-                "title": "Criteria Id",
-                "minLength": 1,
-                "type": "string",
-                "description": "The agent\u0027s evaluation criterion a successful call meets."
-              }
-            },
-            "required": [
-              "criteria_id",
-              "type"
-            ]
-          }
-        ]
-      },
-      "CampaignResponseOutcomeAnyOf1OneOf2Variant": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/CampaignResponseOutcomeAnyOf1"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "type": {
-                "title": "Type",
-                "enum": [
-                  "data_collection"
-                ],
-                "type": "string",
-                "x-client-original-const": "data_collection",
-                "x-ms-enum": {
-                  "name": "Type",
-                  "modelAsString": false,
-                  "values": [
-                    {
-                      "value": "data_collection",
-                      "name": "DataCollection"
-                    }
-                  ]
-                }
-              },
-              "data_collection_id": {
-                "title": "Data Collection Id",
-                "minLength": 1,
-                "type": "string",
-                "description": "The agent\u0027s data collection item a successful call sets."
-              },
-              "equals": {
-                "title": "Equals",
-                "maxItems": 10,
-                "minItems": 1,
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/DataCollectionOutcomeEqualsItem"
-                },
-                "description": "Values that count as success, all of the item\u0027s type."
-              }
-            },
-            "required": [
-              "data_collection_id",
-              "equals",
-              "type"
-            ]
-          }
-        ]
-      },
       "ConversationHistoryMetadataCommonModelPhoneCallAnyOf1ConversationHistoryTwilioPhoneCallModel": {
         "allOf": [
           {
@@ -179590,97 +179273,6 @@
           }
         ]
       },
-      "SetCampaignOutcomeRequestOutcomeAnyOf1OneOf1Variant": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/SetCampaignOutcomeRequestOutcomeAnyOf1"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "type": {
-                "title": "Type",
-                "enum": [
-                  "evaluation_criteria"
-                ],
-                "type": "string",
-                "x-client-original-const": "evaluation_criteria",
-                "x-ms-enum": {
-                  "name": "Type",
-                  "modelAsString": false,
-                  "values": [
-                    {
-                      "value": "evaluation_criteria",
-                      "name": "EvaluationCriteria"
-                    }
-                  ]
-                }
-              },
-              "criteria_id": {
-                "title": "Criteria Id",
-                "minLength": 1,
-                "type": "string",
-                "description": "The agent\u0027s evaluation criterion a successful call meets."
-              }
-            },
-            "required": [
-              "criteria_id",
-              "type"
-            ]
-          }
-        ]
-      },
-      "SetCampaignOutcomeRequestOutcomeAnyOf1OneOf2Variant": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/SetCampaignOutcomeRequestOutcomeAnyOf1"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "type": {
-                "title": "Type",
-                "enum": [
-                  "data_collection"
-                ],
-                "type": "string",
-                "x-client-original-const": "data_collection",
-                "x-ms-enum": {
-                  "name": "Type",
-                  "modelAsString": false,
-                  "values": [
-                    {
-                      "value": "data_collection",
-                      "name": "DataCollection"
-                    }
-                  ]
-                }
-              },
-              "data_collection_id": {
-                "title": "Data Collection Id",
-                "minLength": 1,
-                "type": "string",
-                "description": "The agent\u0027s data collection item a successful call sets."
-              },
-              "equals": {
-                "title": "Equals",
-                "maxItems": 10,
-                "minItems": 1,
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/DataCollectionOutcomeEqualsItem"
-                },
-                "description": "Values that count as success, all of the item\u0027s type."
-              }
-            },
-            "required": [
-              "data_collection_id",
-              "equals",
-              "type"
-            ]
-          }
-        ]
-      },
       "SpeechToTextChunkResponseModelEditedTranscriptAnyOf1EditedTranscript": {
         "allOf": [
           {
@@ -179741,97 +179333,6 @@
               }
             },
             "description": "An error returned in place of an edited transcript when the edit could not be produced."
-          }
-        ]
-      },
-      "SubmitCampaignRequestOutcomeAnyOf1OneOf1Variant": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/SubmitCampaignRequestOutcomeAnyOf1"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "type": {
-                "title": "Type",
-                "enum": [
-                  "evaluation_criteria"
-                ],
-                "type": "string",
-                "x-client-original-const": "evaluation_criteria",
-                "x-ms-enum": {
-                  "name": "Type",
-                  "modelAsString": false,
-                  "values": [
-                    {
-                      "value": "evaluation_criteria",
-                      "name": "EvaluationCriteria"
-                    }
-                  ]
-                }
-              },
-              "criteria_id": {
-                "title": "Criteria Id",
-                "minLength": 1,
-                "type": "string",
-                "description": "The agent\u0027s evaluation criterion a successful call meets."
-              }
-            },
-            "required": [
-              "criteria_id",
-              "type"
-            ]
-          }
-        ]
-      },
-      "SubmitCampaignRequestOutcomeAnyOf1OneOf2Variant": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/SubmitCampaignRequestOutcomeAnyOf1"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "type": {
-                "title": "Type",
-                "enum": [
-                  "data_collection"
-                ],
-                "type": "string",
-                "x-client-original-const": "data_collection",
-                "x-ms-enum": {
-                  "name": "Type",
-                  "modelAsString": false,
-                  "values": [
-                    {
-                      "value": "data_collection",
-                      "name": "DataCollection"
-                    }
-                  ]
-                }
-              },
-              "data_collection_id": {
-                "title": "Data Collection Id",
-                "minLength": 1,
-                "type": "string",
-                "description": "The agent\u0027s data collection item a successful call sets."
-              },
-              "equals": {
-                "title": "Equals",
-                "maxItems": 10,
-                "minItems": 1,
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/DataCollectionOutcomeEqualsItem"
-                },
-                "description": "Values that count as success, all of the item\u0027s type."
-              }
-            },
-            "required": [
-              "data_collection_id",
-              "equals",
-              "type"
-            ]
           }
         ]
       },
@@ -186818,35 +186319,6 @@
         }
       }
     },
-    "DataCollectionOutcome": {
-      "title": "DataCollectionOutcome",
-      "required": [
-        "data_collection_id",
-        "equals"
-      ],
-      "type": "object",
-      "properties": {
-        "type": {
-          "$ref": "#/components/schemas/DataCollectionOutcomeType"
-        },
-        "data_collection_id": {
-          "title": "Data Collection Id",
-          "minLength": 1,
-          "type": "string",
-          "description": "The agent\u0027s data collection item a successful call sets."
-        },
-        "equals": {
-          "title": "Equals",
-          "maxItems": 10,
-          "minItems": 1,
-          "type": "array",
-          "items": {
-            "$ref": "#/components/schemas/DataCollectionOutcomeEqualsItem"
-          },
-          "description": "Values that count as success, all of the item\u0027s type."
-        }
-      }
-    },
     "DeleteAgentProcedureParams": {
       "title": "DeleteAgentProcedureParams",
       "type": "object",
@@ -188437,24 +187909,6 @@
       ],
       "type": "integer",
       "description": "OCSF Activity IDs for Entity Management [3004] events.\n\nSpec: https://schema.ocsf.io/1.6.0/classes/entity_management"
-    },
-    "EvaluationCriterionOutcome": {
-      "title": "EvaluationCriterionOutcome",
-      "required": [
-        "criteria_id"
-      ],
-      "type": "object",
-      "properties": {
-        "type": {
-          "$ref": "#/components/schemas/EvaluationCriteriaType"
-        },
-        "criteria_id": {
-          "title": "Criteria Id",
-          "minLength": 1,
-          "type": "string",
-          "description": "The agent\u0027s evaluation criterion a successful call meets."
-        }
-      }
     },
     "ExactParameterEvaluationStrategy": {
       "title": "ExactParameterEvaluationStrategy",
@@ -201754,7 +201208,7 @@
         "date_unix": {
           "title": "Date Unix",
           "type": "integer",
-          "description": "The date of the voice sharing in Unix time."
+          "description": "The Unix time, in seconds, at which the voice was shared."
         },
         "whitelisted_emails": {
           "title": "Whitelisted Emails",
@@ -201816,7 +201270,7 @@
             "null",
             "integer"
           ],
-          "description": "The date of the voice sharing in Unix time."
+          "description": "The Unix time, in seconds, at which users who added the voice from the Voice Library lose access to it."
         },
         "voice_mixing_allowed": {
           "title": "Voice Mixing Allowed",
@@ -219459,24 +218913,6 @@
         ]
       }
     },
-    "DataCollectionOutcomeType": {
-      "title": "Type",
-      "enum": [
-        "data_collection"
-      ],
-      "type": "string",
-      "x-client-original-const": "data_collection",
-      "x-ms-enum": {
-        "name": "DataCollectionOutcomeType",
-        "modelAsString": false,
-        "values": [
-          {
-            "value": "data_collection",
-            "name": "DataCollection"
-          }
-        ]
-      }
-    },
     "DeleteAgentProcedureSmbToolType": {
       "title": "Smb Tool Type",
       "enum": [
@@ -219978,24 +219414,6 @@
           {
             "value": "end_procedure_success",
             "name": "EndProcedureSuccess"
-          }
-        ]
-      }
-    },
-    "EvaluationCriteriaType": {
-      "title": "Type",
-      "enum": [
-        "evaluation_criteria"
-      ],
-      "type": "string",
-      "x-client-original-const": "evaluation_criteria",
-      "x-ms-enum": {
-        "name": "EvaluationCriteriaType",
-        "modelAsString": false,
-        "values": [
-          {
-            "value": "evaluation_criteria",
-            "name": "EvaluationCriteria"
           }
         ]
       }
@@ -240995,83 +240413,6 @@
         "conversation_initiation_source"
       ]
     },
-    "CampaignResponseOutcomeAnyOf1OneOf1": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "title": "Type",
-          "enum": [
-            "evaluation_criteria"
-          ],
-          "type": "string",
-          "x-client-original-const": "evaluation_criteria",
-          "x-ms-enum": {
-            "name": "Type",
-            "modelAsString": false,
-            "values": [
-              {
-                "value": "evaluation_criteria",
-                "name": "EvaluationCriteria"
-              }
-            ]
-          }
-        },
-        "criteria_id": {
-          "title": "Criteria Id",
-          "minLength": 1,
-          "type": "string",
-          "description": "The agent\u0027s evaluation criterion a successful call meets."
-        }
-      },
-      "required": [
-        "criteria_id",
-        "type"
-      ]
-    },
-    "CampaignResponseOutcomeAnyOf1OneOf2": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "title": "Type",
-          "enum": [
-            "data_collection"
-          ],
-          "type": "string",
-          "x-client-original-const": "data_collection",
-          "x-ms-enum": {
-            "name": "Type",
-            "modelAsString": false,
-            "values": [
-              {
-                "value": "data_collection",
-                "name": "DataCollection"
-              }
-            ]
-          }
-        },
-        "data_collection_id": {
-          "title": "Data Collection Id",
-          "minLength": 1,
-          "type": "string",
-          "description": "The agent\u0027s data collection item a successful call sets."
-        },
-        "equals": {
-          "title": "Equals",
-          "maxItems": 10,
-          "minItems": 1,
-          "type": "array",
-          "items": {
-            "$ref": "#/components/schemas/DataCollectionOutcomeEqualsItem"
-          },
-          "description": "Values that count as success, all of the item\u0027s type."
-        }
-      },
-      "required": [
-        "data_collection_id",
-        "equals",
-        "type"
-      ]
-    },
     "ConversationHistoryMetadataCommonModelPhoneCallAnyOf1OneOf2": {
       "type": "object",
       "properties": {
@@ -243698,160 +243039,6 @@
       },
       "required": [
         "source_type"
-      ]
-    },
-    "SetCampaignOutcomeRequestOutcomeAnyOf1OneOf1": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "title": "Type",
-          "enum": [
-            "evaluation_criteria"
-          ],
-          "type": "string",
-          "x-client-original-const": "evaluation_criteria",
-          "x-ms-enum": {
-            "name": "Type",
-            "modelAsString": false,
-            "values": [
-              {
-                "value": "evaluation_criteria",
-                "name": "EvaluationCriteria"
-              }
-            ]
-          }
-        },
-        "criteria_id": {
-          "title": "Criteria Id",
-          "minLength": 1,
-          "type": "string",
-          "description": "The agent\u0027s evaluation criterion a successful call meets."
-        }
-      },
-      "required": [
-        "criteria_id",
-        "type"
-      ]
-    },
-    "SetCampaignOutcomeRequestOutcomeAnyOf1OneOf2": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "title": "Type",
-          "enum": [
-            "data_collection"
-          ],
-          "type": "string",
-          "x-client-original-const": "data_collection",
-          "x-ms-enum": {
-            "name": "Type",
-            "modelAsString": false,
-            "values": [
-              {
-                "value": "data_collection",
-                "name": "DataCollection"
-              }
-            ]
-          }
-        },
-        "data_collection_id": {
-          "title": "Data Collection Id",
-          "minLength": 1,
-          "type": "string",
-          "description": "The agent\u0027s data collection item a successful call sets."
-        },
-        "equals": {
-          "title": "Equals",
-          "maxItems": 10,
-          "minItems": 1,
-          "type": "array",
-          "items": {
-            "$ref": "#/components/schemas/DataCollectionOutcomeEqualsItem"
-          },
-          "description": "Values that count as success, all of the item\u0027s type."
-        }
-      },
-      "required": [
-        "data_collection_id",
-        "equals",
-        "type"
-      ]
-    },
-    "SubmitCampaignRequestOutcomeAnyOf1OneOf1": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "title": "Type",
-          "enum": [
-            "evaluation_criteria"
-          ],
-          "type": "string",
-          "x-client-original-const": "evaluation_criteria",
-          "x-ms-enum": {
-            "name": "Type",
-            "modelAsString": false,
-            "values": [
-              {
-                "value": "evaluation_criteria",
-                "name": "EvaluationCriteria"
-              }
-            ]
-          }
-        },
-        "criteria_id": {
-          "title": "Criteria Id",
-          "minLength": 1,
-          "type": "string",
-          "description": "The agent\u0027s evaluation criterion a successful call meets."
-        }
-      },
-      "required": [
-        "criteria_id",
-        "type"
-      ]
-    },
-    "SubmitCampaignRequestOutcomeAnyOf1OneOf2": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "title": "Type",
-          "enum": [
-            "data_collection"
-          ],
-          "type": "string",
-          "x-client-original-const": "data_collection",
-          "x-ms-enum": {
-            "name": "Type",
-            "modelAsString": false,
-            "values": [
-              {
-                "value": "data_collection",
-                "name": "DataCollection"
-              }
-            ]
-          }
-        },
-        "data_collection_id": {
-          "title": "Data Collection Id",
-          "minLength": 1,
-          "type": "string",
-          "description": "The agent\u0027s data collection item a successful call sets."
-        },
-        "equals": {
-          "title": "Equals",
-          "maxItems": 10,
-          "minItems": 1,
-          "type": "array",
-          "items": {
-            "$ref": "#/components/schemas/DataCollectionOutcomeEqualsItem"
-          },
-          "description": "Values that count as success, all of the item\u0027s type."
-        }
-      },
-      "required": [
-        "data_collection_id",
-        "equals",
-        "type"
       ]
     },
     "UnitTestRunResponseModelTestInfoAnyOf1OneOf1": {

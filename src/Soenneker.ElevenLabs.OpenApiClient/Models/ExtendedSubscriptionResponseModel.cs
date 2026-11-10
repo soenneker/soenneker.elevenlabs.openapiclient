@@ -21,6 +21,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if (parseNode.GetChildNode("allowed_to_extend_character_limit") is { } nullNodeAllowedToExtendCharacterLimit && nullNodeAllowedToExtendCharacterLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedToExtendCharacterLimit = null;
             if (parseNode.GetChildNode("billing_period") is null) { _explicitNullValueBillingPeriod = default!; _explicitNullProperties?.Remove("billing_period"); }
             else if (parseNode.GetChildNode("billing_period") is { } nullNodeBillingPeriod && nullNodeBillingPeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingPeriod = null;
+            if (parseNode.GetChildNode("cancels_immediately") is null) { _explicitNullValueCancelsImmediately = default!; _explicitNullProperties?.Remove("cancels_immediately"); }
+            else if (parseNode.GetChildNode("cancels_immediately") is { } nullNodeCancelsImmediately && nullNodeCancelsImmediately.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CancelsImmediately = null;
             if (parseNode.GetChildNode("can_extend_character_limit") is null) { _explicitNullValueCanExtendCharacterLimit = default!; _explicitNullProperties?.Remove("can_extend_character_limit"); }
             else if (parseNode.GetChildNode("can_extend_character_limit") is { } nullNodeCanExtendCharacterLimit && nullNodeCanExtendCharacterLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanExtendCharacterLimit = null;
             if (parseNode.GetChildNode("can_extend_voice_limit") is null) { _explicitNullValueCanExtendVoiceLimit = default!; _explicitNullProperties?.Remove("can_extend_voice_limit"); }
@@ -87,6 +89,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The billing period of the user&apos;s subscription.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.BillingPeriod? BillingPeriod { get => _explicitNullValueBillingPeriod; set { _explicitNullValueBillingPeriod = value; AdditionalData?.Remove("billing_period"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_period"); else _explicitNullProperties?.Remove("billing_period"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.BillingPeriod? _explicitNullValueBillingPeriod = default!;
+        /// <summary>Whether cancelling the subscription now ends it immediately, because an unpaid invoice is being collected, rather than at the end of the billing period.</summary>
+        public bool? CancelsImmediately { get => _explicitNullValueCancelsImmediately; set { _explicitNullValueCancelsImmediately = value; AdditionalData?.Remove("cancels_immediately"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cancels_immediately"); else _explicitNullProperties?.Remove("cancels_immediately"); } }
+        private bool? _explicitNullValueCancelsImmediately = default!;
         /// <summary>Whether the workspace is entitled to enter overages (usage-based billing).</summary>
         public bool? CanExtendCharacterLimit { get => _explicitNullValueCanExtendCharacterLimit; set { _explicitNullValueCanExtendCharacterLimit = value; AdditionalData?.Remove("can_extend_character_limit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("can_extend_character_limit"); else _explicitNullProperties?.Remove("can_extend_character_limit"); } }
         private bool? _explicitNullValueCanExtendCharacterLimit = default!;
@@ -219,6 +224,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public ExtendedSubscriptionResponseModel()
         {
             AdditionalData = new Dictionary<string, object>();
+            CancelsImmediately = false;
             HasUsedCreatorCouponOnAccount = false;
             HasUsedStarterCouponOnAccount = false;
             IsEligibleForStarterPromo = false;
@@ -247,6 +253,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "can_extend_voice_limit", n => { CanExtendVoiceLimit = n.GetBoolValue(); } },
                 { "can_use_instant_voice_cloning", n => { CanUseInstantVoiceCloning = n.GetBoolValue(); } },
                 { "can_use_professional_voice_cloning", n => { CanUseProfessionalVoiceCloning = n.GetBoolValue(); } },
+                { "cancels_immediately", n => { CancelsImmediately = n.GetBoolValue(); } },
                 { "character_count", n => { CharacterCount = n.GetIntValue(); } },
                 { "character_limit", n => { CharacterLimit = n.GetIntValue(); } },
                 { "character_refresh_period", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterRefreshPeriod>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCharacterRefreshPeriod = default; _explicitNullProperties?.Remove("character_refresh_period"); AdditionalData["character_refresh_period"] = unknown; } else { CharacterRefreshPeriod = parsed; AdditionalData.Remove("character_refresh_period"); } } },
@@ -282,6 +289,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("allowed_to_extend_character_limit", AllowedToExtendCharacterLimit);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BillingPeriod>("billing_period", BillingPeriod);
+            writer.WriteBoolValue("cancels_immediately", CancelsImmediately);
             writer.WriteBoolValue("can_extend_character_limit", CanExtendCharacterLimit);
             writer.WriteBoolValue("can_extend_voice_limit", CanExtendVoiceLimit);
             writer.WriteBoolValue("can_use_instant_voice_cloning", CanUseInstantVoiceCloning);

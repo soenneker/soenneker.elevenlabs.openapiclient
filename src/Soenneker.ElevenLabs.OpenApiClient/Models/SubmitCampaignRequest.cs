@@ -29,8 +29,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if (parseNode.GetChildNode("environment") is { } nullNodeEnvironment && nullNodeEnvironment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Environment = null;
             if (parseNode.GetChildNode("idempotency_key") is null) { _explicitNullValueIdempotencyKey = default!; _explicitNullProperties?.Remove("idempotency_key"); }
             else if (parseNode.GetChildNode("idempotency_key") is { } nullNodeIdempotencyKey && nullNodeIdempotencyKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdempotencyKey = null;
-            if (parseNode.GetChildNode("outcome") is null) { _explicitNullValueOutcome = default!; _explicitNullProperties?.Remove("outcome"); }
-            else if (parseNode.GetChildNode("outcome") is { } nullNodeOutcome && nullNodeOutcome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Outcome = null;
             if (parseNode.GetChildNode("policy") is null) { _explicitNullValuePolicy = default!; _explicitNullProperties?.Remove("policy"); }
             else if (parseNode.GetChildNode("policy") is { } nullNodePolicy && nullNodePolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Policy = null;
             if (parseNode.GetChildNode("recipients") is null) { _explicitNullValueRecipients = default!; _explicitNullProperties?.Remove("recipients"); }
@@ -107,16 +105,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string IdempotencyKey { get => _explicitNullValueIdempotencyKey; set { _explicitNullValueIdempotencyKey = value; AdditionalData?.Remove("idempotency_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("idempotency_key"); else _explicitNullProperties?.Remove("idempotency_key"); } }
         private string _explicitNullValueIdempotencyKey = default!;
 #endif
-        /// <summary>The result that counts as success for the campaign&apos;s calls.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SubmitCampaignRequestOutcomeAnyOf1? Outcome { get => _explicitNullValueOutcome; set { _explicitNullValueOutcome = value; AdditionalData?.Remove("outcome"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outcome"); else _explicitNullProperties?.Remove("outcome"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SubmitCampaignRequestOutcomeAnyOf1? _explicitNullValueOutcome = default!;
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SubmitCampaignRequestOutcomeAnyOf1 Outcome { get => _explicitNullValueOutcome; set { _explicitNullValueOutcome = value; AdditionalData?.Remove("outcome"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outcome"); else _explicitNullProperties?.Remove("outcome"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SubmitCampaignRequestOutcomeAnyOf1 _explicitNullValueOutcome = default!;
-#endif
         /// <summary>Policy to snapshot onto the campaign. When set, it wins over the workspace default and any per-agent override; when omitted, the workspace configuration must exist and supplies the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -187,7 +175,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "channel_config", n => { ChannelConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SubmitCampaignRequestChannelConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SubmitCampaignRequestChannelConfig.CreateFromDiscriminatorValue); } },
                 { "environment", n => { Environment = n.GetStringValue(); } },
                 { "idempotency_key", n => { IdempotencyKey = n.GetStringValue(); } },
-                { "outcome", n => { Outcome = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SubmitCampaignRequestOutcomeAnyOf1>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SubmitCampaignRequestOutcomeAnyOf1.CreateFromDiscriminatorValue); } },
                 { "policy", n => { Policy = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SubmitCampaignRequestPolicy>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SubmitCampaignRequestPolicy.CreateFromDiscriminatorValue); } },
                 { "recipients", n => { Recipients = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.SubmitCampaignRecipient>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SubmitCampaignRecipient.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "scheduled_time_unix", n => { ScheduledTimeUnix = n.GetIntValue(); } },
@@ -209,7 +196,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SubmitCampaignRequestChannelConfig>("channel_config", ChannelConfig);
             writer.WriteStringValue("environment", Environment);
             writer.WriteStringValue("idempotency_key", IdempotencyKey);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SubmitCampaignRequestOutcomeAnyOf1>("outcome", Outcome);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SubmitCampaignRequestPolicy>("policy", Policy);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.SubmitCampaignRecipient>("recipients", Recipients);
             writer.WriteIntValue("scheduled_time_unix", ScheduledTimeUnix);

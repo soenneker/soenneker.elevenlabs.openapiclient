@@ -8,7 +8,6 @@ using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.OutboundCampaigns.Campaigns.I
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.OutboundCampaigns.Campaigns.Item.Export;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.OutboundCampaigns.Campaigns.Item.FollowUpRequests;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.OutboundCampaigns.Campaigns.Item.Leads;
-using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.OutboundCampaigns.Campaigns.Item.Outcome;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.OutboundCampaigns.Campaigns.Item.Pause;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.OutboundCampaigns.Campaigns.Item.Progress;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.OutboundCampaigns.Campaigns.Item.Resume;
@@ -45,11 +44,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.OutboundCampaigns.Campaig
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.OutboundCampaigns.Campaigns.Item.Leads.LeadsRequestBuilder Leads
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.OutboundCampaigns.Campaigns.Item.Leads.LeadsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The outcome property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.OutboundCampaigns.Campaigns.Item.Outcome.OutcomeRequestBuilder Outcome
-        {
-            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.OutboundCampaigns.Campaigns.Item.Outcome.OutcomeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The pause property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.OutboundCampaigns.Campaigns.Item.Pause.PauseRequestBuilder Pause
