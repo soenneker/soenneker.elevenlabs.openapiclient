@@ -32,7 +32,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Which of the ticket&apos;s texts matched.</summary>
+        /// <summary>Which of the agent issue&apos;s texts matched.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketSearchMatchField? Field { get => _explicitNullValueField; set { _explicitNullValueField = value; AdditionalData?.Remove("field"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketSearchMatchField? _explicitNullValueField = default!;
         /// <summary>Exclusive end offset of the match in `snippet`.</summary>

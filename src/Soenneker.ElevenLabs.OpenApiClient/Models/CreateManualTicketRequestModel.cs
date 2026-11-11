@@ -27,10 +27,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>How urgently the ticket needs attention.</summary>
+        /// <summary>How urgently the agent issue needs attention.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketPriority? Priority { get => _explicitNullValuePriority; set { _explicitNullValuePriority = value; AdditionalData?.Remove("priority"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priority"); else _explicitNullProperties?.Remove("priority"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketPriority? _explicitNullValuePriority = default!;
-        /// <summary>What the ticket is about, e.g. a follow-up task for the agent.</summary>
+        /// <summary>What the agent issue is about, e.g. a follow-up task for the agent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? QaComment { get => _explicitNullValueQaComment; set { _explicitNullValueQaComment = value; AdditionalData?.Remove("qa_comment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qa_comment"); else _explicitNullProperties?.Remove("qa_comment"); } }
@@ -40,7 +40,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string QaComment { get => _explicitNullValueQaComment; set { _explicitNullValueQaComment = value; AdditionalData?.Remove("qa_comment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qa_comment"); else _explicitNullProperties?.Remove("qa_comment"); } }
         private string _explicitNullValueQaComment = default!;
 #endif
-        /// <summary>One-line headline shown in the triage list. Defaults to one derived from qa_comment.</summary>
+        /// <summary>One-line headline shown in the issues list. Defaults to one derived from qa_comment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; AdditionalData?.Remove("title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }

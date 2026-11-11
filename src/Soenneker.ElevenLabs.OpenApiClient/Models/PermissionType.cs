@@ -128,6 +128,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         AgentsArchitect,
         #pragma warning restore CS1591
+        [EnumMember(Value = "agents_environment_variables_write")]
+        #pragma warning disable CS1591
+        AgentsEnvironmentVariablesWrite,
+        #pragma warning restore CS1591
         [EnumMember(Value = "music_generation")]
         #pragma warning disable CS1591
         MusicGeneration,
@@ -215,6 +219,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         [EnumMember(Value = "synthid_detector")]
         #pragma warning disable CS1591
         SynthidDetector,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "watermark")]
+        #pragma warning disable CS1591
+        Watermark,
         #pragma warning restore CS1591
     }
 }

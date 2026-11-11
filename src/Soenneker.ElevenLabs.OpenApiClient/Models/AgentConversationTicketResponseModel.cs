@@ -131,7 +131,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The last_seen_unix_secs property</summary>
         public int? LastSeenUnixSecs { get => _explicitNullValueLastSeenUnixSecs; set { _explicitNullValueLastSeenUnixSecs = value; AdditionalData?.Remove("last_seen_unix_secs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_seen_unix_secs"); else _explicitNullProperties?.Remove("last_seen_unix_secs"); } }
         private int? _explicitNullValueLastSeenUnixSecs = default!;
-        /// <summary>The ticket this one was merged into, set while its status is &apos;merged&apos;.</summary>
+        /// <summary>The agent issue this one was merged into, set while its status is &apos;merged&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MergedIntoTicketId { get => _explicitNullValueMergedIntoTicketId; set { _explicitNullValueMergedIntoTicketId = value; AdditionalData?.Remove("merged_into_ticket_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merged_into_ticket_id"); else _explicitNullProperties?.Remove("merged_into_ticket_id"); } }
@@ -213,7 +213,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketCommentResponseModel> TicketComments { get => _explicitNullValueTicketComments; set { _explicitNullValueTicketComments = value; AdditionalData?.Remove("ticket_comments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ticket_comments"); else _explicitNullProperties?.Remove("ticket_comments"); } }
         private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketCommentResponseModel> _explicitNullValueTicketComments = default!;
 #endif
-        /// <summary>One-line headline for the ticket. None only on tickets created before titles existed.</summary>
+        /// <summary>One-line headline for the agent issue. None only on issues created before titles existed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; AdditionalData?.Remove("title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }

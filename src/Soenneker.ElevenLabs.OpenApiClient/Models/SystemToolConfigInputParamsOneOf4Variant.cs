@@ -20,6 +20,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             base.CaptureExplicitNulls(parseNode);
             if (parseNode.GetChildNode("enable_client_message") is null) { _explicitNullValueEnableClientMessage = default!; _explicitNullProperties?.Remove("enable_client_message"); }
             else if (parseNode.GetChildNode("enable_client_message") is { } nullNodeEnableClientMessage && nullNodeEnableClientMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableClientMessage = null;
+            if (parseNode.GetChildNode("transfer_rules") is null) { _explicitNullValueTransferRules = default!; _explicitNullProperties?.Remove("transfer_rules"); }
+            else if (parseNode.GetChildNode("transfer_rules") is { } nullNodeTransferRules && nullNodeTransferRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferRules = null;
             if (parseNode.GetChildNode("transfers") is null) { _explicitNullValueTransfers = default!; _explicitNullProperties?.Remove("transfers"); }
             else if (parseNode.GetChildNode("transfers") is { } nullNodeTransfers && nullNodeTransfers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Transfers = null;
         }
@@ -27,6 +29,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Whether to play a message to the client while they wait for transfer. Defaults to true for backward compatibility.</summary>
         public bool? EnableClientMessage { get => _explicitNullValueEnableClientMessage; set { _explicitNullValueEnableClientMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enable_client_message"); else _explicitNullProperties?.Remove("enable_client_message"); } }
         private bool? _explicitNullValueEnableClientMessage = default!;
+        /// <summary>Per-provider transfer configuration. Mutually exclusive with `transfers`: a tool sets exactly one of the two. When present, the configuration matching the call&apos;s telephony provider is offered to the agent and executed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferRuleInput>? TransferRules { get => _explicitNullValueTransferRules; set { _explicitNullValueTransferRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_rules"); else _explicitNullProperties?.Remove("transfer_rules"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferRuleInput>? _explicitNullValueTransferRules = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferRuleInput> TransferRules { get => _explicitNullValueTransferRules; set { _explicitNullValueTransferRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_rules"); else _explicitNullProperties?.Remove("transfer_rules"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferRuleInput> _explicitNullValueTransferRules = default!;
+#endif
         /// <summary>The transfers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,6 +75,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "enable_client_message", n => { EnableClientMessage = n.GetBoolValue(); } },
+                { "transfer_rules", n => { TransferRules = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferRuleInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferRuleInput.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "transfers", n => { Transfers = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransfer>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransfer.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -75,6 +88,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("enable_client_message", EnableClientMessage);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferRuleInput>("transfer_rules", TransferRules);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransfer>("transfers", Transfers);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             
         }

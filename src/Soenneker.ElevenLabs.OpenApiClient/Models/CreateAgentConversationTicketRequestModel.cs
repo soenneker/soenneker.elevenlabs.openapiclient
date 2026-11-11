@@ -31,7 +31,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Conversation this ticket is about.</summary>
+        /// <summary>Conversation this agent issue is about.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ConversationId { get => _explicitNullValueConversationId; set { _explicitNullValueConversationId = value; AdditionalData?.Remove("conversation_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_id"); else _explicitNullProperties?.Remove("conversation_id"); } }
@@ -41,10 +41,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string ConversationId { get => _explicitNullValueConversationId; set { _explicitNullValueConversationId = value; AdditionalData?.Remove("conversation_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_id"); else _explicitNullProperties?.Remove("conversation_id"); } }
         private string _explicitNullValueConversationId = default!;
 #endif
-        /// <summary>How urgently the ticket needs attention. If the conversation already has an open ticket, it is raised to this priority when lower.</summary>
+        /// <summary>How urgently the agent issue needs attention. If the conversation already has an open issue, it is raised to this priority when lower.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketPriority? Priority { get => _explicitNullValuePriority; set { _explicitNullValuePriority = value; AdditionalData?.Remove("priority"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priority"); else _explicitNullProperties?.Remove("priority"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketPriority? _explicitNullValuePriority = default!;
-        /// <summary>The issue this ticket is about, covering the whole conversation rather than a single turn.</summary>
+        /// <summary>The problem this agent issue is about, covering the whole conversation rather than a single turn.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? QaComment { get => _explicitNullValueQaComment; set { _explicitNullValueQaComment = value; AdditionalData?.Remove("qa_comment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qa_comment"); else _explicitNullProperties?.Remove("qa_comment"); } }
@@ -54,7 +54,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string QaComment { get => _explicitNullValueQaComment; set { _explicitNullValueQaComment = value; AdditionalData?.Remove("qa_comment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qa_comment"); else _explicitNullProperties?.Remove("qa_comment"); } }
         private string _explicitNullValueQaComment = default!;
 #endif
-        /// <summary>One-line headline shown in the triage list. Defaults to one derived from the comments, falling back to the conversation&apos;s summary title. Ignored when the comment is added to the conversation&apos;s open ticket.</summary>
+        /// <summary>One-line headline shown in the issues list. Defaults to one derived from the comments, falling back to the conversation&apos;s summary title. Ignored when the comment is added to the conversation&apos;s open issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; AdditionalData?.Remove("title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }

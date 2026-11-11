@@ -52,7 +52,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TriageTickets.Item
         {
         }
         /// <summary>
-        /// Delete an agent conversation ticket. Restricted to the ticket creator or a workspace admin.
+        /// Delete an agent issue. Restricted to the issue creator or a workspace admin.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -76,7 +76,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TriageTickets.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get an agent conversation ticket by ID.
+        /// Get an agent issue by ID.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketResponseModel"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -101,7 +101,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TriageTickets.Item
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketResponseModel>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketResponseModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a ticket&apos;s title, comment, status, priority, and/or assignee. Requires viewer access to the ticket&apos;s agent.
+        /// Update an agent issue&apos;s title, comment, status, priority, and/or assignee. Requires viewer access to the issue&apos;s agent.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketResponseModel"/></returns>
         /// <param name="body">Fields to update. Omit a field to leave it unchanged.</param>
@@ -128,7 +128,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TriageTickets.Item
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketResponseModel>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketResponseModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an agent conversation ticket. Restricted to the ticket creator or a workspace admin.
+        /// Delete an agent issue. Restricted to the issue creator or a workspace admin.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -147,7 +147,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TriageTickets.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get an agent conversation ticket by ID.
+        /// Get an agent issue by ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -166,7 +166,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TriageTickets.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update a ticket&apos;s title, comment, status, priority, and/or assignee. Requires viewer access to the ticket&apos;s agent.
+        /// Update an agent issue&apos;s title, comment, status, priority, and/or assignee. Requires viewer access to the issue&apos;s agent.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Fields to update. Omit a field to leave it unchanged.</param>

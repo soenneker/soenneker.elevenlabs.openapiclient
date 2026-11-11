@@ -34,7 +34,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TriageTickets.Item.Commen
         {
         }
         /// <summary>
-        /// Append a comment discussing how to resolve the ticket. Requires viewer access to the ticket&apos;s agent.
+        /// Append a comment discussing how to resolve the agent issue. Requires viewer access to the issue&apos;s agent.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketResponseModel"/></returns>
         /// <param name="body">Comment to append.</param>
@@ -61,7 +61,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TriageTickets.Item.Commen
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketResponseModel>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketResponseModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Append a comment discussing how to resolve the ticket. Requires viewer access to the ticket&apos;s agent.
+        /// Append a comment discussing how to resolve the agent issue. Requires viewer access to the issue&apos;s agent.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Comment to append.</param>

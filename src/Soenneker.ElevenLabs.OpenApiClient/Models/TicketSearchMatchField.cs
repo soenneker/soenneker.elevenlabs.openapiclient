@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
-    /// <summary>Which of the ticket&apos;s texts matched.</summary>
+    /// <summary>Which of the agent issue&apos;s texts matched.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TicketSearchMatchField
     {

@@ -31,7 +31,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>If provided, updates who is responsible for resolving this ticket. Must be a workspace member with at least viewer access to the agent. Pass null to unassign. Omit to leave unchanged.</summary>
+        /// <summary>If provided, updates who is responsible for resolving this agent issue. Must be a workspace member with at least viewer access to the agent. Pass null to unassign. Omit to leave unchanged.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AssigneeUserId { get => _explicitNullValueAssigneeUserId; set { _explicitNullValueAssigneeUserId = value; AdditionalData?.Remove("assignee_user_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assignee_user_id"); else _explicitNullProperties?.Remove("assignee_user_id"); } }
@@ -41,10 +41,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string AssigneeUserId { get => _explicitNullValueAssigneeUserId; set { _explicitNullValueAssigneeUserId = value; AdditionalData?.Remove("assignee_user_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assignee_user_id"); else _explicitNullProperties?.Remove("assignee_user_id"); } }
         private string _explicitNullValueAssigneeUserId = default!;
 #endif
-        /// <summary>If provided, updates how urgently the ticket needs attention. Pass null to clear it. Omit to leave unchanged.</summary>
+        /// <summary>If provided, updates how urgently the agent issue needs attention. Pass null to clear it. Omit to leave unchanged.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketPriority? Priority { get => _explicitNullValuePriority; set { _explicitNullValuePriority = value; AdditionalData?.Remove("priority"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priority"); else _explicitNullProperties?.Remove("priority"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketPriority? _explicitNullValuePriority = default!;
-        /// <summary>If provided, updates the ticket description. Omit to leave unchanged.</summary>
+        /// <summary>If provided, updates the agent issue&apos;s description. Omit to leave unchanged.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? QaComment { get => _explicitNullValueQaComment; set { _explicitNullValueQaComment = value; AdditionalData?.Remove("qa_comment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qa_comment"); else _explicitNullProperties?.Remove("qa_comment"); } }
@@ -54,10 +54,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string QaComment { get => _explicitNullValueQaComment; set { _explicitNullValueQaComment = value; AdditionalData?.Remove("qa_comment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qa_comment"); else _explicitNullProperties?.Remove("qa_comment"); } }
         private string _explicitNullValueQaComment = default!;
 #endif
-        /// <summary>If provided, updates the ticket status. Omit to leave unchanged.</summary>
+        /// <summary>If provided, updates the agent issue&apos;s status. Omit to leave unchanged.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketStatus? _explicitNullValueStatus = default!;
-        /// <summary>If provided, updates the ticket title. Omit to leave unchanged.</summary>
+        /// <summary>If provided, updates the agent issue&apos;s title. Omit to leave unchanged.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; AdditionalData?.Remove("title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }

@@ -34,10 +34,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TriageTickets.Item.Merge
         {
         }
         /// <summary>
-        /// Merge other open tickets of the same agent into this pending, in-progress, or resolved one. Their conversations move onto this ticket, its priority is raised to the highest among them, and they are kept with status &apos;merged&apos;. Requires viewer access to the ticket&apos;s agent.
+        /// Merge other open issues of the same agent into this pending, in-progress, or resolved one. Their conversations move onto this issue, its priority is raised to the highest among them, and they are kept with status &apos;merged&apos;. Requires viewer access to the issue&apos;s agent.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketResponseModel"/></returns>
-        /// <param name="body">Tickets to merge into this one.</param>
+        /// <param name="body">Agent issues to merge into this one.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
@@ -61,10 +61,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TriageTickets.Item.Merge
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketResponseModel>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketResponseModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Merge other open tickets of the same agent into this pending, in-progress, or resolved one. Their conversations move onto this ticket, its priority is raised to the highest among them, and they are kept with status &apos;merged&apos;. Requires viewer access to the ticket&apos;s agent.
+        /// Merge other open issues of the same agent into this pending, in-progress, or resolved one. Their conversations move onto this issue, its priority is raised to the highest among them, and they are kept with status &apos;merged&apos;. Requires viewer access to the issue&apos;s agent.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Tickets to merge into this one.</param>
+        /// <param name="body">Agent issues to merge into this one.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

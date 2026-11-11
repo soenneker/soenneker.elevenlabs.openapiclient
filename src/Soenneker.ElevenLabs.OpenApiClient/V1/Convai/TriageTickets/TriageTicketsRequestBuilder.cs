@@ -47,7 +47,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TriageTickets
         {
         }
         /// <summary>
-        /// List conversation triage tickets across every agent in the workspace, ordered by most recently created first. Use this to build a workspace-wide view (for example, tickets assigned to the caller). Supports the same filters, sorting and search as the per-agent endpoint. Tickets for agents the caller cannot access are omitted.
+        /// List agent issues across every agent in the workspace, ordered by most recently created first. Use this to build a workspace-wide view (for example, issues assigned to the caller). Supports the same filters, sorting and search as the per-agent endpoint. Issues for agents the caller cannot access are omitted.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentConversationTicketsPageResponseModel"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -72,10 +72,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TriageTickets
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentConversationTicketsPageResponseModel>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentConversationTicketsPageResponseModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Raise a ticket about an agent&apos;s performance on a conversation, for triage with Architect. Provide an overall comment and/or turn-level comments describing what went wrong.
+        /// Raise an issue about an agent&apos;s performance on a conversation, to work on with Architect. Provide an overall comment and/or turn-level comments describing what went wrong.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketResponseModel"/></returns>
-        /// <param name="body">Ticket to create.</param>
+        /// <param name="body">Agent issue to create.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
@@ -99,7 +99,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TriageTickets
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketResponseModel>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketResponseModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List conversation triage tickets across every agent in the workspace, ordered by most recently created first. Use this to build a workspace-wide view (for example, tickets assigned to the caller). Supports the same filters, sorting and search as the per-agent endpoint. Tickets for agents the caller cannot access are omitted.
+        /// List agent issues across every agent in the workspace, ordered by most recently created first. Use this to build a workspace-wide view (for example, issues assigned to the caller). Supports the same filters, sorting and search as the per-agent endpoint. Issues for agents the caller cannot access are omitted.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,10 +118,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TriageTickets
             return requestInfo;
         }
         /// <summary>
-        /// Raise a ticket about an agent&apos;s performance on a conversation, for triage with Architect. Provide an overall comment and/or turn-level comments describing what went wrong.
+        /// Raise an issue about an agent&apos;s performance on a conversation, to work on with Architect. Provide an overall comment and/or turn-level comments describing what went wrong.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Ticket to create.</param>
+        /// <param name="body">Agent issue to create.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -149,12 +149,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TriageTickets
             return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TriageTickets.TriageTicketsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List conversation triage tickets across every agent in the workspace, ordered by most recently created first. Use this to build a workspace-wide view (for example, tickets assigned to the caller). Supports the same filters, sorting and search as the per-agent endpoint. Tickets for agents the caller cannot access are omitted.
+        /// List agent issues across every agent in the workspace, ordered by most recently created first. Use this to build a workspace-wide view (for example, issues assigned to the caller). Supports the same filters, sorting and search as the per-agent endpoint. Issues for agents the caller cannot access are omitted.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TriageTicketsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Only tickets for this agent.</summary>
+            /// <summary>Only issues for this agent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("agent_id")]
@@ -164,7 +164,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TriageTickets
             [QueryParameter("agent_id")]
             public string AgentId { get; set; }
 #endif
-            /// <summary>Filter tickets by assignee. Use &apos;unassigned&apos; for tickets with no assignee.</summary>
+            /// <summary>Filter agent issues by assignee. Use &apos;unassigned&apos; for issues with no assignee.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("assignee_user_id")]
@@ -184,7 +184,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TriageTickets
             [QueryParameter("cursor")]
             public string Cursor { get; set; }
 #endif
-            /// <summary>Filter clusters by issue type.</summary>
+            /// <summary>Filter agent issues by type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("issue_type")]
@@ -194,7 +194,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TriageTickets
             [QueryParameter("issue_type")]
             public string IssueType { get; set; }
 #endif
-            /// <summary>Filter tickets by an exact label.</summary>
+            /// <summary>Filter agent issues by an exact label.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("label")]
@@ -204,7 +204,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TriageTickets
             [QueryParameter("label")]
             public string Label { get; set; }
 #endif
-            /// <summary>Filter tickets merged into this ticket.</summary>
+            /// <summary>Filter agent issues merged into this issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("merged_into_ticket_id")]
@@ -214,7 +214,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TriageTickets
             [QueryParameter("merged_into_ticket_id")]
             public string MergedIntoTicketId { get; set; }
 #endif
-            /// <summary>Filter tickets by creator. Use &apos;agent&apos; for agent-raised tickets.</summary>
+            /// <summary>Filter agent issues by creator. Use &apos;agent&apos; for agent-raised issues.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("owner_user_id")]
@@ -224,10 +224,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TriageTickets
             [QueryParameter("owner_user_id")]
             public string OwnerUserId { get; set; }
 #endif
-            /// <summary>How many agent conversation tickets to return. Can not exceed 100.</summary>
+            /// <summary>How many agent issues to return. Can not exceed 100.</summary>
             [QueryParameter("page_size")]
             public int? PageSize { get; set; }
-            /// <summary>Filter tickets by priority. Repeat the parameter to filter by multiple priorities.</summary>
+            /// <summary>Filter agent issues by priority. Repeat the parameter to filter by multiple priorities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("priorities")]
@@ -237,7 +237,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TriageTickets
             [QueryParameter("priorities")]
             public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketPriority[] Priorities { get; set; }
 #endif
-            /// <summary>Case-insensitive free-text search across the ticket&apos;s title, description, comments, and turn comments.</summary>
+            /// <summary>Case-insensitive free-text search across the agent issue&apos;s title, description, comments, and turn comments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("search")]
@@ -247,10 +247,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TriageTickets
             [QueryParameter("search")]
             public string Search { get; set; }
 #endif
-            /// <summary>Order by most recently created, by priority (most urgent first, then most recently created), or by most recently reported (the newest report merged into the issue, else its creation).</summary>
+            /// <summary>Order by most recently created, by priority (most urgent first, then most recently created), or by most recently reported (the newest report merged into the agent issue, else its creation).</summary>
             [QueryParameter("sort_by")]
             public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketSortBy? SortBy { get; set; }
-            /// <summary>Filter tickets by how they were raised (qa, agent, manual). Repeat the parameter to filter by multiple sources.</summary>
+            /// <summary>Filter agent issues by how they were raised (qa, agent, manual). Repeat the parameter to filter by multiple sources.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sources")]
@@ -260,7 +260,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TriageTickets
             [QueryParameter("sources")]
             public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketSource[] Sources { get; set; }
 #endif
-            /// <summary>Filter tickets by status.</summary>
+            /// <summary>Filter agent issues by status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("status")]

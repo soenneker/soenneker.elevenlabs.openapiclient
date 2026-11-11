@@ -6,6 +6,7 @@ using Soenneker.ElevenLabs.OpenApiClient.V1.Assets;
 using Soenneker.ElevenLabs.OpenApiClient.V1.AudioEffects;
 using Soenneker.ElevenLabs.OpenApiClient.V1.AudioIsolation;
 using Soenneker.ElevenLabs.OpenApiClient.V1.AudioNative;
+using Soenneker.ElevenLabs.OpenApiClient.V1.ContentProvenance;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Flows;
@@ -64,6 +65,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.AudioNative.AudioNativeRequestBuilder AudioNative
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.AudioNative.AudioNativeRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The contentProvenance property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.ContentProvenance.ContentProvenanceRequestBuilder ContentProvenance
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.ContentProvenance.ContentProvenanceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The convai property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.ConvaiRequestBuilder Convai

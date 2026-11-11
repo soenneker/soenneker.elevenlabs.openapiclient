@@ -34,7 +34,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TriageTickets.Item.TurnCo
         {
         }
         /// <summary>
-        /// Append a turn-level comment to a ticket. Requires viewer access to the ticket&apos;s agent.
+        /// Append a turn-level comment to an agent issue. Requires viewer access to the issue&apos;s agent.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketResponseModel"/></returns>
         /// <param name="body">Turn-level comment to append.</param>
@@ -61,7 +61,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TriageTickets.Item.TurnCo
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketResponseModel>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketResponseModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Append a turn-level comment to a ticket. Requires viewer access to the ticket&apos;s agent.
+        /// Append a turn-level comment to an agent issue. Requires viewer access to the issue&apos;s agent.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Turn-level comment to append.</param>

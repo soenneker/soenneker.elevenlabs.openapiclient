@@ -83,7 +83,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; AdditionalData?.Remove("title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
         private string _explicitNullValueTitle = default!;
 #endif
-        /// <summary>Triage ticket of this agent that the merge_proposal resolves. Merging it resolves the ticket if still open.</summary>
+        /// <summary>Issue of this agent that the merge_proposal resolves. Merging it resolves the issue if still open.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TriageTicketId { get => _explicitNullValueTriageTicketId; set { _explicitNullValueTriageTicketId = value; AdditionalData?.Remove("triage_ticket_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triage_ticket_id"); else _explicitNullProperties?.Remove("triage_ticket_id"); } }
