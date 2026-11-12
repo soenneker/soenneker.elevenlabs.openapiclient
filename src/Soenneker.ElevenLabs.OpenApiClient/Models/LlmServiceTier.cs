@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
-    /// <summary>Request-time processing tier for a model.STANDARD: default price and throughput.FAST: pays a per-token price premium for higher throughput / lower latency.    See OpenAI&apos;s fast mode: https://openai.com/api-fast-mode/</summary>
+    /// <summary>Request-time processing tier for a model.STANDARD: default price and throughput.FAST: pays a per-token price premium for higher throughput / lower latency.    See OpenAI&apos;s fast mode: https://openai.com/api-fast-mode/ and, for Gemini, Vertex    Priority PayGo: https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/priority-paygo</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum LlmServiceTier
     {

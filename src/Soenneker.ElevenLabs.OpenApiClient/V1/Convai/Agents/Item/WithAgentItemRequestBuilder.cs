@@ -15,6 +15,7 @@ using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Link;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.MergeProposals;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.RunTests;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.SimulateConversation;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.SubagentDependents;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Topics;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.TriageTickets;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Versions;
@@ -87,6 +88,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.SimulateConversation.SimulateConversationRequestBuilder SimulateConversation
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.SimulateConversation.SimulateConversationRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The subagentDependents property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.SubagentDependents.SubagentDependentsRequestBuilder SubagentDependents
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.SubagentDependents.SubagentDependentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The topics property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Topics.TopicsRequestBuilder Topics

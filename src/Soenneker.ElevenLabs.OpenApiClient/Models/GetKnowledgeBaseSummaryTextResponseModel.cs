@@ -19,6 +19,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("access_info") is null) { _explicitNullValueAccessInfo = default!; _explicitNullProperties?.Remove("access_info"); }
             else if (parseNode.GetChildNode("access_info") is { } nullNodeAccessInfo && nullNodeAccessInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessInfo = null;
+            if (parseNode.GetChildNode("chunking_override") is null) { _explicitNullValueChunkingOverride = default!; _explicitNullProperties?.Remove("chunking_override"); }
+            else if (parseNode.GetChildNode("chunking_override") is { } nullNodeChunkingOverride && nullNodeChunkingOverride.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChunkingOverride = null;
             if (parseNode.GetChildNode("dependent_agents") is null) { _explicitNullValueDependentAgents = default!; _explicitNullProperties?.Remove("dependent_agents"); }
             else if (parseNode.GetChildNode("dependent_agents") is { } nullNodeDependentAgents && nullNodeDependentAgents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DependentAgents = null;
             if (parseNode.GetChildNode("folder_parent_id") is null) { _explicitNullValueFolderParentId = default!; _explicitNullProperties?.Remove("folder_parent_id"); }
@@ -49,7 +51,17 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>This field is deprecated and will be removed in the future, use the separate endpoint to get dependent agents instead.</summary>
+        /// <summary>Per-entity RAG chunking override. Null means inherit from ancestors or the embedding model default.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelChunkingOverride? ChunkingOverride { get => _explicitNullValueChunkingOverride; set { _explicitNullValueChunkingOverride = value; AdditionalData?.Remove("chunking_override"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chunking_override"); else _explicitNullProperties?.Remove("chunking_override"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelChunkingOverride? _explicitNullValueChunkingOverride = default!;
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelChunkingOverride ChunkingOverride { get => _explicitNullValueChunkingOverride; set { _explicitNullValueChunkingOverride = value; AdditionalData?.Remove("chunking_override"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chunking_override"); else _explicitNullProperties?.Remove("chunking_override"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelChunkingOverride _explicitNullValueChunkingOverride = default!;
+#endif
+        /// <summary>This field is deprecated, always empty, and will be removed in the future. Use the separate endpoint to get dependent agents instead.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -149,6 +161,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "access_info", n => { AccessInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo.CreateFromDiscriminatorValue); } },
+                { "chunking_override", n => { ChunkingOverride = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelChunkingOverride>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelChunkingOverride.CreateFromDiscriminatorValue); } },
                 { "dependent_agents", n => { DependentAgents = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryTextResponseModelDependentAgentsItem>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryTextResponseModelDependentAgentsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "folder_parent_id", n => { FolderParentId = n.GetStringValue(); } },
                 { "folder_path", n => { FolderPath = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseFolderPathSegmentSummaryResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseFolderPathSegmentSummaryResponseModel.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -167,6 +180,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo>("access_info", AccessInfo);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelChunkingOverride>("chunking_override", ChunkingOverride);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryTextResponseModelDependentAgentsItem>("dependent_agents", DependentAgents);
             writer.WriteStringValue("folder_parent_id", FolderParentId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseFolderPathSegmentSummaryResponseModel>("folder_path", FolderPath);

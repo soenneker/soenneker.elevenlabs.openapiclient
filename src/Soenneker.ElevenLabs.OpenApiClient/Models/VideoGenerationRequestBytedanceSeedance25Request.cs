@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Request body for the ByteDance Seedance 2.5 video model.Diverges from the Seedance 2.0 public shape: no 4K, durations up to 30s,larger reference caps, audio-only input allowed, and no ``seed`` (Arktolerates it but does not honour it).ByteDance models are disabled by default and require explicit approvalbefore use. Contact support to request access.
+    /// Request body for the ByteDance Seedance 2.5 video model.Diverges from the Seedance 2.0 public shape: durations up to 30s, largerreference caps, audio-only input allowed, and no ``seed`` (Ark tolerates itbut does not honour it).ByteDance models are disabled by default and require explicit approvalbefore use. Contact support to request access.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VideoGenerationRequestBytedanceSeedance25Request : global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoGenerationRequest, IParsable

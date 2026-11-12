@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.ElevenLabs.OpenApiClient.Models;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.Chunk;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.ChunkingOverride;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.Chunks;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.Content;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.DependentAgents;
@@ -30,6 +31,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.Chunk.ChunkRequestBuilder Chunk
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.Chunk.ChunkRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The chunkingOverride property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.ChunkingOverride.ChunkingOverrideRequestBuilder ChunkingOverride
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.ChunkingOverride.ChunkingOverrideRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The chunks property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.Chunks.ChunksRequestBuilder Chunks

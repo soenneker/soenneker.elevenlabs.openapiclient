@@ -115,5 +115,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         SubagentTool,
         #pragma warning restore CS1591
+        [EnumMember(Value = "agent_messages_api")]
+        #pragma warning disable CS1591
+        AgentMessagesApi,
+        #pragma warning restore CS1591
     }
 }

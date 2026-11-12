@@ -26,6 +26,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if (parseNode.GetChildNode("auto_sync_info") is { } nullNodeAutoSyncInfo && nullNodeAutoSyncInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoSyncInfo = null;
             if (parseNode.GetChildNode("children_count") is null) { _explicitNullValueChildrenCount = default!; _explicitNullProperties?.Remove("children_count"); }
             else if (parseNode.GetChildNode("children_count") is { } nullNodeChildrenCount && nullNodeChildrenCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChildrenCount = null;
+            if (parseNode.GetChildNode("chunking_override") is null) { _explicitNullValueChunkingOverride = default!; _explicitNullProperties?.Remove("chunking_override"); }
+            else if (parseNode.GetChildNode("chunking_override") is { } nullNodeChunkingOverride && nullNodeChunkingOverride.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChunkingOverride = null;
             if (parseNode.GetChildNode("document_count") is null) { _explicitNullValueDocumentCount = default!; _explicitNullProperties?.Remove("document_count"); }
             else if (parseNode.GetChildNode("document_count") is { } nullNodeDocumentCount && nullNodeDocumentCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentCount = null;
             if (parseNode.GetChildNode("external_sync_info") is null) { _explicitNullValueExternalSyncInfo = default!; _explicitNullProperties?.Remove("external_sync_info"); }
@@ -79,6 +81,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The children_count property</summary>
         public int? ChildrenCount { get => _explicitNullValueChildrenCount; set { _explicitNullValueChildrenCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("children_count"); else _explicitNullProperties?.Remove("children_count"); } }
         private int? _explicitNullValueChildrenCount = default!;
+        /// <summary>Per-entity RAG chunking override. Null means inherit from ancestors or the embedding model default.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelChunkingOverride? ChunkingOverride { get => _explicitNullValueChunkingOverride; set { _explicitNullValueChunkingOverride = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chunking_override"); else _explicitNullProperties?.Remove("chunking_override"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelChunkingOverride? _explicitNullValueChunkingOverride = default!;
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelChunkingOverride ChunkingOverride { get => _explicitNullValueChunkingOverride; set { _explicitNullValueChunkingOverride = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chunking_override"); else _explicitNullProperties?.Remove("chunking_override"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelChunkingOverride _explicitNullValueChunkingOverride = default!;
+#endif
         /// <summary>Number of non-folder documents anywhere in this folder&apos;s subtree (recursive). Counting stops past 1000;</summary>
         public int? DocumentCount { get => _explicitNullValueDocumentCount; set { _explicitNullValueDocumentCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_count"); else _explicitNullProperties?.Remove("document_count"); } }
         private int? _explicitNullValueDocumentCount = default!;
@@ -184,6 +196,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "active_sync_job", n => { ActiveSyncJob = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFolderResponseModelActiveSyncJob>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFolderResponseModelActiveSyncJob.CreateFromDiscriminatorValue); } },
                 { "auto_sync_info", n => { AutoSyncInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelAutoSyncInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelAutoSyncInfo.CreateFromDiscriminatorValue); } },
                 { "children_count", n => { ChildrenCount = n.GetIntValue(); } },
+                { "chunking_override", n => { ChunkingOverride = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelChunkingOverride>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelChunkingOverride.CreateFromDiscriminatorValue); } },
                 { "document_count", n => { DocumentCount = n.GetIntValue(); } },
                 { "external_sync_info", n => { ExternalSyncInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFolderResponseModelExternalSyncInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFolderResponseModelExternalSyncInfo.CreateFromDiscriminatorValue); } },
                 { "folder_parent_id", n => { FolderParentId = n.GetStringValue(); } },
@@ -207,6 +220,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFolderResponseModelActiveSyncJob>("active_sync_job", ActiveSyncJob);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelAutoSyncInfo>("auto_sync_info", AutoSyncInfo);
             writer.WriteIntValue("children_count", ChildrenCount);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelChunkingOverride>("chunking_override", ChunkingOverride);
             writer.WriteIntValue("document_count", DocumentCount);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFolderResponseModelExternalSyncInfo>("external_sync_info", ExternalSyncInfo);
             writer.WriteStringValue("folder_parent_id", FolderParentId);

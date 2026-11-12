@@ -8,9 +8,11 @@ using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Analysis;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Audio;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Feedback;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Files;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Messages;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.SipMessages;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Summary;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Tags;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Turns;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -44,6 +46,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Files.FilesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The messages property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Messages.MessagesRequestBuilder Messages
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Messages.MessagesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The sipMessages property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.SipMessages.SipMessagesRequestBuilder SipMessages
         {
@@ -58,6 +65,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Tags.TagsRequestBuilder Tags
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Tags.TagsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The turns property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Turns.TurnsRequestBuilder Turns
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Turns.TurnsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.WithConversationItemRequestBuilder"/> and sets the default values.

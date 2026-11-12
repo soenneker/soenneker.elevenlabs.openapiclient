@@ -15275,6 +15275,100 @@
         "x-fern-sdk-method-name": "delete"
       }
     },
+    "/v1/convai/agents/{agentId}/subagent-dependents": {
+      "get": {
+        "tags": [
+          "Agents Platform"
+        ],
+        "summary": "Get Agent Subagent Dependents",
+        "description": "Get a list of agents that use this agent as a subagent.",
+        "operationId": "GetAgentSubagentDependentsRoute",
+        "parameters": [
+          {
+            "name": "agentId",
+            "in": "path",
+            "description": "The id of an agent. This is returned on agent creation.",
+            "required": true,
+            "schema": {
+              "examples": [
+                "agent_3701k3ttaq12ewp8b7qv5rfyszkz"
+              ],
+              "title": "Agent Id",
+              "type": "string",
+              "description": "The id of an agent. This is returned on agent creation.",
+              "embed": true
+            }
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "description": "How many Agents to return at maximum. Can not exceed 100, defaults to 30.",
+            "schema": {
+              "title": "Page Size",
+              "maximum": 100,
+              "minimum": 1,
+              "type": "integer",
+              "description": "How many Agents to return at maximum. Can not exceed 100, defaults to 30.",
+              "default": 30
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "Used for fetching next page. Cursor is returned in the response.",
+            "schema": {
+              "title": "Cursor",
+              "type": [
+                "null",
+                "string"
+              ],
+              "description": "Used for fetching next page. Cursor is returned in the response."
+            }
+          },
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": [
+                "null",
+                "string"
+              ],
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website."
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAgentSubagentDependentsResponseModel"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationError"
+                }
+              }
+            }
+          }
+        },
+        "x-fern-sdk-group-name": [
+          "conversational_ai",
+          "agents",
+          "subagents"
+        ],
+        "x-fern-sdk-method-name": "get_dependents"
+      }
+    },
     "/v1/convai/agents/{agentId}/widget": {
       "get": {
         "tags": [
@@ -18273,6 +18367,67 @@
           "conversations"
         ],
         "x-fern-sdk-method-name": "list"
+      },
+      "post": {
+        "tags": [
+          "Agents Platform"
+        ],
+        "summary": "Create Conversation",
+        "description": "Create a text conversation with an agent. This does not run the agent, and the agent sends no first message. This endpoint is in alpha and may change.",
+        "operationId": "CreateAgentConversationRoute",
+        "parameters": [
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": [
+                "null",
+                "string"
+              ],
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website."
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAgentConversationRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateAgentConversationResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationError"
+                }
+              }
+            }
+          }
+        },
+        "x-fern-sdk-group-name": [
+          "conversational_ai",
+          "conversations"
+        ],
+        "x-fern-sdk-method-name": "create",
+        "x-fern-availability": "alpha"
       }
     },
     "/v1/convai/users": {
@@ -23387,6 +23542,150 @@
           "documents"
         ],
         "x-fern-sdk-method-name": "delete"
+      }
+    },
+    "/v1/convai/knowledge-base/{documentationId}/chunking-override": {
+      "get": {
+        "tags": [
+          "Agents Platform"
+        ],
+        "summary": "Get Chunking Override",
+        "description": "Get the stored and effective RAG chunking overrides for a document or folder.",
+        "operationId": "GetChunkingOverrideRoute",
+        "parameters": [
+          {
+            "name": "documentationId",
+            "in": "path",
+            "description": "The id of a document from the knowledge base. This is returned on document addition.",
+            "required": true,
+            "schema": {
+              "examples": [
+                "21m00Tcm4TlvDq8ikWAM"
+              ],
+              "title": "Documentation Id",
+              "type": "string",
+              "description": "The id of a document from the knowledge base. This is returned on document addition.",
+              "embed": true
+            }
+          },
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": [
+                "null",
+                "string"
+              ],
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website."
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetDocumentChunkingOverrideResponseModel"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationError"
+                }
+              }
+            }
+          }
+        },
+        "x-fern-sdk-group-name": [
+          "conversational_ai",
+          "knowledge_base",
+          "documents"
+        ],
+        "x-fern-sdk-method-name": "get_chunking_override"
+      },
+      "patch": {
+        "tags": [
+          "Agents Platform"
+        ],
+        "summary": "Update Chunking Override",
+        "description": "Set or clear the RAG chunking override for a document or folder.",
+        "operationId": "UpdateChunkingOverrideRoute",
+        "parameters": [
+          {
+            "name": "documentationId",
+            "in": "path",
+            "description": "The id of a document from the knowledge base. This is returned on document addition.",
+            "required": true,
+            "schema": {
+              "examples": [
+                "21m00Tcm4TlvDq8ikWAM"
+              ],
+              "title": "Documentation Id",
+              "type": "string",
+              "description": "The id of a document from the knowledge base. This is returned on document addition.",
+              "embed": true
+            }
+          },
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": [
+                "null",
+                "string"
+              ],
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website."
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateDocumentChunkingOverrideRequestModel"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateDocumentChunkingOverrideResponseModel"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationError"
+                }
+              }
+            }
+          }
+        },
+        "x-fern-sdk-group-name": [
+          "conversational_ai",
+          "knowledge_base",
+          "documents"
+        ],
+        "x-fern-sdk-method-name": "update_chunking_override"
       }
     },
     "/v1/convai/knowledge-base/{documentationId}/update-file": {
@@ -32637,6 +32936,343 @@
         },
         "x-fern-sdk-group-name": "speech_engine",
         "x-fern-sdk-method-name": "duplicate"
+      }
+    },
+    "/v1/convai/conversations/{conversationId}/messages": {
+      "post": {
+        "tags": [
+          "Agents Platform"
+        ],
+        "summary": "Send Conversation Message",
+        "description": "Send input to a conversation, and wait until the agent finishes or waits on client tool results. With \u0060background\u0060 set to true, the endpoint returns 202 when the server admits the turn. Then stream the turn\u0027s events with \u0060Last-Event-ID\u0060 set to the \u0060stream_cursor\u0060. This endpoint is in alpha and may change.",
+        "operationId": "SendConversationMessageRoute",
+        "parameters": [
+          {
+            "name": "conversationId",
+            "in": "path",
+            "description": "The Conversation ID",
+            "required": true,
+            "schema": {
+              "title": "Conversation Id",
+              "type": "string",
+              "description": "The Conversation ID"
+            }
+          },
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": [
+                "null",
+                "string"
+              ],
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website."
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SendConversationMessageRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConversationTurn"
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "The server admitted the turn in background mode.",
+            "headers": {
+              "Location": {
+                "description": "The path of the turn.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConversationTurn"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationError"
+                }
+              }
+            }
+          }
+        },
+        "x-fern-sdk-group-name": [
+          "conversational_ai",
+          "conversations"
+        ],
+        "x-fern-sdk-method-name": "send_message",
+        "x-fern-availability": "alpha"
+      }
+    },
+    "/v1/convai/conversations/{conversationId}/messages/stream": {
+      "post": {
+        "tags": [
+          "Agents Platform"
+        ],
+        "summary": "Send Conversation Message Stream",
+        "description": "Send input to a conversation, and stream the events of the request as server-sent events. The last event is \u0060stream_ended\u0060, which has the outcome of the turn. This endpoint is in alpha and may change.",
+        "operationId": "SendConversationMessageStreamRoute",
+        "parameters": [
+          {
+            "name": "conversationId",
+            "in": "path",
+            "description": "The Conversation ID",
+            "required": true,
+            "schema": {
+              "title": "Conversation Id",
+              "type": "string",
+              "description": "The Conversation ID"
+            }
+          },
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": [
+                "null",
+                "string"
+              ],
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website."
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SendConversationMessageStreamRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Server-sent events. Each event has the stream cursor as its \u0060id\u0060, the event type as its \u0060event\u0060, and a stream envelope as its \u0060data\u0060.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StreamEnvelope"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationError"
+                }
+              }
+            }
+          }
+        },
+        "x-fern-sdk-group-name": [
+          "conversational_ai",
+          "conversations"
+        ],
+        "x-fern-sdk-method-name": "send_message_stream",
+        "x-fern-streaming": {
+          "format": "sse"
+        },
+        "x-fern-availability": "alpha"
+      }
+    },
+    "/v1/convai/conversations/{conversationId}/turns/{turnId}": {
+      "get": {
+        "tags": [
+          "Agents Platform"
+        ],
+        "summary": "Get Conversation Turn",
+        "description": "Get the status and output of a turn. The status comes from the stored transcript, so a turn that failed after the agent started can show as completed. Only the \u0060stream_ended\u0060 event has the real outcome. This endpoint is in alpha and may change.",
+        "operationId": "GetConversationTurnRoute",
+        "parameters": [
+          {
+            "name": "conversationId",
+            "in": "path",
+            "description": "The Conversation ID",
+            "required": true,
+            "schema": {
+              "title": "Conversation Id",
+              "type": "string",
+              "description": "The Conversation ID"
+            }
+          },
+          {
+            "name": "turnId",
+            "in": "path",
+            "description": "The Turn ID",
+            "required": true,
+            "schema": {
+              "title": "Turn Id",
+              "maxLength": 20,
+              "pattern": "^[1-9][0-9]*$",
+              "type": "string",
+              "description": "The Turn ID"
+            }
+          },
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": [
+                "null",
+                "string"
+              ],
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website."
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConversationTurn"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationError"
+                }
+              }
+            }
+          }
+        },
+        "x-fern-sdk-group-name": [
+          "conversational_ai",
+          "conversations"
+        ],
+        "x-fern-sdk-method-name": "get_turn",
+        "x-fern-availability": "alpha"
+      }
+    },
+    "/v1/convai/conversations/{conversationId}/turns/{turnId}/events": {
+      "get": {
+        "tags": [
+          "Agents Platform"
+        ],
+        "summary": "Stream Conversation Turn Events",
+        "description": "Stream the events of a turn as server-sent events. Send \u0060Last-Event-ID\u0060 to resume after an event. The server keeps events for about an hour. This endpoint is in alpha and may change.",
+        "operationId": "StreamConversationTurnEventsRoute",
+        "parameters": [
+          {
+            "name": "conversationId",
+            "in": "path",
+            "description": "The Conversation ID",
+            "required": true,
+            "schema": {
+              "title": "Conversation Id",
+              "type": "string",
+              "description": "The Conversation ID"
+            }
+          },
+          {
+            "name": "turnId",
+            "in": "path",
+            "description": "The Turn ID",
+            "required": true,
+            "schema": {
+              "title": "Turn Id",
+              "maxLength": 20,
+              "pattern": "^[1-9][0-9]*$",
+              "type": "string",
+              "description": "The Turn ID"
+            }
+          },
+          {
+            "name": "Last-Event-ID",
+            "in": "header",
+            "schema": {
+              "title": "Last-Event-Id",
+              "type": [
+                "null",
+                "string"
+              ]
+            }
+          },
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": [
+                "null",
+                "string"
+              ],
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website."
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Server-sent events. Each event has the stream cursor as its \u0060id\u0060, the event type as its \u0060event\u0060, and a stream envelope as its \u0060data\u0060.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StreamEnvelope"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationError"
+                }
+              }
+            }
+          }
+        },
+        "x-fern-sdk-group-name": [
+          "conversational_ai",
+          "conversations"
+        ],
+        "x-fern-sdk-method-name": "stream_turn_events",
+        "x-fern-streaming": {
+          "format": "sse"
+        },
+        "x-fern-availability": "alpha"
       }
     },
     "/v1/convai/agents/{agentId}/branches/{branchId}/procedures": {
@@ -46127,6 +46763,60 @@
           "daily_limit": 100000
         }
       },
+      "AgentChatResponsePartClientEventData": {
+        "title": "AgentChatResponsePartClientEventData",
+        "required": [
+          "text",
+          "type",
+          "event_id",
+          "response_id"
+        ],
+        "type": "object",
+        "properties": {
+          "text": {
+            "title": "Text",
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AgentChatResponsePartType"
+          },
+          "event_id": {
+            "title": "Event Id",
+            "type": "integer"
+          },
+          "response_id": {
+            "title": "Response Id",
+            "type": "string"
+          }
+        }
+      },
+      "AgentChatResponsePartType": {
+        "title": "AgentChatResponsePartType",
+        "enum": [
+          "start",
+          "delta",
+          "stop"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "AgentChatResponsePartType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "start",
+              "name": "Start"
+            },
+            {
+              "value": "delta",
+              "name": "Delta"
+            },
+            {
+              "value": "stop",
+              "name": "Stop"
+            }
+          ]
+        }
+      },
       "AgentConfigApiModelInput": {
         "title": "AgentConfigAPIModel",
         "type": "object",
@@ -46172,6 +46862,9 @@
           },
           "text_behavior_overrides": {
             "$ref": "#/components/schemas/AgentConfigApiModelInputTextBehaviorOverrides"
+          },
+          "subagent_config": {
+            "$ref": "#/components/schemas/SubagentConfigInput"
           },
           "prompt": {
             "$ref": "#/components/schemas/PromptAgentApiModelInput"
@@ -46228,6 +46921,9 @@
           },
           "text_behavior_overrides": {
             "$ref": "#/components/schemas/AgentConfigApiModelOutputTextBehaviorOverrides"
+          },
+          "subagent_config": {
+            "$ref": "#/components/schemas/SubagentConfigOutput"
           },
           "prompt": {
             "$ref": "#/components/schemas/PromptAgentApiModelOutput"
@@ -47151,6 +47847,110 @@
           }
         }
       },
+      "AgentMessagesOverrides": {
+        "title": "AgentMessagesOverrides",
+        "type": "object",
+        "properties": {
+          "prompt": {
+            "title": "Prompt",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "The prompt for the agent"
+          },
+          "llm": {
+            "$ref": "#/components/schemas/AgentMessagesOverridesLlm"
+          },
+          "language": {
+            "title": "Language",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Language of the agent"
+          },
+          "tool_ids": {
+            "title": "Tool Ids",
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "type": "string"
+            },
+            "description": "If set, only these tools are available in the conversation, including tools on workflow nodes. Each ID must be attached to the agent."
+          },
+          "native_mcp_server_ids": {
+            "title": "Native Mcp Server Ids",
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "type": "string"
+            },
+            "description": "If set, the agent uses only these native MCP servers. Each ID must be attached to the agent."
+          },
+          "knowledge_base_ids": {
+            "title": "Knowledge Base Ids",
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "type": "string"
+            },
+            "description": "If set, the agent uses only these knowledge base documents. Each ID must be attached to the agent."
+          },
+          "procedure_ids": {
+            "title": "Procedure Ids",
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "type": "string"
+            },
+            "description": "If set, only these procedures are available to the starting agent. Each ID must be attached to that agent. An empty list disables all of that agent\u0027s procedures. Not applied after an agent transfer. Requires enable_procedure_ids_from_client."
+          },
+          "custom_llm_extra_body": {
+            "$ref": "#/components/schemas/AgentMessagesOverridesCustomLlmExtraBodyProperty"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AgentMessagesPersistedAgent": {
+        "title": "AgentMessagesPersistedAgent",
+        "required": [
+          "type",
+          "agent_id"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/PersistedType"
+          },
+          "agent_id": {
+            "title": "Agent Id",
+            "minLength": 1,
+            "type": "string"
+          },
+          "branch_id": {
+            "title": "Branch Id",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "ID of the agent branch to use for this conversation"
+          },
+          "overrides": {
+            "description": "Changes to the agent configuration for this conversation. The agent must allow each field that is set.",
+            "$ref": "#/components/schemas/AgentMessagesOverrides"
+          }
+        },
+        "additionalProperties": false
+      },
       "AgentMetadataDbModel": {
         "title": "AgentMetadataDBModel",
         "required": [
@@ -47195,6 +47995,43 @@
             "type": "integer",
             "description": "The last update time of the agent in unix seconds"
           }
+        }
+      },
+      "AgentOutputStatus": {
+        "title": "AgentOutputStatus",
+        "enum": [
+          "in_progress",
+          "completed",
+          "requires_action",
+          "failed",
+          "timed_out"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "AgentOutputStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "in_progress",
+              "name": "InProgress"
+            },
+            {
+              "value": "completed",
+              "name": "Completed"
+            },
+            {
+              "value": "requires_action",
+              "name": "RequiresAction"
+            },
+            {
+              "value": "failed",
+              "name": "Failed"
+            },
+            {
+              "value": "timed_out",
+              "name": "TimedOut"
+            }
+          ]
         }
       },
       "AgentPlatformSettingsRequestModel": {
@@ -47465,6 +48302,116 @@
           "hold_audio": {
             "$ref": "#/components/schemas/AgentQueueingConfigHoldAudio"
           }
+        }
+      },
+      "AgentReasoningResponsePartClientEventData": {
+        "title": "AgentReasoningResponsePartClientEventData",
+        "required": [
+          "text",
+          "type",
+          "event_id"
+        ],
+        "type": "object",
+        "properties": {
+          "text": {
+            "title": "Text",
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AgentChatResponsePartType"
+          },
+          "event_id": {
+            "title": "Event Id",
+            "type": "integer"
+          }
+        }
+      },
+      "AgentResponseAttachment": {
+        "title": "AgentResponseAttachment",
+        "required": [
+          "url",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "url": {
+            "title": "Url",
+            "type": "string"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "mime_type": {
+            "title": "Mime Type",
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
+      },
+      "AgentResponseClientEventData": {
+        "title": "AgentResponseClientEventData",
+        "required": [
+          "agent_response",
+          "event_id",
+          "response_id"
+        ],
+        "type": "object",
+        "properties": {
+          "agent_response": {
+            "title": "Agent Response",
+            "type": "string"
+          },
+          "event_id": {
+            "title": "Event Id",
+            "type": "integer"
+          },
+          "response_id": {
+            "title": "Response Id",
+            "type": "string"
+          },
+          "in_response_to_ids": {
+            "title": "In Response To Ids",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "response_type": {
+            "default": "text",
+            "$ref": "#/components/schemas/AgentResponseType"
+          },
+          "attachments": {
+            "title": "Attachments",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AgentResponseAttachment"
+            }
+          }
+        }
+      },
+      "AgentResponseType": {
+        "title": "AgentResponseType",
+        "enum": [
+          "text",
+          "voice"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "AgentResponseType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "text",
+              "name": "Text"
+            },
+            {
+              "value": "voice",
+              "name": "Voice"
+            }
+          ]
         }
       },
       "AgentRule": {
@@ -47742,6 +48689,135 @@
           "referenced_tests_ids": [
             "test_123",
             "test_456"
+          ]
+        }
+      },
+      "AgentToolRequestClientEventData": {
+        "title": "AgentToolRequestClientEventData",
+        "required": [
+          "tool_name",
+          "tool_call_id",
+          "tool_type",
+          "event_id",
+          "expects_response",
+          "disable_interruptions",
+          "response_timeout_secs",
+          "execution_mode"
+        ],
+        "type": "object",
+        "properties": {
+          "tool_name": {
+            "title": "Tool Name",
+            "type": "string"
+          },
+          "tool_call_id": {
+            "title": "Tool Call Id",
+            "type": "string"
+          },
+          "tool_type": {
+            "title": "Tool Type",
+            "type": "string"
+          },
+          "event_id": {
+            "title": "Event Id",
+            "type": "integer"
+          },
+          "expects_response": {
+            "title": "Expects Response",
+            "type": "boolean"
+          },
+          "disable_interruptions": {
+            "title": "Disable Interruptions",
+            "type": "boolean"
+          },
+          "response_timeout_secs": {
+            "title": "Response Timeout Secs",
+            "type": "integer"
+          },
+          "execution_mode": {
+            "title": "Execution Mode",
+            "type": "string"
+          }
+        }
+      },
+      "AgentToolResponseClientEventData": {
+        "title": "AgentToolResponseClientEventData",
+        "required": [
+          "tool_name",
+          "tool_call_id",
+          "tool_type",
+          "is_error",
+          "event_id",
+          "is_called",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "tool_name": {
+            "title": "Tool Name",
+            "type": "string"
+          },
+          "tool_call_id": {
+            "title": "Tool Call Id",
+            "type": "string"
+          },
+          "tool_type": {
+            "title": "Tool Type",
+            "type": "string"
+          },
+          "is_error": {
+            "title": "Is Error",
+            "type": "boolean"
+          },
+          "is_blocked": {
+            "title": "Is Blocked",
+            "type": "boolean",
+            "default": false
+          },
+          "event_id": {
+            "title": "Event Id",
+            "type": "integer"
+          },
+          "is_called": {
+            "title": "Is Called",
+            "type": "boolean"
+          },
+          "status": {
+            "description": "Tool call status derived from execution flags.",
+            "readOnly": true,
+            "$ref": "#/components/schemas/AgentToolResponseStatus"
+          }
+        }
+      },
+      "AgentToolResponseStatus": {
+        "title": "AgentToolResponseStatus",
+        "enum": [
+          "success",
+          "error",
+          "blocked",
+          "skipped"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "AgentToolResponseStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "success",
+              "name": "Success"
+            },
+            {
+              "value": "error",
+              "name": "Error"
+            },
+            {
+              "value": "blocked",
+              "name": "Blocked"
+            },
+            {
+              "value": "skipped",
+              "name": "Skipped"
+            }
           ]
         }
       },
@@ -60015,6 +61091,44 @@
           ]
         }
       },
+      "ChunkingOverride": {
+        "title": "ChunkingOverride",
+        "required": [
+          "max_chunk_size",
+          "overlap_percentage",
+          "custom_separators"
+        ],
+        "type": "object",
+        "properties": {
+          "max_chunk_size": {
+            "title": "Max Chunk Size",
+            "type": [
+              "null",
+              "integer"
+            ],
+            "description": "Maximum chunk size in tokens. Null uses the inherited value."
+          },
+          "overlap_percentage": {
+            "title": "Overlap Percentage",
+            "type": [
+              "null",
+              "integer"
+            ],
+            "description": "Chunk overlap as a percentage of the chunk size. Null uses the inherited value."
+          },
+          "custom_separators": {
+            "title": "Custom Separators",
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "type": "string"
+            },
+            "description": "Custom text separators used when splitting. Null uses the inherited value."
+          }
+        }
+      },
       "ClientEvent": {
         "title": "ClientEvent",
         "enum": [
@@ -60170,6 +61284,64 @@
           },
           "session": {
             "$ref": "#/components/schemas/ClientSecretResponseSession"
+          }
+        }
+      },
+      "ClientToolCallClientEventData": {
+        "title": "ClientToolCallClientEventData",
+        "required": [
+          "tool_name",
+          "tool_call_id",
+          "parameters",
+          "event_id",
+          "expects_response"
+        ],
+        "type": "object",
+        "properties": {
+          "tool_name": {
+            "title": "Tool Name",
+            "type": "string"
+          },
+          "tool_call_id": {
+            "title": "Tool Call Id",
+            "type": "string"
+          },
+          "parameters": {
+            "$ref": "#/components/schemas/ClientToolCallClientEventDataParametersProperty"
+          },
+          "event_id": {
+            "title": "Event Id",
+            "type": "integer"
+          },
+          "expects_response": {
+            "title": "Expects Response",
+            "type": "boolean",
+            "description": "Whether the server expects a ClientToolResult response."
+          }
+        }
+      },
+      "ClientToolCallRequiredAction": {
+        "title": "ClientToolCallRequiredAction",
+        "required": [
+          "tool_call_id",
+          "tool_name",
+          "parameters"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/ClientToolCallRequiredActionType"
+          },
+          "tool_call_id": {
+            "title": "Tool Call Id",
+            "type": "string"
+          },
+          "tool_name": {
+            "title": "Tool Name",
+            "type": "string"
+          },
+          "parameters": {
+            "$ref": "#/components/schemas/ClientToolCallRequiredActionParametersProperty"
           }
         }
       },
@@ -60948,6 +62120,29 @@
           "threshold": {
             "$ref": "#/components/schemas/ContentThresholdGuardrailThreshold"
           }
+        }
+      },
+      "ContextualUpdatePlacement": {
+        "title": "ContextualUpdatePlacement",
+        "enum": [
+          "in_place",
+          "end"
+        ],
+        "type": "string",
+        "description": "Where the LLM view renders a contextual update.",
+        "x-ms-enum": {
+          "name": "ContextualUpdatePlacement",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "in_place",
+              "name": "InPlace"
+            },
+            {
+              "value": "end",
+              "name": "End"
+            }
+          ]
         }
       },
       "Contributor": {
@@ -63402,7 +64597,8 @@
           "salesforce_integration",
           "template_preview",
           "genesys_bot_connector",
-          "subagent_tool"
+          "subagent_tool",
+          "agent_messages_api"
         ],
         "type": "string",
         "description": "Enum representing the possible sources for conversation initiation.",
@@ -63517,6 +64713,10 @@
             {
               "value": "subagent_tool",
               "name": "SubagentTool"
+            },
+            {
+              "value": "agent_messages_api",
+              "name": "AgentMessagesApi"
             }
           ]
         }
@@ -63903,6 +65103,49 @@
               "name": "ShareableLink"
             }
           ]
+        }
+      },
+      "ConversationTurn": {
+        "title": "ConversationTurn",
+        "required": [
+          "turn_id",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "turn_id": {
+            "title": "Turn Id",
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/AgentOutputStatus"
+          },
+          "output": {
+            "title": "Output",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TextOutputItem"
+            }
+          },
+          "error": {
+            "$ref": "#/components/schemas/ConversationTurnError"
+          },
+          "required_actions": {
+            "title": "Required Actions",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ClientToolCallRequiredAction"
+            },
+            "description": "The actions the agent waits on. Answer each \u0060client_tool_call\u0060 with a \u0060client_tool_result\u0060 item in \u0060input\u0060 to continue."
+          },
+          "stream_cursor": {
+            "title": "Stream Cursor",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Resume token for this turn\u0027s event stream. Present while the turn is in progress; pass it as Last-Event-ID to stream the turn\u0027s events."
+          }
         }
       },
       "ConversationUserResponseModel": {
@@ -64362,6 +65605,53 @@
             "title": "Created Version Id",
             "type": "string",
             "description": "ID of the first version on the created branch"
+          }
+        }
+      },
+      "CreateAgentConversationRequest": {
+        "title": "CreateAgentConversationRequest",
+        "required": [
+          "agent"
+        ],
+        "type": "object",
+        "properties": {
+          "agent": {
+            "description": "The agent that runs the turns.",
+            "title": "Agent",
+            "$ref": "#/components/schemas/AgentMessagesPersistedAgent"
+          },
+          "environment": {
+            "title": "Environment",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "The environment to use for resolving environment variables (e.g. \u0027production\u0027, \u0027staging\u0027). Defaults to the branch\u0027s environment, then \u0027production\u0027."
+          },
+          "user_id": {
+            "title": "User Id",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "ID of the end user participating in this conversation (for agent owner\u0027s user identification)"
+          },
+          "dynamic_variables": {
+            "$ref": "#/components/schemas/CreateAgentConversationRequestDynamicVariablesProperty"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateAgentConversationResponse": {
+        "title": "CreateAgentConversationResponse",
+        "required": [
+          "conversation_id"
+        ],
+        "type": "object",
+        "properties": {
+          "conversation_id": {
+            "title": "Conversation Id",
+            "type": "string"
           }
         }
       },
@@ -69145,6 +70435,48 @@
           }
         }
       },
+      "FileInputMimeType": {
+        "title": "FileInputMimeType",
+        "enum": [
+          "image/png",
+          "image/jpeg",
+          "image/gif",
+          "image/webp",
+          "application/pdf",
+          "text/plain"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "FileInputMimeType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "image/png",
+              "name": "ImagePng"
+            },
+            {
+              "value": "image/jpeg",
+              "name": "ImageJpeg"
+            },
+            {
+              "value": "image/gif",
+              "name": "ImageGif"
+            },
+            {
+              "value": "image/webp",
+              "name": "ImageWebp"
+            },
+            {
+              "value": "application/pdf",
+              "name": "ApplicationPdf"
+            },
+            {
+              "value": "text/plain",
+              "name": "TextPlain"
+            }
+          ]
+        }
+      },
       "FinetuneCreatedBy": {
         "title": "FinetuneCreatedBy",
         "enum": [
@@ -69929,6 +71261,42 @@
           }
         }
       },
+      "GetAgentSubagentDependentsResponseModel": {
+        "title": "GetAgentSubagentDependentsResponseModel",
+        "required": [
+          "agents",
+          "has_more"
+        ],
+        "type": "object",
+        "properties": {
+          "agents": {
+            "title": "Agents",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetAgentSubagentDependentsResponseModelAgentsItem"
+            }
+          },
+          "branches": {
+            "title": "Branches",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DependentBranchInfo"
+            }
+          },
+          "next_cursor": {
+            "title": "Next Cursor",
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "has_more": {
+            "title": "Has More",
+            "type": "boolean"
+          }
+        },
+        "description": "Agents and branches that use an agent as a subagent."
+      },
       "GetAgentTestFolderResponseModel": {
         "title": "GetAgentTestFolderResponseModel",
         "required": [
@@ -70625,6 +71993,58 @@
           }
         }
       },
+      "GetDocumentChunkingOverrideResponseModel": {
+        "title": "GetDocumentChunkingOverrideResponseModel",
+        "required": [
+          "id",
+          "chunking_override",
+          "effective_chunking_override",
+          "inherited_chunking_override"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string",
+            "description": "ID of the document or folder whose chunking settings were read."
+          },
+          "chunking_override": {
+            "$ref": "#/components/schemas/GetDocumentChunkingOverrideResponseModelChunkingOverride"
+          },
+          "effective_chunking_override": {
+            "description": "Effective override after merging this entity with its ancestor folders. Null fields use embedding model defaults.",
+            "$ref": "#/components/schemas/ChunkingOverride"
+          },
+          "inherited_chunking_override": {
+            "description": "Override inherited from ancestor folders, ignoring this entity\u0027s own override. Null fields use embedding model defaults.",
+            "$ref": "#/components/schemas/ChunkingOverride"
+          }
+        },
+        "example": {
+          "chunking_override": {
+            "custom_separators": [
+              "\n### "
+            ],
+            "max_chunk_size": 800,
+            "overlap_percentage": 15
+          },
+          "effective_chunking_override": {
+            "custom_separators": [
+              "\n### "
+            ],
+            "max_chunk_size": 800,
+            "overlap_percentage": 15
+          },
+          "id": "21m00Tcm4TlvDq8ikWAM",
+          "inherited_chunking_override": {
+            "custom_separators": [
+              "\n## "
+            ],
+            "max_chunk_size": 500,
+            "overlap_percentage": 10
+          }
+        }
+      },
       "GetKnowledgeBaseDependentAgentsResponseModel": {
         "title": "GetKnowledgeBaseDependentAgentsResponseModel",
         "required": [
@@ -70703,6 +72123,9 @@
             ],
             "description": "The ID of the parent folder, or null if the document is at the root level."
           },
+          "chunking_override": {
+            "$ref": "#/components/schemas/GetKnowledgeBaseFileResponseModelChunkingOverride"
+          },
           "folder_path": {
             "title": "Folder Path",
             "type": "array",
@@ -70712,7 +72135,7 @@
             "description": "The folder path segments leading to this entity, from root to parent folder."
           },
           "type": {
-            "$ref": "#/components/schemas/FileType"
+            "$ref": "#/components/schemas/GetKnowledgeBaseFileResponseModelType"
           },
           "extracted_inner_html": {
             "title": "Extracted Inner Html",
@@ -70785,6 +72208,9 @@
               "string"
             ],
             "description": "The ID of the parent folder, or null if the document is at the root level."
+          },
+          "chunking_override": {
+            "$ref": "#/components/schemas/GetKnowledgeBaseFileResponseModelChunkingOverride"
           },
           "folder_path": {
             "title": "Folder Path",
@@ -70892,6 +72318,9 @@
             ],
             "description": "The ID of the parent folder, or null if the document is at the root level."
           },
+          "chunking_override": {
+            "$ref": "#/components/schemas/GetKnowledgeBaseFileResponseModelChunkingOverride"
+          },
           "folder_path": {
             "title": "Folder Path",
             "type": "array",
@@ -70906,7 +72335,7 @@
             "items": {
               "$ref": "#/components/schemas/GetKnowledgeBaseSummaryFileResponseModelDependentAgentsItem"
             },
-            "description": "This field is deprecated and will be removed in the future, use the separate endpoint to get dependent agents instead.",
+            "description": "This field is deprecated, always empty, and will be removed in the future. Use the separate endpoint to get dependent agents instead.",
             "deprecated": true
           },
           "type": {
@@ -70972,6 +72401,9 @@
             ],
             "description": "The ID of the parent folder, or null if the document is at the root level."
           },
+          "chunking_override": {
+            "$ref": "#/components/schemas/GetKnowledgeBaseFileResponseModelChunkingOverride"
+          },
           "folder_path": {
             "title": "Folder Path",
             "type": "array",
@@ -70986,7 +72418,7 @@
             "items": {
               "$ref": "#/components/schemas/GetKnowledgeBaseSummaryFolderResponseModelDependentAgentsItem"
             },
-            "description": "This field is deprecated and will be removed in the future, use the separate endpoint to get dependent agents instead.",
+            "description": "This field is deprecated, always empty, and will be removed in the future. Use the separate endpoint to get dependent agents instead.",
             "deprecated": true
           },
           "type": {
@@ -71056,6 +72488,9 @@
             ],
             "description": "The ID of the parent folder, or null if the document is at the root level."
           },
+          "chunking_override": {
+            "$ref": "#/components/schemas/GetKnowledgeBaseFileResponseModelChunkingOverride"
+          },
           "folder_path": {
             "title": "Folder Path",
             "type": "array",
@@ -71070,7 +72505,7 @@
             "items": {
               "$ref": "#/components/schemas/GetKnowledgeBaseSummaryTextResponseModelDependentAgentsItem"
             },
-            "description": "This field is deprecated and will be removed in the future, use the separate endpoint to get dependent agents instead.",
+            "description": "This field is deprecated, always empty, and will be removed in the future. Use the separate endpoint to get dependent agents instead.",
             "deprecated": true
           },
           "type": {
@@ -71121,6 +72556,9 @@
             ],
             "description": "The ID of the parent folder, or null if the document is at the root level."
           },
+          "chunking_override": {
+            "$ref": "#/components/schemas/GetKnowledgeBaseFileResponseModelChunkingOverride"
+          },
           "folder_path": {
             "title": "Folder Path",
             "type": "array",
@@ -71135,7 +72573,7 @@
             "items": {
               "$ref": "#/components/schemas/GetKnowledgeBaseSummaryUrlResponseModelDependentAgentsItem"
             },
-            "description": "This field is deprecated and will be removed in the future, use the separate endpoint to get dependent agents instead.",
+            "description": "This field is deprecated, always empty, and will be removed in the future. Use the separate endpoint to get dependent agents instead.",
             "deprecated": true
           },
           "type": {
@@ -71191,6 +72629,9 @@
               "string"
             ],
             "description": "The ID of the parent folder, or null if the document is at the root level."
+          },
+          "chunking_override": {
+            "$ref": "#/components/schemas/GetKnowledgeBaseFileResponseModelChunkingOverride"
           },
           "folder_path": {
             "title": "Folder Path",
@@ -71256,6 +72697,9 @@
               "string"
             ],
             "description": "The ID of the parent folder, or null if the document is at the root level."
+          },
+          "chunking_override": {
+            "$ref": "#/components/schemas/GetKnowledgeBaseFileResponseModelChunkingOverride"
           },
           "folder_path": {
             "title": "Folder Path",
@@ -74520,13 +75964,19 @@
           }
         },
         "example": {
+          "available_reasoning_efforts": [
+            "minimal",
+            "low",
+            "medium",
+            "high"
+          ],
           "available_service_tiers": [
             "standard"
           ],
           "is_checkpoint": false,
-          "llm": "gemini-2.5-flash",
+          "llm": "gemini-3.5-flash",
           "max_context_limit": 1048576,
-          "max_tokens_limit": 8192,
+          "max_tokens_limit": 65535,
           "supports_document_input": true,
           "supports_image_input": true,
           "supports_parallel_tool_calls": true
@@ -74580,13 +76030,19 @@
           },
           "llms": [
             {
+              "available_reasoning_efforts": [
+                "minimal",
+                "low",
+                "medium",
+                "high"
+              ],
               "available_service_tiers": [
                 "standard"
               ],
               "is_checkpoint": false,
-              "llm": "gemini-2.5-flash",
+              "llm": "gemini-3.5-flash",
               "max_context_limit": 1048576,
-              "max_tokens_limit": 8192,
+              "max_tokens_limit": 65535,
               "supports_document_input": true,
               "supports_image_input": true,
               "supports_parallel_tool_calls": true
@@ -74677,7 +76133,7 @@
           "fast"
         ],
         "type": "string",
-        "description": "Request-time processing tier for a model.\n\nSTANDARD: default price and throughput.\nFAST: pays a per-token price premium for higher throughput / lower latency.\n    See OpenAI\u0027s fast mode: https://openai.com/api-fast-mode/",
+        "description": "Request-time processing tier for a model.\n\nSTANDARD: default price and throughput.\nFAST: pays a per-token price premium for higher throughput / lower latency.\n    See OpenAI\u0027s fast mode: https://openai.com/api-fast-mode/ and, for Gemini, Vertex\n    Priority PayGo: https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/priority-paygo",
         "x-ms-enum": {
           "name": "LlmServiceTier",
           "modelAsString": false,
@@ -89386,6 +90842,50 @@
           }
         }
       },
+      "SendConversationMessageRequest": {
+        "title": "SendConversationMessageRequest",
+        "required": [
+          "input"
+        ],
+        "type": "object",
+        "properties": {
+          "input": {
+            "title": "Input",
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SendConversationMessageRequestInputItem"
+            },
+            "description": "Either one \u0060user_message\u0060, which starts a new turn, or \u0060client_tool_result\u0060 items, which answer the \u0060required_actions\u0060 of the waiting turn and continue it. Calls that they leave out stay pending. Client tools wait with no timeout. While calls are pending, a \u0060user_message\u0060 is rejected. A \u0060user_message\u0060 can come with \u0060contextual_update\u0060 items, at most one per \u0060context_id\u0060. \u0060client_tool_result\u0060 items that answer every pending call can come with \u0060end\u0060 updates."
+          },
+          "background": {
+            "title": "Background",
+            "type": "boolean",
+            "description": "If true, return a 202 handle after the turn is admitted instead of waiting for generation to finish.",
+            "default": false
+          }
+        },
+        "additionalProperties": false
+      },
+      "SendConversationMessageStreamRequest": {
+        "title": "SendConversationMessageStreamRequest",
+        "required": [
+          "input"
+        ],
+        "type": "object",
+        "properties": {
+          "input": {
+            "title": "Input",
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SendConversationMessageRequestInputItem"
+            },
+            "description": "Either one \u0060user_message\u0060, which starts a new turn, or \u0060client_tool_result\u0060 items, which answer the \u0060required_actions\u0060 of the waiting turn and continue it. Calls that they leave out stay pending. Client tools wait with no timeout. While calls are pending, a \u0060user_message\u0060 is rejected. A \u0060user_message\u0060 can come with \u0060contextual_update\u0060 items, at most one per \u0060context_id\u0060. \u0060client_tool_result\u0060 items that answer every pending call can come with \u0060end\u0060 updates."
+          }
+        },
+        "additionalProperties": false
+      },
       "SentimentAggregate": {
         "title": "SentimentAggregate",
         "required": [
@@ -90979,6 +92479,58 @@
         },
         "description": "Platform limit with usage stored in Firestore. Example: credit usage tracked in Firestore."
       },
+      "StreamEndedData": {
+        "title": "StreamEndedData",
+        "required": [
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/AgentOutputStatus"
+          },
+          "error": {
+            "$ref": "#/components/schemas/ConversationTurnError"
+          },
+          "required_actions": {
+            "title": "Required Actions",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ClientToolCallRequiredAction"
+            },
+            "description": "The actions the agent waits on. Answer each \u0060client_tool_call\u0060 with a \u0060client_tool_result\u0060 item in \u0060input\u0060 to continue."
+          }
+        },
+        "additionalProperties": false
+      },
+      "StreamEnvelope": {
+        "title": "StreamEnvelope",
+        "required": [
+          "conversation_id",
+          "turn_id",
+          "created_at_unix_ms",
+          "event"
+        ],
+        "type": "object",
+        "properties": {
+          "conversation_id": {
+            "title": "Conversation Id",
+            "type": "string"
+          },
+          "turn_id": {
+            "title": "Turn Id",
+            "type": "string"
+          },
+          "created_at_unix_ms": {
+            "title": "Created At Unix Ms",
+            "type": "integer"
+          },
+          "event": {
+            "$ref": "#/components/schemas/StreamEnvelopeEvent"
+          }
+        },
+        "additionalProperties": false
+      },
       "StreamingAudioChunkWithTimestampsAndVoiceSegmentsResponseModel": {
         "title": "StreamingAudioChunkWithTimestampsAndVoiceSegmentsResponseModel",
         "required": [
@@ -91108,6 +92660,126 @@
             "title": "Skip Confirmation",
             "type": "boolean",
             "default": false
+          }
+        }
+      },
+      "SubAgentInput": {
+        "title": "SubAgent",
+        "required": [
+          "agent_id",
+          "description"
+        ],
+        "type": "object",
+        "properties": {
+          "execution_mode": {
+            "$ref": "#/components/schemas/SubAgentInputExecutionMode"
+          },
+          "timeout_secs": {
+            "title": "Timeout Secs",
+            "maximum": 3600.0,
+            "minimum": 10.0,
+            "type": "integer",
+            "description": "How long the agent may run before it\u0027s stopped.",
+            "default": 60
+          },
+          "agent_id": {
+            "title": "Agent Id",
+            "type": "string",
+            "description": "The agent to run. Must be in the same workspace."
+          },
+          "branch_id": {
+            "title": "Branch Id",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "The branch to run. Defaults to the agent\u0027s live deployment."
+          },
+          "description": {
+            "title": "Description",
+            "type": "string",
+            "description": "What the agent is for. Shown to the LLM when it picks an agent."
+          },
+          "parameters": {
+            "$ref": "#/components/schemas/SubAgentInputParameters"
+          }
+        }
+      },
+      "SubAgentOutput": {
+        "title": "SubAgent",
+        "required": [
+          "agent_id",
+          "description"
+        ],
+        "type": "object",
+        "properties": {
+          "execution_mode": {
+            "$ref": "#/components/schemas/SubAgentOutputExecutionMode"
+          },
+          "timeout_secs": {
+            "title": "Timeout Secs",
+            "maximum": 3600.0,
+            "minimum": 10.0,
+            "type": "integer",
+            "description": "How long the agent may run before it\u0027s stopped.",
+            "default": 60
+          },
+          "agent_id": {
+            "title": "Agent Id",
+            "type": "string",
+            "description": "The agent to run. Must be in the same workspace."
+          },
+          "branch_id": {
+            "title": "Branch Id",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "The branch to run. Defaults to the agent\u0027s live deployment."
+          },
+          "description": {
+            "title": "Description",
+            "type": "string",
+            "description": "What the agent is for. Shown to the LLM when it picks an agent."
+          },
+          "parameters": {
+            "$ref": "#/components/schemas/SubAgentOutputParameters"
+          }
+        }
+      },
+      "SubagentConfigInput": {
+        "title": "SubagentConfig",
+        "type": "object",
+        "properties": {
+          "agents": {
+            "title": "Agents",
+            "maxItems": 10,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SubAgentInput"
+            },
+            "description": "Agents this agent can hand a single turn to."
+          },
+          "self_subagent": {
+            "$ref": "#/components/schemas/SubagentConfigInputSelfSubagent"
+          }
+        }
+      },
+      "SubagentConfigOutput": {
+        "title": "SubagentConfig",
+        "type": "object",
+        "properties": {
+          "agents": {
+            "title": "Agents",
+            "maxItems": 10,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SubAgentOutput"
+            },
+            "description": "Agents this agent can hand a single turn to."
+          },
+          "self_subagent": {
+            "$ref": "#/components/schemas/SubagentConfigInputSelfSubagent"
           }
         }
       },
@@ -93328,6 +95000,41 @@
           ]
         }
       },
+      "TextOutputItem": {
+        "title": "TextOutputItem",
+        "required": [
+          "role",
+          "text"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/TextOutputItemType"
+          },
+          "role": {
+            "$ref": "#/components/schemas/AgentRole"
+          },
+          "id": {
+            "title": "Id",
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "text": {
+            "title": "Text",
+            "type": "string"
+          },
+          "created_at_unix_ms": {
+            "title": "Created At Unix Ms",
+            "type": [
+              "null",
+              "integer"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
       "TextToSpeechGenerationRequest": {
         "x-client-original-discriminator": {
           "propertyName": "model_id",
@@ -95221,6 +96928,53 @@
               "string"
             ]
           }
+        }
+      },
+      "UpdateDocumentChunkingOverrideRequestModel": {
+        "title": "UpdateDocumentChunkingOverrideRequestModel",
+        "required": [
+          "chunking_override"
+        ],
+        "type": "object",
+        "properties": {
+          "chunking_override": {
+            "$ref": "#/components/schemas/UpdateDocumentChunkingOverrideRequestModelChunkingOverride"
+          }
+        }
+      },
+      "UpdateDocumentChunkingOverrideResponseModel": {
+        "title": "UpdateDocumentChunkingOverrideResponseModel",
+        "required": [
+          "id",
+          "chunking_override",
+          "reindex_queued"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string",
+            "description": "ID of the document or folder whose chunking override was updated."
+          },
+          "chunking_override": {
+            "$ref": "#/components/schemas/UpdateDocumentChunkingOverrideResponseModelChunkingOverride"
+          },
+          "reindex_queued": {
+            "title": "Reindex Queued",
+            "type": "boolean",
+            "description": "Whether the effective configuration changed and background reindexing was queued."
+          }
+        },
+        "example": {
+          "chunking_override": {
+            "custom_separators": [
+              "\n## "
+            ],
+            "max_chunk_size": 800,
+            "overlap_percentage": 10
+          },
+          "id": "21m00Tcm4TlvDq8ikWAM",
+          "reindex_queued": true
         }
       },
       "UpdateEnvironmentVariableRequest": {
@@ -103684,6 +105438,17 @@
           "description": "Access information for the merge_proposal, including creator."
         }
       },
+      "AgentMessagesOverridesLlm": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/Llm"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "description": "The LLM to query with the prompt and the chat history. If using data residency, the LLM must be supported in the data residency environment"
+      },
       "AgentPlatformSettingsRequestModelAnalysisItems": {
         "title": "AgentAnalysisItems",
         "type": [
@@ -111574,6 +113339,42 @@
           ]
         }
       },
+      "ConversationTurnError": {
+        "title": "AgentOutputError",
+        "required": [
+          "type",
+          "code",
+          "message"
+        ],
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "type": {
+            "title": "Type",
+            "type": "string"
+          },
+          "code": {
+            "title": "Code",
+            "type": "string"
+          },
+          "message": {
+            "title": "Message",
+            "type": "string"
+          }
+        },
+        "x-client-original-nullable-union": {
+          "anyOf": [
+            {
+              "$ref": "#/components/schemas/AgentOutputError"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
       "ConversationalConfigApiModelWorkflowOverrideInputAsr": {
         "title": "ASRConversationalConfigWorkflowOverride",
         "type": [
@@ -114275,6 +116076,57 @@
         ],
         "description": "The pending change for the user."
       },
+      "FileContentPartSource": {
+        "title": "Source",
+        "x-client-original-discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "base64": "#/components/schemas/Base64FileSource",
+            "file_id": "#/components/schemas/FileIdSource"
+          }
+        },
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "base64": "#/components/schemas/FileContentPartSourceBase64FileSource",
+            "file_id": "#/components/schemas/FileContentPartSourceFileIdSource"
+          }
+        },
+        "x-client-original-tagged-union": {
+          "title": "Source",
+          "oneOf": [
+            {
+              "$ref": "#/components/schemas/Base64FileSource"
+            },
+            {
+              "$ref": "#/components/schemas/FileIdSource"
+            }
+          ],
+          "x-client-original-discriminator": {
+            "propertyName": "type",
+            "mapping": {
+              "base64": "#/components/schemas/Base64FileSource",
+              "file_id": "#/components/schemas/FileIdSource"
+            }
+          },
+          "discriminator": {
+            "propertyName": "type",
+            "mapping": {
+              "base64": "#/components/schemas/Base64FileSource",
+              "file_id": "#/components/schemas/FileIdSource"
+            }
+          }
+        },
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
       "FineTuningResponseModelManualVerification": {
         "title": "ManualVerificationResponseModel",
         "required": [
@@ -114611,6 +116463,55 @@
           "description": "The access information of the agent for the user"
         }
       },
+      "GetAgentSubagentDependentsResponseModelAgentsItem": {
+        "x-client-original-discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "available": "#/components/schemas/DependentAvailableAgentIdentifier",
+            "unknown": "#/components/schemas/DependentUnknownAgentIdentifier"
+          }
+        },
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "available": "#/components/schemas/GetAgentSubagentDependentsResponseModelAgentsItemOneOf1Variant",
+            "unknown": "#/components/schemas/GetAgentSubagentDependentsResponseModelAgentsItemOneOf2Variant"
+          }
+        },
+        "x-client-original-tagged-union": {
+          "oneOf": [
+            {
+              "$ref": "#/components/schemas/GetAgentSubagentDependentsResponseModelAgentsItemOneOf1"
+            },
+            {
+              "$ref": "#/components/schemas/GetAgentSubagentDependentsResponseModelAgentsItemOneOf2"
+            }
+          ],
+          "x-client-original-discriminator": {
+            "propertyName": "type",
+            "mapping": {
+              "available": "#/components/schemas/DependentAvailableAgentIdentifier",
+              "unknown": "#/components/schemas/DependentUnknownAgentIdentifier"
+            }
+          },
+          "discriminator": {
+            "propertyName": "type",
+            "mapping": {
+              "available": "#/components/schemas/GetAgentSubagentDependentsResponseModelAgentsItemOneOf1",
+              "unknown": "#/components/schemas/GetAgentSubagentDependentsResponseModelAgentsItemOneOf2"
+            }
+          }
+        },
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
       "GetAnalysisItemDependentAgentsResponseModelAgentsItem": {
         "x-client-original-discriminator": {
           "propertyName": "type",
@@ -114930,6 +116831,59 @@
           }
         ]
       },
+      "GetDocumentChunkingOverrideResponseModelChunkingOverride": {
+        "title": "ChunkingOverride",
+        "required": [
+          "max_chunk_size",
+          "overlap_percentage",
+          "custom_separators"
+        ],
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "max_chunk_size": {
+            "title": "Max Chunk Size",
+            "type": [
+              "null",
+              "integer"
+            ],
+            "description": "Maximum chunk size in tokens. Null uses the inherited value."
+          },
+          "overlap_percentage": {
+            "title": "Overlap Percentage",
+            "type": [
+              "null",
+              "integer"
+            ],
+            "description": "Chunk overlap as a percentage of the chunk size. Null uses the inherited value."
+          },
+          "custom_separators": {
+            "title": "Custom Separators",
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "type": "string"
+            },
+            "description": "Custom text separators used when splitting. Null uses the inherited value."
+          }
+        },
+        "description": "Override stored directly on this entity. Null means every setting is inherited.",
+        "x-client-original-nullable-union": {
+          "anyOf": [
+            {
+              "$ref": "#/components/schemas/ChunkingOverride"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Override stored directly on this entity. Null means every setting is inherited."
+        }
+      },
       "GetKnowledgeBaseDependentAgentsResponseModelAgentsItem": {
         "x-client-original-discriminator": {
           "propertyName": "type",
@@ -114978,6 +116932,59 @@
         "required": [
           "type"
         ]
+      },
+      "GetKnowledgeBaseFileResponseModelChunkingOverride": {
+        "title": "ChunkingOverride",
+        "required": [
+          "max_chunk_size",
+          "overlap_percentage",
+          "custom_separators"
+        ],
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "max_chunk_size": {
+            "title": "Max Chunk Size",
+            "type": [
+              "null",
+              "integer"
+            ],
+            "description": "Maximum chunk size in tokens. Null uses the inherited value."
+          },
+          "overlap_percentage": {
+            "title": "Overlap Percentage",
+            "type": [
+              "null",
+              "integer"
+            ],
+            "description": "Chunk overlap as a percentage of the chunk size. Null uses the inherited value."
+          },
+          "custom_separators": {
+            "title": "Custom Separators",
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "type": "string"
+            },
+            "description": "Custom text separators used when splitting. Null uses the inherited value."
+          }
+        },
+        "description": "Per-entity RAG chunking override. Null means inherit from ancestors or the embedding model default.",
+        "x-client-original-nullable-union": {
+          "anyOf": [
+            {
+              "$ref": "#/components/schemas/ChunkingOverride"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Per-entity RAG chunking override. Null means inherit from ancestors or the embedding model default."
+        }
       },
       "GetKnowledgeBaseFileResponseModelExternalSyncInfo": {
         "title": "ExternalFileSyncInfo",
@@ -122336,6 +124343,62 @@
           }
         ]
       },
+      "SendConversationMessageRequestInputItem": {
+        "x-client-original-discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "client_tool_result": "#/components/schemas/ClientToolResultItem",
+            "contextual_update": "#/components/schemas/ContextualUpdateInputItem",
+            "user_message": "#/components/schemas/UserMessageInputItem"
+          }
+        },
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "user_message": "#/components/schemas/SendConversationMessageRequestInputItemUserMessageInputItem",
+            "client_tool_result": "#/components/schemas/SendConversationMessageRequestInputItemClientToolResultItem",
+            "contextual_update": "#/components/schemas/SendConversationMessageRequestInputItemContextualUpdateInputItem"
+          }
+        },
+        "x-client-original-tagged-union": {
+          "oneOf": [
+            {
+              "$ref": "#/components/schemas/UserMessageInputItem"
+            },
+            {
+              "$ref": "#/components/schemas/ClientToolResultItem"
+            },
+            {
+              "$ref": "#/components/schemas/ContextualUpdateInputItem"
+            }
+          ],
+          "x-client-original-discriminator": {
+            "propertyName": "type",
+            "mapping": {
+              "client_tool_result": "#/components/schemas/ClientToolResultItem",
+              "contextual_update": "#/components/schemas/ContextualUpdateInputItem",
+              "user_message": "#/components/schemas/UserMessageInputItem"
+            }
+          },
+          "discriminator": {
+            "propertyName": "type",
+            "mapping": {
+              "user_message": "#/components/schemas/UserMessageInputItem",
+              "client_tool_result": "#/components/schemas/ClientToolResultItem",
+              "contextual_update": "#/components/schemas/ContextualUpdateInputItem"
+            }
+          }
+        },
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
       "ServiceUpdateResponseService": {
         "title": "SMBServiceDBModel",
         "required": [
@@ -122810,6 +124873,251 @@
           }
         ],
         "description": "Result of the optional transcript edit: the edited text, or an error if it could not be produced. Absent when no edit was requested. On success, both \u0060text\u0060 and \u0060edited_text\u0060 hold the edited transcript; compare them with the top-level \u0060text\u0060 to see what changed."
+      },
+      "StreamEnvelopeEvent": {
+        "title": "Event",
+        "x-client-original-discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "agent_chat_response_part": "#/components/schemas/AgentChatResponsePartClientEvent",
+            "agent_reasoning_response_part": "#/components/schemas/AgentReasoningResponsePartClientEvent",
+            "agent_response": "#/components/schemas/AgentResponseClientEvent",
+            "agent_tool_request": "#/components/schemas/AgentToolRequestStreamedEvent",
+            "agent_tool_response": "#/components/schemas/AgentToolResponseStreamedEvent",
+            "client_tool_call": "#/components/schemas/ClientToolCallEvent",
+            "stream_ended": "#/components/schemas/StreamEndedEvent"
+          }
+        },
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "stream_ended": "#/components/schemas/StreamEnvelopeEventOneOf1Variant",
+            "agent_chat_response_part": "#/components/schemas/StreamEnvelopeEventOneOf2Variant",
+            "agent_reasoning_response_part": "#/components/schemas/StreamEnvelopeEventOneOf3Variant",
+            "agent_response": "#/components/schemas/StreamEnvelopeEventOneOf4Variant",
+            "agent_tool_request": "#/components/schemas/StreamEnvelopeEventOneOf5Variant",
+            "agent_tool_response": "#/components/schemas/StreamEnvelopeEventOneOf6Variant",
+            "client_tool_call": "#/components/schemas/StreamEnvelopeEventOneOf7Variant"
+          }
+        },
+        "x-client-original-tagged-union": {
+          "title": "Event",
+          "oneOf": [
+            {
+              "$ref": "#/components/schemas/StreamEnvelopeEventOneOf1"
+            },
+            {
+              "$ref": "#/components/schemas/StreamEnvelopeEventOneOf2"
+            },
+            {
+              "$ref": "#/components/schemas/StreamEnvelopeEventOneOf3"
+            },
+            {
+              "$ref": "#/components/schemas/StreamEnvelopeEventOneOf4"
+            },
+            {
+              "$ref": "#/components/schemas/StreamEnvelopeEventOneOf5"
+            },
+            {
+              "$ref": "#/components/schemas/StreamEnvelopeEventOneOf6"
+            },
+            {
+              "$ref": "#/components/schemas/StreamEnvelopeEventOneOf7"
+            }
+          ],
+          "x-client-original-discriminator": {
+            "propertyName": "type",
+            "mapping": {
+              "agent_chat_response_part": "#/components/schemas/AgentChatResponsePartClientEvent",
+              "agent_reasoning_response_part": "#/components/schemas/AgentReasoningResponsePartClientEvent",
+              "agent_response": "#/components/schemas/AgentResponseClientEvent",
+              "agent_tool_request": "#/components/schemas/AgentToolRequestStreamedEvent",
+              "agent_tool_response": "#/components/schemas/AgentToolResponseStreamedEvent",
+              "client_tool_call": "#/components/schemas/ClientToolCallEvent",
+              "stream_ended": "#/components/schemas/StreamEndedEvent"
+            }
+          },
+          "discriminator": {
+            "propertyName": "type",
+            "mapping": {
+              "stream_ended": "#/components/schemas/StreamEnvelopeEventOneOf1",
+              "agent_chat_response_part": "#/components/schemas/StreamEnvelopeEventOneOf2",
+              "agent_reasoning_response_part": "#/components/schemas/StreamEnvelopeEventOneOf3",
+              "agent_response": "#/components/schemas/StreamEnvelopeEventOneOf4",
+              "agent_tool_request": "#/components/schemas/StreamEnvelopeEventOneOf5",
+              "agent_tool_response": "#/components/schemas/StreamEnvelopeEventOneOf6",
+              "client_tool_call": "#/components/schemas/StreamEnvelopeEventOneOf7"
+            }
+          }
+        },
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "SubAgentInputParameters": {
+        "title": "ObjectJsonSchemaProperty",
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "property_kind": {
+            "$ref": "#/components/schemas/ObjectJsonSchemaPropertyInputPropertyKind"
+          },
+          "description": {
+            "title": "Description",
+            "type": "string",
+            "default": ""
+          },
+          "dynamic_variable": {
+            "title": "Dynamic Variable",
+            "type": "string",
+            "description": "When set, the entire parameter is populated from this dynamic variable at runtime. Mutually exclusive with description (LLM-provided value), constant_value, and is_omitted.",
+            "default": ""
+          },
+          "constant_value": {
+            "$ref": "#/components/schemas/ObjectJsonSchemaPropertyInputConstantValueProperty"
+          },
+          "is_omitted": {
+            "title": "Is Omitted",
+            "type": "boolean",
+            "description": "If true, this parameter will be completely omitted from the request. Only valid for optional parameters. Mutually exclusive with description, dynamic_variable, and constant_value.",
+            "default": false
+          },
+          "type": {
+            "$ref": "#/components/schemas/ObjectJsonSchemaPropertyInputType"
+          },
+          "required": {
+            "title": "Required",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "properties": {
+            "$ref": "#/components/schemas/ObjectJsonSchemaPropertyInputProperties"
+          },
+          "required_constraints": {
+            "$ref": "#/components/schemas/ObjectJsonSchemaPropertyInputRequiredConstraints"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Values passed to the agent as dynamic variables.",
+        "x-client-original-nullable-union": {
+          "anyOf": [
+            {
+              "$ref": "#/components/schemas/ObjectJsonSchemaPropertyInput"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Values passed to the agent as dynamic variables."
+        }
+      },
+      "SubAgentOutputParameters": {
+        "title": "ObjectJsonSchemaProperty",
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "description": {
+            "title": "Description",
+            "type": "string",
+            "default": ""
+          },
+          "dynamic_variable": {
+            "title": "Dynamic Variable",
+            "type": "string",
+            "description": "When set, the entire parameter is populated from this dynamic variable at runtime. Mutually exclusive with description (LLM-provided value), constant_value, and is_omitted.",
+            "default": ""
+          },
+          "constant_value": {
+            "$ref": "#/components/schemas/ObjectJsonSchemaPropertyOutputConstantValueProperty"
+          },
+          "is_omitted": {
+            "title": "Is Omitted",
+            "type": "boolean",
+            "description": "If true, this parameter will be completely omitted from the request. Only valid for optional parameters. Mutually exclusive with description, dynamic_variable, and constant_value.",
+            "default": false
+          },
+          "type": {
+            "$ref": "#/components/schemas/ObjectJsonSchemaPropertyOutputType"
+          },
+          "required": {
+            "title": "Required",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "properties": {
+            "$ref": "#/components/schemas/ObjectJsonSchemaPropertyOutputProperties"
+          },
+          "required_constraints": {
+            "$ref": "#/components/schemas/ObjectJsonSchemaPropertyInputRequiredConstraints"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Values passed to the agent as dynamic variables.",
+        "x-client-original-nullable-union": {
+          "anyOf": [
+            {
+              "$ref": "#/components/schemas/ObjectJsonSchemaPropertyOutput"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Values passed to the agent as dynamic variables."
+        }
+      },
+      "SubagentConfigInputSelfSubagent": {
+        "title": "SelfSubagent",
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "execution_mode": {
+            "$ref": "#/components/schemas/SelfSubagentExecutionMode"
+          },
+          "timeout_secs": {
+            "title": "Timeout Secs",
+            "maximum": 3600.0,
+            "minimum": 10.0,
+            "type": "integer",
+            "description": "How long the agent may run before it\u0027s stopped.",
+            "default": 60
+          },
+          "description": {
+            "title": "Description",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "When the agent should hand work to itself. Defaults to a built-in description."
+          }
+        },
+        "description": "Lets this agent hand a single turn to a fresh copy of itself.",
+        "x-client-original-nullable-union": {
+          "anyOf": [
+            {
+              "$ref": "#/components/schemas/SelfSubagent"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Lets this agent hand a single turn to a fresh copy of itself."
+        }
       },
       "SubmitCampaignRecipientConversationInitiationClientData": {
         "title": "ConversationInitiationClientDataRequest",
@@ -124969,6 +127277,113 @@
           "status"
         ]
       },
+      "UpdateDocumentChunkingOverrideRequestModelChunkingOverride": {
+        "title": "ChunkingOverrideRequestModel",
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "max_chunk_size": {
+            "title": "Max Chunk Size",
+            "minimum": 200.0,
+            "type": [
+              "null",
+              "integer"
+            ],
+            "description": "Maximum chunk size in tokens. Null inherits from ancestors or the embedding model default."
+          },
+          "overlap_percentage": {
+            "title": "Overlap Percentage",
+            "maximum": 25.0,
+            "minimum": 0.0,
+            "type": [
+              "null",
+              "integer"
+            ],
+            "description": "Chunk overlap as a percentage of the final chunk size, applied after the chunk size is clamped to the embedding model. Null inherits from ancestors or the embedding model default."
+          },
+          "custom_separators": {
+            "title": "Custom Separators",
+            "maxItems": 5,
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "maxLength": 100,
+              "minLength": 1,
+              "type": "string"
+            },
+            "description": "Custom text separators used when splitting. Null inherits from ancestors; an empty list clears inherited separators."
+          }
+        },
+        "description": "RAG chunking override for a document or folder. Null clears the override so ancestors and embedding model defaults apply.",
+        "x-client-original-nullable-union": {
+          "anyOf": [
+            {
+              "$ref": "#/components/schemas/ChunkingOverrideRequestModel"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "RAG chunking override for a document or folder. Null clears the override so ancestors and embedding model defaults apply."
+        }
+      },
+      "UpdateDocumentChunkingOverrideResponseModelChunkingOverride": {
+        "title": "ChunkingOverride",
+        "required": [
+          "max_chunk_size",
+          "overlap_percentage",
+          "custom_separators"
+        ],
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "max_chunk_size": {
+            "title": "Max Chunk Size",
+            "type": [
+              "null",
+              "integer"
+            ],
+            "description": "Maximum chunk size in tokens. Null uses the inherited value."
+          },
+          "overlap_percentage": {
+            "title": "Overlap Percentage",
+            "type": [
+              "null",
+              "integer"
+            ],
+            "description": "Chunk overlap as a percentage of the chunk size. Null uses the inherited value."
+          },
+          "custom_separators": {
+            "title": "Custom Separators",
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "type": "string"
+            },
+            "description": "Custom text separators used when splitting. Null uses the inherited value."
+          }
+        },
+        "description": "The resulting chunking override. Null means the entity inherits from ancestors or the embedding model default.",
+        "x-client-original-nullable-union": {
+          "anyOf": [
+            {
+              "$ref": "#/components/schemas/ChunkingOverride"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "The resulting chunking override. Null means the entity inherits from ancestors or the embedding model default."
+        }
+      },
       "UpdateEnvironmentVariableRequestValuesAdditionalProperties": {
         "anyOf": [
           {
@@ -125650,6 +128065,55 @@
         },
         "required": [
           "mode"
+        ]
+      },
+      "UserMessageInputItemContentItem": {
+        "x-client-original-discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "file": "#/components/schemas/FileContentPart",
+            "text": "#/components/schemas/TextContentPart"
+          }
+        },
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "text": "#/components/schemas/UserMessageInputItemContentItemTextContentPart",
+            "file": "#/components/schemas/UserMessageInputItemContentItemFileContentPart"
+          }
+        },
+        "x-client-original-tagged-union": {
+          "oneOf": [
+            {
+              "$ref": "#/components/schemas/TextContentPart"
+            },
+            {
+              "$ref": "#/components/schemas/FileContentPart"
+            }
+          ],
+          "x-client-original-discriminator": {
+            "propertyName": "type",
+            "mapping": {
+              "file": "#/components/schemas/FileContentPart",
+              "text": "#/components/schemas/TextContentPart"
+            }
+          },
+          "discriminator": {
+            "propertyName": "type",
+            "mapping": {
+              "text": "#/components/schemas/TextContentPart",
+              "file": "#/components/schemas/FileContentPart"
+            }
+          }
+        },
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "type"
         ]
       },
       "ValidationErrorLocItem": {
@@ -130464,6 +132928,14 @@
         },
         "description": "Map of branch IDs to traffic percentages"
       },
+      "AgentMessagesOverridesCustomLlmExtraBodyProperty": {
+        "title": "Custom Llm Extra Body",
+        "type": [
+          "null",
+          "object"
+        ],
+        "description": "Extra fields for the request body that goes to the custom LLM."
+      },
       "AgentPlatformSettingsRequestModelDataCollectionProperty": {
         "title": "Data Collection",
         "type": "object",
@@ -130744,6 +133216,14 @@
         },
         "description": "Overrides of \u0060policy\u0060, keyed by agent ID."
       },
+      "ClientToolCallClientEventDataParametersProperty": {
+        "title": "Parameters",
+        "type": "object"
+      },
+      "ClientToolCallRequiredActionParametersProperty": {
+        "title": "Parameters",
+        "type": "object"
+      },
       "CompileProceduresValidationErrorResponseModelErrorsProperty": {
         "title": "Errors",
         "minProperties": 1,
@@ -130933,6 +133413,10 @@
           "$ref": "#/components/schemas/LanguagePresetOutput"
         },
         "description": "Language presets for conversations"
+      },
+      "CreateAgentConversationRequestDynamicVariablesProperty": {
+        "title": "Dynamic Variables",
+        "type": "object"
       },
       "CreateAuthConnectionEnvironmentVariableRequestValuesProperty": {
         "title": "Values",
@@ -132533,6 +135017,24 @@
           ]
         }
       },
+      "PersistedType": {
+        "title": "Type",
+        "enum": [
+          "persisted"
+        ],
+        "type": "string",
+        "x-client-original-const": "persisted",
+        "x-ms-enum": {
+          "name": "PersistedType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "persisted",
+              "name": "Persisted"
+            }
+          ]
+        }
+      },
       "SuccessType": {
         "title": "Type",
         "enum": [
@@ -133151,6 +135653,24 @@
             {
               "value": "override",
               "name": "OverrideValue"
+            }
+          ]
+        }
+      },
+      "Base64Type": {
+        "title": "Type",
+        "enum": [
+          "base64"
+        ],
+        "type": "string",
+        "x-client-original-const": "base64",
+        "x-ms-enum": {
+          "name": "Base64Type",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "base64",
+              "name": "Base64"
             }
           ]
         }
@@ -134534,7 +137054,8 @@
         "enum": [
           "480p",
           "720p",
-          "1080p"
+          "1080p",
+          "4k"
         ],
         "type": "string",
         "description": "The resolution of the output video.",
@@ -134553,6 +137074,10 @@
             {
               "value": "1080p",
               "name": "Value1080P"
+            },
+            {
+              "value": "4k",
+              "name": "Value4K"
             }
           ]
         }
@@ -135665,6 +138190,94 @@
           ]
         }
       },
+      "ClientToolCallRequiredActionType": {
+        "title": "Type",
+        "enum": [
+          "client_tool_call"
+        ],
+        "type": "string",
+        "x-client-original-const": "client_tool_call",
+        "x-ms-enum": {
+          "name": "ClientToolCallRequiredActionType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "client_tool_call",
+              "name": "ClientToolCall"
+            }
+          ]
+        }
+      },
+      "ClientToolResultType": {
+        "title": "Type",
+        "enum": [
+          "client_tool_result"
+        ],
+        "type": "string",
+        "x-client-original-const": "client_tool_result",
+        "x-ms-enum": {
+          "name": "ClientToolResultType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "client_tool_result",
+              "name": "ClientToolResult"
+            }
+          ]
+        }
+      },
+      "ClientToolResultItemErrorType": {
+        "title": "Error Type",
+        "description": "Optional category for the failure reason. When set, \u0060is_error\u0060 is treated as true. \u0060user_rejected\u0060 is special-cased to mark the tool as not having been called.",
+        "anyOf": [
+          {
+            "title": "Error Type",
+            "enum": [
+              "user_rejected",
+              "external_server",
+              "external_client",
+              "customer_auth",
+              "client_timeout",
+              "unknown"
+            ],
+            "type": "string",
+            "description": "Optional category for the failure reason. When set, \u0060is_error\u0060 is treated as true. \u0060user_rejected\u0060 is special-cased to mark the tool as not having been called.",
+            "x-ms-enum": {
+              "name": "ClientToolResultItemErrorType",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "user_rejected",
+                  "name": "UserRejected"
+                },
+                {
+                  "value": "external_server",
+                  "name": "ExternalServer"
+                },
+                {
+                  "value": "external_client",
+                  "name": "ExternalClient"
+                },
+                {
+                  "value": "customer_auth",
+                  "name": "CustomerAuth"
+                },
+                {
+                  "value": "client_timeout",
+                  "name": "ClientTimeout"
+                },
+                {
+                  "value": "unknown",
+                  "name": "Unknown"
+                }
+              ]
+            }
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
       "ClipAnimationEnterEffect": {
         "title": "Enter Effect",
         "enum": [
@@ -135877,6 +138490,24 @@
             {
               "value": "neq",
               "name": "Neq"
+            }
+          ]
+        }
+      },
+      "ContextualUpdateType": {
+        "title": "Type",
+        "enum": [
+          "contextual_update"
+        ],
+        "type": "string",
+        "x-client-original-const": "contextual_update",
+        "x-ms-enum": {
+          "name": "ContextualUpdateType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "contextual_update",
+              "name": "ContextualUpdate"
             }
           ]
         }
@@ -137754,6 +140385,42 @@
           ]
         }
       },
+      "FileType": {
+        "title": "Type",
+        "enum": [
+          "file"
+        ],
+        "type": "string",
+        "x-client-original-const": "file",
+        "x-ms-enum": {
+          "name": "FileType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "file",
+              "name": "File"
+            }
+          ]
+        }
+      },
+      "FileIdType": {
+        "title": "Type",
+        "enum": [
+          "file_id"
+        ],
+        "type": "string",
+        "x-client-original-const": "file_id",
+        "x-ms-enum": {
+          "name": "FileIdType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "file_id",
+              "name": "FileId"
+            }
+          ]
+        }
+      },
       "FrustratedConversationRefOverallLabel": {
         "title": "Overall Label",
         "enum": [
@@ -139082,7 +141749,7 @@
           ]
         }
       },
-      "FileType": {
+      "GetKnowledgeBaseFileResponseModelType": {
         "title": "Type",
         "enum": [
           "file"
@@ -139090,7 +141757,7 @@
         "type": "string",
         "x-client-original-const": "file",
         "x-ms-enum": {
-          "name": "FileType",
+          "name": "GetKnowledgeBaseFileResponseModelType",
           "modelAsString": false,
           "values": [
             {
@@ -142981,6 +145648,29 @@
           ]
         }
       },
+      "SelfSubagentExecutionMode": {
+        "title": "Execution Mode",
+        "enum": [
+          "immediate",
+          "async"
+        ],
+        "type": "string",
+        "description": "Whether to wait for the reply, or keep going and get it later in the conversation.",
+        "x-ms-enum": {
+          "name": "SelfSubagentExecutionMode",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "immediate",
+              "name": "Immediate"
+            },
+            {
+              "value": "async",
+              "name": "Async"
+            }
+          ]
+        }
+      },
       "ShareOptionResponseModelType": {
         "title": "Type",
         "enum": [
@@ -143346,6 +146036,52 @@
             {
               "value": "tts_node",
               "name": "TtsNode"
+            }
+          ]
+        }
+      },
+      "SubAgentInputExecutionMode": {
+        "title": "Execution Mode",
+        "enum": [
+          "immediate",
+          "async"
+        ],
+        "type": "string",
+        "description": "Whether to wait for the reply, or keep going and get it later in the conversation.",
+        "x-ms-enum": {
+          "name": "SubAgentInputExecutionMode",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "immediate",
+              "name": "Immediate"
+            },
+            {
+              "value": "async",
+              "name": "Async"
+            }
+          ]
+        }
+      },
+      "SubAgentOutputExecutionMode": {
+        "title": "Execution Mode",
+        "enum": [
+          "immediate",
+          "async"
+        ],
+        "type": "string",
+        "description": "Whether to wait for the reply, or keep going and get it later in the conversation.",
+        "x-ms-enum": {
+          "name": "SubAgentOutputExecutionMode",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "immediate",
+              "name": "Immediate"
+            },
+            {
+              "value": "async",
+              "name": "Async"
             }
           ]
         }
@@ -144194,6 +146930,60 @@
           ]
         }
       },
+      "TextContentPartType": {
+        "title": "Type",
+        "enum": [
+          "text"
+        ],
+        "type": "string",
+        "x-client-original-const": "text",
+        "x-ms-enum": {
+          "name": "TextContentPartType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "text",
+              "name": "Text"
+            }
+          ]
+        }
+      },
+      "TextOutputItemType": {
+        "title": "Type",
+        "enum": [
+          "text"
+        ],
+        "type": "string",
+        "x-client-original-const": "text",
+        "x-ms-enum": {
+          "name": "TextOutputItemType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "text",
+              "name": "Text"
+            }
+          ]
+        }
+      },
+      "AgentRole": {
+        "title": "Role",
+        "enum": [
+          "agent"
+        ],
+        "type": "string",
+        "x-client-original-const": "agent",
+        "x-ms-enum": {
+          "name": "AgentRole",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "agent",
+              "name": "Agent"
+            }
+          ]
+        }
+      },
       "ToolExecutionTaskSupport": {
         "title": "Tasksupport",
         "anyOf": [
@@ -144984,6 +147774,24 @@
             {
               "value": "evaluation",
               "name": "Evaluation"
+            }
+          ]
+        }
+      },
+      "UserMessageType": {
+        "title": "Type",
+        "enum": [
+          "user_message"
+        ],
+        "type": "string",
+        "x-client-original-const": "user_message",
+        "x-ms-enum": {
+          "name": "UserMessageType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "user_message",
+              "name": "UserMessage"
             }
           ]
         }
@@ -157493,7 +160301,7 @@
               }
             },
             "additionalProperties": false,
-            "description": "Request body for the ByteDance Seedance 2.5 video model.\n\nDiverges from the Seedance 2.0 public shape: no 4K, durations up to 30s,\nlarger reference caps, audio-only input allowed, and no \u0060\u0060seed\u0060\u0060 (Ark\ntolerates it but does not honour it).\n\nByteDance models are disabled by default and require explicit approval\nbefore use. Contact support to request access."
+            "description": "Request body for the ByteDance Seedance 2.5 video model.\n\nDiverges from the Seedance 2.0 public shape: durations up to 30s, larger\nreference caps, audio-only input allowed, and no \u0060\u0060seed\u0060\u0060 (Ark tolerates it\nbut does not honour it).\n\nByteDance models are disabled by default and require explicit approval\nbefore use. Contact support to request access."
           }
         ]
       },
@@ -160371,6 +163179,70 @@
           }
         ]
       },
+      "FileContentPartSourceBase64FileSource": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/FileContentPartSource"
+          },
+          {
+            "title": "Base64FileSource",
+            "required": [
+              "type",
+              "filename",
+              "media_type",
+              "data"
+            ],
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/Base64Type"
+              },
+              "filename": {
+                "title": "Filename",
+                "minLength": 1,
+                "type": "string",
+                "description": "The name of the file, with its extension."
+              },
+              "media_type": {
+                "$ref": "#/components/schemas/FileInputMimeType"
+              },
+              "data": {
+                "title": "Data",
+                "type": "string",
+                "description": "The content of the file, base64-encoded."
+              }
+            },
+            "additionalProperties": false
+          }
+        ]
+      },
+      "FileContentPartSourceFileIdSource": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/FileContentPartSource"
+          },
+          {
+            "title": "FileIdSource",
+            "required": [
+              "type",
+              "file_id"
+            ],
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/FileIdType"
+              },
+              "file_id": {
+                "title": "File Id",
+                "minLength": 1,
+                "type": "string",
+                "description": "The ID that \u0060POST /v1/convai/conversations/{conversation_id}/files\u0060 returned for this conversation."
+              }
+            },
+            "additionalProperties": false
+          }
+        ]
+      },
       "GetAgentResponseModelPhoneNumbersItemOneOf1Variant": {
         "allOf": [
           {
@@ -160594,6 +163466,112 @@
               "phone_number_id",
               "livekit_stack",
               "provider"
+            ]
+          }
+        ]
+      },
+      "GetAgentSubagentDependentsResponseModelAgentsItemOneOf1Variant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/GetAgentSubagentDependentsResponseModelAgentsItem"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "referenced_resource_ids": {
+                "title": "Referenced Resource Ids",
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "If the agent is a transitive dependent, contains IDs of the resources that the agent depends on directly."
+              },
+              "id": {
+                "title": "Id",
+                "type": "string"
+              },
+              "name": {
+                "title": "Name",
+                "type": "string"
+              },
+              "type": {
+                "title": "Type",
+                "enum": [
+                  "available"
+                ],
+                "type": "string",
+                "x-client-original-const": "available",
+                "x-ms-enum": {
+                  "name": "Type",
+                  "modelAsString": false,
+                  "values": [
+                    {
+                      "value": "available",
+                      "name": "Available"
+                    }
+                  ]
+                }
+              },
+              "created_at_unix_secs": {
+                "title": "Created At Unix Secs",
+                "type": "integer"
+              },
+              "access_level": {
+                "$ref": "#/components/schemas/DependentAvailableAgentIdentifierAccessLevel"
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "created_at_unix_secs",
+              "access_level",
+              "type"
+            ]
+          }
+        ]
+      },
+      "GetAgentSubagentDependentsResponseModelAgentsItemOneOf2Variant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/GetAgentSubagentDependentsResponseModelAgentsItem"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "referenced_resource_ids": {
+                "title": "Referenced Resource Ids",
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "If the agent is a transitive dependent, contains IDs of the resources that the agent depends on directly."
+              },
+              "id": {
+                "title": "Id",
+                "type": "string"
+              },
+              "type": {
+                "title": "Type",
+                "enum": [
+                  "unknown"
+                ],
+                "type": "string",
+                "x-client-original-const": "unknown",
+                "x-ms-enum": {
+                  "name": "Type",
+                  "modelAsString": false,
+                  "values": [
+                    {
+                      "value": "unknown",
+                      "name": "Unknown"
+                    }
+                  ]
+                }
+              }
+            },
+            "required": [
+              "id",
+              "type"
             ]
           }
         ]
@@ -160982,6 +163960,9 @@
                 ],
                 "description": "The ID of the parent folder, or null if the document is at the root level."
               },
+              "chunking_override": {
+                "$ref": "#/components/schemas/GetKnowledgeBaseFileResponseModelChunkingOverride"
+              },
               "folder_path": {
                 "title": "Folder Path",
                 "type": "array",
@@ -160996,7 +163977,7 @@
                 "items": {
                   "$ref": "#/components/schemas/GetKnowledgeBaseSummaryUrlResponseModelDependentAgentsItem"
                 },
-                "description": "This field is deprecated and will be removed in the future, use the separate endpoint to get dependent agents instead.",
+                "description": "This field is deprecated, always empty, and will be removed in the future. Use the separate endpoint to get dependent agents instead.",
                 "deprecated": true
               },
               "type": {
@@ -161060,6 +164041,9 @@
                 ],
                 "description": "The ID of the parent folder, or null if the document is at the root level."
               },
+              "chunking_override": {
+                "$ref": "#/components/schemas/GetKnowledgeBaseFileResponseModelChunkingOverride"
+              },
               "folder_path": {
                 "title": "Folder Path",
                 "type": "array",
@@ -161074,7 +164058,7 @@
                 "items": {
                   "$ref": "#/components/schemas/GetKnowledgeBaseSummaryFileResponseModelDependentAgentsItem"
                 },
-                "description": "This field is deprecated and will be removed in the future, use the separate endpoint to get dependent agents instead.",
+                "description": "This field is deprecated, always empty, and will be removed in the future. Use the separate endpoint to get dependent agents instead.",
                 "deprecated": true
               },
               "type": {
@@ -161145,6 +164129,9 @@
                 ],
                 "description": "The ID of the parent folder, or null if the document is at the root level."
               },
+              "chunking_override": {
+                "$ref": "#/components/schemas/GetKnowledgeBaseFileResponseModelChunkingOverride"
+              },
               "folder_path": {
                 "title": "Folder Path",
                 "type": "array",
@@ -161159,7 +164146,7 @@
                 "items": {
                   "$ref": "#/components/schemas/GetKnowledgeBaseSummaryTextResponseModelDependentAgentsItem"
                 },
-                "description": "This field is deprecated and will be removed in the future, use the separate endpoint to get dependent agents instead.",
+                "description": "This field is deprecated, always empty, and will be removed in the future. Use the separate endpoint to get dependent agents instead.",
                 "deprecated": true
               },
               "type": {
@@ -161218,6 +164205,9 @@
                 ],
                 "description": "The ID of the parent folder, or null if the document is at the root level."
               },
+              "chunking_override": {
+                "$ref": "#/components/schemas/GetKnowledgeBaseFileResponseModelChunkingOverride"
+              },
               "folder_path": {
                 "title": "Folder Path",
                 "type": "array",
@@ -161232,7 +164222,7 @@
                 "items": {
                   "$ref": "#/components/schemas/GetKnowledgeBaseSummaryFolderResponseModelDependentAgentsItem"
                 },
-                "description": "This field is deprecated and will be removed in the future, use the separate endpoint to get dependent agents instead.",
+                "description": "This field is deprecated, always empty, and will be removed in the future. Use the separate endpoint to get dependent agents instead.",
                 "deprecated": true
               },
               "type": {
@@ -171128,6 +174118,376 @@
           }
         ]
       },
+      "SendConversationMessageRequestInputItemUserMessageInputItem": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/SendConversationMessageRequestInputItem"
+          },
+          {
+            "title": "UserMessageInputItem",
+            "required": [
+              "type",
+              "content"
+            ],
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/UserMessageType"
+              },
+              "content": {
+                "title": "Content",
+                "maxItems": 6,
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/UserMessageInputItemContentItem"
+                },
+                "description": "The parts of the message: at most one text part and up to 5 file parts."
+              }
+            },
+            "additionalProperties": false
+          }
+        ]
+      },
+      "SendConversationMessageRequestInputItemClientToolResultItem": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/SendConversationMessageRequestInputItem"
+          },
+          {
+            "title": "ClientToolResultItem",
+            "required": [
+              "type",
+              "tool_call_id",
+              "result",
+              "is_error"
+            ],
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/ClientToolResultType"
+              },
+              "tool_call_id": {
+                "title": "Tool Call Id",
+                "type": "string",
+                "description": "ID of the tool call this result corresponds to."
+              },
+              "result": {
+                "title": "Result",
+                "type": "string"
+              },
+              "is_error": {
+                "title": "Is Error",
+                "type": "boolean"
+              },
+              "error_type": {
+                "$ref": "#/components/schemas/ClientToolResultItemErrorType"
+              }
+            },
+            "additionalProperties": false,
+            "description": "A \u0060client_tool_result\u0060 whose \u0060type\u0060 is required, so that it can share \u0060input\u0060 with other items."
+          }
+        ]
+      },
+      "SendConversationMessageRequestInputItemContextualUpdateInputItem": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/SendConversationMessageRequestInputItem"
+          },
+          {
+            "title": "ContextualUpdateInputItem",
+            "required": [
+              "type",
+              "text",
+              "context_id"
+            ],
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/ContextualUpdateType"
+              },
+              "text": {
+                "title": "Text",
+                "minLength": 1,
+                "type": "string",
+                "description": "Context for the agent that the user did not write, such as the client\u0027s current state."
+              },
+              "context_id": {
+                "title": "Context Id",
+                "minLength": 1,
+                "type": "string",
+                "description": "What the update describes. The agent sees only the latest update for each \u0060context_id\u0060."
+              },
+              "placement": {
+                "description": "\u0060in_place\u0060: the update stays where it was sent, like an event. \u0060end\u0060: the update is current state, sent after the newest message or tool result.",
+                "default": "in_place",
+                "$ref": "#/components/schemas/ContextualUpdatePlacement"
+              }
+            },
+            "additionalProperties": false
+          }
+        ]
+      },
+      "StreamEnvelopeEventOneOf1Variant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/StreamEnvelopeEvent"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "title": "Type",
+                "enum": [
+                  "stream_ended"
+                ],
+                "type": "string",
+                "x-client-original-const": "stream_ended",
+                "x-ms-enum": {
+                  "name": "Type",
+                  "modelAsString": false,
+                  "values": [
+                    {
+                      "value": "stream_ended",
+                      "name": "StreamEnded"
+                    }
+                  ]
+                }
+              },
+              "stream_ended_event": {
+                "$ref": "#/components/schemas/StreamEndedData"
+              }
+            },
+            "required": [
+              "stream_ended_event",
+              "type"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      },
+      "StreamEnvelopeEventOneOf2Variant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/StreamEnvelopeEvent"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "text_response_part": {
+                "$ref": "#/components/schemas/AgentChatResponsePartClientEventData"
+              },
+              "type": {
+                "title": "Type",
+                "enum": [
+                  "agent_chat_response_part"
+                ],
+                "type": "string",
+                "x-client-original-const": "agent_chat_response_part",
+                "x-ms-enum": {
+                  "name": "Type",
+                  "modelAsString": false,
+                  "values": [
+                    {
+                      "value": "agent_chat_response_part",
+                      "name": "AgentChatResponsePart"
+                    }
+                  ]
+                }
+              }
+            },
+            "required": [
+              "text_response_part",
+              "type"
+            ]
+          }
+        ]
+      },
+      "StreamEnvelopeEventOneOf3Variant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/StreamEnvelopeEvent"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "reasoning_response_part": {
+                "$ref": "#/components/schemas/AgentReasoningResponsePartClientEventData"
+              },
+              "type": {
+                "title": "Type",
+                "enum": [
+                  "agent_reasoning_response_part"
+                ],
+                "type": "string",
+                "x-client-original-const": "agent_reasoning_response_part",
+                "x-ms-enum": {
+                  "name": "Type",
+                  "modelAsString": false,
+                  "values": [
+                    {
+                      "value": "agent_reasoning_response_part",
+                      "name": "AgentReasoningResponsePart"
+                    }
+                  ]
+                }
+              }
+            },
+            "required": [
+              "reasoning_response_part",
+              "type"
+            ]
+          }
+        ]
+      },
+      "StreamEnvelopeEventOneOf4Variant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/StreamEnvelopeEvent"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "agent_response_event": {
+                "$ref": "#/components/schemas/AgentResponseClientEventData"
+              },
+              "type": {
+                "title": "Type",
+                "enum": [
+                  "agent_response"
+                ],
+                "type": "string",
+                "x-client-original-const": "agent_response",
+                "x-ms-enum": {
+                  "name": "Type",
+                  "modelAsString": false,
+                  "values": [
+                    {
+                      "value": "agent_response",
+                      "name": "AgentResponse"
+                    }
+                  ]
+                }
+              }
+            },
+            "required": [
+              "agent_response_event",
+              "type"
+            ]
+          }
+        ]
+      },
+      "StreamEnvelopeEventOneOf5Variant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/StreamEnvelopeEvent"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "agent_tool_request": {
+                "$ref": "#/components/schemas/AgentToolRequestClientEventData"
+              },
+              "type": {
+                "title": "Type",
+                "enum": [
+                  "agent_tool_request"
+                ],
+                "type": "string",
+                "x-client-original-const": "agent_tool_request",
+                "x-ms-enum": {
+                  "name": "Type",
+                  "modelAsString": false,
+                  "values": [
+                    {
+                      "value": "agent_tool_request",
+                      "name": "AgentToolRequest"
+                    }
+                  ]
+                }
+              }
+            },
+            "required": [
+              "agent_tool_request",
+              "type"
+            ]
+          }
+        ]
+      },
+      "StreamEnvelopeEventOneOf6Variant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/StreamEnvelopeEvent"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "agent_tool_response": {
+                "$ref": "#/components/schemas/AgentToolResponseClientEventData"
+              },
+              "type": {
+                "title": "Type",
+                "enum": [
+                  "agent_tool_response"
+                ],
+                "type": "string",
+                "x-client-original-const": "agent_tool_response",
+                "x-ms-enum": {
+                  "name": "Type",
+                  "modelAsString": false,
+                  "values": [
+                    {
+                      "value": "agent_tool_response",
+                      "name": "AgentToolResponse"
+                    }
+                  ]
+                }
+              }
+            },
+            "required": [
+              "agent_tool_response",
+              "type"
+            ]
+          }
+        ]
+      },
+      "StreamEnvelopeEventOneOf7Variant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/StreamEnvelopeEvent"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "title": "Type",
+                "enum": [
+                  "client_tool_call"
+                ],
+                "type": "string",
+                "x-client-original-const": "client_tool_call",
+                "x-ms-enum": {
+                  "name": "Type",
+                  "modelAsString": false,
+                  "values": [
+                    {
+                      "value": "client_tool_call",
+                      "name": "ClientToolCall"
+                    }
+                  ]
+                }
+              },
+              "client_tool_call": {
+                "$ref": "#/components/schemas/ClientToolCallClientEventData"
+              }
+            },
+            "required": [
+              "client_tool_call",
+              "type"
+            ]
+          }
+        ]
+      },
       "SubmitCampaignRequestChannelConfigOneOf1Variant": {
         "allOf": [
           {
@@ -173869,6 +177229,55 @@
               "max_score",
               "mode"
             ]
+          }
+        ]
+      },
+      "UserMessageInputItemContentItemTextContentPart": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/UserMessageInputItemContentItem"
+          },
+          {
+            "title": "TextContentPart",
+            "required": [
+              "type",
+              "text"
+            ],
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/TextContentPartType"
+              },
+              "text": {
+                "title": "Text",
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        ]
+      },
+      "UserMessageInputItemContentItemFileContentPart": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/UserMessageInputItemContentItem"
+          },
+          {
+            "title": "FileContentPart",
+            "required": [
+              "type",
+              "source"
+            ],
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/FileType"
+              },
+              "source": {
+                "$ref": "#/components/schemas/FileContentPartSource"
+              }
+            },
+            "additionalProperties": false
           }
         ]
       },
@@ -178639,6 +182048,9 @@
                 ],
                 "description": "The ID of the parent folder, or null if the document is at the root level."
               },
+              "chunking_override": {
+                "$ref": "#/components/schemas/GetKnowledgeBaseFileResponseModelChunkingOverride"
+              },
               "folder_path": {
                 "title": "Folder Path",
                 "type": "array",
@@ -178718,6 +182130,9 @@
                 ],
                 "description": "The ID of the parent folder, or null if the document is at the root level."
               },
+              "chunking_override": {
+                "$ref": "#/components/schemas/GetKnowledgeBaseFileResponseModelChunkingOverride"
+              },
               "folder_path": {
                 "title": "Folder Path",
                 "type": "array",
@@ -178727,7 +182142,7 @@
                 "description": "The folder path segments leading to this entity, from root to parent folder."
               },
               "type": {
-                "$ref": "#/components/schemas/FileType"
+                "$ref": "#/components/schemas/GetKnowledgeBaseFileResponseModelType"
               },
               "extracted_inner_html": {
                 "title": "Extracted Inner Html",
@@ -178807,6 +182222,9 @@
                 ],
                 "description": "The ID of the parent folder, or null if the document is at the root level."
               },
+              "chunking_override": {
+                "$ref": "#/components/schemas/GetKnowledgeBaseFileResponseModelChunkingOverride"
+              },
               "folder_path": {
                 "title": "Folder Path",
                 "type": "array",
@@ -178878,6 +182296,9 @@
                   "string"
                 ],
                 "description": "The ID of the parent folder, or null if the document is at the root level."
+              },
+              "chunking_override": {
+                "$ref": "#/components/schemas/GetKnowledgeBaseFileResponseModelChunkingOverride"
               },
               "folder_path": {
                 "title": "Folder Path",
@@ -184821,6 +188242,21 @@
         }
       }
     },
+    "AgentChatResponsePartClientEvent": {
+      "title": "AgentChatResponsePartClientEvent",
+      "required": [
+        "text_response_part"
+      ],
+      "type": "object",
+      "properties": {
+        "text_response_part": {
+          "$ref": "#/components/schemas/AgentChatResponsePartClientEventData"
+        },
+        "type": {
+          "$ref": "#/components/schemas/AgentChatResponsePartClientEventType"
+        }
+      }
+    },
     "AgentConfigApiModelWorkflowOverrideInput": {
       "title": "AgentConfigAPIModelWorkflowOverride",
       "type": "object",
@@ -185183,6 +188619,59 @@
         }
       }
     },
+    "AgentOutputError": {
+      "title": "AgentOutputError",
+      "required": [
+        "type",
+        "code",
+        "message"
+      ],
+      "type": "object",
+      "properties": {
+        "type": {
+          "title": "Type",
+          "type": "string"
+        },
+        "code": {
+          "title": "Code",
+          "type": "string"
+        },
+        "message": {
+          "title": "Message",
+          "type": "string"
+        }
+      }
+    },
+    "AgentReasoningResponsePartClientEvent": {
+      "title": "AgentReasoningResponsePartClientEvent",
+      "required": [
+        "reasoning_response_part"
+      ],
+      "type": "object",
+      "properties": {
+        "reasoning_response_part": {
+          "$ref": "#/components/schemas/AgentReasoningResponsePartClientEventData"
+        },
+        "type": {
+          "$ref": "#/components/schemas/AgentReasoningResponsePartType"
+        }
+      }
+    },
+    "AgentResponseClientEvent": {
+      "title": "AgentResponseClientEvent",
+      "required": [
+        "agent_response_event"
+      ],
+      "type": "object",
+      "properties": {
+        "agent_response_event": {
+          "$ref": "#/components/schemas/AgentResponseClientEventData"
+        },
+        "type": {
+          "$ref": "#/components/schemas/AgentResponseClientEventType"
+        }
+      }
+    },
     "AgentSmbMetadata": {
       "title": "AgentSMBMetadata",
       "required": [
@@ -185209,6 +188698,36 @@
         }
       },
       "description": "Identifies an agent as part of the SMB product."
+    },
+    "AgentToolRequestStreamedEvent": {
+      "title": "AgentToolRequestStreamedEvent",
+      "required": [
+        "agent_tool_request"
+      ],
+      "type": "object",
+      "properties": {
+        "agent_tool_request": {
+          "$ref": "#/components/schemas/AgentToolRequestClientEventData"
+        },
+        "type": {
+          "$ref": "#/components/schemas/AgentToolRequestType"
+        }
+      }
+    },
+    "AgentToolResponseStreamedEvent": {
+      "title": "AgentToolResponseStreamedEvent",
+      "required": [
+        "agent_tool_response"
+      ],
+      "type": "object",
+      "properties": {
+        "agent_tool_response": {
+          "$ref": "#/components/schemas/AgentToolResponseClientEventData"
+        },
+        "type": {
+          "$ref": "#/components/schemas/AgentToolResponseType"
+        }
+      }
     },
     "AgentTransferOp": {
       "x-client-original-discriminator": {
@@ -186503,6 +190022,36 @@
         ]
       }
     },
+    "Base64FileSource": {
+      "title": "Base64FileSource",
+      "required": [
+        "type",
+        "filename",
+        "media_type",
+        "data"
+      ],
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/components/schemas/Base64Type"
+        },
+        "filename": {
+          "title": "Filename",
+          "minLength": 1,
+          "type": "string",
+          "description": "The name of the file, with its extension."
+        },
+        "media_type": {
+          "$ref": "#/components/schemas/FileInputMimeType"
+        },
+        "data": {
+          "title": "Data",
+          "type": "string",
+          "description": "The content of the file, base64-encoded."
+        }
+      },
+      "additionalProperties": false
+    },
     "BasicAuthResponse": {
       "title": "BasicAuthResponse",
       "required": [
@@ -186853,7 +190402,7 @@
         }
       },
       "additionalProperties": false,
-      "description": "Request body for the ByteDance Seedance 2.5 video model.\n\nDiverges from the Seedance 2.0 public shape: no 4K, durations up to 30s,\nlarger reference caps, audio-only input allowed, and no \u0060\u0060seed\u0060\u0060 (Ark\ntolerates it but does not honour it).\n\nByteDance models are disabled by default and require explicit approval\nbefore use. Contact support to request access."
+      "description": "Request body for the ByteDance Seedance 2.5 video model.\n\nDiverges from the Seedance 2.0 public shape: durations up to 30s, larger\nreference caps, audio-only input allowed, and no \u0060\u0060seed\u0060\u0060 (Ark tolerates it\nbut does not honour it).\n\nByteDance models are disabled by default and require explicit approval\nbefore use. Contact support to request access."
     },
     "BytedanceSeedance2FastRequest": {
       "title": "BytedanceSeedance2FastRequest",
@@ -187728,6 +191277,61 @@
         }
       }
     },
+    "ChunkingOverrideRequestModel": {
+      "title": "ChunkingOverrideRequestModel",
+      "type": "object",
+      "properties": {
+        "max_chunk_size": {
+          "title": "Max Chunk Size",
+          "minimum": 200.0,
+          "type": [
+            "null",
+            "integer"
+          ],
+          "description": "Maximum chunk size in tokens. Null inherits from ancestors or the embedding model default."
+        },
+        "overlap_percentage": {
+          "title": "Overlap Percentage",
+          "maximum": 25.0,
+          "minimum": 0.0,
+          "type": [
+            "null",
+            "integer"
+          ],
+          "description": "Chunk overlap as a percentage of the final chunk size, applied after the chunk size is clamped to the embedding model. Null inherits from ancestors or the embedding model default."
+        },
+        "custom_separators": {
+          "title": "Custom Separators",
+          "maxItems": 5,
+          "type": [
+            "null",
+            "array"
+          ],
+          "items": {
+            "maxLength": 100,
+            "minLength": 1,
+            "type": "string"
+          },
+          "description": "Custom text separators used when splitting. Null inherits from ancestors; an empty list clears inherited separators."
+        }
+      }
+    },
+    "ClientToolCallEvent": {
+      "title": "ClientToolCallEvent",
+      "required": [
+        "client_tool_call"
+      ],
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/components/schemas/ClientToolCallType"
+        },
+        "client_tool_call": {
+          "$ref": "#/components/schemas/ClientToolCallClientEventData"
+        }
+      },
+      "description": "\u0060ClientToolCallClientEvent\u0060 as a stream event, because its custom \u0060__init__\u0060 can\u0027t parse its own JSON."
+    },
     "ClientToolConfigInput": {
       "title": "ClientToolConfig",
       "required": [
@@ -187930,6 +191534,39 @@
         "type": "client"
       }
     },
+    "ClientToolResultItem": {
+      "title": "ClientToolResultItem",
+      "required": [
+        "type",
+        "tool_call_id",
+        "result",
+        "is_error"
+      ],
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/components/schemas/ClientToolResultType"
+        },
+        "tool_call_id": {
+          "title": "Tool Call Id",
+          "type": "string",
+          "description": "ID of the tool call this result corresponds to."
+        },
+        "result": {
+          "title": "Result",
+          "type": "string"
+        },
+        "is_error": {
+          "title": "Is Error",
+          "type": "boolean"
+        },
+        "error_type": {
+          "$ref": "#/components/schemas/ClientToolResultItemErrorType"
+        }
+      },
+      "additionalProperties": false,
+      "description": "A \u0060client_tool_result\u0060 whose \u0060type\u0060 is required, so that it can share \u0060input\u0060 with other items."
+    },
     "ClosedOutcome": {
       "title": "ClosedOutcome",
       "required": [
@@ -188031,6 +191668,38 @@
           "default": false
         }
       }
+    },
+    "ContextualUpdateInputItem": {
+      "title": "ContextualUpdateInputItem",
+      "required": [
+        "type",
+        "text",
+        "context_id"
+      ],
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/components/schemas/ContextualUpdateType"
+        },
+        "text": {
+          "title": "Text",
+          "minLength": 1,
+          "type": "string",
+          "description": "Context for the agent that the user did not write, such as the client\u0027s current state."
+        },
+        "context_id": {
+          "title": "Context Id",
+          "minLength": 1,
+          "type": "string",
+          "description": "What the update describes. The agent sees only the latest update for each \u0060context_id\u0060."
+        },
+        "placement": {
+          "description": "\u0060in_place\u0060: the update stays where it was sent, like an event. \u0060end\u0060: the update is current state, sent after the newest message or tool result.",
+          "default": "in_place",
+          "$ref": "#/components/schemas/ContextualUpdatePlacement"
+        }
+      },
+      "additionalProperties": false
     },
     "ConversationAsrUsageModel": {
       "title": "ConversationASRUsageModel",
@@ -191718,6 +195387,43 @@
         }
       },
       "description": "Metadata for a KB folder that mirrors an external source folder."
+    },
+    "FileContentPart": {
+      "title": "FileContentPart",
+      "required": [
+        "type",
+        "source"
+      ],
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/components/schemas/FileType"
+        },
+        "source": {
+          "$ref": "#/components/schemas/FileContentPartSource"
+        }
+      },
+      "additionalProperties": false
+    },
+    "FileIdSource": {
+      "title": "FileIdSource",
+      "required": [
+        "type",
+        "file_id"
+      ],
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/components/schemas/FileIdType"
+        },
+        "file_id": {
+          "title": "File Id",
+          "minLength": 1,
+          "type": "string",
+          "description": "The ID that \u0060POST /v1/convai/conversations/{conversation_id}/files\u0060 returned for this conversation."
+        }
+      },
+      "additionalProperties": false
     },
     "FileInputConfigWorkflowOverride": {
       "title": "FileInputConfigWorkflowOverride",
@@ -200437,6 +204143,32 @@
         }
       }
     },
+    "SelfSubagent": {
+      "title": "SelfSubagent",
+      "type": "object",
+      "properties": {
+        "execution_mode": {
+          "$ref": "#/components/schemas/SelfSubagentExecutionMode"
+        },
+        "timeout_secs": {
+          "title": "Timeout Secs",
+          "maximum": 3600.0,
+          "minimum": 10.0,
+          "type": "integer",
+          "description": "How long the agent may run before it\u0027s stopped.",
+          "default": 60
+        },
+        "description": {
+          "title": "Description",
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "When the agent should hand work to itself. Defaults to a built-in description."
+        }
+      },
+      "description": "The agent itself, run on the same branch with none of the conversation."
+    },
     "SendCustomEmailParams": {
       "title": "SendCustomEmailParams",
       "type": "object",
@@ -201235,6 +204967,22 @@
           "default": "Procedure is now started. Follow its instructions from the \u003Cactive-procedures\u003E section of your system prompt."
         }
       }
+    },
+    "StreamEndedEvent": {
+      "title": "StreamEndedEvent",
+      "required": [
+        "stream_ended_event"
+      ],
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/components/schemas/StreamEndedType"
+        },
+        "stream_ended_event": {
+          "$ref": "#/components/schemas/StreamEndedData"
+        }
+      },
+      "additionalProperties": false
     },
     "StringSchema": {
       "title": "StringSchema",
@@ -202998,6 +206746,24 @@
         }
       }
     },
+    "TextContentPart": {
+      "title": "TextContentPart",
+      "required": [
+        "type",
+        "text"
+      ],
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/components/schemas/TextContentPartType"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
     "TicketMergeProposalLinkResponseModel": {
       "title": "TicketMergeProposalLinkResponseModel",
       "required": [
@@ -204654,6 +208420,30 @@
           "type": "integer"
         }
       }
+    },
+    "UserMessageInputItem": {
+      "title": "UserMessageInputItem",
+      "required": [
+        "type",
+        "content"
+      ],
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/components/schemas/UserMessageType"
+        },
+        "content": {
+          "title": "Content",
+          "maxItems": 6,
+          "minItems": 1,
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/UserMessageInputItemContentItem"
+          },
+          "description": "The parts of the message: at most one text part and up to 5 file parts."
+        }
+      },
+      "additionalProperties": false
     },
     "VadConfigWorkflowOverride": {
       "title": "VADConfigWorkflowOverride",
@@ -213726,6 +217516,59 @@
       ],
       "description": "How strongly the model adheres to the conditioning reference. Low strength means the model will be more creative and deviate from the reference. High strength means the model will be more consistent with the reference."
     },
+    "GetKnowledgeBaseFolderResponseModelChunkingOverride": {
+      "title": "ChunkingOverride",
+      "required": [
+        "max_chunk_size",
+        "overlap_percentage",
+        "custom_separators"
+      ],
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "max_chunk_size": {
+          "title": "Max Chunk Size",
+          "type": [
+            "null",
+            "integer"
+          ],
+          "description": "Maximum chunk size in tokens. Null uses the inherited value."
+        },
+        "overlap_percentage": {
+          "title": "Overlap Percentage",
+          "type": [
+            "null",
+            "integer"
+          ],
+          "description": "Chunk overlap as a percentage of the chunk size. Null uses the inherited value."
+        },
+        "custom_separators": {
+          "title": "Custom Separators",
+          "type": [
+            "null",
+            "array"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "description": "Custom text separators used when splitting. Null uses the inherited value."
+        }
+      },
+      "description": "Per-entity RAG chunking override. Null means inherit from ancestors or the embedding model default.",
+      "x-client-original-nullable-union": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ChunkingOverride"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "description": "Per-entity RAG chunking override. Null means inherit from ancestors or the embedding model default."
+      }
+    },
     "GetKnowledgeBaseFolderResponseModelAutoSyncInfo": {
       "title": "AutoSyncInfo",
       "type": [
@@ -213772,6 +217615,59 @@
             "type": "null"
           }
         ]
+      }
+    },
+    "GetKnowledgeBaseSummaryFileResponseModelChunkingOverride": {
+      "title": "ChunkingOverride",
+      "required": [
+        "max_chunk_size",
+        "overlap_percentage",
+        "custom_separators"
+      ],
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "max_chunk_size": {
+          "title": "Max Chunk Size",
+          "type": [
+            "null",
+            "integer"
+          ],
+          "description": "Maximum chunk size in tokens. Null uses the inherited value."
+        },
+        "overlap_percentage": {
+          "title": "Overlap Percentage",
+          "type": [
+            "null",
+            "integer"
+          ],
+          "description": "Chunk overlap as a percentage of the chunk size. Null uses the inherited value."
+        },
+        "custom_separators": {
+          "title": "Custom Separators",
+          "type": [
+            "null",
+            "array"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "description": "Custom text separators used when splitting. Null uses the inherited value."
+        }
+      },
+      "description": "Per-entity RAG chunking override. Null means inherit from ancestors or the embedding model default.",
+      "x-client-original-nullable-union": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ChunkingOverride"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "description": "Per-entity RAG chunking override. Null means inherit from ancestors or the embedding model default."
       }
     },
     "GetKnowledgeBaseSummaryFileResponseModelExternalSyncInfo": {
@@ -213888,6 +217784,59 @@
         ]
       }
     },
+    "GetKnowledgeBaseSummaryFolderResponseModelChunkingOverride": {
+      "title": "ChunkingOverride",
+      "required": [
+        "max_chunk_size",
+        "overlap_percentage",
+        "custom_separators"
+      ],
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "max_chunk_size": {
+          "title": "Max Chunk Size",
+          "type": [
+            "null",
+            "integer"
+          ],
+          "description": "Maximum chunk size in tokens. Null uses the inherited value."
+        },
+        "overlap_percentage": {
+          "title": "Overlap Percentage",
+          "type": [
+            "null",
+            "integer"
+          ],
+          "description": "Chunk overlap as a percentage of the chunk size. Null uses the inherited value."
+        },
+        "custom_separators": {
+          "title": "Custom Separators",
+          "type": [
+            "null",
+            "array"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "description": "Custom text separators used when splitting. Null uses the inherited value."
+        }
+      },
+      "description": "Per-entity RAG chunking override. Null means inherit from ancestors or the embedding model default.",
+      "x-client-original-nullable-union": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ChunkingOverride"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "description": "Per-entity RAG chunking override. Null means inherit from ancestors or the embedding model default."
+      }
+    },
     "GetKnowledgeBaseSummaryFolderResponseModelAutoSyncInfo": {
       "title": "AutoSyncInfo",
       "type": [
@@ -213999,6 +217948,112 @@
         ]
       }
     },
+    "GetKnowledgeBaseSummaryTextResponseModelChunkingOverride": {
+      "title": "ChunkingOverride",
+      "required": [
+        "max_chunk_size",
+        "overlap_percentage",
+        "custom_separators"
+      ],
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "max_chunk_size": {
+          "title": "Max Chunk Size",
+          "type": [
+            "null",
+            "integer"
+          ],
+          "description": "Maximum chunk size in tokens. Null uses the inherited value."
+        },
+        "overlap_percentage": {
+          "title": "Overlap Percentage",
+          "type": [
+            "null",
+            "integer"
+          ],
+          "description": "Chunk overlap as a percentage of the chunk size. Null uses the inherited value."
+        },
+        "custom_separators": {
+          "title": "Custom Separators",
+          "type": [
+            "null",
+            "array"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "description": "Custom text separators used when splitting. Null uses the inherited value."
+        }
+      },
+      "description": "Per-entity RAG chunking override. Null means inherit from ancestors or the embedding model default.",
+      "x-client-original-nullable-union": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ChunkingOverride"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "description": "Per-entity RAG chunking override. Null means inherit from ancestors or the embedding model default."
+      }
+    },
+    "GetKnowledgeBaseSummaryUrlResponseModelChunkingOverride": {
+      "title": "ChunkingOverride",
+      "required": [
+        "max_chunk_size",
+        "overlap_percentage",
+        "custom_separators"
+      ],
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "max_chunk_size": {
+          "title": "Max Chunk Size",
+          "type": [
+            "null",
+            "integer"
+          ],
+          "description": "Maximum chunk size in tokens. Null uses the inherited value."
+        },
+        "overlap_percentage": {
+          "title": "Overlap Percentage",
+          "type": [
+            "null",
+            "integer"
+          ],
+          "description": "Chunk overlap as a percentage of the chunk size. Null uses the inherited value."
+        },
+        "custom_separators": {
+          "title": "Custom Separators",
+          "type": [
+            "null",
+            "array"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "description": "Custom text separators used when splitting. Null uses the inherited value."
+        }
+      },
+      "description": "Per-entity RAG chunking override. Null means inherit from ancestors or the embedding model default.",
+      "x-client-original-nullable-union": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ChunkingOverride"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "description": "Per-entity RAG chunking override. Null means inherit from ancestors or the embedding model default."
+      }
+    },
     "GetKnowledgeBaseSummaryUrlResponseModelAutoSyncInfo": {
       "title": "AutoSyncInfo",
       "type": [
@@ -214045,6 +218100,112 @@
             "type": "null"
           }
         ]
+      }
+    },
+    "GetKnowledgeBaseTextResponseModelChunkingOverride": {
+      "title": "ChunkingOverride",
+      "required": [
+        "max_chunk_size",
+        "overlap_percentage",
+        "custom_separators"
+      ],
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "max_chunk_size": {
+          "title": "Max Chunk Size",
+          "type": [
+            "null",
+            "integer"
+          ],
+          "description": "Maximum chunk size in tokens. Null uses the inherited value."
+        },
+        "overlap_percentage": {
+          "title": "Overlap Percentage",
+          "type": [
+            "null",
+            "integer"
+          ],
+          "description": "Chunk overlap as a percentage of the chunk size. Null uses the inherited value."
+        },
+        "custom_separators": {
+          "title": "Custom Separators",
+          "type": [
+            "null",
+            "array"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "description": "Custom text separators used when splitting. Null uses the inherited value."
+        }
+      },
+      "description": "Per-entity RAG chunking override. Null means inherit from ancestors or the embedding model default.",
+      "x-client-original-nullable-union": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ChunkingOverride"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "description": "Per-entity RAG chunking override. Null means inherit from ancestors or the embedding model default."
+      }
+    },
+    "GetKnowledgeBaseUrlResponseModelChunkingOverride": {
+      "title": "ChunkingOverride",
+      "required": [
+        "max_chunk_size",
+        "overlap_percentage",
+        "custom_separators"
+      ],
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "max_chunk_size": {
+          "title": "Max Chunk Size",
+          "type": [
+            "null",
+            "integer"
+          ],
+          "description": "Maximum chunk size in tokens. Null uses the inherited value."
+        },
+        "overlap_percentage": {
+          "title": "Overlap Percentage",
+          "type": [
+            "null",
+            "integer"
+          ],
+          "description": "Chunk overlap as a percentage of the chunk size. Null uses the inherited value."
+        },
+        "custom_separators": {
+          "title": "Custom Separators",
+          "type": [
+            "null",
+            "array"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "description": "Custom text separators used when splitting. Null uses the inherited value."
+        }
+      },
+      "description": "Per-entity RAG chunking override. Null means inherit from ancestors or the embedding model default.",
+      "x-client-original-nullable-union": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ChunkingOverride"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "description": "Per-entity RAG chunking override. Null means inherit from ancestors or the embedding model default."
       }
     },
     "GetKnowledgeBaseUrlResponseModelAutoSyncInfo": {
@@ -217150,6 +221311,35 @@
         "description": "Custom working hours for this staff member. Null means follow the assigned location\u0027s operating_hours (requires location_id)."
       }
     },
+    "SendConversationMessageStreamRequestInputItem": {
+      "oneOf": [
+        {
+          "$ref": "#/components/schemas/UserMessageInputItem"
+        },
+        {
+          "$ref": "#/components/schemas/ClientToolResultItem"
+        },
+        {
+          "$ref": "#/components/schemas/ContextualUpdateInputItem"
+        }
+      ],
+      "x-client-original-discriminator": {
+        "propertyName": "type",
+        "mapping": {
+          "client_tool_result": "#/components/schemas/ClientToolResultItem",
+          "contextual_update": "#/components/schemas/ContextualUpdateInputItem",
+          "user_message": "#/components/schemas/UserMessageInputItem"
+        }
+      },
+      "discriminator": {
+        "propertyName": "type",
+        "mapping": {
+          "user_message": "#/components/schemas/UserMessageInputItem",
+          "client_tool_result": "#/components/schemas/ClientToolResultItem",
+          "contextual_update": "#/components/schemas/ContextualUpdateInputItem"
+        }
+      }
+    },
     "SimulationTestModelFromConversationMetadata": {
       "title": "TestFromConversationMetadata",
       "required": [
@@ -217291,6 +221481,42 @@
           "$ref": "#/components/schemas/ProcedureDraftRef"
         }
       ]
+    },
+    "StreamEndedDataError": {
+      "title": "AgentOutputError",
+      "required": [
+        "type",
+        "code",
+        "message"
+      ],
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "type": {
+          "title": "Type",
+          "type": "string"
+        },
+        "code": {
+          "title": "Code",
+          "type": "string"
+        },
+        "message": {
+          "title": "Message",
+          "type": "string"
+        }
+      },
+      "x-client-original-nullable-union": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/AgentOutputError"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
     },
     "StreamingAudioChunkWithTimestampsAndVoiceSegmentsResponseModelAlignment": {
       "title": "CharacterAlignmentResponseModel",
@@ -217478,6 +221704,46 @@
           }
         ],
         "description": "Timestamp information for each character in the normalized text"
+      }
+    },
+    "SubagentConfigOutputSelfSubagent": {
+      "title": "SelfSubagent",
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "execution_mode": {
+          "$ref": "#/components/schemas/SelfSubagentExecutionMode"
+        },
+        "timeout_secs": {
+          "title": "Timeout Secs",
+          "maximum": 3600.0,
+          "minimum": 10.0,
+          "type": "integer",
+          "description": "How long the agent may run before it\u0027s stopped.",
+          "default": 60
+        },
+        "description": {
+          "title": "Description",
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "When the agent should hand work to itself. Defaults to a built-in description."
+        }
+      },
+      "description": "Lets this agent hand a single turn to a fresh copy of itself.",
+      "x-client-original-nullable-union": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/SelfSubagent"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "description": "Lets this agent hand a single turn to a fresh copy of itself."
       }
     },
     "SubscriptionExtrasResponseModelUsage": {
@@ -219631,6 +223897,14 @@
       },
       "description": "Map of branch IDs to traffic percentages"
     },
+    "AgentMessagesOverridesCustomLlmExtraBody": {
+      "title": "Custom Llm Extra Body",
+      "type": [
+        "null",
+        "object"
+      ],
+      "description": "Extra fields for the request body that goes to the custom LLM."
+    },
     "AgentPlatformSettingsRequestModelDataCollection": {
       "title": "Data Collection",
       "type": "object",
@@ -219893,6 +224167,14 @@
       },
       "description": "Overrides of \u0060policy\u0060, keyed by agent ID."
     },
+    "ClientToolCallClientEventDataParameters": {
+      "title": "Parameters",
+      "type": "object"
+    },
+    "ClientToolCallRequiredActionParameters": {
+      "title": "Parameters",
+      "type": "object"
+    },
     "CompileProceduresValidationErrorResponseModelErrors": {
       "title": "Errors",
       "minProperties": 1,
@@ -220082,6 +224364,10 @@
         "$ref": "#/components/schemas/LanguagePresetOutput"
       },
       "description": "Language presets for conversations"
+    },
+    "CreateAgentConversationRequestDynamicVariables": {
+      "title": "Dynamic Variables",
+      "type": "object"
     },
     "CreateAuthConnectionEnvironmentVariableRequestValues": {
       "title": "Values",
@@ -222253,6 +226539,96 @@
         ]
       }
     },
+    "AgentChatResponsePartClientEventType": {
+      "title": "Type",
+      "enum": [
+        "agent_chat_response_part"
+      ],
+      "type": "string",
+      "x-client-original-const": "agent_chat_response_part",
+      "x-ms-enum": {
+        "name": "AgentChatResponsePartClientEventType",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "agent_chat_response_part",
+            "name": "AgentChatResponsePart"
+          }
+        ]
+      }
+    },
+    "AgentReasoningResponsePartType": {
+      "title": "Type",
+      "enum": [
+        "agent_reasoning_response_part"
+      ],
+      "type": "string",
+      "x-client-original-const": "agent_reasoning_response_part",
+      "x-ms-enum": {
+        "name": "AgentReasoningResponsePartType",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "agent_reasoning_response_part",
+            "name": "AgentReasoningResponsePart"
+          }
+        ]
+      }
+    },
+    "AgentResponseClientEventType": {
+      "title": "Type",
+      "enum": [
+        "agent_response"
+      ],
+      "type": "string",
+      "x-client-original-const": "agent_response",
+      "x-ms-enum": {
+        "name": "AgentResponseClientEventType",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "agent_response",
+            "name": "AgentResponse"
+          }
+        ]
+      }
+    },
+    "AgentToolRequestType": {
+      "title": "Type",
+      "enum": [
+        "agent_tool_request"
+      ],
+      "type": "string",
+      "x-client-original-const": "agent_tool_request",
+      "x-ms-enum": {
+        "name": "AgentToolRequestType",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "agent_tool_request",
+            "name": "AgentToolRequest"
+          }
+        ]
+      }
+    },
+    "AgentToolResponseType": {
+      "title": "Type",
+      "enum": [
+        "agent_tool_response"
+      ],
+      "type": "string",
+      "x-client-original-const": "agent_tool_response",
+      "x-ms-enum": {
+        "name": "AgentToolResponseType",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "agent_tool_response",
+            "name": "AgentToolResponse"
+          }
+        ]
+      }
+    },
     "PopType": {
       "title": "Type",
       "enum": [
@@ -222555,6 +226931,24 @@
           {
             "value": "check_service_availability",
             "name": "CheckServiceAvailability"
+          }
+        ]
+      }
+    },
+    "ClientToolCallType": {
+      "title": "Type",
+      "enum": [
+        "client_tool_call"
+      ],
+      "type": "string",
+      "x-client-original-const": "client_tool_call",
+      "x-ms-enum": {
+        "name": "ClientToolCallType",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "client_tool_call",
+            "name": "ClientToolCall"
           }
         ]
       }
@@ -225846,6 +230240,24 @@
           {
             "value": "start_procedure_success",
             "name": "StartProcedureSuccess"
+          }
+        ]
+      }
+    },
+    "StreamEndedType": {
+      "title": "Type",
+      "enum": [
+        "stream_ended"
+      ],
+      "type": "string",
+      "x-client-original-const": "stream_ended",
+      "x-ms-enum": {
+        "name": "StreamEndedType",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "stream_ended",
+            "name": "StreamEnded"
           }
         ]
       }
@@ -230296,6 +234708,98 @@
         "phone_number_id",
         "livekit_stack",
         "provider"
+      ]
+    },
+    "GetAgentSubagentDependentsResponseModelAgentsItemOneOf1": {
+      "type": "object",
+      "properties": {
+        "referenced_resource_ids": {
+          "title": "Referenced Resource Ids",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "If the agent is a transitive dependent, contains IDs of the resources that the agent depends on directly."
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "type": {
+          "title": "Type",
+          "enum": [
+            "available"
+          ],
+          "type": "string",
+          "x-client-original-const": "available",
+          "x-ms-enum": {
+            "name": "Type",
+            "modelAsString": false,
+            "values": [
+              {
+                "value": "available",
+                "name": "Available"
+              }
+            ]
+          }
+        },
+        "created_at_unix_secs": {
+          "title": "Created At Unix Secs",
+          "type": "integer"
+        },
+        "access_level": {
+          "$ref": "#/components/schemas/DependentAvailableAgentIdentifierAccessLevel"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "created_at_unix_secs",
+        "access_level",
+        "type"
+      ]
+    },
+    "GetAgentSubagentDependentsResponseModelAgentsItemOneOf2": {
+      "type": "object",
+      "properties": {
+        "referenced_resource_ids": {
+          "title": "Referenced Resource Ids",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "If the agent is a transitive dependent, contains IDs of the resources that the agent depends on directly."
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "type": {
+          "title": "Type",
+          "enum": [
+            "unknown"
+          ],
+          "type": "string",
+          "x-client-original-const": "unknown",
+          "x-ms-enum": {
+            "name": "Type",
+            "modelAsString": false,
+            "values": [
+              {
+                "value": "unknown",
+                "name": "Unknown"
+              }
+            ]
+          }
+        }
+      },
+      "required": [
+        "id",
+        "type"
       ]
     },
     "GetAnalysisItemDependentAgentsResponseModelAgentsItemOneOf1": {
@@ -238781,6 +243285,217 @@
       },
       "required": [
         "smb_tool_type"
+      ]
+    },
+    "StreamEnvelopeEventOneOf1": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "title": "Type",
+          "enum": [
+            "stream_ended"
+          ],
+          "type": "string",
+          "x-client-original-const": "stream_ended",
+          "x-ms-enum": {
+            "name": "Type",
+            "modelAsString": false,
+            "values": [
+              {
+                "value": "stream_ended",
+                "name": "StreamEnded"
+              }
+            ]
+          }
+        },
+        "stream_ended_event": {
+          "$ref": "#/components/schemas/StreamEndedData"
+        }
+      },
+      "required": [
+        "stream_ended_event",
+        "type"
+      ],
+      "additionalProperties": false
+    },
+    "StreamEnvelopeEventOneOf2": {
+      "type": "object",
+      "properties": {
+        "text_response_part": {
+          "$ref": "#/components/schemas/AgentChatResponsePartClientEventData"
+        },
+        "type": {
+          "title": "Type",
+          "enum": [
+            "agent_chat_response_part"
+          ],
+          "type": "string",
+          "x-client-original-const": "agent_chat_response_part",
+          "x-ms-enum": {
+            "name": "Type",
+            "modelAsString": false,
+            "values": [
+              {
+                "value": "agent_chat_response_part",
+                "name": "AgentChatResponsePart"
+              }
+            ]
+          }
+        }
+      },
+      "required": [
+        "text_response_part",
+        "type"
+      ]
+    },
+    "StreamEnvelopeEventOneOf3": {
+      "type": "object",
+      "properties": {
+        "reasoning_response_part": {
+          "$ref": "#/components/schemas/AgentReasoningResponsePartClientEventData"
+        },
+        "type": {
+          "title": "Type",
+          "enum": [
+            "agent_reasoning_response_part"
+          ],
+          "type": "string",
+          "x-client-original-const": "agent_reasoning_response_part",
+          "x-ms-enum": {
+            "name": "Type",
+            "modelAsString": false,
+            "values": [
+              {
+                "value": "agent_reasoning_response_part",
+                "name": "AgentReasoningResponsePart"
+              }
+            ]
+          }
+        }
+      },
+      "required": [
+        "reasoning_response_part",
+        "type"
+      ]
+    },
+    "StreamEnvelopeEventOneOf4": {
+      "type": "object",
+      "properties": {
+        "agent_response_event": {
+          "$ref": "#/components/schemas/AgentResponseClientEventData"
+        },
+        "type": {
+          "title": "Type",
+          "enum": [
+            "agent_response"
+          ],
+          "type": "string",
+          "x-client-original-const": "agent_response",
+          "x-ms-enum": {
+            "name": "Type",
+            "modelAsString": false,
+            "values": [
+              {
+                "value": "agent_response",
+                "name": "AgentResponse"
+              }
+            ]
+          }
+        }
+      },
+      "required": [
+        "agent_response_event",
+        "type"
+      ]
+    },
+    "StreamEnvelopeEventOneOf5": {
+      "type": "object",
+      "properties": {
+        "agent_tool_request": {
+          "$ref": "#/components/schemas/AgentToolRequestClientEventData"
+        },
+        "type": {
+          "title": "Type",
+          "enum": [
+            "agent_tool_request"
+          ],
+          "type": "string",
+          "x-client-original-const": "agent_tool_request",
+          "x-ms-enum": {
+            "name": "Type",
+            "modelAsString": false,
+            "values": [
+              {
+                "value": "agent_tool_request",
+                "name": "AgentToolRequest"
+              }
+            ]
+          }
+        }
+      },
+      "required": [
+        "agent_tool_request",
+        "type"
+      ]
+    },
+    "StreamEnvelopeEventOneOf6": {
+      "type": "object",
+      "properties": {
+        "agent_tool_response": {
+          "$ref": "#/components/schemas/AgentToolResponseClientEventData"
+        },
+        "type": {
+          "title": "Type",
+          "enum": [
+            "agent_tool_response"
+          ],
+          "type": "string",
+          "x-client-original-const": "agent_tool_response",
+          "x-ms-enum": {
+            "name": "Type",
+            "modelAsString": false,
+            "values": [
+              {
+                "value": "agent_tool_response",
+                "name": "AgentToolResponse"
+              }
+            ]
+          }
+        }
+      },
+      "required": [
+        "agent_tool_response",
+        "type"
+      ]
+    },
+    "StreamEnvelopeEventOneOf7": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "title": "Type",
+          "enum": [
+            "client_tool_call"
+          ],
+          "type": "string",
+          "x-client-original-const": "client_tool_call",
+          "x-ms-enum": {
+            "name": "Type",
+            "modelAsString": false,
+            "values": [
+              {
+                "value": "client_tool_call",
+                "name": "ClientToolCall"
+              }
+            ]
+          }
+        },
+        "client_tool_call": {
+          "$ref": "#/components/schemas/ClientToolCallClientEventData"
+        }
+      },
+      "required": [
+        "client_tool_call",
+        "type"
       ]
     },
     "SubmitCampaignRequestChannelConfigOneOf1": {

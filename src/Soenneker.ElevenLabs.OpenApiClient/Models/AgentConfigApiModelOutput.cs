@@ -31,6 +31,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if (parseNode.GetChildNode("max_conversation_duration_message") is { } nullNodeMaxConversationDurationMessage && nullNodeMaxConversationDurationMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxConversationDurationMessage = null;
             if (parseNode.GetChildNode("prompt") is null) { _explicitNullValuePrompt = default!; _explicitNullProperties?.Remove("prompt"); }
             else if (parseNode.GetChildNode("prompt") is { } nullNodePrompt && nullNodePrompt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Prompt = null;
+            if (parseNode.GetChildNode("subagent_config") is null) { _explicitNullValueSubagentConfig = default!; _explicitNullProperties?.Remove("subagent_config"); }
+            else if (parseNode.GetChildNode("subagent_config") is { } nullNodeSubagentConfig && nullNodeSubagentConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubagentConfig = null;
             if (parseNode.GetChildNode("text_behavior_overrides") is null) { _explicitNullValueTextBehaviorOverrides = default!; _explicitNullProperties?.Remove("text_behavior_overrides"); }
             else if (parseNode.GetChildNode("text_behavior_overrides") is { } nullNodeTextBehaviorOverrides && nullNodeTextBehaviorOverrides.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TextBehaviorOverrides = null;
         }
@@ -93,6 +95,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutput Prompt { get => _explicitNullValuePrompt; set { _explicitNullValuePrompt = value; AdditionalData?.Remove("prompt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt"); else _explicitNullProperties?.Remove("prompt"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutput _explicitNullValuePrompt = default!;
 #endif
+        /// <summary>The subagent_config property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SubagentConfigOutput? SubagentConfig { get => _explicitNullValueSubagentConfig; set { _explicitNullValueSubagentConfig = value; AdditionalData?.Remove("subagent_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subagent_config"); else _explicitNullProperties?.Remove("subagent_config"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SubagentConfigOutput? _explicitNullValueSubagentConfig = default!;
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SubagentConfigOutput SubagentConfig { get => _explicitNullValueSubagentConfig; set { _explicitNullValueSubagentConfig = value; AdditionalData?.Remove("subagent_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subagent_config"); else _explicitNullProperties?.Remove("subagent_config"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SubagentConfigOutput _explicitNullValueSubagentConfig = default!;
+#endif
         /// <summary>Per-channel response behavior overrides for text conversations. Built-in channel defaults apply when unset.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -138,6 +150,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "language", n => { Language = n.GetStringValue(); } },
                 { "max_conversation_duration_message", n => { MaxConversationDurationMessage = n.GetStringValue(); } },
                 { "prompt", n => { Prompt = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutput.CreateFromDiscriminatorValue); } },
+                { "subagent_config", n => { SubagentConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SubagentConfigOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SubagentConfigOutput.CreateFromDiscriminatorValue); } },
                 { "text_behavior_overrides", n => { TextBehaviorOverrides = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelOutputTextBehaviorOverrides>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelOutputTextBehaviorOverrides.CreateFromDiscriminatorValue); } },
             };
         }
@@ -155,6 +168,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("language", Language);
             writer.WriteStringValue("max_conversation_duration_message", MaxConversationDurationMessage);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutput>("prompt", Prompt);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SubagentConfigOutput>("subagent_config", SubagentConfig);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelOutputTextBehaviorOverrides>("text_behavior_overrides", TextBehaviorOverrides);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
