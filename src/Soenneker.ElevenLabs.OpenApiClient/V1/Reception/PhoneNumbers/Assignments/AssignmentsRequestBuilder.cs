@@ -49,17 +49,17 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Reception.PhoneNumbers.Assignmen
         /// <summary>
         /// List the workspace&apos;s phone numbers and the receptionist each one rings. A number with no `customer_facing_agent_id` is held by the workspace but not attached to a receptionist yet.
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbPhoneAssignmentDbModel&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionPhoneAssignment&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbPhoneAssignmentDbModel>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionPhoneAssignment>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbPhoneAssignmentDbModel>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionPhoneAssignment>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -69,24 +69,24 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Reception.PhoneNumbers.Assignmen
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbPhoneAssignmentDbModel>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbPhoneAssignmentDbModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionPhoneAssignment>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionPhoneAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
         /// Give a receptionist a phone number. A number the workspace already holds but has not attached is used first. Otherwise, in the US and Canada, a number with one of the requested `area_codes` is taken from the pool or bought, falling back to any number in the business&apos;s country. In countries that require paperwork, the number is issued right away but takes public calls only once the workspace&apos;s own registration is approved (see `accepts_public_calls`). Counts toward the plan&apos;s phone number limit, and free plans can take only a few new numbers a day. Returns 404 when no number is available and 403 `telephony_managed_by_reseller` when the reseller supplies the workspace&apos;s numbers from its own Twilio account or SIP trunk and none is free.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbPhoneAssignmentDbModel"/></returns>
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionPhoneAssignment"/></returns>
         /// <param name="body">Body for giving a receptionist a phone number.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbPhoneAssignmentDbModel?> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatePhoneAssignmentRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionPhoneAssignment?> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatePhoneAssignmentRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbPhoneAssignmentDbModel> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatePhoneAssignmentRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionPhoneAssignment> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatePhoneAssignmentRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -97,7 +97,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Reception.PhoneNumbers.Assignmen
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbPhoneAssignmentDbModel>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbPhoneAssignmentDbModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionPhoneAssignment>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionPhoneAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List the workspace&apos;s phone numbers and the receptionist each one rings. A number with no `customer_facing_agent_id` is held by the workspace but not attached to a receptionist yet.

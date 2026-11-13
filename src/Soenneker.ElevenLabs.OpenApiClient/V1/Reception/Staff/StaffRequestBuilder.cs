@@ -49,17 +49,17 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Reception.Staff
         /// <summary>
         /// Get all staff for the current workspace
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbStaffResourceDbModel&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionStaffResource&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbStaffResourceDbModel>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionStaffResource>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbStaffResourceDbModel>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionStaffResource>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -69,24 +69,24 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Reception.Staff
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbStaffResourceDbModel>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbStaffResourceDbModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionStaffResource>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionStaffResource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
         /// Create a new staff member
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbStaffResourceDbModel"/></returns>
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionStaffResource"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbStaffResourceDbModel?> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbCreateStaffRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionStaffResource?> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionCreateStaffRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbStaffResourceDbModel> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbCreateStaffRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionStaffResource> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionCreateStaffRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -97,7 +97,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Reception.Staff
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbStaffResourceDbModel>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbStaffResourceDbModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionStaffResource>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionStaffResource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get all staff for the current workspace
@@ -126,11 +126,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Reception.Staff
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbCreateStaffRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionCreateStaffRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbCreateStaffRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionCreateStaffRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

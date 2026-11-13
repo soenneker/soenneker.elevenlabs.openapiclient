@@ -36,18 +36,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Reception.Services.Item.ConfirmU
         /// <summary>
         /// Save a service update that changes the price of existing bookings. Optionally reprice future bookings.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ServiceUpdateResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionServiceUpdateResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.ServiceUpdateResponse?> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbConfirmServiceUpdateRequest body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Reception.Services.Item.ConfirmUpdate.ConfirmUpdateRequestBuilder.ConfirmUpdateRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionServiceUpdateResponse?> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionConfirmServiceUpdateRequest body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Reception.Services.Item.ConfirmUpdate.ConfirmUpdateRequestBuilder.ConfirmUpdateRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.ServiceUpdateResponse> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbConfirmServiceUpdateRequest body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Reception.Services.Item.ConfirmUpdate.ConfirmUpdateRequestBuilder.ConfirmUpdateRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionServiceUpdateResponse> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionConfirmServiceUpdateRequest body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Reception.Services.Item.ConfirmUpdate.ConfirmUpdateRequestBuilder.ConfirmUpdateRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -58,7 +58,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Reception.Services.Item.ConfirmU
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.ServiceUpdateResponse>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.ServiceUpdateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionServiceUpdateResponse>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionServiceUpdateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Save a service update that changes the price of existing bookings. Optionally reprice future bookings.
@@ -68,11 +68,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Reception.Services.Item.ConfirmU
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbConfirmServiceUpdateRequest body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Reception.Services.Item.ConfirmUpdate.ConfirmUpdateRequestBuilder.ConfirmUpdateRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionConfirmServiceUpdateRequest body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Reception.Services.Item.ConfirmUpdate.ConfirmUpdateRequestBuilder.ConfirmUpdateRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbConfirmServiceUpdateRequest body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Reception.Services.Item.ConfirmUpdate.ConfirmUpdateRequestBuilder.ConfirmUpdateRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionConfirmServiceUpdateRequest body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Reception.Services.Item.ConfirmUpdate.ConfirmUpdateRequestBuilder.ConfirmUpdateRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

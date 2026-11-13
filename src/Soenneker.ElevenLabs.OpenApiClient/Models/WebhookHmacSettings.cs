@@ -20,6 +20,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("auth_type") is null) { _explicitNullValueAuthType = default!; _explicitNullProperties?.Remove("auth_type"); }
             else if (parseNode.GetChildNode("auth_type") is { } nullNodeAuthType && nullNodeAuthType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthType = null;
+            if (parseNode.GetChildNode("log_redacted_fields") is null) { _explicitNullValueLogRedactedFields = default!; _explicitNullProperties?.Remove("log_redacted_fields"); }
+            else if (parseNode.GetChildNode("log_redacted_fields") is { } nullNodeLogRedactedFields && nullNodeLogRedactedFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogRedactedFields = null;
             if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
             else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
             if (parseNode.GetChildNode("request_headers") is null) { _explicitNullValueRequestHeaders = default!; _explicitNullProperties?.Remove("request_headers"); }
@@ -33,6 +35,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The authentication type for this webhook</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.HmacAuthType? AuthType { get => _explicitNullValueAuthType; set { _explicitNullValueAuthType = value; AdditionalData?.Remove("auth_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_type"); else _explicitNullProperties?.Remove("auth_type"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.HmacAuthType? _explicitNullValueAuthType = default!;
+        /// <summary>Field names whose values the delivery log hides when it shows the request payload, matched at any depth, ignoring case and punctuation such as _ or -. Fields with secret-looking names, such as tokens and passwords, are always hidden. The stored log and redeliveries keep the original values. At most 50 names, each 1 to 128 characters, with no whitespace, dots or wildcards.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? LogRedactedFields { get => _explicitNullValueLogRedactedFields; set { _explicitNullValueLogRedactedFields = value; AdditionalData?.Remove("log_redacted_fields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("log_redacted_fields"); else _explicitNullProperties?.Remove("log_redacted_fields"); } }
+        private List<string>? _explicitNullValueLogRedactedFields = default!;
+#nullable restore
+#else
+        public List<string> LogRedactedFields { get => _explicitNullValueLogRedactedFields; set { _explicitNullValueLogRedactedFields = value; AdditionalData?.Remove("log_redacted_fields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("log_redacted_fields"); else _explicitNullProperties?.Remove("log_redacted_fields"); } }
+        private List<string> _explicitNullValueLogRedactedFields = default!;
+#endif
         /// <summary>The display name for this webhook</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -89,6 +101,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "auth_type", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.HmacAuthType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAuthType = default; _explicitNullProperties?.Remove("auth_type"); AdditionalData["auth_type"] = unknown; } else { AuthType = parsed; AdditionalData.Remove("auth_type"); } } },
+                { "log_redacted_fields", n => { LogRedactedFields = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "request_headers", n => { RequestHeaders = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookHmacSettingsRequestHeadersProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookHmacSettingsRequestHeadersProperty.CreateFromDiscriminatorValue); } },
                 { "webhook_url", n => { WebhookUrl = n.GetStringValue(); } },
@@ -102,6 +115,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.HmacAuthType>("auth_type", AuthType);
+            writer.WriteCollectionOfPrimitiveValues<string>("log_redacted_fields", LogRedactedFields);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookHmacSettingsRequestHeadersProperty>("request_headers", RequestHeaders);
             writer.WriteStringValue("webhook_url", WebhookUrl);

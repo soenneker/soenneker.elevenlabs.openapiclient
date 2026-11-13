@@ -21,6 +21,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if (parseNode.GetChildNode("events") is { } nullNodeEvents && nullNodeEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Events = null;
             if (parseNode.GetChildNode("is_disabled") is null) { _explicitNullValueIsDisabled = default!; _explicitNullProperties?.Remove("is_disabled"); }
             else if (parseNode.GetChildNode("is_disabled") is { } nullNodeIsDisabled && nullNodeIsDisabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsDisabled = null;
+            if (parseNode.GetChildNode("log_redacted_fields") is null) { _explicitNullValueLogRedactedFields = default!; _explicitNullProperties?.Remove("log_redacted_fields"); }
+            else if (parseNode.GetChildNode("log_redacted_fields") is { } nullNodeLogRedactedFields && nullNodeLogRedactedFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogRedactedFields = null;
             if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
             else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
             if (parseNode.GetChildNode("request_headers") is null) { _explicitNullValueRequestHeaders = default!; _explicitNullProperties?.Remove("request_headers"); }
@@ -44,6 +46,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Whether to disable or enable the webhook</summary>
         public bool? IsDisabled { get => _explicitNullValueIsDisabled; set { _explicitNullValueIsDisabled = value; AdditionalData?.Remove("is_disabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_disabled"); else _explicitNullProperties?.Remove("is_disabled"); } }
         private bool? _explicitNullValueIsDisabled = default!;
+        /// <summary>Field names whose values the delivery log hides when it shows the request payload, matched at any depth, ignoring case and punctuation such as _ or -. Fields with secret-looking names, such as tokens and passwords, are always hidden. The stored log and redeliveries keep the original values. At most 50 names, each 1 to 128 characters, with no whitespace, dots or wildcards.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? LogRedactedFields { get => _explicitNullValueLogRedactedFields; set { _explicitNullValueLogRedactedFields = value; AdditionalData?.Remove("log_redacted_fields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("log_redacted_fields"); else _explicitNullProperties?.Remove("log_redacted_fields"); } }
+        private List<string>? _explicitNullValueLogRedactedFields = default!;
+#nullable restore
+#else
+        public List<string> LogRedactedFields { get => _explicitNullValueLogRedactedFields; set { _explicitNullValueLogRedactedFields = value; AdditionalData?.Remove("log_redacted_fields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("log_redacted_fields"); else _explicitNullProperties?.Remove("log_redacted_fields"); } }
+        private List<string> _explicitNullValueLogRedactedFields = default!;
+#endif
         /// <summary>The display name of the webhook (used for display purposes only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -94,6 +106,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "events", n => { Events = n.GetCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookEventType>()?.AsList(); } },
                 { "is_disabled", n => { IsDisabled = n.GetBoolValue(); } },
+                { "log_redacted_fields", n => { LogRedactedFields = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "request_headers", n => { RequestHeaders = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateWorkspaceWebhookV1WorkspaceWebhooksWebhookIdPatchRequestHeadersProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateWorkspaceWebhookV1WorkspaceWebhooksWebhookIdPatchRequestHeadersProperty.CreateFromDiscriminatorValue); } },
                 { "retry_enabled", n => { RetryEnabled = n.GetBoolValue(); } },
@@ -108,6 +121,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookEventType>("events", Events);
             writer.WriteBoolValue("is_disabled", IsDisabled);
+            writer.WriteCollectionOfPrimitiveValues<string>("log_redacted_fields", LogRedactedFields);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateWorkspaceWebhookV1WorkspaceWebhooksWebhookIdPatchRequestHeadersProperty>("request_headers", RequestHeaders);
             writer.WriteBoolValue("retry_enabled", RetryEnabled);

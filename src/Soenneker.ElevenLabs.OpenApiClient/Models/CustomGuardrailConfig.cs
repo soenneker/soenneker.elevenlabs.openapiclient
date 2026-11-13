@@ -34,6 +34,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
             if (parseNode.GetChildNode("prompt") is null) { _explicitNullValuePrompt = default!; _explicitNullProperties?.Remove("prompt"); }
             else if (parseNode.GetChildNode("prompt") is { } nullNodePrompt && nullNodePrompt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Prompt = null;
+            if (parseNode.GetChildNode("service_tier") is null) { _explicitNullValueServiceTier = default!; _explicitNullProperties?.Remove("service_tier"); }
+            else if (parseNode.GetChildNode("service_tier") is { } nullNodeServiceTier && nullNodeServiceTier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceTier = null;
             if (parseNode.GetChildNode("trigger_action") is null) { _explicitNullValueTriggerAction = default!; _explicitNullProperties?.Remove("trigger_action"); }
             else if (parseNode.GetChildNode("trigger_action") is { } nullNodeTriggerAction && nullNodeTriggerAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TriggerAction = null;
         }
@@ -78,6 +80,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string Prompt { get => _explicitNullValuePrompt; set { _explicitNullValuePrompt = value; AdditionalData?.Remove("prompt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt"); else _explicitNullProperties?.Remove("prompt"); } }
         private string _explicitNullValuePrompt = default!;
 #endif
+        /// <summary>Request-time processing tier for a model.STANDARD: default price and throughput.FAST: pays a per-token price premium for higher throughput / lower latency.    See OpenAI&apos;s fast mode: https://openai.com/api-fast-mode/ and, for Gemini, Vertex    Priority PayGo: https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/priority-paygo</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmServiceTier? ServiceTier { get => _explicitNullValueServiceTier; set { _explicitNullValueServiceTier = value; AdditionalData?.Remove("service_tier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_tier"); else _explicitNullProperties?.Remove("service_tier"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmServiceTier? _explicitNullValueServiceTier = default!;
         /// <summary>The trigger_action property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -126,6 +131,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "model", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfigModel>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueModel = default; _explicitNullProperties?.Remove("model"); AdditionalData["model"] = unknown; } else { Model = parsed; AdditionalData.Remove("model"); } } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "prompt", n => { Prompt = n.GetStringValue(); } },
+                { "service_tier", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmServiceTier>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueServiceTier = default; _explicitNullProperties?.Remove("service_tier"); AdditionalData["service_tier"] = unknown; } else { ServiceTier = parsed; AdditionalData.Remove("service_tier"); } } },
                 { "trigger_action", n => { TriggerAction = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfigTriggerAction>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfigTriggerAction.CreateFromDiscriminatorValue); } },
             };
         }
@@ -144,6 +150,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfigModel>("model", Model);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("prompt", Prompt);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmServiceTier>("service_tier", ServiceTier);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfigTriggerAction>("trigger_action", TriggerAction);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

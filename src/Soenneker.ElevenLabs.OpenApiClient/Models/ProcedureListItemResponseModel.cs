@@ -39,6 +39,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
             if (parseNode.GetChildNode("version_id") is null) { _explicitNullValueVersionId = default!; _explicitNullProperties?.Remove("version_id"); }
             else if (parseNode.GetChildNode("version_id") is { } nullNodeVersionId && nullNodeVersionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VersionId = null;
+            if (parseNode.GetChildNode("written_dynamic_variables") is null) { _explicitNullValueWrittenDynamicVariables = default!; _explicitNullProperties?.Remove("written_dynamic_variables"); }
+            else if (parseNode.GetChildNode("written_dynamic_variables") is { } nullNodeWrittenDynamicVariables && nullNodeWrittenDynamicVariables.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WrittenDynamicVariables = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -139,6 +141,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string VersionId { get => _explicitNullValueVersionId; set { _explicitNullValueVersionId = value; AdditionalData?.Remove("version_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version_id"); else _explicitNullProperties?.Remove("version_id"); } }
         private string _explicitNullValueVersionId = default!;
 #endif
+        /// <summary>Dynamic variable names written by Update state steps</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? WrittenDynamicVariables { get => _explicitNullValueWrittenDynamicVariables; set { _explicitNullValueWrittenDynamicVariables = value; AdditionalData?.Remove("written_dynamic_variables"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("written_dynamic_variables"); else _explicitNullProperties?.Remove("written_dynamic_variables"); } }
+        private List<string>? _explicitNullValueWrittenDynamicVariables = default!;
+#nullable restore
+#else
+        public List<string> WrittenDynamicVariables { get => _explicitNullValueWrittenDynamicVariables; set { _explicitNullValueWrittenDynamicVariables = value; AdditionalData?.Remove("written_dynamic_variables"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("written_dynamic_variables"); else _explicitNullProperties?.Remove("written_dynamic_variables"); } }
+        private List<string> _explicitNullValueWrittenDynamicVariables = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ProcedureListItemResponseModel"/> and sets the default values.
         /// </summary>
@@ -176,6 +188,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "trigger", n => { Trigger = n.GetStringValue(); } },
                 { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProcedureType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
                 { "version_id", n => { VersionId = n.GetStringValue(); } },
+                { "written_dynamic_variables", n => { WrittenDynamicVariables = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -196,6 +209,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("trigger", Trigger);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProcedureType>("type", Type);
             writer.WriteStringValue("version_id", VersionId);
+            writer.WriteCollectionOfPrimitiveValues<string>("written_dynamic_variables", WrittenDynamicVariables);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -34,7 +34,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.EnvironmentVariables.Item
         {
         }
         /// <summary>
-        /// Delete an environment variable and its values in all environments. WARNING: Agents are not checked. A variable that an agent still uses (custom LLM, webhooks or cloud storage export, on any branch or version) is deleted anyway, and that agent&apos;s conversations then fail. The delete is only rejected while tools, MCP servers or the workspace conversation initiation webhook use the variable.
+        /// Delete an environment variable and its values in all environments. The delete is rejected while the latest version of an unarchived agent branch, a tool, an MCP server or the workspace conversation initiation webhook uses the variable. Archived branches and earlier versions are not checked.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -110,7 +110,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.EnvironmentVariables.Item
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentVariableResponse>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentVariableResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an environment variable and its values in all environments. WARNING: Agents are not checked. A variable that an agent still uses (custom LLM, webhooks or cloud storage export, on any branch or version) is deleted anyway, and that agent&apos;s conversations then fail. The delete is only rejected while tools, MCP servers or the workspace conversation initiation webhook use the variable.
+        /// Delete an environment variable and its values in all environments. The delete is rejected while the latest version of an unarchived agent branch, a tool, an MCP server or the workspace conversation initiation webhook uses the variable. Archived branches and earlier versions are not checked.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -49,17 +49,17 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Reception.CustomerFacingAgents.I
         /// <summary>
         /// List the procedures (SOPs) on the named receptionist, with the tools each one is missing.
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbProcedureResponse&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionProcedureResponse&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbProcedureResponse>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionProcedureResponse>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbProcedureResponse>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionProcedureResponse>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -69,24 +69,24 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Reception.CustomerFacingAgents.I
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbProcedureResponse>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbProcedureResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionProcedureResponse>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionProcedureResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
         /// Add a procedure (SOP) to the named receptionist.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbProcedure"/></returns>
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionProcedure"/></returns>
         /// <param name="body">Request model for creating a new procedure.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbProcedure?> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbCreateProcedureRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionProcedure?> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionCreateProcedureRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbProcedure> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbCreateProcedureRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionProcedure> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionCreateProcedureRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -97,7 +97,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Reception.CustomerFacingAgents.I
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbProcedure>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbProcedure.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionProcedure>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionProcedure.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List the procedures (SOPs) on the named receptionist, with the tools each one is missing.
@@ -126,11 +126,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Reception.CustomerFacingAgents.I
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbCreateProcedureRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionCreateProcedureRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbCreateProcedureRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionCreateProcedureRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
