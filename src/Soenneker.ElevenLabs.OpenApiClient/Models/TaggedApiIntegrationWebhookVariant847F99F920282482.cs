@@ -20,6 +20,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             base.CaptureExplicitNulls(parseNode);
             if (parseNode.GetChildNode("credential_id") is null) { _explicitNullValueCredentialId = default!; _explicitNullProperties?.Remove("credential_id"); }
             else if (parseNode.GetChildNode("credential_id") is { } nullNodeCredentialId && nullNodeCredentialId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CredentialId = null;
+            if (parseNode.GetChildNode("function_details") is null) { _explicitNullValueFunctionDetails = default!; _explicitNullProperties?.Remove("function_details"); }
+            else if (parseNode.GetChildNode("function_details") is { } nullNodeFunctionDetails && nullNodeFunctionDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FunctionDetails = null;
             if (parseNode.GetChildNode("integration_connection_id") is null) { _explicitNullValueIntegrationConnectionId = default!; _explicitNullProperties?.Remove("integration_connection_id"); }
             else if (parseNode.GetChildNode("integration_connection_id") is { } nullNodeIntegrationConnectionId && nullNodeIntegrationConnectionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationConnectionId = null;
             if (parseNode.GetChildNode("integration_id") is null) { _explicitNullValueIntegrationId = default!; _explicitNullProperties?.Remove("integration_id"); }
@@ -37,6 +39,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string CredentialId { get => _explicitNullValueCredentialId; set { _explicitNullValueCredentialId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credential_id"); else _explicitNullProperties?.Remove("credential_id"); } }
         private string _explicitNullValueCredentialId = default!;
+#endif
+        /// <summary>The function_details property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetailsInputFunctionDetails? FunctionDetails { get => _explicitNullValueFunctionDetails; set { _explicitNullValueFunctionDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("function_details"); else _explicitNullProperties?.Remove("function_details"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetailsInputFunctionDetails? _explicitNullValueFunctionDetails = default!;
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetailsInputFunctionDetails FunctionDetails { get => _explicitNullValueFunctionDetails; set { _explicitNullValueFunctionDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("function_details"); else _explicitNullProperties?.Remove("function_details"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetailsInputFunctionDetails _explicitNullValueFunctionDetails = default!;
 #endif
         /// <summary>The integration_connection_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -87,6 +99,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "credential_id", n => { CredentialId = n.GetStringValue(); } },
+                { "function_details", n => { FunctionDetails = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetailsInputFunctionDetails>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetailsInputFunctionDetails.CreateFromDiscriminatorValue); } },
                 { "integration_connection_id", n => { IntegrationConnectionId = n.GetStringValue(); } },
                 { "integration_id", n => { IntegrationId = n.GetStringValue(); } },
                 { "webhook_details", n => { WebhookDetails = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallWebhookDetails>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallWebhookDetails.CreateFromDiscriminatorValue); } },
@@ -101,6 +114,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("credential_id", CredentialId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetailsInputFunctionDetails>("function_details", FunctionDetails);
             writer.WriteStringValue("integration_connection_id", IntegrationConnectionId);
             writer.WriteStringValue("integration_id", IntegrationId);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallWebhookDetails>("webhook_details", WebhookDetails);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

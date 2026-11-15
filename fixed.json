@@ -64288,7 +64288,8 @@
           "integration_id",
           "credential_id",
           "integration_connection_id",
-          "webhook_details"
+          "webhook_details",
+          "function_details"
         ],
         "type": "object",
         "properties": {
@@ -64312,6 +64313,9 @@
           },
           "webhook_details": {
             "$ref": "#/components/schemas/ConversationHistoryTranscriptToolCallWebhookDetails"
+          },
+          "function_details": {
+            "$ref": "#/components/schemas/ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetailsInputFunctionDetails"
           }
         }
       },
@@ -113634,6 +113638,31 @@
           }
         ]
       },
+      "ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetailsInputFunctionDetails": {
+        "title": "ConversationHistoryTranscriptToolCallIntegrationFunctionDetails",
+        "required": [
+          "resolved_parameters"
+        ],
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "resolved_parameters": {
+            "$ref": "#/components/schemas/ConversationHistoryTranscriptToolCallIntegrationFunctionDetailsResolvedParametersProperty"
+          }
+        },
+        "x-client-original-nullable-union": {
+          "anyOf": [
+            {
+              "$ref": "#/components/schemas/ConversationHistoryTranscriptToolCallIntegrationFunctionDetails"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
       "ConversationHistoryTranscriptToolCallCommonModelInputType": {
         "anyOf": [
           {
@@ -133740,6 +133769,13 @@
       },
       "ConversationHistorySipTrunkingPhoneCallModelSipHeaderDynamicVariablesProperty": {
         "title": "Sip Header Dynamic Variables",
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      },
+      "ConversationHistoryTranscriptToolCallIntegrationFunctionDetailsResolvedParametersProperty": {
+        "title": "Resolved Parameters",
         "type": "object",
         "additionalProperties": {
           "type": "string"
@@ -185882,6 +185918,9 @@
               },
               "webhook_details": {
                 "$ref": "#/components/schemas/ConversationHistoryTranscriptToolCallWebhookDetails"
+              },
+              "function_details": {
+                "$ref": "#/components/schemas/ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetailsInputFunctionDetails"
               }
             },
             "required": [
@@ -186071,7 +186110,8 @@
               "integration_id",
               "credential_id",
               "integration_connection_id",
-              "webhook_details"
+              "webhook_details",
+              "function_details"
             ],
             "type": "object",
             "properties": {
@@ -186095,6 +186135,9 @@
               },
               "webhook_details": {
                 "$ref": "#/components/schemas/ConversationHistoryTranscriptToolCallWebhookDetails"
+              },
+              "function_details": {
+                "$ref": "#/components/schemas/ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetailsInputFunctionDetails"
               }
             }
           }
@@ -192726,6 +192769,9 @@
         },
         "webhook_details": {
           "$ref": "#/components/schemas/ConversationHistoryTranscriptToolCallWebhookDetails"
+        },
+        "function_details": {
+          "$ref": "#/components/schemas/ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetailsInputFunctionDetails"
         }
       }
     },
@@ -192742,6 +192788,18 @@
         "parameters": {
           "title": "Parameters",
           "type": "string"
+        }
+      }
+    },
+    "ConversationHistoryTranscriptToolCallIntegrationFunctionDetails": {
+      "title": "ConversationHistoryTranscriptToolCallIntegrationFunctionDetails",
+      "required": [
+        "resolved_parameters"
+      ],
+      "type": "object",
+      "properties": {
+        "resolved_parameters": {
+          "$ref": "#/components/schemas/ConversationHistoryTranscriptToolCallIntegrationFunctionDetailsResolvedParametersProperty"
         }
       }
     },
@@ -216944,6 +217002,31 @@
         }
       ]
     },
+    "ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetailsOutputFunctionDetails": {
+      "title": "ConversationHistoryTranscriptToolCallIntegrationFunctionDetails",
+      "required": [
+        "resolved_parameters"
+      ],
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "resolved_parameters": {
+          "$ref": "#/components/schemas/ConversationHistoryTranscriptToolCallIntegrationFunctionDetailsResolvedParametersProperty"
+        }
+      },
+      "x-client-original-nullable-union": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ConversationHistoryTranscriptToolCallIntegrationFunctionDetails"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    },
     "ConversationHistoryTranscriptToolCallCommonModelOutputType": {
       "anyOf": [
         {
@@ -224714,6 +224797,13 @@
     },
     "ConversationHistorySipTrunkingPhoneCallModelSipHeaderDynamicVariables": {
       "title": "Sip Header Dynamic Variables",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "ConversationHistoryTranscriptToolCallIntegrationFunctionDetailsResolvedParameters": {
+      "title": "Resolved Parameters",
       "type": "object",
       "additionalProperties": {
         "type": "string"
@@ -253133,6 +253223,9 @@
         },
         "webhook_details": {
           "$ref": "#/components/schemas/ConversationHistoryTranscriptToolCallWebhookDetails"
+        },
+        "function_details": {
+          "$ref": "#/components/schemas/ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetailsInputFunctionDetails"
         }
       },
       "required": [

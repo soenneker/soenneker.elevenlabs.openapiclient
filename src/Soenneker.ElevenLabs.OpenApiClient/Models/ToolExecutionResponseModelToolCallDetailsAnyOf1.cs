@@ -23,6 +23,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if (parseNode.GetChildNode("body") is { } nullNodeBody && nullNodeBody.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Body = null;
             if (parseNode.GetChildNode("credential_id") is null) { _explicitNullValueCredentialId = default!; _explicitNullProperties?.Remove("credential_id"); }
             else if (parseNode.GetChildNode("credential_id") is { } nullNodeCredentialId && nullNodeCredentialId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CredentialId = null;
+            if (parseNode.GetChildNode("function_details") is null) { _explicitNullValueFunctionDetails = default!; _explicitNullProperties?.Remove("function_details"); }
+            else if (parseNode.GetChildNode("function_details") is { } nullNodeFunctionDetails && nullNodeFunctionDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FunctionDetails = null;
             if (parseNode.GetChildNode("headers") is null) { _explicitNullValueHeaders = default!; _explicitNullProperties?.Remove("headers"); }
             else if (parseNode.GetChildNode("headers") is { } nullNodeHeaders && nullNodeHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Headers = null;
             if (parseNode.GetChildNode("integration_connection_id") is null) { _explicitNullValueIntegrationConnectionId = default!; _explicitNullProperties?.Remove("integration_connection_id"); }
@@ -88,6 +90,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string CredentialId { get => _explicitNullValueCredentialId; set { _explicitNullValueCredentialId = value; AdditionalData?.Remove("credential_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credential_id"); else _explicitNullProperties?.Remove("credential_id"); } }
         private string _explicitNullValueCredentialId = default!;
+#endif
+        /// <summary>The function_details property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetailsInputFunctionDetails? FunctionDetails { get => _explicitNullValueFunctionDetails; set { _explicitNullValueFunctionDetails = value; AdditionalData?.Remove("function_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("function_details"); else _explicitNullProperties?.Remove("function_details"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetailsInputFunctionDetails? _explicitNullValueFunctionDetails = default!;
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetailsInputFunctionDetails FunctionDetails { get => _explicitNullValueFunctionDetails; set { _explicitNullValueFunctionDetails = value; AdditionalData?.Remove("function_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("function_details"); else _explicitNullProperties?.Remove("function_details"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetailsInputFunctionDetails _explicitNullValueFunctionDetails = default!;
 #endif
         /// <summary>The headers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -266,6 +278,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "approval_policy", n => { ApprovalPolicy = n.GetStringValue(); } },
                 { "body", n => { Body = n.GetStringValue(); } },
                 { "credential_id", n => { CredentialId = n.GetStringValue(); } },
+                { "function_details", n => { FunctionDetails = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetailsInputFunctionDetails>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetailsInputFunctionDetails.CreateFromDiscriminatorValue); } },
                 { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallWebhookDetailsHeadersProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallWebhookDetailsHeadersProperty.CreateFromDiscriminatorValue); } },
                 { "integration_connection_id", n => { IntegrationConnectionId = n.GetStringValue(); } },
                 { "integration_id", n => { IntegrationId = n.GetStringValue(); } },
@@ -294,6 +307,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("approval_policy", ApprovalPolicy);
             writer.WriteStringValue("body", Body);
             writer.WriteStringValue("credential_id", CredentialId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetailsInputFunctionDetails>("function_details", FunctionDetails);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallWebhookDetailsHeadersProperty>("headers", Headers);
             writer.WriteStringValue("integration_connection_id", IntegrationConnectionId);
             writer.WriteStringValue("integration_id", IntegrationId);
