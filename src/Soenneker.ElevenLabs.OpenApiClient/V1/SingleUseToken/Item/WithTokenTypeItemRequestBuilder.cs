@@ -22,7 +22,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.SingleUseToken.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithTokenTypeItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/single-use-token/{tokenType}", pathParameters)
+        public WithTokenTypeItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/single-use-token/{tokenType}{?max_session_duration_seconds*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.SingleUseToken.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithTokenTypeItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/single-use-token/{tokenType}", rawUrl)
+        public WithTokenTypeItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/single-use-token/{tokenType}{?max_session_duration_seconds*}", rawUrl)
         {
         }
         /// <summary>
@@ -42,11 +42,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.SingleUseToken.Item
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleUseTokenResponseModel?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleUseTokenResponseModel?> PostAsync(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.SingleUseToken.Item.WithTokenTypeItemRequestBuilder.WithTokenTypeItemRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleUseTokenResponseModel> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleUseTokenResponseModel> PostAsync(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.SingleUseToken.Item.WithTokenTypeItemRequestBuilder.WithTokenTypeItemRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
@@ -65,11 +65,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.SingleUseToken.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.SingleUseToken.Item.WithTokenTypeItemRequestBuilder.WithTokenTypeItemRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.SingleUseToken.Item.WithTokenTypeItemRequestBuilder.WithTokenTypeItemRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
@@ -85,6 +85,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.SingleUseToken.Item
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.SingleUseToken.Item.WithTokenTypeItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.ElevenLabs.OpenApiClient.V1.SingleUseToken.Item.WithTokenTypeItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Generate a time limited single-use token with embedded authentication for frontend clients.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class WithTokenTypeItemRequestBuilderPostQueryParameters 
+        {
+            /// <summary>Closes the realtime transcription session opened with this token after this many seconds. Only for realtime_scribe tokens.</summary>
+            [QueryParameter("max_session_duration_seconds")]
+            public int? MaxSessionDurationSeconds { get; set; }
         }
     }
 }

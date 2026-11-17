@@ -244,10 +244,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         Claude3Haiku,
         #pragma warning restore CS1591
-        [EnumMember(Value = "grok-beta")]
-        #pragma warning disable CS1591
-        GrokBeta,
-        #pragma warning restore CS1591
         [EnumMember(Value = "custom-llm")]
         #pragma warning disable CS1591
         CustomLlm,

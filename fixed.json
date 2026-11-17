@@ -14038,6 +14038,20 @@
             }
           },
           {
+            "name": "max_session_duration_seconds",
+            "in": "query",
+            "description": "Closes the realtime transcription session opened with this token after this many seconds. Only for realtime_scribe tokens.",
+            "schema": {
+              "title": "Max Session Duration Seconds",
+              "exclusiveMinimum": 0,
+              "type": [
+                "null",
+                "integer"
+              ],
+              "description": "Closes the realtime transcription session opened with this token after this many seconds. Only for realtime_scribe tokens."
+            }
+          },
+          {
             "name": "xi-api-key",
             "in": "header",
             "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
@@ -51739,6 +51753,9 @@
           "Notification Preference Deletion",
           "Notification Preference Management",
           "Notification Preference Update",
+          "OAuth App Authorization Grant",
+          "OAuth App Authorization Management",
+          "OAuth App Authorization Revocation",
           "Password Reset Email Request",
           "Password Reset Link Generation",
           "Reporting Workspace SSO Inheritance Update",
@@ -51795,6 +51812,13 @@
           "Webhook Deletion",
           "Webhook Management",
           "Webhook Update",
+          "Workload Identity Federation Assignment Creation",
+          "Workload Identity Federation Assignment Deletion",
+          "Workload Identity Federation Assignment Management",
+          "Workload Identity Federation Pool Creation",
+          "Workload Identity Federation Pool Deletion",
+          "Workload Identity Federation Pool Management",
+          "Workload Identity Federation Pool Update",
           "Workspace Creation",
           "Workspace Deletion",
           "Workspace Deletion Cancellation",
@@ -52047,6 +52071,18 @@
               "name": "NotificationPreferenceUpdate"
             },
             {
+              "value": "OAuth App Authorization Grant",
+              "name": "OAuthAppAuthorizationGrant"
+            },
+            {
+              "value": "OAuth App Authorization Management",
+              "name": "OAuthAppAuthorizationManagement"
+            },
+            {
+              "value": "OAuth App Authorization Revocation",
+              "name": "OAuthAppAuthorizationRevocation"
+            },
+            {
               "value": "Password Reset Email Request",
               "name": "PasswordResetEmailRequest"
             },
@@ -52269,6 +52305,34 @@
             {
               "value": "Webhook Update",
               "name": "WebhookUpdate"
+            },
+            {
+              "value": "Workload Identity Federation Assignment Creation",
+              "name": "WorkloadIdentityFederationAssignmentCreation"
+            },
+            {
+              "value": "Workload Identity Federation Assignment Deletion",
+              "name": "WorkloadIdentityFederationAssignmentDeletion"
+            },
+            {
+              "value": "Workload Identity Federation Assignment Management",
+              "name": "WorkloadIdentityFederationAssignmentManagement"
+            },
+            {
+              "value": "Workload Identity Federation Pool Creation",
+              "name": "WorkloadIdentityFederationPoolCreation"
+            },
+            {
+              "value": "Workload Identity Federation Pool Deletion",
+              "name": "WorkloadIdentityFederationPoolDeletion"
+            },
+            {
+              "value": "Workload Identity Federation Pool Management",
+              "name": "WorkloadIdentityFederationPoolManagement"
+            },
+            {
+              "value": "Workload Identity Federation Pool Update",
+              "name": "WorkloadIdentityFederationPoolUpdate"
             },
             {
               "value": "Workspace Creation",
@@ -61789,6 +61853,7 @@
           "occupation",
           "physical_attribute",
           "language",
+          "criminal_record",
           "username",
           "password",
           "url",
@@ -61898,6 +61963,10 @@
             {
               "value": "language",
               "name": "Language"
+            },
+            {
+              "value": "criminal_record",
+              "name": "CriminalRecord"
             },
             {
               "value": "username",
@@ -75350,7 +75419,6 @@
           "claude-3-5-sonnet",
           "claude-3-5-sonnet-v1",
           "claude-3-haiku",
-          "grok-beta",
           "custom-llm",
           "qwen3-4b",
           "qwen3-30b-a3b",
@@ -75644,10 +75712,6 @@
             {
               "value": "claude-3-haiku",
               "name": "Claude3Haiku"
-            },
-            {
-              "value": "grok-beta",
-              "name": "GrokBeta"
             },
             {
               "value": "custom-llm",
@@ -106418,6 +106482,7 @@
             "phone_number": "#/components/schemas/WorkflowPhoneNumberNodeModelInput",
             "standalone_agent": "#/components/schemas/WorkflowStandaloneAgentNodeModelInput",
             "start": "#/components/schemas/WorkflowStartNodeModelInput",
+            "start_procedure": "#/components/schemas/WorkflowStartProcedureNodeModelInput",
             "tool": "#/components/schemas/WorkflowToolNodeModelInput"
           }
         },
@@ -106429,7 +106494,8 @@
             "phone_number": "#/components/schemas/AgentWorkflowRequestModelNodesAdditionalPropertiesOneOf3Variant",
             "override_agent": "#/components/schemas/AgentWorkflowRequestModelNodesAdditionalPropertiesOneOf4Variant",
             "standalone_agent": "#/components/schemas/AgentWorkflowRequestModelNodesAdditionalPropertiesOneOf5Variant",
-            "tool": "#/components/schemas/AgentWorkflowRequestModelNodesAdditionalPropertiesOneOf6Variant"
+            "tool": "#/components/schemas/AgentWorkflowRequestModelNodesAdditionalPropertiesOneOf6Variant",
+            "start_procedure": "#/components/schemas/AgentWorkflowRequestModelNodesAdditionalPropertiesOneOf7Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -106451,6 +106517,9 @@
             },
             {
               "$ref": "#/components/schemas/AgentWorkflowRequestModelNodesAdditionalPropertiesOneOf6"
+            },
+            {
+              "$ref": "#/components/schemas/AgentWorkflowRequestModelNodesAdditionalPropertiesOneOf7"
             }
           ],
           "x-client-original-discriminator": {
@@ -106461,6 +106530,7 @@
               "phone_number": "#/components/schemas/WorkflowPhoneNumberNodeModelInput",
               "standalone_agent": "#/components/schemas/WorkflowStandaloneAgentNodeModelInput",
               "start": "#/components/schemas/WorkflowStartNodeModelInput",
+              "start_procedure": "#/components/schemas/WorkflowStartProcedureNodeModelInput",
               "tool": "#/components/schemas/WorkflowToolNodeModelInput"
             }
           },
@@ -106472,7 +106542,8 @@
               "phone_number": "#/components/schemas/AgentWorkflowRequestModelNodesAdditionalPropertiesOneOf3",
               "override_agent": "#/components/schemas/AgentWorkflowRequestModelNodesAdditionalPropertiesOneOf4",
               "standalone_agent": "#/components/schemas/AgentWorkflowRequestModelNodesAdditionalPropertiesOneOf5",
-              "tool": "#/components/schemas/AgentWorkflowRequestModelNodesAdditionalPropertiesOneOf6"
+              "tool": "#/components/schemas/AgentWorkflowRequestModelNodesAdditionalPropertiesOneOf6",
+              "start_procedure": "#/components/schemas/AgentWorkflowRequestModelNodesAdditionalPropertiesOneOf7"
             }
           }
         },
@@ -106495,6 +106566,7 @@
             "phone_number": "#/components/schemas/WorkflowPhoneNumberNodeModelOutput",
             "standalone_agent": "#/components/schemas/WorkflowStandaloneAgentNodeModelOutput",
             "start": "#/components/schemas/WorkflowStartNodeModelOutput",
+            "start_procedure": "#/components/schemas/WorkflowStartProcedureNodeModelOutput",
             "tool": "#/components/schemas/WorkflowToolNodeModelOutput"
           }
         },
@@ -106506,7 +106578,8 @@
             "phone_number": "#/components/schemas/AgentWorkflowResponseModelNodesAdditionalPropertiesWorkflowPhoneNumberNodeModelOutput",
             "override_agent": "#/components/schemas/AgentWorkflowResponseModelNodesAdditionalPropertiesWorkflowOverrideAgentNodeModelOutput",
             "standalone_agent": "#/components/schemas/AgentWorkflowResponseModelNodesAdditionalPropertiesWorkflowStandaloneAgentNodeModelOutput",
-            "tool": "#/components/schemas/AgentWorkflowResponseModelNodesAdditionalPropertiesWorkflowToolNodeModelOutput"
+            "tool": "#/components/schemas/AgentWorkflowResponseModelNodesAdditionalPropertiesWorkflowToolNodeModelOutput",
+            "start_procedure": "#/components/schemas/AgentWorkflowResponseModelNodesAdditionalPropertiesWorkflowStartProcedureNodeModelOutput"
           }
         },
         "x-client-original-tagged-union": {
@@ -106528,6 +106601,9 @@
             },
             {
               "$ref": "#/components/schemas/WorkflowToolNodeModelOutput"
+            },
+            {
+              "$ref": "#/components/schemas/WorkflowStartProcedureNodeModelOutput"
             }
           ],
           "x-client-original-discriminator": {
@@ -106538,6 +106614,7 @@
               "phone_number": "#/components/schemas/WorkflowPhoneNumberNodeModelOutput",
               "standalone_agent": "#/components/schemas/WorkflowStandaloneAgentNodeModelOutput",
               "start": "#/components/schemas/WorkflowStartNodeModelOutput",
+              "start_procedure": "#/components/schemas/WorkflowStartProcedureNodeModelOutput",
               "tool": "#/components/schemas/WorkflowToolNodeModelOutput"
             }
           },
@@ -106549,7 +106626,8 @@
               "phone_number": "#/components/schemas/WorkflowPhoneNumberNodeModelOutput",
               "override_agent": "#/components/schemas/WorkflowOverrideAgentNodeModelOutput",
               "standalone_agent": "#/components/schemas/WorkflowStandaloneAgentNodeModelOutput",
-              "tool": "#/components/schemas/WorkflowToolNodeModelOutput"
+              "tool": "#/components/schemas/WorkflowToolNodeModelOutput",
+              "start_procedure": "#/components/schemas/WorkflowStartProcedureNodeModelOutput"
             }
           }
         },
@@ -145090,7 +145168,8 @@
           "EGP",
           "NGN",
           "KES",
-          "PKR"
+          "PKR",
+          "GEL"
         ],
         "type": "string",
         "description": "Currency code for all prices (ISO 4217)",
@@ -145289,6 +145368,10 @@
             {
               "value": "PKR",
               "name": "Pkr"
+            },
+            {
+              "value": "GEL",
+              "name": "Gel"
             }
           ]
         }
@@ -145343,7 +145426,8 @@
           "EGP",
           "NGN",
           "KES",
-          "PKR"
+          "PKR",
+          "GEL"
         ],
         "type": "string",
         "description": "Currency code for all prices (ISO 4217)",
@@ -145542,6 +145626,10 @@
             {
               "value": "PKR",
               "name": "Pkr"
+            },
+            {
+              "value": "GEL",
+              "name": "Gel"
             }
           ]
         }
@@ -149433,6 +149521,24 @@
             {
               "value": "start",
               "name": "Start"
+            }
+          ]
+        }
+      },
+      "WorkflowStartProcedureNodeModelOutputType": {
+        "title": "Type",
+        "enum": [
+          "start_procedure"
+        ],
+        "type": "string",
+        "x-client-original-const": "start_procedure",
+        "x-ms-enum": {
+          "name": "WorkflowStartProcedureNodeModelOutputType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "start_procedure",
+              "name": "StartProcedure"
             }
           ]
         }
@@ -161586,6 +161692,57 @@
           }
         ]
       },
+      "AgentWorkflowRequestModelNodesAdditionalPropertiesOneOf7Variant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/AgentWorkflowRequestModelNodesAdditionalProperties"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "title": "Type",
+                "enum": [
+                  "start_procedure"
+                ],
+                "type": "string",
+                "x-client-original-const": "start_procedure",
+                "x-ms-enum": {
+                  "name": "Type",
+                  "modelAsString": false,
+                  "values": [
+                    {
+                      "value": "start_procedure",
+                      "name": "StartProcedure"
+                    }
+                  ]
+                }
+              },
+              "position": {
+                "$ref": "#/components/schemas/PositionInput"
+              },
+              "edge_order": {
+                "title": "Edge Order",
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "The ids of outgoing edges in the order they should be evaluated."
+              },
+              "procedure_id": {
+                "title": "Procedure Id",
+                "minLength": 1,
+                "type": "string",
+                "description": "ID of the procedure to start when the workflow reaches this node."
+              }
+            },
+            "required": [
+              "procedure_id",
+              "type"
+            ]
+          }
+        ]
+      },
       "AgentWorkflowResponseModelNodesAdditionalPropertiesWorkflowStartNodeModelOutput": {
         "allOf": [
           {
@@ -161945,6 +162102,46 @@
                 "description": "List of tools to execute in parallel. The entire node is considered successful if all tools are executed successfully."
               }
             }
+          }
+        ]
+      },
+      "AgentWorkflowResponseModelNodesAdditionalPropertiesWorkflowStartProcedureNodeModelOutput": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/AgentWorkflowResponseModelNodesAdditionalProperties"
+          },
+          {
+            "title": "WorkflowStartProcedureNodeModel",
+            "required": [
+              "type",
+              "position",
+              "edge_order",
+              "procedure_id"
+            ],
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/WorkflowStartProcedureNodeModelOutputType"
+              },
+              "position": {
+                "$ref": "#/components/schemas/PositionOutput"
+              },
+              "edge_order": {
+                "title": "Edge Order",
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "The ids of outgoing edges in the order they should be evaluated."
+              },
+              "procedure_id": {
+                "title": "Procedure Id",
+                "minLength": 1,
+                "type": "string",
+                "description": "ID of the procedure to start when the workflow reaches this node."
+              }
+            },
+            "description": "Starts one procedure when the workflow reaches it.\n\nA freeform procedure is injected and traversal continues along the node\u0027s\noutgoing edges in the same turn. A structured procedure transfers into its\ncompiled island with this node as the return node; when it ends, the\nworkflow runner hosts this node and evaluates its outgoing edges."
           }
         ]
       },
@@ -187765,6 +187962,10 @@
       "description": "Isolate speech from background noise in an audio file."
     },
     {
+      "name": "content-provenance",
+      "description": "Check audio for an embedded ElevenLabs watermark to verify where it came from."
+    },
+    {
       "name": "audio-native",
       "description": "Embed AI-narrated audio players into your website using Audio Native."
     },
@@ -198227,7 +198428,8 @@
             "EGP",
             "NGN",
             "KES",
-            "PKR"
+            "PKR",
+            "GEL"
           ],
           "type": "string",
           "x-ms-enum": {
@@ -198425,6 +198627,10 @@
               {
                 "value": "PKR",
                 "name": "Pkr"
+              },
+              {
+                "value": "GEL",
+                "name": "Gel"
               }
             ]
           }
@@ -211229,6 +211435,69 @@
           "description": "The ids of outgoing edges in the order they should be evaluated."
         }
       }
+    },
+    "WorkflowStartProcedureNodeModelInput": {
+      "title": "WorkflowStartProcedureNodeModel",
+      "required": [
+        "procedure_id"
+      ],
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/components/schemas/StartProcedureType"
+        },
+        "position": {
+          "$ref": "#/components/schemas/PositionInput"
+        },
+        "edge_order": {
+          "title": "Edge Order",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "The ids of outgoing edges in the order they should be evaluated."
+        },
+        "procedure_id": {
+          "title": "Procedure Id",
+          "minLength": 1,
+          "type": "string",
+          "description": "ID of the procedure to start when the workflow reaches this node."
+        }
+      },
+      "description": "Starts one procedure when the workflow reaches it.\n\nA freeform procedure is injected and traversal continues along the node\u0027s\noutgoing edges in the same turn. A structured procedure transfers into its\ncompiled island with this node as the return node; when it ends, the\nworkflow runner hosts this node and evaluates its outgoing edges."
+    },
+    "WorkflowStartProcedureNodeModelOutput": {
+      "title": "WorkflowStartProcedureNodeModel",
+      "required": [
+        "type",
+        "position",
+        "edge_order",
+        "procedure_id"
+      ],
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/components/schemas/WorkflowStartProcedureNodeModelOutputType"
+        },
+        "position": {
+          "$ref": "#/components/schemas/PositionOutput"
+        },
+        "edge_order": {
+          "title": "Edge Order",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "The ids of outgoing edges in the order they should be evaluated."
+        },
+        "procedure_id": {
+          "title": "Procedure Id",
+          "minLength": 1,
+          "type": "string",
+          "description": "ID of the procedure to start when the workflow reaches this node."
+        }
+      },
+      "description": "Starts one procedure when the workflow reaches it.\n\nA freeform procedure is injected and traversal continues along the node\u0027s\noutgoing edges in the same turn. A structured procedure transfers into its\ncompiled island with this node as the return node; when it ends, the\nworkflow runner hosts this node and evaluates its outgoing edges."
     },
     "WorkflowToolEdgeStepModel": {
       "title": "WorkflowToolEdgeStepModel",
@@ -232090,6 +232359,24 @@
         ]
       }
     },
+    "StartProcedureType": {
+      "title": "Type",
+      "enum": [
+        "start_procedure"
+      ],
+      "type": "string",
+      "x-client-original-const": "start_procedure",
+      "x-ms-enum": {
+        "name": "StartProcedureType",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "start_procedure",
+            "name": "StartProcedure"
+          }
+        ]
+      }
+    },
     "EdgeType": {
       "title": "Type",
       "enum": [
@@ -233816,6 +234103,50 @@
         }
       },
       "required": [
+        "type"
+      ]
+    },
+    "AgentWorkflowRequestModelNodesAdditionalPropertiesOneOf7": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "title": "Type",
+          "enum": [
+            "start_procedure"
+          ],
+          "type": "string",
+          "x-client-original-const": "start_procedure",
+          "x-ms-enum": {
+            "name": "Type",
+            "modelAsString": false,
+            "values": [
+              {
+                "value": "start_procedure",
+                "name": "StartProcedure"
+              }
+            ]
+          }
+        },
+        "position": {
+          "$ref": "#/components/schemas/PositionInput"
+        },
+        "edge_order": {
+          "title": "Edge Order",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "The ids of outgoing edges in the order they should be evaluated."
+        },
+        "procedure_id": {
+          "title": "Procedure Id",
+          "minLength": 1,
+          "type": "string",
+          "description": "ID of the procedure to start when the workflow reaches this node."
+        }
+      },
+      "required": [
+        "procedure_id",
         "type"
       ]
     },

@@ -71,6 +71,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         Language,
         #pragma warning restore CS1591
+        [EnumMember(Value = "criminal_record")]
+        #pragma warning disable CS1591
+        CriminalRecord,
+        #pragma warning restore CS1591
         [EnumMember(Value = "username")]
         #pragma warning disable CS1591
         Username,

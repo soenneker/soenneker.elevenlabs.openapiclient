@@ -199,5 +199,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         Pkr,
         #pragma warning restore CS1591
+        [EnumMember(Value = "GEL")]
+        #pragma warning disable CS1591
+        Gel,
+        #pragma warning restore CS1591
     }
 }
