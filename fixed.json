@@ -46074,7 +46074,8 @@
         "enum": [
           "elevenlabs",
           "scribe_realtime",
-          "scribe_v2_turbo"
+          "scribe_v2_turbo",
+          "scribe_v3_live"
         ],
         "type": "string",
         "x-fern-enum": {
@@ -46098,6 +46099,10 @@
             {
               "value": "scribe_v2_turbo",
               "name": "ScribeV2Turbo"
+            },
+            {
+              "value": "scribe_v3_live",
+              "name": "ScribeV3Live"
             }
           ]
         }
@@ -51819,6 +51824,7 @@
           "Workload Identity Federation Pool Deletion",
           "Workload Identity Federation Pool Management",
           "Workload Identity Federation Pool Update",
+          "Workload Identity Federation Token Exchange",
           "Workspace Creation",
           "Workspace Deletion",
           "Workspace Deletion Cancellation",
@@ -52333,6 +52339,10 @@
             {
               "value": "Workload Identity Federation Pool Update",
               "name": "WorkloadIdentityFederationPoolUpdate"
+            },
+            {
+              "value": "Workload Identity Federation Token Exchange",
+              "name": "WorkloadIdentityFederationTokenExchange"
             },
             {
               "value": "Workspace Creation",
@@ -75403,6 +75413,7 @@
           "gemini-3.7-flash",
           "gemini-3.8-flash",
           "gemini-4-argon",
+          "gemini-4-hydrogen",
           "claude-sonnet-4-5",
           "claude-opus-4-6",
           "claude-opus-4-7",
@@ -75648,6 +75659,10 @@
             {
               "value": "gemini-4-argon",
               "name": "Gemini4Argon"
+            },
+            {
+              "value": "gemini-4-hydrogen",
+              "name": "Gemini4Hydrogen"
             },
             {
               "value": "claude-sonnet-4-5",
@@ -85123,6 +85138,95 @@
             }
           ]
         }
+      },
+      "QueryArrayJsonSchemaPropertyInput": {
+        "title": "QueryArrayJsonSchemaProperty",
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "property_kind": {
+            "$ref": "#/components/schemas/QueryArrayJsonSchemaPropertyInputPropertyKind"
+          },
+          "description": {
+            "title": "Description",
+            "type": "string",
+            "default": ""
+          },
+          "dynamic_variable": {
+            "title": "Dynamic Variable",
+            "type": "string",
+            "description": "When set, the entire parameter is populated from this dynamic variable at runtime. Mutually exclusive with description (LLM-provided value), constant_value, and is_omitted.",
+            "default": ""
+          },
+          "constant_value": {
+            "title": "Constant Value",
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {},
+            "description": "When set, the entire array uses this constant value at runtime. Mutually exclusive with description (LLM-provided array), dynamic_variable, and is_omitted."
+          },
+          "is_omitted": {
+            "title": "Is Omitted",
+            "type": "boolean",
+            "description": "If true, this parameter will be completely omitted from the request. Only valid for optional parameters. Mutually exclusive with description, dynamic_variable, and constant_value.",
+            "default": false
+          },
+          "type": {
+            "$ref": "#/components/schemas/QueryArrayJsonSchemaPropertyInputType"
+          },
+          "items": {
+            "$ref": "#/components/schemas/QueryArrayJsonSchemaPropertyInputItems"
+          }
+        },
+        "additionalProperties": false,
+        "description": "A query param holding several literals, sent as a repeated key (?a=x\u0026a=y)."
+      },
+      "QueryArrayJsonSchemaPropertyOutput": {
+        "title": "QueryArrayJsonSchemaProperty",
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "description": {
+            "title": "Description",
+            "type": "string",
+            "default": ""
+          },
+          "dynamic_variable": {
+            "title": "Dynamic Variable",
+            "type": "string",
+            "description": "When set, the entire parameter is populated from this dynamic variable at runtime. Mutually exclusive with description (LLM-provided value), constant_value, and is_omitted.",
+            "default": ""
+          },
+          "constant_value": {
+            "title": "Constant Value",
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {},
+            "description": "When set, the entire array uses this constant value at runtime. Mutually exclusive with description (LLM-provided array), dynamic_variable, and is_omitted."
+          },
+          "is_omitted": {
+            "title": "Is Omitted",
+            "type": "boolean",
+            "description": "If true, this parameter will be completely omitted from the request. Only valid for optional parameters. Mutually exclusive with description, dynamic_variable, and constant_value.",
+            "default": false
+          },
+          "type": {
+            "$ref": "#/components/schemas/QueryArrayJsonSchemaPropertyOutputType"
+          },
+          "items": {
+            "$ref": "#/components/schemas/QueryArrayJsonSchemaPropertyOutputItems"
+          }
+        },
+        "additionalProperties": false,
+        "description": "A query param holding several literals, sent as a repeated key (?a=x\u0026a=y)."
       },
       "RagDocumentIndexResponseModel": {
         "title": "RAGDocumentIndexResponseModel",
@@ -123190,6 +123294,74 @@
           "description": "The reseller-managed subscription, when this workspace has one. None means nothing is sold here yet and a tier can be assigned."
         }
       },
+      "QueryArrayJsonSchemaPropertyInputItems": {
+        "title": "Items",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/LiteralJsonSchemaProperty"
+          },
+          {
+            "$ref": "#/components/schemas/ObjectJsonSchemaPropertyInput"
+          },
+          {
+            "$ref": "#/components/schemas/ArrayJsonSchemaPropertyInput"
+          }
+        ],
+        "description": "Schema for each value; must be a string, number or boolean.",
+        "default": {
+          "type": "string",
+          "description": "Array element",
+          "is_system_provided": false,
+          "dynamic_variable": "",
+          "allowed_values_dynamic_variable": "",
+          "constant_value": "",
+          "is_omitted": false
+        }
+      },
+      "QueryArrayJsonSchemaPropertyOutputItems": {
+        "title": "Items",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/LiteralJsonSchemaProperty"
+          },
+          {
+            "$ref": "#/components/schemas/ObjectJsonSchemaPropertyOutput"
+          },
+          {
+            "$ref": "#/components/schemas/ArrayJsonSchemaPropertyOutput"
+          }
+        ],
+        "description": "Schema for each value; must be a string, number or boolean.",
+        "default": {
+          "type": "string",
+          "description": "Array element",
+          "is_system_provided": false,
+          "dynamic_variable": "",
+          "allowed_values_dynamic_variable": "",
+          "constant_value": "",
+          "is_omitted": false
+        }
+      },
+      "QueryParamsJsonSchemaInputPropertiesAdditionalProperties": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/LiteralJsonSchemaProperty"
+          },
+          {
+            "$ref": "#/components/schemas/QueryArrayJsonSchemaPropertyInput"
+          }
+        ]
+      },
+      "QueryParamsJsonSchemaOutputPropertiesAdditionalProperties": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/LiteralJsonSchemaProperty"
+          },
+          {
+            "$ref": "#/components/schemas/QueryArrayJsonSchemaPropertyOutput"
+          }
+        ]
+      },
       "RagConfigInputKnowledgeBaseToolInfo": {
         "title": "KnowledgeBaseToolInfo",
         "type": [
@@ -134741,7 +134913,7 @@
         "minProperties": 1,
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/LiteralJsonSchemaProperty"
+          "$ref": "#/components/schemas/QueryParamsJsonSchemaInputPropertiesAdditionalProperties"
         }
       },
       "QueryParamsJsonSchemaOutputPropertiesProperty": {
@@ -134749,7 +134921,7 @@
         "minProperties": 1,
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/LiteralJsonSchemaProperty"
+          "$ref": "#/components/schemas/QueryParamsJsonSchemaOutputPropertiesAdditionalProperties"
         }
       },
       "ReceptionProductStockProperty": {
@@ -145031,6 +145203,64 @@
             {
               "value": "annual_period",
               "name": "AnnualPeriod"
+            }
+          ]
+        }
+      },
+      "QueryArrayJsonSchemaPropertyInputPropertyKind": {
+        "title": "Property Kind",
+        "enum": [
+          "array",
+          "object"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "QueryArrayJsonSchemaPropertyInputPropertyKind",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "array",
+              "name": "Array"
+            },
+            {
+              "value": "object",
+              "name": "ObjectValue"
+            }
+          ]
+        }
+      },
+      "QueryArrayJsonSchemaPropertyInputType": {
+        "title": "Type",
+        "enum": [
+          "array"
+        ],
+        "type": "string",
+        "x-client-original-const": "array",
+        "x-ms-enum": {
+          "name": "QueryArrayJsonSchemaPropertyInputType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "array",
+              "name": "Array"
+            }
+          ]
+        }
+      },
+      "QueryArrayJsonSchemaPropertyOutputType": {
+        "title": "Type",
+        "enum": [
+          "array"
+        ],
+        "type": "string",
+        "x-client-original-const": "array",
+        "x-ms-enum": {
+          "name": "QueryArrayJsonSchemaPropertyOutputType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "array",
+              "name": "Array"
             }
           ]
         }
@@ -198841,6 +199071,48 @@
         }
       }
     },
+    "LiteralParamsJsonSchemaInput": {
+      "title": "LiteralParamsJsonSchema",
+      "required": [
+        "properties"
+      ],
+      "type": "object",
+      "properties": {
+        "properties": {
+          "$ref": "#/components/schemas/LiteralParamsJsonSchemaInputPropertiesProperty"
+        },
+        "required": {
+          "title": "Required",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false,
+      "description": "Named single values, for consumers that take flat key/value strings."
+    },
+    "LiteralParamsJsonSchemaOutput": {
+      "title": "LiteralParamsJsonSchema",
+      "required": [
+        "properties"
+      ],
+      "type": "object",
+      "properties": {
+        "properties": {
+          "$ref": "#/components/schemas/LiteralParamsJsonSchemaOutputPropertiesProperty"
+        },
+        "required": {
+          "title": "Required",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false,
+      "description": "Named single values, for consumers that take flat key/value strings."
+    },
     "LoadMemoryEntryToolErrorStatus": {
       "enum": [
         "not_found",
@@ -225622,6 +225894,22 @@
       "title": "List Kwargs",
       "type": "object"
     },
+    "LiteralParamsJsonSchemaInputProperties": {
+      "title": "Properties",
+      "minProperties": 1,
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/LiteralJsonSchemaProperty"
+      }
+    },
+    "LiteralParamsJsonSchemaOutputProperties": {
+      "title": "Properties",
+      "minProperties": 1,
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/LiteralJsonSchemaProperty"
+      }
+    },
     "McpApprovedToolDefinitionInputSchema": {
       "title": "Input Schema",
       "type": "object",
@@ -225981,7 +226269,7 @@
       "minProperties": 1,
       "type": "object",
       "additionalProperties": {
-        "$ref": "#/components/schemas/LiteralJsonSchemaProperty"
+        "$ref": "#/components/schemas/QueryParamsJsonSchemaInputPropertiesAdditionalProperties"
       }
     },
     "QueryParamsJsonSchemaOutputProperties": {
@@ -225989,7 +226277,7 @@
       "minProperties": 1,
       "type": "object",
       "additionalProperties": {
-        "$ref": "#/components/schemas/LiteralJsonSchemaProperty"
+        "$ref": "#/components/schemas/QueryParamsJsonSchemaOutputPropertiesAdditionalProperties"
       }
     },
     "RawLocationInfoOperatingHours": {
@@ -227052,6 +227340,22 @@
           "success": "#/components/schemas/KnowledgeBaseBulkDeleteSuccessfulResponseModel",
           "failure": "#/components/schemas/BatchFailureResponseModel"
         }
+      }
+    },
+    "LiteralParamsJsonSchemaInputPropertiesProperty": {
+      "title": "Properties",
+      "minProperties": 1,
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/LiteralJsonSchemaProperty"
+      }
+    },
+    "LiteralParamsJsonSchemaOutputPropertiesProperty": {
+      "title": "Properties",
+      "minProperties": 1,
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/LiteralJsonSchemaProperty"
       }
     },
     "OTelAttributeValueProperty": {

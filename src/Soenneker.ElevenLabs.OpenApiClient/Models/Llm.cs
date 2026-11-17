@@ -180,6 +180,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         Gemini4Argon,
         #pragma warning restore CS1591
+        [EnumMember(Value = "gemini-4-hydrogen")]
+        #pragma warning disable CS1591
+        Gemini4Hydrogen,
+        #pragma warning restore CS1591
         [EnumMember(Value = "claude-sonnet-4-5")]
         #pragma warning disable CS1591
         ClaudeSonnet45,
