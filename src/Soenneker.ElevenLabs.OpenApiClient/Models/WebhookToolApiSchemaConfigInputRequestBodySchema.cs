@@ -132,7 +132,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(9)
             {
                 { "constant_value", n => { ConstantValue = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInputConstantValueProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInputConstantValueProperty.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },

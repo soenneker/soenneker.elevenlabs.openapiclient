@@ -181,7 +181,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(13)
             {
                 { "apply_text_normalization", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueMultiVoiceV1TextToDialoguePostApplyTextNormalization>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueApplyTextNormalization = default; _explicitNullProperties?.Remove("apply_text_normalization"); AdditionalData["apply_text_normalization"] = unknown; } else { ApplyTextNormalization = parsed; AdditionalData.Remove("apply_text_normalization"); } } },
                 { "audio_effects", n => { AudioEffects = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueFullWithTimestampsAudioEffects>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueFullWithTimestampsAudioEffects.CreateFromDiscriminatorValue); } },

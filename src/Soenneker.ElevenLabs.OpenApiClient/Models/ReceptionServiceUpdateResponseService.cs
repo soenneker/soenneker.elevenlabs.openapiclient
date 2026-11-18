@@ -274,7 +274,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(29)
             {
                 { "add_ons", n => { AddOns = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionAddOn>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionAddOn.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "advance_booking_minutes", n => { AdvanceBookingMinutes = n.GetIntValue(); } },

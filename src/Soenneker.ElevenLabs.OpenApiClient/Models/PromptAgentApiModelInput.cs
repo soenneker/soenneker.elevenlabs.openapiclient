@@ -239,7 +239,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(22)
             {
                 { "backup_llm_config", n => { BackupLlmConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputBackupLlmConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputBackupLlmConfig.CreateFromDiscriminatorValue); } },
                 { "built_in_tools", n => { BuiltInTools = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsInput.CreateFromDiscriminatorValue); } },

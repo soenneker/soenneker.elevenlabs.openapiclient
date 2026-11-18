@@ -8,9 +8,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     public enum SmbToolConfigParamsOneOf81Variant_smb_tool_type
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "delete_location")]
+        [EnumMember(Value = "update_location")]
         #pragma warning disable CS1591
-        DeleteLocation,
+        UpdateLocation,
         #pragma warning restore CS1591
     }
 }

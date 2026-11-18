@@ -20,6 +20,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("auto_resolve_after_inactive_minutes") is null) { _explicitNullValueAutoResolveAfterInactiveMinutes = default!; _explicitNullProperties?.Remove("auto_resolve_after_inactive_minutes"); }
             else if (parseNode.GetChildNode("auto_resolve_after_inactive_minutes") is { } nullNodeAutoResolveAfterInactiveMinutes && nullNodeAutoResolveAfterInactiveMinutes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoResolveAfterInactiveMinutes = null;
+            if (parseNode.GetChildNode("environments") is null) { _explicitNullValueEnvironments = default!; _explicitNullProperties?.Remove("environments"); }
+            else if (parseNode.GetChildNode("environments") is { } nullNodeEnvironments && nullNodeEnvironments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Environments = null;
             if (parseNode.GetChildNode("monitor_configs") is null) { _explicitNullValueMonitorConfigs = default!; _explicitNullProperties?.Remove("monitor_configs"); }
             else if (parseNode.GetChildNode("monitor_configs") is { } nullNodeMonitorConfigs && nullNodeMonitorConfigs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MonitorConfigs = null;
             if (parseNode.GetChildNode("notifiers") is null) { _explicitNullValueNotifiers = default!; _explicitNullProperties?.Remove("notifiers"); }
@@ -31,6 +33,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The auto_resolve_after_inactive_minutes property</summary>
         public int? AutoResolveAfterInactiveMinutes { get => _explicitNullValueAutoResolveAfterInactiveMinutes; set { _explicitNullValueAutoResolveAfterInactiveMinutes = value; AdditionalData?.Remove("auto_resolve_after_inactive_minutes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_resolve_after_inactive_minutes"); else _explicitNullProperties?.Remove("auto_resolve_after_inactive_minutes"); } }
         private int? _explicitNullValueAutoResolveAfterInactiveMinutes = default!;
+        /// <summary>The environments property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Environments { get => _explicitNullValueEnvironments; set { _explicitNullValueEnvironments = value; AdditionalData?.Remove("environments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environments"); else _explicitNullProperties?.Remove("environments"); } }
+        private List<string>? _explicitNullValueEnvironments = default!;
+#nullable restore
+#else
+        public List<string> Environments { get => _explicitNullValueEnvironments; set { _explicitNullValueEnvironments = value; AdditionalData?.Remove("environments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environments"); else _explicitNullProperties?.Remove("environments"); } }
+        private List<string> _explicitNullValueEnvironments = default!;
+#endif
         /// <summary>The monitor_configs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,9 +88,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "auto_resolve_after_inactive_minutes", n => { AutoResolveAfterInactiveMinutes = n.GetIntValue(); } },
+                { "environments", n => { Environments = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "monitor_configs", n => { MonitorConfigs = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettingsResponseMonitorConfigsProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettingsResponseMonitorConfigsProperty.CreateFromDiscriminatorValue); } },
                 { "notifiers", n => { Notifiers = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettingsResponseNotifiersItem>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettingsResponseNotifiersItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -91,6 +104,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("auto_resolve_after_inactive_minutes", AutoResolveAfterInactiveMinutes);
+            writer.WriteCollectionOfPrimitiveValues<string>("environments", Environments);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettingsResponseMonitorConfigsProperty>("monitor_configs", MonitorConfigs);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettingsResponseNotifiersItem>("notifiers", Notifiers);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

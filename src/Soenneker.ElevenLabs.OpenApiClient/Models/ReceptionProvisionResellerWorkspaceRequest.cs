@@ -9,7 +9,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ProvisionResellerWorkspaceRequest : IAdditionalDataHolder, IParsable
+    public partial class ReceptionProvisionResellerWorkspaceRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
@@ -29,6 +29,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if (parseNode.GetChildNode("phone_number") is { } nullNodePhoneNumber && nullNodePhoneNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhoneNumber = null;
             if (parseNode.GetChildNode("subscription") is null) { _explicitNullValueSubscription = default!; _explicitNullProperties?.Remove("subscription"); }
             else if (parseNode.GetChildNode("subscription") is { } nullNodeSubscription && nullNodeSubscription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subscription = null;
+            if (parseNode.GetChildNode("vertical") is null) { _explicitNullValueVertical = default!; _explicitNullProperties?.Remove("vertical"); }
+            else if (parseNode.GetChildNode("vertical") is { } nullNodeVertical && nullNodeVertical.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Vertical = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -79,17 +81,20 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Paid tier to subscribe to. Omitted leaves the workspace with no subscription.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProvisionResellerWorkspaceRequestSubscription? Subscription { get => _explicitNullValueSubscription; set { _explicitNullValueSubscription = value; AdditionalData?.Remove("subscription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscription"); else _explicitNullProperties?.Remove("subscription"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ProvisionResellerWorkspaceRequestSubscription? _explicitNullValueSubscription = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionProvisionResellerWorkspaceRequestSubscription? Subscription { get => _explicitNullValueSubscription; set { _explicitNullValueSubscription = value; AdditionalData?.Remove("subscription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscription"); else _explicitNullProperties?.Remove("subscription"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionProvisionResellerWorkspaceRequestSubscription? _explicitNullValueSubscription = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProvisionResellerWorkspaceRequestSubscription Subscription { get => _explicitNullValueSubscription; set { _explicitNullValueSubscription = value; AdditionalData?.Remove("subscription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscription"); else _explicitNullProperties?.Remove("subscription"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ProvisionResellerWorkspaceRequestSubscription _explicitNullValueSubscription = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionProvisionResellerWorkspaceRequestSubscription Subscription { get => _explicitNullValueSubscription; set { _explicitNullValueSubscription = value; AdditionalData?.Remove("subscription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscription"); else _explicitNullProperties?.Remove("subscription"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionProvisionResellerWorkspaceRequestSubscription _explicitNullValueSubscription = default!;
 #endif
+        /// <summary>The business&apos;s vertical, used with `complete_onboarding`. Without it, onboarding picks the vertical as usual.</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionVertical? Vertical { get => _explicitNullValueVertical; set { _explicitNullValueVertical = value; AdditionalData?.Remove("vertical"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vertical"); else _explicitNullProperties?.Remove("vertical"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionVertical? _explicitNullValueVertical = default!;
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ProvisionResellerWorkspaceRequest"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionProvisionResellerWorkspaceRequest"/> and sets the default values.
         /// </summary>
-        public ProvisionResellerWorkspaceRequest()
+        public ReceptionProvisionResellerWorkspaceRequest()
         {
             AdditionalData = new Dictionary<string, object>();
             CompleteOnboarding = false;
@@ -97,12 +102,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ProvisionResellerWorkspaceRequest"/></returns>
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionProvisionResellerWorkspaceRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ProvisionResellerWorkspaceRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionProvisionResellerWorkspaceRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ProvisionResellerWorkspaceRequest(), parseNode);
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionProvisionResellerWorkspaceRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -110,14 +115,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "business_name", n => { BusinessName = n.GetStringValue(); } },
                 { "complete_onboarding", n => { CompleteOnboarding = n.GetBoolValue(); } },
                 { "idempotency_key", n => { IdempotencyKey = n.GetStringValue(); } },
                 { "members", n => { Members = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.TeamInviteRequest>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TeamInviteRequest.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "phone_number", n => { PhoneNumber = n.GetStringValue(); } },
-                { "subscription", n => { Subscription = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProvisionResellerWorkspaceRequestSubscription>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProvisionResellerWorkspaceRequestSubscription.CreateFromDiscriminatorValue); } },
+                { "subscription", n => { Subscription = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionProvisionResellerWorkspaceRequestSubscription>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionProvisionResellerWorkspaceRequestSubscription.CreateFromDiscriminatorValue); } },
+                { "vertical", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionVertical>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueVertical = default; _explicitNullProperties?.Remove("vertical"); AdditionalData["vertical"] = unknown; } else { Vertical = parsed; AdditionalData.Remove("vertical"); } } },
             };
         }
         /// <summary>
@@ -132,7 +138,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("idempotency_key", IdempotencyKey);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.TeamInviteRequest>("members", Members);
             writer.WriteStringValue("phone_number", PhoneNumber);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProvisionResellerWorkspaceRequestSubscription>("subscription", Subscription);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionProvisionResellerWorkspaceRequestSubscription>("subscription", Subscription);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionVertical>("vertical", Vertical);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

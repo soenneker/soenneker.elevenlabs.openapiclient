@@ -66,7 +66,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "created_at_unix_secs", n => { CreatedAtUnixSecs = n.GetIntValue(); } },
                 { "created_from", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDefinitionSource>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCreatedFrom = default; _explicitNullProperties?.Remove("created_from"); AdditionalData["created_from"] = unknown; } else { CreatedFrom = parsed; AdditionalData.Remove("created_from"); } } },

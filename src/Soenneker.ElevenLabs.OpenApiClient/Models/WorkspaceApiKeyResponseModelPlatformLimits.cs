@@ -107,7 +107,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "concurrency", n => { Concurrency = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ComputedUsagePlatformLimit>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ComputedUsagePlatformLimit.CreateFromDiscriminatorValue); } },
                 { "credits", n => { Credits = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.StoredUsagePlatformLimit>(global::Soenneker.ElevenLabs.OpenApiClient.Models.StoredUsagePlatformLimit.CreateFromDiscriminatorValue); } },

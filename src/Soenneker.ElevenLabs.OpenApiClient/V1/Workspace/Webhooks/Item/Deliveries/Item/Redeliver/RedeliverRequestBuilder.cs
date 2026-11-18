@@ -34,7 +34,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Webhooks.Item.Deliveri
         {
         }
         /// <summary>
-        /// Sends a stored delivery again, once, with the same delivery ID, a new signature and an ElevenLabs-Webhook-Redelivery header. A retry that is already scheduled is still sent. Only workspace admins on a web session can redeliver, and only deliveries whose payload is stored. Redeliveries and test events share a limit of 10 per webhook per minute.
+        /// Sends a stored delivery again, once, with the same delivery ID, a new signature and an ElevenLabs-Webhook-Redelivery header. A retry that is already scheduled is still sent. Redelivering needs permission to manage webhooks and a web session, and the delivery&apos;s payload must be stored. Redeliveries and test events share a limit of 10 per webhook per minute.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookSendResultResponseModel"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Webhooks.Item.Deliveri
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookSendResultResponseModel>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookSendResultResponseModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Sends a stored delivery again, once, with the same delivery ID, a new signature and an ElevenLabs-Webhook-Redelivery header. A retry that is already scheduled is still sent. Only workspace admins on a web session can redeliver, and only deliveries whose payload is stored. Redeliveries and test events share a limit of 10 per webhook per minute.
+        /// Sends a stored delivery again, once, with the same delivery ID, a new signature and an ElevenLabs-Webhook-Redelivery header. A retry that is already scheduled is still sent. Redelivering needs permission to manage webhooks and a web session, and the delivery&apos;s payload must be stored. Redeliveries and test events share a limit of 10 per webhook per minute.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

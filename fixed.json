@@ -20593,9 +20593,9 @@
           {
             "name": "sort_by",
             "in": "query",
-            "description": "Order by most recently created, by priority (most urgent first, then most recently created), or by most recently reported (the newest report merged into the agent issue, else its creation).",
+            "description": "Order by most recently created, by priority (most urgent first, then most recently created), by most recently reported (the newest report merged into the agent issue, else its creation), or by report count (most reports merged into the agent issue first, then most recently created).",
             "schema": {
-              "description": "Order by most recently created, by priority (most urgent first, then most recently created), or by most recently reported (the newest report merged into the agent issue, else its creation).",
+              "description": "Order by most recently created, by priority (most urgent first, then most recently created), by most recently reported (the newest report merged into the agent issue, else its creation), or by report count (most reports merged into the agent issue first, then most recently created).",
               "default": "created_at",
               "$ref": "#/components/schemas/AgentConversationTicketSortBy"
             }
@@ -20890,9 +20890,9 @@
           {
             "name": "sort_by",
             "in": "query",
-            "description": "Order by most recently created, by priority (most urgent first, then most recently created), or by most recently reported (the newest report merged into the agent issue, else its creation).",
+            "description": "Order by most recently created, by priority (most urgent first, then most recently created), by most recently reported (the newest report merged into the agent issue, else its creation), or by report count (most reports merged into the agent issue first, then most recently created).",
             "schema": {
-              "description": "Order by most recently created, by priority (most urgent first, then most recently created), or by most recently reported (the newest report merged into the agent issue, else its creation).",
+              "description": "Order by most recently created, by priority (most urgent first, then most recently created), by most recently reported (the newest report merged into the agent issue, else its creation), or by report count (most reports merged into the agent issue first, then most recently created).",
               "default": "created_at",
               "$ref": "#/components/schemas/AgentConversationTicketSortBy"
             }
@@ -39917,7 +39917,7 @@
     "/v1/workspace/webhooks/{webhookId}/deliveries/{deliveryId}/redeliver": {
       "post": {
         "summary": "Redeliver Webhook Delivery",
-        "description": "Sends a stored delivery again, once, with the same delivery ID, a new signature and an ElevenLabs-Webhook-Redelivery header. A retry that is already scheduled is still sent. Only workspace admins on a web session can redeliver, and only deliveries whose payload is stored. Redeliveries and test events share a limit of 10 per webhook per minute.",
+        "description": "Sends a stored delivery again, once, with the same delivery ID, a new signature and an ElevenLabs-Webhook-Redelivery header. A retry that is already scheduled is still sent. Redelivering needs permission to manage webhooks and a web session, and the delivery\u0027s payload must be stored. Redeliveries and test events share a limit of 10 per webhook per minute.",
         "operationId": "RedeliverWebhookDeliveryRoute",
         "parameters": [
           {
@@ -44808,7 +44808,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ProvisionResellerWorkspaceRequest"
+                "$ref": "#/components/schemas/ReceptionProvisionResellerWorkspaceRequest"
               }
             }
           },
@@ -46075,7 +46075,8 @@
           "elevenlabs",
           "scribe_realtime",
           "scribe_v2_turbo",
-          "scribe_v3_live"
+          "scribe_v3_live",
+          "scribe_v3_live_medical"
         ],
         "type": "string",
         "x-fern-enum": {
@@ -46103,6 +46104,10 @@
             {
               "value": "scribe_v3_live",
               "name": "ScribeV3Live"
+            },
+            {
+              "value": "scribe_v3_live_medical",
+              "name": "ScribeV3LiveMedical"
             }
           ]
         }
@@ -48392,6 +48397,18 @@
               "$ref": "#/components/schemas/CallingPeriod"
             }
           },
+          "date_overrides": {
+            "title": "Date Overrides",
+            "maxItems": 100,
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/DateOverride"
+            },
+            "description": "Replaces the inherited date overrides; unset inherits them and an empty list clears them."
+          },
           "data_collection": {
             "$ref": "#/components/schemas/AgentPolicyOverrideInputDataCollection"
           },
@@ -48425,6 +48442,18 @@
             "items": {
               "$ref": "#/components/schemas/CallingPeriod"
             }
+          },
+          "date_overrides": {
+            "title": "Date Overrides",
+            "maxItems": 100,
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/DateOverride"
+            },
+            "description": "Replaces the inherited date overrides; unset inherits them and an empty list clears them."
           },
           "data_collection": {
             "$ref": "#/components/schemas/AgentPolicyOverrideInputDataCollection"
@@ -60254,6 +60283,13 @@
               "$ref": "#/components/schemas/CallingPeriodPolicy"
             }
           },
+          "date_overrides": {
+            "title": "Date Overrides",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DateOverridePolicy"
+            }
+          },
           "data_collection": {
             "$ref": "#/components/schemas/DataCollectionPolicy"
           },
@@ -64846,6 +64882,7 @@
           "telegram_integration",
           "intercom_integration",
           "freshdesk_integration",
+          "plain_integration",
           "salesforce_integration",
           "template_preview",
           "genesys_bot_connector",
@@ -64949,6 +64986,10 @@
             {
               "value": "freshdesk_integration",
               "name": "FreshdeskIntegration"
+            },
+            {
+              "value": "plain_integration",
+              "name": "PlainIntegration"
             },
             {
               "value": "salesforce_integration",
@@ -67663,6 +67704,83 @@
           }
         },
         "description": "Represents a calendar date as individual numeric components."
+      },
+      "DateOverride": {
+        "title": "DateOverride",
+        "required": [
+          "start_date",
+          "end_date"
+        ],
+        "type": "object",
+        "properties": {
+          "start_date": {
+            "title": "Start Date",
+            "type": "string",
+            "description": "First local date the override applies on.",
+            "format": "date"
+          },
+          "end_date": {
+            "title": "End Date",
+            "type": "string",
+            "description": "Last local date the override applies on, inclusive.",
+            "format": "date"
+          },
+          "intervals": {
+            "title": "Intervals",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CallingIntervalPolicy"
+            },
+            "description": "Calling windows on every day from \u0060start_date\u0060 to \u0060end_date\u0060, replacing the weekly ones. Empty means no calls on those days."
+          },
+          "name": {
+            "title": "Name",
+            "maxLength": 100,
+            "minLength": 1,
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "What the override is for, such as \u0060Christmas\u0060."
+          }
+        }
+      },
+      "DateOverridePolicy": {
+        "title": "DateOverridePolicy",
+        "required": [
+          "start_date",
+          "end_date"
+        ],
+        "type": "object",
+        "properties": {
+          "start_date": {
+            "title": "Start Date",
+            "type": "string",
+            "description": "First local date the override applies on.",
+            "format": "date"
+          },
+          "end_date": {
+            "title": "End Date",
+            "type": "string",
+            "description": "Last local date the override applies on, inclusive.",
+            "format": "date"
+          },
+          "intervals": {
+            "title": "Intervals",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CallingIntervalPolicy"
+            },
+            "description": "Calling windows on every day from \u0060start_date\u0060 to \u0060end_date\u0060, replacing the weekly ones. Empty means no calls on those days."
+          },
+          "name": {
+            "title": "Name",
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
       },
       "DayOfWeek": {
         "type": "integer"
@@ -70630,6 +70748,34 @@
             {
               "value": "public",
               "name": "PublicValue"
+            }
+          ]
+        }
+      },
+      "FirstMessageMode": {
+        "title": "FirstMessageMode",
+        "enum": [
+          "interruptible",
+          "uninterruptible",
+          "recording_notice"
+        ],
+        "type": "string",
+        "description": "How the receptionist\u0027s greeting plays.",
+        "x-ms-enum": {
+          "name": "FirstMessageMode",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "interruptible",
+              "name": "Interruptible"
+            },
+            {
+              "value": "uninterruptible",
+              "name": "Uninterruptible"
+            },
+            {
+              "value": "recording_notice",
+              "name": "RecordingNotice"
             }
           ]
         }
@@ -75393,6 +75539,8 @@
           "gpt-6-luna",
           "gpt-6.1-sol",
           "gpt-6.1-terra",
+          "gpt-6.2-astra",
+          "gpt-6.2-sol",
           "gpt-5-mini",
           "gpt-5-nano",
           "gpt-3.5-turbo",
@@ -75579,6 +75727,14 @@
             {
               "value": "gpt-6.1-terra",
               "name": "Gpt61Terra"
+            },
+            {
+              "value": "gpt-6.2-astra",
+              "name": "Gpt62Astra"
+            },
+            {
+              "value": "gpt-6.2-sol",
+              "name": "Gpt62Sol"
             },
             {
               "value": "gpt-5-mini",
@@ -82043,6 +82199,15 @@
             },
             "description": "The weekly windows calls may be placed in."
           },
+          "date_overrides": {
+            "title": "Date Overrides",
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DateOverride"
+            },
+            "description": "Local dates in \u0060timezone\u0060 whose calling windows replace \u0060calling_periods\u0060. Date ranges may not overlap."
+          },
           "data_collection": {
             "description": "The agent\u0027s data collection items that steer follow-up calls. Each defaults\nto the built-in item for its purpose; \u0060null\u0060 turns it off.",
             "$ref": "#/components/schemas/DataCollectionConfig"
@@ -82074,6 +82239,15 @@
               "$ref": "#/components/schemas/CallingPeriod"
             },
             "description": "The weekly windows calls may be placed in."
+          },
+          "date_overrides": {
+            "title": "Date Overrides",
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DateOverride"
+            },
+            "description": "Local dates in \u0060timezone\u0060 whose calling windows replace \u0060calling_periods\u0060. Date ranges may not overlap."
           },
           "data_collection": {
             "description": "The agent\u0027s data collection items that steer follow-up calls. Each defaults\nto the built-in item for its purpose; \u0060null\u0060 turns it off.",
@@ -84964,60 +85138,6 @@
           }
         }
       },
-      "ProvisionResellerWorkspaceRequest": {
-        "title": "ProvisionResellerWorkspaceRequest",
-        "required": [
-          "business_name"
-        ],
-        "type": "object",
-        "properties": {
-          "business_name": {
-            "title": "Business Name",
-            "maxLength": 100,
-            "minLength": 1,
-            "type": "string"
-          },
-          "subscription": {
-            "$ref": "#/components/schemas/ProvisionResellerWorkspaceRequestSubscription"
-          },
-          "phone_number": {
-            "title": "Phone Number",
-            "type": [
-              "null",
-              "string"
-            ],
-            "description": "A free number from the reseller\u0027s phone pool, reserved for the workspace until onboarding binds it to the receptionist."
-          },
-          "members": {
-            "title": "Members",
-            "maxItems": 100,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/TeamInviteRequest"
-            },
-            "description": "People to invite once the workspace exists, capped by the tier\u0027s team size. Best-effort: each outcome is in \u0060member_results\u0060.",
-            "default": []
-          },
-          "complete_onboarding": {
-            "title": "Complete Onboarding",
-            "type": "boolean",
-            "description": "Finish setup right away, as \u0060POST /v1/reception/reseller/workspaces/{workspace_id}/complete-onboarding\u0060 does. Best-effort: \u0060onboarding_completed_at_unix\u0060 stays null on failure, and that call can be retried.",
-            "default": false
-          },
-          "idempotency_key": {
-            "examples": [
-              "3c1d2b7e-8f4a-4e5b-9c6d-1a2b3c4d5e6f"
-            ],
-            "title": "Idempotency Key",
-            "maxLength": 255,
-            "type": [
-              "null",
-              "string"
-            ],
-            "description": "Client-generated key that makes a retry safe. The same key and body within 24 hours returns the first result without running again. While that first request is still running, a retry gets 409 \u0060idempotency_key_in_progress\u0060; a different body with the same key gets 400 \u0060idempotency_key_reused\u0060. A request that fails is not saved, so it can be retried with the same key."
-          }
-        }
-      },
       "ProvisionResellerWorkspaceResponse": {
         "title": "ProvisionResellerWorkspaceResponse",
         "required": [
@@ -87075,11 +87195,10 @@
             "description": "The first message the agent says when starting a conversation",
             "default": "Hello! Thanks for calling. How can I help you today?"
           },
-          "disable_first_message_interruptions": {
-            "title": "Disable First Message Interruptions",
-            "type": "boolean",
-            "description": "When true, callers cannot interrupt the receptionist while the first message is being delivered. Use when the greeting carries a recording or legal notice callers must hear in full.",
-            "default": false
+          "first_message_mode": {
+            "description": "How the first message plays. interruptible: callers can talk over it. uninterruptible: it always plays to the end. recording_notice: it opens with a short \u0027this call may be recorded\u0027 notice in the receptionist\u0027s language, spoken by a separate voice, and always plays to the end.",
+            "default": "interruptible",
+            "$ref": "#/components/schemas/FirstMessageMode"
           },
           "enable_end_call_tool": {
             "title": "Enable End Call Tool",
@@ -87914,6 +88033,63 @@
           }
         },
         "description": "Represents a product, menu item, or catalog item.\n\nUsed for restaurants (menu), e-commerce (products), salons (retail items), etc."
+      },
+      "ReceptionProvisionResellerWorkspaceRequest": {
+        "title": "ReceptionProvisionResellerWorkspaceRequest",
+        "required": [
+          "business_name"
+        ],
+        "type": "object",
+        "properties": {
+          "business_name": {
+            "title": "Business Name",
+            "maxLength": 100,
+            "minLength": 1,
+            "type": "string"
+          },
+          "vertical": {
+            "$ref": "#/components/schemas/ReceptionProvisionResellerWorkspaceRequestVertical"
+          },
+          "subscription": {
+            "$ref": "#/components/schemas/ReceptionProvisionResellerWorkspaceRequestSubscription"
+          },
+          "phone_number": {
+            "title": "Phone Number",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "A free number from the reseller\u0027s phone pool, reserved for the workspace until onboarding binds it to the receptionist."
+          },
+          "members": {
+            "title": "Members",
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TeamInviteRequest"
+            },
+            "description": "People to invite once the workspace exists, capped by the tier\u0027s team size. Best-effort: each outcome is in \u0060member_results\u0060.",
+            "default": []
+          },
+          "complete_onboarding": {
+            "title": "Complete Onboarding",
+            "type": "boolean",
+            "description": "Finish setup right away, as \u0060POST /v1/reception/reseller/workspaces/{workspace_id}/complete-onboarding\u0060 does. Best-effort: \u0060onboarding_completed_at_unix\u0060 stays null on failure, and that call can be retried.",
+            "default": false
+          },
+          "idempotency_key": {
+            "examples": [
+              "3c1d2b7e-8f4a-4e5b-9c6d-1a2b3c4d5e6f"
+            ],
+            "title": "Idempotency Key",
+            "maxLength": 255,
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Client-generated key that makes a retry safe. The same key and body within 24 hours returns the first result without running again. While that first request is still running, a retry gets 409 \u0060idempotency_key_in_progress\u0060; a different body with the same key gets 400 \u0060idempotency_key_reused\u0060. A request that fails is not saved, so it can be retried with the same key."
+          }
+        }
       },
       "ReceptionService": {
         "title": "ReceptionService",
@@ -89374,6 +89550,98 @@
           }
         },
         "description": "Request model for updating an existing transfer rule."
+      },
+      "ReceptionVertical": {
+        "title": "ReceptionVertical",
+        "enum": [
+          "salon_barbershop",
+          "nail_beauty",
+          "spa",
+          "medical",
+          "veterinary",
+          "fitness",
+          "home_services",
+          "photography",
+          "consulting",
+          "restaurant",
+          "dental",
+          "auto_service",
+          "tutoring",
+          "legal",
+          "real_estate",
+          "other"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "ReceptionVertical",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "salon_barbershop",
+              "name": "SalonBarbershop"
+            },
+            {
+              "value": "nail_beauty",
+              "name": "NailBeauty"
+            },
+            {
+              "value": "spa",
+              "name": "Spa"
+            },
+            {
+              "value": "medical",
+              "name": "Medical"
+            },
+            {
+              "value": "veterinary",
+              "name": "Veterinary"
+            },
+            {
+              "value": "fitness",
+              "name": "Fitness"
+            },
+            {
+              "value": "home_services",
+              "name": "HomeServices"
+            },
+            {
+              "value": "photography",
+              "name": "Photography"
+            },
+            {
+              "value": "consulting",
+              "name": "Consulting"
+            },
+            {
+              "value": "restaurant",
+              "name": "Restaurant"
+            },
+            {
+              "value": "dental",
+              "name": "Dental"
+            },
+            {
+              "value": "auto_service",
+              "name": "AutoService"
+            },
+            {
+              "value": "tutoring",
+              "name": "Tutoring"
+            },
+            {
+              "value": "legal",
+              "name": "Legal"
+            },
+            {
+              "value": "real_estate",
+              "name": "RealEstate"
+            },
+            {
+              "value": "other",
+              "name": "Other"
+            }
+          ]
+        }
       },
       "RegisterMediaResponse": {
         "title": "RegisterMediaResponse",
@@ -104810,6 +105078,7 @@
             }
           }
         },
+        "description": "A workflow to run instead of the agent\u0027s. It replaces the agent\u0027s workflow whole.",
         "x-client-original-nullable-union": {
           "anyOf": [
             {
@@ -104818,7 +105087,8 @@
             {
               "type": "null"
             }
-          ]
+          ],
+          "description": "A workflow to run instead of the agent\u0027s. It replaces the agent\u0027s workflow whole."
         }
       },
       "AgentAnalysisItemsInputEvaluationCriteriaItem": {
@@ -106159,6 +106429,19 @@
             ],
             "description": "How many minutes an alert can stay inactive before it is auto-resolved. Unset values fall through to the next layer."
           },
+          "environments": {
+            "title": "Environments",
+            "maxItems": 20,
+            "minItems": 1,
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "type": "string"
+            },
+            "description": "Environments whose conversations are monitored, e.g. \u0060\u0060[\u0027production\u0027]\u0060\u0060. The list must include \u0060\u0060production\u0060\u0060. Unset values fall through to the next layer; when no layer sets it, every environment is monitored."
+          },
           "notifiers": {
             "title": "Notifiers",
             "maxItems": 10,
@@ -106233,6 +106516,16 @@
               "null",
               "integer"
             ]
+          },
+          "environments": {
+            "title": "Environments",
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "type": "string"
+            }
           },
           "notifiers": {
             "title": "Notifiers",
@@ -111362,6 +111655,18 @@
               "$ref": "#/components/schemas/CallingPeriod"
             }
           },
+          "date_overrides": {
+            "title": "Date Overrides",
+            "maxItems": 100,
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/DateOverride"
+            },
+            "description": "Replaces the inherited date overrides; unset inherits them and an empty list clears them."
+          },
           "data_collection": {
             "$ref": "#/components/schemas/AgentPolicyOverrideInputDataCollection"
           },
@@ -111409,6 +111714,18 @@
             "items": {
               "$ref": "#/components/schemas/CallingPeriod"
             }
+          },
+          "date_overrides": {
+            "title": "Date Overrides",
+            "maxItems": 100,
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/DateOverride"
+            },
+            "description": "Replaces the inherited date overrides; unset inherits them and an empty list clears them."
           },
           "data_collection": {
             "$ref": "#/components/schemas/AgentPolicyOverrideInputDataCollection"
@@ -123201,37 +123518,6 @@
         ],
         "description": "LLM model to use for this evaluation criteria. If not set, uses agent\u0027s analysis_llm default."
       },
-      "ProvisionResellerWorkspaceRequestSubscription": {
-        "title": "ProvisionResellerWorkspaceSubscription",
-        "required": [
-          "tier_id"
-        ],
-        "type": [
-          "object",
-          "null"
-        ],
-        "properties": {
-          "tier_id": {
-            "title": "Tier Id",
-            "type": "string"
-          },
-          "billing_period": {
-            "$ref": "#/components/schemas/ProvisionResellerWorkspaceSubscriptionBillingPeriod"
-          }
-        },
-        "description": "Paid tier to subscribe to. Omitted leaves the workspace with no subscription.",
-        "x-client-original-nullable-union": {
-          "anyOf": [
-            {
-              "$ref": "#/components/schemas/ProvisionResellerWorkspaceSubscription"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "description": "Paid tier to subscribe to. Omitted leaves the workspace with no subscription."
-        }
-      },
       "ProvisionResellerWorkspaceResponseSubscription": {
         "title": "ResellerWorkspaceSubscription",
         "required": [
@@ -123689,6 +123975,48 @@
         ],
         "description": "The regulated number type this number was issued as. Null for numbers that need no paperwork."
       },
+      "ReceptionProvisionResellerWorkspaceRequestVertical": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ReceptionVertical"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "description": "The business\u0027s vertical, used with \u0060complete_onboarding\u0060. Without it, onboarding picks the vertical as usual."
+      },
+      "ReceptionProvisionResellerWorkspaceRequestSubscription": {
+        "title": "ProvisionResellerWorkspaceSubscription",
+        "required": [
+          "tier_id"
+        ],
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "tier_id": {
+            "title": "Tier Id",
+            "type": "string"
+          },
+          "billing_period": {
+            "$ref": "#/components/schemas/ProvisionResellerWorkspaceSubscriptionBillingPeriod"
+          }
+        },
+        "description": "Paid tier to subscribe to. Omitted leaves the workspace with no subscription.",
+        "x-client-original-nullable-union": {
+          "anyOf": [
+            {
+              "$ref": "#/components/schemas/ProvisionResellerWorkspaceSubscription"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Paid tier to subscribe to. Omitted leaves the workspace with no subscription."
+        }
+      },
       "ReceptionServiceUpdateResponseService": {
         "title": "ReceptionService",
         "required": [
@@ -124027,10 +124355,9 @@
             "type": "string",
             "description": "The first message the agent says when starting a conversation"
           },
-          "disable_first_message_interruptions": {
-            "title": "Disable First Message Interruptions",
-            "type": "boolean",
-            "description": "When true, callers cannot interrupt the receptionist while the first message is being delivered. Use when the greeting carries a recording or legal notice callers must hear in full."
+          "first_message_mode": {
+            "description": "How the first message plays. interruptible: callers can talk over it. uninterruptible: it always plays to the end. recording_notice: it opens with a short \u0027this call may be recorded\u0027 notice in the receptionist\u0027s language, spoken by a separate voice, and always plays to the end.",
+            "$ref": "#/components/schemas/FirstMessageMode"
           },
           "enable_end_call_tool": {
             "title": "Enable End Call Tool",
@@ -124229,10 +124556,6 @@
       },
       "ResubmitTestsRequestModelAgentConfigOverride": {
         "title": "AdhocAgentConfigOverrideForTestRequestModel",
-        "required": [
-          "conversation_config",
-          "platform_settings"
-        ],
         "type": [
           "object",
           "null"
@@ -124242,6 +124565,8 @@
             "$ref": "#/components/schemas/ConversationalConfigApiModelInput"
           },
           "platform_settings": {
+            "description": "Platform settings fields to change for this run. Fields left out keep the agent\u0027s values.",
+            "title": "Platform Settings",
             "$ref": "#/components/schemas/AgentPlatformSettingsRequestModel"
           },
           "workflow": {
@@ -124684,6 +125009,7 @@
             "search_clients": "#/components/schemas/SearchClientsParams",
             "send_custom_email": "#/components/schemas/SendCustomEmailParams",
             "set_booking_slug": "#/components/schemas/SetBookingSlugParams",
+            "smb_confirm_change": "#/components/schemas/ConfirmChangeParams",
             "submit_business_info": "#/components/schemas/SubmitBusinessInfoParams",
             "trigger_user_verification": "#/components/schemas/TriggerUserVerificationParams",
             "update_agent_config": "#/components/schemas/UpdateAgentConfigParams",
@@ -124782,28 +125108,29 @@
             "update_booking_page_settings": "#/components/schemas/SmbToolConfigParamsOneOf71Variant",
             "update_booking_page_appearance": "#/components/schemas/SmbToolConfigParamsOneOf72Variant",
             "get_booking_slug_status": "#/components/schemas/SmbToolConfigParamsOneOf73Variant",
-            "set_booking_slug": "#/components/schemas/SmbToolConfigParamsOneOf74Variant",
-            "list_client_interactions": "#/components/schemas/SmbToolConfigParamsOneOf75Variant",
-            "create_client_interaction": "#/components/schemas/SmbToolConfigParamsOneOf76Variant",
-            "delete_client_interaction": "#/components/schemas/SmbToolConfigParamsOneOf77Variant",
-            "list_locations": "#/components/schemas/SmbToolConfigParamsOneOf78Variant",
-            "create_location": "#/components/schemas/SmbToolConfigParamsOneOf79Variant",
-            "update_location": "#/components/schemas/SmbToolConfigParamsOneOf80Variant",
-            "delete_location": "#/components/schemas/SmbToolConfigParamsOneOf81Variant",
-            "leave_message": "#/components/schemas/SmbToolConfigParamsOneOf82Variant",
-            "create_service_quote_request": "#/components/schemas/SmbToolConfigParamsOneOf83Variant",
-            "create_product_quote_request": "#/components/schemas/SmbToolConfigParamsOneOf84Variant",
-            "report_knowledge_gap": "#/components/schemas/SmbToolConfigParamsOneOf85Variant",
-            "opt_in_sms_reminder": "#/components/schemas/SmbToolConfigParamsOneOf86Variant",
-            "opt_out_sms_reminder": "#/components/schemas/SmbToolConfigParamsOneOf87Variant",
-            "trigger_user_verification": "#/components/schemas/SmbToolConfigParamsOneOf88Variant",
-            "validate_user_verification_code": "#/components/schemas/SmbToolConfigParamsOneOf89Variant",
-            "owner_list_staff": "#/components/schemas/SmbToolConfigParamsOneOf90Variant",
-            "owner_list_assets": "#/components/schemas/SmbToolConfigParamsOneOf91Variant",
-            "owner_list_locations": "#/components/schemas/SmbToolConfigParamsOneOf92Variant",
-            "owner_list_services": "#/components/schemas/SmbToolConfigParamsOneOf93Variant",
-            "owner_list_products": "#/components/schemas/SmbToolConfigParamsOneOf94Variant",
-            "owner_get_client_appointments": "#/components/schemas/SmbToolConfigParamsOneOf95Variant"
+            "smb_confirm_change": "#/components/schemas/SmbToolConfigParamsOneOf74Variant",
+            "set_booking_slug": "#/components/schemas/SmbToolConfigParamsOneOf75Variant",
+            "list_client_interactions": "#/components/schemas/SmbToolConfigParamsOneOf76Variant",
+            "create_client_interaction": "#/components/schemas/SmbToolConfigParamsOneOf77Variant",
+            "delete_client_interaction": "#/components/schemas/SmbToolConfigParamsOneOf78Variant",
+            "list_locations": "#/components/schemas/SmbToolConfigParamsOneOf79Variant",
+            "create_location": "#/components/schemas/SmbToolConfigParamsOneOf80Variant",
+            "update_location": "#/components/schemas/SmbToolConfigParamsOneOf81Variant",
+            "delete_location": "#/components/schemas/SmbToolConfigParamsOneOf82Variant",
+            "leave_message": "#/components/schemas/SmbToolConfigParamsOneOf83Variant",
+            "create_service_quote_request": "#/components/schemas/SmbToolConfigParamsOneOf84Variant",
+            "create_product_quote_request": "#/components/schemas/SmbToolConfigParamsOneOf85Variant",
+            "report_knowledge_gap": "#/components/schemas/SmbToolConfigParamsOneOf86Variant",
+            "opt_in_sms_reminder": "#/components/schemas/SmbToolConfigParamsOneOf87Variant",
+            "opt_out_sms_reminder": "#/components/schemas/SmbToolConfigParamsOneOf88Variant",
+            "trigger_user_verification": "#/components/schemas/SmbToolConfigParamsOneOf89Variant",
+            "validate_user_verification_code": "#/components/schemas/SmbToolConfigParamsOneOf90Variant",
+            "owner_list_staff": "#/components/schemas/SmbToolConfigParamsOneOf91Variant",
+            "owner_list_assets": "#/components/schemas/SmbToolConfigParamsOneOf92Variant",
+            "owner_list_locations": "#/components/schemas/SmbToolConfigParamsOneOf93Variant",
+            "owner_list_services": "#/components/schemas/SmbToolConfigParamsOneOf94Variant",
+            "owner_list_products": "#/components/schemas/SmbToolConfigParamsOneOf95Variant",
+            "owner_get_client_appointments": "#/components/schemas/SmbToolConfigParamsOneOf96Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -125093,6 +125420,9 @@
             },
             {
               "$ref": "#/components/schemas/SmbToolConfigParamsOneOf95"
+            },
+            {
+              "$ref": "#/components/schemas/SmbToolConfigParamsOneOf96"
             }
           ],
           "x-client-original-discriminator": {
@@ -125173,6 +125503,7 @@
               "search_clients": "#/components/schemas/SearchClientsParams",
               "send_custom_email": "#/components/schemas/SendCustomEmailParams",
               "set_booking_slug": "#/components/schemas/SetBookingSlugParams",
+              "smb_confirm_change": "#/components/schemas/ConfirmChangeParams",
               "submit_business_info": "#/components/schemas/SubmitBusinessInfoParams",
               "trigger_user_verification": "#/components/schemas/TriggerUserVerificationParams",
               "update_agent_config": "#/components/schemas/UpdateAgentConfigParams",
@@ -125271,28 +125602,29 @@
               "update_booking_page_settings": "#/components/schemas/SmbToolConfigParamsOneOf71",
               "update_booking_page_appearance": "#/components/schemas/SmbToolConfigParamsOneOf72",
               "get_booking_slug_status": "#/components/schemas/SmbToolConfigParamsOneOf73",
-              "set_booking_slug": "#/components/schemas/SmbToolConfigParamsOneOf74",
-              "list_client_interactions": "#/components/schemas/SmbToolConfigParamsOneOf75",
-              "create_client_interaction": "#/components/schemas/SmbToolConfigParamsOneOf76",
-              "delete_client_interaction": "#/components/schemas/SmbToolConfigParamsOneOf77",
-              "list_locations": "#/components/schemas/SmbToolConfigParamsOneOf78",
-              "create_location": "#/components/schemas/SmbToolConfigParamsOneOf79",
-              "update_location": "#/components/schemas/SmbToolConfigParamsOneOf80",
-              "delete_location": "#/components/schemas/SmbToolConfigParamsOneOf81",
-              "leave_message": "#/components/schemas/SmbToolConfigParamsOneOf82",
-              "create_service_quote_request": "#/components/schemas/SmbToolConfigParamsOneOf83",
-              "create_product_quote_request": "#/components/schemas/SmbToolConfigParamsOneOf84",
-              "report_knowledge_gap": "#/components/schemas/SmbToolConfigParamsOneOf85",
-              "opt_in_sms_reminder": "#/components/schemas/SmbToolConfigParamsOneOf86",
-              "opt_out_sms_reminder": "#/components/schemas/SmbToolConfigParamsOneOf87",
-              "trigger_user_verification": "#/components/schemas/SmbToolConfigParamsOneOf88",
-              "validate_user_verification_code": "#/components/schemas/SmbToolConfigParamsOneOf89",
-              "owner_list_staff": "#/components/schemas/SmbToolConfigParamsOneOf90",
-              "owner_list_assets": "#/components/schemas/SmbToolConfigParamsOneOf91",
-              "owner_list_locations": "#/components/schemas/SmbToolConfigParamsOneOf92",
-              "owner_list_services": "#/components/schemas/SmbToolConfigParamsOneOf93",
-              "owner_list_products": "#/components/schemas/SmbToolConfigParamsOneOf94",
-              "owner_get_client_appointments": "#/components/schemas/SmbToolConfigParamsOneOf95"
+              "smb_confirm_change": "#/components/schemas/SmbToolConfigParamsOneOf74",
+              "set_booking_slug": "#/components/schemas/SmbToolConfigParamsOneOf75",
+              "list_client_interactions": "#/components/schemas/SmbToolConfigParamsOneOf76",
+              "create_client_interaction": "#/components/schemas/SmbToolConfigParamsOneOf77",
+              "delete_client_interaction": "#/components/schemas/SmbToolConfigParamsOneOf78",
+              "list_locations": "#/components/schemas/SmbToolConfigParamsOneOf79",
+              "create_location": "#/components/schemas/SmbToolConfigParamsOneOf80",
+              "update_location": "#/components/schemas/SmbToolConfigParamsOneOf81",
+              "delete_location": "#/components/schemas/SmbToolConfigParamsOneOf82",
+              "leave_message": "#/components/schemas/SmbToolConfigParamsOneOf83",
+              "create_service_quote_request": "#/components/schemas/SmbToolConfigParamsOneOf84",
+              "create_product_quote_request": "#/components/schemas/SmbToolConfigParamsOneOf85",
+              "report_knowledge_gap": "#/components/schemas/SmbToolConfigParamsOneOf86",
+              "opt_in_sms_reminder": "#/components/schemas/SmbToolConfigParamsOneOf87",
+              "opt_out_sms_reminder": "#/components/schemas/SmbToolConfigParamsOneOf88",
+              "trigger_user_verification": "#/components/schemas/SmbToolConfigParamsOneOf89",
+              "validate_user_verification_code": "#/components/schemas/SmbToolConfigParamsOneOf90",
+              "owner_list_staff": "#/components/schemas/SmbToolConfigParamsOneOf91",
+              "owner_list_assets": "#/components/schemas/SmbToolConfigParamsOneOf92",
+              "owner_list_locations": "#/components/schemas/SmbToolConfigParamsOneOf93",
+              "owner_list_services": "#/components/schemas/SmbToolConfigParamsOneOf94",
+              "owner_list_products": "#/components/schemas/SmbToolConfigParamsOneOf95",
+              "owner_get_client_appointments": "#/components/schemas/SmbToolConfigParamsOneOf96"
             }
           }
         },
@@ -125997,6 +126329,15 @@
               "$ref": "#/components/schemas/CallingPeriod"
             },
             "description": "The weekly windows calls may be placed in."
+          },
+          "date_overrides": {
+            "title": "Date Overrides",
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DateOverride"
+            },
+            "description": "Local dates in \u0060timezone\u0060 whose calling windows replace \u0060calling_periods\u0060. Date ranges may not overlap."
           },
           "data_collection": {
             "description": "The agent\u0027s data collection items that steer follow-up calls. Each defaults\nto the built-in item for its purpose; \u0060null\u0060 turns it off.",
@@ -174349,6 +174690,39 @@
               "smb_tool_type": {
                 "title": "Smb Tool Type",
                 "enum": [
+                  "smb_confirm_change"
+                ],
+                "type": "string",
+                "x-client-original-const": "smb_confirm_change",
+                "x-ms-enum": {
+                  "name": "SmbToolType",
+                  "modelAsString": false,
+                  "values": [
+                    {
+                      "value": "smb_confirm_change",
+                      "name": "SmbConfirmChange"
+                    }
+                  ]
+                }
+              }
+            },
+            "required": [
+              "smb_tool_type"
+            ]
+          }
+        ]
+      },
+      "SmbToolConfigParamsOneOf75Variant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/SmbToolConfigParams"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "smb_tool_type": {
+                "title": "Smb Tool Type",
+                "enum": [
                   "set_booking_slug"
                 ],
                 "type": "string",
@@ -174371,7 +174745,7 @@
           }
         ]
       },
-      "SmbToolConfigParamsOneOf75Variant": {
+      "SmbToolConfigParamsOneOf76Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/SmbToolConfigParams"
@@ -174404,7 +174778,7 @@
           }
         ]
       },
-      "SmbToolConfigParamsOneOf76Variant": {
+      "SmbToolConfigParamsOneOf77Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/SmbToolConfigParams"
@@ -174437,7 +174811,7 @@
           }
         ]
       },
-      "SmbToolConfigParamsOneOf77Variant": {
+      "SmbToolConfigParamsOneOf78Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/SmbToolConfigParams"
@@ -174470,7 +174844,7 @@
           }
         ]
       },
-      "SmbToolConfigParamsOneOf78Variant": {
+      "SmbToolConfigParamsOneOf79Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/SmbToolConfigParams"
@@ -174503,7 +174877,7 @@
           }
         ]
       },
-      "SmbToolConfigParamsOneOf79Variant": {
+      "SmbToolConfigParamsOneOf80Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/SmbToolConfigParams"
@@ -174536,7 +174910,7 @@
           }
         ]
       },
-      "SmbToolConfigParamsOneOf80Variant": {
+      "SmbToolConfigParamsOneOf81Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/SmbToolConfigParams"
@@ -174569,7 +174943,7 @@
           }
         ]
       },
-      "SmbToolConfigParamsOneOf81Variant": {
+      "SmbToolConfigParamsOneOf82Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/SmbToolConfigParams"
@@ -174602,7 +174976,7 @@
           }
         ]
       },
-      "SmbToolConfigParamsOneOf82Variant": {
+      "SmbToolConfigParamsOneOf83Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/SmbToolConfigParams"
@@ -174635,7 +175009,7 @@
           }
         ]
       },
-      "SmbToolConfigParamsOneOf83Variant": {
+      "SmbToolConfigParamsOneOf84Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/SmbToolConfigParams"
@@ -174668,7 +175042,7 @@
           }
         ]
       },
-      "SmbToolConfigParamsOneOf84Variant": {
+      "SmbToolConfigParamsOneOf85Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/SmbToolConfigParams"
@@ -174701,7 +175075,7 @@
           }
         ]
       },
-      "SmbToolConfigParamsOneOf85Variant": {
+      "SmbToolConfigParamsOneOf86Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/SmbToolConfigParams"
@@ -174734,7 +175108,7 @@
           }
         ]
       },
-      "SmbToolConfigParamsOneOf86Variant": {
+      "SmbToolConfigParamsOneOf87Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/SmbToolConfigParams"
@@ -174767,7 +175141,7 @@
           }
         ]
       },
-      "SmbToolConfigParamsOneOf87Variant": {
+      "SmbToolConfigParamsOneOf88Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/SmbToolConfigParams"
@@ -174800,7 +175174,7 @@
           }
         ]
       },
-      "SmbToolConfigParamsOneOf88Variant": {
+      "SmbToolConfigParamsOneOf89Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/SmbToolConfigParams"
@@ -174833,7 +175207,7 @@
           }
         ]
       },
-      "SmbToolConfigParamsOneOf89Variant": {
+      "SmbToolConfigParamsOneOf90Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/SmbToolConfigParams"
@@ -174866,7 +175240,7 @@
           }
         ]
       },
-      "SmbToolConfigParamsOneOf90Variant": {
+      "SmbToolConfigParamsOneOf91Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/SmbToolConfigParams"
@@ -174902,7 +175276,7 @@
           }
         ]
       },
-      "SmbToolConfigParamsOneOf91Variant": {
+      "SmbToolConfigParamsOneOf92Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/SmbToolConfigParams"
@@ -174938,7 +175312,7 @@
           }
         ]
       },
-      "SmbToolConfigParamsOneOf92Variant": {
+      "SmbToolConfigParamsOneOf93Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/SmbToolConfigParams"
@@ -174971,7 +175345,7 @@
           }
         ]
       },
-      "SmbToolConfigParamsOneOf93Variant": {
+      "SmbToolConfigParamsOneOf94Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/SmbToolConfigParams"
@@ -175007,7 +175381,7 @@
           }
         ]
       },
-      "SmbToolConfigParamsOneOf94Variant": {
+      "SmbToolConfigParamsOneOf95Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/SmbToolConfigParams"
@@ -175043,7 +175417,7 @@
           }
         ]
       },
-      "SmbToolConfigParamsOneOf95Variant": {
+      "SmbToolConfigParamsOneOf96Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/SmbToolConfigParams"
@@ -189116,16 +189490,14 @@
     },
     "AdhocAgentConfigOverrideForTestRequestModel": {
       "title": "AdhocAgentConfigOverrideForTestRequestModel",
-      "required": [
-        "conversation_config",
-        "platform_settings"
-      ],
       "type": "object",
       "properties": {
         "conversation_config": {
           "$ref": "#/components/schemas/ConversationalConfigApiModelInput"
         },
         "platform_settings": {
+          "description": "Platform settings fields to change for this run. Fields left out keep the agent\u0027s values.",
+          "title": "Platform Settings",
           "$ref": "#/components/schemas/AgentPlatformSettingsRequestModel"
         },
         "workflow": {
@@ -189809,6 +190181,19 @@
           ],
           "description": "How many minutes an alert can stay inactive before it is auto-resolved. Unset values fall through to the next layer."
         },
+        "environments": {
+          "title": "Environments",
+          "maxItems": 20,
+          "minItems": 1,
+          "type": [
+            "null",
+            "array"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "description": "Environments whose conversations are monitored, e.g. \u0060\u0060[\u0027production\u0027]\u0060\u0060. The list must include \u0060\u0060production\u0060\u0060. Unset values fall through to the next layer; when no layer sets it, every environment is monitored."
+        },
         "notifiers": {
           "title": "Notifiers",
           "maxItems": 10,
@@ -189834,6 +190219,16 @@
             "null",
             "integer"
           ]
+        },
+        "environments": {
+          "title": "Environments",
+          "type": [
+            "null",
+            "array"
+          ],
+          "items": {
+            "type": "string"
+          }
         },
         "notifiers": {
           "title": "Notifiers",
@@ -192607,6 +193002,16 @@
           "description": "Minimum number of tokens that compaction must reclaim."
         }
       }
+    },
+    "ConfirmChangeParams": {
+      "title": "ConfirmChangeParams",
+      "type": "object",
+      "properties": {
+        "smb_tool_type": {
+          "$ref": "#/components/schemas/SmbConfirmChangeSmbToolType"
+        }
+      },
+      "description": "The owner\u0027s spoken answer to changes the assistant read back to them.\n\nRuns in the agent runtime rather than Reception: it needs the conversation\u0027s\nchat to check the owner actually answered after hearing the changes."
     },
     "ConstantSchemaOverride": {
       "title": "ConstantSchemaOverride",
@@ -203166,11 +203571,10 @@
           "description": "The first message the agent says when starting a conversation",
           "default": "Hello! Thanks for calling. How can I help you today?"
         },
-        "disable_first_message_interruptions": {
-          "title": "Disable First Message Interruptions",
-          "type": "boolean",
-          "description": "When true, callers cannot interrupt the receptionist while the first message is being delivered. Use when the greeting carries a recording or legal notice callers must hear in full.",
-          "default": false
+        "first_message_mode": {
+          "description": "How the first message plays. interruptible: callers can talk over it. uninterruptible: it always plays to the end. recording_notice: it opens with a short \u0027this call may be recorded\u0027 notice in the receptionist\u0027s language, spoken by a separate voice, and always plays to the end.",
+          "default": "interruptible",
+          "$ref": "#/components/schemas/FirstMessageMode"
         },
         "enable_end_call_tool": {
           "title": "Enable End Call Tool",
@@ -203313,10 +203717,9 @@
           "type": "string",
           "description": "The first message the agent says when starting a conversation"
         },
-        "disable_first_message_interruptions": {
-          "title": "Disable First Message Interruptions",
-          "type": "boolean",
-          "description": "When true, callers cannot interrupt the receptionist while the first message is being delivered. Use when the greeting carries a recording or legal notice callers must hear in full."
+        "first_message_mode": {
+          "description": "How the first message plays. interruptible: callers can talk over it. uninterruptible: it always plays to the end. recording_notice: it opens with a short \u0027this call may be recorded\u0027 notice in the receptionist\u0027s language, spoken by a separate voice, and always plays to the end.",
+          "$ref": "#/components/schemas/FirstMessageMode"
         },
         "enable_end_call_tool": {
           "title": "Enable End Call Tool",
@@ -203739,98 +204142,6 @@
         }
       },
       "description": "Scrape-reachable subset of a staff/team member."
-    },
-    "ReceptionVertical": {
-      "title": "ReceptionVertical",
-      "enum": [
-        "salon_barbershop",
-        "nail_beauty",
-        "spa",
-        "medical",
-        "veterinary",
-        "fitness",
-        "home_services",
-        "photography",
-        "consulting",
-        "restaurant",
-        "dental",
-        "auto_service",
-        "tutoring",
-        "legal",
-        "real_estate",
-        "other"
-      ],
-      "type": "string",
-      "x-ms-enum": {
-        "name": "ReceptionVertical",
-        "modelAsString": false,
-        "values": [
-          {
-            "value": "salon_barbershop",
-            "name": "SalonBarbershop"
-          },
-          {
-            "value": "nail_beauty",
-            "name": "NailBeauty"
-          },
-          {
-            "value": "spa",
-            "name": "Spa"
-          },
-          {
-            "value": "medical",
-            "name": "Medical"
-          },
-          {
-            "value": "veterinary",
-            "name": "Veterinary"
-          },
-          {
-            "value": "fitness",
-            "name": "Fitness"
-          },
-          {
-            "value": "home_services",
-            "name": "HomeServices"
-          },
-          {
-            "value": "photography",
-            "name": "Photography"
-          },
-          {
-            "value": "consulting",
-            "name": "Consulting"
-          },
-          {
-            "value": "restaurant",
-            "name": "Restaurant"
-          },
-          {
-            "value": "dental",
-            "name": "Dental"
-          },
-          {
-            "value": "auto_service",
-            "name": "AutoService"
-          },
-          {
-            "value": "tutoring",
-            "name": "Tutoring"
-          },
-          {
-            "value": "legal",
-            "name": "Legal"
-          },
-          {
-            "value": "real_estate",
-            "name": "RealEstate"
-          },
-          {
-            "value": "other",
-            "name": "Other"
-          }
-        ]
-      }
     },
     "ReceptionWidgetAppearance": {
       "title": "ReceptionWidgetAppearance",
@@ -222334,10 +222645,6 @@
     },
     "RunAgentTestsRequestModelAgentConfigOverride": {
       "title": "AdhocAgentConfigOverrideForTestRequestModel",
-      "required": [
-        "conversation_config",
-        "platform_settings"
-      ],
       "type": [
         "object",
         "null"
@@ -222347,6 +222654,8 @@
           "$ref": "#/components/schemas/ConversationalConfigApiModelInput"
         },
         "platform_settings": {
+          "description": "Platform settings fields to change for this run. Fields left out keep the agent\u0027s values.",
+          "title": "Platform Settings",
           "$ref": "#/components/schemas/AgentPlatformSettingsRequestModel"
         },
         "workflow": {
@@ -228178,6 +228487,24 @@
           {
             "value": "closed",
             "name": "Closed"
+          }
+        ]
+      }
+    },
+    "SmbConfirmChangeSmbToolType": {
+      "title": "Smb Tool Type",
+      "enum": [
+        "smb_confirm_change"
+      ],
+      "type": "string",
+      "x-client-original-const": "smb_confirm_change",
+      "x-ms-enum": {
+        "name": "SmbConfirmChangeSmbToolType",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "smb_confirm_change",
+            "name": "SmbConfirmChange"
           }
         ]
       }
@@ -243945,6 +244272,32 @@
         "smb_tool_type": {
           "title": "Smb Tool Type",
           "enum": [
+            "smb_confirm_change"
+          ],
+          "type": "string",
+          "x-client-original-const": "smb_confirm_change",
+          "x-ms-enum": {
+            "name": "SmbToolType",
+            "modelAsString": false,
+            "values": [
+              {
+                "value": "smb_confirm_change",
+                "name": "SmbConfirmChange"
+              }
+            ]
+          }
+        }
+      },
+      "required": [
+        "smb_tool_type"
+      ]
+    },
+    "SmbToolConfigParamsOneOf75": {
+      "type": "object",
+      "properties": {
+        "smb_tool_type": {
+          "title": "Smb Tool Type",
+          "enum": [
             "set_booking_slug"
           ],
           "type": "string",
@@ -243965,7 +244318,7 @@
         "smb_tool_type"
       ]
     },
-    "SmbToolConfigParamsOneOf75": {
+    "SmbToolConfigParamsOneOf76": {
       "type": "object",
       "properties": {
         "smb_tool_type": {
@@ -243991,7 +244344,7 @@
         "smb_tool_type"
       ]
     },
-    "SmbToolConfigParamsOneOf76": {
+    "SmbToolConfigParamsOneOf77": {
       "type": "object",
       "properties": {
         "smb_tool_type": {
@@ -244017,7 +244370,7 @@
         "smb_tool_type"
       ]
     },
-    "SmbToolConfigParamsOneOf77": {
+    "SmbToolConfigParamsOneOf78": {
       "type": "object",
       "properties": {
         "smb_tool_type": {
@@ -244043,7 +244396,7 @@
         "smb_tool_type"
       ]
     },
-    "SmbToolConfigParamsOneOf78": {
+    "SmbToolConfigParamsOneOf79": {
       "type": "object",
       "properties": {
         "smb_tool_type": {
@@ -244069,7 +244422,7 @@
         "smb_tool_type"
       ]
     },
-    "SmbToolConfigParamsOneOf79": {
+    "SmbToolConfigParamsOneOf80": {
       "type": "object",
       "properties": {
         "smb_tool_type": {
@@ -244095,7 +244448,7 @@
         "smb_tool_type"
       ]
     },
-    "SmbToolConfigParamsOneOf80": {
+    "SmbToolConfigParamsOneOf81": {
       "type": "object",
       "properties": {
         "smb_tool_type": {
@@ -244121,7 +244474,7 @@
         "smb_tool_type"
       ]
     },
-    "SmbToolConfigParamsOneOf81": {
+    "SmbToolConfigParamsOneOf82": {
       "type": "object",
       "properties": {
         "smb_tool_type": {
@@ -244147,7 +244500,7 @@
         "smb_tool_type"
       ]
     },
-    "SmbToolConfigParamsOneOf82": {
+    "SmbToolConfigParamsOneOf83": {
       "type": "object",
       "properties": {
         "smb_tool_type": {
@@ -244173,7 +244526,7 @@
         "smb_tool_type"
       ]
     },
-    "SmbToolConfigParamsOneOf83": {
+    "SmbToolConfigParamsOneOf84": {
       "type": "object",
       "properties": {
         "smb_tool_type": {
@@ -244199,7 +244552,7 @@
         "smb_tool_type"
       ]
     },
-    "SmbToolConfigParamsOneOf84": {
+    "SmbToolConfigParamsOneOf85": {
       "type": "object",
       "properties": {
         "smb_tool_type": {
@@ -244225,7 +244578,7 @@
         "smb_tool_type"
       ]
     },
-    "SmbToolConfigParamsOneOf85": {
+    "SmbToolConfigParamsOneOf86": {
       "type": "object",
       "properties": {
         "smb_tool_type": {
@@ -244251,7 +244604,7 @@
         "smb_tool_type"
       ]
     },
-    "SmbToolConfigParamsOneOf86": {
+    "SmbToolConfigParamsOneOf87": {
       "type": "object",
       "properties": {
         "smb_tool_type": {
@@ -244277,7 +244630,7 @@
         "smb_tool_type"
       ]
     },
-    "SmbToolConfigParamsOneOf87": {
+    "SmbToolConfigParamsOneOf88": {
       "type": "object",
       "properties": {
         "smb_tool_type": {
@@ -244303,7 +244656,7 @@
         "smb_tool_type"
       ]
     },
-    "SmbToolConfigParamsOneOf88": {
+    "SmbToolConfigParamsOneOf89": {
       "type": "object",
       "properties": {
         "smb_tool_type": {
@@ -244329,7 +244682,7 @@
         "smb_tool_type"
       ]
     },
-    "SmbToolConfigParamsOneOf89": {
+    "SmbToolConfigParamsOneOf90": {
       "type": "object",
       "properties": {
         "smb_tool_type": {
@@ -244355,7 +244708,7 @@
         "smb_tool_type"
       ]
     },
-    "SmbToolConfigParamsOneOf90": {
+    "SmbToolConfigParamsOneOf91": {
       "type": "object",
       "properties": {
         "list_kwargs": {
@@ -244384,7 +244737,7 @@
         "smb_tool_type"
       ]
     },
-    "SmbToolConfigParamsOneOf91": {
+    "SmbToolConfigParamsOneOf92": {
       "type": "object",
       "properties": {
         "list_kwargs": {
@@ -244413,7 +244766,7 @@
         "smb_tool_type"
       ]
     },
-    "SmbToolConfigParamsOneOf92": {
+    "SmbToolConfigParamsOneOf93": {
       "type": "object",
       "properties": {
         "smb_tool_type": {
@@ -244439,7 +244792,7 @@
         "smb_tool_type"
       ]
     },
-    "SmbToolConfigParamsOneOf93": {
+    "SmbToolConfigParamsOneOf94": {
       "type": "object",
       "properties": {
         "list_kwargs": {
@@ -244468,7 +244821,7 @@
         "smb_tool_type"
       ]
     },
-    "SmbToolConfigParamsOneOf94": {
+    "SmbToolConfigParamsOneOf95": {
       "type": "object",
       "properties": {
         "list_kwargs": {
@@ -244497,7 +244850,7 @@
         "smb_tool_type"
       ]
     },
-    "SmbToolConfigParamsOneOf95": {
+    "SmbToolConfigParamsOneOf96": {
       "type": "object",
       "properties": {
         "include_cancelled": {

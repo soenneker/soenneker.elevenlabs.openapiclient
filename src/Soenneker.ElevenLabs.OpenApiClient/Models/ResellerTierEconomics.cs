@@ -95,7 +95,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(10)
             {
                 { "annual_price_usd", n => { AnnualPriceUsd = n.GetDoubleValue(); } },
                 { "assistant_daily_messages", n => { AssistantDailyMessages = n.GetIntValue(); } },

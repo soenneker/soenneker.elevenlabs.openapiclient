@@ -240,7 +240,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.TriageTickets
             [QueryParameter("search")]
             public string Search { get; set; }
 #endif
-            /// <summary>Order by most recently created, by priority (most urgent first, then most recently created), or by most recently reported (the newest report merged into the agent issue, else its creation).</summary>
+            /// <summary>Order by most recently created, by priority (most urgent first, then most recently created), by most recently reported (the newest report merged into the agent issue, else its creation), or by report count (most reports merged into the agent issue first, then most recently created).</summary>
             [QueryParameter("sort_by")]
             public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketSortBy? SortBy { get; set; }
             /// <summary>Filter agent issues by how they were raised (qa, agent, manual). Repeat the parameter to filter by multiple sources.</summary>

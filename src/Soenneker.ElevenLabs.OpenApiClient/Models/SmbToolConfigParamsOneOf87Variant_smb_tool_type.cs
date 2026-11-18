@@ -8,9 +8,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     public enum SmbToolConfigParamsOneOf87Variant_smb_tool_type
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "opt_out_sms_reminder")]
+        [EnumMember(Value = "opt_in_sms_reminder")]
         #pragma warning disable CS1591
-        OptOutSmsReminder,
+        OptInSmsReminder,
         #pragma warning restore CS1591
     }
 }

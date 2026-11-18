@@ -128,7 +128,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "harassment", n => { Harassment = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail.CreateFromDiscriminatorValue); } },
                 { "medical_and_legal_information", n => { MedicalAndLegalInformation = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail.CreateFromDiscriminatorValue); } },

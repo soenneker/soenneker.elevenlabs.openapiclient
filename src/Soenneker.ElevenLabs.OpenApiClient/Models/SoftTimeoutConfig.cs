@@ -112,7 +112,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "additional_soft_timeout_messages", n => { AdditionalSoftTimeoutMessages = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "disable_until_first_user_message", n => { DisableUntilFirstUserMessage = n.GetBoolValue(); } },

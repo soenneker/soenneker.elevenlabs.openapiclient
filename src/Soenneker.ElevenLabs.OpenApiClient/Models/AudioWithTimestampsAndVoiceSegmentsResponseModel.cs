@@ -92,7 +92,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "alignment", n => { Alignment = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioWithTimestampsAndVoiceSegmentsResponseModelAlignment>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioWithTimestampsAndVoiceSegmentsResponseModelAlignment.CreateFromDiscriminatorValue); } },
                 { "audio_base64", n => { AudioBase64 = n.GetStringValue(); } },

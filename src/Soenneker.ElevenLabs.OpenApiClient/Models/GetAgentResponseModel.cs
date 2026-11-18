@@ -225,7 +225,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(15)
             {
                 { "access_info", n => { AccessInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelAccessInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelAccessInfo.CreateFromDiscriminatorValue); } },
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },

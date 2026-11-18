@@ -409,7 +409,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(37)
             {
                 { "access_level", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelAccessLevel>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAccessLevel = default; _explicitNullProperties?.Remove("access_level"); AdditionalData["access_level"] = unknown; } else { AccessLevel = parsed; AdditionalData.Remove("access_level"); } } },
                 { "agent_settings", n => { AgentSettings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelAgentSettings>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelAgentSettings.CreateFromDiscriminatorValue); } },

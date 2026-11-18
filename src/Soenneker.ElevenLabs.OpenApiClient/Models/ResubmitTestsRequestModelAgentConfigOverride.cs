@@ -38,7 +38,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationalConfigApiModelInput ConversationConfig { get => _explicitNullValueConversationConfig; set { _explicitNullValueConversationConfig = value; AdditionalData?.Remove("conversation_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_config"); else _explicitNullProperties?.Remove("conversation_config"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationalConfigApiModelInput _explicitNullValueConversationConfig = default!;
 #endif
-        /// <summary>The platform_settings property</summary>
+        /// <summary>Platform settings fields to change for this run. Fields left out keep the agent&apos;s values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModel? PlatformSettings { get => _explicitNullValuePlatformSettings; set { _explicitNullValuePlatformSettings = value; AdditionalData?.Remove("platform_settings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform_settings"); else _explicitNullProperties?.Remove("platform_settings"); } }
@@ -48,7 +48,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModel PlatformSettings { get => _explicitNullValuePlatformSettings; set { _explicitNullValuePlatformSettings = value; AdditionalData?.Remove("platform_settings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform_settings"); else _explicitNullProperties?.Remove("platform_settings"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModel _explicitNullValuePlatformSettings = default!;
 #endif
-        /// <summary>The workflow property</summary>
+        /// <summary>A workflow to run instead of the agent&apos;s. It replaces the agent&apos;s workflow whole.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AdhocAgentConfigOverrideForTestRequestModelWorkflow? Workflow { get => _explicitNullValueWorkflow; set { _explicitNullValueWorkflow = value; AdditionalData?.Remove("workflow"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow"); else _explicitNullProperties?.Remove("workflow"); } }

@@ -110,7 +110,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "knowledge_base", n => { KnowledgeBase = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseLocator>(global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseLocator.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "llm", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueLlm = default; _explicitNullProperties?.Remove("llm"); AdditionalData["llm"] = unknown; } else { Llm = parsed; AdditionalData.Remove("llm"); } } },

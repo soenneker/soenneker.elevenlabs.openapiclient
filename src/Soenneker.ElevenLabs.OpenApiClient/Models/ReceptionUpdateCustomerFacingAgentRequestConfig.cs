@@ -26,8 +26,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if (parseNode.GetChildNode("background_voice_detection") is { } nullNodeBackgroundVoiceDetection && nullNodeBackgroundVoiceDetection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BackgroundVoiceDetection = null;
             if (parseNode.GetChildNode("details_to_collect") is null) { _explicitNullValueDetailsToCollect = default!; _explicitNullProperties?.Remove("details_to_collect"); }
             else if (parseNode.GetChildNode("details_to_collect") is { } nullNodeDetailsToCollect && nullNodeDetailsToCollect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DetailsToCollect = null;
-            if (parseNode.GetChildNode("disable_first_message_interruptions") is null) { _explicitNullValueDisableFirstMessageInterruptions = default!; _explicitNullProperties?.Remove("disable_first_message_interruptions"); }
-            else if (parseNode.GetChildNode("disable_first_message_interruptions") is { } nullNodeDisableFirstMessageInterruptions && nullNodeDisableFirstMessageInterruptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisableFirstMessageInterruptions = null;
             if (parseNode.GetChildNode("disable_rag") is null) { _explicitNullValueDisableRag = default!; _explicitNullProperties?.Remove("disable_rag"); }
             else if (parseNode.GetChildNode("disable_rag") is { } nullNodeDisableRag && nullNodeDisableRag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisableRag = null;
             if (parseNode.GetChildNode("enable_end_call_tool") is null) { _explicitNullValueEnableEndCallTool = default!; _explicitNullProperties?.Remove("enable_end_call_tool"); }
@@ -42,6 +40,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if (parseNode.GetChildNode("enable_spam_protection") is { } nullNodeEnableSpamProtection && nullNodeEnableSpamProtection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableSpamProtection = null;
             if (parseNode.GetChildNode("first_message") is null) { _explicitNullValueFirstMessage = default!; _explicitNullProperties?.Remove("first_message"); }
             else if (parseNode.GetChildNode("first_message") is { } nullNodeFirstMessage && nullNodeFirstMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstMessage = null;
+            if (parseNode.GetChildNode("first_message_mode") is null) { _explicitNullValueFirstMessageMode = default!; _explicitNullProperties?.Remove("first_message_mode"); }
+            else if (parseNode.GetChildNode("first_message_mode") is { } nullNodeFirstMessageMode && nullNodeFirstMessageMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstMessageMode = null;
             if (parseNode.GetChildNode("hide_caller_number_on_transfers") is null) { _explicitNullValueHideCallerNumberOnTransfers = default!; _explicitNullProperties?.Remove("hide_caller_number_on_transfers"); }
             else if (parseNode.GetChildNode("hide_caller_number_on_transfers") is { } nullNodeHideCallerNumberOnTransfers && nullNodeHideCallerNumberOnTransfers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HideCallerNumberOnTransfers = null;
             if (parseNode.GetChildNode("language") is null) { _explicitNullValueLanguage = default!; _explicitNullProperties?.Remove("language"); }
@@ -95,9 +95,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public List<string> DetailsToCollect { get => _explicitNullValueDetailsToCollect; set { _explicitNullValueDetailsToCollect = value; AdditionalData?.Remove("details_to_collect"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("details_to_collect"); else _explicitNullProperties?.Remove("details_to_collect"); } }
         private List<string> _explicitNullValueDetailsToCollect = default!;
 #endif
-        /// <summary>When true, callers cannot interrupt the receptionist while the first message is being delivered. Use when the greeting carries a recording or legal notice callers must hear in full.</summary>
-        public bool? DisableFirstMessageInterruptions { get => _explicitNullValueDisableFirstMessageInterruptions; set { _explicitNullValueDisableFirstMessageInterruptions = value; AdditionalData?.Remove("disable_first_message_interruptions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disable_first_message_interruptions"); else _explicitNullProperties?.Remove("disable_first_message_interruptions"); } }
-        private bool? _explicitNullValueDisableFirstMessageInterruptions = default!;
         /// <summary>When true, the whole knowledge base is given to the receptionist up front instead of searched on each turn. Faster, but only for small knowledge bases; larger ones are still searched.</summary>
         public bool? DisableRag { get => _explicitNullValueDisableRag; set { _explicitNullValueDisableRag = value; AdditionalData?.Remove("disable_rag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disable_rag"); else _explicitNullProperties?.Remove("disable_rag"); } }
         private bool? _explicitNullValueDisableRag = default!;
@@ -126,6 +123,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string FirstMessage { get => _explicitNullValueFirstMessage; set { _explicitNullValueFirstMessage = value; AdditionalData?.Remove("first_message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_message"); else _explicitNullProperties?.Remove("first_message"); } }
         private string _explicitNullValueFirstMessage = default!;
 #endif
+        /// <summary>How the first message plays. interruptible: callers can talk over it. uninterruptible: it always plays to the end. recording_notice: it opens with a short &apos;this call may be recorded&apos; notice in the receptionist&apos;s language, spoken by a separate voice, and always plays to the end.</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FirstMessageMode? FirstMessageMode { get => _explicitNullValueFirstMessageMode; set { _explicitNullValueFirstMessageMode = value; AdditionalData?.Remove("first_message_mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_message_mode"); else _explicitNullProperties?.Remove("first_message_mode"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.FirstMessageMode? _explicitNullValueFirstMessageMode = default!;
         /// <summary>Show the business&apos;s own number, rather than the caller&apos;s, as the caller ID on transferred calls.</summary>
         public bool? HideCallerNumberOnTransfers { get => _explicitNullValueHideCallerNumberOnTransfers; set { _explicitNullValueHideCallerNumberOnTransfers = value; AdditionalData?.Remove("hide_caller_number_on_transfers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hide_caller_number_on_transfers"); else _explicitNullProperties?.Remove("hide_caller_number_on_transfers"); } }
         private bool? _explicitNullValueHideCallerNumberOnTransfers = default!;
@@ -196,13 +196,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(20)
             {
                 { "additional_instructions", n => { AdditionalInstructions = n.GetStringValue(); } },
                 { "additional_languages", n => { AdditionalLanguages = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "background_voice_detection", n => { BackgroundVoiceDetection = n.GetBoolValue(); } },
                 { "details_to_collect", n => { DetailsToCollect = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "disable_first_message_interruptions", n => { DisableFirstMessageInterruptions = n.GetBoolValue(); } },
                 { "disable_rag", n => { DisableRag = n.GetBoolValue(); } },
                 { "enable_end_call_tool", n => { EnableEndCallTool = n.GetBoolValue(); } },
                 { "enable_play_keypad_touch_tone_tool", n => { EnablePlayKeypadTouchToneTool = n.GetBoolValue(); } },
@@ -210,6 +209,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "enable_skip_turn_tool", n => { EnableSkipTurnTool = n.GetBoolValue(); } },
                 { "enable_spam_protection", n => { EnableSpamProtection = n.GetBoolValue(); } },
                 { "first_message", n => { FirstMessage = n.GetStringValue(); } },
+                { "first_message_mode", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FirstMessageMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFirstMessageMode = default; _explicitNullProperties?.Remove("first_message_mode"); AdditionalData["first_message_mode"] = unknown; } else { FirstMessageMode = parsed; AdditionalData.Remove("first_message_mode"); } } },
                 { "hide_caller_number_on_transfers", n => { HideCallerNumberOnTransfers = n.GetBoolValue(); } },
                 { "language", n => { Language = n.GetStringValue(); } },
                 { "llm", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueLlm = default; _explicitNullProperties?.Remove("llm"); AdditionalData["llm"] = unknown; } else { Llm = parsed; AdditionalData.Remove("llm"); } } },
@@ -231,7 +231,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("additional_languages", AdditionalLanguages);
             writer.WriteBoolValue("background_voice_detection", BackgroundVoiceDetection);
             writer.WriteCollectionOfPrimitiveValues<string>("details_to_collect", DetailsToCollect);
-            writer.WriteBoolValue("disable_first_message_interruptions", DisableFirstMessageInterruptions);
             writer.WriteBoolValue("disable_rag", DisableRag);
             writer.WriteBoolValue("enable_end_call_tool", EnableEndCallTool);
             writer.WriteBoolValue("enable_play_keypad_touch_tone_tool", EnablePlayKeypadTouchToneTool);
@@ -239,6 +238,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("enable_skip_turn_tool", EnableSkipTurnTool);
             writer.WriteBoolValue("enable_spam_protection", EnableSpamProtection);
             writer.WriteStringValue("first_message", FirstMessage);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FirstMessageMode>("first_message_mode", FirstMessageMode);
             writer.WriteBoolValue("hide_caller_number_on_transfers", HideCallerNumberOnTransfers);
             writer.WriteStringValue("language", Language);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm>("llm", Llm);

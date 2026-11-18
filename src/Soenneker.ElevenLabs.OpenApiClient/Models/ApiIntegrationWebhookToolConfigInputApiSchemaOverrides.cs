@@ -88,7 +88,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "request_headers", n => { RequestHeaders = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesRequestHeadersProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesRequestHeadersProperty.CreateFromDiscriminatorValue); } },
                 { "response_filter_mode", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseFilterMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueResponseFilterMode = default; _explicitNullProperties?.Remove("response_filter_mode"); AdditionalData["response_filter_mode"] = unknown; } else { ResponseFilterMode = parsed; AdditionalData.Remove("response_filter_mode"); } } },

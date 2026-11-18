@@ -124,7 +124,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "api_key", n => { ApiKey = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmApiKey>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmApiKey.CreateFromDiscriminatorValue); } },
                 { "api_type", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmapiType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueApiType = default; _explicitNullProperties?.Remove("api_type"); AdditionalData["api_type"] = unknown; } else { ApiType = parsed; AdditionalData.Remove("api_type"); } } },

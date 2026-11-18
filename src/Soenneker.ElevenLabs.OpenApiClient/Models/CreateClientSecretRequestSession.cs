@@ -215,7 +215,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(17)
             {
                 { "audio", n => { Audio = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiAudioConfigInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiAudioConfigInput.CreateFromDiscriminatorValue); } },
                 { "include", n => { Include = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },

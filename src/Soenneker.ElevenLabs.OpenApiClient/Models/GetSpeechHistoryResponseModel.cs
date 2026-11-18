@@ -78,7 +78,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "has_more", n => { HasMore = n.GetBoolValue(); } },
                 { "history", n => { History = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModel.CreateFromDiscriminatorValue)?.AsList(); } },

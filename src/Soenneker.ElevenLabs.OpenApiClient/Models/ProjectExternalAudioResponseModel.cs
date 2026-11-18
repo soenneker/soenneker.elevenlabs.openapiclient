@@ -303,7 +303,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(29)
             {
                 { "analysis", n => { Analysis = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExternalAudioResponseModelAnalysis>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExternalAudioResponseModelAnalysis.CreateFromDiscriminatorValue); } },
                 { "created_at_ms", n => { CreatedAtMs = n.GetIntValue(); } },

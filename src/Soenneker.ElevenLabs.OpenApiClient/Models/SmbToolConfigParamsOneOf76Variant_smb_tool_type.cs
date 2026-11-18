@@ -8,9 +8,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     public enum SmbToolConfigParamsOneOf76Variant_smb_tool_type
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "create_client_interaction")]
+        [EnumMember(Value = "list_client_interactions")]
         #pragma warning disable CS1591
-        CreateClientInteraction,
+        ListClientInteractions,
         #pragma warning restore CS1591
     }
 }

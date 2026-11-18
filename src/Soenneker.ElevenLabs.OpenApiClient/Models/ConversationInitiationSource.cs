@@ -99,6 +99,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         FreshdeskIntegration,
         #pragma warning restore CS1591
+        [EnumMember(Value = "plain_integration")]
+        #pragma warning disable CS1591
+        PlainIntegration,
+        #pragma warning restore CS1591
         [EnumMember(Value = "salesforce_integration")]
         #pragma warning disable CS1591
         SalesforceIntegration,

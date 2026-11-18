@@ -121,7 +121,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(10)
             {
                 { "evaluate_full_response_only", n => { EvaluateFullResponseOnly = n.GetBoolValue(); } },
                 { "execution_mode", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailExecutionMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueExecutionMode = default; _explicitNullProperties?.Remove("execution_mode"); AdditionalData["execution_mode"] = unknown; } else { ExecutionMode = parsed; AdditionalData.Remove("execution_mode"); } } },

@@ -138,7 +138,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(9)
             {
                 { "available_hours", n => { AvailableHours = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionAssetResourceAvailableHours>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ReceptionAssetResourceAvailableHours.CreateFromDiscriminatorValue); } },
                 { "customer_facing_name", n => { CustomerFacingName = n.GetStringValue(); } },

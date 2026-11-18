@@ -18,8 +18,20 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public override void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
             base.CaptureExplicitNulls(parseNode);
+            if (parseNode.GetChildNode("list_kwargs") is null) { _explicitNullValueListKwargs = default!; _explicitNullProperties?.Remove("list_kwargs"); }
+            else if (parseNode.GetChildNode("list_kwargs") is { } nullNodeListKwargs && nullNodeListKwargs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ListKwargs = null;
         }
 
+        /// <summary>The list_kwargs property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OwnerListAssetsParamsListKwargsProperty? ListKwargs { get => _explicitNullValueListKwargs; set { _explicitNullValueListKwargs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("list_kwargs"); else _explicitNullProperties?.Remove("list_kwargs"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.OwnerListAssetsParamsListKwargsProperty? _explicitNullValueListKwargs = default!;
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OwnerListAssetsParamsListKwargsProperty ListKwargs { get => _explicitNullValueListKwargs; set { _explicitNullValueListKwargs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("list_kwargs"); else _explicitNullProperties?.Remove("list_kwargs"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.OwnerListAssetsParamsListKwargsProperty _explicitNullValueListKwargs = default!;
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -38,6 +50,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "list_kwargs", n => { ListKwargs = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OwnerListAssetsParamsListKwargsProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OwnerListAssetsParamsListKwargsProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -47,7 +60,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public override void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            base.Serialize(writer);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            base.Serialize(writer);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OwnerListAssetsParamsListKwargsProperty>("list_kwargs", ListKwargs);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             
         }
     }

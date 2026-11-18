@@ -107,7 +107,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "condition_strength", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConditionStrength>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueConditionStrength = default; _explicitNullProperties?.Remove("condition_strength"); AdditionalData["condition_strength"] = unknown; } else { ConditionStrength = parsed; AdditionalData.Remove("condition_strength"); } } },
                 { "conditioning_ref", n => { ConditioningRef = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationChunkInputConditioningRef>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationChunkInputConditioningRef.CreateFromDiscriminatorValue); } },

@@ -116,7 +116,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "explanation", n => { Explanation = n.GetStringValue(); } },
                 { "reject_reasons", n => { RejectReasons = n.GetCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelRejectReasonsItem>()?.AsList(); } },

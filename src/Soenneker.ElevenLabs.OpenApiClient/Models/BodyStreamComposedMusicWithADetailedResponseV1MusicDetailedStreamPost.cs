@@ -161,7 +161,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(15)
             {
                 { "composition_plan", n => { CompositionPlan = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComposeMusicV1MusicPostCompositionPlanAnyOf1>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComposeMusicV1MusicPostCompositionPlanAnyOf1.CreateFromDiscriminatorValue); } },
                 { "finetune_id", n => { FinetuneId = n.GetStringValue(); } },

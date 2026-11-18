@@ -8,9 +8,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     public enum SmbToolConfigParamsOneOf85Variant_smb_tool_type
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "report_knowledge_gap")]
+        [EnumMember(Value = "create_product_quote_request")]
         #pragma warning disable CS1591
-        ReportKnowledgeGap,
+        CreateProductQuoteRequest,
         #pragma warning restore CS1591
     }
 }

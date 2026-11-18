@@ -134,7 +134,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(11)
             {
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "created_by", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FinetuneCreatedBy>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCreatedBy = default; _explicitNullProperties?.Remove("created_by"); AdditionalData["created_by"] = unknown; } else { CreatedBy = parsed; AdditionalData.Remove("created_by"); } } },

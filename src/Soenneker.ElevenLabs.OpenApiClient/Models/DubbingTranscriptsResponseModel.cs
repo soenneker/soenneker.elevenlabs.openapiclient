@@ -85,7 +85,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "json", n => { Json = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptsResponseModelJson>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptsResponseModelJson.CreateFromDiscriminatorValue); } },
                 { "srt", n => { Srt = n.GetStringValue(); } },

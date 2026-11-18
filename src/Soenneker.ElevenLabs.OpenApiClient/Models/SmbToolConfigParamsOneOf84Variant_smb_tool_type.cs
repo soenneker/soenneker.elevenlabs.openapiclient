@@ -8,9 +8,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     public enum SmbToolConfigParamsOneOf84Variant_smb_tool_type
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "create_product_quote_request")]
+        [EnumMember(Value = "create_service_quote_request")]
         #pragma warning disable CS1591
-        CreateProductQuoteRequest,
+        CreateServiceQuoteRequest,
         #pragma warning restore CS1591
     }
 }

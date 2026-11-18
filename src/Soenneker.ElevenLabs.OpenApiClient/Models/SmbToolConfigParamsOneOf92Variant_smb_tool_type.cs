@@ -8,9 +8,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     public enum SmbToolConfigParamsOneOf92Variant_smb_tool_type
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "owner_list_locations")]
+        [EnumMember(Value = "owner_list_assets")]
         #pragma warning disable CS1591
-        OwnerListLocations,
+        OwnerListAssets,
         #pragma warning restore CS1591
     }
 }

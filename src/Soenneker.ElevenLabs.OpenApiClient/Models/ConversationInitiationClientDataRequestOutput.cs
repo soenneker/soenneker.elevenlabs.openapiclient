@@ -164,7 +164,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(10)
             {
                 { "branch_id", n => { BranchId = n.GetStringValue(); } },
                 { "conversation_config_override", n => { ConversationConfigOverride = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideOutput.CreateFromDiscriminatorValue); } },

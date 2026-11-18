@@ -24,5 +24,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         ScribeV3Live,
         #pragma warning restore CS1591
+        [EnumMember(Value = "scribe_v3_live_medical")]
+        #pragma warning disable CS1591
+        ScribeV3LiveMedical,
+        #pragma warning restore CS1591
     }
 }

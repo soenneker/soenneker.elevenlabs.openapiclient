@@ -129,7 +129,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "end_call", n => { EndCall = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutputEndCall>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutputEndCall.CreateFromDiscriminatorValue); } },
                 { "language_detection", n => { LanguageDetection = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutputLanguageDetection>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutputLanguageDetection.CreateFromDiscriminatorValue); } },

@@ -66,7 +66,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "enter_duration_ms", n => { EnterDurationMs = n.GetIntValue(); } },
                 { "enter_effect", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClipAnimationEnterEffect>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEnterEffect = default; _explicitNullProperties?.Remove("enter_effect"); AdditionalData["enter_effect"] = unknown; } else { EnterEffect = parsed; AdditionalData.Remove("enter_effect"); } } },

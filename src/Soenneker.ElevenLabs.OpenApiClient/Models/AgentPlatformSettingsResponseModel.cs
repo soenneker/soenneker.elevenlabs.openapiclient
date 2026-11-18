@@ -282,7 +282,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(22)
             {
                 { "alerting", n => { Alerting = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModelAlerting>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModelAlerting.CreateFromDiscriminatorValue); } },
                 { "analysis_items", n => { AnalysisItems = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModelAnalysisItems>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModelAnalysisItems.CreateFromDiscriminatorValue); } },

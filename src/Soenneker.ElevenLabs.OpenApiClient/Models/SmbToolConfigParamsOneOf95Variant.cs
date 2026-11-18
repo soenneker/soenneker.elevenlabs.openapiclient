@@ -18,20 +18,20 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public override void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
             base.CaptureExplicitNulls(parseNode);
-            if (parseNode.GetChildNode("include_cancelled") is null) { _explicitNullValueIncludeCancelled = default!; _explicitNullProperties?.Remove("include_cancelled"); }
-            else if (parseNode.GetChildNode("include_cancelled") is { } nullNodeIncludeCancelled && nullNodeIncludeCancelled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeCancelled = null;
+            if (parseNode.GetChildNode("list_kwargs") is null) { _explicitNullValueListKwargs = default!; _explicitNullProperties?.Remove("list_kwargs"); }
+            else if (parseNode.GetChildNode("list_kwargs") is { } nullNodeListKwargs && nullNodeListKwargs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ListKwargs = null;
         }
 
-        /// <summary>The include_cancelled property</summary>
-        public bool? IncludeCancelled { get => _explicitNullValueIncludeCancelled; set { _explicitNullValueIncludeCancelled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_cancelled"); else _explicitNullProperties?.Remove("include_cancelled"); } }
-        private bool? _explicitNullValueIncludeCancelled = default!;
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbToolConfigParamsOneOf95Variant"/> and sets the default values.
-        /// </summary>
-        public SmbToolConfigParamsOneOf95Variant() : base()
-        {
-            IncludeCancelled = false;
-        }
+        /// <summary>The list_kwargs property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OwnerListProductsParamsListKwargsProperty? ListKwargs { get => _explicitNullValueListKwargs; set { _explicitNullValueListKwargs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("list_kwargs"); else _explicitNullProperties?.Remove("list_kwargs"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.OwnerListProductsParamsListKwargsProperty? _explicitNullValueListKwargs = default!;
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OwnerListProductsParamsListKwargsProperty ListKwargs { get => _explicitNullValueListKwargs; set { _explicitNullValueListKwargs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("list_kwargs"); else _explicitNullProperties?.Remove("list_kwargs"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.OwnerListProductsParamsListKwargsProperty _explicitNullValueListKwargs = default!;
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "include_cancelled", n => { IncludeCancelled = n.GetBoolValue(); } },
+                { "list_kwargs", n => { ListKwargs = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OwnerListProductsParamsListKwargsProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OwnerListProductsParamsListKwargsProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteBoolValue("include_cancelled", IncludeCancelled);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OwnerListProductsParamsListKwargsProperty>("list_kwargs", ListKwargs);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             
         }
     }

@@ -103,7 +103,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "embedding_model", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EmbeddingModelEnum>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEmbeddingModel = default; _explicitNullProperties?.Remove("embedding_model"); AdditionalData["embedding_model"] = unknown; } else { EmbeddingModel = parsed; AdditionalData.Remove("embedding_model"); } } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },

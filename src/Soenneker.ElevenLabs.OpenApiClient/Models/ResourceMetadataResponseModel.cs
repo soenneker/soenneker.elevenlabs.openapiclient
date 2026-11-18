@@ -121,7 +121,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "anonymous_access_level_override", n => { AnonymousAccessLevelOverride = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceMetadataResponseModelAnonymousAccessLevelOverride>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceMetadataResponseModelAnonymousAccessLevelOverride.CreateFromDiscriminatorValue); } },
                 { "creator_user_id", n => { CreatorUserId = n.GetStringValue(); } },

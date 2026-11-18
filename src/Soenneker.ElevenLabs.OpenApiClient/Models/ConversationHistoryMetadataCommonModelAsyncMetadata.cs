@@ -152,7 +152,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(11)
             {
                 { "delivery_error", n => { DeliveryError = n.GetStringValue(); } },
                 { "delivery_status", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AsyncConversationMetadataDeliveryStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDeliveryStatus = default; _explicitNullProperties?.Remove("delivery_status"); AdditionalData["delivery_status"] = unknown; } else { DeliveryStatus = parsed; AdditionalData.Remove("delivery_status"); } } },

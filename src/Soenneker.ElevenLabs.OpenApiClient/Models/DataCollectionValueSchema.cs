@@ -142,7 +142,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(9)
             {
                 { "allowed_values", n => { AllowedValues = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisPropertyAllowedValues>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisPropertyAllowedValues.CreateFromDiscriminatorValue); } },
                 { "allowed_values_dynamic_variable", n => { AllowedValuesDynamicVariable = n.GetStringValue(); } },

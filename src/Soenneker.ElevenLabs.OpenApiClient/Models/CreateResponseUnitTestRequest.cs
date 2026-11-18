@@ -162,7 +162,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(11)
             {
                 { "chat_history", n => { ChatHistory = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInput.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "conversation_initiation_source", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSource>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueConversationInitiationSource = default; _explicitNullProperties?.Remove("conversation_initiation_source"); AdditionalData["conversation_initiation_source"] = unknown; } else { ConversationInitiationSource = parsed; AdditionalData.Remove("conversation_initiation_source"); } } },

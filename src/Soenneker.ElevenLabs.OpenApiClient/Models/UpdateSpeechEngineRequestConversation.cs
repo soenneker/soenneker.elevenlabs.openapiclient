@@ -130,7 +130,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(9)
             {
                 { "background_sound", n => { BackgroundSound = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BackgroundSoundConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BackgroundSoundConfig.CreateFromDiscriminatorValue); } },
                 { "client_events", n => { ClientEvents = n.GetCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientEvent>()?.AsList(); } },

@@ -329,7 +329,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(30)
             {
                 { "accepted_time_unix_secs", n => { AcceptedTimeUnixSecs = n.GetIntValue(); } },
                 { "agent_created_from", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDefinitionSource>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAgentCreatedFrom = default; _explicitNullProperties?.Remove("agent_created_from"); AdditionalData["agent_created_from"] = unknown; } else { AgentCreatedFrom = parsed; AdditionalData.Remove("agent_created_from"); } } },

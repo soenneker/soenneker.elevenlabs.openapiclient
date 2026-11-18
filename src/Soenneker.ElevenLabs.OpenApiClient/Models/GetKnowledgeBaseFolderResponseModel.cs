@@ -197,7 +197,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(15)
             {
                 { "access_info", n => { AccessInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo.CreateFromDiscriminatorValue); } },
                 { "active_sync_job", n => { ActiveSyncJob = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFolderResponseModelActiveSyncJob>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFolderResponseModelActiveSyncJob.CreateFromDiscriminatorValue); } },

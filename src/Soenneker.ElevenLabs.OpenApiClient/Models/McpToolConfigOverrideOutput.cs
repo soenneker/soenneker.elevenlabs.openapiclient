@@ -141,7 +141,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(12)
             {
                 { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariableAssignment>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariableAssignment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "disable_interruptions", n => { DisableInterruptions = n.GetBoolValue(); } },

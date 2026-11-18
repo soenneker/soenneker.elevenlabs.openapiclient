@@ -100,6 +100,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         Gpt61Terra,
         #pragma warning restore CS1591
+        [EnumMember(Value = "gpt-6.2-astra")]
+        #pragma warning disable CS1591
+        Gpt62Astra,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "gpt-6.2-sol")]
+        #pragma warning disable CS1591
+        Gpt62Sol,
+        #pragma warning restore CS1591
         [EnumMember(Value = "gpt-5-mini")]
         #pragma warning disable CS1591
         Gpt5Mini,

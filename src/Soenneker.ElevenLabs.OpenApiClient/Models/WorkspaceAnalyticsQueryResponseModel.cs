@@ -92,7 +92,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "column_types", n => { ColumnTypes = n.GetCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAnalyticsQueryResponseModelColumnTypesItem>()?.AsList(); } },
                 { "column_units", n => { ColumnUnits = n.GetCollectionOfObjectValues<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue)?.AsList(); } },

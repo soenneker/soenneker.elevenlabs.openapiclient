@@ -79,7 +79,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "approval_policy", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolApprovalPolicy>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueApprovalPolicy = default; _explicitNullProperties?.Remove("approval_policy"); AdditionalData["approval_policy"] = unknown; } else { ApprovalPolicy = parsed; AdditionalData.Remove("approval_policy"); } } },
                 { "approved_definition", n => { ApprovedDefinition = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolApprovalStatusApprovedDefinition>(global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolApprovalStatusApprovedDefinition.CreateFromDiscriminatorValue); } },

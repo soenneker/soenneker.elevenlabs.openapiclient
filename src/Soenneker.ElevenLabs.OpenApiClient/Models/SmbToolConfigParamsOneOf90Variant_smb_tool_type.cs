@@ -8,9 +8,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     public enum SmbToolConfigParamsOneOf90Variant_smb_tool_type
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "owner_list_staff")]
+        [EnumMember(Value = "validate_user_verification_code")]
         #pragma warning disable CS1591
-        OwnerListStaff,
+        ValidateUserVerificationCode,
         #pragma warning restore CS1591
     }
 }

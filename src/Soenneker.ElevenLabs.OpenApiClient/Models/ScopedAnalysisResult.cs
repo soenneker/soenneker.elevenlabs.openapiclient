@@ -107,7 +107,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "data_collection_results", n => { DataCollectionResults = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResultDataCollectionResultsProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResultDataCollectionResultsProperty.CreateFromDiscriminatorValue); } },
                 { "evaluation_criteria_results", n => { EvaluationCriteriaResults = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResultEvaluationCriteriaResultsProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResultEvaluationCriteriaResultsProperty.CreateFromDiscriminatorValue); } },

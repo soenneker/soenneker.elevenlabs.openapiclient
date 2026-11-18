@@ -8,9 +8,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     public enum SmbToolConfigParamsOneOf88Variant_smb_tool_type
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "trigger_user_verification")]
+        [EnumMember(Value = "opt_out_sms_reminder")]
         #pragma warning disable CS1591
-        TriggerUserVerification,
+        OptOutSmsReminder,
         #pragma warning restore CS1591
     }
 }

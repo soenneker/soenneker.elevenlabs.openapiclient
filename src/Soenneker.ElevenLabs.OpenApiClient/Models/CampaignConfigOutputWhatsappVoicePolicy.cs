@@ -22,6 +22,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if (parseNode.GetChildNode("calling_periods") is { } nullNodeCallingPeriods && nullNodeCallingPeriods.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CallingPeriods = null;
             if (parseNode.GetChildNode("data_collection") is null) { _explicitNullValueDataCollection = default!; _explicitNullProperties?.Remove("data_collection"); }
             else if (parseNode.GetChildNode("data_collection") is { } nullNodeDataCollection && nullNodeDataCollection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataCollection = null;
+            if (parseNode.GetChildNode("date_overrides") is null) { _explicitNullValueDateOverrides = default!; _explicitNullProperties?.Remove("date_overrides"); }
+            else if (parseNode.GetChildNode("date_overrides") is { } nullNodeDateOverrides && nullNodeDateOverrides.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateOverrides = null;
             if (parseNode.GetChildNode("followup_context") is null) { _explicitNullValueFollowupContext = default!; _explicitNullProperties?.Remove("followup_context"); }
             else if (parseNode.GetChildNode("followup_context") is { } nullNodeFollowupContext && nullNodeFollowupContext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FollowupContext = null;
             if (parseNode.GetChildNode("retry") is null) { _explicitNullValueRetry = default!; _explicitNullProperties?.Remove("retry"); }
@@ -51,6 +53,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPolicyOverrideInputDataCollection DataCollection { get => _explicitNullValueDataCollection; set { _explicitNullValueDataCollection = value; AdditionalData?.Remove("data_collection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data_collection"); else _explicitNullProperties?.Remove("data_collection"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPolicyOverrideInputDataCollection _explicitNullValueDataCollection = default!;
+#endif
+        /// <summary>Replaces the inherited date overrides; unset inherits them and an empty list clears them.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DateOverride>? DateOverrides { get => _explicitNullValueDateOverrides; set { _explicitNullValueDateOverrides = value; AdditionalData?.Remove("date_overrides"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date_overrides"); else _explicitNullProperties?.Remove("date_overrides"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DateOverride>? _explicitNullValueDateOverrides = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DateOverride> DateOverrides { get => _explicitNullValueDateOverrides; set { _explicitNullValueDateOverrides = value; AdditionalData?.Remove("date_overrides"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date_overrides"); else _explicitNullProperties?.Remove("date_overrides"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DateOverride> _explicitNullValueDateOverrides = default!;
 #endif
         /// <summary>Which `campaign__` dynamic variables follow-up calls get.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -107,10 +119,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "calling_periods", n => { CallingPeriods = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.CallingPeriod>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CallingPeriod.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "data_collection", n => { DataCollection = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPolicyOverrideInputDataCollection>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPolicyOverrideInputDataCollection.CreateFromDiscriminatorValue); } },
+                { "date_overrides", n => { DateOverrides = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DateOverride>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DateOverride.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "followup_context", n => { FollowupContext = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPolicyOverrideInputFollowupContext>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPolicyOverrideInputFollowupContext.CreateFromDiscriminatorValue); } },
                 { "retry", n => { Retry = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPolicyOverrideInputRetry>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPolicyOverrideInputRetry.CreateFromDiscriminatorValue); } },
                 { "timezone", n => { Timezone = n.GetStringValue(); } },
@@ -125,6 +138,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.CallingPeriod>("calling_periods", CallingPeriods);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPolicyOverrideInputDataCollection>("data_collection", DataCollection);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DateOverride>("date_overrides", DateOverrides);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPolicyOverrideInputFollowupContext>("followup_context", FollowupContext);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPolicyOverrideInputRetry>("retry", Retry);
             writer.WriteStringValue("timezone", Timezone);

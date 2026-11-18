@@ -78,7 +78,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "model_id", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicModelId>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueModelId = default; _explicitNullProperties?.Remove("model_id"); AdditionalData["model_id"] = unknown; } else { ModelId = parsed; AdditionalData.Remove("model_id"); } } },
                 { "music_length_ms", n => { MusicLengthMs = n.GetIntValue(); } },

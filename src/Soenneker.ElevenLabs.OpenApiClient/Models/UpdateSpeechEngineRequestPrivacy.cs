@@ -94,7 +94,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "apply_to_existing_conversations", n => { ApplyToExistingConversations = n.GetBoolValue(); } },
                 { "conversation_history_redaction", n => { ConversationHistoryRedaction = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryRedactionConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryRedactionConfig.CreateFromDiscriminatorValue); } },

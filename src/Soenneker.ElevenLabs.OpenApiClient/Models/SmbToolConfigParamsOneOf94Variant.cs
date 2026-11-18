@@ -25,12 +25,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The list_kwargs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OwnerListProductsParamsListKwargsProperty? ListKwargs { get => _explicitNullValueListKwargs; set { _explicitNullValueListKwargs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("list_kwargs"); else _explicitNullProperties?.Remove("list_kwargs"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.OwnerListProductsParamsListKwargsProperty? _explicitNullValueListKwargs = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OwnerListServicesParamsListKwargsProperty? ListKwargs { get => _explicitNullValueListKwargs; set { _explicitNullValueListKwargs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("list_kwargs"); else _explicitNullProperties?.Remove("list_kwargs"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.OwnerListServicesParamsListKwargsProperty? _explicitNullValueListKwargs = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OwnerListProductsParamsListKwargsProperty ListKwargs { get => _explicitNullValueListKwargs; set { _explicitNullValueListKwargs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("list_kwargs"); else _explicitNullProperties?.Remove("list_kwargs"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.OwnerListProductsParamsListKwargsProperty _explicitNullValueListKwargs = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OwnerListServicesParamsListKwargsProperty ListKwargs { get => _explicitNullValueListKwargs; set { _explicitNullValueListKwargs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("list_kwargs"); else _explicitNullProperties?.Remove("list_kwargs"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.OwnerListServicesParamsListKwargsProperty _explicitNullValueListKwargs = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -50,7 +50,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "list_kwargs", n => { ListKwargs = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OwnerListProductsParamsListKwargsProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OwnerListProductsParamsListKwargsProperty.CreateFromDiscriminatorValue); } },
+                { "list_kwargs", n => { ListKwargs = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OwnerListServicesParamsListKwargsProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OwnerListServicesParamsListKwargsProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OwnerListProductsParamsListKwargsProperty>("list_kwargs", ListKwargs);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OwnerListServicesParamsListKwargsProperty>("list_kwargs", ListKwargs);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             
         }
     }

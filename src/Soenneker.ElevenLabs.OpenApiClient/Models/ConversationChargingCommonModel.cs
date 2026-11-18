@@ -170,7 +170,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(16)
             {
                 { "analysis", n => { Analysis = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModelAnalysis>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModelAnalysis.CreateFromDiscriminatorValue); } },
                 { "asr_usage", n => { AsrUsage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModelAsrUsage>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModelAsrUsage.CreateFromDiscriminatorValue); } },

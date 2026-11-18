@@ -66,7 +66,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "crossfade_loop", n => { CrossfadeLoop = n.GetBoolValue(); } },
                 { "source_id", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BackgroundSoundPresetId>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSourceId = default; _explicitNullProperties?.Remove("source_id"); AdditionalData["source_id"] = unknown; } else { SourceId = parsed; AdditionalData.Remove("source_id"); } } },

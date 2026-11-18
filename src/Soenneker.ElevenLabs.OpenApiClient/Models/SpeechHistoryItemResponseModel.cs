@@ -232,7 +232,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(18)
             {
                 { "alignments", n => { Alignments = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelAlignments>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelAlignments.CreateFromDiscriminatorValue); } },
                 { "character_count_change_from", n => { CharacterCountChangeFrom = n.GetIntValue(); } },

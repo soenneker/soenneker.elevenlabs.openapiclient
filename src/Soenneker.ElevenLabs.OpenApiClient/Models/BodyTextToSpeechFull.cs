@@ -187,7 +187,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(14)
             {
                 { "apply_language_text_normalization", n => { ApplyLanguageTextNormalization = n.GetBoolValue(); } },
                 { "apply_text_normalization", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFullApplyTextNormalization>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueApplyTextNormalization = default; _explicitNullProperties?.Remove("apply_text_normalization"); AdditionalData["apply_text_normalization"] = unknown; } else { ApplyTextNormalization = parsed; AdditionalData.Remove("apply_text_normalization"); } } },
