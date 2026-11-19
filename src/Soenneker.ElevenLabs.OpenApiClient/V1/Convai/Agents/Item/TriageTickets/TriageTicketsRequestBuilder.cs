@@ -28,7 +28,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.TriageTickets
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TriageTicketsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/agents/{agentId}/triage-tickets{?assignee_user_id*,conversation_id*,cursor*,issue_type*,label*,merged_into_ticket_id*,owner_user_id*,page_size*,priorities*,search*,sort_by*,sources*,status*}", pathParameters)
+        public TriageTicketsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/agents/{agentId}/triage-tickets{?assignee_user_id*,conversation_id*,cursor*,label*,merged_into_ticket_id*,owner_user_id*,page_size*,priorities*,search*,sort_by*,sources*,status*}", pathParameters)
         {
         }
         /// <summary>
@@ -36,7 +36,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.TriageTickets
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TriageTicketsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/agents/{agentId}/triage-tickets{?assignee_user_id*,conversation_id*,cursor*,issue_type*,label*,merged_into_ticket_id*,owner_user_id*,page_size*,priorities*,search*,sort_by*,sources*,status*}", rawUrl)
+        public TriageTicketsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/agents/{agentId}/triage-tickets{?assignee_user_id*,conversation_id*,cursor*,label*,merged_into_ticket_id*,owner_user_id*,page_size*,priorities*,search*,sort_by*,sources*,status*}", rawUrl)
         {
         }
         /// <summary>
@@ -176,16 +176,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.TriageTickets
 #else
             [QueryParameter("cursor")]
             public string Cursor { get; set; }
-#endif
-            /// <summary>Filter agent issues by type.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("issue_type")]
-            public string? IssueType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("issue_type")]
-            public string IssueType { get; set; }
 #endif
             /// <summary>Filter agent issues by an exact label.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -28,7 +28,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Whether to archive the source branch after merging.</summary>
         public bool? ArchiveSourceBranch { get => _explicitNullValueArchiveSourceBranch; set { _explicitNullValueArchiveSourceBranch = value; AdditionalData?.Remove("archive_source_branch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("archive_source_branch"); else _explicitNullProperties?.Remove("archive_source_branch"); } }
         private bool? _explicitNullValueArchiveSourceBranch = default!;
-        /// <summary>Force source branch changes onto the target, overriding timestamp-based conflict resolution.</summary>
+        /// <summary>Keep the source branch&apos;s value for every conflict.</summary>
         public bool? Force { get => _explicitNullValueForce; set { _explicitNullValueForce = value; AdditionalData?.Remove("force"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("force"); else _explicitNullProperties?.Remove("force"); } }
         private bool? _explicitNullValueForce = default!;
         /// <summary>

@@ -20627,23 +20627,6 @@
             }
           },
           {
-            "name": "issue_type",
-            "in": "query",
-            "description": "Filter agent issues by type.",
-            "schema": {
-              "title": "Issue Type",
-              "anyOf": [
-                {
-                  "$ref": "#/components/schemas/AgentConversationTicketIssueType"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "description": "Filter agent issues by type."
-            }
-          },
-          {
             "name": "label",
             "in": "query",
             "description": "Filter agent issues by an exact label.",
@@ -20921,23 +20904,6 @@
                 "string"
               ],
               "description": "Filter agent issues by assignee. Use \u0027unassigned\u0027 for issues with no assignee."
-            }
-          },
-          {
-            "name": "issue_type",
-            "in": "query",
-            "description": "Filter agent issues by type.",
-            "schema": {
-              "title": "Issue Type",
-              "anyOf": [
-                {
-                  "$ref": "#/components/schemas/AgentConversationTicketIssueType"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "description": "Filter agent issues by type."
             }
           },
           {
@@ -29521,7 +29487,7 @@
           "Agents Platform"
         ],
         "summary": "Preview Merged Configuration",
-        "description": "Returns the result of merging the source branch into the target branch without performing the merge. Useful for showing an accurate diff before confirming.",
+        "description": "Returns the result of merging the source branch into the target branch without performing the merge. When \u0060conflicts\u0060 is not empty, the merge itself is rejected unless \u0060conflict_resolutions\u0060 settles every conflict or \u0060force\u0060 is set; until then the returned configuration shows one side of each conflict only as a placeholder.",
         "operationId": "MergePreviewRoute",
         "parameters": [
           {
@@ -29572,11 +29538,11 @@
           {
             "name": "force",
             "in": "query",
-            "description": "When true, source branch changes always win conflicts regardless of timestamps",
+            "description": "When true, the preview keeps the source branch\u0027s value for every conflict, as a merge with \u0060force\u0060 does. Without it, a merge with conflicts needs \u0060conflict_resolutions\u0060.",
             "schema": {
               "title": "Force",
               "type": "boolean",
-              "description": "When true, source branch changes always win conflicts regardless of timestamps",
+              "description": "When true, the preview keeps the source branch\u0027s value for every conflict, as a merge with \u0060force\u0060 does. Without it, a merge with conflicts needs \u0060conflict_resolutions\u0060.",
               "default": false
             }
           },
@@ -29641,7 +29607,7 @@
           "Agents Platform"
         ],
         "summary": "Merge A Branch Into A Target Branch",
-        "description": "Merge a branch into a target branch",
+        "description": "Merge a branch into a target branch. If both branches changed the same field, the merge returns 409 unless \u0060conflict_resolutions\u0060 settles every conflict the merge preview reports, or \u0060force\u0060 is set.",
         "operationId": "MergeBranchIntoTarget",
         "parameters": [
           {
@@ -29748,7 +29714,7 @@
           "Agents Platform"
         ],
         "summary": "Preview Rebased Configuration",
-        "description": "Returns the result of pulling changes from a source branch (defaults to main) into the given branch without performing it, preserving the given branch\u0027s own changes. Useful for showing an accurate diff before confirming.",
+        "description": "Returns the result of pulling changes from a source branch (defaults to main) into the given branch without performing it. When \u0060conflicts\u0060 is not empty, the rebase itself is rejected unless \u0060conflict_resolutions\u0060 settles every conflict; until then the returned configuration keeps the given branch\u0027s side of each conflict.",
         "operationId": "RebasePreviewRoute",
         "parameters": [
           {
@@ -29863,7 +29829,7 @@
           "Agents Platform"
         ],
         "summary": "Rebase A Branch Onto Main",
-        "description": "Pull changes from a source branch (defaults to main) into this branch as a new version, preserving this branch\u0027s own changes on conflicts.",
+        "description": "Pull changes from a source branch (defaults to main) into this branch as a new version. If both branches changed the same field, the rebase returns 409 unless \u0060conflict_resolutions\u0060 settles every conflict the rebase preview reports.",
         "operationId": "RebaseBranchOntoMain",
         "parameters": [
           {
@@ -29935,7 +29901,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/RebaseBranchOntoMainRequest"
+                "$ref": "#/components/schemas/BodyRebaseABranchOntoMainV1ConvaiAgentsAgentIdBranchesBranchIdRebasePost"
               }
             }
           }
@@ -47121,63 +47087,6 @@
           }
         }
       },
-      "AgentConversationTicketIssueType": {
-        "title": "AgentConversationTicketIssueType",
-        "enum": [
-          "knowledge_gap",
-          "incorrect_information",
-          "documentation_gap",
-          "product_feedback",
-          "platform_bug",
-          "tool_issue",
-          "missing_tool",
-          "unnecessary_escalation",
-          "wrong_action"
-        ],
-        "type": "string",
-        "x-ms-enum": {
-          "name": "AgentConversationTicketIssueType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "knowledge_gap",
-              "name": "KnowledgeGap"
-            },
-            {
-              "value": "incorrect_information",
-              "name": "IncorrectInformation"
-            },
-            {
-              "value": "documentation_gap",
-              "name": "DocumentationGap"
-            },
-            {
-              "value": "product_feedback",
-              "name": "ProductFeedback"
-            },
-            {
-              "value": "platform_bug",
-              "name": "PlatformBug"
-            },
-            {
-              "value": "tool_issue",
-              "name": "ToolIssue"
-            },
-            {
-              "value": "missing_tool",
-              "name": "MissingTool"
-            },
-            {
-              "value": "unnecessary_escalation",
-              "name": "UnnecessaryEscalation"
-            },
-            {
-              "value": "wrong_action",
-              "name": "WrongAction"
-            }
-          ]
-        }
-      },
       "AgentConversationTicketPriority": {
         "title": "AgentConversationTicketPriority",
         "enum": [
@@ -47219,7 +47128,6 @@
           "agent_id",
           "needs_clustering",
           "title",
-          "issue_type",
           "labels",
           "conversation_ids",
           "first_seen_unix_secs",
@@ -47267,7 +47175,10 @@
             "description": "One-line headline for the agent issue. None only on issues created before titles existed."
           },
           "issue_type": {
-            "$ref": "#/components/schemas/AgentConversationTicketResponseModelIssueType"
+            "title": "Issue Type",
+            "type": "null",
+            "description": "Always null. Issue types are labels, written as \u0060issue_type:\u003Cvalue\u003E\u0060.",
+            "deprecated": true
           },
           "labels": {
             "title": "Labels",
@@ -56232,8 +56143,49 @@
           "force": {
             "title": "Force",
             "type": "boolean",
-            "description": "Force source branch changes onto the target, overriding timestamp-based conflict resolution",
+            "description": "Keep the source branch\u0027s value for every conflict instead of sending \u0060conflict_resolutions\u0060",
             "default": false
+          },
+          "conflict_resolutions": {
+            "examples": [
+              [
+                {
+                  "choice": "source",
+                  "conflict_id": "conversation_config:agent.first_message"
+                }
+              ]
+            ],
+            "title": "Conflict Resolutions",
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/ConflictResolution"
+            },
+            "description": "Side to keep, or custom text where the conflict accepts it, for each conflict the preview reported. A merge or rebase with conflicts is rejected unless there is one for every conflict, sent with both tip ids. On a merge it can\u0027t be combined with \u0060force\u0060, which lets the source win every conflict instead."
+          },
+          "source_tip_id": {
+            "examples": [
+              "agtvrsn_0901k4aafjxxfxt93gd841r7tv5t"
+            ],
+            "title": "Source Tip Id",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Source branch tip version the conflicts were resolved against (\u0060source_tip_version_id\u0060 of the preview). The request fails with 409 if the branch moved since."
+          },
+          "target_tip_id": {
+            "examples": [
+              "agtvrsn_0901k4aafjxxfxt93gd841r7tv5t"
+            ],
+            "title": "Target Tip Id",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Target branch tip version the conflicts were resolved against (\u0060target_tip_version_id\u0060 of the preview). The request fails with 409 if the branch moved since."
           }
         }
       },
@@ -56250,7 +56202,7 @@
           "force": {
             "title": "Force",
             "type": "boolean",
-            "description": "Force source branch changes onto the target, overriding timestamp-based conflict resolution.",
+            "description": "Keep the source branch\u0027s value for every conflict.",
             "default": false
           }
         }
@@ -56350,6 +56302,53 @@
             "type": "string",
             "description": "An MP3 or WAV file played on loop to callers waiting in the agent\u0027s concurrency wait queue. Maximum size 40 MB, maximum duration 180 seconds.",
             "format": "binary"
+          }
+        }
+      },
+      "BodyRebaseABranchOntoMainV1ConvaiAgentsAgentIdBranchesBranchIdRebasePost": {
+        "title": "Body_Rebase_a_branch_onto_main_v1_convai_agents__agent_id__branches__branch_id__rebase_post",
+        "type": "object",
+        "properties": {
+          "conflict_resolutions": {
+            "examples": [
+              [
+                {
+                  "choice": "source",
+                  "conflict_id": "conversation_config:agent.first_message"
+                }
+              ]
+            ],
+            "title": "Conflict Resolutions",
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/ConflictResolution"
+            },
+            "description": "Side to keep, or custom text where the conflict accepts it, for each conflict the preview reported. A merge or rebase with conflicts is rejected unless there is one for every conflict, sent with both tip ids. On a merge it can\u0027t be combined with \u0060force\u0060, which lets the source win every conflict instead."
+          },
+          "branch_tip_id": {
+            "examples": [
+              "agtvrsn_0901k4aafjxxfxt93gd841r7tv5t"
+            ],
+            "title": "Branch Tip Id",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Tip version of the branch being rebased (\u0060source_tip_version_id\u0060 of the rebase preview) the conflicts were resolved against. The request fails with 409 if it moved since."
+          },
+          "source_tip_id": {
+            "examples": [
+              "agtvrsn_0901k4aafjxxfxt93gd841r7tv5t"
+            ],
+            "title": "Source Tip Id",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Tip version of the branch the changes are pulled from (\u0060source_branch_id\u0060, the main branch by default; \u0060target_tip_version_id\u0060 of the rebase preview) the conflicts were resolved against. The request fails with 409 if it moved since."
           }
         }
       },
@@ -62169,6 +62168,64 @@
             {
               "value": "medical.medical_other",
               "name": "MedicalMedicalOther"
+            }
+          ]
+        }
+      },
+      "ConflictResolution": {
+        "title": "ConflictResolution",
+        "required": [
+          "conflict_id",
+          "choice"
+        ],
+        "type": "object",
+        "properties": {
+          "conflict_id": {
+            "examples": [
+              "conversation_config:agent.first_message"
+            ],
+            "title": "Conflict Id",
+            "type": "string",
+            "description": "\u0060id\u0060 of the conflict this resolves, as the merge or rebase preview reported it."
+          },
+          "choice": {
+            "description": "Keep the source value, the target value, or \u0060custom_value\u0060. On a list of entities, the side settles the entities both branches changed; ones only one branch changed still merge in.",
+            "$ref": "#/components/schemas/ConflictResolutionChoice"
+          },
+          "custom_value": {
+            "title": "Custom Value",
+            "maxLength": 1000000,
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Text to keep when \u0060choice\u0060 is \u0060custom\u0060, or for a procedure conflict the id of the procedure version to pin. Only conflicts with \u0060accepts_custom_value\u0060 take one."
+          }
+        }
+      },
+      "ConflictResolutionChoice": {
+        "title": "ConflictResolutionChoice",
+        "enum": [
+          "source",
+          "target",
+          "custom"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "ConflictResolutionChoice",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "source",
+              "name": "Source"
+            },
+            {
+              "value": "target",
+              "name": "Target"
+            },
+            {
+              "value": "custom",
+              "name": "Custom"
             }
           ]
         }
@@ -70603,7 +70660,9 @@
         "title": "FieldConflict",
         "required": [
           "path",
-          "section"
+          "section",
+          "id",
+          "accepts_custom_value"
         ],
         "type": "object",
         "properties": {
@@ -70627,6 +70686,18 @@
           "target_value": {
             "title": "Target Value",
             "description": "Value on the target branch tip."
+          },
+          "id": {
+            "title": "Id",
+            "type": "string",
+            "description": "Stable identifier of this conflict within a merge.",
+            "readOnly": true
+          },
+          "accepts_custom_value": {
+            "title": "Accepts Custom Value",
+            "type": "boolean",
+            "description": "Whether a resolution of this conflict may use \u0060custom\u0060 with a \u0060custom_value\u0060 instead of keeping a side.",
+            "readOnly": true
           }
         }
       },
@@ -75562,6 +75633,7 @@
           "gemini-3.8-flash",
           "gemini-4-argon",
           "gemini-4-hydrogen",
+          "gemini-4-neon",
           "claude-sonnet-4-5",
           "claude-opus-4-6",
           "claude-opus-4-7",
@@ -75819,6 +75891,10 @@
             {
               "value": "gemini-4-hydrogen",
               "name": "Gemini4Hydrogen"
+            },
+            {
+              "value": "gemini-4-neon",
+              "name": "Gemini4Neon"
             },
             {
               "value": "claude-sonnet-4-5",
@@ -78920,13 +78996,37 @@
             "items": {
               "$ref": "#/components/schemas/FieldConflict"
             },
-            "description": "Structured view of the same conflicts as overridden_fields, each carrying the value on the base (common ancestor), source branch, and target branch so the divergence can be presented and resolved field-by-field."
+            "description": "Structured view of the same conflicts as overridden_fields, each carrying the value on the base (common ancestor), source branch, and target branch so the divergence can be presented and resolved field-by-field. A merge or rebase is rejected while any of them has no resolution in \u0060conflict_resolutions\u0060, unless the merge is forced."
           },
           "source_identical_to_target": {
             "title": "Source Identical To Target",
             "type": "boolean",
             "description": "True when the merge/rebase would be a no-op, i.e. the merged result is identical to the source branch tip. The rebase endpoint rejects in this case.",
             "default": false
+          },
+          "source_tip_version_id": {
+            "title": "Source Tip Version Id",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Tip version of the source branch (the rebased branch for a rebase) the preview was computed from."
+          },
+          "target_tip_version_id": {
+            "title": "Target Tip Version Id",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Tip version of the target branch (main for a rebase) the preview was computed from."
+          },
+          "merge_error": {
+            "title": "Merge Error",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Why the merge doesn\u0027t combine into a valid configuration while conflicts are left to resolve. The preview then shows the branch the merge writes unchanged."
           }
         },
         "example": {
@@ -106000,16 +106100,6 @@
           ],
           "description": "The prompt for the agent"
         }
-      },
-      "AgentConversationTicketResponseModelIssueType": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/AgentConversationTicketIssueType"
-          },
-          {
-            "type": "null"
-          }
-        ]
       },
       "AgentConversationTicketResponseModelPriority": {
         "anyOf": [
@@ -133580,10 +133670,6 @@
       "UpdateWhatsappAccount200ResponseSchema": {},
       "DeleteWhatsappAccount200ResponseSchema": {},
       "MergeBranchIntoTarget200ResponseSchema": {},
-      "RebaseBranchOntoMainRequest": {
-        "title": "Body_Rebase_a_branch_onto_main_v1_convai_agents__agent_id__branches__branch_id__rebase_post",
-        "type": "object"
-      },
       "RebaseBranchOntoMain200ResponseSchema": {},
       "CreateAgentDraftRoute200ResponseSchema": {},
       "DeleteAgentDraftRoute200ResponseSchema": {},
@@ -191601,10 +191687,6 @@
           "$ref": "#/components/schemas/BinaryMode"
         }
       }
-    },
-    "BodyRebaseABranchOntoMainV1ConvaiAgentsAgentIdBranchesBranchIdRebasePost": {
-      "title": "Body_Rebase_a_branch_onto_main_v1_convai_agents__agent_id__branches__branch_id__rebase_post",
-      "type": "object"
     },
     "BooleanSchema": {
       "title": "BooleanSchema",

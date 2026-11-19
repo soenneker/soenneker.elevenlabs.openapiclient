@@ -29,6 +29,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if (parseNode.GetChildNode("target_value") is { } nullNodeTargetValue && nullNodeTargetValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetValue = null;
         }
 
+        /// <summary>Whether a resolution of this conflict may use `custom` with a `custom_value` instead of keeping a side.</summary>
+        public bool? AcceptsCustomValue { get; private set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Value at the common ancestor (merge base).</summary>
@@ -40,6 +42,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public UntypedNode BaseValue { get => _explicitNullValueBaseValue; set { _explicitNullValueBaseValue = value; AdditionalData?.Remove("base_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_value"); else _explicitNullProperties?.Remove("base_value"); } }
         private UntypedNode _explicitNullValueBaseValue = default!;
+#endif
+        /// <summary>Stable identifier of this conflict within a merge.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Id { get; private set; }
+#nullable restore
+#else
+        public string Id { get; private set; }
 #endif
         /// <summary>Identifier of the conflicting field relative to its section: a dot-path within conversation_config/platform_settings (e.g. `tts.voice_id`), a procedure id, or a workflow path: `nodes.&lt;id&gt;`, `edges.&lt;id&gt;`, or the name of a top-level workflow setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -97,9 +107,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(5)
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
+                { "accepts_custom_value", n => { AcceptsCustomValue = n.GetBoolValue(); } },
                 { "base_value", n => { BaseValue = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
                 { "path", n => { Path = n.GetStringValue(); } },
                 { "section", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConflictSection>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSection = default; _explicitNullProperties?.Remove("section"); AdditionalData["section"] = unknown; } else { Section = parsed; AdditionalData.Remove("section"); } } },
                 { "source_value", n => { SourceValue = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },

@@ -115,9 +115,17 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The first_seen_unix_secs property</summary>
         public int? FirstSeenUnixSecs { get => _explicitNullValueFirstSeenUnixSecs; set { _explicitNullValueFirstSeenUnixSecs = value; AdditionalData?.Remove("first_seen_unix_secs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_seen_unix_secs"); else _explicitNullProperties?.Remove("first_seen_unix_secs"); } }
         private int? _explicitNullValueFirstSeenUnixSecs = default!;
-        /// <summary>The issue_type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketIssueType? IssueType { get => _explicitNullValueIssueType; set { _explicitNullValueIssueType = value; AdditionalData?.Remove("issue_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issue_type"); else _explicitNullProperties?.Remove("issue_type"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketIssueType? _explicitNullValueIssueType = default!;
+        /// <summary>Always null. Issue types are labels, written as `issue_type:&lt;value&gt;`.</summary>
+        [Obsolete("")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? IssueType { get => _explicitNullValueIssueType; set { _explicitNullValueIssueType = value; AdditionalData?.Remove("issue_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issue_type"); else _explicitNullProperties?.Remove("issue_type"); } }
+        private UntypedNode? _explicitNullValueIssueType = default!;
+#nullable restore
+#else
+        public UntypedNode IssueType { get => _explicitNullValueIssueType; set { _explicitNullValueIssueType = value; AdditionalData?.Remove("issue_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issue_type"); else _explicitNullProperties?.Remove("issue_type"); } }
+        private UntypedNode _explicitNullValueIssueType = default!;
+#endif
         /// <summary>The labels property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -277,7 +285,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "conversation_ids", n => { ConversationIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "created_at_unix_secs", n => { CreatedAtUnixSecs = n.GetIntValue(); } },
                 { "first_seen_unix_secs", n => { FirstSeenUnixSecs = n.GetIntValue(); } },
-                { "issue_type", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketIssueType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueIssueType = default; _explicitNullProperties?.Remove("issue_type"); AdditionalData["issue_type"] = unknown; } else { IssueType = parsed; AdditionalData.Remove("issue_type"); } } },
+                { "issue_type", n => { IssueType = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "labels", n => { Labels = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "last_seen_unix_secs", n => { LastSeenUnixSecs = n.GetIntValue(); } },
                 { "merged_into_ticket_id", n => { MergedIntoTicketId = n.GetStringValue(); } },
@@ -310,7 +318,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("conversation_ids", ConversationIds);
             writer.WriteIntValue("created_at_unix_secs", CreatedAtUnixSecs);
             writer.WriteIntValue("first_seen_unix_secs", FirstSeenUnixSecs);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketIssueType>("issue_type", IssueType);
+            writer.WriteObjectValue<UntypedNode>("issue_type", IssueType);
             writer.WriteCollectionOfPrimitiveValues<string>("labels", Labels);
             writer.WriteIntValue("last_seen_unix_secs", LastSeenUnixSecs);
             writer.WriteStringValue("merged_into_ticket_id", MergedIntoTicketId);

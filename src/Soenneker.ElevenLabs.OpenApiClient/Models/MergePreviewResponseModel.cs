@@ -31,6 +31,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if (parseNode.GetChildNode("default_hold_audio_url") is { } nullNodeDefaultHoldAudioUrl && nullNodeDefaultHoldAudioUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultHoldAudioUrl = null;
             if (parseNode.GetChildNode("main_branch_id") is null) { _explicitNullValueMainBranchId = default!; _explicitNullProperties?.Remove("main_branch_id"); }
             else if (parseNode.GetChildNode("main_branch_id") is { } nullNodeMainBranchId && nullNodeMainBranchId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MainBranchId = null;
+            if (parseNode.GetChildNode("merge_error") is null) { _explicitNullValueMergeError = default!; _explicitNullProperties?.Remove("merge_error"); }
+            else if (parseNode.GetChildNode("merge_error") is { } nullNodeMergeError && nullNodeMergeError.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MergeError = null;
             if (parseNode.GetChildNode("metadata") is null) { _explicitNullValueMetadata = default!; _explicitNullProperties?.Remove("metadata"); }
             else if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
             if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
@@ -45,8 +47,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if (parseNode.GetChildNode("procedures") is { } nullNodeProcedures && nullNodeProcedures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Procedures = null;
             if (parseNode.GetChildNode("source_identical_to_target") is null) { _explicitNullValueSourceIdenticalToTarget = default!; _explicitNullProperties?.Remove("source_identical_to_target"); }
             else if (parseNode.GetChildNode("source_identical_to_target") is { } nullNodeSourceIdenticalToTarget && nullNodeSourceIdenticalToTarget.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceIdenticalToTarget = null;
+            if (parseNode.GetChildNode("source_tip_version_id") is null) { _explicitNullValueSourceTipVersionId = default!; _explicitNullProperties?.Remove("source_tip_version_id"); }
+            else if (parseNode.GetChildNode("source_tip_version_id") is { } nullNodeSourceTipVersionId && nullNodeSourceTipVersionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceTipVersionId = null;
             if (parseNode.GetChildNode("tags") is null) { _explicitNullValueTags = default!; _explicitNullProperties?.Remove("tags"); }
             else if (parseNode.GetChildNode("tags") is { } nullNodeTags && nullNodeTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tags = null;
+            if (parseNode.GetChildNode("target_tip_version_id") is null) { _explicitNullValueTargetTipVersionId = default!; _explicitNullProperties?.Remove("target_tip_version_id"); }
+            else if (parseNode.GetChildNode("target_tip_version_id") is { } nullNodeTargetTipVersionId && nullNodeTargetTipVersionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetTipVersionId = null;
             if (parseNode.GetChildNode("version_id") is null) { _explicitNullValueVersionId = default!; _explicitNullProperties?.Remove("version_id"); }
             else if (parseNode.GetChildNode("version_id") is { } nullNodeVersionId && nullNodeVersionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VersionId = null;
             if (parseNode.GetChildNode("whatsapp_accounts") is null) { _explicitNullValueWhatsappAccounts = default!; _explicitNullProperties?.Remove("whatsapp_accounts"); }
@@ -87,7 +93,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string BranchId { get => _explicitNullValueBranchId; set { _explicitNullValueBranchId = value; AdditionalData?.Remove("branch_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch_id"); else _explicitNullProperties?.Remove("branch_id"); } }
         private string _explicitNullValueBranchId = default!;
 #endif
-        /// <summary>Structured view of the same conflicts as overridden_fields, each carrying the value on the base (common ancestor), source branch, and target branch so the divergence can be presented and resolved field-by-field.</summary>
+        /// <summary>Structured view of the same conflicts as overridden_fields, each carrying the value on the base (common ancestor), source branch, and target branch so the divergence can be presented and resolved field-by-field. A merge or rebase is rejected while any of them has no resolution in `conflict_resolutions`, unless the merge is forced.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.FieldConflict>? Conflicts { get => _explicitNullValueConflicts; set { _explicitNullValueConflicts = value; AdditionalData?.Remove("conflicts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conflicts"); else _explicitNullProperties?.Remove("conflicts"); } }
@@ -126,6 +132,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string MainBranchId { get => _explicitNullValueMainBranchId; set { _explicitNullValueMainBranchId = value; AdditionalData?.Remove("main_branch_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("main_branch_id"); else _explicitNullProperties?.Remove("main_branch_id"); } }
         private string _explicitNullValueMainBranchId = default!;
+#endif
+        /// <summary>Why the merge doesn&apos;t combine into a valid configuration while conflicts are left to resolve. The preview then shows the branch the merge writes unchanged.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MergeError { get => _explicitNullValueMergeError; set { _explicitNullValueMergeError = value; AdditionalData?.Remove("merge_error"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merge_error"); else _explicitNullProperties?.Remove("merge_error"); } }
+        private string? _explicitNullValueMergeError = default!;
+#nullable restore
+#else
+        public string MergeError { get => _explicitNullValueMergeError; set { _explicitNullValueMergeError = value; AdditionalData?.Remove("merge_error"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merge_error"); else _explicitNullProperties?.Remove("merge_error"); } }
+        private string _explicitNullValueMergeError = default!;
 #endif
         /// <summary>The metadata of the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -190,6 +206,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>True when the merge/rebase would be a no-op, i.e. the merged result is identical to the source branch tip. The rebase endpoint rejects in this case.</summary>
         public bool? SourceIdenticalToTarget { get => _explicitNullValueSourceIdenticalToTarget; set { _explicitNullValueSourceIdenticalToTarget = value; AdditionalData?.Remove("source_identical_to_target"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_identical_to_target"); else _explicitNullProperties?.Remove("source_identical_to_target"); } }
         private bool? _explicitNullValueSourceIdenticalToTarget = default!;
+        /// <summary>Tip version of the source branch (the rebased branch for a rebase) the preview was computed from.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SourceTipVersionId { get => _explicitNullValueSourceTipVersionId; set { _explicitNullValueSourceTipVersionId = value; AdditionalData?.Remove("source_tip_version_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_tip_version_id"); else _explicitNullProperties?.Remove("source_tip_version_id"); } }
+        private string? _explicitNullValueSourceTipVersionId = default!;
+#nullable restore
+#else
+        public string SourceTipVersionId { get => _explicitNullValueSourceTipVersionId; set { _explicitNullValueSourceTipVersionId = value; AdditionalData?.Remove("source_tip_version_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_tip_version_id"); else _explicitNullProperties?.Remove("source_tip_version_id"); } }
+        private string _explicitNullValueSourceTipVersionId = default!;
+#endif
         /// <summary>Agent tags used to categorize the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -199,6 +225,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public List<string> Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; AdditionalData?.Remove("tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
         private List<string> _explicitNullValueTags = default!;
+#endif
+        /// <summary>Tip version of the target branch (main for a rebase) the preview was computed from.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TargetTipVersionId { get => _explicitNullValueTargetTipVersionId; set { _explicitNullValueTargetTipVersionId = value; AdditionalData?.Remove("target_tip_version_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_tip_version_id"); else _explicitNullProperties?.Remove("target_tip_version_id"); } }
+        private string? _explicitNullValueTargetTipVersionId = default!;
+#nullable restore
+#else
+        public string TargetTipVersionId { get => _explicitNullValueTargetTipVersionId; set { _explicitNullValueTargetTipVersionId = value; AdditionalData?.Remove("target_tip_version_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_tip_version_id"); else _explicitNullProperties?.Remove("target_tip_version_id"); } }
+        private string _explicitNullValueTargetTipVersionId = default!;
 #endif
         /// <summary>The ID of the version the agent is on</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -255,7 +291,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(18)
+            return new Dictionary<string, Action<IParseNode>>(21)
             {
                 { "access_info", n => { AccessInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelAccessInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelAccessInfo.CreateFromDiscriminatorValue); } },
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
@@ -264,6 +300,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "conversation_config", n => { ConversationConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationalConfigApiModelOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationalConfigApiModelOutput.CreateFromDiscriminatorValue); } },
                 { "default_hold_audio_url", n => { DefaultHoldAudioUrl = n.GetStringValue(); } },
                 { "main_branch_id", n => { MainBranchId = n.GetStringValue(); } },
+                { "merge_error", n => { MergeError = n.GetStringValue(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadataResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadataResponseModel.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "overridden_fields", n => { OverriddenFields = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -271,7 +308,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "platform_settings", n => { PlatformSettings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModel.CreateFromDiscriminatorValue); } },
                 { "procedures", n => { Procedures = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MergePreviewResponseModelProceduresProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MergePreviewResponseModelProceduresProperty.CreateFromDiscriminatorValue); } },
                 { "source_identical_to_target", n => { SourceIdenticalToTarget = n.GetBoolValue(); } },
+                { "source_tip_version_id", n => { SourceTipVersionId = n.GetStringValue(); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "target_tip_version_id", n => { TargetTipVersionId = n.GetStringValue(); } },
                 { "version_id", n => { VersionId = n.GetStringValue(); } },
                 { "whatsapp_accounts", n => { WhatsappAccounts = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetWhatsAppAccountResponse>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetWhatsAppAccountResponse.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "workflow", n => { Workflow = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowResponseModel.CreateFromDiscriminatorValue); } },
@@ -291,6 +330,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationalConfigApiModelOutput>("conversation_config", ConversationConfig);
             writer.WriteStringValue("default_hold_audio_url", DefaultHoldAudioUrl);
             writer.WriteStringValue("main_branch_id", MainBranchId);
+            writer.WriteStringValue("merge_error", MergeError);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadataResponseModel>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfPrimitiveValues<string>("overridden_fields", OverriddenFields);
@@ -298,7 +338,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModel>("platform_settings", PlatformSettings);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MergePreviewResponseModelProceduresProperty>("procedures", Procedures);
             writer.WriteBoolValue("source_identical_to_target", SourceIdenticalToTarget);
+            writer.WriteStringValue("source_tip_version_id", SourceTipVersionId);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
+            writer.WriteStringValue("target_tip_version_id", TargetTipVersionId);
             writer.WriteStringValue("version_id", VersionId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetWhatsAppAccountResponse>("whatsapp_accounts", WhatsappAccounts);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowResponseModel>("workflow", Workflow);

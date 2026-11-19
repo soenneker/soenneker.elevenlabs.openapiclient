@@ -19,8 +19,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("archive_source_branch") is null) { _explicitNullValueArchiveSourceBranch = default!; _explicitNullProperties?.Remove("archive_source_branch"); }
             else if (parseNode.GetChildNode("archive_source_branch") is { } nullNodeArchiveSourceBranch && nullNodeArchiveSourceBranch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ArchiveSourceBranch = null;
+            if (parseNode.GetChildNode("conflict_resolutions") is null) { _explicitNullValueConflictResolutions = default!; _explicitNullProperties?.Remove("conflict_resolutions"); }
+            else if (parseNode.GetChildNode("conflict_resolutions") is { } nullNodeConflictResolutions && nullNodeConflictResolutions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConflictResolutions = null;
             if (parseNode.GetChildNode("force") is null) { _explicitNullValueForce = default!; _explicitNullProperties?.Remove("force"); }
             else if (parseNode.GetChildNode("force") is { } nullNodeForce && nullNodeForce.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Force = null;
+            if (parseNode.GetChildNode("source_tip_id") is null) { _explicitNullValueSourceTipId = default!; _explicitNullProperties?.Remove("source_tip_id"); }
+            else if (parseNode.GetChildNode("source_tip_id") is { } nullNodeSourceTipId && nullNodeSourceTipId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceTipId = null;
+            if (parseNode.GetChildNode("target_tip_id") is null) { _explicitNullValueTargetTipId = default!; _explicitNullProperties?.Remove("target_tip_id"); }
+            else if (parseNode.GetChildNode("target_tip_id") is { } nullNodeTargetTipId && nullNodeTargetTipId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetTipId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,9 +34,39 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Whether to archive the source branch after merging</summary>
         public bool? ArchiveSourceBranch { get => _explicitNullValueArchiveSourceBranch; set { _explicitNullValueArchiveSourceBranch = value; AdditionalData?.Remove("archive_source_branch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("archive_source_branch"); else _explicitNullProperties?.Remove("archive_source_branch"); } }
         private bool? _explicitNullValueArchiveSourceBranch = default!;
-        /// <summary>Force source branch changes onto the target, overriding timestamp-based conflict resolution</summary>
+        /// <summary>Side to keep, or custom text where the conflict accepts it, for each conflict the preview reported. A merge or rebase with conflicts is rejected unless there is one for every conflict, sent with both tip ids. On a merge it can&apos;t be combined with `force`, which lets the source win every conflict instead.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConflictResolution>? ConflictResolutions { get => _explicitNullValueConflictResolutions; set { _explicitNullValueConflictResolutions = value; AdditionalData?.Remove("conflict_resolutions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conflict_resolutions"); else _explicitNullProperties?.Remove("conflict_resolutions"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConflictResolution>? _explicitNullValueConflictResolutions = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConflictResolution> ConflictResolutions { get => _explicitNullValueConflictResolutions; set { _explicitNullValueConflictResolutions = value; AdditionalData?.Remove("conflict_resolutions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conflict_resolutions"); else _explicitNullProperties?.Remove("conflict_resolutions"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConflictResolution> _explicitNullValueConflictResolutions = default!;
+#endif
+        /// <summary>Keep the source branch&apos;s value for every conflict instead of sending `conflict_resolutions`</summary>
         public bool? Force { get => _explicitNullValueForce; set { _explicitNullValueForce = value; AdditionalData?.Remove("force"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("force"); else _explicitNullProperties?.Remove("force"); } }
         private bool? _explicitNullValueForce = default!;
+        /// <summary>Source branch tip version the conflicts were resolved against (`source_tip_version_id` of the preview). The request fails with 409 if the branch moved since.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SourceTipId { get => _explicitNullValueSourceTipId; set { _explicitNullValueSourceTipId = value; AdditionalData?.Remove("source_tip_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_tip_id"); else _explicitNullProperties?.Remove("source_tip_id"); } }
+        private string? _explicitNullValueSourceTipId = default!;
+#nullable restore
+#else
+        public string SourceTipId { get => _explicitNullValueSourceTipId; set { _explicitNullValueSourceTipId = value; AdditionalData?.Remove("source_tip_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_tip_id"); else _explicitNullProperties?.Remove("source_tip_id"); } }
+        private string _explicitNullValueSourceTipId = default!;
+#endif
+        /// <summary>Target branch tip version the conflicts were resolved against (`target_tip_version_id` of the preview). The request fails with 409 if the branch moved since.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TargetTipId { get => _explicitNullValueTargetTipId; set { _explicitNullValueTargetTipId = value; AdditionalData?.Remove("target_tip_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_tip_id"); else _explicitNullProperties?.Remove("target_tip_id"); } }
+        private string? _explicitNullValueTargetTipId = default!;
+#nullable restore
+#else
+        public string TargetTipId { get => _explicitNullValueTargetTipId; set { _explicitNullValueTargetTipId = value; AdditionalData?.Remove("target_tip_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_tip_id"); else _explicitNullProperties?.Remove("target_tip_id"); } }
+        private string _explicitNullValueTargetTipId = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyMergeABranchIntoATargetBranchV1ConvaiAgentsAgentIdBranchesSourceBranchIdMergePost"/> and sets the default values.
         /// </summary>
@@ -56,10 +92,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "archive_source_branch", n => { ArchiveSourceBranch = n.GetBoolValue(); } },
+                { "conflict_resolutions", n => { ConflictResolutions = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConflictResolution>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConflictResolution.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "force", n => { Force = n.GetBoolValue(); } },
+                { "source_tip_id", n => { SourceTipId = n.GetStringValue(); } },
+                { "target_tip_id", n => { TargetTipId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -70,7 +109,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("archive_source_branch", ArchiveSourceBranch);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConflictResolution>("conflict_resolutions", ConflictResolutions);
             writer.WriteBoolValue("force", Force);
+            writer.WriteStringValue("source_tip_id", SourceTipId);
+            writer.WriteStringValue("target_tip_id", TargetTipId);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

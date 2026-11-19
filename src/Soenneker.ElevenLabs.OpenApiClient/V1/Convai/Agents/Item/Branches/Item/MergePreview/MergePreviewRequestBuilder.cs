@@ -34,7 +34,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item
         {
         }
         /// <summary>
-        /// Returns the result of merging the source branch into the target branch without performing the merge. Useful for showing an accurate diff before confirming.
+        /// Returns the result of merging the source branch into the target branch without performing the merge. When `conflicts` is not empty, the merge itself is rejected unless `conflict_resolutions` settles every conflict or `force` is set; until then the returned configuration shows one side of each conflict only as a placeholder.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MergePreviewResponseModel"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.MergePreviewResponseModel>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.MergePreviewResponseModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns the result of merging the source branch into the target branch without performing the merge. Useful for showing an accurate diff before confirming.
+        /// Returns the result of merging the source branch into the target branch without performing the merge. When `conflicts` is not empty, the merge itself is rejected unless `conflict_resolutions` settles every conflict or `force` is set; until then the returned configuration shows one side of each conflict only as a placeholder.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -87,12 +87,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item
             return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item.MergePreview.MergePreviewRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns the result of merging the source branch into the target branch without performing the merge. Useful for showing an accurate diff before confirming.
+        /// Returns the result of merging the source branch into the target branch without performing the merge. When `conflicts` is not empty, the merge itself is rejected unless `conflict_resolutions` settles every conflict or `force` is set; until then the returned configuration shows one side of each conflict only as a placeholder.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MergePreviewRequestBuilderGetQueryParameters 
         {
-            /// <summary>When true, source branch changes always win conflicts regardless of timestamps</summary>
+            /// <summary>When true, the preview keeps the source branch&apos;s value for every conflict, as a merge with `force` does. Without it, a merge with conflicts needs `conflict_resolutions`.</summary>
             [QueryParameter("force")]
             public bool? Force { get; set; }
             /// <summary>Whether to include the workflow nodes and edges generated from structured procedures. When false, the workflow contains only authored elements.</summary>
