@@ -47,6 +47,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if (parseNode.GetChildNode("redirect_count") is { } nullNodeRedirectCount && nullNodeRedirectCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RedirectCount = null;
             if (parseNode.GetChildNode("terminal_disposition") is null) { _explicitNullValueTerminalDisposition = default!; _explicitNullProperties?.Remove("terminal_disposition"); }
             else if (parseNode.GetChildNode("terminal_disposition") is { } nullNodeTerminalDisposition && nullNodeTerminalDisposition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TerminalDisposition = null;
+            if (parseNode.GetChildNode("timezone_override") is null) { _explicitNullValueTimezoneOverride = default!; _explicitNullProperties?.Remove("timezone_override"); }
+            else if (parseNode.GetChildNode("timezone_override") is { } nullNodeTimezoneOverride && nullNodeTimezoneOverride.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimezoneOverride = null;
             if (parseNode.GetChildNode("updated_at_unix") is null) { _explicitNullValueUpdatedAtUnix = default!; _explicitNullProperties?.Remove("updated_at_unix"); }
             else if (parseNode.GetChildNode("updated_at_unix") is { } nullNodeUpdatedAtUnix && nullNodeUpdatedAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAtUnix = null;
             if (parseNode.GetChildNode("user_id") is null) { _explicitNullValueUserId = default!; _explicitNullProperties?.Remove("user_id"); }
@@ -149,6 +151,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Why the lead won&apos;t be called again; unset while it may be.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.TerminalDisposition? TerminalDisposition { get => _explicitNullValueTerminalDisposition; set { _explicitNullValueTerminalDisposition = value; AdditionalData?.Remove("terminal_disposition"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("terminal_disposition"); else _explicitNullProperties?.Remove("terminal_disposition"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.TerminalDisposition? _explicitNullValueTerminalDisposition = default!;
+        /// <summary>The timezone the recipient&apos;s calling windows are read in; unset when the lead follows the campaign&apos;s.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TimezoneOverride { get => _explicitNullValueTimezoneOverride; set { _explicitNullValueTimezoneOverride = value; AdditionalData?.Remove("timezone_override"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timezone_override"); else _explicitNullProperties?.Remove("timezone_override"); } }
+        private string? _explicitNullValueTimezoneOverride = default!;
+#nullable restore
+#else
+        public string TimezoneOverride { get => _explicitNullValueTimezoneOverride; set { _explicitNullValueTimezoneOverride = value; AdditionalData?.Remove("timezone_override"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timezone_override"); else _explicitNullProperties?.Remove("timezone_override"); } }
+        private string _explicitNullValueTimezoneOverride = default!;
+#endif
         /// <summary>The updated_at_unix property</summary>
         public int? UpdatedAtUnix { get => _explicitNullValueUpdatedAtUnix; set { _explicitNullValueUpdatedAtUnix = value; AdditionalData?.Remove("updated_at_unix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at_unix"); else _explicitNullProperties?.Remove("updated_at_unix"); } }
         private int? _explicitNullValueUpdatedAtUnix = default!;
@@ -185,7 +197,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(17)
+            return new Dictionary<string, Action<IParseNode>>(18)
             {
                 { "attempt_count", n => { AttemptCount = n.GetIntValue(); } },
                 { "callback_count", n => { CallbackCount = n.GetIntValue(); } },
@@ -202,6 +214,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "recipient_id", n => { RecipientId = n.GetStringValue(); } },
                 { "redirect_count", n => { RedirectCount = n.GetIntValue(); } },
                 { "terminal_disposition", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TerminalDisposition>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTerminalDisposition = default; _explicitNullProperties?.Remove("terminal_disposition"); AdditionalData["terminal_disposition"] = unknown; } else { TerminalDisposition = parsed; AdditionalData.Remove("terminal_disposition"); } } },
+                { "timezone_override", n => { TimezoneOverride = n.GetStringValue(); } },
                 { "updated_at_unix", n => { UpdatedAtUnix = n.GetIntValue(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
             };
@@ -228,6 +241,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("recipient_id", RecipientId);
             writer.WriteIntValue("redirect_count", RedirectCount);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TerminalDisposition>("terminal_disposition", TerminalDisposition);
+            writer.WriteStringValue("timezone_override", TimezoneOverride);
             writer.WriteIntValue("updated_at_unix", UpdatedAtUnix);
             writer.WriteStringValue("user_id", UserId);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

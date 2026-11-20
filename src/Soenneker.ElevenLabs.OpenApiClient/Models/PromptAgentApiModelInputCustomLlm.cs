@@ -28,6 +28,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if (parseNode.GetChildNode("auth_connection") is { } nullNodeAuthConnection && nullNodeAuthConnection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthConnection = null;
             if (parseNode.GetChildNode("model_id") is null) { _explicitNullValueModelId = default!; _explicitNullProperties?.Remove("model_id"); }
             else if (parseNode.GetChildNode("model_id") is { } nullNodeModelId && nullNodeModelId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModelId = null;
+            if (parseNode.GetChildNode("mtls_auth_connection") is null) { _explicitNullValueMtlsAuthConnection = default!; _explicitNullProperties?.Remove("mtls_auth_connection"); }
+            else if (parseNode.GetChildNode("mtls_auth_connection") is { } nullNodeMtlsAuthConnection && nullNodeMtlsAuthConnection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MtlsAuthConnection = null;
             if (parseNode.GetChildNode("request_headers") is null) { _explicitNullValueRequestHeaders = default!; _explicitNullProperties?.Remove("request_headers"); }
             else if (parseNode.GetChildNode("request_headers") is { } nullNodeRequestHeaders && nullNodeRequestHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestHeaders = null;
             if (parseNode.GetChildNode("url") is null) { _explicitNullValueUrl = default!; _explicitNullProperties?.Remove("url"); }
@@ -79,6 +81,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string ModelId { get => _explicitNullValueModelId; set { _explicitNullValueModelId = value; AdditionalData?.Remove("model_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model_id"); else _explicitNullProperties?.Remove("model_id"); } }
         private string _explicitNullValueModelId = default!;
 #endif
+        /// <summary>Optional mTLS auth connection. When set, its client certificate is used for the TLS handshake with the LLM endpoint and, when auth_connection is OAuth2 client credentials or OAuth2 JWT, with its token endpoint too. Application auth stays on auth_connection or api_key. auth_connection must then be OAuth2 client credentials, OAuth2 JWT or bearer.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmMtlsAuthConnection? MtlsAuthConnection { get => _explicitNullValueMtlsAuthConnection; set { _explicitNullValueMtlsAuthConnection = value; AdditionalData?.Remove("mtls_auth_connection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mtls_auth_connection"); else _explicitNullProperties?.Remove("mtls_auth_connection"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmMtlsAuthConnection? _explicitNullValueMtlsAuthConnection = default!;
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmMtlsAuthConnection MtlsAuthConnection { get => _explicitNullValueMtlsAuthConnection; set { _explicitNullValueMtlsAuthConnection = value; AdditionalData?.Remove("mtls_auth_connection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mtls_auth_connection"); else _explicitNullProperties?.Remove("mtls_auth_connection"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmMtlsAuthConnection _explicitNullValueMtlsAuthConnection = default!;
+#endif
         /// <summary>Headers that should be included in the request</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -124,13 +136,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(7)
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "api_key", n => { ApiKey = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmApiKey>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmApiKey.CreateFromDiscriminatorValue); } },
                 { "api_type", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmapiType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueApiType = default; _explicitNullProperties?.Remove("api_type"); AdditionalData["api_type"] = unknown; } else { ApiType = parsed; AdditionalData.Remove("api_type"); } } },
                 { "api_version", n => { ApiVersion = n.GetStringValue(); } },
                 { "auth_connection", n => { AuthConnection = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmAuthConnection>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmAuthConnection.CreateFromDiscriminatorValue); } },
                 { "model_id", n => { ModelId = n.GetStringValue(); } },
+                { "mtls_auth_connection", n => { MtlsAuthConnection = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmMtlsAuthConnection>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmMtlsAuthConnection.CreateFromDiscriminatorValue); } },
                 { "request_headers", n => { RequestHeaders = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmRequestHeadersProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmRequestHeadersProperty.CreateFromDiscriminatorValue); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
@@ -147,6 +160,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("api_version", ApiVersion);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmAuthConnection>("auth_connection", AuthConnection);
             writer.WriteStringValue("model_id", ModelId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmMtlsAuthConnection>("mtls_auth_connection", MtlsAuthConnection);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmRequestHeadersProperty>("request_headers", RequestHeaders);
             writer.WriteStringValue("url", Url);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

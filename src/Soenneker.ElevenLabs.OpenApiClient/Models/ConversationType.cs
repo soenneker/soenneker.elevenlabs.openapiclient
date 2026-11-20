@@ -5,7 +5,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>The type of podcast to create.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum PodcastConversationModeType
+    public enum ConversationType
     {
         [EnumMember(Value = "conversation")]
         #pragma warning disable CS1591

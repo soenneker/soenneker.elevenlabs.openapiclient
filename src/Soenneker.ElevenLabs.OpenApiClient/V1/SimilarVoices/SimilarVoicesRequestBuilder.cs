@@ -22,7 +22,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.SimilarVoices
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SimilarVoicesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/similar-voices", pathParameters)
+        public SimilarVoicesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/similar-voices{?age*,category*,gender*,include_custom_rates*,include_live_moderated*,min_notice_period_days*,owner_id*,use_cases*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.SimilarVoices
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SimilarVoicesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/similar-voices", rawUrl)
+        public SimilarVoicesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/similar-voices{?age*,category*,gender*,include_custom_rates*,include_live_moderated*,min_notice_period_days*,owner_id*,use_cases*}", rawUrl)
         {
         }
         /// <summary>
@@ -43,11 +43,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.SimilarVoices
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetLibraryVoicesResponseModel?> PostAsync(global::Microsoft.Kiota.Abstractions.MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetLibraryVoicesResponseModel?> PostAsync(global::Microsoft.Kiota.Abstractions.MultipartBody body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.SimilarVoices.SimilarVoicesRequestBuilder.SimilarVoicesRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetLibraryVoicesResponseModel> PostAsync(global::Microsoft.Kiota.Abstractions.MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetLibraryVoicesResponseModel> PostAsync(global::Microsoft.Kiota.Abstractions.MultipartBody body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.SimilarVoices.SimilarVoicesRequestBuilder.SimilarVoicesRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -68,11 +68,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.SimilarVoices
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Microsoft.Kiota.Abstractions.MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Kiota.Abstractions.MultipartBody body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.SimilarVoices.SimilarVoicesRequestBuilder.SimilarVoicesRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Microsoft.Kiota.Abstractions.MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Kiota.Abstractions.MultipartBody body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.SimilarVoices.SimilarVoicesRequestBuilder.SimilarVoicesRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -90,6 +90,65 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.SimilarVoices
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.SimilarVoices.SimilarVoicesRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.ElevenLabs.OpenApiClient.V1.SimilarVoices.SimilarVoicesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Returns a list of shared voices similar to the provided audio sample. If neither similarity_threshold nor top_k is provided, we will apply default values.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class SimilarVoicesRequestBuilderPostQueryParameters 
+        {
+            /// <summary>Age used for filtering</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("age")]
+            public string? Age { get; set; }
+#nullable restore
+#else
+            [QueryParameter("age")]
+            public string Age { get; set; }
+#endif
+            /// <summary>Voice category used for filtering</summary>
+            [QueryParameter("category")]
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSimilarLibraryVoicesCategoryParameter? Category { get; set; }
+            /// <summary>Gender used for filtering</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("gender")]
+            public string? Gender { get; set; }
+#nullable restore
+#else
+            [QueryParameter("gender")]
+            public string Gender { get; set; }
+#endif
+            /// <summary>Include/exclude voices with custom rates</summary>
+            [QueryParameter("include_custom_rates")]
+            public bool? IncludeCustomRates { get; set; }
+            /// <summary>Include/exclude voices that are live moderated</summary>
+            [QueryParameter("include_live_moderated")]
+            public bool? IncludeLiveModerated { get; set; }
+            /// <summary>Filter voices with a minimum notice period of the given number of days.</summary>
+            [QueryParameter("min_notice_period_days")]
+            public int? MinNoticePeriodDays { get; set; }
+            /// <summary>Filter voices by public owner ID</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("owner_id")]
+            public string? OwnerId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("owner_id")]
+            public string OwnerId { get; set; }
+#endif
+            /// <summary>Use-case used for filtering</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("use_cases")]
+            public string[]? UseCases { get; set; }
+#nullable restore
+#else
+            [QueryParameter("use_cases")]
+            public string[] UseCases { get; set; }
+#endif
         }
     }
 }

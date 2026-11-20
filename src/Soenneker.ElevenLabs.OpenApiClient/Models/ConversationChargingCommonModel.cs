@@ -140,7 +140,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModelTtsUsage TtsUsage { get => _explicitNullValueTtsUsage; set { _explicitNullValueTtsUsage = value; AdditionalData?.Remove("tts_usage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tts_usage"); else _explicitNullProperties?.Remove("tts_usage"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModelTtsUsage _explicitNullValueTtsUsage = default!;
 #endif
-        /// <summary>Credits charged as the voice actor reward for the Voice Library voices this conversation used. It is not included in `cost`.</summary>
+        /// <summary>Credits charged as the voice owner fee for the custom rate voices this conversation used. It is not included in `cost`.</summary>
         public int? VoiceSurchargeCharge { get => _explicitNullValueVoiceSurchargeCharge; set { _explicitNullValueVoiceSurchargeCharge = value; AdditionalData?.Remove("voice_surcharge_charge"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_surcharge_charge"); else _explicitNullProperties?.Remove("voice_surcharge_charge"); } }
         private int? _explicitNullValueVoiceSurchargeCharge = default!;
         /// <summary>

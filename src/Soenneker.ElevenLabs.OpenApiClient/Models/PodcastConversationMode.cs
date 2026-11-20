@@ -36,8 +36,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastConversationModeData _explicitNullValueConversation = default!;
 #endif
         /// <summary>The type of podcast to create.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastConversationModeType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
-        private global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastConversationModeType? _explicitNullValueType = default!;
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastConversationMode"/> and sets the default values.
         /// </summary>
@@ -64,7 +64,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "conversation", n => { Conversation = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastConversationModeData>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastConversationModeData.CreateFromDiscriminatorValue); } },
-                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastConversationModeType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>
@@ -75,7 +75,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastConversationModeData>("conversation", Conversation);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastConversationModeType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationType>("type", Type);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

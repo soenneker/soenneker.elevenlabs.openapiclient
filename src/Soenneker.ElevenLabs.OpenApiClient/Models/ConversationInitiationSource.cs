@@ -79,6 +79,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         FlutterSdk,
         #pragma warning restore CS1591
+        [EnumMember(Value = "unity_sdk")]
+        #pragma warning disable CS1591
+        UnitySdk,
+        #pragma warning restore CS1591
         [EnumMember(Value = "zendesk_integration")]
         #pragma warning disable CS1591
         ZendeskIntegration,

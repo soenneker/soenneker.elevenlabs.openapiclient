@@ -28,6 +28,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if (parseNode.GetChildNode("max_soft_timeouts_per_generation") is { } nullNodeMaxSoftTimeoutsPerGeneration && nullNodeMaxSoftTimeoutsPerGeneration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxSoftTimeoutsPerGeneration = null;
             if (parseNode.GetChildNode("message") is null) { _explicitNullValueMessage = default!; _explicitNullProperties?.Remove("message"); }
             else if (parseNode.GetChildNode("message") is { } nullNodeMessage && nullNodeMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Message = null;
+            if (parseNode.GetChildNode("pause_after_filler") is null) { _explicitNullValuePauseAfterFiller = default!; _explicitNullProperties?.Remove("pause_after_filler"); }
+            else if (parseNode.GetChildNode("pause_after_filler") is { } nullNodePauseAfterFiller && nullNodePauseAfterFiller.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PauseAfterFiller = null;
             if (parseNode.GetChildNode("randomize_fillers") is null) { _explicitNullValueRandomizeFillers = default!; _explicitNullProperties?.Remove("randomize_fillers"); }
             else if (parseNode.GetChildNode("randomize_fillers") is { } nullNodeRandomizeFillers && nullNodeRandomizeFillers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RandomizeFillers = null;
             if (parseNode.GetChildNode("timeout_seconds") is null) { _explicitNullValueTimeoutSeconds = default!; _explicitNullProperties?.Remove("timeout_seconds"); }
@@ -74,6 +76,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; AdditionalData?.Remove("message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
         private string _explicitNullValueMessage = default!;
 #endif
+        /// <summary>If enabled, leave a short pause after a filler message before the agent&apos;s response, so the two do not run together.</summary>
+        public bool? PauseAfterFiller { get => _explicitNullValuePauseAfterFiller; set { _explicitNullValuePauseAfterFiller = value; AdditionalData?.Remove("pause_after_filler"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pause_after_filler"); else _explicitNullProperties?.Remove("pause_after_filler"); } }
+        private bool? _explicitNullValuePauseAfterFiller = default!;
         /// <summary>If enabled, shuffle the order of static soft timeout messages once at the start of each turn. Only applies when use_llm_generated_message is false.</summary>
         public bool? RandomizeFillers { get => _explicitNullValueRandomizeFillers; set { _explicitNullValueRandomizeFillers = value; AdditionalData?.Remove("randomize_fillers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("randomize_fillers"); else _explicitNullProperties?.Remove("randomize_fillers"); } }
         private bool? _explicitNullValueRandomizeFillers = default!;
@@ -92,6 +97,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             DisableUntilFirstUserMessage = false;
             MaxSoftTimeoutsPerGeneration = 1;
             Message = "Hhmmmm...yeah.";
+            PauseAfterFiller = false;
             RandomizeFillers = false;
             TimeoutSeconds = -1.0;
             UseLlmGeneratedMessage = false;
@@ -112,13 +118,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(8)
+            return new Dictionary<string, Action<IParseNode>>(9)
             {
                 { "additional_soft_timeout_messages", n => { AdditionalSoftTimeoutMessages = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "disable_until_first_user_message", n => { DisableUntilFirstUserMessage = n.GetBoolValue(); } },
                 { "llm_generated_message_prompt_override", n => { LlmGeneratedMessagePromptOverride = n.GetStringValue(); } },
                 { "max_soft_timeouts_per_generation", n => { MaxSoftTimeoutsPerGeneration = n.GetIntValue(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
+                { "pause_after_filler", n => { PauseAfterFiller = n.GetBoolValue(); } },
                 { "randomize_fillers", n => { RandomizeFillers = n.GetBoolValue(); } },
                 { "timeout_seconds", n => { TimeoutSeconds = n.GetDoubleValue(); } },
                 { "use_llm_generated_message", n => { UseLlmGeneratedMessage = n.GetBoolValue(); } },
@@ -136,6 +143,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("llm_generated_message_prompt_override", LlmGeneratedMessagePromptOverride);
             writer.WriteIntValue("max_soft_timeouts_per_generation", MaxSoftTimeoutsPerGeneration);
             writer.WriteStringValue("message", Message);
+            writer.WriteBoolValue("pause_after_filler", PauseAfterFiller);
             writer.WriteBoolValue("randomize_fillers", RandomizeFillers);
             writer.WriteDoubleValue("timeout_seconds", TimeoutSeconds);
             writer.WriteBoolValue("use_llm_generated_message", UseLlmGeneratedMessage);

@@ -25,6 +25,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if (parseNode.GetChildNode("phone_number") is { } nullNodePhoneNumber && nullNodePhoneNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhoneNumber = null;
             if (parseNode.GetChildNode("phone_numbers") is null) { _explicitNullValuePhoneNumbers = default!; _explicitNullProperties?.Remove("phone_numbers"); }
             else if (parseNode.GetChildNode("phone_numbers") is { } nullNodePhoneNumbers && nullNodePhoneNumbers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhoneNumbers = null;
+            if (parseNode.GetChildNode("timezone_override") is null) { _explicitNullValueTimezoneOverride = default!; _explicitNullProperties?.Remove("timezone_override"); }
+            else if (parseNode.GetChildNode("timezone_override") is { } nullNodeTimezoneOverride && nullNodeTimezoneOverride.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimezoneOverride = null;
             if (parseNode.GetChildNode("whatsapp_user_id") is null) { _explicitNullValueWhatsappUserId = default!; _explicitNullProperties?.Remove("whatsapp_user_id"); }
             else if (parseNode.GetChildNode("whatsapp_user_id") is { } nullNodeWhatsappUserId && nullNodeWhatsappUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WhatsappUserId = null;
         }
@@ -71,6 +73,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public List<string> PhoneNumbers { get => _explicitNullValuePhoneNumbers; set { _explicitNullValuePhoneNumbers = value; AdditionalData?.Remove("phone_numbers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_numbers"); else _explicitNullProperties?.Remove("phone_numbers"); } }
         private List<string> _explicitNullValuePhoneNumbers = default!;
 #endif
+        /// <summary>IANA timezone to read the calling windows and callback times in for this recipient, overriding the campaign&apos;s.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TimezoneOverride { get => _explicitNullValueTimezoneOverride; set { _explicitNullValueTimezoneOverride = value; AdditionalData?.Remove("timezone_override"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timezone_override"); else _explicitNullProperties?.Remove("timezone_override"); } }
+        private string? _explicitNullValueTimezoneOverride = default!;
+#nullable restore
+#else
+        public string TimezoneOverride { get => _explicitNullValueTimezoneOverride; set { _explicitNullValueTimezoneOverride = value; AdditionalData?.Remove("timezone_override"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timezone_override"); else _explicitNullProperties?.Remove("timezone_override"); } }
+        private string _explicitNullValueTimezoneOverride = default!;
+#endif
         /// <summary>The contact&apos;s WhatsApp user ID. WhatsApp campaigns use it instead of the phone numbers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -104,12 +116,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(5)
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "conversation_initiation_client_data", n => { ConversationInitiationClientData = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SubmitCampaignRecipientConversationInitiationClientData>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SubmitCampaignRecipientConversationInitiationClientData.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "phone_number", n => { PhoneNumber = n.GetStringValue(); } },
                 { "phone_numbers", n => { PhoneNumbers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "timezone_override", n => { TimezoneOverride = n.GetStringValue(); } },
                 { "whatsapp_user_id", n => { WhatsappUserId = n.GetStringValue(); } },
             };
         }
@@ -124,6 +137,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("phone_number", PhoneNumber);
             writer.WriteCollectionOfPrimitiveValues<string>("phone_numbers", PhoneNumbers);
+            writer.WriteStringValue("timezone_override", TimezoneOverride);
             writer.WriteStringValue("whatsapp_user_id", WhatsappUserId);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
