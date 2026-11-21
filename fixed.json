@@ -90579,6 +90579,7 @@
         "required": [
           "tier_id",
           "display_name",
+          "currency",
           "tier_economics"
         ],
         "type": "object",
@@ -90590,6 +90591,9 @@
           "display_name": {
             "title": "Display Name",
             "type": "string"
+          },
+          "currency": {
+            "$ref": "#/components/schemas/ResellerTierResponseCurrency"
           },
           "tier_economics": {
             "description": "A tier\u0027s prices and the limits shown on its tier card.",
@@ -146716,6 +146720,267 @@
             {
               "value": "failed",
               "name": "Failed"
+            }
+          ]
+        }
+      },
+      "ResellerTierResponseCurrency": {
+        "examples": [
+          "USD"
+        ],
+        "title": "Currency",
+        "enum": [
+          "USD",
+          "EUR",
+          "GBP",
+          "PLN",
+          "CAD",
+          "AUD",
+          "CHF",
+          "SEK",
+          "NOK",
+          "DKK",
+          "ISK",
+          "CZK",
+          "HUF",
+          "RON",
+          "BGN",
+          "JPY",
+          "CNY",
+          "TWD",
+          "INR",
+          "BRL",
+          "MXN",
+          "KRW",
+          "SGD",
+          "HKD",
+          "NZD",
+          "ZAR",
+          "AED",
+          "SAR",
+          "QAR",
+          "KWD",
+          "ILS",
+          "TRY",
+          "THB",
+          "IDR",
+          "MYR",
+          "PHP",
+          "VND",
+          "BDT",
+          "RUB",
+          "UAH",
+          "CLP",
+          "COP",
+          "ARS",
+          "PEN",
+          "EGP",
+          "NGN",
+          "KES",
+          "PKR",
+          "GEL"
+        ],
+        "type": "string",
+        "description": "What the prices are in. The same for every tier on a ladder.",
+        "x-ms-enum": {
+          "name": "ResellerTierResponseCurrency",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "USD",
+              "name": "Usd"
+            },
+            {
+              "value": "EUR",
+              "name": "Eur"
+            },
+            {
+              "value": "GBP",
+              "name": "Gbp"
+            },
+            {
+              "value": "PLN",
+              "name": "Pln"
+            },
+            {
+              "value": "CAD",
+              "name": "Cad"
+            },
+            {
+              "value": "AUD",
+              "name": "Aud"
+            },
+            {
+              "value": "CHF",
+              "name": "Chf"
+            },
+            {
+              "value": "SEK",
+              "name": "Sek"
+            },
+            {
+              "value": "NOK",
+              "name": "Nok"
+            },
+            {
+              "value": "DKK",
+              "name": "Dkk"
+            },
+            {
+              "value": "ISK",
+              "name": "Isk"
+            },
+            {
+              "value": "CZK",
+              "name": "Czk"
+            },
+            {
+              "value": "HUF",
+              "name": "Huf"
+            },
+            {
+              "value": "RON",
+              "name": "Ron"
+            },
+            {
+              "value": "BGN",
+              "name": "Bgn"
+            },
+            {
+              "value": "JPY",
+              "name": "Jpy"
+            },
+            {
+              "value": "CNY",
+              "name": "Cny"
+            },
+            {
+              "value": "TWD",
+              "name": "Twd"
+            },
+            {
+              "value": "INR",
+              "name": "Inr"
+            },
+            {
+              "value": "BRL",
+              "name": "Brl"
+            },
+            {
+              "value": "MXN",
+              "name": "Mxn"
+            },
+            {
+              "value": "KRW",
+              "name": "Krw"
+            },
+            {
+              "value": "SGD",
+              "name": "Sgd"
+            },
+            {
+              "value": "HKD",
+              "name": "Hkd"
+            },
+            {
+              "value": "NZD",
+              "name": "Nzd"
+            },
+            {
+              "value": "ZAR",
+              "name": "Zar"
+            },
+            {
+              "value": "AED",
+              "name": "Aed"
+            },
+            {
+              "value": "SAR",
+              "name": "Sar"
+            },
+            {
+              "value": "QAR",
+              "name": "Qar"
+            },
+            {
+              "value": "KWD",
+              "name": "Kwd"
+            },
+            {
+              "value": "ILS",
+              "name": "Ils"
+            },
+            {
+              "value": "TRY",
+              "name": "TryValue"
+            },
+            {
+              "value": "THB",
+              "name": "Thb"
+            },
+            {
+              "value": "IDR",
+              "name": "Idr"
+            },
+            {
+              "value": "MYR",
+              "name": "Myr"
+            },
+            {
+              "value": "PHP",
+              "name": "Php"
+            },
+            {
+              "value": "VND",
+              "name": "Vnd"
+            },
+            {
+              "value": "BDT",
+              "name": "Bdt"
+            },
+            {
+              "value": "RUB",
+              "name": "Rub"
+            },
+            {
+              "value": "UAH",
+              "name": "Uah"
+            },
+            {
+              "value": "CLP",
+              "name": "Clp"
+            },
+            {
+              "value": "COP",
+              "name": "Cop"
+            },
+            {
+              "value": "ARS",
+              "name": "Ars"
+            },
+            {
+              "value": "PEN",
+              "name": "Pen"
+            },
+            {
+              "value": "EGP",
+              "name": "Egp"
+            },
+            {
+              "value": "NGN",
+              "name": "Ngn"
+            },
+            {
+              "value": "KES",
+              "name": "Kes"
+            },
+            {
+              "value": "PKR",
+              "name": "Pkr"
+            },
+            {
+              "value": "GEL",
+              "name": "Gel"
             }
           ]
         }
