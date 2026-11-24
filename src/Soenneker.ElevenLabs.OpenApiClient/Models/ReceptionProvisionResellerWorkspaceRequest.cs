@@ -19,6 +19,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("business_name") is null) { _explicitNullValueBusinessName = default!; _explicitNullProperties?.Remove("business_name"); }
             else if (parseNode.GetChildNode("business_name") is { } nullNodeBusinessName && nullNodeBusinessName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BusinessName = null;
+            if (parseNode.GetChildNode("charge_customer") is null) { _explicitNullValueChargeCustomer = default!; _explicitNullProperties?.Remove("charge_customer"); }
+            else if (parseNode.GetChildNode("charge_customer") is { } nullNodeChargeCustomer && nullNodeChargeCustomer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChargeCustomer = null;
             if (parseNode.GetChildNode("complete_onboarding") is null) { _explicitNullValueCompleteOnboarding = default!; _explicitNullProperties?.Remove("complete_onboarding"); }
             else if (parseNode.GetChildNode("complete_onboarding") is { } nullNodeCompleteOnboarding && nullNodeCompleteOnboarding.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompleteOnboarding = null;
             if (parseNode.GetChildNode("idempotency_key") is null) { _explicitNullValueIdempotencyKey = default!; _explicitNullProperties?.Remove("idempotency_key"); }
@@ -45,6 +47,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string BusinessName { get => _explicitNullValueBusinessName; set { _explicitNullValueBusinessName = value; AdditionalData?.Remove("business_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("business_name"); else _explicitNullProperties?.Remove("business_name"); } }
         private string _explicitNullValueBusinessName = default!;
 #endif
+        /// <summary>Bill the workspace&apos;s own customer instead of the reseller: it checks out and sees its billing itself, and the reseller earns a commission. Only for a reseller on standard billing.</summary>
+        public bool? ChargeCustomer { get => _explicitNullValueChargeCustomer; set { _explicitNullValueChargeCustomer = value; AdditionalData?.Remove("charge_customer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("charge_customer"); else _explicitNullProperties?.Remove("charge_customer"); } }
+        private bool? _explicitNullValueChargeCustomer = default!;
         /// <summary>Finish setup right away, as `POST /v1/reception/reseller/workspaces/{workspace_id}/complete-onboarding` does. Best-effort: `onboarding_completed_at_unix` stays null on failure, and that call can be retried.</summary>
         public bool? CompleteOnboarding { get => _explicitNullValueCompleteOnboarding; set { _explicitNullValueCompleteOnboarding = value; AdditionalData?.Remove("complete_onboarding"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("complete_onboarding"); else _explicitNullProperties?.Remove("complete_onboarding"); } }
         private bool? _explicitNullValueCompleteOnboarding = default!;
@@ -97,6 +102,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public ReceptionProvisionResellerWorkspaceRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            ChargeCustomer = false;
             CompleteOnboarding = false;
         }
         /// <summary>
@@ -115,9 +121,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(7)
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "business_name", n => { BusinessName = n.GetStringValue(); } },
+                { "charge_customer", n => { ChargeCustomer = n.GetBoolValue(); } },
                 { "complete_onboarding", n => { CompleteOnboarding = n.GetBoolValue(); } },
                 { "idempotency_key", n => { IdempotencyKey = n.GetStringValue(); } },
                 { "members", n => { Members = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.TeamInviteRequest>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TeamInviteRequest.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -134,6 +141,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("business_name", BusinessName);
+            writer.WriteBoolValue("charge_customer", ChargeCustomer);
             writer.WriteBoolValue("complete_onboarding", CompleteOnboarding);
             writer.WriteStringValue("idempotency_key", IdempotencyKey);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.TeamInviteRequest>("members", Members);

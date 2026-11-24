@@ -166,7 +166,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.OutboundCampaigns.Campaig
             /// <summary>How many items to return at most.</summary>
             [QueryParameter("page_size")]
             public int? PageSize { get; set; }
-            /// <summary>Only campaigns whose name contains this text.</summary>
+            /// <summary>Only campaigns whose name contains this text, or whose ID is exactly this text.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("search")]

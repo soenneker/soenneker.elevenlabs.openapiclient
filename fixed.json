@@ -134,6 +134,28 @@
             }
           },
           {
+            "name": "sources",
+            "in": "query",
+            "description": "Sources of the generated history items, matching any of them. Cannot be combined with source.",
+            "schema": {
+              "examples": [
+                [
+                  "TTS",
+                  "STS"
+                ]
+              ],
+              "title": "Sources",
+              "type": [
+                "null",
+                "array"
+              ],
+              "items": {
+                "$ref": "#/components/schemas/GetSpeechHistorySourcesParameterItem"
+              },
+              "description": "Sources of the generated history items, matching any of them. Cannot be combined with source."
+            }
+          },
+          {
             "name": "xi-api-key",
             "in": "header",
             "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
@@ -31268,7 +31290,7 @@
           {
             "name": "search",
             "in": "query",
-            "description": "Only campaigns whose name contains this text.",
+            "description": "Only campaigns whose name contains this text, or whose ID is exactly this text.",
             "schema": {
               "title": "Search",
               "maxLength": 256,
@@ -31276,7 +31298,7 @@
                 "null",
                 "string"
               ],
-              "description": "Only campaigns whose name contains this text."
+              "description": "Only campaigns whose name contains this text, or whose ID is exactly this text."
             }
           },
           {
@@ -76528,6 +76550,9 @@
           },
           "output_total": {
             "$ref": "#/components/schemas/LlmTokensCategoryUsage"
+          },
+          "output_total_reasoning_portion": {
+            "$ref": "#/components/schemas/LlmTokensCategoryUsage"
           }
         }
       },
@@ -85488,6 +85513,12 @@
           "subscription": {
             "$ref": "#/components/schemas/ProvisionResellerWorkspaceResponseSubscription"
           },
+          "charge_customer": {
+            "title": "Charge Customer",
+            "type": "boolean",
+            "description": "The workspace pays for its own subscription, so its tier can\u0027t be assigned or changed here.",
+            "default": false
+          },
           "has_payment_issue": {
             "title": "Has Payment Issue",
             "type": "boolean",
@@ -88358,6 +88389,12 @@
           "vertical": {
             "$ref": "#/components/schemas/ReceptionProvisionResellerWorkspaceRequestVertical"
           },
+          "charge_customer": {
+            "title": "Charge Customer",
+            "type": "boolean",
+            "description": "Bill the workspace\u0027s own customer instead of the reseller: it checks out and sees its billing itself, and the reseller earns a commission. Only for a reseller on standard billing.",
+            "default": false
+          },
           "subscription": {
             "$ref": "#/components/schemas/ReceptionProvisionResellerWorkspaceRequestSubscription"
           },
@@ -90765,6 +90802,12 @@
           },
           "subscription": {
             "$ref": "#/components/schemas/ProvisionResellerWorkspaceResponseSubscription"
+          },
+          "charge_customer": {
+            "title": "Charge Customer",
+            "type": "boolean",
+            "description": "The workspace pays for its own subscription, so its tier can\u0027t be assigned or changed here.",
+            "default": false
           },
           "has_payment_issue": {
             "title": "Has Payment Issue",
@@ -123913,7 +123956,7 @@
             "description": "When that scheduled downgrade takes effect."
           }
         },
-        "description": "The reseller-managed subscription, when this workspace has one. None means nothing is sold here yet and a tier can be assigned.",
+        "description": "The reseller-managed subscription, when this workspace has one. None means the reseller sells nothing here: no tier is assigned yet, or the workspace pays for its own subscription (see charge_customer).",
         "x-client-original-nullable-union": {
           "anyOf": [
             {
@@ -123923,7 +123966,7 @@
               "type": "null"
             }
           ],
-          "description": "The reseller-managed subscription, when this workspace has one. None means nothing is sold here yet and a tier can be assigned."
+          "description": "The reseller-managed subscription, when this workspace has one. None means the reseller sells nothing here: no tier is assigned yet, or the workspace pays for its own subscription (see charge_customer)."
         }
       },
       "QueryArrayJsonSchemaPropertyInputItems": {
@@ -151518,6 +151561,28 @@
             "type": "null"
           }
         ]
+      },
+      "GetSpeechHistorySourcesParameterItem": {
+        "enum": [
+          "TTS",
+          "STS",
+          "Flows"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "GetSpeechHistorySourcesParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "TTS",
+              "name": "Tts"
+            },
+            {
+              "value": "STS",
+              "name": "Sts"
+            }
+          ]
+        }
       },
       "SoundGenerationOutputFormatParameter": {
         "title": "Output format of the generated audio.",
@@ -220717,7 +220782,7 @@
           "description": "When that scheduled downgrade takes effect."
         }
       },
-      "description": "The reseller-managed subscription, when this workspace has one. None means nothing is sold here yet and a tier can be assigned.",
+      "description": "The reseller-managed subscription, when this workspace has one. None means the reseller sells nothing here: no tier is assigned yet, or the workspace pays for its own subscription (see charge_customer).",
       "x-client-original-nullable-union": {
         "anyOf": [
           {
@@ -220727,7 +220792,7 @@
             "type": "null"
           }
         ],
-        "description": "The reseller-managed subscription, when this workspace has one. None means nothing is sold here yet and a tier can be assigned."
+        "description": "The reseller-managed subscription, when this workspace has one. None means the reseller sells nothing here: no tier is assigned yet, or the workspace pays for its own subscription (see charge_customer)."
       }
     },
     "ResponseUnitTestModelFromConversationMetadata": {

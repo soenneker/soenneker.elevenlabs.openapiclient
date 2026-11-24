@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// The reseller-managed subscription, when this workspace has one. None means nothing is sold here yet and a tier can be assigned.
+    /// The reseller-managed subscription, when this workspace has one. None means the reseller sells nothing here: no tier is assigned yet, or the workspace pays for its own subscription (see charge_customer).
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ProvisionResellerWorkspaceResponseSubscription : IAdditionalDataHolder, IParsable

@@ -23,6 +23,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if (parseNode.GetChildNode("business_name") is { } nullNodeBusinessName && nullNodeBusinessName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BusinessName = null;
             if (parseNode.GetChildNode("calls_last_30_days") is null) { _explicitNullValueCallsLast30Days = default!; _explicitNullProperties?.Remove("calls_last_30_days"); }
             else if (parseNode.GetChildNode("calls_last_30_days") is { } nullNodeCallsLast30Days && nullNodeCallsLast30Days.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CallsLast30Days = null;
+            if (parseNode.GetChildNode("charge_customer") is null) { _explicitNullValueChargeCustomer = default!; _explicitNullProperties?.Remove("charge_customer"); }
+            else if (parseNode.GetChildNode("charge_customer") is { } nullNodeChargeCustomer && nullNodeChargeCustomer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChargeCustomer = null;
             if (parseNode.GetChildNode("created_at_unix") is null) { _explicitNullValueCreatedAtUnix = default!; _explicitNullProperties?.Remove("created_at_unix"); }
             else if (parseNode.GetChildNode("created_at_unix") is { } nullNodeCreatedAtUnix && nullNodeCreatedAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAtUnix = null;
             if (parseNode.GetChildNode("has_payment_issue") is null) { _explicitNullValueHasPaymentIssue = default!; _explicitNullProperties?.Remove("has_payment_issue"); }
@@ -62,6 +64,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The calls_last_30_days property</summary>
         public int? CallsLast30Days { get => _explicitNullValueCallsLast30Days; set { _explicitNullValueCallsLast30Days = value; AdditionalData?.Remove("calls_last_30_days"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("calls_last_30_days"); else _explicitNullProperties?.Remove("calls_last_30_days"); } }
         private int? _explicitNullValueCallsLast30Days = default!;
+        /// <summary>The workspace pays for its own subscription, so its tier can&apos;t be assigned or changed here.</summary>
+        public bool? ChargeCustomer { get => _explicitNullValueChargeCustomer; set { _explicitNullValueChargeCustomer = value; AdditionalData?.Remove("charge_customer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("charge_customer"); else _explicitNullProperties?.Remove("charge_customer"); } }
+        private bool? _explicitNullValueChargeCustomer = default!;
         /// <summary>The created_at_unix property</summary>
         public int? CreatedAtUnix { get => _explicitNullValueCreatedAtUnix; set { _explicitNullValueCreatedAtUnix = value; AdditionalData?.Remove("created_at_unix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at_unix"); else _explicitNullProperties?.Remove("created_at_unix"); } }
         private int? _explicitNullValueCreatedAtUnix = default!;
@@ -74,7 +79,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The receptionist_count property</summary>
         public int? ReceptionistCount { get => _explicitNullValueReceptionistCount; set { _explicitNullValueReceptionistCount = value; AdditionalData?.Remove("receptionist_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("receptionist_count"); else _explicitNullProperties?.Remove("receptionist_count"); } }
         private int? _explicitNullValueReceptionistCount = default!;
-        /// <summary>The reseller-managed subscription, when this workspace has one. None means nothing is sold here yet and a tier can be assigned.</summary>
+        /// <summary>The reseller-managed subscription, when this workspace has one. None means the reseller sells nothing here: no tier is assigned yet, or the workspace pays for its own subscription (see charge_customer).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProvisionResellerWorkspaceResponseSubscription? Subscription { get => _explicitNullValueSubscription; set { _explicitNullValueSubscription = value; AdditionalData?.Remove("subscription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscription"); else _explicitNullProperties?.Remove("subscription"); } }
@@ -100,6 +105,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public ResellerWorkspaceSummary()
         {
             AdditionalData = new Dictionary<string, object>();
+            ChargeCustomer = false;
             HasPaymentIssue = false;
         }
         /// <summary>
@@ -118,11 +124,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(9)
+            return new Dictionary<string, Action<IParseNode>>(10)
             {
                 { "billing_tier", n => { BillingTier = n.GetStringValue(); } },
                 { "business_name", n => { BusinessName = n.GetStringValue(); } },
                 { "calls_last_30_days", n => { CallsLast30Days = n.GetIntValue(); } },
+                { "charge_customer", n => { ChargeCustomer = n.GetBoolValue(); } },
                 { "created_at_unix", n => { CreatedAtUnix = n.GetIntValue(); } },
                 { "has_payment_issue", n => { HasPaymentIssue = n.GetBoolValue(); } },
                 { "onboarding_completed_at_unix", n => { OnboardingCompletedAtUnix = n.GetIntValue(); } },
@@ -141,6 +148,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("billing_tier", BillingTier);
             writer.WriteStringValue("business_name", BusinessName);
             writer.WriteIntValue("calls_last_30_days", CallsLast30Days);
+            writer.WriteBoolValue("charge_customer", ChargeCustomer);
             writer.WriteIntValue("created_at_unix", CreatedAtUnix);
             writer.WriteBoolValue("has_payment_issue", HasPaymentIssue);
             writer.WriteIntValue("onboarding_completed_at_unix", OnboardingCompletedAtUnix);

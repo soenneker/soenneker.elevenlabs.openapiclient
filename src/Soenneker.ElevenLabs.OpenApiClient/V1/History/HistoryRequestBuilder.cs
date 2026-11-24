@@ -41,7 +41,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.History
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public HistoryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/history{?date_after_unix*,date_before_unix*,model_id*,page_size*,search*,sort_direction*,source*,start_after_history_item_id*,voice_id*}", pathParameters)
+        public HistoryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/history{?date_after_unix*,date_before_unix*,model_id*,page_size*,search*,sort_direction*,source*,sources*,start_after_history_item_id*,voice_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.History
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public HistoryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/history{?date_after_unix*,date_before_unix*,model_id*,page_size*,search*,sort_direction*,source*,start_after_history_item_id*,voice_id*}", rawUrl)
+        public HistoryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/history{?date_after_unix*,date_before_unix*,model_id*,page_size*,search*,sort_direction*,source*,sources*,start_after_history_item_id*,voice_id*}", rawUrl)
         {
         }
         /// <summary>
@@ -159,6 +159,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.History
 #else
             [QueryParameter("source")]
             public string Source { get; set; }
+#endif
+            /// <summary>Sources of the generated history items, matching any of them. Cannot be combined with source.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("sources")]
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSpeechHistorySourcesParameterItem[]? Sources { get; set; }
+#nullable restore
+#else
+            [QueryParameter("sources")]
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSpeechHistorySourcesParameterItem[] Sources { get; set; }
 #endif
             /// <summary>After which ID to start fetching, use this parameter to paginate across a large collection of history items. In case this parameter is not provided history items will be fetched starting from the most recently created one ordered descending by their creation date.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
