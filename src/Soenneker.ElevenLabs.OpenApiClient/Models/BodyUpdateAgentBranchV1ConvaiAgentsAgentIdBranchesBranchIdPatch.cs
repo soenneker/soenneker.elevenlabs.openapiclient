@@ -27,11 +27,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
             if (parseNode.GetChildNode("protection_status") is null) { _explicitNullValueProtectionStatus = default!; _explicitNullProperties?.Remove("protection_status"); }
             else if (parseNode.GetChildNode("protection_status") is { } nullNodeProtectionStatus && nullNodeProtectionStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProtectionStatus = null;
+            if (parseNode.GetChildNode("sync_branch_id") is null) { _explicitNullValueSyncBranchId = default!; _explicitNullProperties?.Remove("sync_branch_id"); }
+            else if (parseNode.GetChildNode("sync_branch_id") is { } nullNodeSyncBranchId && nullNodeSyncBranchId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SyncBranchId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>When true, rebase this branch onto main automatically after each new main version. Cannot be enabled on the main branch.</summary>
+        /// <summary>When true, rebase this branch automatically after each new version of the branch it is kept in sync with (`sync_branch_id`, main by default). Cannot be enabled on the main branch, or while this branch is more protected than a non-main branch it is kept in sync with.</summary>
         public bool? AutoRebase { get => _explicitNullValueAutoRebase; set { _explicitNullValueAutoRebase = value; AdditionalData?.Remove("auto_rebase"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_rebase"); else _explicitNullProperties?.Remove("auto_rebase"); } }
         private bool? _explicitNullValueAutoRebase = default!;
         /// <summary>New description for the branch. Pass an empty string to clear it.</summary>
@@ -60,6 +62,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The protection level for the branch</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.BranchProtectionStatus? ProtectionStatus { get => _explicitNullValueProtectionStatus; set { _explicitNullValueProtectionStatus = value; AdditionalData?.Remove("protection_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("protection_status"); else _explicitNullProperties?.Remove("protection_status"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.BranchProtectionStatus? _explicitNullValueProtectionStatus = default!;
+        /// <summary>ID of the branch to keep this branch in sync with: its new versions are pulled in automatically while `auto_rebase` is on. Pass the main branch&apos;s ID to sync with main again. Must be the main branch or the active branch this branch was created from (`parent_branch_id`). At most 10 branches can be kept in sync with one another in a row. Cannot be set on the main branch.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SyncBranchId { get => _explicitNullValueSyncBranchId; set { _explicitNullValueSyncBranchId = value; AdditionalData?.Remove("sync_branch_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sync_branch_id"); else _explicitNullProperties?.Remove("sync_branch_id"); } }
+        private string? _explicitNullValueSyncBranchId = default!;
+#nullable restore
+#else
+        public string SyncBranchId { get => _explicitNullValueSyncBranchId; set { _explicitNullValueSyncBranchId = value; AdditionalData?.Remove("sync_branch_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sync_branch_id"); else _explicitNullProperties?.Remove("sync_branch_id"); } }
+        private string _explicitNullValueSyncBranchId = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateAgentBranchV1ConvaiAgentsAgentIdBranchesBranchIdPatch"/> and sets the default values.
         /// </summary>
@@ -83,13 +95,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(5)
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "auto_rebase", n => { AutoRebase = n.GetBoolValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "is_archived", n => { IsArchived = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "protection_status", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BranchProtectionStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueProtectionStatus = default; _explicitNullProperties?.Remove("protection_status"); AdditionalData["protection_status"] = unknown; } else { ProtectionStatus = parsed; AdditionalData.Remove("protection_status"); } } },
+                { "sync_branch_id", n => { SyncBranchId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -104,6 +117,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("is_archived", IsArchived);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BranchProtectionStatus>("protection_status", ProtectionStatus);
+            writer.WriteStringValue("sync_branch_id", SyncBranchId);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

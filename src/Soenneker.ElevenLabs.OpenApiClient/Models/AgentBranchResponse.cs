@@ -137,7 +137,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The protection_status property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.BranchProtectionStatus? ProtectionStatus { get => _explicitNullValueProtectionStatus; set { _explicitNullValueProtectionStatus = value; AdditionalData?.Remove("protection_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("protection_status"); else _explicitNullProperties?.Remove("protection_status"); } }
         private global::Soenneker.ElevenLabs.OpenApiClient.Models.BranchProtectionStatus? _explicitNullValueProtectionStatus = default!;
-        /// <summary>Set while the branch is kept in sync with another branch (Main today), pulling in its new versions automatically. Null when it is not synced.</summary>
+        /// <summary>Set while the branch is kept in sync with another branch: automatically (`auto_rebase`), or with a chosen branch other than main. Null otherwise.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchResponseSyncStatus? SyncStatus { get => _explicitNullValueSyncStatus; set { _explicitNullValueSyncStatus = value; AdditionalData?.Remove("sync_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sync_status"); else _explicitNullProperties?.Remove("sync_status"); } }

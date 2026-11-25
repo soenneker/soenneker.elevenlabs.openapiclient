@@ -89,7 +89,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchResponse>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update agent branch properties such as name, description, archiving status, protection level, and auto-rebase onto main
+        /// Update agent branch properties such as name, description, archiving status, protection level, auto-rebase, and the branch it is kept in sync with
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -135,7 +135,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update agent branch properties such as name, description, archiving status, protection level, and auto-rebase onto main
+        /// Update agent branch properties such as name, description, archiving status, protection level, auto-rebase, and the branch it is kept in sync with
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -29459,7 +29459,7 @@
           "Agents Platform"
         ],
         "summary": "Update Agent Branch",
-        "description": "Update agent branch properties such as name, description, archiving status, protection level, and auto-rebase onto main",
+        "description": "Update agent branch properties such as name, description, archiving status, protection level, auto-rebase, and the branch it is kept in sync with",
         "operationId": "UpdateBranchRoute",
         "parameters": [
           {
@@ -29974,8 +29974,8 @@
           "Agents Platform"
         ],
         "summary": "Rebase A Branch Onto Main",
-        "description": "Pull changes from a source branch (defaults to main) into this branch as a new version. If both branches changed the same field, the rebase returns 409 unless \u0060conflict_resolutions\u0060 settles every conflict the rebase preview reports.",
-        "operationId": "RebaseBranchOntoMain",
+        "description": "Pull changes from a source branch (defaults to main) into this branch as a new version. If both branches changed the same field, the rebase returns 409 unless \u0060conflict_resolutions\u0060 settles every conflict the rebase preview reports. Callers with only propose access can pull into their own branch from its parent branch (their default source).",
+        "operationId": "RebaseBranchRoute",
         "parameters": [
           {
             "name": "agentId",
@@ -30057,7 +30057,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RebaseBranchOntoMain200ResponseSchema"
+                  "$ref": "#/components/schemas/RebaseBranchRoute200ResponseSchema"
                 }
               }
             }
@@ -30430,7 +30430,7 @@
           "Agents Platform"
         ],
         "summary": "Create A Merge Proposal",
-        "description": "Record a request to merge a source branch into a target branch. Anyone with edit access can open one; merging it later is gated on write access to the target branch, so this is how a change reaches a protected branch the author cannot merge into themselves.",
+        "description": "Create a request to merge a source branch into a target branch. Callers with only propose access can open a proposal from a branch they own into its parent. Merging requires write access to the target branch.",
         "operationId": "CreateMergeProposalRoute",
         "parameters": [
           {
@@ -39840,7 +39840,7 @@
           "access:all"
         ],
         "summary": "Get Workspace Cost Usage",
-        "description": "Returns the cost of the workspace\u0027s usage over time, for workspaces billed by cost. Usage is bucketed by UTC day. The response is a tabular structure with columns, column_types, column_units, and rows, with one row per group and bucket. \u0060total_cost\u0060 is the cost in the workspace\u0027s currency and \u0060total_charge_count\u0060 the billed quantity. Usage can be grouped or filtered by at most two of \u0060user_id\u0060, \u0060hashed_xi_api_key\u0060, \u0060region\u0060, \u0060reporting_workspace_id\u0060, \u0060billing_group_id\u0060, \u0060product_type\u0060, \u0060surface\u0060 and \u0060actor\u0060, and grouping by two of them requires an \u0060eq\u0060 or \u0060in\u0060 filter on one. \u0060model\u0060, \u0060request_source\u0060, \u0060fiat_charge_type\u0060 and \u0060fiat_currency\u0060 can always be added. Some id columns also get a display-name column, such as user_label, appended after the existing columns. Workspaces billed in credits should use /v1/workspace/analytics/query/usage-by-product-over-time.",
+        "description": "Returns the base cost of the workspace\u0027s usage over time, bucketed by UTC day. The response is a tabular structure with columns, column_types, column_units, and rows, with one row per group and bucket. \u0060total_cost\u0060 is the base cost in the workspace\u0027s currency (excluding overage surcharges) and \u0060total_charge_count\u0060 is the billed quantity. Usage can be grouped or filtered by at most two of \u0060user_id\u0060, \u0060hashed_xi_api_key\u0060, \u0060region\u0060, \u0060reporting_workspace_id\u0060, \u0060billing_group_id\u0060, \u0060product_type\u0060, \u0060surface\u0060 and \u0060actor\u0060, and grouping by two of them requires an \u0060eq\u0060 or \u0060in\u0060 filter on one. \u0060model\u0060, \u0060request_source\u0060, \u0060fiat_charge_type\u0060 and \u0060fiat_currency\u0060 can always be added. Some id columns also get a display-name column, such as user_label, appended after the existing columns.",
         "operationId": "WorkspaceUsage",
         "parameters": [
           {
@@ -44954,6 +44954,83 @@
         "x-fern-sdk-method-name": "create"
       }
     },
+    "/v1/reception/reseller/workspaces/{workspaceId}": {
+      "patch": {
+        "tags": [
+          "smb",
+          "reception"
+        ],
+        "summary": "Update Reseller Workspace",
+        "description": "Update a customer workspace. Only the fields sent are changed.",
+        "operationId": "SmbResellerUpdateWorkspace",
+        "parameters": [
+          {
+            "name": "workspaceId",
+            "in": "path",
+            "description": "ID of the customer workspace. Returned when you provision one; list them with \u0060GET /v1/reception/reseller/workspaces\u0060.",
+            "required": true,
+            "schema": {
+              "examples": [
+                "3f2c9a7e1b4d4c8e9a6f0b2d5e7c1a93"
+              ],
+              "title": "Workspace Id",
+              "type": "string",
+              "description": "ID of the customer workspace. Returned when you provision one; list them with \u0060GET /v1/reception/reseller/workspaces\u0060."
+            }
+          },
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": [
+                "null",
+                "string"
+              ],
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website."
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateResellerWorkspaceRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResellerWorkspaceSummary"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationError"
+                }
+              }
+            }
+          }
+        },
+        "x-fern-sdk-group-name": [
+          "reception",
+          "workspaces"
+        ],
+        "x-fern-sdk-method-name": "update"
+      }
+    },
     "/v1/reception/reseller/workspaces/{workspaceId}/complete-onboarding": {
       "post": {
         "tags": [
@@ -46116,7 +46193,7 @@
             "hello",
             "world"
           ],
-          "provider": "scribe_realtime",
+          "provider": "scribe_v3_live",
           "quality": "high",
           "user_input_audio_format": "pcm_16000"
         }
@@ -51850,6 +51927,8 @@
         "title": "AuditActivityName",
         "enum": [
           "Account Security Change",
+          "Agents User Deleted",
+          "Agents User Exported",
           "Agents User Memory Entity Deleted",
           "Agents User Memory Erased",
           "Agents User Memory Exported",
@@ -52000,6 +52079,14 @@
             {
               "value": "Account Security Change",
               "name": "AccountSecurityChange"
+            },
+            {
+              "value": "Agents User Deleted",
+              "name": "AgentsUserDeleted"
+            },
+            {
+              "value": "Agents User Exported",
+              "name": "AgentsUserExported"
             },
             {
               "value": "Agents User Memory Entity Deleted",
@@ -58145,7 +58232,15 @@
               "null",
               "boolean"
             ],
-            "description": "When true, rebase this branch onto main automatically after each new main version. Cannot be enabled on the main branch."
+            "description": "When true, rebase this branch automatically after each new version of the branch it is kept in sync with (\u0060sync_branch_id\u0060, main by default). Cannot be enabled on the main branch, or while this branch is more protected than a non-main branch it is kept in sync with."
+          },
+          "sync_branch_id": {
+            "title": "Sync Branch Id",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "ID of the branch to keep this branch in sync with: its new versions are pulled in automatically while \u0060auto_rebase\u0060 is on. Pass the main branch\u0027s ID to sync with main again. Must be the main branch or the active branch this branch was created from (\u0060parent_branch_id\u0060). At most 10 branches can be kept in sync with one another in a row. Cannot be set on the main branch."
           }
         }
       },
@@ -65913,7 +66008,7 @@
               "hello",
               "world"
             ],
-            "provider": "scribe_realtime",
+            "provider": "scribe_v3_live",
             "quality": "high",
             "user_input_audio_format": "pcm_16000"
           },
@@ -66009,7 +66104,7 @@
               "hello",
               "world"
             ],
-            "provider": "scribe_realtime",
+            "provider": "scribe_v3_live",
             "quality": "high",
             "user_input_audio_format": "pcm_16000"
           },
@@ -85533,6 +85628,9 @@
             ],
             "description": "When onboarding finished. Until then the onboarding wizard may replace or remove the workspace\u0027s business data."
           },
+          "metadata": {
+            "$ref": "#/components/schemas/ProvisionResellerWorkspaceResponseMetadataProperty"
+          },
           "member_results": {
             "title": "Member Results",
             "type": "array",
@@ -88422,6 +88520,9 @@
             "description": "Finish setup right away, as \u0060POST /v1/reception/reseller/workspaces/{workspace_id}/complete-onboarding\u0060 does. Best-effort: \u0060onboarding_completed_at_unix\u0060 stays null on failure, and that call can be retried.",
             "default": false
           },
+          "metadata": {
+            "$ref": "#/components/schemas/ReceptionProvisionResellerWorkspaceRequestMetadataProperty"
+          },
           "idempotency_key": {
             "examples": [
               "3c1d2b7e-8f4a-4e5b-9c6d-1a2b3c4d5e6f"
@@ -90822,6 +90923,9 @@
               "integer"
             ],
             "description": "When onboarding finished. Until then the onboarding wizard may replace or remove the workspace\u0027s business data."
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/ResellerWorkspaceSummaryMetadataProperty"
           }
         }
       },
@@ -98361,6 +98465,15 @@
         },
         "description": "Only fields present in the request are applied; \u0060description=None\u0060 clears it."
       },
+      "UpdateResellerWorkspaceRequest": {
+        "title": "UpdateResellerWorkspaceRequest",
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/UpdateResellerWorkspaceRequestMetadataProperty"
+          }
+        }
+      },
       "UpdateResponseUnitTestRequest": {
         "title": "UpdateResponseUnitTestRequest",
         "required": [
@@ -103253,6 +103366,14 @@
             ],
             "description": "Text and ARIA label for the new call button. Displayed when the caller already finished at least one call in order ot start the next one."
           },
+          "resume_call": {
+            "title": "Resume Call",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Text and ARIA label for the button that resumes the conversation."
+          },
           "end_call": {
             "title": "End Call",
             "type": [
@@ -103260,6 +103381,14 @@
               "string"
             ],
             "description": "Text and ARIA label for the end call button."
+          },
+          "end_chat": {
+            "title": "End Chat",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Text and ARIA label for the end chat button."
           },
           "mute_microphone": {
             "title": "Mute Microphone",
@@ -103293,6 +103422,38 @@
             ],
             "description": "ARIA label for the expand button."
           },
+          "expand_widget": {
+            "title": "Expand Widget",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "ARIA label for the header button that expands the widget."
+          },
+          "collapse_widget": {
+            "title": "Collapse Widget",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "ARIA label for the header button that collapses the widget back to its compact size."
+          },
+          "dismiss": {
+            "title": "Dismiss",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "ARIA label for the button that hides a dismissible widget."
+          },
+          "open_chat": {
+            "title": "Open Chat",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "ARIA label for the launcher button that reopens a dismissed widget."
+          },
           "copied": {
             "title": "Copied",
             "type": [
@@ -103317,6 +103478,54 @@
             ],
             "description": "Text and ARIA label for the cancel terms button."
           },
+          "end_chat_confirmation_title": {
+            "title": "End Chat Confirmation Title",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Title displayed in the confirmation dialog before ending a chat."
+          },
+          "end_chat_confirmation_description": {
+            "title": "End Chat Confirmation Description",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Description displayed in the confirmation dialog before ending a chat."
+          },
+          "end_call_confirmation_title": {
+            "title": "End Call Confirmation Title",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Title displayed in the confirmation dialog before ending a call."
+          },
+          "end_call_confirmation_description": {
+            "title": "End Call Confirmation Description",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Description displayed in the confirmation dialog before ending a call."
+          },
+          "end_call_confirm": {
+            "title": "End Call Confirm",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Text and ARIA label for the button that confirms ending a call."
+          },
+          "cancel_end_confirmation": {
+            "title": "Cancel End Confirmation",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Text and ARIA label for the button that cancels ending a chat or call."
+          },
           "listening_status": {
             "title": "Listening Status",
             "type": [
@@ -103340,6 +103549,14 @@
               "string"
             ],
             "description": "Status displayed when the agent is connecting."
+          },
+          "reconnecting_status": {
+            "title": "Reconnecting Status",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Status displayed when the agent is reconnecting."
           },
           "chatting_status": {
             "title": "Chatting Status",
@@ -103525,6 +103742,22 @@
             ],
             "description": "Text and ARIA label for the switch to voice mode button."
           },
+          "voice_mode_label": {
+            "title": "Voice Mode Label",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Label for the voice option in the conversation mode toggle."
+          },
+          "text_mode_label": {
+            "title": "Text Mode Label",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Label for the text option in the conversation mode toggle."
+          },
           "switched_to_text_mode": {
             "title": "Switched To Text Mode",
             "type": [
@@ -103645,6 +103878,14 @@
             ],
             "description": "Status text displayed while the agent is typing."
           },
+          "thinking_status": {
+            "title": "Thinking Status",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Status text displayed while the agent is thinking."
+          },
           "rich_content_unavailable": {
             "title": "Rich Content Unavailable",
             "type": [
@@ -103652,6 +103893,38 @@
               "string"
             ],
             "description": "Fallback message displayed when rich content cannot be rendered."
+          },
+          "carousel_previous": {
+            "title": "Carousel Previous",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "ARIA label for the previous button in a rich content carousel."
+          },
+          "carousel_next": {
+            "title": "Carousel Next",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "ARIA label for the next button in a rich content carousel."
+          },
+          "new_message": {
+            "title": "New Message",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Label for the button that scrolls to one new message."
+          },
+          "new_messages": {
+            "title": "New Messages",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Label for the button that scrolls to new messages. Keep the count placeholder from the default, which is replaced with the number of messages."
           }
         }
       },
@@ -105560,16 +105833,24 @@
       },
       "AgentBranchResponseSyncStatus": {
         "title": "BranchSyncStatus",
+        "required": [
+          "branch_id"
+        ],
         "type": [
           "object",
           "null"
         ],
         "properties": {
+          "branch_id": {
+            "title": "Branch Id",
+            "type": "string",
+            "description": "ID of the branch this branch is kept in sync with: its new versions are pulled in automatically while \u0060auto_rebase\u0060 is on. The main branch unless another was chosen. While the chosen branch is archived this still names it, and main is used in its place."
+          },
           "last_attempt": {
             "$ref": "#/components/schemas/BranchSyncStatusLastAttempt"
           }
         },
-        "description": "Set while the branch is kept in sync with another branch (Main today), pulling in its new versions automatically. Null when it is not synced.",
+        "description": "Set while the branch is kept in sync with another branch: automatically (\u0060auto_rebase\u0060), or with a chosen branch other than main. Null otherwise.",
         "x-client-original-nullable-union": {
           "anyOf": [
             {
@@ -105579,7 +105860,7 @@
               "type": "null"
             }
           ],
-          "description": "Set while the branch is kept in sync with another branch (Main today), pulling in its new versions automatically. Null when it is not synced."
+          "description": "Set while the branch is kept in sync with another branch: automatically (\u0060auto_rebase\u0060), or with a chosen branch other than main. Null otherwise."
         }
       },
       "AgentBranchResponseAccessInfo": {
@@ -114787,7 +115068,7 @@
             "hello",
             "world"
           ],
-          "provider": "scribe_realtime",
+          "provider": "scribe_v3_live",
           "quality": "high",
           "user_input_audio_format": "pcm_16000"
         },
@@ -128983,7 +129264,7 @@
             "hello",
             "world"
           ],
-          "provider": "scribe_realtime",
+          "provider": "scribe_v3_live",
           "quality": "high",
           "user_input_audio_format": "pcm_16000"
         },
@@ -131340,6 +131621,14 @@
             ],
             "description": "Text and ARIA label for the new call button. Displayed when the caller already finished at least one call in order ot start the next one."
           },
+          "resume_call": {
+            "title": "Resume Call",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Text and ARIA label for the button that resumes the conversation."
+          },
           "end_call": {
             "title": "End Call",
             "type": [
@@ -131347,6 +131636,14 @@
               "string"
             ],
             "description": "Text and ARIA label for the end call button."
+          },
+          "end_chat": {
+            "title": "End Chat",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Text and ARIA label for the end chat button."
           },
           "mute_microphone": {
             "title": "Mute Microphone",
@@ -131380,6 +131677,38 @@
             ],
             "description": "ARIA label for the expand button."
           },
+          "expand_widget": {
+            "title": "Expand Widget",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "ARIA label for the header button that expands the widget."
+          },
+          "collapse_widget": {
+            "title": "Collapse Widget",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "ARIA label for the header button that collapses the widget back to its compact size."
+          },
+          "dismiss": {
+            "title": "Dismiss",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "ARIA label for the button that hides a dismissible widget."
+          },
+          "open_chat": {
+            "title": "Open Chat",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "ARIA label for the launcher button that reopens a dismissed widget."
+          },
           "copied": {
             "title": "Copied",
             "type": [
@@ -131404,6 +131733,54 @@
             ],
             "description": "Text and ARIA label for the cancel terms button."
           },
+          "end_chat_confirmation_title": {
+            "title": "End Chat Confirmation Title",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Title displayed in the confirmation dialog before ending a chat."
+          },
+          "end_chat_confirmation_description": {
+            "title": "End Chat Confirmation Description",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Description displayed in the confirmation dialog before ending a chat."
+          },
+          "end_call_confirmation_title": {
+            "title": "End Call Confirmation Title",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Title displayed in the confirmation dialog before ending a call."
+          },
+          "end_call_confirmation_description": {
+            "title": "End Call Confirmation Description",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Description displayed in the confirmation dialog before ending a call."
+          },
+          "end_call_confirm": {
+            "title": "End Call Confirm",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Text and ARIA label for the button that confirms ending a call."
+          },
+          "cancel_end_confirmation": {
+            "title": "Cancel End Confirmation",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Text and ARIA label for the button that cancels ending a chat or call."
+          },
           "listening_status": {
             "title": "Listening Status",
             "type": [
@@ -131427,6 +131804,14 @@
               "string"
             ],
             "description": "Status displayed when the agent is connecting."
+          },
+          "reconnecting_status": {
+            "title": "Reconnecting Status",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Status displayed when the agent is reconnecting."
           },
           "chatting_status": {
             "title": "Chatting Status",
@@ -131612,6 +131997,22 @@
             ],
             "description": "Text and ARIA label for the switch to voice mode button."
           },
+          "voice_mode_label": {
+            "title": "Voice Mode Label",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Label for the voice option in the conversation mode toggle."
+          },
+          "text_mode_label": {
+            "title": "Text Mode Label",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Label for the text option in the conversation mode toggle."
+          },
           "switched_to_text_mode": {
             "title": "Switched To Text Mode",
             "type": [
@@ -131732,6 +132133,14 @@
             ],
             "description": "Status text displayed while the agent is typing."
           },
+          "thinking_status": {
+            "title": "Thinking Status",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Status text displayed while the agent is thinking."
+          },
           "rich_content_unavailable": {
             "title": "Rich Content Unavailable",
             "type": [
@@ -131739,6 +132148,38 @@
               "string"
             ],
             "description": "Fallback message displayed when rich content cannot be rendered."
+          },
+          "carousel_previous": {
+            "title": "Carousel Previous",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "ARIA label for the previous button in a rich content carousel."
+          },
+          "carousel_next": {
+            "title": "Carousel Next",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "ARIA label for the next button in a rich content carousel."
+          },
+          "new_message": {
+            "title": "New Message",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Label for the button that scrolls to one new message."
+          },
+          "new_messages": {
+            "title": "New Messages",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Label for the button that scrolls to new messages. Keep the count placeholder from the default, which is replaced with the number of messages."
           }
         },
         "description": "The text contents for the selected language",
@@ -133983,7 +134424,7 @@
       "UpdateWhatsappAccount200ResponseSchema": {},
       "DeleteWhatsappAccount200ResponseSchema": {},
       "MergeBranchIntoTarget200ResponseSchema": {},
-      "RebaseBranchOntoMain200ResponseSchema": {},
+      "RebaseBranchRoute200ResponseSchema": {},
       "CreateAgentDraftRoute200ResponseSchema": {},
       "DeleteAgentDraftRoute200ResponseSchema": {},
       "ExportCampaign200CsvResponseSchema": {
@@ -135648,6 +136089,14 @@
         ],
         "description": "(Deprecated)"
       },
+      "ProvisionResellerWorkspaceResponseMetadataProperty": {
+        "title": "Metadata",
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        },
+        "description": "Your own key-value pairs for the workspace."
+      },
       "QueryParamsJsonSchemaInputPropertiesProperty": {
         "title": "Properties",
         "minProperties": 1,
@@ -135676,12 +136125,30 @@
         },
         "description": "On-hand quantity by location. None means unlimited. A missing location key means zero."
       },
+      "ReceptionProvisionResellerWorkspaceRequestMetadataProperty": {
+        "title": "Metadata",
+        "maxProperties": 20,
+        "type": "object",
+        "additionalProperties": {
+          "maxLength": 500,
+          "type": "string"
+        },
+        "description": "Your own key-value pairs for the workspace, such as your customer or contract id. Up to 20 keys of up to 40 characters, without \u0060.\u0060 or \u0060$\u0060, and values of up to 500 characters. Not shown to the workspace\u0027s members."
+      },
       "RefreshTokenAuthResponseExtraParamsProperty": {
         "title": "Extra Params",
         "type": "object",
         "additionalProperties": {
           "type": "string"
         }
+      },
+      "ResellerWorkspaceSummaryMetadataProperty": {
+        "title": "Metadata",
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        },
+        "description": "Your own key-value pairs for the workspace."
       },
       "ResourceMetadataResponseModelRoleToGroupIdsProperty": {
         "title": "Role To Group Ids",
@@ -135905,6 +136372,16 @@
         "additionalProperties": {
           "type": "string"
         }
+      },
+      "UpdateResellerWorkspaceRequestMetadataProperty": {
+        "title": "Metadata",
+        "maxProperties": 20,
+        "type": "object",
+        "additionalProperties": {
+          "maxLength": 500,
+          "type": "string"
+        },
+        "description": "Replaces the workspace\u0027s whole metadata map; send \u0060{}\u0060 to clear it. Omitted leaves it unchanged."
       },
       "UpdateResponseUnitTestRequestDynamicVariablesProperty": {
         "title": "Dynamic Variables",
@@ -189425,7 +189902,7 @@
           "hello",
           "world"
         ],
-        "provider": "scribe_realtime",
+        "provider": "scribe_v3_live",
         "quality": "high",
         "user_input_audio_format": "pcm_16000"
       }
@@ -192121,8 +192598,16 @@
     },
     "BranchSyncStatus": {
       "title": "BranchSyncStatus",
+      "required": [
+        "branch_id"
+      ],
       "type": "object",
       "properties": {
+        "branch_id": {
+          "title": "Branch Id",
+          "type": "string",
+          "description": "ID of the branch this branch is kept in sync with: its new versions are pulled in automatically while \u0060auto_rebase\u0060 is on. The main branch unless another was chosen. While the chosen branch is archived this still names it, and main is used in its place."
+        },
         "last_attempt": {
           "$ref": "#/components/schemas/BranchSyncStatusLastAttempt"
         }
@@ -210848,16 +211333,24 @@
     },
     "AgentBranchSummarySyncStatus": {
       "title": "BranchSyncStatus",
+      "required": [
+        "branch_id"
+      ],
       "type": [
         "object",
         "null"
       ],
       "properties": {
+        "branch_id": {
+          "title": "Branch Id",
+          "type": "string",
+          "description": "ID of the branch this branch is kept in sync with: its new versions are pulled in automatically while \u0060auto_rebase\u0060 is on. The main branch unless another was chosen. While the chosen branch is archived this still names it, and main is used in its place."
+        },
         "last_attempt": {
           "$ref": "#/components/schemas/BranchSyncStatusLastAttempt"
         }
       },
-      "description": "Set while the branch is kept in sync with another branch (Main today), pulling in its new versions automatically. Null when it is not synced.",
+      "description": "Set while the branch is kept in sync with another branch: automatically (\u0060auto_rebase\u0060), or with a chosen branch other than main. Null otherwise.",
       "x-client-original-nullable-union": {
         "anyOf": [
           {
@@ -210867,7 +211360,7 @@
             "type": "null"
           }
         ],
-        "description": "Set while the branch is kept in sync with another branch (Main today), pulling in its new versions automatically. Null when it is not synced."
+        "description": "Set while the branch is kept in sync with another branch: automatically (\u0060auto_rebase\u0060), or with a chosen branch other than main. Null otherwise."
       }
     },
     "AgentBranchSummaryAccessInfo": {
@@ -216278,7 +216771,7 @@
           "hello",
           "world"
         ],
-        "provider": "scribe_realtime",
+        "provider": "scribe_v3_live",
         "quality": "high",
         "user_input_audio_format": "pcm_16000"
       },
@@ -222949,6 +223442,14 @@
           ],
           "description": "Text and ARIA label for the new call button. Displayed when the caller already finished at least one call in order ot start the next one."
         },
+        "resume_call": {
+          "title": "Resume Call",
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Text and ARIA label for the button that resumes the conversation."
+        },
         "end_call": {
           "title": "End Call",
           "type": [
@@ -222956,6 +223457,14 @@
             "string"
           ],
           "description": "Text and ARIA label for the end call button."
+        },
+        "end_chat": {
+          "title": "End Chat",
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Text and ARIA label for the end chat button."
         },
         "mute_microphone": {
           "title": "Mute Microphone",
@@ -222989,6 +223498,38 @@
           ],
           "description": "ARIA label for the expand button."
         },
+        "expand_widget": {
+          "title": "Expand Widget",
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "ARIA label for the header button that expands the widget."
+        },
+        "collapse_widget": {
+          "title": "Collapse Widget",
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "ARIA label for the header button that collapses the widget back to its compact size."
+        },
+        "dismiss": {
+          "title": "Dismiss",
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "ARIA label for the button that hides a dismissible widget."
+        },
+        "open_chat": {
+          "title": "Open Chat",
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "ARIA label for the launcher button that reopens a dismissed widget."
+        },
         "copied": {
           "title": "Copied",
           "type": [
@@ -223013,6 +223554,54 @@
           ],
           "description": "Text and ARIA label for the cancel terms button."
         },
+        "end_chat_confirmation_title": {
+          "title": "End Chat Confirmation Title",
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Title displayed in the confirmation dialog before ending a chat."
+        },
+        "end_chat_confirmation_description": {
+          "title": "End Chat Confirmation Description",
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Description displayed in the confirmation dialog before ending a chat."
+        },
+        "end_call_confirmation_title": {
+          "title": "End Call Confirmation Title",
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Title displayed in the confirmation dialog before ending a call."
+        },
+        "end_call_confirmation_description": {
+          "title": "End Call Confirmation Description",
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Description displayed in the confirmation dialog before ending a call."
+        },
+        "end_call_confirm": {
+          "title": "End Call Confirm",
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Text and ARIA label for the button that confirms ending a call."
+        },
+        "cancel_end_confirmation": {
+          "title": "Cancel End Confirmation",
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Text and ARIA label for the button that cancels ending a chat or call."
+        },
         "listening_status": {
           "title": "Listening Status",
           "type": [
@@ -223036,6 +223625,14 @@
             "string"
           ],
           "description": "Status displayed when the agent is connecting."
+        },
+        "reconnecting_status": {
+          "title": "Reconnecting Status",
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Status displayed when the agent is reconnecting."
         },
         "chatting_status": {
           "title": "Chatting Status",
@@ -223221,6 +223818,22 @@
           ],
           "description": "Text and ARIA label for the switch to voice mode button."
         },
+        "voice_mode_label": {
+          "title": "Voice Mode Label",
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Label for the voice option in the conversation mode toggle."
+        },
+        "text_mode_label": {
+          "title": "Text Mode Label",
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Label for the text option in the conversation mode toggle."
+        },
         "switched_to_text_mode": {
           "title": "Switched To Text Mode",
           "type": [
@@ -223341,6 +223954,14 @@
           ],
           "description": "Status text displayed while the agent is typing."
         },
+        "thinking_status": {
+          "title": "Thinking Status",
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Status text displayed while the agent is thinking."
+        },
         "rich_content_unavailable": {
           "title": "Rich Content Unavailable",
           "type": [
@@ -223348,6 +223969,38 @@
             "string"
           ],
           "description": "Fallback message displayed when rich content cannot be rendered."
+        },
+        "carousel_previous": {
+          "title": "Carousel Previous",
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "ARIA label for the previous button in a rich content carousel."
+        },
+        "carousel_next": {
+          "title": "Carousel Next",
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "ARIA label for the next button in a rich content carousel."
+        },
+        "new_message": {
+          "title": "New Message",
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Label for the button that scrolls to one new message."
+        },
+        "new_messages": {
+          "title": "New Messages",
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Label for the button that scrolls to new messages. Keep the count placeholder from the default, which is replaced with the number of messages."
         }
       },
       "description": "The text contents for the selected language",
@@ -224761,6 +225414,14 @@
       ],
       "description": "(Deprecated)"
     },
+    "ProvisionResellerWorkspaceResponseMetadata": {
+      "title": "Metadata",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Your own key-value pairs for the workspace."
+    },
     "QueryParamsJsonSchemaInputProperties": {
       "title": "Properties",
       "minProperties": 1,
@@ -224789,12 +225450,30 @@
       },
       "description": "On-hand quantity by location. None means unlimited. A missing location key means zero."
     },
+    "ReceptionProvisionResellerWorkspaceRequestMetadata": {
+      "title": "Metadata",
+      "maxProperties": 20,
+      "type": "object",
+      "additionalProperties": {
+        "maxLength": 500,
+        "type": "string"
+      },
+      "description": "Your own key-value pairs for the workspace, such as your customer or contract id. Up to 20 keys of up to 40 characters, without \u0060.\u0060 or \u0060$\u0060, and values of up to 500 characters. Not shown to the workspace\u0027s members."
+    },
     "RefreshTokenAuthResponseExtraParams": {
       "title": "Extra Params",
       "type": "object",
       "additionalProperties": {
         "type": "string"
       }
+    },
+    "ResellerWorkspaceSummaryMetadata": {
+      "title": "Metadata",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Your own key-value pairs for the workspace."
     },
     "ResourceMetadataResponseModelRoleToGroupIds": {
       "title": "Role To Group Ids",
@@ -225018,6 +225697,16 @@
       "additionalProperties": {
         "type": "string"
       }
+    },
+    "UpdateResellerWorkspaceRequestMetadata": {
+      "title": "Metadata",
+      "maxProperties": 20,
+      "type": "object",
+      "additionalProperties": {
+        "maxLength": 500,
+        "type": "string"
+      },
+      "description": "Replaces the workspace\u0027s whole metadata map; send \u0060{}\u0060 to clear it. Omitted leaves it unchanged."
     },
     "UpdateResponseUnitTestRequestDynamicVariables": {
       "title": "Dynamic Variables",
@@ -225376,7 +226065,7 @@
     "UpdateWhatsappAccount200Response": {},
     "DeleteWhatsappAccount200Response": {},
     "MergeBranchIntoTarget200Response": {},
-    "RebaseBranchOntoMain200Response": {},
+    "RebaseBranchRoute200Response": {},
     "CreateAgentDraftRoute200Response": {},
     "DeleteAgentDraftRoute200Response": {},
     "ExportCampaign200CsvResponse": {

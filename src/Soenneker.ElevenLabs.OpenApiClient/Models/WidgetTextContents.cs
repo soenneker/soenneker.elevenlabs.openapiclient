@@ -29,12 +29,20 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if (parseNode.GetChildNode("agent_working") is { } nullNodeAgentWorking && nullNodeAgentWorking.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentWorking = null;
             if (parseNode.GetChildNode("attach_file") is null) { _explicitNullValueAttachFile = default!; _explicitNullProperties?.Remove("attach_file"); }
             else if (parseNode.GetChildNode("attach_file") is { } nullNodeAttachFile && nullNodeAttachFile.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttachFile = null;
+            if (parseNode.GetChildNode("cancel_end_confirmation") is null) { _explicitNullValueCancelEndConfirmation = default!; _explicitNullProperties?.Remove("cancel_end_confirmation"); }
+            else if (parseNode.GetChildNode("cancel_end_confirmation") is { } nullNodeCancelEndConfirmation && nullNodeCancelEndConfirmation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CancelEndConfirmation = null;
+            if (parseNode.GetChildNode("carousel_next") is null) { _explicitNullValueCarouselNext = default!; _explicitNullProperties?.Remove("carousel_next"); }
+            else if (parseNode.GetChildNode("carousel_next") is { } nullNodeCarouselNext && nullNodeCarouselNext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CarouselNext = null;
+            if (parseNode.GetChildNode("carousel_previous") is null) { _explicitNullValueCarouselPrevious = default!; _explicitNullProperties?.Remove("carousel_previous"); }
+            else if (parseNode.GetChildNode("carousel_previous") is { } nullNodeCarouselPrevious && nullNodeCarouselPrevious.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CarouselPrevious = null;
             if (parseNode.GetChildNode("change_language") is null) { _explicitNullValueChangeLanguage = default!; _explicitNullProperties?.Remove("change_language"); }
             else if (parseNode.GetChildNode("change_language") is { } nullNodeChangeLanguage && nullNodeChangeLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChangeLanguage = null;
             if (parseNode.GetChildNode("chatting_status") is null) { _explicitNullValueChattingStatus = default!; _explicitNullProperties?.Remove("chatting_status"); }
             else if (parseNode.GetChildNode("chatting_status") is { } nullNodeChattingStatus && nullNodeChattingStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChattingStatus = null;
             if (parseNode.GetChildNode("collapse") is null) { _explicitNullValueCollapse = default!; _explicitNullProperties?.Remove("collapse"); }
             else if (parseNode.GetChildNode("collapse") is { } nullNodeCollapse && nullNodeCollapse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Collapse = null;
+            if (parseNode.GetChildNode("collapse_widget") is null) { _explicitNullValueCollapseWidget = default!; _explicitNullProperties?.Remove("collapse_widget"); }
+            else if (parseNode.GetChildNode("collapse_widget") is { } nullNodeCollapseWidget && nullNodeCollapseWidget.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CollapseWidget = null;
             if (parseNode.GetChildNode("connecting_status") is null) { _explicitNullValueConnectingStatus = default!; _explicitNullProperties?.Remove("connecting_status"); }
             else if (parseNode.GetChildNode("connecting_status") is { } nullNodeConnectingStatus && nullNodeConnectingStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectingStatus = null;
             if (parseNode.GetChildNode("conversation_id") is null) { _explicitNullValueConversationId = default!; _explicitNullProperties?.Remove("conversation_id"); }
@@ -45,16 +53,32 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if (parseNode.GetChildNode("copy") is { } nullNodeCopy && nullNodeCopy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Copy = null;
             if (parseNode.GetChildNode("copy_id") is null) { _explicitNullValueCopyId = default!; _explicitNullProperties?.Remove("copy_id"); }
             else if (parseNode.GetChildNode("copy_id") is { } nullNodeCopyId && nullNodeCopyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CopyId = null;
+            if (parseNode.GetChildNode("dismiss") is null) { _explicitNullValueDismiss = default!; _explicitNullProperties?.Remove("dismiss"); }
+            else if (parseNode.GetChildNode("dismiss") is { } nullNodeDismiss && nullNodeDismiss.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dismiss = null;
             if (parseNode.GetChildNode("dismiss_terms") is null) { _explicitNullValueDismissTerms = default!; _explicitNullProperties?.Remove("dismiss_terms"); }
             else if (parseNode.GetChildNode("dismiss_terms") is { } nullNodeDismissTerms && nullNodeDismissTerms.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DismissTerms = null;
             if (parseNode.GetChildNode("download") is null) { _explicitNullValueDownload = default!; _explicitNullProperties?.Remove("download"); }
             else if (parseNode.GetChildNode("download") is { } nullNodeDownload && nullNodeDownload.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Download = null;
             if (parseNode.GetChildNode("end_call") is null) { _explicitNullValueEndCall = default!; _explicitNullProperties?.Remove("end_call"); }
             else if (parseNode.GetChildNode("end_call") is { } nullNodeEndCall && nullNodeEndCall.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndCall = null;
+            if (parseNode.GetChildNode("end_call_confirm") is null) { _explicitNullValueEndCallConfirm = default!; _explicitNullProperties?.Remove("end_call_confirm"); }
+            else if (parseNode.GetChildNode("end_call_confirm") is { } nullNodeEndCallConfirm && nullNodeEndCallConfirm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndCallConfirm = null;
+            if (parseNode.GetChildNode("end_call_confirmation_description") is null) { _explicitNullValueEndCallConfirmationDescription = default!; _explicitNullProperties?.Remove("end_call_confirmation_description"); }
+            else if (parseNode.GetChildNode("end_call_confirmation_description") is { } nullNodeEndCallConfirmationDescription && nullNodeEndCallConfirmationDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndCallConfirmationDescription = null;
+            if (parseNode.GetChildNode("end_call_confirmation_title") is null) { _explicitNullValueEndCallConfirmationTitle = default!; _explicitNullProperties?.Remove("end_call_confirmation_title"); }
+            else if (parseNode.GetChildNode("end_call_confirmation_title") is { } nullNodeEndCallConfirmationTitle && nullNodeEndCallConfirmationTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndCallConfirmationTitle = null;
+            if (parseNode.GetChildNode("end_chat") is null) { _explicitNullValueEndChat = default!; _explicitNullProperties?.Remove("end_chat"); }
+            else if (parseNode.GetChildNode("end_chat") is { } nullNodeEndChat && nullNodeEndChat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndChat = null;
+            if (parseNode.GetChildNode("end_chat_confirmation_description") is null) { _explicitNullValueEndChatConfirmationDescription = default!; _explicitNullProperties?.Remove("end_chat_confirmation_description"); }
+            else if (parseNode.GetChildNode("end_chat_confirmation_description") is { } nullNodeEndChatConfirmationDescription && nullNodeEndChatConfirmationDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndChatConfirmationDescription = null;
+            if (parseNode.GetChildNode("end_chat_confirmation_title") is null) { _explicitNullValueEndChatConfirmationTitle = default!; _explicitNullProperties?.Remove("end_chat_confirmation_title"); }
+            else if (parseNode.GetChildNode("end_chat_confirmation_title") is { } nullNodeEndChatConfirmationTitle && nullNodeEndChatConfirmationTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndChatConfirmationTitle = null;
             if (parseNode.GetChildNode("error_occurred") is null) { _explicitNullValueErrorOccurred = default!; _explicitNullProperties?.Remove("error_occurred"); }
             else if (parseNode.GetChildNode("error_occurred") is { } nullNodeErrorOccurred && nullNodeErrorOccurred.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorOccurred = null;
             if (parseNode.GetChildNode("expand") is null) { _explicitNullValueExpand = default!; _explicitNullProperties?.Remove("expand"); }
             else if (parseNode.GetChildNode("expand") is { } nullNodeExpand && nullNodeExpand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Expand = null;
+            if (parseNode.GetChildNode("expand_widget") is null) { _explicitNullValueExpandWidget = default!; _explicitNullProperties?.Remove("expand_widget"); }
+            else if (parseNode.GetChildNode("expand_widget") is { } nullNodeExpandWidget && nullNodeExpandWidget.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpandWidget = null;
             if (parseNode.GetChildNode("file_limit_reached") is null) { _explicitNullValueFileLimitReached = default!; _explicitNullProperties?.Remove("file_limit_reached"); }
             else if (parseNode.GetChildNode("file_limit_reached") is { } nullNodeFileLimitReached && nullNodeFileLimitReached.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileLimitReached = null;
             if (parseNode.GetChildNode("file_too_large") is null) { _explicitNullValueFileTooLarge = default!; _explicitNullProperties?.Remove("file_too_large"); }
@@ -85,16 +109,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if (parseNode.GetChildNode("mute_microphone") is { } nullNodeMuteMicrophone && nullNodeMuteMicrophone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MuteMicrophone = null;
             if (parseNode.GetChildNode("new_call") is null) { _explicitNullValueNewCall = default!; _explicitNullProperties?.Remove("new_call"); }
             else if (parseNode.GetChildNode("new_call") is { } nullNodeNewCall && nullNodeNewCall.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewCall = null;
+            if (parseNode.GetChildNode("new_message") is null) { _explicitNullValueNewMessage = default!; _explicitNullProperties?.Remove("new_message"); }
+            else if (parseNode.GetChildNode("new_message") is { } nullNodeNewMessage && nullNodeNewMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewMessage = null;
+            if (parseNode.GetChildNode("new_messages") is null) { _explicitNullValueNewMessages = default!; _explicitNullProperties?.Remove("new_messages"); }
+            else if (parseNode.GetChildNode("new_messages") is { } nullNodeNewMessages && nullNodeNewMessages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewMessages = null;
+            if (parseNode.GetChildNode("open_chat") is null) { _explicitNullValueOpenChat = default!; _explicitNullProperties?.Remove("open_chat"); }
+            else if (parseNode.GetChildNode("open_chat") is { } nullNodeOpenChat && nullNodeOpenChat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OpenChat = null;
             if (parseNode.GetChildNode("queue_timed_out") is null) { _explicitNullValueQueueTimedOut = default!; _explicitNullProperties?.Remove("queue_timed_out"); }
             else if (parseNode.GetChildNode("queue_timed_out") is { } nullNodeQueueTimedOut && nullNodeQueueTimedOut.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueueTimedOut = null;
             if (parseNode.GetChildNode("queue_waiting_status") is null) { _explicitNullValueQueueWaitingStatus = default!; _explicitNullProperties?.Remove("queue_waiting_status"); }
             else if (parseNode.GetChildNode("queue_waiting_status") is { } nullNodeQueueWaitingStatus && nullNodeQueueWaitingStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueueWaitingStatus = null;
             if (parseNode.GetChildNode("queue_waiting_status_short") is null) { _explicitNullValueQueueWaitingStatusShort = default!; _explicitNullProperties?.Remove("queue_waiting_status_short"); }
             else if (parseNode.GetChildNode("queue_waiting_status_short") is { } nullNodeQueueWaitingStatusShort && nullNodeQueueWaitingStatusShort.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueueWaitingStatusShort = null;
+            if (parseNode.GetChildNode("reconnecting_status") is null) { _explicitNullValueReconnectingStatus = default!; _explicitNullProperties?.Remove("reconnecting_status"); }
+            else if (parseNode.GetChildNode("reconnecting_status") is { } nullNodeReconnectingStatus && nullNodeReconnectingStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReconnectingStatus = null;
             if (parseNode.GetChildNode("remove_file") is null) { _explicitNullValueRemoveFile = default!; _explicitNullProperties?.Remove("remove_file"); }
             else if (parseNode.GetChildNode("remove_file") is { } nullNodeRemoveFile && nullNodeRemoveFile.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemoveFile = null;
             if (parseNode.GetChildNode("request_follow_up_feedback") is null) { _explicitNullValueRequestFollowUpFeedback = default!; _explicitNullProperties?.Remove("request_follow_up_feedback"); }
             else if (parseNode.GetChildNode("request_follow_up_feedback") is { } nullNodeRequestFollowUpFeedback && nullNodeRequestFollowUpFeedback.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestFollowUpFeedback = null;
+            if (parseNode.GetChildNode("resume_call") is null) { _explicitNullValueResumeCall = default!; _explicitNullProperties?.Remove("resume_call"); }
+            else if (parseNode.GetChildNode("resume_call") is { } nullNodeResumeCall && nullNodeResumeCall.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResumeCall = null;
             if (parseNode.GetChildNode("rich_content_unavailable") is null) { _explicitNullValueRichContentUnavailable = default!; _explicitNullProperties?.Remove("rich_content_unavailable"); }
             else if (parseNode.GetChildNode("rich_content_unavailable") is { } nullNodeRichContentUnavailable && nullNodeRichContentUnavailable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RichContentUnavailable = null;
             if (parseNode.GetChildNode("send_message") is null) { _explicitNullValueSendMessage = default!; _explicitNullProperties?.Remove("send_message"); }
@@ -113,16 +147,22 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if (parseNode.GetChildNode("switched_to_voice_mode") is { } nullNodeSwitchedToVoiceMode && nullNodeSwitchedToVoiceMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SwitchedToVoiceMode = null;
             if (parseNode.GetChildNode("text_mode") is null) { _explicitNullValueTextMode = default!; _explicitNullProperties?.Remove("text_mode"); }
             else if (parseNode.GetChildNode("text_mode") is { } nullNodeTextMode && nullNodeTextMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TextMode = null;
+            if (parseNode.GetChildNode("text_mode_label") is null) { _explicitNullValueTextModeLabel = default!; _explicitNullProperties?.Remove("text_mode_label"); }
+            else if (parseNode.GetChildNode("text_mode_label") is { } nullNodeTextModeLabel && nullNodeTextModeLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TextModeLabel = null;
             if (parseNode.GetChildNode("thanks_for_feedback") is null) { _explicitNullValueThanksForFeedback = default!; _explicitNullProperties?.Remove("thanks_for_feedback"); }
             else if (parseNode.GetChildNode("thanks_for_feedback") is { } nullNodeThanksForFeedback && nullNodeThanksForFeedback.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThanksForFeedback = null;
             if (parseNode.GetChildNode("thanks_for_feedback_details") is null) { _explicitNullValueThanksForFeedbackDetails = default!; _explicitNullProperties?.Remove("thanks_for_feedback_details"); }
             else if (parseNode.GetChildNode("thanks_for_feedback_details") is { } nullNodeThanksForFeedbackDetails && nullNodeThanksForFeedbackDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThanksForFeedbackDetails = null;
+            if (parseNode.GetChildNode("thinking_status") is null) { _explicitNullValueThinkingStatus = default!; _explicitNullProperties?.Remove("thinking_status"); }
+            else if (parseNode.GetChildNode("thinking_status") is { } nullNodeThinkingStatus && nullNodeThinkingStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThinkingStatus = null;
             if (parseNode.GetChildNode("typing_indicator") is null) { _explicitNullValueTypingIndicator = default!; _explicitNullProperties?.Remove("typing_indicator"); }
             else if (parseNode.GetChildNode("typing_indicator") is { } nullNodeTypingIndicator && nullNodeTypingIndicator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TypingIndicator = null;
             if (parseNode.GetChildNode("user_ended_conversation") is null) { _explicitNullValueUserEndedConversation = default!; _explicitNullProperties?.Remove("user_ended_conversation"); }
             else if (parseNode.GetChildNode("user_ended_conversation") is { } nullNodeUserEndedConversation && nullNodeUserEndedConversation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserEndedConversation = null;
             if (parseNode.GetChildNode("voice_mode") is null) { _explicitNullValueVoiceMode = default!; _explicitNullProperties?.Remove("voice_mode"); }
             else if (parseNode.GetChildNode("voice_mode") is { } nullNodeVoiceMode && nullNodeVoiceMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VoiceMode = null;
+            if (parseNode.GetChildNode("voice_mode_label") is null) { _explicitNullValueVoiceModeLabel = default!; _explicitNullProperties?.Remove("voice_mode_label"); }
+            else if (parseNode.GetChildNode("voice_mode_label") is { } nullNodeVoiceModeLabel && nullNodeVoiceModeLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VoiceModeLabel = null;
             if (parseNode.GetChildNode("wrap") is null) { _explicitNullValueWrap = default!; _explicitNullProperties?.Remove("wrap"); }
             else if (parseNode.GetChildNode("wrap") is { } nullNodeWrap && nullNodeWrap.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Wrap = null;
         }
@@ -189,6 +229,36 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string AttachFile { get => _explicitNullValueAttachFile; set { _explicitNullValueAttachFile = value; AdditionalData?.Remove("attach_file"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attach_file"); else _explicitNullProperties?.Remove("attach_file"); } }
         private string _explicitNullValueAttachFile = default!;
 #endif
+        /// <summary>Text and ARIA label for the button that cancels ending a chat or call.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CancelEndConfirmation { get => _explicitNullValueCancelEndConfirmation; set { _explicitNullValueCancelEndConfirmation = value; AdditionalData?.Remove("cancel_end_confirmation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cancel_end_confirmation"); else _explicitNullProperties?.Remove("cancel_end_confirmation"); } }
+        private string? _explicitNullValueCancelEndConfirmation = default!;
+#nullable restore
+#else
+        public string CancelEndConfirmation { get => _explicitNullValueCancelEndConfirmation; set { _explicitNullValueCancelEndConfirmation = value; AdditionalData?.Remove("cancel_end_confirmation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cancel_end_confirmation"); else _explicitNullProperties?.Remove("cancel_end_confirmation"); } }
+        private string _explicitNullValueCancelEndConfirmation = default!;
+#endif
+        /// <summary>ARIA label for the next button in a rich content carousel.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CarouselNext { get => _explicitNullValueCarouselNext; set { _explicitNullValueCarouselNext = value; AdditionalData?.Remove("carousel_next"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("carousel_next"); else _explicitNullProperties?.Remove("carousel_next"); } }
+        private string? _explicitNullValueCarouselNext = default!;
+#nullable restore
+#else
+        public string CarouselNext { get => _explicitNullValueCarouselNext; set { _explicitNullValueCarouselNext = value; AdditionalData?.Remove("carousel_next"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("carousel_next"); else _explicitNullProperties?.Remove("carousel_next"); } }
+        private string _explicitNullValueCarouselNext = default!;
+#endif
+        /// <summary>ARIA label for the previous button in a rich content carousel.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CarouselPrevious { get => _explicitNullValueCarouselPrevious; set { _explicitNullValueCarouselPrevious = value; AdditionalData?.Remove("carousel_previous"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("carousel_previous"); else _explicitNullProperties?.Remove("carousel_previous"); } }
+        private string? _explicitNullValueCarouselPrevious = default!;
+#nullable restore
+#else
+        public string CarouselPrevious { get => _explicitNullValueCarouselPrevious; set { _explicitNullValueCarouselPrevious = value; AdditionalData?.Remove("carousel_previous"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("carousel_previous"); else _explicitNullProperties?.Remove("carousel_previous"); } }
+        private string _explicitNullValueCarouselPrevious = default!;
+#endif
         /// <summary>ARIA label for the change language dropdown.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -218,6 +288,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Collapse { get => _explicitNullValueCollapse; set { _explicitNullValueCollapse = value; AdditionalData?.Remove("collapse"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("collapse"); else _explicitNullProperties?.Remove("collapse"); } }
         private string _explicitNullValueCollapse = default!;
+#endif
+        /// <summary>ARIA label for the header button that collapses the widget back to its compact size.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CollapseWidget { get => _explicitNullValueCollapseWidget; set { _explicitNullValueCollapseWidget = value; AdditionalData?.Remove("collapse_widget"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("collapse_widget"); else _explicitNullProperties?.Remove("collapse_widget"); } }
+        private string? _explicitNullValueCollapseWidget = default!;
+#nullable restore
+#else
+        public string CollapseWidget { get => _explicitNullValueCollapseWidget; set { _explicitNullValueCollapseWidget = value; AdditionalData?.Remove("collapse_widget"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("collapse_widget"); else _explicitNullProperties?.Remove("collapse_widget"); } }
+        private string _explicitNullValueCollapseWidget = default!;
 #endif
         /// <summary>Status displayed when the agent is connecting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -269,6 +349,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string CopyId { get => _explicitNullValueCopyId; set { _explicitNullValueCopyId = value; AdditionalData?.Remove("copy_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("copy_id"); else _explicitNullProperties?.Remove("copy_id"); } }
         private string _explicitNullValueCopyId = default!;
 #endif
+        /// <summary>ARIA label for the button that hides a dismissible widget.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Dismiss { get => _explicitNullValueDismiss; set { _explicitNullValueDismiss = value; AdditionalData?.Remove("dismiss"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dismiss"); else _explicitNullProperties?.Remove("dismiss"); } }
+        private string? _explicitNullValueDismiss = default!;
+#nullable restore
+#else
+        public string Dismiss { get => _explicitNullValueDismiss; set { _explicitNullValueDismiss = value; AdditionalData?.Remove("dismiss"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dismiss"); else _explicitNullProperties?.Remove("dismiss"); } }
+        private string _explicitNullValueDismiss = default!;
+#endif
         /// <summary>Text and ARIA label for the cancel terms button.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -299,6 +389,66 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string EndCall { get => _explicitNullValueEndCall; set { _explicitNullValueEndCall = value; AdditionalData?.Remove("end_call"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_call"); else _explicitNullProperties?.Remove("end_call"); } }
         private string _explicitNullValueEndCall = default!;
 #endif
+        /// <summary>Text and ARIA label for the button that confirms ending a call.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EndCallConfirm { get => _explicitNullValueEndCallConfirm; set { _explicitNullValueEndCallConfirm = value; AdditionalData?.Remove("end_call_confirm"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_call_confirm"); else _explicitNullProperties?.Remove("end_call_confirm"); } }
+        private string? _explicitNullValueEndCallConfirm = default!;
+#nullable restore
+#else
+        public string EndCallConfirm { get => _explicitNullValueEndCallConfirm; set { _explicitNullValueEndCallConfirm = value; AdditionalData?.Remove("end_call_confirm"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_call_confirm"); else _explicitNullProperties?.Remove("end_call_confirm"); } }
+        private string _explicitNullValueEndCallConfirm = default!;
+#endif
+        /// <summary>Description displayed in the confirmation dialog before ending a call.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EndCallConfirmationDescription { get => _explicitNullValueEndCallConfirmationDescription; set { _explicitNullValueEndCallConfirmationDescription = value; AdditionalData?.Remove("end_call_confirmation_description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_call_confirmation_description"); else _explicitNullProperties?.Remove("end_call_confirmation_description"); } }
+        private string? _explicitNullValueEndCallConfirmationDescription = default!;
+#nullable restore
+#else
+        public string EndCallConfirmationDescription { get => _explicitNullValueEndCallConfirmationDescription; set { _explicitNullValueEndCallConfirmationDescription = value; AdditionalData?.Remove("end_call_confirmation_description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_call_confirmation_description"); else _explicitNullProperties?.Remove("end_call_confirmation_description"); } }
+        private string _explicitNullValueEndCallConfirmationDescription = default!;
+#endif
+        /// <summary>Title displayed in the confirmation dialog before ending a call.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EndCallConfirmationTitle { get => _explicitNullValueEndCallConfirmationTitle; set { _explicitNullValueEndCallConfirmationTitle = value; AdditionalData?.Remove("end_call_confirmation_title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_call_confirmation_title"); else _explicitNullProperties?.Remove("end_call_confirmation_title"); } }
+        private string? _explicitNullValueEndCallConfirmationTitle = default!;
+#nullable restore
+#else
+        public string EndCallConfirmationTitle { get => _explicitNullValueEndCallConfirmationTitle; set { _explicitNullValueEndCallConfirmationTitle = value; AdditionalData?.Remove("end_call_confirmation_title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_call_confirmation_title"); else _explicitNullProperties?.Remove("end_call_confirmation_title"); } }
+        private string _explicitNullValueEndCallConfirmationTitle = default!;
+#endif
+        /// <summary>Text and ARIA label for the end chat button.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EndChat { get => _explicitNullValueEndChat; set { _explicitNullValueEndChat = value; AdditionalData?.Remove("end_chat"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_chat"); else _explicitNullProperties?.Remove("end_chat"); } }
+        private string? _explicitNullValueEndChat = default!;
+#nullable restore
+#else
+        public string EndChat { get => _explicitNullValueEndChat; set { _explicitNullValueEndChat = value; AdditionalData?.Remove("end_chat"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_chat"); else _explicitNullProperties?.Remove("end_chat"); } }
+        private string _explicitNullValueEndChat = default!;
+#endif
+        /// <summary>Description displayed in the confirmation dialog before ending a chat.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EndChatConfirmationDescription { get => _explicitNullValueEndChatConfirmationDescription; set { _explicitNullValueEndChatConfirmationDescription = value; AdditionalData?.Remove("end_chat_confirmation_description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_chat_confirmation_description"); else _explicitNullProperties?.Remove("end_chat_confirmation_description"); } }
+        private string? _explicitNullValueEndChatConfirmationDescription = default!;
+#nullable restore
+#else
+        public string EndChatConfirmationDescription { get => _explicitNullValueEndChatConfirmationDescription; set { _explicitNullValueEndChatConfirmationDescription = value; AdditionalData?.Remove("end_chat_confirmation_description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_chat_confirmation_description"); else _explicitNullProperties?.Remove("end_chat_confirmation_description"); } }
+        private string _explicitNullValueEndChatConfirmationDescription = default!;
+#endif
+        /// <summary>Title displayed in the confirmation dialog before ending a chat.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EndChatConfirmationTitle { get => _explicitNullValueEndChatConfirmationTitle; set { _explicitNullValueEndChatConfirmationTitle = value; AdditionalData?.Remove("end_chat_confirmation_title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_chat_confirmation_title"); else _explicitNullProperties?.Remove("end_chat_confirmation_title"); } }
+        private string? _explicitNullValueEndChatConfirmationTitle = default!;
+#nullable restore
+#else
+        public string EndChatConfirmationTitle { get => _explicitNullValueEndChatConfirmationTitle; set { _explicitNullValueEndChatConfirmationTitle = value; AdditionalData?.Remove("end_chat_confirmation_title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_chat_confirmation_title"); else _explicitNullProperties?.Remove("end_chat_confirmation_title"); } }
+        private string _explicitNullValueEndChatConfirmationTitle = default!;
+#endif
         /// <summary>Text label used when an error occurs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -318,6 +468,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Expand { get => _explicitNullValueExpand; set { _explicitNullValueExpand = value; AdditionalData?.Remove("expand"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expand"); else _explicitNullProperties?.Remove("expand"); } }
         private string _explicitNullValueExpand = default!;
+#endif
+        /// <summary>ARIA label for the header button that expands the widget.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ExpandWidget { get => _explicitNullValueExpandWidget; set { _explicitNullValueExpandWidget = value; AdditionalData?.Remove("expand_widget"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expand_widget"); else _explicitNullProperties?.Remove("expand_widget"); } }
+        private string? _explicitNullValueExpandWidget = default!;
+#nullable restore
+#else
+        public string ExpandWidget { get => _explicitNullValueExpandWidget; set { _explicitNullValueExpandWidget = value; AdditionalData?.Remove("expand_widget"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expand_widget"); else _explicitNullProperties?.Remove("expand_widget"); } }
+        private string _explicitNullValueExpandWidget = default!;
 #endif
         /// <summary>Error message displayed when the maximum number of files for a conversation is reached.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -469,6 +629,36 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string NewCall { get => _explicitNullValueNewCall; set { _explicitNullValueNewCall = value; AdditionalData?.Remove("new_call"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_call"); else _explicitNullProperties?.Remove("new_call"); } }
         private string _explicitNullValueNewCall = default!;
 #endif
+        /// <summary>Label for the button that scrolls to one new message.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? NewMessage { get => _explicitNullValueNewMessage; set { _explicitNullValueNewMessage = value; AdditionalData?.Remove("new_message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_message"); else _explicitNullProperties?.Remove("new_message"); } }
+        private string? _explicitNullValueNewMessage = default!;
+#nullable restore
+#else
+        public string NewMessage { get => _explicitNullValueNewMessage; set { _explicitNullValueNewMessage = value; AdditionalData?.Remove("new_message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_message"); else _explicitNullProperties?.Remove("new_message"); } }
+        private string _explicitNullValueNewMessage = default!;
+#endif
+        /// <summary>Label for the button that scrolls to new messages. Keep the count placeholder from the default, which is replaced with the number of messages.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? NewMessages { get => _explicitNullValueNewMessages; set { _explicitNullValueNewMessages = value; AdditionalData?.Remove("new_messages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_messages"); else _explicitNullProperties?.Remove("new_messages"); } }
+        private string? _explicitNullValueNewMessages = default!;
+#nullable restore
+#else
+        public string NewMessages { get => _explicitNullValueNewMessages; set { _explicitNullValueNewMessages = value; AdditionalData?.Remove("new_messages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_messages"); else _explicitNullProperties?.Remove("new_messages"); } }
+        private string _explicitNullValueNewMessages = default!;
+#endif
+        /// <summary>ARIA label for the launcher button that reopens a dismissed widget.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OpenChat { get => _explicitNullValueOpenChat; set { _explicitNullValueOpenChat = value; AdditionalData?.Remove("open_chat"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("open_chat"); else _explicitNullProperties?.Remove("open_chat"); } }
+        private string? _explicitNullValueOpenChat = default!;
+#nullable restore
+#else
+        public string OpenChat { get => _explicitNullValueOpenChat; set { _explicitNullValueOpenChat = value; AdditionalData?.Remove("open_chat"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("open_chat"); else _explicitNullProperties?.Remove("open_chat"); } }
+        private string _explicitNullValueOpenChat = default!;
+#endif
         /// <summary>Error message displayed when the queue wait times out.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -499,6 +689,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string QueueWaitingStatusShort { get => _explicitNullValueQueueWaitingStatusShort; set { _explicitNullValueQueueWaitingStatusShort = value; AdditionalData?.Remove("queue_waiting_status_short"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queue_waiting_status_short"); else _explicitNullProperties?.Remove("queue_waiting_status_short"); } }
         private string _explicitNullValueQueueWaitingStatusShort = default!;
 #endif
+        /// <summary>Status displayed when the agent is reconnecting.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ReconnectingStatus { get => _explicitNullValueReconnectingStatus; set { _explicitNullValueReconnectingStatus = value; AdditionalData?.Remove("reconnecting_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reconnecting_status"); else _explicitNullProperties?.Remove("reconnecting_status"); } }
+        private string? _explicitNullValueReconnectingStatus = default!;
+#nullable restore
+#else
+        public string ReconnectingStatus { get => _explicitNullValueReconnectingStatus; set { _explicitNullValueReconnectingStatus = value; AdditionalData?.Remove("reconnecting_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reconnecting_status"); else _explicitNullProperties?.Remove("reconnecting_status"); } }
+        private string _explicitNullValueReconnectingStatus = default!;
+#endif
         /// <summary>ARIA label for the remove file button.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -518,6 +718,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string RequestFollowUpFeedback { get => _explicitNullValueRequestFollowUpFeedback; set { _explicitNullValueRequestFollowUpFeedback = value; AdditionalData?.Remove("request_follow_up_feedback"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_follow_up_feedback"); else _explicitNullProperties?.Remove("request_follow_up_feedback"); } }
         private string _explicitNullValueRequestFollowUpFeedback = default!;
+#endif
+        /// <summary>Text and ARIA label for the button that resumes the conversation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ResumeCall { get => _explicitNullValueResumeCall; set { _explicitNullValueResumeCall = value; AdditionalData?.Remove("resume_call"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resume_call"); else _explicitNullProperties?.Remove("resume_call"); } }
+        private string? _explicitNullValueResumeCall = default!;
+#nullable restore
+#else
+        public string ResumeCall { get => _explicitNullValueResumeCall; set { _explicitNullValueResumeCall = value; AdditionalData?.Remove("resume_call"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resume_call"); else _explicitNullProperties?.Remove("resume_call"); } }
+        private string _explicitNullValueResumeCall = default!;
 #endif
         /// <summary>Fallback message displayed when rich content cannot be rendered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -609,6 +819,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string TextMode { get => _explicitNullValueTextMode; set { _explicitNullValueTextMode = value; AdditionalData?.Remove("text_mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text_mode"); else _explicitNullProperties?.Remove("text_mode"); } }
         private string _explicitNullValueTextMode = default!;
 #endif
+        /// <summary>Label for the text option in the conversation mode toggle.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TextModeLabel { get => _explicitNullValueTextModeLabel; set { _explicitNullValueTextModeLabel = value; AdditionalData?.Remove("text_mode_label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text_mode_label"); else _explicitNullProperties?.Remove("text_mode_label"); } }
+        private string? _explicitNullValueTextModeLabel = default!;
+#nullable restore
+#else
+        public string TextModeLabel { get => _explicitNullValueTextModeLabel; set { _explicitNullValueTextModeLabel = value; AdditionalData?.Remove("text_mode_label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text_mode_label"); else _explicitNullProperties?.Remove("text_mode_label"); } }
+        private string _explicitNullValueTextModeLabel = default!;
+#endif
         /// <summary>Text displayed to thank the user for providing feedback.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -628,6 +848,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string ThanksForFeedbackDetails { get => _explicitNullValueThanksForFeedbackDetails; set { _explicitNullValueThanksForFeedbackDetails = value; AdditionalData?.Remove("thanks_for_feedback_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("thanks_for_feedback_details"); else _explicitNullProperties?.Remove("thanks_for_feedback_details"); } }
         private string _explicitNullValueThanksForFeedbackDetails = default!;
+#endif
+        /// <summary>Status text displayed while the agent is thinking.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ThinkingStatus { get => _explicitNullValueThinkingStatus; set { _explicitNullValueThinkingStatus = value; AdditionalData?.Remove("thinking_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("thinking_status"); else _explicitNullProperties?.Remove("thinking_status"); } }
+        private string? _explicitNullValueThinkingStatus = default!;
+#nullable restore
+#else
+        public string ThinkingStatus { get => _explicitNullValueThinkingStatus; set { _explicitNullValueThinkingStatus = value; AdditionalData?.Remove("thinking_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("thinking_status"); else _explicitNullProperties?.Remove("thinking_status"); } }
+        private string _explicitNullValueThinkingStatus = default!;
 #endif
         /// <summary>Status text displayed while the agent is typing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -658,6 +888,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string VoiceMode { get => _explicitNullValueVoiceMode; set { _explicitNullValueVoiceMode = value; AdditionalData?.Remove("voice_mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_mode"); else _explicitNullProperties?.Remove("voice_mode"); } }
         private string _explicitNullValueVoiceMode = default!;
+#endif
+        /// <summary>Label for the voice option in the conversation mode toggle.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VoiceModeLabel { get => _explicitNullValueVoiceModeLabel; set { _explicitNullValueVoiceModeLabel = value; AdditionalData?.Remove("voice_mode_label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_mode_label"); else _explicitNullProperties?.Remove("voice_mode_label"); } }
+        private string? _explicitNullValueVoiceModeLabel = default!;
+#nullable restore
+#else
+        public string VoiceModeLabel { get => _explicitNullValueVoiceModeLabel; set { _explicitNullValueVoiceModeLabel = value; AdditionalData?.Remove("voice_mode_label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_mode_label"); else _explicitNullProperties?.Remove("voice_mode_label"); } }
+        private string _explicitNullValueVoiceModeLabel = default!;
 #endif
         /// <summary>Text and ARIA label for the wrap toggle button.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -692,7 +932,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(54)
+            return new Dictionary<string, Action<IParseNode>>(74)
             {
                 { "accept_terms", n => { AcceptTerms = n.GetStringValue(); } },
                 { "agent_done", n => { AgentDone = n.GetStringValue(); } },
@@ -700,19 +940,31 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "agent_error", n => { AgentError = n.GetStringValue(); } },
                 { "agent_working", n => { AgentWorking = n.GetStringValue(); } },
                 { "attach_file", n => { AttachFile = n.GetStringValue(); } },
+                { "cancel_end_confirmation", n => { CancelEndConfirmation = n.GetStringValue(); } },
+                { "carousel_next", n => { CarouselNext = n.GetStringValue(); } },
+                { "carousel_previous", n => { CarouselPrevious = n.GetStringValue(); } },
                 { "change_language", n => { ChangeLanguage = n.GetStringValue(); } },
                 { "chatting_status", n => { ChattingStatus = n.GetStringValue(); } },
                 { "collapse", n => { Collapse = n.GetStringValue(); } },
+                { "collapse_widget", n => { CollapseWidget = n.GetStringValue(); } },
                 { "connecting_status", n => { ConnectingStatus = n.GetStringValue(); } },
                 { "conversation_id", n => { ConversationId = n.GetStringValue(); } },
                 { "copied", n => { Copied = n.GetStringValue(); } },
                 { "copy", n => { Copy = n.GetStringValue(); } },
                 { "copy_id", n => { CopyId = n.GetStringValue(); } },
+                { "dismiss", n => { Dismiss = n.GetStringValue(); } },
                 { "dismiss_terms", n => { DismissTerms = n.GetStringValue(); } },
                 { "download", n => { Download = n.GetStringValue(); } },
                 { "end_call", n => { EndCall = n.GetStringValue(); } },
+                { "end_call_confirm", n => { EndCallConfirm = n.GetStringValue(); } },
+                { "end_call_confirmation_description", n => { EndCallConfirmationDescription = n.GetStringValue(); } },
+                { "end_call_confirmation_title", n => { EndCallConfirmationTitle = n.GetStringValue(); } },
+                { "end_chat", n => { EndChat = n.GetStringValue(); } },
+                { "end_chat_confirmation_description", n => { EndChatConfirmationDescription = n.GetStringValue(); } },
+                { "end_chat_confirmation_title", n => { EndChatConfirmationTitle = n.GetStringValue(); } },
                 { "error_occurred", n => { ErrorOccurred = n.GetStringValue(); } },
                 { "expand", n => { Expand = n.GetStringValue(); } },
+                { "expand_widget", n => { ExpandWidget = n.GetStringValue(); } },
                 { "file_limit_reached", n => { FileLimitReached = n.GetStringValue(); } },
                 { "file_too_large", n => { FileTooLarge = n.GetStringValue(); } },
                 { "file_type_unsupported", n => { FileTypeUnsupported = n.GetStringValue(); } },
@@ -728,11 +980,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "main_label", n => { MainLabel = n.GetStringValue(); } },
                 { "mute_microphone", n => { MuteMicrophone = n.GetStringValue(); } },
                 { "new_call", n => { NewCall = n.GetStringValue(); } },
+                { "new_message", n => { NewMessage = n.GetStringValue(); } },
+                { "new_messages", n => { NewMessages = n.GetStringValue(); } },
+                { "open_chat", n => { OpenChat = n.GetStringValue(); } },
                 { "queue_timed_out", n => { QueueTimedOut = n.GetStringValue(); } },
                 { "queue_waiting_status", n => { QueueWaitingStatus = n.GetStringValue(); } },
                 { "queue_waiting_status_short", n => { QueueWaitingStatusShort = n.GetStringValue(); } },
+                { "reconnecting_status", n => { ReconnectingStatus = n.GetStringValue(); } },
                 { "remove_file", n => { RemoveFile = n.GetStringValue(); } },
                 { "request_follow_up_feedback", n => { RequestFollowUpFeedback = n.GetStringValue(); } },
+                { "resume_call", n => { ResumeCall = n.GetStringValue(); } },
                 { "rich_content_unavailable", n => { RichContentUnavailable = n.GetStringValue(); } },
                 { "send_message", n => { SendMessage = n.GetStringValue(); } },
                 { "speaking_status", n => { SpeakingStatus = n.GetStringValue(); } },
@@ -742,11 +999,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "switched_to_text_mode", n => { SwitchedToTextMode = n.GetStringValue(); } },
                 { "switched_to_voice_mode", n => { SwitchedToVoiceMode = n.GetStringValue(); } },
                 { "text_mode", n => { TextMode = n.GetStringValue(); } },
+                { "text_mode_label", n => { TextModeLabel = n.GetStringValue(); } },
                 { "thanks_for_feedback", n => { ThanksForFeedback = n.GetStringValue(); } },
                 { "thanks_for_feedback_details", n => { ThanksForFeedbackDetails = n.GetStringValue(); } },
+                { "thinking_status", n => { ThinkingStatus = n.GetStringValue(); } },
                 { "typing_indicator", n => { TypingIndicator = n.GetStringValue(); } },
                 { "user_ended_conversation", n => { UserEndedConversation = n.GetStringValue(); } },
                 { "voice_mode", n => { VoiceMode = n.GetStringValue(); } },
+                { "voice_mode_label", n => { VoiceModeLabel = n.GetStringValue(); } },
                 { "wrap", n => { Wrap = n.GetStringValue(); } },
             };
         }
@@ -763,19 +1023,31 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("agent_error", AgentError);
             writer.WriteStringValue("agent_working", AgentWorking);
             writer.WriteStringValue("attach_file", AttachFile);
+            writer.WriteStringValue("cancel_end_confirmation", CancelEndConfirmation);
+            writer.WriteStringValue("carousel_next", CarouselNext);
+            writer.WriteStringValue("carousel_previous", CarouselPrevious);
             writer.WriteStringValue("change_language", ChangeLanguage);
             writer.WriteStringValue("chatting_status", ChattingStatus);
             writer.WriteStringValue("collapse", Collapse);
+            writer.WriteStringValue("collapse_widget", CollapseWidget);
             writer.WriteStringValue("connecting_status", ConnectingStatus);
             writer.WriteStringValue("conversation_id", ConversationId);
             writer.WriteStringValue("copied", Copied);
             writer.WriteStringValue("copy", Copy);
             writer.WriteStringValue("copy_id", CopyId);
+            writer.WriteStringValue("dismiss", Dismiss);
             writer.WriteStringValue("dismiss_terms", DismissTerms);
             writer.WriteStringValue("download", Download);
             writer.WriteStringValue("end_call", EndCall);
+            writer.WriteStringValue("end_call_confirm", EndCallConfirm);
+            writer.WriteStringValue("end_call_confirmation_description", EndCallConfirmationDescription);
+            writer.WriteStringValue("end_call_confirmation_title", EndCallConfirmationTitle);
+            writer.WriteStringValue("end_chat", EndChat);
+            writer.WriteStringValue("end_chat_confirmation_description", EndChatConfirmationDescription);
+            writer.WriteStringValue("end_chat_confirmation_title", EndChatConfirmationTitle);
             writer.WriteStringValue("error_occurred", ErrorOccurred);
             writer.WriteStringValue("expand", Expand);
+            writer.WriteStringValue("expand_widget", ExpandWidget);
             writer.WriteStringValue("file_limit_reached", FileLimitReached);
             writer.WriteStringValue("file_too_large", FileTooLarge);
             writer.WriteStringValue("file_type_unsupported", FileTypeUnsupported);
@@ -791,11 +1063,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("main_label", MainLabel);
             writer.WriteStringValue("mute_microphone", MuteMicrophone);
             writer.WriteStringValue("new_call", NewCall);
+            writer.WriteStringValue("new_message", NewMessage);
+            writer.WriteStringValue("new_messages", NewMessages);
+            writer.WriteStringValue("open_chat", OpenChat);
             writer.WriteStringValue("queue_timed_out", QueueTimedOut);
             writer.WriteStringValue("queue_waiting_status", QueueWaitingStatus);
             writer.WriteStringValue("queue_waiting_status_short", QueueWaitingStatusShort);
+            writer.WriteStringValue("reconnecting_status", ReconnectingStatus);
             writer.WriteStringValue("remove_file", RemoveFile);
             writer.WriteStringValue("request_follow_up_feedback", RequestFollowUpFeedback);
+            writer.WriteStringValue("resume_call", ResumeCall);
             writer.WriteStringValue("rich_content_unavailable", RichContentUnavailable);
             writer.WriteStringValue("send_message", SendMessage);
             writer.WriteStringValue("speaking_status", SpeakingStatus);
@@ -805,11 +1082,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("switched_to_text_mode", SwitchedToTextMode);
             writer.WriteStringValue("switched_to_voice_mode", SwitchedToVoiceMode);
             writer.WriteStringValue("text_mode", TextMode);
+            writer.WriteStringValue("text_mode_label", TextModeLabel);
             writer.WriteStringValue("thanks_for_feedback", ThanksForFeedback);
             writer.WriteStringValue("thanks_for_feedback_details", ThanksForFeedbackDetails);
+            writer.WriteStringValue("thinking_status", ThinkingStatus);
             writer.WriteStringValue("typing_indicator", TypingIndicator);
             writer.WriteStringValue("user_ended_conversation", UserEndedConversation);
             writer.WriteStringValue("voice_mode", VoiceMode);
+            writer.WriteStringValue("voice_mode_label", VoiceModeLabel);
             writer.WriteStringValue("wrap", Wrap);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

@@ -29,6 +29,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if (parseNode.GetChildNode("created_at_unix") is { } nullNodeCreatedAtUnix && nullNodeCreatedAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAtUnix = null;
             if (parseNode.GetChildNode("has_payment_issue") is null) { _explicitNullValueHasPaymentIssue = default!; _explicitNullProperties?.Remove("has_payment_issue"); }
             else if (parseNode.GetChildNode("has_payment_issue") is { } nullNodeHasPaymentIssue && nullNodeHasPaymentIssue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasPaymentIssue = null;
+            if (parseNode.GetChildNode("metadata") is null) { _explicitNullValueMetadata = default!; _explicitNullProperties?.Remove("metadata"); }
+            else if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
             if (parseNode.GetChildNode("onboarding_completed_at_unix") is null) { _explicitNullValueOnboardingCompletedAtUnix = default!; _explicitNullProperties?.Remove("onboarding_completed_at_unix"); }
             else if (parseNode.GetChildNode("onboarding_completed_at_unix") is { } nullNodeOnboardingCompletedAtUnix && nullNodeOnboardingCompletedAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnboardingCompletedAtUnix = null;
             if (parseNode.GetChildNode("receptionist_count") is null) { _explicitNullValueReceptionistCount = default!; _explicitNullProperties?.Remove("receptionist_count"); }
@@ -73,6 +75,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>A charge for this workspace is unpaid. Assigning or changing a tier is refused until it clears, so surface it rather than letting it fail.</summary>
         public bool? HasPaymentIssue { get => _explicitNullValueHasPaymentIssue; set { _explicitNullValueHasPaymentIssue = value; AdditionalData?.Remove("has_payment_issue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_payment_issue"); else _explicitNullProperties?.Remove("has_payment_issue"); } }
         private bool? _explicitNullValueHasPaymentIssue = default!;
+        /// <summary>Your own key-value pairs for the workspace.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSummaryMetadataProperty? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSummaryMetadataProperty? _explicitNullValueMetadata = default!;
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSummaryMetadataProperty Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSummaryMetadataProperty _explicitNullValueMetadata = default!;
+#endif
         /// <summary>When onboarding finished. Until then the onboarding wizard may replace or remove the workspace&apos;s business data.</summary>
         public int? OnboardingCompletedAtUnix { get => _explicitNullValueOnboardingCompletedAtUnix; set { _explicitNullValueOnboardingCompletedAtUnix = value; AdditionalData?.Remove("onboarding_completed_at_unix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("onboarding_completed_at_unix"); else _explicitNullProperties?.Remove("onboarding_completed_at_unix"); } }
         private int? _explicitNullValueOnboardingCompletedAtUnix = default!;
@@ -124,7 +136,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(10)
+            return new Dictionary<string, Action<IParseNode>>(11)
             {
                 { "billing_tier", n => { BillingTier = n.GetStringValue(); } },
                 { "business_name", n => { BusinessName = n.GetStringValue(); } },
@@ -132,6 +144,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "charge_customer", n => { ChargeCustomer = n.GetBoolValue(); } },
                 { "created_at_unix", n => { CreatedAtUnix = n.GetIntValue(); } },
                 { "has_payment_issue", n => { HasPaymentIssue = n.GetBoolValue(); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSummaryMetadataProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSummaryMetadataProperty.CreateFromDiscriminatorValue); } },
                 { "onboarding_completed_at_unix", n => { OnboardingCompletedAtUnix = n.GetIntValue(); } },
                 { "receptionist_count", n => { ReceptionistCount = n.GetIntValue(); } },
                 { "subscription", n => { Subscription = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProvisionResellerWorkspaceResponseSubscription>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProvisionResellerWorkspaceResponseSubscription.CreateFromDiscriminatorValue); } },
@@ -151,6 +164,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("charge_customer", ChargeCustomer);
             writer.WriteIntValue("created_at_unix", CreatedAtUnix);
             writer.WriteBoolValue("has_payment_issue", HasPaymentIssue);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSummaryMetadataProperty>("metadata", Metadata);
             writer.WriteIntValue("onboarding_completed_at_unix", OnboardingCompletedAtUnix);
             writer.WriteIntValue("receptionist_count", ReceptionistCount);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProvisionResellerWorkspaceResponseSubscription>("subscription", Subscription);
