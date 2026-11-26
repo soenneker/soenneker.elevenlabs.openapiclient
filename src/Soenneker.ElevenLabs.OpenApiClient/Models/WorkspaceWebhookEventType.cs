@@ -24,5 +24,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         Flows,
         #pragma warning restore CS1591
+        [EnumMember(Value = "support_ticket")]
+        #pragma warning disable CS1591
+        SupportTicket,
+        #pragma warning restore CS1591
     }
 }

@@ -16,5 +16,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         SkipTurnWaitElapsed,
         #pragma warning restore CS1591
+        [EnumMember(Value = "turn_stopped")]
+        #pragma warning disable CS1591
+        TurnStopped,
+        #pragma warning restore CS1591
     }
 }

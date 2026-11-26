@@ -63,6 +63,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if (parseNode.GetChildNode("language_presets") is { } nullNodeLanguagePresets && nullNodeLanguagePresets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LanguagePresets = null;
             if (parseNode.GetChildNode("language_selector") is null) { _explicitNullValueLanguageSelector = default!; _explicitNullProperties?.Remove("language_selector"); }
             else if (parseNode.GetChildNode("language_selector") is { } nullNodeLanguageSelector && nullNodeLanguageSelector.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LanguageSelector = null;
+            if (parseNode.GetChildNode("layout") is null) { _explicitNullValueLayout = default!; _explicitNullProperties?.Remove("layout"); }
+            else if (parseNode.GetChildNode("layout") is { } nullNodeLayout && nullNodeLayout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Layout = null;
             if (parseNode.GetChildNode("listening_text") is null) { _explicitNullValueListeningText = default!; _explicitNullProperties?.Remove("listening_text"); }
             else if (parseNode.GetChildNode("listening_text") is { } nullNodeListeningText && nullNodeListeningText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ListeningText = null;
             if (parseNode.GetChildNode("markdown_link_allowed_hosts") is null) { _explicitNullValueMarkdownLinkAllowedHosts = default!; _explicitNullProperties?.Remove("markdown_link_allowed_hosts"); }
@@ -278,6 +280,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Whether to show the language selector</summary>
         public bool? LanguageSelector { get => _explicitNullValueLanguageSelector; set { _explicitNullValueLanguageSelector = value; AdditionalData?.Remove("language_selector"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language_selector"); else _explicitNullProperties?.Remove("language_selector"); } }
         private bool? _explicitNullValueLanguageSelector = default!;
+        /// <summary>Whether the widget floats over a corner of the page or opens as a full-height side panel</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetLayout? Layout { get => _explicitNullValueLayout; set { _explicitNullValueLayout = value; AdditionalData?.Remove("layout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("layout"); else _explicitNullProperties?.Remove("layout"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetLayout? _explicitNullValueLayout = default!;
         /// <summary>The text to display when the agent is listening</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -476,6 +481,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             FeedbackMode = global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetFeedbackMode.None;
             FocusColor = "#000000";
             LanguageSelector = false;
+            Layout = global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetLayout.DefaultValue;
             MarkdownLinkAllowHttp = true;
             MarkdownLinkIncludeWww = true;
             MicMutingEnabled = true;
@@ -510,7 +516,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(52)
+            return new Dictionary<string, Action<IParseNode>>(53)
             {
                 { "action_text", n => { ActionText = n.GetStringValue(); } },
                 { "always_expanded", n => { AlwaysExpanded = n.GetBoolValue(); } },
@@ -535,6 +541,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "focus_color", n => { FocusColor = n.GetStringValue(); } },
                 { "language_presets", n => { LanguagePresets = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigInputLanguagePresetsProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigInputLanguagePresetsProperty.CreateFromDiscriminatorValue); } },
                 { "language_selector", n => { LanguageSelector = n.GetBoolValue(); } },
+                { "layout", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetLayout>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueLayout = default; _explicitNullProperties?.Remove("layout"); AdditionalData["layout"] = unknown; } else { Layout = parsed; AdditionalData.Remove("layout"); } } },
                 { "listening_text", n => { ListeningText = n.GetStringValue(); } },
                 { "markdown_link_allow_http", n => { MarkdownLinkAllowHttp = n.GetBoolValue(); } },
                 { "markdown_link_allowed_hosts", n => { MarkdownLinkAllowedHosts = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AllowlistItem>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AllowlistItem.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -596,6 +603,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("focus_color", FocusColor);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigInputLanguagePresetsProperty>("language_presets", LanguagePresets);
             writer.WriteBoolValue("language_selector", LanguageSelector);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetLayout>("layout", Layout);
             writer.WriteStringValue("listening_text", ListeningText);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AllowlistItem>("markdown_link_allowed_hosts", MarkdownLinkAllowedHosts);
             writer.WriteBoolValue("markdown_link_allow_http", MarkdownLinkAllowHttp);

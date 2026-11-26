@@ -28,5 +28,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         TimedOut,
         #pragma warning restore CS1591
+        [EnumMember(Value = "interrupted")]
+        #pragma warning disable CS1591
+        Interrupted,
+        #pragma warning restore CS1591
     }
 }

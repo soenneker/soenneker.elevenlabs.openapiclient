@@ -35,7 +35,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BranchesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/agents/{agentId}/branches{?include_archived*,include_commit_status*,limit*}", pathParameters)
+        public BranchesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/agents/{agentId}/branches{?include_archived*,include_commit_status*,limit*,page*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BranchesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/agents/{agentId}/branches{?include_archived*,include_commit_status*,limit*}", rawUrl)
+        public BranchesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/agents/{agentId}/branches{?include_archived*,include_commit_status*,limit*,page*}", rawUrl)
         {
         }
         /// <summary>
@@ -163,6 +163,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches
             /// <summary>How many results at most should be returned</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            /// <summary>Page number, starting at 1. Each page holds up to `limit` branches, and `meta.total` in the response is the number of branches across all pages.</summary>
+            [QueryParameter("page")]
+            public int? Page { get; set; }
         }
     }
 }

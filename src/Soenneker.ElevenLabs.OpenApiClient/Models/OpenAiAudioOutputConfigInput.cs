@@ -51,7 +51,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public OpenAiAudioOutputConfigInput()
         {
             AdditionalData = new Dictionary<string, object>();
-            Voice = "brian";
+            Voice = "default";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

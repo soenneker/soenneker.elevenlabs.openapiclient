@@ -35,7 +35,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Secrets
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SecretsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/secrets{?cursor*,dependency_limit*,page_size*,search*}", pathParameters)
+        public SecretsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/secrets{?cursor*,dependency_limit*,include_dependencies*,page_size*,search*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Secrets
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SecretsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/secrets{?cursor*,dependency_limit*,page_size*,search*}", rawUrl)
+        public SecretsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/secrets{?cursor*,dependency_limit*,include_dependencies*,page_size*,search*}", rawUrl)
         {
         }
         /// <summary>
@@ -167,6 +167,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Secrets
             /// <summary>Maximum number of dependent resources (tools, agents, phone numbers) to return per secret. Can not exceed 100.</summary>
             [QueryParameter("dependency_limit")]
             public int? DependencyLimit { get; set; }
+            /// <summary>Whether to return the resources that use each secret. If false, used_by is empty and the list returns much faster for workspaces with many secrets.</summary>
+            [QueryParameter("include_dependencies")]
+            public bool? IncludeDependencies { get; set; }
             /// <summary>How many documents to return at maximum. Can not exceed 100. If not provided, returns all secrets.</summary>
             [QueryParameter("page_size")]
             public int? PageSize { get; set; }

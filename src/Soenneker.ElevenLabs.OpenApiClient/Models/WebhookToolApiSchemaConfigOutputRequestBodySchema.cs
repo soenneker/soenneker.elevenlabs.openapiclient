@@ -18,6 +18,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("additional_properties") is null) { _explicitNullValueAdditionalProperties = default!; _explicitNullProperties?.Remove("additional_properties"); }
+            else if (parseNode.GetChildNode("additional_properties") is { } nullNodeAdditionalProperties && nullNodeAdditionalProperties.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdditionalProperties = null;
             if (parseNode.GetChildNode("constant_value") is null) { _explicitNullValueConstantValue = default!; _explicitNullProperties?.Remove("constant_value"); }
             else if (parseNode.GetChildNode("constant_value") is { } nullNodeConstantValue && nullNodeConstantValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConstantValue = null;
             if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
@@ -36,6 +38,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
+        /// <summary>Makes the object a map: the LLM may add keys beyond `properties`, and each of their values follows this schema, which the LLM must fill. Only for an LLM-provided nested object; ignored on a tool&apos;s top-level schema.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyOutputAdditionalPropertiesAnyOf1? AdditionalProperties { get => _explicitNullValueAdditionalProperties; set { _explicitNullValueAdditionalProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additional_properties"); else _explicitNullProperties?.Remove("additional_properties"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyOutputAdditionalPropertiesAnyOf1? _explicitNullValueAdditionalProperties = default!;
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyOutputAdditionalPropertiesAnyOf1 AdditionalProperties { get => _explicitNullValueAdditionalProperties; set { _explicitNullValueAdditionalProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additional_properties"); else _explicitNullProperties?.Remove("additional_properties"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyOutputAdditionalPropertiesAnyOf1 _explicitNullValueAdditionalProperties = default!;
+#endif
         /// <summary>When set, the entire object uses this constant JSON value at runtime. Mutually exclusive with description (LLM-provided object), dynamic_variable, and is_omitted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -127,8 +139,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(8)
+            return new Dictionary<string, Action<IParseNode>>(9)
             {
+                { "additional_properties", n => { AdditionalProperties = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyOutputAdditionalPropertiesAnyOf1>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyOutputAdditionalPropertiesAnyOf1.CreateFromDiscriminatorValue); } },
                 { "constant_value", n => { ConstantValue = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyOutputConstantValueProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyOutputConstantValueProperty.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "dynamic_variable", n => { DynamicVariable = n.GetStringValue(); } },
@@ -146,6 +159,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyOutputAdditionalPropertiesAnyOf1>("additional_properties", AdditionalProperties);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyOutputConstantValueProperty>("constant_value", ConstantValue);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("dynamic_variable", DynamicVariable);

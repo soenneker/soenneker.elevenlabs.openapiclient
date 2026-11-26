@@ -10,6 +10,7 @@ using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Feedback;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Files;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Messages;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.SipMessages;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Stop;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Summary;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Tags;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Turns;
@@ -55,6 +56,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.SipMessages.SipMessagesRequestBuilder SipMessages
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.SipMessages.SipMessagesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The stop property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Stop.StopRequestBuilder Stop
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Stop.StopRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The summary property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Summary.SummaryRequestBuilder Summary
