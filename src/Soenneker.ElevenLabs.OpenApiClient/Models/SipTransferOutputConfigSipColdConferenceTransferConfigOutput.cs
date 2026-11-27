@@ -18,10 +18,22 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public override void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
             base.CaptureExplicitNulls(parseNode);
+            if (parseNode.GetChildNode("custom_sip_headers") is null) { _explicitNullValueCustomSipHeaders = default!; _explicitNullProperties?.Remove("custom_sip_headers"); }
+            else if (parseNode.GetChildNode("custom_sip_headers") is { } nullNodeCustomSipHeaders && nullNodeCustomSipHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomSipHeaders = null;
             if (parseNode.GetChildNode("transfer_destination") is null) { _explicitNullValueTransferDestination = default!; _explicitNullProperties?.Remove("transfer_destination"); }
             else if (parseNode.GetChildNode("transfer_destination") is { } nullNodeTransferDestination && nullNodeTransferDestination.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferDestination = null;
         }
 
+        /// <summary>Custom SIP headers to include when transferring the call. Each header can be either a static value or a dynamic variable reference.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SipColdConferenceTransferConfigOutputCustomSipHeadersItem>? CustomSipHeaders { get => _explicitNullValueCustomSipHeaders; set { _explicitNullValueCustomSipHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_sip_headers"); else _explicitNullProperties?.Remove("custom_sip_headers"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SipColdConferenceTransferConfigOutputCustomSipHeadersItem>? _explicitNullValueCustomSipHeaders = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SipColdConferenceTransferConfigOutputCustomSipHeadersItem> CustomSipHeaders { get => _explicitNullValueCustomSipHeaders; set { _explicitNullValueCustomSipHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_sip_headers"); else _explicitNullProperties?.Remove("custom_sip_headers"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SipColdConferenceTransferConfigOutputCustomSipHeadersItem> _explicitNullValueCustomSipHeaders = default!;
+#endif
         /// <summary>The transfer_destination property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -50,6 +62,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "custom_sip_headers", n => { CustomSipHeaders = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.SipColdConferenceTransferConfigOutputCustomSipHeadersItem>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SipColdConferenceTransferConfigOutputCustomSipHeadersItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "transfer_destination", n => { TransferDestination = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExotelColdBlindTransferConfigOutputTransferDestination>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ExotelColdBlindTransferConfigOutputTransferDestination.CreateFromDiscriminatorValue); } },
             };
         }
@@ -61,6 +74,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.SipColdConferenceTransferConfigOutputCustomSipHeadersItem>("custom_sip_headers", CustomSipHeaders);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExotelColdBlindTransferConfigOutputTransferDestination>("transfer_destination", TransferDestination);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             
         }

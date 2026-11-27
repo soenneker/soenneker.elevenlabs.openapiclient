@@ -100,6 +100,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         ContextUsage,
         #pragma warning restore CS1591
+        [EnumMember(Value = "agent_speaker")]
+        #pragma warning disable CS1591
+        AgentSpeaker,
+        #pragma warning restore CS1591
         [EnumMember(Value = "internal_turn_probability")]
         #pragma warning disable CS1591
         InternalTurnProbability,

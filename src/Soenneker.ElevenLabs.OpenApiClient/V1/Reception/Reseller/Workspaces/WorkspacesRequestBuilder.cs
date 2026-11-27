@@ -35,7 +35,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Reception.Reseller.Workspaces
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WorkspacesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/reception/reseller/workspaces{?cursor*,page_size*}", pathParameters)
+        public WorkspacesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/reception/reseller/workspaces{?cursor*,page_size*,search*,sort*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Reception.Reseller.Workspaces
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WorkspacesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/reception/reseller/workspaces{?cursor*,page_size*}", rawUrl)
+        public WorkspacesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/reception/reseller/workspaces{?cursor*,page_size*,search*,sort*}", rawUrl)
         {
         }
         /// <summary>
@@ -167,6 +167,19 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Reception.Reseller.Workspaces
             /// <summary>Number of workspaces per page</summary>
             [QueryParameter("page_size")]
             public int? PageSize { get; set; }
+            /// <summary>Case-insensitive substring of the business name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("search")]
+            public string? Search { get; set; }
+#nullable restore
+#else
+            [QueryParameter("search")]
+            public string Search { get; set; }
+#endif
+            /// <summary>Order of the workspaces, newest first by default</summary>
+            [QueryParameter("sort")]
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSort? Sort { get; set; }
         }
     }
 }

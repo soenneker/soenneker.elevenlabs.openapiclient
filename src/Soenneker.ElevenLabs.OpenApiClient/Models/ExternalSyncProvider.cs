@@ -11,5 +11,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         GoogleDrive,
         #pragma warning restore CS1591
+        [EnumMember(Value = "sharepoint")]
+        #pragma warning disable CS1591
+        Sharepoint,
+        #pragma warning restore CS1591
     }
 }

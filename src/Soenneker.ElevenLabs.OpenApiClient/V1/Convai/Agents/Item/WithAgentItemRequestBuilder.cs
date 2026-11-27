@@ -18,6 +18,7 @@ using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.SimulateConversat
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.SubagentDependents;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Topics;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.TriageTickets;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.UserMemory;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Versions;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Widget;
 using System.Collections.Generic;
@@ -103,6 +104,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.TriageTickets.TriageTicketsRequestBuilder TriageTickets
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.TriageTickets.TriageTicketsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The userMemory property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.UserMemory.UserMemoryRequestBuilder UserMemory
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.UserMemory.UserMemoryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The versions property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Versions.VersionsRequestBuilder Versions

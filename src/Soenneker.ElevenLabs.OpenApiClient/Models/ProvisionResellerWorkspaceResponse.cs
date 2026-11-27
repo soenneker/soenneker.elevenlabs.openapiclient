@@ -35,6 +35,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
             if (parseNode.GetChildNode("onboarding_completed_at_unix") is null) { _explicitNullValueOnboardingCompletedAtUnix = default!; _explicitNullProperties?.Remove("onboarding_completed_at_unix"); }
             else if (parseNode.GetChildNode("onboarding_completed_at_unix") is { } nullNodeOnboardingCompletedAtUnix && nullNodeOnboardingCompletedAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnboardingCompletedAtUnix = null;
+            if (parseNode.GetChildNode("owner_email") is null) { _explicitNullValueOwnerEmail = default!; _explicitNullProperties?.Remove("owner_email"); }
+            else if (parseNode.GetChildNode("owner_email") is { } nullNodeOwnerEmail && nullNodeOwnerEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OwnerEmail = null;
             if (parseNode.GetChildNode("receptionist_count") is null) { _explicitNullValueReceptionistCount = default!; _explicitNullProperties?.Remove("receptionist_count"); }
             else if (parseNode.GetChildNode("receptionist_count") is { } nullNodeReceptionistCount && nullNodeReceptionistCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReceptionistCount = null;
             if (parseNode.GetChildNode("subscription") is null) { _explicitNullValueSubscription = default!; _explicitNullProperties?.Remove("subscription"); }
@@ -100,6 +102,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>When onboarding finished. Until then the onboarding wizard may replace or remove the workspace&apos;s business data.</summary>
         public int? OnboardingCompletedAtUnix { get => _explicitNullValueOnboardingCompletedAtUnix; set { _explicitNullValueOnboardingCompletedAtUnix = value; AdditionalData?.Remove("onboarding_completed_at_unix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("onboarding_completed_at_unix"); else _explicitNullProperties?.Remove("onboarding_completed_at_unix"); } }
         private int? _explicitNullValueOnboardingCompletedAtUnix = default!;
+        /// <summary>The customer&apos;s main contact: the email of the workspace&apos;s earliest admin that is a person. None until someone invited as admin joins.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OwnerEmail { get => _explicitNullValueOwnerEmail; set { _explicitNullValueOwnerEmail = value; AdditionalData?.Remove("owner_email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner_email"); else _explicitNullProperties?.Remove("owner_email"); } }
+        private string? _explicitNullValueOwnerEmail = default!;
+#nullable restore
+#else
+        public string OwnerEmail { get => _explicitNullValueOwnerEmail; set { _explicitNullValueOwnerEmail = value; AdditionalData?.Remove("owner_email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner_email"); else _explicitNullProperties?.Remove("owner_email"); } }
+        private string _explicitNullValueOwnerEmail = default!;
+#endif
         /// <summary>The receptionist_count property</summary>
         public int? ReceptionistCount { get => _explicitNullValueReceptionistCount; set { _explicitNullValueReceptionistCount = value; AdditionalData?.Remove("receptionist_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("receptionist_count"); else _explicitNullProperties?.Remove("receptionist_count"); } }
         private int? _explicitNullValueReceptionistCount = default!;
@@ -148,7 +160,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(12)
+            return new Dictionary<string, Action<IParseNode>>(13)
             {
                 { "billing_tier", n => { BillingTier = n.GetStringValue(); } },
                 { "business_name", n => { BusinessName = n.GetStringValue(); } },
@@ -159,6 +171,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "member_results", n => { MemberResults = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.TeamInviteResult>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TeamInviteResult.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProvisionResellerWorkspaceResponseMetadataProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProvisionResellerWorkspaceResponseMetadataProperty.CreateFromDiscriminatorValue); } },
                 { "onboarding_completed_at_unix", n => { OnboardingCompletedAtUnix = n.GetIntValue(); } },
+                { "owner_email", n => { OwnerEmail = n.GetStringValue(); } },
                 { "receptionist_count", n => { ReceptionistCount = n.GetIntValue(); } },
                 { "subscription", n => { Subscription = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProvisionResellerWorkspaceResponseSubscription>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProvisionResellerWorkspaceResponseSubscription.CreateFromDiscriminatorValue); } },
                 { "workspace_id", n => { WorkspaceId = n.GetStringValue(); } },
@@ -180,6 +193,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.TeamInviteResult>("member_results", MemberResults);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProvisionResellerWorkspaceResponseMetadataProperty>("metadata", Metadata);
             writer.WriteIntValue("onboarding_completed_at_unix", OnboardingCompletedAtUnix);
+            writer.WriteStringValue("owner_email", OwnerEmail);
             writer.WriteIntValue("receptionist_count", ReceptionistCount);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProvisionResellerWorkspaceResponseSubscription>("subscription", Subscription);
             writer.WriteStringValue("workspace_id", WorkspaceId);

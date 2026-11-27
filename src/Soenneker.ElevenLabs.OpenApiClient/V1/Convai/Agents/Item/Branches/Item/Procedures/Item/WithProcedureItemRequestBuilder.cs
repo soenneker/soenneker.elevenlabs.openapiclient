@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.ElevenLabs.OpenApiClient.Models;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item.Procedures.Item.Draft;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item.Procedures.Item.Visibility;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -22,6 +23,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item.Procedures.Item.Draft.DraftRequestBuilder Draft
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item.Procedures.Item.Draft.DraftRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The visibility property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item.Procedures.Item.Visibility.VisibilityRequestBuilder Visibility
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item.Procedures.Item.Visibility.VisibilityRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item.Procedures.Item.WithProcedureItemRequestBuilder"/> and sets the default values.

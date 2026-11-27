@@ -127,5 +127,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         AgentMessagesApi,
         #pragma warning restore CS1591
+        [EnumMember(Value = "websocket_api")]
+        #pragma warning disable CS1591
+        WebsocketApi,
+        #pragma warning restore CS1591
     }
 }

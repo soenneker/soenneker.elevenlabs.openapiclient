@@ -27,6 +27,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if (parseNode.GetChildNode("default_livekit_stack") is { } nullNodeDefaultLivekitStack && nullNodeDefaultLivekitStack.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultLivekitStack = null;
             if (parseNode.GetChildNode("rag_retention_period_days") is null) { _explicitNullValueRagRetentionPeriodDays = default!; _explicitNullProperties?.Remove("rag_retention_period_days"); }
             else if (parseNode.GetChildNode("rag_retention_period_days") is { } nullNodeRagRetentionPeriodDays && nullNodeRagRetentionPeriodDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RagRetentionPeriodDays = null;
+            if (parseNode.GetChildNode("user_memory") is null) { _explicitNullValueUserMemory = default!; _explicitNullProperties?.Remove("user_memory"); }
+            else if (parseNode.GetChildNode("user_memory") is { } nullNodeUserMemory && nullNodeUserMemory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserMemory = null;
             if (parseNode.GetChildNode("webhooks") is null) { _explicitNullValueWebhooks = default!; _explicitNullProperties?.Remove("webhooks"); }
             else if (parseNode.GetChildNode("webhooks") is { } nullNodeWebhooks && nullNodeWebhooks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Webhooks = null;
         }
@@ -55,6 +57,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The rag_retention_period_days property</summary>
         public int? RagRetentionPeriodDays { get => _explicitNullValueRagRetentionPeriodDays; set { _explicitNullValueRagRetentionPeriodDays = value; AdditionalData?.Remove("rag_retention_period_days"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rag_retention_period_days"); else _explicitNullProperties?.Remove("rag_retention_period_days"); } }
         private int? _explicitNullValueRagRetentionPeriodDays = default!;
+        /// <summary>User memory policy applied to the memory of every agent in the workspace with user memories on.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceUserMemorySettings? UserMemory { get => _explicitNullValueUserMemory; set { _explicitNullValueUserMemory = value; AdditionalData?.Remove("user_memory"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_memory"); else _explicitNullProperties?.Remove("user_memory"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceUserMemorySettings? _explicitNullValueUserMemory = default!;
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceUserMemorySettings UserMemory { get => _explicitNullValueUserMemory; set { _explicitNullValueUserMemory = value; AdditionalData?.Remove("user_memory"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_memory"); else _explicitNullProperties?.Remove("user_memory"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceUserMemorySettings _explicitNullValueUserMemory = default!;
+#endif
         /// <summary>The webhooks property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -91,13 +103,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(6)
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "can_use_mcp_servers", n => { CanUseMcpServers = n.GetBoolValue(); } },
                 { "conversation_embedding_retention_days", n => { ConversationEmbeddingRetentionDays = n.GetIntValue(); } },
                 { "conversation_initiation_client_data_webhook", n => { ConversationInitiationClientDataWebhook = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConvAiSettingsResponseModelConversationInitiationClientDataWebhook>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConvAiSettingsResponseModelConversationInitiationClientDataWebhook.CreateFromDiscriminatorValue); } },
                 { "default_livekit_stack", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LivekitStackType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDefaultLivekitStack = default; _explicitNullProperties?.Remove("default_livekit_stack"); AdditionalData["default_livekit_stack"] = unknown; } else { DefaultLivekitStack = parsed; AdditionalData.Remove("default_livekit_stack"); } } },
                 { "rag_retention_period_days", n => { RagRetentionPeriodDays = n.GetIntValue(); } },
+                { "user_memory", n => { UserMemory = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceUserMemorySettings>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceUserMemorySettings.CreateFromDiscriminatorValue); } },
                 { "webhooks", n => { Webhooks = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiWebhooks>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiWebhooks.CreateFromDiscriminatorValue); } },
             };
         }
@@ -113,6 +126,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConvAiSettingsResponseModelConversationInitiationClientDataWebhook>("conversation_initiation_client_data_webhook", ConversationInitiationClientDataWebhook);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LivekitStackType>("default_livekit_stack", DefaultLivekitStack);
             writer.WriteIntValue("rag_retention_period_days", RagRetentionPeriodDays);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceUserMemorySettings>("user_memory", UserMemory);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiWebhooks>("webhooks", Webhooks);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

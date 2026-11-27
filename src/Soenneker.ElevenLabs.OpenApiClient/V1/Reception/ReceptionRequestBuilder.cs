@@ -10,6 +10,7 @@ using Soenneker.ElevenLabs.OpenApiClient.V1.Reception.KnowledgeSources;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Reception.Locations;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Reception.PhoneNumbers;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Reception.Products;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Reception.PronunciationRules;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Reception.Reseller;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Reception.Services;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Reception.Staff;
@@ -65,6 +66,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Reception
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Reception.Products.ProductsRequestBuilder Products
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Reception.Products.ProductsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The pronunciationRules property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Reception.PronunciationRules.PronunciationRulesRequestBuilder PronunciationRules
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Reception.PronunciationRules.PronunciationRulesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The reseller property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Reception.Reseller.ResellerRequestBuilder Reseller

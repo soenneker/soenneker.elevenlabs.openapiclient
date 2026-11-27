@@ -56,6 +56,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 "bytedance-seedance-v2-mini" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoGenerationRequestBytedanceSeedance2MiniRequest(),
                 "bytedance-seedance-v2.5" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoGenerationRequestBytedanceSeedance25Request(),
                 "creatify-aurora" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoGenerationRequestCreatifyAuroraRequest(),
+                "creatify-aurora-2" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoGenerationRequestCreatifyAurora2Request(),
                 "veo-3.1-fast-generate-001" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoGenerationRequestVeo31FastRequest(),
                 "veo-3.1-generate-001" => new global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoGenerationRequestVeo31Request(),
                 _ => new global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoGenerationRequest(),

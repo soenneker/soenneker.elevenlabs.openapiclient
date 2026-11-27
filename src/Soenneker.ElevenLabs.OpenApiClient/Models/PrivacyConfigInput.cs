@@ -29,6 +29,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if (parseNode.GetChildNode("record_voice") is { } nullNodeRecordVoice && nullNodeRecordVoice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordVoice = null;
             if (parseNode.GetChildNode("retention_days") is null) { _explicitNullValueRetentionDays = default!; _explicitNullProperties?.Remove("retention_days"); }
             else if (parseNode.GetChildNode("retention_days") is { } nullNodeRetentionDays && nullNodeRetentionDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RetentionDays = null;
+            if (parseNode.GetChildNode("user_memory") is null) { _explicitNullValueUserMemory = default!; _explicitNullProperties?.Remove("user_memory"); }
+            else if (parseNode.GetChildNode("user_memory") is { } nullNodeUserMemory && nullNodeUserMemory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserMemory = null;
             if (parseNode.GetChildNode("zero_retention_mode") is null) { _explicitNullValueZeroRetentionMode = default!; _explicitNullProperties?.Remove("zero_retention_mode"); }
             else if (parseNode.GetChildNode("zero_retention_mode") is { } nullNodeZeroRetentionMode && nullNodeZeroRetentionMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ZeroRetentionMode = null;
         }
@@ -60,6 +62,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The number of days to retain the conversation. -1 indicates there is no retention limit</summary>
         public int? RetentionDays { get => _explicitNullValueRetentionDays; set { _explicitNullValueRetentionDays = value; AdditionalData?.Remove("retention_days"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retention_days"); else _explicitNullProperties?.Remove("retention_days"); } }
         private int? _explicitNullValueRetentionDays = default!;
+        /// <summary>Whether an agent remembers its end users, and how much of it it carries.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UserMemorySettingsInput? UserMemory { get => _explicitNullValueUserMemory; set { _explicitNullValueUserMemory = value; AdditionalData?.Remove("user_memory"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_memory"); else _explicitNullProperties?.Remove("user_memory"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.UserMemorySettingsInput? _explicitNullValueUserMemory = default!;
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UserMemorySettingsInput UserMemory { get => _explicitNullValueUserMemory; set { _explicitNullValueUserMemory = value; AdditionalData?.Remove("user_memory"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_memory"); else _explicitNullProperties?.Remove("user_memory"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.UserMemorySettingsInput _explicitNullValueUserMemory = default!;
+#endif
         /// <summary>Whether to enable zero retention mode - no PII data is stored</summary>
         public bool? ZeroRetentionMode { get => _explicitNullValueZeroRetentionMode; set { _explicitNullValueZeroRetentionMode = value; AdditionalData?.Remove("zero_retention_mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zero_retention_mode"); else _explicitNullProperties?.Remove("zero_retention_mode"); } }
         private bool? _explicitNullValueZeroRetentionMode = default!;
@@ -92,7 +104,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(7)
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "apply_to_existing_conversations", n => { ApplyToExistingConversations = n.GetBoolValue(); } },
                 { "conversation_history_redaction", n => { ConversationHistoryRedaction = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryRedactionConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryRedactionConfig.CreateFromDiscriminatorValue); } },
@@ -100,6 +112,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "delete_transcript_and_pii", n => { DeleteTranscriptAndPii = n.GetBoolValue(); } },
                 { "record_voice", n => { RecordVoice = n.GetBoolValue(); } },
                 { "retention_days", n => { RetentionDays = n.GetIntValue(); } },
+                { "user_memory", n => { UserMemory = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UserMemorySettingsInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UserMemorySettingsInput.CreateFromDiscriminatorValue); } },
                 { "zero_retention_mode", n => { ZeroRetentionMode = n.GetBoolValue(); } },
             };
         }
@@ -116,6 +129,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("delete_transcript_and_pii", DeleteTranscriptAndPii);
             writer.WriteBoolValue("record_voice", RecordVoice);
             writer.WriteIntValue("retention_days", RetentionDays);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UserMemorySettingsInput>("user_memory", UserMemory);
             writer.WriteBoolValue("zero_retention_mode", ZeroRetentionMode);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

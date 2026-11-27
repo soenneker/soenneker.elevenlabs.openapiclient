@@ -39,6 +39,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
             if (parseNode.GetChildNode("version_id") is null) { _explicitNullValueVersionId = default!; _explicitNullProperties?.Remove("version_id"); }
             else if (parseNode.GetChildNode("version_id") is { } nullNodeVersionId && nullNodeVersionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VersionId = null;
+            if (parseNode.GetChildNode("visibility") is null) { _explicitNullValueVisibility = default!; _explicitNullProperties?.Remove("visibility"); }
+            else if (parseNode.GetChildNode("visibility") is { } nullNodeVisibility && nullNodeVisibility.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Visibility = null;
             if (parseNode.GetChildNode("written_dynamic_variables") is null) { _explicitNullValueWrittenDynamicVariables = default!; _explicitNullProperties?.Remove("written_dynamic_variables"); }
             else if (parseNode.GetChildNode("written_dynamic_variables") is { } nullNodeWrittenDynamicVariables && nullNodeWrittenDynamicVariables.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WrittenDynamicVariables = null;
         }
@@ -141,6 +143,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string VersionId { get => _explicitNullValueVersionId; set { _explicitNullValueVersionId = value; AdditionalData?.Remove("version_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version_id"); else _explicitNullProperties?.Remove("version_id"); } }
         private string _explicitNullValueVersionId = default!;
 #endif
+        /// <summary>The condition that controls if the procedure is visible to the agent in its procedure menu. None means always visible.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProcedureAtVersionResponseModelVisibility? Visibility { get => _explicitNullValueVisibility; set { _explicitNullValueVisibility = value; AdditionalData?.Remove("visibility"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("visibility"); else _explicitNullProperties?.Remove("visibility"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ProcedureAtVersionResponseModelVisibility? _explicitNullValueVisibility = default!;
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProcedureAtVersionResponseModelVisibility Visibility { get => _explicitNullValueVisibility; set { _explicitNullValueVisibility = value; AdditionalData?.Remove("visibility"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("visibility"); else _explicitNullProperties?.Remove("visibility"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ProcedureAtVersionResponseModelVisibility _explicitNullValueVisibility = default!;
+#endif
         /// <summary>Dynamic variable names written by Update state steps</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -175,7 +187,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(12)
+            return new Dictionary<string, Action<IParseNode>>(13)
             {
                 { "folder_parent_id", n => { FolderParentId = n.GetStringValue(); } },
                 { "has_draft", n => { HasDraft = n.GetBoolValue(); } },
@@ -188,6 +200,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "trigger", n => { Trigger = n.GetStringValue(); } },
                 { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProcedureType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
                 { "version_id", n => { VersionId = n.GetStringValue(); } },
+                { "visibility", n => { Visibility = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProcedureAtVersionResponseModelVisibility>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProcedureAtVersionResponseModelVisibility.CreateFromDiscriminatorValue); } },
                 { "written_dynamic_variables", n => { WrittenDynamicVariables = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -209,6 +222,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("trigger", Trigger);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProcedureType>("type", Type);
             writer.WriteStringValue("version_id", VersionId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProcedureAtVersionResponseModelVisibility>("visibility", Visibility);
             writer.WriteCollectionOfPrimitiveValues<string>("written_dynamic_variables", WrittenDynamicVariables);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

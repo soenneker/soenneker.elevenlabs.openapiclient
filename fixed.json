@@ -34306,6 +34306,111 @@
         "x-fern-sdk-method-name": "delete"
       }
     },
+    "/v1/convai/agents/{agentId}/branches/{branchId}/procedures/{procedureId}/visibility": {
+      "patch": {
+        "tags": [
+          "Agents Platform"
+        ],
+        "summary": "Update Procedure Visibility",
+        "description": "Update or clear the visibility of a procedure draft. This is the condition that controls if a procedure is visible to the agent in its procedure menu.",
+        "operationId": "UpdateProcedureVisibilityRoute",
+        "parameters": [
+          {
+            "name": "agentId",
+            "in": "path",
+            "description": "Agent ID to get the procedure draft from",
+            "required": true,
+            "schema": {
+              "examples": [
+                "agent_3701k3ttaq12ewp8b7qv5rfyszkz"
+              ],
+              "title": "Agent Id",
+              "type": "string",
+              "description": "Agent ID to get the procedure draft from"
+            }
+          },
+          {
+            "name": "branchId",
+            "in": "path",
+            "description": "Branch ID to get the procedure draft from",
+            "required": true,
+            "schema": {
+              "examples": [
+                "agtbranch_0901k4aafjxxfxt93gd841r7tv5t"
+              ],
+              "title": "Branch Id",
+              "type": "string",
+              "description": "Branch ID to get the procedure draft from"
+            }
+          },
+          {
+            "name": "procedureId",
+            "in": "path",
+            "description": "The procedure ID",
+            "required": true,
+            "schema": {
+              "examples": [
+                "agtprc_6qbpwdq8n01bxhk44bgjy6f10ck3"
+              ],
+              "title": "Procedure Id",
+              "type": "string",
+              "description": "The procedure ID"
+            }
+          },
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": [
+                "null",
+                "string"
+              ],
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website."
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateProcedureVisibilityRequestModel"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProcedureDraftResponseModel"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationError"
+                }
+              }
+            }
+          }
+        },
+        "x-fern-sdk-group-name": [
+          "conversational_ai",
+          "agents",
+          "procedures"
+        ],
+        "x-fern-sdk-method-name": "update_visibility"
+      }
+    },
     "/v1/convai/conversations/{conversationId}/analysis/run": {
       "post": {
         "tags": [
@@ -34442,6 +34547,368 @@
           "analysis"
         ],
         "x-fern-sdk-method-name": "runEvaluation"
+      }
+    },
+    "/v1/convai/agents/{agentId}/user-memory/erase": {
+      "post": {
+        "tags": [
+          "Agents Platform"
+        ],
+        "summary": "Erase User Memory",
+        "description": "Erase what this agent remembers about an end user: it stops drawing on their earlier conversations, and what it learned from them is deleted. With \u0060opt_out\u0060, it also stops remembering them in future ones. Other agents\u0027 memories of the user are kept. The conversations themselves are not deleted; use the Delete Conversation endpoint for that.",
+        "operationId": "EraseUserMemoryRoute",
+        "parameters": [
+          {
+            "name": "agentId",
+            "in": "path",
+            "description": "The id of an agent.",
+            "required": true,
+            "schema": {
+              "examples": [
+                "agent_3701k3ttaq12ewp8b7qv5rfyszkz"
+              ],
+              "title": "Agent Id",
+              "type": "string",
+              "description": "The id of an agent."
+            }
+          },
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": [
+                "null",
+                "string"
+              ],
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website."
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EraseUserMemoryRequestModel"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EraseUserMemoryResponseModel"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationError"
+                }
+              }
+            }
+          }
+        },
+        "x-fern-sdk-group-name": [
+          "conversational_ai",
+          "user_memory"
+        ],
+        "x-fern-sdk-method-name": "erase"
+      }
+    },
+    "/v1/convai/agents/{agentId}/user-memory/facts/{factId}": {
+      "delete": {
+        "tags": [
+          "Agents Platform"
+        ],
+        "summary": "Delete User Memory Fact",
+        "description": "Delete one thing this agent remembers about an end user, e.g. because it is wrong. Earlier and later values of the same fact are kept and listed separately in Export User Memory. The agent still reads the user\u0027s recent conversations verbatim, so it can come across it there until those conversations are erased with Erase User Memory or deleted with Delete Conversation.",
+        "operationId": "DeleteUserMemoryFactRoute",
+        "parameters": [
+          {
+            "name": "agentId",
+            "in": "path",
+            "description": "The id of an agent.",
+            "required": true,
+            "schema": {
+              "examples": [
+                "agent_3701k3ttaq12ewp8b7qv5rfyszkz"
+              ],
+              "title": "Agent Id",
+              "type": "string",
+              "description": "The id of an agent."
+            }
+          },
+          {
+            "name": "factId",
+            "in": "path",
+            "description": "ID of the fact, as listed by Export User Memory.",
+            "required": true,
+            "schema": {
+              "examples": [
+                "umfa_01k6m3w9xq4f2c8t7n5b0r1d2e"
+              ],
+              "title": "Fact Id",
+              "type": "string",
+              "description": "ID of the fact, as listed by Export User Memory."
+            }
+          },
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": [
+                "null",
+                "string"
+              ],
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website."
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationError"
+                }
+              }
+            }
+          }
+        },
+        "x-fern-sdk-group-name": [
+          "conversational_ai",
+          "user_memory",
+          "facts"
+        ],
+        "x-fern-sdk-method-name": "delete"
+      }
+    },
+    "/v1/convai/agents/{agentId}/user-memory/entities/{entityId}": {
+      "delete": {
+        "tags": [
+          "Agents Platform"
+        ],
+        "summary": "Delete User Memory Entity",
+        "description": "Delete a person, place or thing this agent remembers from an end user\u0027s conversations, together with everything it remembers about it. The agent may learn about it again from later conversations. It still reads the user\u0027s recent conversations verbatim, so it can come across it there until those conversations are erased with Erase User Memory or deleted with Delete Conversation.",
+        "operationId": "DeleteUserMemoryEntityRoute",
+        "parameters": [
+          {
+            "name": "agentId",
+            "in": "path",
+            "description": "The id of an agent.",
+            "required": true,
+            "schema": {
+              "examples": [
+                "agent_3701k3ttaq12ewp8b7qv5rfyszkz"
+              ],
+              "title": "Agent Id",
+              "type": "string",
+              "description": "The id of an agent."
+            }
+          },
+          {
+            "name": "entityId",
+            "in": "path",
+            "description": "ID of the entity, as listed by Export User Memory.",
+            "required": true,
+            "schema": {
+              "examples": [
+                "umen_01k6m3w9xq4f2c8t7n5b0r1d2e"
+              ],
+              "title": "Entity Id",
+              "type": "string",
+              "description": "ID of the entity, as listed by Export User Memory."
+            }
+          },
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": [
+                "null",
+                "string"
+              ],
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website."
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationError"
+                }
+              }
+            }
+          }
+        },
+        "x-fern-sdk-group-name": [
+          "conversational_ai",
+          "user_memory",
+          "entities"
+        ],
+        "x-fern-sdk-method-name": "delete"
+      }
+    },
+    "/v1/convai/agents/{agentId}/user-memory/export": {
+      "post": {
+        "tags": [
+          "Agents Platform"
+        ],
+        "summary": "Export User Memory",
+        "description": "Get a copy of everything this agent remembers about an end user, to answer their request to access or take their data; each agent remembers its users separately. Conversations are not included; use the Get Conversation Details endpoint for those. Someone who reached you under identities that were never linked is a separate user for each.",
+        "operationId": "ExportUserMemoryRoute",
+        "parameters": [
+          {
+            "name": "agentId",
+            "in": "path",
+            "description": "The id of an agent.",
+            "required": true,
+            "schema": {
+              "examples": [
+                "agent_3701k3ttaq12ewp8b7qv5rfyszkz"
+              ],
+              "title": "Agent Id",
+              "type": "string",
+              "description": "The id of an agent."
+            }
+          },
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": [
+                "null",
+                "string"
+              ],
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website."
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExportUserMemoryRequestModel"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExportUserMemoryResponseModel"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationError"
+                }
+              }
+            }
+          }
+        },
+        "x-fern-sdk-group-name": [
+          "conversational_ai",
+          "user_memory"
+        ],
+        "x-fern-sdk-method-name": "export"
+      }
+    },
+    "/v1/convai/users/find-by-identity": {
+      "post": {
+        "tags": [
+          "Agents Platform"
+        ],
+        "summary": "Find Agents User By Identity",
+        "description": "The end user an active identity belongs to in the caller\u0027s workspace, e.g. the \u0060user_id\u0060 your conversation initiation data sent for them. Use the returned \u0060user_id\u0060 with Erase User Memory or Export User Memory. Never creates a user or identity.",
+        "operationId": "FindAgentsUserByIdentityRoute",
+        "parameters": [
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": [
+                "null",
+                "string"
+              ],
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website."
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FindAgentsUserByIdentityRequestModel"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FindAgentsUserByIdentityResponseModel"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationError"
+                }
+              }
+            }
+          }
+        },
+        "x-fern-sdk-group-name": [
+          "conversational_ai",
+          "agents_users"
+        ],
+        "x-fern-sdk-method-name": "find_by_identity"
       }
     },
     "/v1/convai/environment-variables": {
@@ -44528,6 +44995,144 @@
         "x-fern-sdk-method-name": "delete"
       }
     },
+    "/v1/reception/pronunciation-rules": {
+      "get": {
+        "tags": [
+          "smb",
+          "SMB",
+          "reception"
+        ],
+        "summary": "Get Pronunciation Rules",
+        "description": "Get how the receptionists say this business\u0027s words on calls.",
+        "operationId": "SmbGetPronunciationRules",
+        "parameters": [
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": [
+                "null",
+                "string"
+              ],
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website."
+            }
+          },
+          {
+            "name": "xi-workspace-id",
+            "in": "header",
+            "description": "The customer workspace a reseller\u0027s API key acts on.",
+            "required": true,
+            "schema": {
+              "title": "Xi-Workspace-Id",
+              "type": "string",
+              "description": "The customer workspace a reseller\u0027s API key acts on."
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReceptionPronunciationRulesResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationError"
+                }
+              }
+            }
+          }
+        },
+        "x-fern-sdk-group-name": [
+          "reception",
+          "pronunciation_rules"
+        ],
+        "x-fern-sdk-method-name": "get"
+      },
+      "put": {
+        "tags": [
+          "smb",
+          "SMB",
+          "reception"
+        ],
+        "summary": "Set Pronunciation Rules",
+        "description": "Replace how the receptionists say this business\u0027s words on calls. Send the full list; an empty list clears the rules.",
+        "operationId": "SmbSetPronunciationRules",
+        "parameters": [
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": [
+                "null",
+                "string"
+              ],
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website."
+            }
+          },
+          {
+            "name": "xi-workspace-id",
+            "in": "header",
+            "description": "The customer workspace a reseller\u0027s API key acts on.",
+            "required": true,
+            "schema": {
+              "title": "Xi-Workspace-Id",
+              "type": "string",
+              "description": "The customer workspace a reseller\u0027s API key acts on."
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReceptionSetPronunciationRulesRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReceptionPronunciationRulesResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationError"
+                }
+              }
+            }
+          }
+        },
+        "x-fern-sdk-group-name": [
+          "reception",
+          "pronunciation_rules"
+        ],
+        "x-fern-sdk-method-name": "set"
+      }
+    },
     "/v1/reception/phone-numbers/assignments": {
       "get": {
         "tags": [
@@ -46208,6 +46813,30 @@
               "type": "integer",
               "description": "Number of workspaces per page",
               "default": 50
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "description": "Case-insensitive substring of the business name",
+            "schema": {
+              "title": "Search",
+              "maxLength": 100,
+              "type": [
+                "null",
+                "string"
+              ],
+              "description": "Case-insensitive substring of the business name"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Order of the workspaces, newest first by default",
+            "schema": {
+              "description": "Order of the workspaces, newest first by default",
+              "default": "newest",
+              "$ref": "#/components/schemas/ResellerWorkspaceSort"
             }
           },
           {
@@ -63102,6 +63731,7 @@
           "dtmf_request",
           "agent_response_complete",
           "context_usage",
+          "agent_speaker",
           "internal_turn_probability",
           "internal_tentative_agent_response"
         ],
@@ -63201,6 +63831,10 @@
             {
               "value": "context_usage",
               "name": "ContextUsage"
+            },
+            {
+              "value": "agent_speaker",
+              "name": "AgentSpeaker"
             },
             {
               "value": "internal_turn_probability",
@@ -66614,7 +67248,8 @@
           "template_preview",
           "genesys_bot_connector",
           "subagent_tool",
-          "agent_messages_api"
+          "agent_messages_api",
+          "websocket_api"
         ],
         "type": "string",
         "description": "Enum representing the possible sources for conversation initiation.",
@@ -66741,6 +67376,10 @@
             {
               "value": "agent_messages_api",
               "name": "AgentMessagesApi"
+            },
+            {
+              "value": "websocket_api",
+              "name": "WebsocketApi"
             }
           ]
         }
@@ -71828,6 +72467,56 @@
           ]
         }
       },
+      "EraseUserMemoryRequestModel": {
+        "title": "EraseUserMemoryRequestModel",
+        "required": [
+          "user_id"
+        ],
+        "type": "object",
+        "properties": {
+          "user_id": {
+            "title": "User Id",
+            "type": "string",
+            "description": "ID of the end user whose memory the agent is to erase. Find it from the \u0060user_id\u0060 your conversation initiation data sent with Find Agents User By Identity."
+          },
+          "opt_out": {
+            "title": "Opt Out",
+            "type": [
+              "null",
+              "boolean"
+            ],
+            "description": "True turns the agent\u0027s memory off for this user in future conversations, false turns it back on. Left out, the user\u0027s current setting is kept."
+          }
+        },
+        "example": {
+          "opt_out": true,
+          "user_id": "ausr_01k6m3w9xq4f2c8t7n5b0r1d2e"
+        }
+      },
+      "EraseUserMemoryResponseModel": {
+        "title": "EraseUserMemoryResponseModel",
+        "required": [
+          "erased_at_unix_secs",
+          "opted_out"
+        ],
+        "type": "object",
+        "properties": {
+          "erased_at_unix_secs": {
+            "title": "Erased At Unix Secs",
+            "type": "integer",
+            "description": "The agent remembers nothing about the user from before this time."
+          },
+          "opted_out": {
+            "title": "Opted Out",
+            "type": "boolean",
+            "description": "Whether the agent\u0027s memory is off for this user in future conversations."
+          }
+        },
+        "example": {
+          "erased_at_unix_secs": 1790000000,
+          "opted_out": true
+        }
+      },
       "EvaluationCriteriaSummaryResult": {
         "title": "EvaluationCriteriaSummaryResult",
         "required": [
@@ -72078,6 +72767,84 @@
         "required": [
           "format"
         ]
+      },
+      "ExportUserMemoryRequestModel": {
+        "title": "ExportUserMemoryRequestModel",
+        "required": [
+          "user_id"
+        ],
+        "type": "object",
+        "properties": {
+          "user_id": {
+            "title": "User Id",
+            "type": "string",
+            "description": "ID of the end user whose memory the agent is to export. Find it from the \u0060user_id\u0060 your conversation initiation data sent with Find Agents User By Identity."
+          }
+        },
+        "example": {
+          "user_id": "ausr_01k6m3w9xq4f2c8t7n5b0r1d2e"
+        }
+      },
+      "ExportUserMemoryResponseModel": {
+        "title": "ExportUserMemoryResponseModel",
+        "required": [
+          "agent_id",
+          "user_id",
+          "exported_at_unix_secs",
+          "entities"
+        ],
+        "type": "object",
+        "properties": {
+          "agent_id": {
+            "title": "Agent Id",
+            "type": "string",
+            "description": "ID of the agent whose memory was exported."
+          },
+          "user_id": {
+            "title": "User Id",
+            "type": "string",
+            "description": "ID of the end user the export is about."
+          },
+          "exported_at_unix_secs": {
+            "title": "Exported At Unix Secs",
+            "type": "integer",
+            "description": "When the export was taken."
+          },
+          "entities": {
+            "title": "Entities",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RenderedUserMemoryEntity"
+            },
+            "description": "Everything the agent remembers about the user, by who or what it is about, the user first. Includes what is no longer believed."
+          }
+        },
+        "example": {
+          "agent_id": "agent_01k6m3w9xq4f2c8t7n5b0r1d2e",
+          "entities": [
+            {
+              "events": [],
+              "facts": [
+                {
+                  "attribute": "diet",
+                  "id": "umfa_01k6m3w9xq4f2c8t7n5b0r1d2e",
+                  "last_seen_conversation_id": "conv_01k6m3w9xq4f2c8t7n5b0r1d2e",
+                  "learned_at_unix_secs": 1789000000,
+                  "reference_count": 2,
+                  "text": "Is vegetarian.",
+                  "valid_from": "2026-03-01"
+                }
+              ],
+              "id": "umen_01k6m3w9xq4f2c8t7n5b0r1d2e",
+              "is_user": true,
+              "name": "user",
+              "relations": [],
+              "type": "person"
+            }
+          ],
+          "exported_at_unix_secs": 1790000000,
+          "user_id": "ausr_01k6m3w9xq4f2c8t7n5b0r1d2e"
+        }
       },
       "ExtendedSubscriptionResponseModel": {
         "title": "ExtendedSubscriptionResponseModel",
@@ -72381,7 +73148,8 @@
       "ExternalSyncProvider": {
         "title": "ExternalSyncProvider",
         "enum": [
-          "google_drive"
+          "google_drive",
+          "sharepoint"
         ],
         "type": "string",
         "x-ms-enum": {
@@ -72391,6 +73159,10 @@
             {
               "value": "google_drive",
               "name": "GoogleDrive"
+            },
+            {
+              "value": "sharepoint",
+              "name": "Sharepoint"
             }
           ]
         }
@@ -72588,6 +73360,55 @@
               "name": "TextPlain"
             }
           ]
+        }
+      },
+      "FindAgentsUserByIdentityRequestModel": {
+        "title": "FindAgentsUserByIdentityRequestModel",
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "namespace": {
+            "title": "Namespace",
+            "type": "string",
+            "description": "Namespace of the identity, e.g. \u0060external\u0060 for the \u0060user_id\u0060 a conversation initiation webhook or API request gave, or \u0060email\u0060.",
+            "default": "external"
+          },
+          "value": {
+            "title": "Value",
+            "minLength": 1,
+            "type": "string",
+            "description": "Value of the identity."
+          }
+        },
+        "example": {
+          "namespace": "external",
+          "value": "jane@example.com"
+        }
+      },
+      "FindAgentsUserByIdentityResponseModel": {
+        "title": "FindAgentsUserByIdentityResponseModel",
+        "required": [
+          "user_id",
+          "identity_id"
+        ],
+        "type": "object",
+        "properties": {
+          "user_id": {
+            "title": "User Id",
+            "type": "string",
+            "description": "ID of the end user the identity belongs to."
+          },
+          "identity_id": {
+            "title": "Identity Id",
+            "type": "string",
+            "description": "ID of the identity."
+          }
+        },
+        "example": {
+          "identity_id": "auid_01k6m3w9xq4f2c8t7n5b0r1d2e",
+          "user_id": "ausr_01k6m3w9xq4f2c8t7n5b0r1d2e"
         }
       },
       "FinetuneCreatedBy": {
@@ -73737,6 +74558,10 @@
           "default_livekit_stack": {
             "default": "standard",
             "$ref": "#/components/schemas/LivekitStackType"
+          },
+          "user_memory": {
+            "description": "User memory policy applied to the memory of every agent in the workspace with user memories on.",
+            "$ref": "#/components/schemas/WorkspaceUserMemorySettings"
           }
         }
       },
@@ -76509,6 +77334,91 @@
           }
         },
         "description": "An optionally-sized icon for display in a user interface (2025-11-25\u002B)."
+      },
+      "IdentityPolicyInput": {
+        "title": "IdentityPolicy",
+        "required": [
+          "rules"
+        ],
+        "type": "object",
+        "properties": {
+          "rules": {
+            "title": "Rules",
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IdentityPolicyRule"
+            },
+            "description": "The end user is recognized when any rule matches. \u0060workspace_asserted\u0060: ids your backend sends through the API, your webhooks or your own app. \u0060challenge_verified\u0060: identities the user proved through a challenge. \u0060provider_asserted\u0060: platform-provided ids, the account a user messages from as the platform (Slack, WhatsApp, Telegram) reports it; ElevenLabs does not verify who uses the account. \u0060unverified\u0060: identities nobody verified, such as a caller\u0027s phone number, which can be spoofed."
+          }
+        },
+        "description": "Which end users an agent feature recognizes. Each feature that acts for an end\nuser embeds its own, with its own default."
+      },
+      "IdentityPolicyOutput": {
+        "title": "IdentityPolicy",
+        "required": [
+          "rules"
+        ],
+        "type": "object",
+        "properties": {
+          "rules": {
+            "title": "Rules",
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IdentityPolicyRule"
+            },
+            "description": "The end user is recognized when any rule matches. \u0060workspace_asserted\u0060: ids your backend sends through the API, your webhooks or your own app. \u0060challenge_verified\u0060: identities the user proved through a challenge. \u0060provider_asserted\u0060: platform-provided ids, the account a user messages from as the platform (Slack, WhatsApp, Telegram) reports it; ElevenLabs does not verify who uses the account. \u0060unverified\u0060: identities nobody verified, such as a caller\u0027s phone number, which can be spoofed."
+          }
+        },
+        "description": "Which end users an agent feature recognizes. Each feature that acts for an end\nuser embeds its own, with its own default."
+      },
+      "IdentityPolicyRule": {
+        "title": "IdentityPolicyRule",
+        "required": [
+          "verification_method"
+        ],
+        "type": "object",
+        "properties": {
+          "verification_method": {
+            "description": "How the conversation established who the end user is.",
+            "$ref": "#/components/schemas/IdentityVerificationMethod"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Recognizes an end user the conversation established by \u0060verification_method\u0060.\n\nFields a rule gains later narrow what it matches and default to matching\nanything, so a stored rule keeps its meaning."
+      },
+      "IdentityVerificationMethod": {
+        "title": "IdentityVerificationMethod",
+        "enum": [
+          "unverified",
+          "workspace_asserted",
+          "provider_asserted",
+          "challenge_verified"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "IdentityVerificationMethod",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "unverified",
+              "name": "Unverified"
+            },
+            {
+              "value": "workspace_asserted",
+              "name": "WorkspaceAsserted"
+            },
+            {
+              "value": "provider_asserted",
+              "name": "ProviderAsserted"
+            },
+            {
+              "value": "challenge_verified",
+              "name": "ChallengeVerified"
+            }
+          ]
+        }
       },
       "ImageAvatar": {
         "title": "ImageAvatar",
@@ -83525,6 +84435,10 @@
           "default_livekit_stack": {
             "default": "standard",
             "$ref": "#/components/schemas/LivekitStackType"
+          },
+          "user_memory": {
+            "description": "User memory policy applied to the memory of every agent in the workspace with user memories on.",
+            "$ref": "#/components/schemas/WorkspaceUserMemorySettings"
           }
         }
       },
@@ -84647,6 +85561,9 @@
           "conversation_history_redaction": {
             "description": "Config for PII redaction in the conversation history",
             "$ref": "#/components/schemas/ConversationHistoryRedactionConfig"
+          },
+          "user_memory": {
+            "$ref": "#/components/schemas/UserMemorySettingsInput"
           }
         },
         "example": {
@@ -84701,6 +85618,9 @@
           "conversation_history_redaction": {
             "description": "Config for PII redaction in the conversation history",
             "$ref": "#/components/schemas/ConversationHistoryRedactionConfig"
+          },
+          "user_memory": {
+            "$ref": "#/components/schemas/UserMemorySettingsOutput"
           }
         },
         "example": {
@@ -84764,6 +85684,9 @@
               "string"
             ],
             "description": "Procedure ID of the folder this procedure is placed in. None means root."
+          },
+          "visibility": {
+            "$ref": "#/components/schemas/ProcedureAtVersionResponseModelVisibility"
           }
         },
         "example": {
@@ -84837,6 +85760,9 @@
               "string"
             ],
             "description": "Procedure ID of the folder this procedure is placed in. None means root."
+          },
+          "visibility": {
+            "$ref": "#/components/schemas/ProcedureAtVersionResponseModelVisibility"
           }
         },
         "example": {
@@ -84937,6 +85863,9 @@
               "string"
             ],
             "description": "Procedure ID of the folder this procedure is placed in. None means root."
+          },
+          "visibility": {
+            "$ref": "#/components/schemas/ProcedureAtVersionResponseModelVisibility"
           }
         },
         "example": {
@@ -85044,6 +85973,9 @@
               "string"
             ],
             "description": "Procedure ID of the folder this procedure is placed in. None means root."
+          },
+          "visibility": {
+            "$ref": "#/components/schemas/ProcedureAtVersionResponseModelVisibility"
           }
         },
         "example": {
@@ -87349,6 +88281,14 @@
             "type": "boolean",
             "description": "A charge for this workspace is unpaid. Assigning or changing a tier is refused until it clears, so surface it rather than letting it fail.",
             "default": false
+          },
+          "owner_email": {
+            "title": "Owner Email",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "The customer\u0027s main contact: the email of the workspace\u0027s earliest admin that is a person. None until someone invited as admin joins."
           },
           "onboarding_completed_at_unix": {
             "title": "Onboarding Completed At Unix",
@@ -90201,6 +91141,39 @@
         },
         "description": "Represents a product, menu item, or catalog item.\n\nUsed for restaurants (menu), e-commerce (products), salons (retail items), etc."
       },
+      "ReceptionPronunciationRule": {
+        "title": "ReceptionPronunciationRule",
+        "required": [
+          "word",
+          "pronunciation"
+        ],
+        "type": "object",
+        "properties": {
+          "word": {
+            "type": "string"
+          },
+          "pronunciation": {
+            "type": "string"
+          }
+        },
+        "description": "How the receptionist should say one word (or phrase) on calls.\n\nThe rule rewrites only what the receptionist *says* \u2014 transcripts, messages\nand everything written keep the original spelling."
+      },
+      "ReceptionPronunciationRulesResponse": {
+        "title": "ReceptionPronunciationRulesResponse",
+        "type": "object",
+        "properties": {
+          "rules": {
+            "title": "Rules",
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ReceptionPronunciationRule"
+            },
+            "description": "The full list of pronunciation rules; sending it replaces the stored list."
+          }
+        },
+        "description": "The workspace\u0027s pronunciation rules, shared by every receptionist and the assistant."
+      },
       "ReceptionProvisionResellerWorkspaceRequest": {
         "title": "ReceptionProvisionResellerWorkspaceRequest",
         "required": [
@@ -90702,6 +91675,25 @@
           }
         },
         "description": "A variant of a service identified by its duration, with optional price override."
+      },
+      "ReceptionSetPronunciationRulesRequest": {
+        "title": "ReceptionSetPronunciationRulesRequest",
+        "required": [
+          "rules"
+        ],
+        "type": "object",
+        "properties": {
+          "rules": {
+            "title": "Rules",
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ReceptionPronunciationRule"
+            },
+            "description": "The full list of pronunciation rules; sending it replaces the stored list."
+          }
+        },
+        "description": "Request model for replacing the workspace\u0027s pronunciation rules."
       },
       "ReceptionStaffResource": {
         "title": "ReceptionStaffResource",
@@ -91962,6 +92954,135 @@
           ]
         }
       },
+      "RenderedUserMemoryEntity": {
+        "title": "RenderedUserMemoryEntity",
+        "required": [
+          "id",
+          "name",
+          "type",
+          "is_user",
+          "relations",
+          "facts",
+          "events"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string",
+            "description": "ID of the entity, to delete it with everything known about it."
+          },
+          "name": {
+            "title": "Name",
+            "type": "string",
+            "description": "e.g. \u0060Piotr N\u0060. The user themselves is \u0060user\u0060."
+          },
+          "type": {
+            "title": "Type",
+            "type": "string",
+            "description": "e.g. \u0060person\u0060, \u0060company\u0060, \u0060dog\u0060."
+          },
+          "is_user": {
+            "title": "Is User",
+            "type": "boolean",
+            "description": "Whether this is the user themselves."
+          },
+          "relations": {
+            "title": "Relations",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RenderedUserMemoryFact"
+            },
+            "description": "How the user relates to it, e.g. \u0060colleague\u0060."
+          },
+          "facts": {
+            "title": "Facts",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RenderedUserMemoryFact"
+            },
+            "description": "What holds about it until something replaces it."
+          },
+          "events": {
+            "title": "Events",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RenderedUserMemoryFact"
+            },
+            "description": "Things that happened once."
+          }
+        }
+      },
+      "RenderedUserMemoryFact": {
+        "title": "RenderedUserMemoryFact",
+        "required": [
+          "id",
+          "attribute",
+          "text",
+          "learned_at_unix_secs",
+          "reference_count",
+          "last_seen_conversation_id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string",
+            "description": "ID of the fact, to delete it on its own."
+          },
+          "attribute": {
+            "title": "Attribute",
+            "type": "string",
+            "description": "What the fact is about, e.g. \u0060diet\u0060."
+          },
+          "text": {
+            "title": "Text",
+            "type": "string",
+            "description": "The fact itself, e.g. \u0060Is vegetarian.\u0060"
+          },
+          "valid_from": {
+            "title": "Valid From",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "When it became true, or for an event when it happened.",
+            "format": "date"
+          },
+          "valid_to": {
+            "title": "Valid To",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "When it stopped being true.",
+            "format": "date"
+          },
+          "learned_at_unix_secs": {
+            "title": "Learned At Unix Secs",
+            "type": "integer",
+            "description": "When agents learned it."
+          },
+          "invalidated_at_unix_secs": {
+            "title": "Invalidated At Unix Secs",
+            "type": [
+              "null",
+              "integer"
+            ],
+            "description": "When agents stopped believing it. Unset while still believed."
+          },
+          "reference_count": {
+            "title": "Reference Count",
+            "type": "integer",
+            "description": "How many times the user has said it."
+          },
+          "last_seen_conversation_id": {
+            "title": "Last Seen Conversation Id",
+            "type": "string",
+            "description": "The latest conversation in which the user said it."
+          }
+        }
+      },
       "ReplaceWorkspaceConfigRequest": {
         "title": "ReplaceWorkspaceConfigRequest",
         "required": [
@@ -92544,6 +93665,33 @@
           }
         }
       },
+      "ResellerWorkspaceSort": {
+        "title": "ResellerWorkspaceSort",
+        "enum": [
+          "newest",
+          "oldest",
+          "name"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "ResellerWorkspaceSort",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "newest",
+              "name": "Newest"
+            },
+            {
+              "value": "oldest",
+              "name": "Oldest"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            }
+          ]
+        }
+      },
       "ResellerWorkspaceSubscription": {
         "title": "ResellerWorkspaceSubscription",
         "required": [
@@ -92646,6 +93794,14 @@
             "description": "A charge for this workspace is unpaid. Assigning or changing a tier is refused until it clears, so surface it rather than letting it fail.",
             "default": false
           },
+          "owner_email": {
+            "title": "Owner Email",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "The customer\u0027s main contact: the email of the workspace\u0027s earliest admin that is a person. None until someone invited as admin joins."
+          },
           "onboarding_completed_at_unix": {
             "title": "Onboarding Completed At Unix",
             "type": [
@@ -92662,7 +93818,8 @@
       "ResellerWorkspacesResponse": {
         "title": "ResellerWorkspacesResponse",
         "required": [
-          "workspaces"
+          "workspaces",
+          "total"
         ],
         "type": "object",
         "properties": {
@@ -92672,6 +93829,11 @@
             "items": {
               "$ref": "#/components/schemas/ResellerWorkspaceSummary"
             }
+          },
+          "total": {
+            "title": "Total",
+            "type": "integer",
+            "description": "Workspaces matching the search, across every page."
           },
           "next_cursor": {
             "title": "Next Cursor",
@@ -100775,6 +101937,18 @@
           }
         }
       },
+      "UpdateProcedureVisibilityRequestModel": {
+        "title": "UpdateProcedureVisibilityRequestModel",
+        "required": [
+          "visibility"
+        ],
+        "type": "object",
+        "properties": {
+          "visibility": {
+            "$ref": "#/components/schemas/UpdateProcedureVisibilityRequestModelVisibility"
+          }
+        }
+      },
       "UpdateRealtimeConversationGroupRequestModel": {
         "title": "UpdateRealtimeConversationGroupRequestModel",
         "type": "object",
@@ -101593,6 +102767,76 @@
           ]
         }
       },
+      "UserMemoryScale": {
+        "title": "UserMemoryScale",
+        "enum": [
+          "minimal",
+          "balanced",
+          "maximum"
+        ],
+        "type": "string",
+        "description": "How much of a user\u0027s history an agent carries into the prompt.",
+        "x-ms-enum": {
+          "name": "UserMemoryScale",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "minimal",
+              "name": "Minimal"
+            },
+            {
+              "value": "balanced",
+              "name": "Balanced"
+            },
+            {
+              "value": "maximum",
+              "name": "Maximum"
+            }
+          ]
+        }
+      },
+      "UserMemorySettingsInput": {
+        "title": "UserMemorySettings",
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "title": "Enabled",
+            "type": "boolean",
+            "description": "Whether this agent reads and writes what it remembers about its users. User memories are for business or professional use only, and their use is covered by the ElevenLabs Data Processing Addendum. Each agent remembers its users apart: no agent reads what another learned. Memories are built from the agent\u0027s stored conversations, so a value its conversation history redaction removes is never remembered. Keeping special category data in memories requires a lawful basis and the notices and consents the DPA and the ElevenAgent Terms require; health data also requires a HIPAA BAA that permits processing it. Tell end users that the agent remembers them across conversations and give them a way to opt out; erase a user\u0027s memories with the Erase User Memory endpoint.",
+            "default": false
+          },
+          "scale": {
+            "description": "How much of the user\u0027s history the agent carries into the prompt: remembered facts plus verbatim transcript from earlier conversations. \u0060minimal\u0060 keeps the facts and a short window of recent conversation, for high-volume short conversations. \u0060balanced\u0060 suits most agents. \u0060maximum\u0060 carries as much recent conversation as fits. Larger scales cost more prompt tokens per turn, but tend to remember intricate details better.",
+            "default": "balanced",
+            "$ref": "#/components/schemas/UserMemoryScale"
+          },
+          "identity_policy": {
+            "$ref": "#/components/schemas/IdentityPolicyInput"
+          }
+        },
+        "description": "Whether an agent remembers its end users, and how much of it it carries."
+      },
+      "UserMemorySettingsOutput": {
+        "title": "UserMemorySettings",
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "title": "Enabled",
+            "type": "boolean",
+            "description": "Whether this agent reads and writes what it remembers about its users. User memories are for business or professional use only, and their use is covered by the ElevenLabs Data Processing Addendum. Each agent remembers its users apart: no agent reads what another learned. Memories are built from the agent\u0027s stored conversations, so a value its conversation history redaction removes is never remembered. Keeping special category data in memories requires a lawful basis and the notices and consents the DPA and the ElevenAgent Terms require; health data also requires a HIPAA BAA that permits processing it. Tell end users that the agent remembers them across conversations and give them a way to opt out; erase a user\u0027s memories with the Erase User Memory endpoint.",
+            "default": false
+          },
+          "scale": {
+            "description": "How much of the user\u0027s history the agent carries into the prompt: remembered facts plus verbatim transcript from earlier conversations. \u0060minimal\u0060 keeps the facts and a short window of recent conversation, for high-volume short conversations. \u0060balanced\u0060 suits most agents. \u0060maximum\u0060 carries as much recent conversation as fits. Larger scales cost more prompt tokens per turn, but tend to remember intricate details better.",
+            "default": "balanced",
+            "$ref": "#/components/schemas/UserMemoryScale"
+          },
+          "identity_policy": {
+            "$ref": "#/components/schemas/IdentityPolicyOutput"
+          }
+        },
+        "description": "Whether an agent remembers its end users, and how much of it it carries."
+      },
       "UserModel": {
         "title": "UserModel",
         "type": "object",
@@ -102144,6 +103388,7 @@
             "bytedance-seedance-v2-mini": "#/components/schemas/BytedanceSeedance2MiniRequest",
             "bytedance-seedance-v2.5": "#/components/schemas/BytedanceSeedance25Request",
             "creatify-aurora": "#/components/schemas/CreatifyAuroraRequest",
+            "creatify-aurora-2": "#/components/schemas/CreatifyAurora2Request",
             "veo-3.1-fast-generate-001": "#/components/schemas/Veo31FastRequest",
             "veo-3.1-generate-001": "#/components/schemas/Veo31Request"
           }
@@ -102152,6 +103397,7 @@
           "propertyName": "model_id",
           "mapping": {
             "creatify-aurora": "#/components/schemas/VideoGenerationRequestCreatifyAuroraRequest",
+            "creatify-aurora-2": "#/components/schemas/VideoGenerationRequestCreatifyAurora2Request",
             "veo-3.1-generate-001": "#/components/schemas/VideoGenerationRequestVeo31Request",
             "veo-3.1-fast-generate-001": "#/components/schemas/VideoGenerationRequestVeo31FastRequest",
             "bytedance-seedance-v2": "#/components/schemas/VideoGenerationRequestBytedanceSeedance2Request",
@@ -102164,6 +103410,9 @@
           "oneOf": [
             {
               "$ref": "#/components/schemas/CreatifyAuroraRequest"
+            },
+            {
+              "$ref": "#/components/schemas/CreatifyAurora2Request"
             },
             {
               "$ref": "#/components/schemas/Veo31Request"
@@ -102192,6 +103441,7 @@
               "bytedance-seedance-v2-mini": "#/components/schemas/BytedanceSeedance2MiniRequest",
               "bytedance-seedance-v2.5": "#/components/schemas/BytedanceSeedance25Request",
               "creatify-aurora": "#/components/schemas/CreatifyAuroraRequest",
+              "creatify-aurora-2": "#/components/schemas/CreatifyAurora2Request",
               "veo-3.1-fast-generate-001": "#/components/schemas/Veo31FastRequest",
               "veo-3.1-generate-001": "#/components/schemas/Veo31Request"
             }
@@ -102200,6 +103450,7 @@
             "propertyName": "model_id",
             "mapping": {
               "creatify-aurora": "#/components/schemas/CreatifyAuroraRequest",
+              "creatify-aurora-2": "#/components/schemas/CreatifyAurora2Request",
               "veo-3.1-generate-001": "#/components/schemas/Veo31Request",
               "veo-3.1-fast-generate-001": "#/components/schemas/Veo31FastRequest",
               "bytedance-seedance-v2": "#/components/schemas/BytedanceSeedance2Request",
@@ -107809,6 +109060,23 @@
             "default": []
           }
         }
+      },
+      "WorkspaceUserMemorySettings": {
+        "title": "WorkspaceUserMemorySettings",
+        "type": "object",
+        "properties": {
+          "retention_days": {
+            "title": "Retention Days",
+            "maximum": 3650.0,
+            "exclusiveMinimum": 0.0,
+            "type": [
+              "null",
+              "integer"
+            ],
+            "description": "Days to retain a user\u0027s memories after their last conversation with an agent that has user memory on. None means the system default (365). A change applies to each user from their next such conversation. Unlimited retention is not expressible. Only a workspace admin can change it."
+          }
+        },
+        "description": "Workspace-wide user memory policy, applied to the memory of every agent in it."
       },
       "WorkspaceWebhookEventType": {
         "title": "WorkspaceWebhookEventType",
@@ -118617,6 +119885,33 @@
         ],
         "description": "Local or mobile, in a country that requires paperwork before a number takes calls. Leave unset to try mobile first. Ignored in the US and Canada."
       },
+      "CreateProcedureRequestModelVisibility": {
+        "title": "ProcedureVisibility",
+        "required": [
+          "expression"
+        ],
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "expression": {
+            "$ref": "#/components/schemas/AstNodeInput"
+          }
+        },
+        "description": "The condition that controls if the procedure is visible to the agent in its procedure menu. None means always visible.",
+        "x-client-original-nullable-union": {
+          "anyOf": [
+            {
+              "$ref": "#/components/schemas/ProcedureVisibilityInput"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "The condition that controls if the procedure is visible to the agent in its procedure menu. None means always visible."
+        }
+      },
       "CreateResponseUnitTestRequestFromConversationMetadata": {
         "title": "TestFromConversationMetadata",
         "required": [
@@ -125347,6 +126642,33 @@
           "description": "Configuration for Twilio\u0027s carrier-level answering machine detection (AMD). Omit or set to null to disable it. Ignored for non-Twilio providers and for inbound calls. The resulting verdict is delivered as its own \u0060answering_machine_detection\u0060 webhook event, which requires that event to be enabled on the workspace or agent webhook settings; it is not part of the conversation or the post-call webhook. Detection runs asynchronously so it never delays the start of the conversation, and the verdict can arrive at any point during the call -- with \u0060detect_message_end\u0060, even after it has ended. Twilio bills separately for AMD."
         }
       },
+      "ProcedureAtVersionResponseModelVisibility": {
+        "title": "ProcedureVisibility",
+        "required": [
+          "expression"
+        ],
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "expression": {
+            "$ref": "#/components/schemas/AstNodeOutput"
+          }
+        },
+        "description": "The condition that controls if the procedure is visible to the agent in its procedure menu. None means always visible.",
+        "x-client-original-nullable-union": {
+          "anyOf": [
+            {
+              "$ref": "#/components/schemas/ProcedureVisibilityOutput"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "The condition that controls if the procedure is visible to the agent in its procedure menu. None means always visible."
+        }
+      },
       "ProjectExtendedResponseModelCreationMeta": {
         "title": "ProjectCreationMetaResponseModel",
         "required": [
@@ -128166,6 +129488,30 @@
           "description": "Configuration overrides to use for testing. If not provided, the agent\u0027s default configuration will be used."
         }
       },
+      "SipColdConferenceTransferConfigInputCustomSipHeadersItem": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/SipColdConferenceTransferConfigInputCustomSipHeadersItemOneOf1"
+          },
+          {
+            "$ref": "#/components/schemas/CustomSipHeaderWithDynamicVariable"
+          }
+        ],
+        "x-client-original-discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "dynamic": "#/components/schemas/CustomSipHeaderWithDynamicVariable",
+            "static": "#/components/schemas/CustomSipHeader"
+          }
+        },
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "static": "#/components/schemas/SipColdConferenceTransferConfigInputCustomSipHeadersItemOneOf1",
+            "dynamic": "#/components/schemas/CustomSipHeaderWithDynamicVariable"
+          }
+        }
+      },
       "SipColdConferenceTransferConfigInputTransferDestination": {
         "title": "Transfer Destination",
         "x-client-original-discriminator": {
@@ -128216,6 +129562,30 @@
         "required": [
           "type"
         ]
+      },
+      "SipColdConferenceTransferConfigOutputCustomSipHeadersItem": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/SipColdConferenceTransferConfigOutputCustomSipHeadersItemOneOf1"
+          },
+          {
+            "$ref": "#/components/schemas/CustomSipHeaderWithDynamicVariable"
+          }
+        ],
+        "x-client-original-discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "dynamic": "#/components/schemas/CustomSipHeaderWithDynamicVariable",
+            "static": "#/components/schemas/CustomSipHeader"
+          }
+        },
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "static": "#/components/schemas/SipColdConferenceTransferConfigOutputCustomSipHeadersItemOneOf1",
+            "dynamic": "#/components/schemas/CustomSipHeaderWithDynamicVariable"
+          }
+        }
       },
       "SipColdReferTransferConfigInputCustomSipHeadersItem": {
         "oneOf": [
@@ -132236,6 +133606,33 @@
           }
         ]
       },
+      "UpdateProcedureVisibilityRequestModelVisibility": {
+        "title": "ProcedureVisibility",
+        "required": [
+          "expression"
+        ],
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "expression": {
+            "$ref": "#/components/schemas/AstNodeInput"
+          }
+        },
+        "description": "The condition that controls if the procedure is visible to the agent in its procedure menu. Null clears it, so the procedure is always visible.",
+        "x-client-original-nullable-union": {
+          "anyOf": [
+            {
+              "$ref": "#/components/schemas/ProcedureVisibilityInput"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "The condition that controls if the procedure is visible to the agent in its procedure menu. Null clears it, so the procedure is always visible."
+        }
+      },
       "UpdateSpeechEngineRequestSpeechEngine": {
         "title": "SpeechEngineConfig",
         "required": [
@@ -132713,6 +134110,9 @@
           "conversation_history_redaction": {
             "description": "Config for PII redaction in the conversation history",
             "$ref": "#/components/schemas/ConversationHistoryRedactionConfig"
+          },
+          "user_memory": {
+            "$ref": "#/components/schemas/UserMemorySettingsInput"
           }
         },
         "example": {
@@ -137335,6 +138735,9 @@
               "string"
             ],
             "description": "Procedure ID of the folder to create this procedure in, or null for root."
+          },
+          "visibility": {
+            "$ref": "#/components/schemas/CreateProcedureRequestModelVisibility"
           }
         },
         "x-client-original-nullable-union": {
@@ -144581,6 +145984,58 @@
             {
               "value": "twilio",
               "name": "Twilio"
+            }
+          ]
+        }
+      },
+      "CreatifyAurora2ModelId": {
+        "title": "Model Id",
+        "enum": [
+          "creatify-aurora-2"
+        ],
+        "type": "string",
+        "description": "The model to use for the generation.",
+        "x-client-original-const": "creatify-aurora-2",
+        "x-ms-enum": {
+          "name": "CreatifyAurora2ModelId",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "creatify-aurora-2",
+              "name": "CreatifyAurora2"
+            }
+          ]
+        }
+      },
+      "CreatifyAurora2RequestResolution": {
+        "title": "Resolution",
+        "enum": [
+          "480p",
+          "720p",
+          "1080p",
+          "2K"
+        ],
+        "type": "string",
+        "description": "The resolution of the output video.",
+        "x-ms-enum": {
+          "name": "CreatifyAurora2RequestResolution",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "480p",
+              "name": "Value480P"
+            },
+            {
+              "value": "720p",
+              "name": "Value720P"
+            },
+            {
+              "value": "1080p",
+              "name": "Value1080P"
+            },
+            {
+              "value": "2K",
+              "name": "Value2K"
             }
           ]
         }
@@ -160599,6 +162054,94 @@
           "type"
         ]
       },
+      "SipColdConferenceTransferConfigInputCustomSipHeadersItemOneOf1": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "title": "Type",
+            "enum": [
+              "static"
+            ],
+            "type": "string",
+            "x-client-original-const": "static",
+            "x-ms-enum": {
+              "name": "Type",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "static",
+                  "name": "StaticValue"
+                }
+              ]
+            }
+          },
+          "key": {
+            "title": "Key",
+            "maxLength": 64,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9]\u002B(-[A-Za-z0-9]\u002B)*$",
+            "type": "string",
+            "description": "The SIP header name (e.g., \u0027X-Customer-ID\u0027)"
+          },
+          "value": {
+            "title": "Value",
+            "maxLength": 512,
+            "minLength": 1,
+            "pattern": "^[\\x09\\x20-\\x7E]\u002B$",
+            "type": "string",
+            "description": "The header value"
+          }
+        },
+        "required": [
+          "key",
+          "value",
+          "type"
+        ]
+      },
+      "SipColdConferenceTransferConfigOutputCustomSipHeadersItemOneOf1": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "title": "Type",
+            "enum": [
+              "static"
+            ],
+            "type": "string",
+            "x-client-original-const": "static",
+            "x-ms-enum": {
+              "name": "Type",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "static",
+                  "name": "StaticValue"
+                }
+              ]
+            }
+          },
+          "key": {
+            "title": "Key",
+            "maxLength": 64,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9]\u002B(-[A-Za-z0-9]\u002B)*$",
+            "type": "string",
+            "description": "The SIP header name (e.g., \u0027X-Customer-ID\u0027)"
+          },
+          "value": {
+            "title": "Value",
+            "maxLength": 512,
+            "minLength": 1,
+            "pattern": "^[\\x09\\x20-\\x7E]\u002B$",
+            "type": "string",
+            "description": "The header value"
+          }
+        },
+        "required": [
+          "key",
+          "value",
+          "type"
+        ]
+      },
       "SipColdReferTransferConfigInputCustomSipHeadersItemOneOf1": {
         "type": "object",
         "properties": {
@@ -166091,6 +167634,43 @@
             },
             "additionalProperties": false,
             "description": "Request body for the Creatify Aurora lipsync video model."
+          }
+        ]
+      },
+      "VideoGenerationRequestCreatifyAurora2Request": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/VideoGenerationRequest"
+          },
+          {
+            "title": "CreatifyAurora2Request",
+            "required": [
+              "model_id",
+              "image",
+              "audio"
+            ],
+            "type": "object",
+            "properties": {
+              "webhook": {
+                "$ref": "#/components/schemas/BytedanceSeedance25RequestWebhook"
+              },
+              "model_id": {
+                "$ref": "#/components/schemas/CreatifyAurora2ModelId"
+              },
+              "image": {
+                "description": "The image of the character to animate.",
+                "$ref": "#/components/schemas/ImageReference"
+              },
+              "audio": {
+                "description": "The speech audio to drive the character\u0027s lip movements. At most 59.7 seconds, or 14.375 seconds at \u00602K\u0060.",
+                "$ref": "#/components/schemas/AudioReference"
+              },
+              "resolution": {
+                "$ref": "#/components/schemas/CreatifyAurora2RequestResolution"
+              }
+            },
+            "additionalProperties": false,
+            "description": "Request body for the Creatify Aurora 2.0 lipsync video model."
           }
         ]
       },
@@ -178235,6 +179815,15 @@
           {
             "type": "object",
             "properties": {
+              "custom_sip_headers": {
+                "title": "Custom Sip Headers",
+                "maxItems": 20,
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SipColdConferenceTransferConfigInputCustomSipHeadersItem"
+                },
+                "description": "Custom SIP headers to include when transferring the call. Each header can be either a static value or a dynamic variable reference."
+              },
               "transfer_destination": {
                 "$ref": "#/components/schemas/SipColdConferenceTransferConfigInputTransferDestination"
               },
@@ -178327,11 +179916,21 @@
           {
             "title": "SIPColdConferenceTransferConfig",
             "required": [
+              "custom_sip_headers",
               "transfer_destination",
               "type"
             ],
             "type": "object",
             "properties": {
+              "custom_sip_headers": {
+                "title": "Custom Sip Headers",
+                "maxItems": 20,
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SipColdConferenceTransferConfigOutputCustomSipHeadersItem"
+                },
+                "description": "Custom SIP headers to include when transferring the call. Each header can be either a static value or a dynamic variable reference."
+              },
               "transfer_destination": {
                 "$ref": "#/components/schemas/ExotelColdBlindTransferConfigOutputTransferDestination"
               },
@@ -200611,6 +202210,9 @@
             "string"
           ],
           "description": "Procedure ID of the folder to create this procedure in, or null for root."
+        },
+        "visibility": {
+          "$ref": "#/components/schemas/CreateProcedureRequestModelVisibility"
         }
       }
     },
@@ -200725,6 +202327,36 @@
           "default": false
         }
       }
+    },
+    "CreatifyAurora2Request": {
+      "title": "CreatifyAurora2Request",
+      "required": [
+        "model_id",
+        "image",
+        "audio"
+      ],
+      "type": "object",
+      "properties": {
+        "webhook": {
+          "$ref": "#/components/schemas/BytedanceSeedance25RequestWebhook"
+        },
+        "model_id": {
+          "$ref": "#/components/schemas/CreatifyAurora2ModelId"
+        },
+        "image": {
+          "description": "The image of the character to animate.",
+          "$ref": "#/components/schemas/ImageReference"
+        },
+        "audio": {
+          "description": "The speech audio to drive the character\u0027s lip movements. At most 59.7 seconds, or 14.375 seconds at \u00602K\u0060.",
+          "$ref": "#/components/schemas/AudioReference"
+        },
+        "resolution": {
+          "$ref": "#/components/schemas/CreatifyAurora2RequestResolution"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Request body for the Creatify Aurora 2.0 lipsync video model."
     },
     "CreatifyAuroraRequest": {
       "title": "CreatifyAuroraRequest",
@@ -207863,6 +209495,30 @@
       },
       "description": "Response model for Private Key JWT auth connections"
     },
+    "ProcedureVisibilityInput": {
+      "title": "ProcedureVisibility",
+      "required": [
+        "expression"
+      ],
+      "type": "object",
+      "properties": {
+        "expression": {
+          "$ref": "#/components/schemas/AstNodeInput"
+        }
+      }
+    },
+    "ProcedureVisibilityOutput": {
+      "title": "ProcedureVisibility",
+      "required": [
+        "expression"
+      ],
+      "type": "object",
+      "properties": {
+        "expression": {
+          "$ref": "#/components/schemas/AstNodeOutput"
+        }
+      }
+    },
     "ProjectCreationMetaResponseModel": {
       "title": "ProjectCreationMetaResponseModel",
       "required": [
@@ -209589,6 +211245,15 @@
       ],
       "type": "object",
       "properties": {
+        "custom_sip_headers": {
+          "title": "Custom Sip Headers",
+          "maxItems": 20,
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/SipColdConferenceTransferConfigInputCustomSipHeadersItem"
+          },
+          "description": "Custom SIP headers to include when transferring the call. Each header can be either a static value or a dynamic variable reference."
+        },
         "transfer_destination": {
           "$ref": "#/components/schemas/SipColdConferenceTransferConfigInputTransferDestination"
         },
@@ -209600,11 +211265,21 @@
     "SipColdConferenceTransferConfigOutput": {
       "title": "SIPColdConferenceTransferConfig",
       "required": [
+        "custom_sip_headers",
         "transfer_destination",
         "type"
       ],
       "type": "object",
       "properties": {
+        "custom_sip_headers": {
+          "title": "Custom Sip Headers",
+          "maxItems": 20,
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/SipColdConferenceTransferConfigOutputCustomSipHeadersItem"
+          },
+          "description": "Custom SIP headers to include when transferring the call. Each header can be either a static value or a dynamic variable reference."
+        },
         "transfer_destination": {
           "$ref": "#/components/schemas/ExotelColdBlindTransferConfigOutputTransferDestination"
         },
@@ -223749,6 +225424,28 @@
       ],
       "description": "Simulate the test as if the conversation originated from this channel."
     },
+    "CreatifyAurora2RequestWebhook": {
+      "examples": [
+        {
+          "type": "all"
+        },
+        {
+          "ids": [
+            "Q8mVr2LpXcT4nB6yJdKw"
+          ],
+          "type": "ids"
+        }
+      ],
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/WebhookTarget"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Include to send the generation\u0027s result to the workspace\u0027s configured flows webhooks once it completes or fails. The webhook payload matches the terminal response of the corresponding GET endpoint."
+    },
     "CreatifyAuroraRequestWebhook": {
       "examples": [
         {
@@ -226742,6 +228439,87 @@
             "type": "null"
           }
         ]
+      }
+    },
+    "ProcedureDraftResponseModelVisibility": {
+      "title": "ProcedureVisibility",
+      "required": [
+        "expression"
+      ],
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "expression": {
+          "$ref": "#/components/schemas/AstNodeOutput"
+        }
+      },
+      "description": "The condition that controls if the procedure is visible to the agent in its procedure menu. None means always visible.",
+      "x-client-original-nullable-union": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ProcedureVisibilityOutput"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "description": "The condition that controls if the procedure is visible to the agent in its procedure menu. None means always visible."
+      }
+    },
+    "ProcedureListItemResponseModelVisibility": {
+      "title": "ProcedureVisibility",
+      "required": [
+        "expression"
+      ],
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "expression": {
+          "$ref": "#/components/schemas/AstNodeOutput"
+        }
+      },
+      "description": "The condition that controls if the procedure is visible to the agent in its procedure menu. None means always visible.",
+      "x-client-original-nullable-union": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ProcedureVisibilityOutput"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "description": "The condition that controls if the procedure is visible to the agent in its procedure menu. None means always visible."
+      }
+    },
+    "ProcedureRefResponseModelVisibility": {
+      "title": "ProcedureVisibility",
+      "required": [
+        "expression"
+      ],
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "expression": {
+          "$ref": "#/components/schemas/AstNodeOutput"
+        }
+      },
+      "description": "The condition that controls if the procedure is visible to the agent in its procedure menu. None means always visible.",
+      "x-client-original-nullable-union": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ProcedureVisibilityOutput"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "description": "The condition that controls if the procedure is visible to the agent in its procedure menu. None means always visible."
       }
     },
     "ProjectImageResponseModelPendingTask": {
@@ -248413,6 +250191,15 @@
     "SipTransferInputConfigOneOf1": {
       "type": "object",
       "properties": {
+        "custom_sip_headers": {
+          "title": "Custom Sip Headers",
+          "maxItems": 20,
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/SipColdConferenceTransferConfigInputCustomSipHeadersItem"
+          },
+          "description": "Custom SIP headers to include when transferring the call. Each header can be either a static value or a dynamic variable reference."
+        },
         "transfer_destination": {
           "$ref": "#/components/schemas/SipColdConferenceTransferConfigInputTransferDestination"
         },
