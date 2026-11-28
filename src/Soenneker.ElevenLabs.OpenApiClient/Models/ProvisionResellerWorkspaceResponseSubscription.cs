@@ -28,6 +28,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if (parseNode.GetChildNode("pending_downgrade_at_unix") is { } nullNodePendingDowngradeAtUnix && nullNodePendingDowngradeAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PendingDowngradeAtUnix = null;
             if (parseNode.GetChildNode("pending_downgrade_tier") is null) { _explicitNullValuePendingDowngradeTier = default!; _explicitNullProperties?.Remove("pending_downgrade_tier"); }
             else if (parseNode.GetChildNode("pending_downgrade_tier") is { } nullNodePendingDowngradeTier && nullNodePendingDowngradeTier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PendingDowngradeTier = null;
+            if (parseNode.GetChildNode("subscription_price_usd") is null) { _explicitNullValueSubscriptionPriceUsd = default!; _explicitNullProperties?.Remove("subscription_price_usd"); }
+            else if (parseNode.GetChildNode("subscription_price_usd") is { } nullNodeSubscriptionPriceUsd && nullNodeSubscriptionPriceUsd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubscriptionPriceUsd = null;
             if (parseNode.GetChildNode("tier_id") is null) { _explicitNullValueTierId = default!; _explicitNullProperties?.Remove("tier_id"); }
             else if (parseNode.GetChildNode("tier_id") is { } nullNodeTierId && nullNodeTierId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TierId = null;
         }
@@ -63,6 +65,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string PendingDowngradeTier { get => _explicitNullValuePendingDowngradeTier; set { _explicitNullValuePendingDowngradeTier = value; AdditionalData?.Remove("pending_downgrade_tier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pending_downgrade_tier"); else _explicitNullProperties?.Remove("pending_downgrade_tier"); } }
         private string _explicitNullValuePendingDowngradeTier = default!;
 #endif
+        /// <summary>Price frozen at grant for the current billing cadence, not the live catalog price.</summary>
+        public double? SubscriptionPriceUsd { get => _explicitNullValueSubscriptionPriceUsd; set { _explicitNullValueSubscriptionPriceUsd = value; AdditionalData?.Remove("subscription_price_usd"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscription_price_usd"); else _explicitNullProperties?.Remove("subscription_price_usd"); } }
+        private double? _explicitNullValueSubscriptionPriceUsd = default!;
         /// <summary>The tier_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -98,13 +103,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(6)
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "billing_period", n => { BillingPeriod = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSubscriptionBillingPeriod>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSubscriptionBillingPeriod.CreateFromDiscriminatorValue); } },
                 { "billing_period_end_unix", n => { BillingPeriodEndUnix = n.GetIntValue(); } },
                 { "cancel_at_unix", n => { CancelAtUnix = n.GetIntValue(); } },
                 { "pending_downgrade_at_unix", n => { PendingDowngradeAtUnix = n.GetIntValue(); } },
                 { "pending_downgrade_tier", n => { PendingDowngradeTier = n.GetStringValue(); } },
+                { "subscription_price_usd", n => { SubscriptionPriceUsd = n.GetDoubleValue(); } },
                 { "tier_id", n => { TierId = n.GetStringValue(); } },
             };
         }
@@ -120,6 +126,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("cancel_at_unix", CancelAtUnix);
             writer.WriteIntValue("pending_downgrade_at_unix", PendingDowngradeAtUnix);
             writer.WriteStringValue("pending_downgrade_tier", PendingDowngradeTier);
+            writer.WriteDoubleValue("subscription_price_usd", SubscriptionPriceUsd);
             writer.WriteStringValue("tier_id", TierId);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

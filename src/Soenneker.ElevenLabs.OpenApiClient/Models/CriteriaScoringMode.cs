@@ -3,9 +3,10 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
-    /// <summary>How this criterion is scored. &apos;binary&apos; resolves to success/failure/unknown. &apos;numeric_uniform&apos; returns a number on the [0, max_score] scale which is normalized into the aggregate conversation success percentage.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public enum CriteriaScoringMode
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "binary")]
         #pragma warning disable CS1591

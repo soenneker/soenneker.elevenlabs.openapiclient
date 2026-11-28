@@ -26,6 +26,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if (parseNode.GetChildNode("call_result") is { } nullNodeCallResult && nullNodeCallResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CallResult = null;
             if (parseNode.GetChildNode("call_sid") is null) { _explicitNullValueCallSid = default!; _explicitNullProperties?.Remove("call_sid"); }
             else if (parseNode.GetChildNode("call_sid") is { } nullNodeCallSid && nullNodeCallSid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CallSid = null;
+            if (parseNode.GetChildNode("conference_transfer_sip_call_id") is null) { _explicitNullValueConferenceTransferSipCallId = default!; _explicitNullProperties?.Remove("conference_transfer_sip_call_id"); }
+            else if (parseNode.GetChildNode("conference_transfer_sip_call_id") is { } nullNodeConferenceTransferSipCallId && nullNodeConferenceTransferSipCallId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConferenceTransferSipCallId = null;
             if (parseNode.GetChildNode("direction") is null) { _explicitNullValueDirection = default!; _explicitNullProperties?.Remove("direction"); }
             else if (parseNode.GetChildNode("direction") is { } nullNodeDirection && nullNodeDirection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Direction = null;
             if (parseNode.GetChildNode("external_number") is null) { _explicitNullValueExternalNumber = default!; _explicitNullProperties?.Remove("external_number"); }
@@ -68,6 +70,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string CallSid { get => _explicitNullValueCallSid; set { _explicitNullValueCallSid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("call_sid"); else _explicitNullProperties?.Remove("call_sid"); } }
         private string _explicitNullValueCallSid = default!;
+#endif
+        /// <summary>The conference_transfer_sip_call_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ConferenceTransferSipCallId { get => _explicitNullValueConferenceTransferSipCallId; set { _explicitNullValueConferenceTransferSipCallId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conference_transfer_sip_call_id"); else _explicitNullProperties?.Remove("conference_transfer_sip_call_id"); } }
+        private string? _explicitNullValueConferenceTransferSipCallId = default!;
+#nullable restore
+#else
+        public string ConferenceTransferSipCallId { get => _explicitNullValueConferenceTransferSipCallId; set { _explicitNullValueConferenceTransferSipCallId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conference_transfer_sip_call_id"); else _explicitNullProperties?.Remove("conference_transfer_sip_call_id"); } }
+        private string _explicitNullValueConferenceTransferSipCallId = default!;
 #endif
         /// <summary>The direction property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyDirection? Direction { get => _explicitNullValueDirection; set { _explicitNullValueDirection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("direction"); else _explicitNullProperties?.Remove("direction"); } }
@@ -124,6 +136,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "call_id", n => { CallId = n.GetStringValue(); } },
                 { "call_result", n => { CallResult = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CallResult>(); } },
                 { "call_sid", n => { CallSid = n.GetStringValue(); } },
+                { "conference_transfer_sip_call_id", n => { ConferenceTransferSipCallId = n.GetStringValue(); } },
                 { "direction", n => { Direction = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyDirection>(); } },
                 { "external_number", n => { ExternalNumber = n.GetStringValue(); } },
                 { "phone_number_id", n => { PhoneNumberId = n.GetStringValue(); } },
@@ -142,6 +155,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("call_id", CallId);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CallResult>("call_result", CallResult);
             writer.WriteStringValue("call_sid", CallSid);
+            writer.WriteStringValue("conference_transfer_sip_call_id", ConferenceTransferSipCallId);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyDirection>("direction", Direction);
             writer.WriteStringValue("external_number", ExternalNumber);
             writer.WriteStringValue("phone_number_id", PhoneNumberId);

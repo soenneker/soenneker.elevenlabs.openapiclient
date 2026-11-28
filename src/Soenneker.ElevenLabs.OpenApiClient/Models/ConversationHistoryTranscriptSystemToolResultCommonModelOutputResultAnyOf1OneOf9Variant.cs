@@ -18,6 +18,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public override void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
             base.CaptureExplicitNulls(parseNode);
+            if (parseNode.GetChildNode("conference_transfer_sip_call_id") is null) { _explicitNullValueConferenceTransferSipCallId = default!; _explicitNullProperties?.Remove("conference_transfer_sip_call_id"); }
+            else if (parseNode.GetChildNode("conference_transfer_sip_call_id") is { } nullNodeConferenceTransferSipCallId && nullNodeConferenceTransferSipCallId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConferenceTransferSipCallId = null;
             if (parseNode.GetChildNode("details") is null) { _explicitNullValueDetails = default!; _explicitNullProperties?.Remove("details"); }
             else if (parseNode.GetChildNode("details") is { } nullNodeDetails && nullNodeDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Details = null;
             if (parseNode.GetChildNode("error") is null) { _explicitNullValueError = default!; _explicitNullProperties?.Remove("error"); }
@@ -26,6 +28,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
         }
 
+        /// <summary>The conference_transfer_sip_call_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ConferenceTransferSipCallId { get => _explicitNullValueConferenceTransferSipCallId; set { _explicitNullValueConferenceTransferSipCallId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conference_transfer_sip_call_id"); else _explicitNullProperties?.Remove("conference_transfer_sip_call_id"); } }
+        private string? _explicitNullValueConferenceTransferSipCallId = default!;
+#nullable restore
+#else
+        public string ConferenceTransferSipCallId { get => _explicitNullValueConferenceTransferSipCallId; set { _explicitNullValueConferenceTransferSipCallId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conference_transfer_sip_call_id"); else _explicitNullProperties?.Remove("conference_transfer_sip_call_id"); } }
+        private string _explicitNullValueConferenceTransferSipCallId = default!;
+#endif
         /// <summary>The details property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,6 +79,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "conference_transfer_sip_call_id", n => { ConferenceTransferSipCallId = n.GetStringValue(); } },
                 { "details", n => { Details = n.GetStringValue(); } },
                 { "error", n => { Error = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferToNumberResultErrorModelStatus>(); } },
@@ -80,6 +93,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteStringValue("conference_transfer_sip_call_id", ConferenceTransferSipCallId);
             writer.WriteStringValue("details", Details);
             writer.WriteStringValue("error", Error);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferToNumberResultErrorModelStatus>("status", Status);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

@@ -31547,129 +31547,77 @@
         "x-fern-sdk-method-name": "create"
       }
     },
-    "/v1/convai/outbound-campaigns/campaigns/{campaignId}": {
-      "get": {
-        "tags": [
-          "Agents Platform"
-        ],
-        "summary": "Get An Outbound Campaign",
-        "description": "Get an outbound campaign and its lead counts.",
-        "operationId": "GetCampaign",
-        "parameters": [
-          {
-            "name": "campaignId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "title": "Campaign Id",
-              "type": "string"
-            }
-          },
-          {
-            "name": "xi-api-key",
-            "in": "header",
-            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
-            "schema": {
-              "title": "Xi-Api-Key",
-              "type": [
-                "null",
-                "string"
-              ],
-              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website."
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CampaignResponse"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HttpValidationError"
-                }
-              }
-            }
-          }
-        },
-        "x-fern-sdk-group-name": [
-          "conversational_ai",
-          "outbound_campaigns"
-        ],
-        "x-fern-sdk-method-name": "get"
-      }
-    },
-    "/v1/convai/outbound-campaigns/campaigns/{campaignId}/progress": {
-      "get": {
-        "tags": [
-          "Agents Platform"
-        ],
-        "summary": "Get Outbound Campaign Progress",
-        "description": "Get where an outbound campaign\u0027s leads and calls stand, and when its next call is due.",
-        "operationId": "GetCampaignProgress",
-        "parameters": [
-          {
-            "name": "campaignId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "title": "Campaign Id",
-              "type": "string"
-            }
-          },
-          {
-            "name": "xi-api-key",
-            "in": "header",
-            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
-            "schema": {
-              "title": "Xi-Api-Key",
-              "type": [
-                "null",
-                "string"
-              ],
-              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website."
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CampaignProgressResponse"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HttpValidationError"
-                }
-              }
-            }
-          }
-        },
-        "x-fern-sdk-group-name": [
-          "conversational_ai",
-          "outbound_campaigns"
-        ],
-        "x-fern-sdk-method-name": "get_progress"
-      }
-    },
     "/v1/convai/outbound-campaigns/campaigns/{campaignId}/leads": {
+      "post": {
+        "tags": [
+          "Agents Platform"
+        ],
+        "summary": "Add Leads To An Outbound Campaign",
+        "description": "Add recipients to an outbound campaign that isn\u0027t stopping, stopped or failed. Recipients whose \u0060id\u0060 the campaign already has are skipped, and a \u0060completed\u0060 campaign becomes \u0060active\u0060 again.",
+        "operationId": "AddCampaignLeads",
+        "parameters": [
+          {
+            "name": "campaignId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "Campaign Id",
+              "type": "string"
+            }
+          },
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": [
+                "null",
+                "string"
+              ],
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website."
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddLeadsRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AddLeadsResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationError"
+                }
+              }
+            }
+          }
+        },
+        "x-fern-sdk-group-name": [
+          "conversational_ai",
+          "outbound_campaigns",
+          "leads"
+        ],
+        "x-fern-sdk-method-name": "create"
+      },
       "get": {
         "tags": [
           "Agents Platform"
@@ -31793,6 +31741,128 @@
           "leads"
         ],
         "x-fern-sdk-method-name": "list"
+      }
+    },
+    "/v1/convai/outbound-campaigns/campaigns/{campaignId}": {
+      "get": {
+        "tags": [
+          "Agents Platform"
+        ],
+        "summary": "Get An Outbound Campaign",
+        "description": "Get an outbound campaign and its lead counts.",
+        "operationId": "GetCampaign",
+        "parameters": [
+          {
+            "name": "campaignId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "Campaign Id",
+              "type": "string"
+            }
+          },
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": [
+                "null",
+                "string"
+              ],
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website."
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CampaignResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationError"
+                }
+              }
+            }
+          }
+        },
+        "x-fern-sdk-group-name": [
+          "conversational_ai",
+          "outbound_campaigns"
+        ],
+        "x-fern-sdk-method-name": "get"
+      }
+    },
+    "/v1/convai/outbound-campaigns/campaigns/{campaignId}/progress": {
+      "get": {
+        "tags": [
+          "Agents Platform"
+        ],
+        "summary": "Get Outbound Campaign Progress",
+        "description": "Get where an outbound campaign\u0027s leads and calls stand, and when its next call is due.",
+        "operationId": "GetCampaignProgress",
+        "parameters": [
+          {
+            "name": "campaignId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "Campaign Id",
+              "type": "string"
+            }
+          },
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": [
+                "null",
+                "string"
+              ],
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website."
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CampaignProgressResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationError"
+                }
+              }
+            }
+          }
+        },
+        "x-fern-sdk-group-name": [
+          "conversational_ai",
+          "outbound_campaigns"
+        ],
+        "x-fern-sdk-method-name": "get_progress"
       }
     },
     "/v1/convai/outbound-campaigns/campaigns/{campaignId}/calls": {
@@ -48628,6 +48698,43 @@
               "$ref": "#/components/schemas/KnowledgeBaseFolderPathSegmentSummaryResponseModel"
             },
             "description": "The folder path segments leading to this entity, from root to parent folder."
+          }
+        }
+      },
+      "AddLeadsRequest": {
+        "title": "AddLeadsRequest",
+        "required": [
+          "recipients"
+        ],
+        "type": "object",
+        "properties": {
+          "recipients": {
+            "title": "Recipients",
+            "maxItems": 10000,
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SubmitCampaignRecipient"
+            },
+            "description": "Who to add. A recipient whose \u0060id\u0060 the campaign already has is skipped, so retrying a request with ids is safe. Recipients without an \u0060id\u0060 are always added."
+          }
+        }
+      },
+      "AddLeadsResponse": {
+        "title": "AddLeadsResponse",
+        "required": [
+          "campaign",
+          "added"
+        ],
+        "type": "object",
+        "properties": {
+          "campaign": {
+            "$ref": "#/components/schemas/CampaignResponse"
+          },
+          "added": {
+            "title": "Added",
+            "type": "integer",
+            "description": "Recipients the campaign didn\u0027t have yet."
           }
         }
       },
@@ -93705,6 +93812,14 @@
             "title": "Tier Id",
             "type": "string"
           },
+          "subscription_price_usd": {
+            "title": "Subscription Price Usd",
+            "type": [
+              "null",
+              "number"
+            ],
+            "description": "Price frozen at grant for the current billing cadence, not the live catalog price."
+          },
           "billing_period": {
             "$ref": "#/components/schemas/ResellerWorkspaceSubscriptionBillingPeriod"
           },
@@ -128429,6 +128544,14 @@
           "tier_id": {
             "title": "Tier Id",
             "type": "string"
+          },
+          "subscription_price_usd": {
+            "title": "Subscription Price Usd",
+            "type": [
+              "null",
+              "number"
+            ],
+            "description": "Price frozen at grant for the current billing cadence, not the live catalog price."
           },
           "billing_period": {
             "$ref": "#/components/schemas/ResellerWorkspaceSubscriptionBillingPeriod"
@@ -192283,6 +192406,13 @@
                 "title": "Call Sid",
                 "type": "string"
               },
+              "conference_transfer_sip_call_id": {
+                "title": "Conference Transfer Sip Call Id",
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
               "sip_header_dynamic_variables": {
                 "$ref": "#/components/schemas/ConversationHistorySipTrunkingPhoneCallModelSipHeaderDynamicVariablesProperty"
               }
@@ -192649,6 +192779,13 @@
                   "null",
                   "string"
                 ]
+              },
+              "conference_transfer_sip_call_id": {
+                "title": "Conference Transfer Sip Call Id",
+                "type": [
+                  "null",
+                  "string"
+                ]
               }
             },
             "required": [
@@ -192815,6 +192952,13 @@
               },
               "details": {
                 "title": "Details",
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "conference_transfer_sip_call_id": {
+                "title": "Conference Transfer Sip Call Id",
                 "type": [
                   "null",
                   "string"
@@ -193782,6 +193926,13 @@
                   "null",
                   "string"
                 ]
+              },
+              "conference_transfer_sip_call_id": {
+                "title": "Conference Transfer Sip Call Id",
+                "type": [
+                  "null",
+                  "string"
+                ]
               }
             },
             "required": [
@@ -193948,6 +194099,13 @@
               },
               "details": {
                 "title": "Details",
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "conference_transfer_sip_call_id": {
+                "title": "Conference Transfer Sip Call Id",
                 "type": [
                   "null",
                   "string"
@@ -201533,6 +201691,13 @@
         "call_sid": {
           "title": "Call Sid",
           "type": "string"
+        },
+        "conference_transfer_sip_call_id": {
+          "title": "Conference Transfer Sip Call Id",
+          "type": [
+            "null",
+            "string"
+          ]
         },
         "sip_header_dynamic_variables": {
           "$ref": "#/components/schemas/ConversationHistorySipTrunkingPhoneCallModelSipHeaderDynamicVariablesProperty"
@@ -215828,6 +215993,13 @@
             "null",
             "string"
           ]
+        },
+        "conference_transfer_sip_call_id": {
+          "title": "Conference Transfer Sip Call Id",
+          "type": [
+            "null",
+            "string"
+          ]
         }
       }
     },
@@ -215897,6 +216069,13 @@
         },
         "note": {
           "title": "Note",
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "conference_transfer_sip_call_id": {
+          "title": "Conference Transfer Sip Call Id",
           "type": [
             "null",
             "string"
@@ -229714,6 +229893,14 @@
         "tier_id": {
           "title": "Tier Id",
           "type": "string"
+        },
+        "subscription_price_usd": {
+          "title": "Subscription Price Usd",
+          "type": [
+            "null",
+            "number"
+          ],
+          "description": "Price frozen at grant for the current billing cadence, not the live catalog price."
         },
         "billing_period": {
           "$ref": "#/components/schemas/ResellerWorkspaceSubscriptionBillingPeriod"
@@ -260560,6 +260747,13 @@
             "null",
             "string"
           ]
+        },
+        "conference_transfer_sip_call_id": {
+          "title": "Conference Transfer Sip Call Id",
+          "type": [
+            "null",
+            "string"
+          ]
         }
       },
       "required": [
@@ -260705,6 +260899,13 @@
         },
         "details": {
           "title": "Details",
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "conference_transfer_sip_call_id": {
+          "title": "Conference Transfer Sip Call Id",
           "type": [
             "null",
             "string"
@@ -261546,6 +261747,13 @@
             "null",
             "string"
           ]
+        },
+        "conference_transfer_sip_call_id": {
+          "title": "Conference Transfer Sip Call Id",
+          "type": [
+            "null",
+            "string"
+          ]
         }
       },
       "required": [
@@ -261691,6 +261899,13 @@
         },
         "details": {
           "title": "Details",
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "conference_transfer_sip_call_id": {
+          "title": "Conference Transfer Sip Call Id",
           "type": [
             "null",
             "string"
